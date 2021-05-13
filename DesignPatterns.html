@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button type="button" onclick="document.location='index.html'" style="position:fixed;">Back To HOME</button>
+<br>
+<h1>Design Patterns Links</h1>
+
+<p>Design Patterns</p>
+<p><a href="https://www.geeksforgeeks.org/design-patterns-set-1-introduction/">https://www.geeksforgeeks.org/design-patterns-set-1-introduction/</a></p>
+<p><a href="https://www.geeksforgeeks.org/design-patterns-understand-the-importance-with-real-life-examples/">https://www.geeksforgeeks.org/design-patterns-understand-the-importance-with-real-life-examples/</a></p>
+<p>A design pattern provides a general reusable solution for the common problems occurs in software design. The patterns typically show relationships and interactions between classes or objects.&nbsp;The idea is to speed up the development process by providing well tested, proven development/design paradigm.&nbsp;Design patterns are programming language independent strategies for solving a common problem. That means a design pattern represents an idea, not a particular implementation. By using the design patterns you can make your code more flexible, reusable and maintainable.</p>
+<p>It&rsquo;s not mandatory to implement design patterns in your project always. Design patterns are not meant for project development. Design patterns are meant for common problem-solving. Whenever there is a need, you have to implement a suitable pattern to avoid such problems in the future. To find out which pattern to use. You just have to try to understand the design patterns and it&rsquo;s purposes. Only by then you will be able to pick the right one.</p>
+<p><strong>Goal:</strong><br />Understand the purpose and usage of each design patterns. So, you will be able to pick and implement the correct pattern as needed.</p>
+<p>&nbsp;</p>
+<p><strong>Example:</strong><br />For example, in many real-world situations, we want to create only one instance of a class. For example, there can be only one active president of the country at a time regardless of personal identity. This pattern is called a Singleton pattern. Other software examples could be a single DB connection shared by multiple objects as creating a separate DB connection for every object may be costly. Similarly, there can be a single configuration manager or error manager in an application that handles all problems instead of creating multiple managers.<br />&nbsp;<br /><strong>Types of Design Patterns</strong><br />There are mainly three types of design patterns:</p>
+<ol>
+<li><strong>Creational</strong><br />These design patterns are all about class instantiation or object creation. These patterns can be further categorized into Class-creational patterns and object-creational patterns. While class-creation patterns use inheritance effectively in the instantiation process, object-creation patterns use delegation effectively to get the job done.</li>
+</ol>
+<p>Creational design patterns are the Factory Method, Abstract Factory, Builder, Singleton, Object Pool, and Prototype.</p>
+<p>Use case of creational design pattern-<br />1) Suppose a developer wants to create a simple DBConnection class to connect to a database and wants to access the database at multiple locations from code, generally what developer will do is create an instance of DBConnection class and use it for doing database operations wherever required. Which results in creating multiple connections from the database as each instance of DBConnection class will have a separate connection to the database. In order to deal with it, we create DBConnection class as a singleton class, so that only one instance of DBConnection is created and a single connection is established. Because we can manage DB Connection via one instance so we can control load balance, unnecessary connections, etc.</p>
+<p>2) Suppose you want to create multiple instances of similar kind and want to achieve loose coupling then you can go for Factory pattern. A class implementing factory design pattern works as a bridge between multiple classes. Consider an example of using multiple database servers like SQL Server and Oracle. If you are developing an application using SQL Server database as back end, but in future need to change database to oracle, you will need to modify all your code, so as factory design patterns maintain loose coupling and easy implementation we should go for factory for achieving loose coupling and creation of similar kind of object.</p>
+<ol start="2">
+<li><strong>Structural</strong><br />These design patterns are about organizing different classes and objects to form larger structures and provide new functionality.</li>
+</ol>
+<p>Structural design patterns are Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Private Class Data, and Proxy.</p>
+<p>Use Case Of Structural Design Pattern-</p>
+<p>1) When 2 interfaces are not compatible with each other and want to make establish a relationship between them through an adapter its called adapter design pattern. Adapter pattern converts the interface of a class into another interface or classes the client expects that is adapter lets classes works together that could not otherwise because of incompatibility. so in these type of incompatible scenarios, we can go for the adapter pattern.</p>
+<ol start="3">
+<li><strong>Behavioral</strong><br />Behavioral patterns are about identifying common communication patterns between objects and realize these patterns.</li>
+</ol>
+<p>Behavioral patterns are Chain of responsibility, Command, Interpreter, Iterator, Mediator, Memento, Null Object, Observer, State, Strategy, Template method, Visitor</p>
+<p>Use Case of Behavioral Design Pattern-</p>
+<p>1) Template pattern defines the skeleton of an algorithm in an operation deferring some steps to sub-classes, Template method lets subclasses redefine certain steps of an algorithm without changing the algorithm structure. say for an example in your project you want the behavior of the module can be extended, such that we can make the module behave in new and different ways as the requirements of the application change, or to meet the needs of new applications. However, No one is allowed to make source code changes to it. it means you can add but can&rsquo;t modify the structure in those scenarios a developer can approach template design pattern.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h1>Singleton Design Pattern (Creational) | Introduction</h1>
+<p><a href="https://www.geeksforgeeks.org/singleton-design-pattern-introduction/">https://www.geeksforgeeks.org/singleton-design-pattern-introduction/</a></p>
+<p>Singleton is a part of&nbsp;<strong>Gang of Four design pattern</strong>&nbsp;and it is categorized under&nbsp;<strong>creational</strong>&nbsp;design patterns. In this article, we are going to take a deeper look into the usage of the Singleton pattern. It is one of the most simple design patterns in terms of the modelling but on the other hand, this is one of the most controversial patterns in terms of complexity of usage.</p>
+<p>Singleton pattern is a design pattern which restricts a class to instantiate its multiple objects. It is nothing but a way of defining a class. Class is defined in such a way that only one instance of the class is created in the complete execution of a program or project. It is used where only a single instance of a class is required to control the action throughout the execution. A singleton class shouldn&rsquo;t have multiple instances in any case and at any cost. Singleton classes are used for logging, driver objects, caching and thread pool, database connections.</p>
+<p><strong>Implementation of Singleton class</strong></p>
+<p>An implementation of singleton class should have following properties:</p>
+<ol>
+<li><strong>It should have only one instance :</strong>This is done by providing an instance of the class from within the class. Outer classes or subclasses should be prevented to create the instance. This is done by making the constructor private in java so that no class can access the constructor and hence cannot instantiate it.</li>
+<li><strong>Instance should be globally accessible :</strong>Instance of singleton class should be globally accessible so that each class can use it. In Java, it is done by making the access-specifier of instance public.</li>
+</ol>
+<p>&nbsp;</p>
+<p>//A singleton class should have public visibility</p>
+<p>//so that complete application can use</p>
+<p>public class GFG {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;//static instance of class globally accessible</p>
+<p>&nbsp;&nbsp;public static GFG instance = new GFG();</p>
+<p>&nbsp;&nbsp;private GFG() {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// private constructor so that class</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;//cannot be instantiated from outside</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;//this class</p>
+<p>&nbsp;&nbsp;}</p>
+<p>}</p>
+<p><strong>Initialization Types of Singleton</strong></p>
+<p>Singleton class can be instantiated by two methods:</p>
+<ol>
+<li><strong>Early initialization :</strong>In this method, class is initialized whether it is to be used or not. The main advantage of this method is its simplicity. You initiate the class at the time of class loading. Its drawback is that class is always initialized whether it is being used or not.</li>
+<li><strong>Lazy initialization :</strong>In this method, class in initialized only when it is required. It can save you from instantiating the class when you don&rsquo;t need it. Generally, lazy initialization is used when we create a singleton class.</li>
+</ol>
+<p><strong>Examples of Singleton class</strong></p>
+<ol>
+<li><strong>lang.Runtime :</strong>Java provides a class Runtime in its lang package which is singleton in nature. Every Java application has a single instance of class Runtime that allows the application to interface with the environment in which the application is running. The current runtime can be obtained from the getRuntime() method.<br />An application cannot instantiate this class so multiple objects can&rsquo;t be created for this class. Hence Runtime is a singleton class.</li>
+<li><strong>awt.Desktop :</strong>The Desktop class allows a Java application to launch associated applications registered on the native desktop to handle a URI or a file.<br />Supported operations include:
+<ul>
+<li>launching the user-default browser to show a specified URI;<br />launching the user-default mail client with an optional mailto URI;</li>
+<li>launching a registered application to open, edit or print a specified file.</li>
+<li>This class provides methods corresponding to these operations. The methods look for the associated application registered on the current platform, and launch it to handle a URI or file. If there is no associated application or the associated application fails to be launched, an exception is thrown.</li>
+<li>Each operation is an action type represented by the Desktop.Action class.</li>
+</ul>
+</li>
+</ol>
+<p>This class also cannot be instantiated from application. Hence it is also a singleton class.</p>
+<p><strong>Applications of Singleton classes</strong></p>
+<p>There is a lot of applications of singleton pattern like cache-memory, database connection, drivers, logging. Some major of them are :-</p>
+<ol>
+<li><strong>Hardware interface access:</strong>The use of singleton depends on the requirements. Singleton classes are also used to prevent concurrent access of class. Practically singleton can be used in case external hardware resource usage limitation required e.g. Hardware printers where the print spooler can be made a singleton to avoid multiple concurrent accesses and creating deadlock.</li>
+<li><strong>Logger :</strong>Singleton classes are used in log file generations. Log files are created by the logger class object. Suppose an application where the logging utility has to produce one log file based on the messages received from the users. If there is multiple client application using this logging utility class they might create multiple instances of this class and it can potentially cause issues during concurrent access to the same logger file. We can use the logger utility class as a singleton and provide a global point of reference so that each user can use this utility and no 2 users access it at the same time.</li>
+<li><strong>Configuration File:</strong>This is another potential candidate for Singleton pattern because this has a performance benefit as it prevents multiple users to repeatedly access and read the configuration file or properties file. It creates a single instance of the configuration file which can be accessed by multiple calls concurrently as it will provide static config data loaded into in-memory objects. The application only reads from the configuration file for the first time and thereafter from second call onwards the client applications read the data from in-memory objects.</li>
+<li><strong>Cache:</strong>We can use the cache as a singleton object as it can have a global point of reference and for all future calls to the cache object the client application will use the in-memory object.</li>
+</ol>
+<p><strong>Important points</strong></p>
+<ul>
+<li>Singleton classes can have only one instance and that instance should be globally accessible.</li>
+<li>lang.Runtime and java.awt.Desktop are 2 singleton classes provided by JVM.</li>
+<li>Singleton Design pattern is a type of creational design pattern.</li>
+<li>Outer classes should be prevented to create instance of singleton class.</li>
+</ul>
+<p>&nbsp;</p>
+<h1>Singleton Design Pattern | Implementation</h1>
+<p><a href="https://www.geeksforgeeks.org/singleton-design-pattern/?ref=lbp">https://www.geeksforgeeks.org/singleton-design-pattern/?ref=lbp</a></p>
+<p>The singleton pattern is one of the simplest design patterns. Sometimes we need to have only one instance of our class for example a single DB connection shared by multiple objects as creating a separate DB connection for every object may be costly. Similarly, there can be a single configuration manager or error manager in an application that handles all problems instead of creating multiple managers.</p>
+<p><strong>Definition:</strong><br /><em>The singleton pattern is a design pattern that restricts the instantiation of a class to one object.</em><br />Let&rsquo;s see various design options for implementing such a class. If you have a good handle on static class variables and access modifiers this should not be a difficult task.</p>
+<p>&nbsp;</p>
+<p><strong>Method 1: Classic Implementation</strong></p>
+<p>// Classical Java implementation of singleton&nbsp;</p>
+<p>// design pattern</p>
+<p>class Singleton</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;private static Singleton obj;</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// private constructor to force use of</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// getInstance() to create Singleton object</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;private Singleton() {}</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static Singleton getInstance()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (obj==null)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj = new Singleton();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return obj;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>Here we have declared getInstance() static so that we can call it without instantiating the class. The first time getInstance() is called it creates a new singleton object and after that it just returns the same object. Note that Singleton obj is not created until we need it and call getInstance() method. This is called lazy instantiation.</p>
+<p>The main problem with above method is that it is not thread safe. Consider the following execution sequence.</p>
+<p>This execution sequence creates two objects for singleton. Therefore this classic implementation is not thread safe.</p>
+<p>&nbsp;</p>
+<p><strong>Method 2: make getInstance() synchronized</strong></p>
+<table width="722">
+<tbody>
+<tr>
+<td width="722">
+<p>// Thread Synchronized Java implementation of&nbsp;</p>
+<p>// singleton design pattern</p>
+<p>class Singleton</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;private static Singleton obj;</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;private Singleton() {}</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// Only one thread can execute this at a time</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static synchronized Singleton getInstance()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (obj==null)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj = new Singleton();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return obj;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Here using synchronized makes sure that only one thread at a time can execute getInstance().<br />The main disadvantage of this is method is that using synchronized every time while creating the singleton object is expensive and may decrease the performance of your program. However if performance of getInstance() is not critical for your application this method provides a clean and simple solution.</p>
+<p>&nbsp;</p>
+<p><strong>Method 3: Eager Instantiation</strong></p>
+<table width="722">
+<tbody>
+<tr>
+<td width="722">
+<p>// Static initializer based Java implementation of</p>
+<p>// singleton design pattern</p>
+<p>class Singleton</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;private static Singleton obj = new Singleton();</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;private Singleton() {}</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static Singleton getInstance()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return obj;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Here we have created instance of singleton in static initializer. JVM executes static initializer when the class is loaded and hence this is guaranteed to be thread safe. Use this method only when your singleton class is light and is used throughout the execution of your program.</p>
+<p>&nbsp;</p>
+<p><strong>Method 4 (Best): Use &ldquo;</strong><a href="https://en.wikipedia.org/wiki/Double-checked_locking"><strong>Double Checked Locking</strong></a><strong>&rdquo;</strong></p>
+<p>If you notice carefully once an object is created synchronization is no longer useful because now obj will not be null and any sequence of operations will lead to consistent results.<br />So we will only acquire lock on the getInstance() once, when the obj is null. This way we only synchronize the first way through, just what we want.</p>
+<p>// Double Checked Locking based Java implementation of</p>
+<p>// singleton design pattern</p>
+<p>class Singleton</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;private volatile static Singleton obj;</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;private Singleton() {}</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static Singleton getInstance()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (obj == null)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// To make thread safe</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synchronized (Singleton.class)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// check again as multiple threads</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// can reach above step</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (obj==null)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj = new Singleton();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return obj;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>We have declared the obj&nbsp;<a href="https://www.geeksforgeeks.org/volatile-keyword-in-java/">volatile</a>&nbsp;which ensures that multiple threads offer the obj variable correctly when it is being initialized to Singleton instance. This method drastically reduces the overhead of calling the synchronized method every time.</p>
+<h1>Java Singleton Design Pattern Practices with Examples</h1>
+<p><a href="https://www.geeksforgeeks.org/java-singleton-design-pattern-practices-examples/">https://www.geeksforgeeks.org/java-singleton-design-pattern-practices-examples/</a></p>
+<p>In this article, we will see how we can create singleton classes. After reading this article you will be able to create your singleton class according to your use, simplicity and removed bottlenecks.<br />There are many ways this can be done in Java. All these ways differs in their implementation of the pattern, but in the end, they all achieve the same end result of a single instance.</p>
+<p><strong>Eager initialization</strong><strong>:</strong>&nbsp;This is the simplest method of creating a singleton class. In this, object of class is created when it is loaded to the memory by JVM. It is done by assigning the reference an instance directly.<br />It can be used when program will always use instance of this class, or the cost of creating the instance is not too large in terms of resources and time.</p>
+<p>// Java code to create singleton class by&nbsp;</p>
+<p>// Eager Initialization</p>
+<p>public class GFG&nbsp;</p>
+<p>{</p>
+<p>&nbsp;&nbsp;// public instance initialized when loading the class</p>
+<p>&nbsp;&nbsp;private static final GFG instance = new GFG();</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;private GFG()</p>
+<p>&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// private constructor</p>
+<p>&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;public static GFG getInstance(){</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return instance;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p><strong>Pros:</strong></p>
+<ol>
+<li>Very simple to implement.</li>
+</ol>
+<p><strong>Cons:</strong></p>
+<ol>
+<li>May lead to resource wastage. Because instance of class is created always, whether it is required or not.</li>
+<li>CPU time is also wasted in creation of instance if it is not required.</li>
+<li>Exception handling is not possible.</li>
+</ol>
+<p>&nbsp;</p>
+<p><strong>Using static block</strong><strong>:</strong>&nbsp;This is also a sub part of Eager initialization. The only difference is object is created in a static block so that we can have access on its creation, like exception handling. In this way also, object is created at the time of class loading.<br />It can be used when there is a chance of exceptions in creating object with eager initialization.</p>
+<p>// Java code to create singleton class</p>
+<p>// Using Static block</p>
+<p>public class GFG&nbsp;</p>
+<p>{</p>
+<p>&nbsp;&nbsp;// public instance</p>
+<p>&nbsp;&nbsp;public static GFG instance;</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;private GFG()&nbsp;</p>
+<p>&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// private constructor</p>
+<p>&nbsp;&nbsp;}</p>
+<p>static</p>
+<p>&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static block to initialize instance</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;instance = new GFG();</p>
+<p>&nbsp;&nbsp;}</p>
+<p>}</p>
+<p><strong>Pros:</strong></p>
+<ol>
+<li>Very simple to implement.</li>
+<li>No need to implement getInstance() method. Instance can be accessed directly.</li>
+<li>Exceptions can be handled in static block.</li>
+</ol>
+<p>&nbsp;</p>
+<p><strong>Cons:</strong></p>
+<ol>
+<li>May lead to resource wastage. Because instance of class is created always, whether it is required or not.</li>
+<li>CPU time is also wasted in creation of instance if it is not required.</li>
+</ol>
+<p>&nbsp;</p>
+<p><strong>Lazy initialization</strong><strong>:</strong>&nbsp;In this method, object is created only if it is needed. This may prevent resource wastage. An implementation of getInstance() method is required which return the instance. There is a null check that if object is not created then create, otherwise return previously created. To make sure that class cannot be instantiated in any other way, constructor is made final. As object is created with in a method, it ensures that object will not be created until and unless it is required. Instance is kept private so that no one can access it directly.<br />It can be used in a single threaded environment because multiple threads can break singleton property because they can access get instance method simultaneously and create multiple objects.</p>
+<p>&nbsp;</p>
+<p>//Java Code to create singleton class</p>
+<p>// With Lazy initialization</p>
+<p>public class GFG&nbsp;</p>
+<p>{</p>
+<p>&nbsp;&nbsp;// private instance, so that it can be</p>
+<p>&nbsp;&nbsp;// accessed by only by getInstance() method</p>
+<p>&nbsp;&nbsp;private static GFG instance;</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;private GFG()&nbsp;</p>
+<p>&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// private constructor</p>
+<p>&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;//method to return instance of class</p>
+<p>&nbsp;&nbsp;public static GFG getInstance()&nbsp;</p>
+<p>&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;if (instance == null)&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// if instance is null, initialize</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance = new GFG();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;return instance;</p>
+<p>&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p><strong>Pros:</strong></p>
+<ol>
+<li>Object is created only if it is needed. It may overcome resource overcome and wastage of CPU time.</li>
+<li>Exception handling is also possible in method.</li>
+</ol>
+<p>&nbsp;</p>
+<p><strong>Cons:</strong></p>
+<ol>
+<li>Every time a condition of null has to be checked.</li>
+<li>instance can&rsquo;t be accessed directly.</li>
+<li>In multithreaded environment, it may break singleton property.</li>
+</ol>
+<p>&nbsp;</p>
+<p><strong>Thread Safe Singleton</strong><strong>:</strong>&nbsp;A thread safe singleton in created so that singleton property is maintained even in multithreaded environment. To make a singleton class thread-safe, getInstance() method is made synchronized so that multiple threads can&rsquo;t access it simultaneously.</p>
+<p>&nbsp;</p>
+<table width="686">
+<tbody>
+<tr>
+<td width="686">
+<p>// Java program to create Thread Safe</p>
+<p>// Singleton class</p>
+<p>public class GFG&nbsp;</p>
+<p>{</p>
+<p>&nbsp;&nbsp;// private instance, so that it can be</p>
+<p>&nbsp;&nbsp;// accessed by only by getInstance() method</p>
+<p>&nbsp;&nbsp;private static GFG instance;</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;private GFG()&nbsp;</p>
+<p>&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// private constructor</p>
+<p>&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;//synchronized method to control simultaneous access</p>
+<p>&nbsp;&nbsp;synchronized public static GFG getInstance()&nbsp;</p>
+<p>&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;if (instance == null)&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// if instance is null, initialize</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance = new GFG();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;return instance;</p>
+<p>&nbsp;&nbsp;}</p>
+<p>}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p><strong>Pros:</strong></p>
+<ol>
+<li>Lazy initialization is possible.</li>
+<li>It is also thread safe.</li>
+</ol>
+<p>&nbsp;</p>
+<p><strong>Cons:</strong></p>
+<ol>
+<li>getInstance() method is synchronized so it causes slow performance as multiple threads can&rsquo;t access it simultaneously.</li>
+</ol>
+<p>&nbsp;</p>
+<p><strong>Lazy initialization with Double check locking</strong><strong>:</strong>&nbsp;In this mechanism, we overcome the overhead problem of synchronized code. In this method, getInstance is not synchronized but the block which creates instance is synchronized so that minimum number of threads have to wait and that&rsquo;s only for first time.</p>
+<p>&nbsp;</p>
+<table width="686">
+<tbody>
+<tr>
+<td width="686">
+<p>// Java code to explain double check locking</p>
+<p>public class GFG&nbsp;</p>
+<p>{</p>
+<p>&nbsp;&nbsp;// private instance, so that it can be</p>
+<p>&nbsp;&nbsp;// accessed by only by getInstance() method</p>
+<p>&nbsp;&nbsp;private static GFG instance;</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;private GFG()&nbsp;</p>
+<p>&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// private constructor</p>
+<p>&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;public static GFG getInstance()</p>
+<p>&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;if (instance == null)&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//synchronized block to remove overhead</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synchronized (GFG.class)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(instance==null)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// if instance is null, initialize</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance = new GFG();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;return instance;</p>
+<p>&nbsp;&nbsp;}</p>
+<p>}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pros:</strong></p>
+<ol>
+<li>Lazy initialization is possible.</li>
+<li>It is also thread safe.</li>
+<li>Performance overhead gets reduced because of synchronized keyword.</li>
+</ol>
+<p>&nbsp;</p>
+<p><strong>Cons:</strong></p>
+<ol>
+<li>First time, it can affect performance.</li>
+</ol>
+<p>As cons. of double check locking method is bearable so it can be used for high performance multi-threaded applications.</p>
+<p><strong>Bill Pugh Singleton Implementation</strong><strong>:</strong>&nbsp;Prior to Java5, memory model had a lot of issues and above methods caused failure in certain scenarios in multithreaded environment. So, Bill Pugh suggested a concept of inner static classes to use for singleton.</p>
+<p>// Java code for Bill Pugh Singleton Implementaion</p>
+<p>public class GFG&nbsp;</p>
+<p>{</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;private GFG()&nbsp;</p>
+<p>&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// private constructor</p>
+<p>&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;// Inner class to provide instance of class</p>
+<p>&nbsp;&nbsp;private static class BillPughSingleton</p>
+<p>&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;private static final GFG INSTANCE = new GFG();</p>
+<p>&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;public static GFG getInstance()&nbsp;</p>
+<p>&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;return BillPughSingleton.INSTANCE;</p>
+<p>&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>When the singleton class is loaded, inner class is not loaded and hence doesn&rsquo;t create object when loading the class. Inner class is created only when getInstance() method is called. So it may seem like eager initialization but it is lazy initialization.<br />This is the most widely used approach as it doesn&rsquo;t use synchronization.</p>
+<p><strong>When to use What</strong></p>
+<ol>
+<li>Eager initialization is easy to implement but it may cause resource and CPU time wastage. Use it only if cost of initializing a class is less in terms of resources or your program will always need the instance of class.</li>
+<li>By using Static block in Eager initialization we can provide exception handling and also can control over instance.</li>
+<li>Using synchronized we can create singleton class in multi-threading environment also but it can cause slow performance, so we can use Double check locking mechanism.</li>
+<li>Bill Pugh implementation is most widely used approach for singleton classes. Most developers prefer it because of its simplicity and advantages.</li>
+</ol>
+<p>&nbsp;</p>
+<h1>Factory method design pattern (Creational) in Java</h1>
+<p><a href="https://www.geeksforgeeks.org/factory-method-design-pattern-in-java/">https://www.geeksforgeeks.org/factory-method-design-pattern-in-java/</a></p>
+<p>It is a creational design pattern which talks about the creation of an object. The factory design pattern says that define an interface ( A java interface or an abstract class) and let the subclasses decide which object to instantiate. The factory method in the interface lets a class defer the instantiation to one or more concrete subclasses. Since this design patterns talk about instantiation of an object and so it comes under the category of creational design pattern. If we notice the name&nbsp;<strong>Factory method</strong>, that means there is a method which is a factory, and in general factories are involved with creational stuff and here with this an object is being created. It is one of the best ways to create an object where object creation logic is hidden to the client. Now Let&rsquo;s look at the implementation.</p>
+<p><strong>Implementation:</strong><br />1. Define a factory method inside an interface.<br />2. Let the subclass implements the above factory method and decide which object to create.</p>
+<p>In Java constructors are not polymorphic, but by allowing subclass to create an object, we are adding polymorphic behavior to the instantiation. In short, we are trying to achieve Pseudo polymorphism by letting the subclass to decide what to create, and so this Factory method is also called as&nbsp;<strong>Virtual constructor</strong>. Let&rsquo;s try to implement it with a real-time problem and some coding exercise.<br /><strong>Problem Statement :</strong><br />Consider we want to implement a notification service through email, SMS, and push notification. Let&rsquo;s try to implement this with the help of factory method design pattern. First we will design a UML class diagram for this.</p>
+<p>In the above class diagram we have an interface called&nbsp;<strong>NotificationService</strong>, and three concrete classes are implementing NotificationService interface. A factory class NotificationFactory is created to get a NotificationService object. Let&rsquo;s jump into the coding now.<br /><strong>Create Notification interface</strong></p>
+<p>public interface Notification {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;void notifyUser();</p>
+<p>}</p>
+<p>Note- Above interface could be created as an abstract class as well.<br /><strong>Create all implementation classes</strong></p>
+<p>SMSNotification.java</p>
+<p>public class SMSNotification implements Notification {</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;@Override</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public void notifyUser()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// TODO Auto-generated method stub</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Sending an SMS notification");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>EmailNotification.java</p>
+<p>public class EmailNotification implements Notification {</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;@Override</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public void notifyUser()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// TODO Auto-generated method stub</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Sending an e-mail notification");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>PushNotification.java</p>
+<p>public class PushNotification implements Notification {</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;@Override</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public void notifyUser()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// TODO Auto-generated method stub</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Sending a push notification");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p><strong>Create a factory class NotificationFactory.java to instantiate concrete class.</strong></p>
+<p>public class NotificationFactory {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public Notification createNotification(String channel)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (channel == null || channel.isEmpty())</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return null;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ("SMS".equals(channel)) {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return new SMSNotification();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if ("EMAIL".equals(channel)) {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return new EmailNotification();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if ("PUSH".equals(channel)) {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return new PushNotification();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return null;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>Now let&rsquo;s use factory class to create and get an object of concrete class by passing some information.</p>
+<p>\</p>
+<p>public class NotificationService {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NotificationFactory notificationFactory = new NotificationFactory();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Notification notification = notificationFactory.createNotification("SMS");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;notification.notifyUser();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p><strong>Output :</strong> Sending an SMS notification</p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>Real-time examples</strong><br />This design pattern has been widely used in JDK, such as<br />1. getInstance() method of java.util.Calendar, NumberFormat, and ResourceBundle uses factory method design pattern.<br />2. All the wrapper classes like Integer, Boolean etc, in Java uses this pattern to evaluate the values using valueOf() method.<br />3. java.nio.charset.Charset.forName(), java.sql.DriverManager#getConnection(), java.net.URL.openConnection(), java.lang.Class.newInstance(), java.lang.Class.forName() are some of ther example where factory method design pattern has been used.</p>
+<p><strong>Conclusion</strong><br />So far we learned what is Factory method design pattern and how to implement it. I believe now we have a fair understanding of the advantage of this design mechanism.</p>
+<p>&nbsp;</p>
+<h1>Prototype Design Pattern (Creational)</h1>
+<p><a href="https://www.geeksforgeeks.org/prototype-design-pattern/">https://www.geeksforgeeks.org/prototype-design-pattern/</a></p>
+<h1>Builder Design Pattern</h1>
+<p><a href="https://www.geeksforgeeks.org/builder-design-pattern/">https://www.geeksforgeeks.org/builder-design-pattern/</a></p>
+<p>&nbsp;</p>
+<h1>Facade Design Pattern (Structural) | Introduction</h1>
+<p><a href="https://www.geeksforgeeks.org/facade-design-pattern-introduction/">https://www.geeksforgeeks.org/facade-design-pattern-introduction/</a></p>
+<p>Facade is a part of Gang of Four design pattern and it is categorized under Structural design patterns. Before we dig into the details of it, let us discuss some examples which will be solved by this particular Pattern.</p>
+<p>So, As the name suggests, it means the face of the building. The people walking past the road can only see this glass face of the building. They do not know anything about it, the wiring, the pipes and other complexities. It hides all the complexities of the building and displays a friendly face.</p>
+<p><strong>More examples</strong></p>
+<p>In Java, the interface JDBC can be called a facade because, we as users or clients create connection using the &ldquo;java.sql.Connection&rdquo; interface, the implementation of which we are not concerned about. The implementation is left to the vendor of driver.</p>
+<p>Another good example can be the startup of a computer. When a computer starts up, it involves the work of cpu, memory, hard drive, etc. To make it easy to use for users, we can add a facade which wrap the complexity of the task, and provide one simple interface instead.<br />Same goes for the&nbsp;<strong>Facade Design Pattern</strong>. It hides the complexities of the system and provides an interface to the client from where the client can access the system.</p>
+<p><strong>Facade Design Pattern Diagram</strong></p>
+<p>Now Let&rsquo;s try and understand the facade pattern better using a simple example. Let&rsquo;s consider a hotel. This hotel has a hotel keeper. There are a lot of restaurants inside hotel e.g. Veg restaurants, Non-Veg restaurants and Veg/Non Both restaurants.<br />You, as client want access to different menus of different restaurants . You do not know what are the different menus they have. You just have access to hotel keeper who knows his hotel well. Whichever menu you want, you tell the hotel keeper and he takes it out of from the respective restaurants and hands it over to you. Here, the hotel keeper acts as the&nbsp;<strong>facade</strong>, as he hides the complexities of the system hotel.<br />Let&rsquo;s see how it works :</p>
+<p><strong>Interface of Hotel</strong></p>
+<p>&nbsp;</p>
+<p>package structural.facade;</p>
+<p>public interface Hotel</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public Menus getMenus();</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>The hotel interface only returns Menus.<br />Similarly, the Restaurant are of three types and can implement the hotel interface. Let&rsquo;s have a look at the code for one of the Restaurants.</p>
+<p>&nbsp;</p>
+<p><strong>NonVegRestaurant.java</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p>package structural.facade;</p>
+<p>&nbsp;&nbsp;</p>
+<p>public class NonVegRestaurant implements Hotel</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public Menus getMenus()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NonVegMenu nv = new NonVegMenu();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return nv;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p><strong>VegRestaurant.java</strong></p>
+<table width="722">
+<tbody>
+<tr>
+<td width="722">
+<p>package structural.facade;</p>
+<p>&nbsp;&nbsp;</p>
+<p>public class VegRestaurant implements Hotel</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public Menus getMenus()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VegMenu v = new VegMenu();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return v;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>VegNonBothRestaurant.java</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p>package structural.facade;</p>
+<p>&nbsp;&nbsp;</p>
+<p>public class VegNonBothRestaurant implements Hotel</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public Menus getMenus()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Both b = new Both();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return b;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>Now let&rsquo;s consider the facade,</p>
+<p><strong>HotelKeeper.java</strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>package structural.facade;</p>
+<p>&nbsp;&nbsp;</p>
+<p>public class HotelKeeper</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public VegMenu getVegMenu()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VegRestaurant v = new VegRestaurant();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VegMenu vegMenu = (VegMenu)v.getMenus();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return vegMenu;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public NonVegMenu getNonVegMenu()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NonVegRestaurant v = new NonVegRestaurant();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NonVegMenu NonvegMenu = (NonVegMenu)v.getMenus();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return NonvegMenu;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public Both getVegNonMenu()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VegNonBothRestaurant v = new VegNonBothRestaurant();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Both bothMenu = (Both)v.getMenus();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return bothMenu;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>From this, It is clear that the complex implementation will be done by HotelKeeper himself. The client will just access the HotelKeeper and ask for either Veg, NonVeg or VegNon Both Restaurant menu.</p>
+<p><strong>How will the client program access this fa&ccedil;ade?</strong></p>
+<p>&nbsp;</p>
+<p>package structural.facade;</p>
+<p>&nbsp;&nbsp;</p>
+<p>public class Client</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main (String[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HotelKeeper keeper = new HotelKeeper();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VegMenu v = keeper.getVegMenu();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NonVegMenu nv = keeper.getNonVegMenu();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Both = keeper.getVegNonMenu();</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>In this way the implementation is sent to the fa&ccedil;ade. The client is given just one interface and can access only that. This hides all the complexities.</p>
+<p><strong>When Should this pattern be used?</strong></p>
+<p>The facade pattern is appropriate when you have a&nbsp;<strong>complex system&nbsp;</strong>that you want to expose to clients in a simplified way, or you want to make an external communication layer over an existing system which is incompatible with the system. Facade deals with interfaces, not implementation. Its purpose is to hide internal complexity behind a single interface that appears simple on the outside.<br />&nbsp;</p>
+<p>Adapter Pattern (<strong>Structural</strong>)</p>
+<p><a href="https://www.geeksforgeeks.org/adapter-pattern/">https://www.geeksforgeeks.org/adapter-pattern/</a></p>
+<p>This pattern is easy to understand as the real world is full of adapters.&nbsp;&nbsp; For example consider a USB to Ethernet adapter. We need this when we have an Ethernet interface on one end and USB on the other. Since they are incompatible with each other. we use an adapter that converts one to other. This example is pretty analogous to Object Oriented Adapters. In design, adapters are used when we have a class (Client) expecting some type of object and we have an object (Adaptee) offering the same features but exposing a different interface.</p>
+<p>To use an adapter:</p>
+<ol>
+<li>The client makes a request to the adapter by calling a method on it using the target interface.</li>
+<li>The adapter translates that request on the adaptee using the adaptee interface.</li>
+<li>Client receive the results of the call and is unaware of adapter&rsquo;s presence.</li>
+</ol>
+<p>&nbsp;</p>
+<p><strong><em>Definition:</em></strong></p>
+<p>The adapter pattern convert the interface of a class into another interface clients expect. Adapter lets classes work together that couldn&rsquo;t otherwise because of incompatible interfaces.</p>
+<p><strong>Class Diagram:</strong></p>
+<p>The client sees only the target interface and not the adapter. The adapter implements the target interface. Adapter delegates all requests to Adaptee.</p>
+<p><strong>Example:</strong></p>
+<p>Suppose you have a Bird class with fly() , and makeSound()methods. And also a ToyDuck class with squeak() method. Let&rsquo;s assume that you are short on ToyDuck objects and you would like to use Bird objects in their place. Birds have some similar functionality but implement a different interface, so we can&rsquo;t use them directly. So we will use adapter pattern. Here our client would be ToyDuck and adaptee would be Bird.</p>
+<p>Below is Java implementation of it.</p>
+<p>// Java implementation of Adapter pattern</p>
+<p>&nbsp;&nbsp;</p>
+<p>interface Bird</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// birds implement Bird interface that allows</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// them to fly and make sounds adaptee interface</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public void fly();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public void makeSound();</p>
+<p>}</p>
+<p>&nbsp;&nbsp;</p>
+<p>class Sparrow implements Bird</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// a concrete implementation of bird</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public void fly()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Flying");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public void makeSound()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Chirp Chirp");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>&nbsp;&nbsp;</p>
+<p>interface ToyDuck</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// target interface</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// toyducks dont fly they just make</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// squeaking sound</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public void squeak();</p>
+<p>}</p>
+<p>&nbsp;&nbsp;</p>
+<p>class PlasticToyDuck implements ToyDuck</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public void squeak()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Squeak");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>&nbsp;&nbsp;</p>
+<p>class BirdAdapter implements ToyDuck</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// You need to implement the interface your</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// client expects to use.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Bird bird;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public BirdAdapter(Bird bird)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// we need reference to the object we</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// are adapting</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.bird = bird;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public void squeak()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// translate the methods appropriately</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bird.makeSound();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>&nbsp;&nbsp;</p>
+<p>class Main</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String args[])</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sparrow sparrow = new Sparrow();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ToyDuck toyDuck = new PlasticToyDuck();</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Wrap a bird in a birdAdapter so that it&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// behaves like toy duck</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ToyDuck birdAdapter = new BirdAdapter(sparrow);</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Sparrow...");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sparrow.fly();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sparrow.makeSound();</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("ToyDuck...");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toyDuck.squeak();</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// toy duck behaving like a bird&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("BirdAdapter...");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;birdAdapter.squeak();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>Output:</p>
+<p>Sparrow...</p>
+<p>Flying</p>
+<p>Chirp Chirp</p>
+<p>ToyDuck...</p>
+<p>Squeak</p>
+<p>BirdAdapter...</p>
+<p>Chirp Chirp</p>
+<p><strong>Explanation :</strong><br />Suppose we have a bird that can makeSound(), and we have a plastic toy duck that can squeak(). Now suppose our client changes the requirement and he wants the toyDuck to makeSound than ?<br />Simple solution is that we will just change the implementation class to the new adapter class and tell the client to pass the instance of the bird(which wants to squeak()) to that class.<br /><strong>Before :</strong>&nbsp;ToyDuck toyDuck = new PlasticToyDuck();<br /><strong>After :</strong>&nbsp;ToyDuck toyDuck = new BirdAdapter(sparrow);<br />You can see that by changing just one line the toyDuck can now do Chirp Chirp !!</p>
+<p><strong>Object Adapter Vs Class Adapter</strong><br />The adapter pattern we have implemented above is called Object Adapter Pattern because the adapter holds an instance of adaptee. There is also another type called Class Adapter Pattern which use inheritance instead of composition but you require multiple inheritance to implement it.<br />Class diagram of Class Adapter Pattern:</p>
+<p>Here instead of having an adaptee object inside adapter (composition) to make use of its functionality adapter inherits the adaptee.</p>
+<p>Since multiple inheritance is not supported by many languages including java and is associated with many problems we have not shown implementation using class adapter pattern.</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Helps achieve reusability and flexibility.</li>
+<li>Client class is not complicated by having to use a different interface and can use polymorphism to swap between different implementations of adapters.</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>All requests are forwarded, so there is a slight increase in the overhead.</li>
+<li>Sometimes many adaptations are required along an adapter chain to reach the type which is required.</li>
+</ul>
+<p>&nbsp;</p>
+<h1>Bridge Design Pattern (Structural)</h1>
+<p><a href="https://www.geeksforgeeks.org/bridge-design-pattern/">https://www.geeksforgeeks.org/bridge-design-pattern/</a></p>
+<h1>Composite Design Pattern (Structural)</h1>
+<p><a href="https://www.geeksforgeeks.org/composite-design-pattern/">https://www.geeksforgeeks.org/composite-design-pattern/</a></p>
+<p>&nbsp;</p>
+<h1>Decorator Pattern (Structural) | Set 1 (Background)</h1>
+<p><a href="https://www.geeksforgeeks.org/decorator-pattern/">https://www.geeksforgeeks.org/decorator-pattern/</a></p>
+<h1>Decorator Pattern (Structural) | Set 2 (Introduction and Design)</h1>
+<p><a href="https://www.geeksforgeeks.org/the-decorator-pattern-set-2-introduction-and-design/">https://www.geeksforgeeks.org/the-decorator-pattern-set-2-introduction-and-design/</a></p>
+<h1>Decorator Pattern (Structural) | Set 3 (Coding the Design)</h1>
+<p><a href="https://www.geeksforgeeks.org/decorator-pattern-set-3-coding-the-design/">https://www.geeksforgeeks.org/decorator-pattern-set-3-coding-the-design/</a></p>
+<h1>Proxy Design Pattern (Structural)</h1>
+<p><a href="https://www.geeksforgeeks.org/proxy-design-pattern/">https://www.geeksforgeeks.org/proxy-design-pattern/</a></p>
+<p>&nbsp;</p>
+<h1>Interpreter Design Pattern (Behavioral)</h1>
+<p><a href="https://www.geeksforgeeks.org/interpreter-design-pattern/">https://www.geeksforgeeks.org/interpreter-design-pattern/</a></p>
+<h1>Strategy Pattern (Behavioral)| Set 1 (Introduction)</h1>
+<p><a href="https://www.geeksforgeeks.org/strategy-pattern-set-1/">https://www.geeksforgeeks.org/strategy-pattern-set-1/</a></p>
+<h1>Strategy Pattern (Behavioral)| Set 2 (Implementation)</h1>
+<p><a href="https://www.geeksforgeeks.org/strategy-pattern-set-2/">https://www.geeksforgeeks.org/strategy-pattern-set-2/</a></p>
+<h1>State Design Pattern (Behavioral)</h1>
+<p><a href="https://www.geeksforgeeks.org/state-design-pattern/">https://www.geeksforgeeks.org/state-design-pattern/</a></p>
+<h1>Command Pattern (Behavioral)</h1>
+<p><a href="https://www.geeksforgeeks.org/command-pattern/">https://www.geeksforgeeks.org/command-pattern/</a></p>
+<h1>Chain of Responsibility Design Pattern (Behavioral)</h1>
+<p><a href="https://www.geeksforgeeks.org/chain-responsibility-design-pattern/">https://www.geeksforgeeks.org/chain-responsibility-design-pattern/</a></p>
+<h1>Memento design pattern (Behavioral)</h1>
+<p><a href="https://www.geeksforgeeks.org/memento-design-pattern/">https://www.geeksforgeeks.org/memento-design-pattern/</a></p>
+<h1>Template Method Design Pattern (Behavioral)</h1>
+<p><a href="https://www.geeksforgeeks.org/template-method-design-pattern/">https://www.geeksforgeeks.org/template-method-design-pattern/</a></p>
+<h1>Observer Pattern &nbsp;(Behavioral)| Set 1 (Introduction)</h1>
+<p><a href="https://www.geeksforgeeks.org/observer-pattern-set-1-introduction/">https://www.geeksforgeeks.org/observer-pattern-set-1-introduction/</a></p>
+<h1>Observer Pattern | &nbsp;Set 2 (Implementation)</h1>
+<p><a href="https://www.geeksforgeeks.org/observer-pattern-set-2-implementation/">https://www.geeksforgeeks.org/observer-pattern-set-2-implementation/</a></p>
+<h1>Visitor design pattern (Behavioral)</h1>
+<p><a href="https://www.geeksforgeeks.org/visitor-design-pattern/">https://www.geeksforgeeks.org/visitor-design-pattern/</a></p>
+
+</body>
+</html>

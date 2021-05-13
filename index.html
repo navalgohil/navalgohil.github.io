@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 50%;
+        }
+          
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+          
+        h1 {
+            color: green;
+        }
+    </style>
+
+<body>
+
+<center>
+<h1>NAVAL JAVA Links</h1>
+
+<button type="button" onclick="document.location='OOPS.html'" style="position:fixed;">OOPS</button></br></br></br>
+		<b>Search the table for content, Type: 
+          <input id="gfg" type="text" placeholder="Search here">
+        </b>
+        <br>
+        <br>
+        <table>
+            <!--<tr>
+                <th>Core Java</th>
+                <th>Spring</th>
+                <th>Database</th>
+				 <th>Database</th>
+            </tr>-->
+            <tbody id="geeks">
+                <tr>
+                    <td><button type="button" onclick="document.location='OOPS.html'" >OOPS</button></td>
+					<td><button type="button" onclick="document.location='static.html'" >static</button></td>
+                    <td><button type="button" onclick="document.location='Excpetion.html'" >Excpetion</button></td>
+					<td><button type="button" onclick="document.location='string.html'" >string</button></td>					 
+                </tr>
+				<tr>
+                    <td><button type="button" onclick="document.location='Constructor.html'" >Constructor</button></td>
+					<td><button type="button" onclick="document.location='Java.html'" >JAVA</button></td>
+                    <td><button type="button" onclick="document.location='Algoritham.html'" >Algoritham</button></td>
+					<td><button type="button" onclick="document.location='Sorting.html'" >Sorting</button></td>					 
+                </tr>
+				<tr>
+                    <td><button type="button" onclick="document.location='DesignPatterns.html'" >DesignPatterns</button></td>
+					<td><button type="button" onclick="document.location='Java8.html'" >Java 8</button></td>
+                    <td><button type="button" onclick="document.location='JDBC.html'" >JDBC</button></td>
+					<td><button type="button" onclick="document.location='Logical.html'" >Logical</button></td>					 
+                </tr> 
+				<tr>
+                    <td><button type="button" onclick="document.location='JavaHistory.html'" >JavaHistory</button></td>
+					<td><button type="button" onclick="document.location='JMS.html'" >JMS</button></td>
+                    <td><button type="button" onclick="document.location='REGEX.html'" >REGEX</button></td>
+					<td><button type="button" onclick="document.location='Logical.html'" >X</button></td>					 
+                </tr> 
+				<tr>
+					<td><button type="button" onclick="document.location='Collections.html'" >Collections</button></td>
+					<td><button type="button" onclick="document.location='MultiThreading.html'" >MultiThreading</button></td>
+					<td><button type="button" onclick="document.location='Spring.html'" >Spring</button></td>
+					<td><button type="button" onclick="document.location='SpringBoot.html'" >SpringBoot</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="document.location='RestWebservice.html'" >RestWebservice</button></td>
+					<td><button type="button" onclick="document.location='microservice.html'" >microservice</button></td>
+                    <td><button type="button" onclick="document.location='Hibernate.html'" >Hibernate</button></td>
+					<td><button type="button" onclick="document.location='Database.html'" >Database</button></td>                   
+                </tr>
+				<tr>
+                    <td><button type="button" onclick="document.location='jQuery.html'" >jQuery</button></td>
+                    <td><button type="button" onclick="document.location='javascript.html'" >javascript</button></td>
+                    <td><button type="button" onclick="document.location='HTML.html'" >HTML</button></td>
+					<td><button type="button" onclick="document.location='bootstrap.html'" >bootstrap</button></td>
+                </tr>
+				<tr>
+                    <td><button type="button" onclick="document.location='JSP.html'" >JSP</button></td>
+                    <td><button type="button" onclick="document.location='Servlets.html'" >Servlets</button></td>
+					<td><button type="button" onclick="document.location='struts.html'" >struts</button></td>
+                    <td></td>
+                </tr>				
+            </tbody>
+        </table>
+  
+        <script>
+            $(document).ready(function() {
+                $("#gfg").on("keyup", function() {
+                    var value = $(this).val().toLowerCase();
+                    $("#geeks tr").filter(function() {
+                        $(this).toggle($(this).text()
+                        .toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+        </script>
+  </center>
+
+</body>
+</html>

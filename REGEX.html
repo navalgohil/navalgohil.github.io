@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button type="button" onclick="document.location='index.html'" style="position:fixed;">Back To HOME</button>
+<br>
+<h1>REGEX Links</h1>
+
+<p>Regular Expressions in Java</p>
+<p><a href="https://www.geeksforgeeks.org/regular-expressions-in-java/?ref=lbp">https://www.geeksforgeeks.org/regular-expressions-in-java/?ref=lbp</a></p>
+<p>Regular Expressions or Regex (in short) is an API for defining String patterns that can be used for searching, manipulating and editing a string in Java. Email validation and passwords are few areas of strings where Regex are widely used to define the constraints. Regular Expressions are provided under java.util.regex package. This consists of 3 classes and 1 interface.</p>
+<p><strong>The java.util.regex</strong>&nbsp;package primarily consists of the following three classes:</p>
+<table width="100%">
+<thead>
+<tr>
+<td>
+<p><strong>CLASS</strong></p>
+</td>
+<td>
+<p><strong>DESCRIPTION</strong></p>
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>util.regex.Pattern</p>
+</td>
+<td>
+<p>Used for defining patterns</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>util.regex.Matcher</p>
+</td>
+<td>
+<p>Used for performing match operations on text using patterns</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>PatternSyntaxException</p>
+</td>
+<td>
+<p>Used for indicating syntax error in a regular expression pattern</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>MatchResult interface:</strong>&nbsp;This interface is used to determine the result of a match operation for a regular expression. It must be noted that although the match boundaries, groups and group boundaries can be seen, the modification is not allowed through a MatchResult.</p>
+<p>&nbsp;</p>
+<ol>
+<li><strong>util.regex.Pattern class:&nbsp;</strong>This class is a compilation of regular expressions that can be used to define various types of patters, providing no public constructors. This can be created by invoking the compile() method which accepts a regular expression as the first argument, thus returns a pattern after execution.</li>
+</ol>
+<p>// A Simple Java program to demonstrate working of</p>
+<p>// Pattern.matches() in Java</p>
+<p>import java.util.regex.Pattern;</p>
+<p>&nbsp;&nbsp;</p>
+<p>class Demo</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String args[])</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Following line prints "true" because the whole</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// text "geeksforgeeks" matches pattern "geeksforge*ks"</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println (Pattern.matches("geeksforge*ks",</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"geeksforgeeks"));</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Following line prints "false" because the whole</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// text "geeksfor" doesn't match pattern "g*geeks*"</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println (Pattern.matches("g*geeks*",</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"geeksfor"));</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>&nbsp;</p>
+<ol start="2">
+<li><strong>util.regex.Matcher class:&nbsp;</strong>This object is used to perform match operations for an input string in java, thus interpreting the previously explained patterns. This too defines no public constructors. This can be implemented by invoking a matcher() on any pattern object.</li>
+</ol>
+<p>Note that Pattern.matches() checks if the whole text matches with a pattern or not. Other methods (demonstrated below) are mainly used to find multiple occurrences of pattern in text.</p>
+<p><strong>Java Programs to demonstrate workings of compile(), find(), start(), end() and split() :</strong></p>
+<p><strong>Java Program to demonstrate simple pattern searching</strong></p>
+<p>// A Simple Java program to demonstrate working of</p>
+<p>// String matching in Java</p>
+<p>import java.util.regex.Matcher;</p>
+<p>import java.util.regex.Pattern;</p>
+<p>&nbsp;&nbsp;</p>
+<p>class Demo</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String args[])</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Create a pattern to be searched</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pattern pattern = Pattern.compile("geeks");</p>
+<p>&nbsp;</p>
+<p>&nbsp; // Create a pattern to be searched</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pattern pattern = Pattern.compile("ge*");</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Search above pattern in "geeksforgeeks.org"</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Matcher m = pattern.matcher("geeksforgeeks.org");</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Print starting and ending indexes of the pattern</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// in text</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (m.find())</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Pattern found from " + m.start() +</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" to " + (m.end()-1));</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>Output:</p>
+<p>Pattern found from 0 to 4</p>
+<p>Pattern found from 8 to 12</p>
+<ol start="3">
+<li><strong>PatternSyntaxException class:&nbsp;</strong>This object of Regex is used to indicate a syntax error in a regular expression pattern and is an unchecked exception.</li>
+</ol>
+<p><strong>&nbsp;</strong></p>
+<p><strong>Important Observations/Facts:</strong></p>
+<ol>
+<li>We create a pattern object by calling Pattern.compile(), there is no constructor. compile() is a static method in Pattern class.</li>
+<li>Like above, we create a Matcher object using matcher() on objects of Pattern class.</li>
+<li>matches() is also a static method that is used to check if given text as a whole matches pattern or not.</li>
+<li>find() is used to find multiple occurrences of pattern in text.</li>
+<li>We can split a text based on a delimiter pattern<br />using split()</li>
+</ol>
+<p>&nbsp;</p>
+<h1>Check if URL is valid or not in Java</h1>
+<p><a href="https://www.geeksforgeeks.org/check-if-url-is-valid-or-not-in-java/">https://www.geeksforgeeks.org/check-if-url-is-valid-or-not-in-java/</a></p>
+<p>Given a URL as string, we need to find if the given URL is valid or not.</p>
+<p>Input : str = "https://www.geeksforgeeks.org/"</p>
+<p>Output : Yes</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Input : str = "https:// www.geeksforgeeks.org/"</p>
+<p>Output : No</p>
+<p>Note that there is a space after https://</p>
+<p><strong>Using java.net.url</strong><br />We can use&nbsp;<a href="https://www.geeksforgeeks.org/url-class-java-examples/">java.net.url</a>&nbsp;class to validate a URL. The idea is to create a URL object from the specified String representation. If we do not get exception while creating the object, we return true. Else we return false.</p>
+<p>&nbsp;</p>
+<p>// Java program to check if a URL is valid&nbsp;</p>
+<p>// using java.net.url</p>
+<p>import java.net.URL;</p>
+<p>&nbsp;&nbsp;</p>
+<p>class Test {</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;/* Returns true if url is valid */</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static boolean isValid(String url)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* Try creating a valid URL */</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new URL(url).toURI();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return true;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// If there was an Exception</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// while creating URL object</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch (Exception e) {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return false;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;/*driver function*/&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String url1 = "<a href="http://www.geeksforgeeks.org/">http://www.geeksforgeeks.org/</a>";</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (isValid(url1))&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Yes");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("No");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String url2 = "<u>http://</u> www.geeksforgeeks.org/";</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (isValid(url2))&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Yes");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("No");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>Output:</p>
+<p>Yes</p>
+<p>No</p>
+<h1>Check if email address valid or not in Java</h1>
+<p><a href="https://www.geeksforgeeks.org/check-email-address-valid-not-java/?ref=rp">https://www.geeksforgeeks.org/check-email-address-valid-not-java/?ref=rp</a></p>
+<p>Given a string, find if the given string is a valid email or not.</p>
+<p>Input : email = "contribute@geeksforgeeks.org"</p>
+<p>Output : Yes</p>
+<p>&nbsp;</p>
+<p>Input : email = "contribute@geeksforgeeks..org"</p>
+<p>Output : No</p>
+<p>There is an extra dot before org.</p>
+<p>Prerequisite :&nbsp;<a href="https://www.geeksforgeeks.org/regular-expressions-in-java/">Regular Expressions in Java</a><br />We use below regular expression provided in&nbsp;<a href="https://www.owasp.org/index.php/OWASP_Validation_Regex_Repository">OWASP Validation Regex repository</a>.</p>
+<p><strong>^[a-zA-Z0-9_+&amp;*-] + (?:\\.[a-zA-Z0-9_+&amp;*-]</strong></p>
+<p><strong>+ )*@(?:[a-zA-Z0-9-]+\\.) + [a-zA-Z]{2, 7}</strong></p>
+<p>&nbsp;</p>
+<p>// Java program to check if an email address</p>
+<p>// is valid using Regex.</p>
+<p>import java.util.regex.Matcher;</p>
+<p>import java.util.regex.Pattern;</p>
+<p>&nbsp;&nbsp;</p>
+<p>class Test</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static boolean isValid(String email)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String emailRegex = "^[a-zA-Z0-9_+&amp;*-]+(?:\\."+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"[a-zA-Z0-9_+&amp;*-]+)*@" +</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"(?:[a-zA-Z0-9-]+\\.)+[a-z" +</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"A-Z]{2,7}$";</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pattern pat = Pattern.compile(emailRegex);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (email == null)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return false;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return pat.matcher(email).matches();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;/* driver function to check */</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String email = "contribute@geeksforgeeks.org";</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (isValid(email))</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print("Yes");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print("No");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<h1>Program to check valid mobile number</h1>
+<p><a href="https://www.geeksforgeeks.org/java-program-check-valid-mobile-number/">https://www.geeksforgeeks.org/java-program-check-valid-mobile-number/</a></p>
+<p><strong>Mobile Number validation criteria:</strong></p>
+<ul>
+<li>The first digit should contain number between 7 to 9.</li>
+<li>The rest 9 digit can contain any number between 0 to 9.</li>
+<li>The mobile number can have 11 digits also by including 0 at the starting.</li>
+<li>The mobile number can be of 12 digits also by including 91 at the starting</li>
+</ul>
+<p>The number which satisfies the above criteria, is a valid mobile Number.</p>
+<p>Examples:</p>
+<p>Input : Enter Mobile Number:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7873923408</p>
+<p>Output :Valid Mobile Number</p>
+<p>&nbsp;</p>
+<p>Input : Enter Mobile Number:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5678729234</p>
+<p>Output :Invalid Mobile Number</p>
+<p>Prerequisites :&nbsp;<a href="https://www.geeksforgeeks.org/regular-expressions-in-java/">Java Regular Expressions</a></p>
+<p>&nbsp;</p>
+<p>// Java program to check if given mobile number</p>
+<p>// is valid.</p>
+<p>import java.util.regex.*;</p>
+<p>import java.util.Scanner;</p>
+<p>&nbsp;&nbsp;</p>
+<p>class MobileNumberValidation {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static boolean isValid(String s)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// The given argument to compile() method&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// is regular expression. With the help of&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// regular expression we can validate mobile</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// number.&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 1) Begins with 0 or 91</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 2) Then contains 7 or 8 or 9.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 3) Then contains 9 digits</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pattern p = Pattern.compile("(0/91)?[7-9][0-9]{9}");</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Pattern class contains matcher() method</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// to find matching between given number&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// and regular expression</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Matcher m = p.matcher(s);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (m.find() &amp;&amp; m.group().equals(s));</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String s = "347873923408"</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (isValid(s))&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Valid Number");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Invalid Number");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>Output:</p>
+<p>Invalid Number</p>
+<h1>Get the first letter of each word in a string using regex in Java</h1>
+<p><a href="https://www.geeksforgeeks.org/get-first-letter-word-string-using-regex-java/">https://www.geeksforgeeks.org/get-first-letter-word-string-using-regex-java/</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+</html>

@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button type="button" onclick="document.location='index.html'" style="position:fixed;">Back To HOME</button>
+<br>
+<h1>Exception Links Links</h1>
+
+<div class="dp-highlighter">
+<h3><strong>Q1. What is the difference between Error and Exception?</strong></h3>
+<p>An error is an irrecoverable condition occurring at runtime. Such as OutOfMemory error. These JVM errors you cannot repair them at runtime. Though error can be caught in the catch block but the execution of application will come to a halt and is not recoverable.</p>
+<p>While exceptions are conditions that occur because of bad input or human error etc. e.g. FileNotFoundException will be thrown if the specified file does not exist. Or a NullPointerException will take place if you try using a null reference. In most of the cases it is possible to recover from an exception (probably by giving the user feedback for entering proper values etc.</p>
+<h3><strong>Q2. How can you handle Java exceptions?</strong></h3>
+<p>There are five keywords used to handle exceptions in Java:&nbsp;</p>
+<ol>
+<li>try</li>
+<li>catch</li>
+<li>finally</li>
+<li>throw</li>
+<li>throws</li>
+</ol>
+<h3><strong>Q3. What are the differences between Checked Exception and Unchecked Exception?</strong></h3>
+<h4><strong>Checked Exception</strong></h4>
+<ul>
+<li>The classes that extend Throwable class except RuntimeException and Error are known as checked exceptions.&nbsp;</li>
+<li>Checked exceptions are checked at compile-time.</li>
+<li>Example: IOException, SQLException etc.</li>
+</ul>
+<h4><strong>Unchecked Exception</strong></h4>
+<ul>
+<li>The classes that extend RuntimeException are known as unchecked exceptions.&nbsp;</li>
+<li>Unchecked exceptions are not checked at compile-time.</li>
+<li>Example: ArithmeticException, NullPointerException etc.</li>
+</ul>
+<h3><strong>Q4. What purpose do the keywords final, finally, and finalize fulfill?&nbsp;</strong></h3>
+<h4><strong>Final:</strong></h4>
+<p>Final is used to apply restrictions on class, method, and variable. A final class can&rsquo;t be inherited, final method can&rsquo;t be overridden and final variable value can&rsquo;t be changed. Let&rsquo;s take a look at the example below to understand it better.</p>
+<div>
+<div id="highlighter_529202" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">class</code>&nbsp;<code class="java plain">FinalVarExample {</code></div>
+<div class="line number2 index1 alt1"><code class="java keyword">public</code>&nbsp;<code class="java keyword">static</code>&nbsp;<code class="java keyword">void</code>&nbsp;<code class="java plain">main( String args[])</code></div>
+<div class="line number3 index2 alt2"><code class="java plain">{</code></div>
+<div class="line number4 index3 alt1"><code class="java keyword">final</code>&nbsp;<code class="java keyword">int</code>&nbsp;<code class="java plain">a=</code><code class="java value">10</code><code class="java plain">;&nbsp;&nbsp;&nbsp;</code><code class="java comments">// Final variable</code></div>
+<div class="line number5 index4 alt2"><code class="java plain">a=</code><code class="java value">50</code><code class="java plain">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java comments">//Error as value can't be changed</code></div>
+<div class="line number6 index5 alt1"><code class="java plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h4><strong>Finally</strong></h4>
+<p>Finally is used to place important code, it will be executed whether the exception is handled or not. Let&rsquo;s take a look at the example below to understand it better.</p>
+<div>
+<div id="highlighter_863308" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">class</code>&nbsp;<code class="java plain">FinallyExample {</code></div>
+<div class="line number2 index1 alt1"><code class="java keyword">public</code>&nbsp;<code class="java keyword">static</code>&nbsp;<code class="java keyword">void</code>&nbsp;<code class="java plain">main(String args[]){</code></div>
+<div class="line number3 index2 alt2"><code class="java keyword">try</code>&nbsp;<code class="java plain">{</code></div>
+<div class="line number4 index3 alt1"><code class="java keyword">int</code>&nbsp;<code class="java plain">x=</code><code class="java value">100</code><code class="java plain">;</code></div>
+<div class="line number5 index4 alt2"><code class="java plain">}</code></div>
+<div class="line number6 index5 alt1"><code class="java keyword">catch</code><code class="java plain">(Exception e) {</code></div>
+<div class="line number7 index6 alt2"><code class="java plain">System.out.println(e);</code></div>
+<div class="line number8 index7 alt1"><code class="java plain">}</code></div>
+<div class="line number9 index8 alt2"><code class="java keyword">finally</code>&nbsp;<code class="java plain">{</code></div>
+<div class="line number10 index9 alt1"><code class="java plain">System.out.println(</code><code class="java string">"finally block is executing"</code><code class="java plain">);}</code></div>
+<div class="line number11 index10 alt2"><code class="java plain">}}</code></div>
+<div class="line number12 index11 alt1"><code class="java plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h4><strong>Finalize</strong></h4>
+<p>Finalize is used to perform clean up processing just before the object is garbage collected. Let&rsquo;s take a look at the example below to understand it better.</p>
+<div>
+<div id="highlighter_35078" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">class</code>&nbsp;<code class="java plain">FinalizeExample {</code></div>
+<div class="line number2 index1 alt1"><code class="java keyword">public</code>&nbsp;<code class="java keyword">void</code>&nbsp;<code class="java plain">finalize() {</code></div>
+<div class="line number3 index2 alt2"><code class="java plain">System.out.println(</code><code class="java string">"Finalize is called"</code><code class="java plain">);</code></div>
+<div class="line number4 index3 alt1"><code class="java plain">}</code></div>
+<div class="line number5 index4 alt2"><code class="java keyword">public</code>&nbsp;<code class="java keyword">static</code>&nbsp;<code class="java keyword">void</code>&nbsp;<code class="java plain">main(String args[])</code></div>
+<div class="line number6 index5 alt1"><code class="java plain">{</code></div>
+<div class="line number7 index6 alt2"><code class="java plain">FinalizeExample f1=</code><code class="java keyword">new</code>&nbsp;<code class="java plain">FinalizeExample();</code></div>
+<div class="line number8 index7 alt1"><code class="java plain">FinalizeExample f2=</code><code class="java keyword">new</code>&nbsp;<code class="java plain">FinalizeExample();</code></div>
+<div class="line number9 index8 alt2"><code class="java plain">f1= NULL;</code></div>
+<div class="line number10 index9 alt1"><code class="java plain">f2=NULL;</code></div>
+<div class="line number11 index10 alt2"><code class="java plain">System.gc();</code></div>
+<div class="line number12 index11 alt1"><code class="java plain">}</code></div>
+<div class="line number13 index12 alt2"><code class="java plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3>&nbsp;<strong>Q5. What are the differences between throw and throws?&nbsp;</strong></h3>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>throw keyword</strong></td>
+<td><strong>throws keyword</strong></td>
+</tr>
+<tr>
+<td>Throw is used to explicitly throw an exception.</td>
+<td>Throws is used to declare an exception.</td>
+</tr>
+<tr>
+<td>Checked exceptions can not be propagated with throw only.</td>
+<td>Checked exception can be propagated with throws.</td>
+</tr>
+<tr>
+<td>Throw is followed by an instance.</td>
+<td>Throws is followed by class.</td>
+</tr>
+<tr>
+<td>Throw is used within the method.</td>
+<td>Throws is used with the method signature.</td>
+</tr>
+<tr>
+<td>You cannot throw multiple exception</td>
+<td>You can declare multiple exception e.g. public void method()throws IOException,SQLException.</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>Q6. What is exception hierarchy in java?</strong></h3>
+<p>The hierarchy is as follows:</p>
+<div class="row batch-schedule-widget m-0 my-4 p-3">
+<div class="col-xl-4 col-lg-4 col-md-4 col-12"><img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/themes/edu-new/img/batch-schedule.png" alt="Course Curriculum" /></div>
+</div>
+<h3><strong>1. What are the life-cycle methods for a jsp?</strong></h3>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>Methods</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>&nbsp;public void jspInit()</td>
+<td>It is invoked only once, same as init method of servlet.</td>
+</tr>
+<tr>
+<td>public void _jspService(ServletRequest request,ServletResponse)throws ServletException,IOException</td>
+<td>It is invoked at each request, same as service() method of servlet.</td>
+</tr>
+<tr>
+<td>&nbsp;public void jspDestroy()</td>
+<td>It is invoked only once, same as destroy() method of servlet.</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>2. What are the JSP implicit objects?</strong></h3>
+<p>JSP provides 9 implicit objects by default. They are as follows:</p>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>Object</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr>
+<td>1) out</td>
+<td>&nbsp;JspWriter</td>
+</tr>
+<tr>
+<td>2) request</td>
+<td>&nbsp;HttpServletRequest</td>
+</tr>
+<tr>
+<td>3) response</td>
+<td>&nbsp;HttpServletResponse</td>
+</tr>
+<tr>
+<td>4) config</td>
+<td>&nbsp;ServletConfig</td>
+</tr>
+<tr>
+<td>5) session</td>
+<td>&nbsp;HttpSession</td>
+</tr>
+<tr>
+<td>6) application</td>
+<td>&nbsp;ServletContext</td>
+</tr>
+<tr>
+<td>7) pageContext</td>
+<td>&nbsp;PageContext</td>
+</tr>
+<tr>
+<td>8) page</td>
+<td>&nbsp;Object</td>
+</tr>
+<tr>
+<td>9) exception</td>
+<td>&nbsp;Throwable</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>3. What are the differences between include directive and include action?</strong></h3>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>include directive</strong></td>
+<td><strong>include action</strong></td>
+</tr>
+<tr>
+<td>The include directive includes the content at page translation time.</td>
+<td>The include action includes the content at request time.</td>
+</tr>
+<tr>
+<td>The include directive includes the original content of the page so page size increases at runtime.</td>
+<td>The include action doesn&rsquo;t include the original content rather invokes the include() method of Vendor provided class.</td>
+</tr>
+<tr>
+<td>&nbsp;It&rsquo;s better for static pages.</td>
+<td>&nbsp;It&rsquo;s better for dynamic pages.</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>4. How to disable caching on back button of the browser?</strong></h3>
+<p><strong>&lt;</strong>%<br />response.setHeader(&ldquo;Cache-Control&rdquo;,&rdquo;no-store&rdquo;);<br />response.setHeader(&ldquo;Pragma&rdquo;,&rdquo;no-cache&rdquo;);<br />response.setHeader (&ldquo;Expires&rdquo;, &ldquo;0&rdquo;); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//prevents caching at the proxy server<br />%<strong>&gt;</strong>&nbsp;&nbsp;&nbsp;</p>
+<h3><strong>5. What are the different tags provided in JSTL?</strong></h3>
+<p>There are 5 type of JSTL tags.</p>
+<ol>
+<li>core tags</li>
+<li>sql tags</li>
+<li>xml tags</li>
+<li>internationalization tags</li>
+<li>functions tags</li>
+</ol>
+<h3><strong>6. How to disable session in JSP?</strong></h3>
+<ol>
+<li><strong>&lt;</strong>%@ page&nbsp;session=&ldquo;false&rdquo;&nbsp;%<strong>&gt;</strong>&nbsp;&nbsp;&nbsp;</li>
+</ol>
+<h3><strong>7. &nbsp;How to delete a Cookie in a JSP?</strong></h3>
+<p>The following code explains how to delete a Cookie in a JSP :</p>
+<div>
+<div id="highlighter_163246" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java plain">Cookie mycook =&nbsp;</code><code class="java keyword">new</code>&nbsp;<code class="java plain">Cookie(</code><code class="java string">"name1"</code><code class="java plain">,</code><code class="java string">"value1"</code><code class="java plain">);</code></div>
+<div class="line number2 index1 alt1">&nbsp;</div>
+<div class="line number3 index2 alt2"><code class="java plain">response.addCookie(mycook1);</code></div>
+<div class="line number4 index3 alt1">&nbsp;</div>
+<div class="line number5 index4 alt2"><code class="java plain">Cookie killmycook =&nbsp;</code><code class="java keyword">new</code>&nbsp;<code class="java plain">Cookie(</code><code class="java string">"mycook1"</code><code class="java plain">,</code><code class="java string">"value1"</code><code class="java plain">);</code></div>
+<div class="line number6 index5 alt1">&nbsp;</div>
+<div class="line number7 index6 alt2"><code class="java plain">killmycook . set MaxAge (&nbsp;</code><code class="java value">0</code>&nbsp;<code class="java plain">);</code></div>
+<div class="line number8 index7 alt1">&nbsp;</div>
+<div class="line number9 index8 alt2"><code class="java plain">killmycook . set Path (</code><code class="java string">"/"</code><code class="java plain">);</code></div>
+<div class="line number10 index9 alt1">&nbsp;</div>
+<div class="line number11 index10 alt2"><code class="java plain">killmycook . addCookie ( killmycook&nbsp;</code><code class="java value">1</code>&nbsp;<code class="java plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3><strong>8. Explain the jspDestroy() method.</strong></h3>
+<p>jspDestry() method is invoked from&nbsp;<strong>javax.servlet.jsp.JspPage</strong>&nbsp;interface whenever a JSP page is about to be destroyed. Servlets destroy methods can be easily overridden to perform cleanup, like when closing a database connection.</p>
+<h3><strong>9. &nbsp;How is JSP better than Servlet technology?</strong></h3>
+<p>JSP is a technology on the server&rsquo;s side to make content generation simple. They are document-centric, whereas servlets are programs. A Java server page can contain fragments of Java program, which execute and instantiate Java classes. However, they occur inside <a href="https://htmlcheatsheet.com/" rel="nofollow">an HTML</a> template file. It provides the framework for the development of a Web Application.</p>
+<h3><strong>10. Why should we not configure JSP standard tags in web.xml?</strong></h3>
+<p><a name="exception"></a></p>
+<p>We don&rsquo;t need to configure JSP standard tags in web.xml because when container loads the web application and find TLD files, it automatically configures them to be used directly in the application JSP pages. We just need to include it in the JSP page using taglib directive.</p>
+<h3><strong>11. How will you use JSP EL in order to get the HTTP method name?</strong></h3>
+<p>Using pageContext JSP EL implicit object you can get the request object reference and make use of the dot operator to retrieve the HTTP method name in the JSP page. The JSP EL code for this purpose will look like&nbsp;${pageContext.request.method}.</p>
+<p>In case you are facing any challenges with these java interview questions, please comment on your problems in the section below. Apart from this Java Interview Questions Blog, if you want to get trained from professionals on this technology, you can opt for structured training from edureka!</p>
+</div>
+<div class="dp-highlighter">
+<p>Throwable is a parent class of all Exception classes. There are two types of Exceptions: Checked exceptions and UncheckedExceptions or RunTimeExceptions. Both type of exceptions extends Exception class whereas errors are further classified into Virtual Machine error and Assertion error.</p>
+<p><img class="aligncenter wp-image-45689 size-large  blur-up lazyloaded" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-516x300.png" sizes="(max-width: 516px) 100vw, 516px" srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-516x300.png 516w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-150x87.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-300x174.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-768x447.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-310x180.png 310w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy.png 1154w" alt="ExceptionHierarchy - Java Interview Questions - Edureka" width="516" height="300" data-src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-516x300.png" data-srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-516x300.png 516w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-150x87.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-300x174.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-768x447.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-310x180.png 310w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy.png 1154w" data-sizes="(max-width: 516px) 100vw, 516px" /></p>
+<h3><strong>Q7. How to create a custom Exception?</strong></h3>
+<p>To create you own exception extend the Exception class or any of its subclasses.</p>
+<ul>
+<li>class New1Exception extends Exception { } &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // this will create Checked Exception</li>
+<li>class NewException extends IOException { } &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // this will create Checked exception</li>
+<li>class NewException extends NullPonterExcpetion { } &nbsp;// this will create UnChecked exception</li>
+</ul>
+<h3><strong>Q8. What are the important methods of Java Exception Class?</strong></h3>
+<p>Exception and all of it&rsquo;s subclasses doesn&rsquo;t provide any specific methods and all of the methods are defined in the base class Throwable.</p>
+<ol>
+<li><strong>String getMessage()</strong>&nbsp;&ndash; This method returns the message String of Throwable and the message can be provided while creating the exception through it&rsquo;s constructor.</li>
+<li><strong>String getLocalizedMessage(</strong>) &ndash; This method is provided so that subclasses can override it to provide locale specific message to the calling program. Throwable class implementation of this method simply use&nbsp;getMessage()&nbsp;method to return the exception message.</li>
+<li><strong>Synchronized Throwable getCause()</strong>&nbsp;&ndash; This method returns the cause of the exception or null id the cause is unknown.</li>
+<li><strong>String toString()</strong>&nbsp;&ndash; This method returns the information about Throwable in String format, the returned String contains the name of Throwable class and localized message.</li>
+<li><strong>void printStackTrace()</strong>&nbsp;&ndash; This method prints the stack trace information to the standard error stream, this method is overloaded and we can pass PrintStream or PrintWriter as an argument to write the stack trace information to the file or stream.</li>
+</ol>
+</div>
+
+<h3><strong>What is a finally block? Is there a&nbsp;case when finally will not execute?</strong></h3>
+<p>Finally block is a block which always executes a set of statements. It is always associated with a try block regardless of any exception that occurs or not.&nbsp;<br />Yes, finally will not be executed if the program exits either by&nbsp;calling System.exit() or by causing a fatal error that causes the process to abort.</p>
+
+<h3><strong>&nbsp;Can we write multiple catch blocks under single try block?&nbsp;</strong></h3>
+<p>Yes we can have multiple catch blocks under single try block but the approach should be from specific to general. Let&rsquo;s understand this with a programmatic example.</p>
+<div>
+<div id="highlighter_752943" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+<div class="line number15 index14 alt2">15</div>
+<div class="line number16 index15 alt1">16</div>
+<div class="line number17 index16 alt2">17</div>
+<div class="line number18 index17 alt1">18</div>
+<div class="line number19 index18 alt2">19</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">public</code>&nbsp;<code class="java keyword">class</code>&nbsp;<code class="java plain">Example {</code></div>
+<div class="line number2 index1 alt1"><code class="java keyword">public</code>&nbsp;<code class="java keyword">static</code>&nbsp;<code class="java keyword">void</code>&nbsp;<code class="java plain">main(String args[]) {</code></div>
+<div class="line number3 index2 alt2"><code class="java keyword">try</code>&nbsp;<code class="java plain">{</code></div>
+<div class="line number4 index3 alt1"><code class="java keyword">int</code>&nbsp;<code class="java plain">a[]=&nbsp;</code><code class="java keyword">new</code>&nbsp;<code class="java keyword">int</code><code class="java plain">[</code><code class="java value">10</code><code class="java plain">];</code></div>
+<div class="line number5 index4 alt2"><code class="java plain">a[</code><code class="java value">10</code><code class="java plain">]=&nbsp;</code><code class="java value">10</code><code class="java plain">/</code><code class="java value">0</code><code class="java plain">;</code></div>
+<div class="line number6 index5 alt1"><code class="java plain">}</code></div>
+<div class="line number7 index6 alt2"><code class="java keyword">catch</code><code class="java plain">(ArithmeticException e)</code></div>
+<div class="line number8 index7 alt1"><code class="java plain">{</code></div>
+<div class="line number9 index8 alt2"><code class="java plain">System.out.println(</code><code class="java string">"Arithmetic exception in first catch block"</code><code class="java plain">);</code></div>
+<div class="line number10 index9 alt1"><code class="java plain">}</code></div>
+<div class="line number11 index10 alt2"><code class="java keyword">catch</code><code class="java plain">(ArrayIndexOutOfBoundsException e)</code></div>
+<div class="line number12 index11 alt1"><code class="java plain">{</code></div>
+<div class="line number13 index12 alt2"><code class="java plain">System.out.println(</code><code class="java string">"Array index out of bounds in second catch block"</code><code class="java plain">);</code></div>
+<div class="line number14 index13 alt1"><code class="java plain">}</code></div>
+<div class="line number15 index14 alt2"><code class="java keyword">catch</code><code class="java plain">(Exception e)</code></div>
+<div class="line number16 index15 alt1"><code class="java plain">{</code></div>
+<div class="line number17 index16 alt2"><code class="java plain">System.out.println(</code><code class="java string">"Any exception in third catch block"</code><code class="java plain">);</code></div>
+<div class="line number18 index17 alt1"><code class="java plain">}</code></div>
+<div class="line number19 index18 alt2"><code class="java plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3><strong>Q13.&nbsp;What are the important methods of Java Exception Class?</strong></h3>
+<p>Methods are defined in the base class Throwable. Some of the important methods of Java exception class are stated below.&nbsp;</p>
+<ol>
+<li><strong>String getMessage()</strong>&nbsp;&ndash; This method returns the message String about the exception. The message can be provided through its constructor.</li>
+<li><strong>public StackTraceElement[] getStackTrace() &ndash;&nbsp;</strong>This method returns an array containing each element on the stack trace. The element at index 0 represents the top of the call stack whereas the last element in the array represents the method at the bottom of the call stack.</li>
+<li>
+<p><strong>Synchronized Throwable getCause()</strong>&nbsp;&ndash; This method returns the cause of the exception or null id as represented by a Throwable object.</p>
+</li>
+<li><strong>String toString()</strong>&nbsp;&ndash; This method returns the information in String format. The returned String contains the name of Throwable class and localized message.</li>
+<li><strong>void printStackTrace()</strong>&nbsp;&ndash; This method prints the stack trace information to the standard error stream.&nbsp;</li>
+</ol>
+<h3><strong>Q14. What is OutOfMemoryError in Java?</strong></h3>
+<p>OutOfMemoryError is the subclass of java.lang.Error which generally occurs when our JVM runs out of memory.</p>
+
+<ol>
+<li>
+<ol start="4">
+<li>
+<p><strong>What is the difference between &lsquo;throw&rsquo; and &lsquo;throws&rsquo; in Java Exception Handling?</strong><br />&nbsp;</p>
+<p>Following are the differences between two:</p>
+<ul>
+<li>throw keyword is used to throw Exception from any method or static block whereas throws is used to indicate that which Exception can possibly be thrown by this method</li>
+<li>If any method throws checked Exception, then caller can either handle this exception(using try catch block )or can re throw it by declaring another &lsquo;throws&rsquo; clause in method declaration.</li>
+<li>throw clause can be used in any part of code where you feel a specific exception needs to be thrown to the calling method</li>
+</ul>
+<p>E.g.<br /><strong>throw</strong><br />throw new Exception(&ldquo;You have some exception&rdquo;)<br />throw new IOException(&ldquo;Connection failed!!&rdquo;)<br /><strong>throws</strong><br />throws IOException, NullPointerException, ArithmeticException</p>
+</li>
+</ol>
+</li>
+</ol>
+
+<ol>
+<li>
+<ol start="4">
+<li>
+<p><strong>What will happen if you put System.exit(0) on try or catch block? Will finally block execute?</strong><br />&nbsp;<br />By Calling System.exit(0) in try or catch block, we can skip the finally block. System.exit(int) method can throw a SecurityException. If Sysytem.exit(0) exits the JVM without throwing that exception then finally block will not execute. But, if System.exit(0) does throw security exception then finally block will be executed.</p>
+<p>&nbsp;</p>
+</li>
+</ol>
+</li>
+</ol>
+
+<ol>
+<li>
+<ol start="4">
+<li>
+<h1>Exceptions in Java</h1>
+<p><a href="https://www.geeksforgeeks.org/exceptions-in-java/">https://www.geeksforgeeks.org/exceptions-in-java/</a></p>
+<p><a href="https://www.geeksforgeeks.org/types-of-exception-in-java-with-examples/">https://www.geeksforgeeks.org/types-of-exception-in-java-with-examples/</a></p>
+<p><strong>What is an Exception?</strong></p>
+<p>An exception is an unwanted or unexpected event, which occurs during the execution of a program i.e at run time, that disrupts the normal flow of the program&rsquo;s instructions.</p>
+<p><strong>Error vs Exception</strong></p>
+<p><strong>Error:&nbsp;</strong>An Error indicates serious problem that a reasonable application should not try to catch.<br /><strong>Exception:&nbsp;</strong>Exception indicates conditions that a reasonable application might try to catch.</p>
+<p><strong>Exception Hierarchy</strong></p>
+<p>All exception and errors types are sub classes of class&nbsp;<strong>Throwable</strong>, which is base class of hierarchy.One branch is headed by&nbsp;<strong>Exception</strong>. This class is used for exceptional conditions that user programs should catch. NullPointerException is an example of such an exception.Another branch,<strong>Error</strong>&nbsp;are used by the Java run-time system(<a href="https://www.geeksforgeeks.org/jvm-works-jvm-architecture/">JVM</a>) to indicate errors having to do with the run-time environment itself(JRE). StackOverflowError is an example of such an error.</p>
+<p>For checked vs unchecked exception, see&nbsp;<a href="https://www.geeksforgeeks.org/checked-vs-unchecked-exceptions-in-java/">Checked vs Unchecked Exceptions</a></p>
+<h1>Checked vs Unchecked Exceptions in Java</h1>
+<p><a href="https://www.geeksforgeeks.org/checked-vs-unchecked-exceptions-in-java/">https://www.geeksforgeeks.org/checked-vs-unchecked-exceptions-in-java/</a></p>
+<p>In Java, there are two types of exceptions:</p>
+<p><strong>1) Checked:</strong>&nbsp;are the exceptions that are checked at compile time. If some code within a method throws a checked exception,&nbsp;then the method must either handle the exception or it must specify the exception using&nbsp;<em>throws&nbsp;</em>keyword.</p>
+<p>For example, consider the following Java program that opens file at location &ldquo;C:\test\a.txt&rdquo; and prints the first three lines of it. The program doesn&rsquo;t compile, because the function main() uses FileReader() and FileReader() throws a checked exception&nbsp;<em>FileNotFoundException</em>. It also uses readLine() and close() methods, and these methods also throw checked exception&nbsp;<em>IOException.</em></p>
+<p>import java.io.*;</p>
+<p>&nbsp;&nbsp;</p>
+<p>class Main {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args) {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FileReader file = new FileReader("C:\\test\\a.txt");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BufferedReader fileInput = new BufferedReader(file);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Print first 3 lines of file "C:\test\a.txt"</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int counter = 0; counter &lt; 3; counter++)&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(fileInput.readLine());</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fileInput.close();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>Output:</p>
+<h1>Exception in thread "main" java.lang.RuntimeException: Uncompilable source code - unreported exception java.io.FileNotFoundException; must be caught or declared to be thrown&nbsp;&nbsp;&nbsp; at Main.main(Main.java:5)</h1>
+<p>To fix the above program, we either need to specify list of exceptions using throws, or we need to use try-catch block. We have used throws in the below program. Since&nbsp;<em>FileNotFoundException</em>&nbsp;is a subclass of&nbsp;<em>IOException</em>, we can just specify&nbsp;<em>IOException</em>&nbsp;in the throws list and make the above program compiler-error-free.</p>
+<p>&nbsp;</p>
+<p><strong>2) Unchecked&nbsp;are the exceptions that are not checked at compiled time. In C++, all exceptions are unchecked, so it is not forced by the compiler to either handle or specify the exception. It is up to the programmers to be civilized, and specify or catch the exceptions.<br />In Java exceptions under&nbsp;<em>Error&nbsp;</em>and&nbsp;<em>RuntimeException&nbsp;</em>classes are unchecked exceptions, everything else under throwable is checked</strong>.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-----------+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Throwable |</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-----------+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-------+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-----------+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Error |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Exception |</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-------+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-----------+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp; |&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \________/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \______/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;\</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +------------------+</p>
+<p>&nbsp;&nbsp;&nbsp; unchecked&nbsp;&nbsp;&nbsp;&nbsp; checked&nbsp;&nbsp;&nbsp; | RuntimeException |</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +------------------+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \_________________/</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unchecked</p>
+<h1><strong>Consider the following Java program. It compiles fine, but it throws&nbsp;</strong><strong><em>ArithmeticException</em></strong><strong>&nbsp;when run. The compiler allows it to compile, because&nbsp;</strong><strong><em>ArithmeticException</em></strong><strong>&nbsp;is an unchecked exception</strong>.</h1>
+<p>class Main {</p>
+<p>&nbsp;&nbsp;&nbsp;public static void main(String args[]) {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int x = 0;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int y = 10;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int z = y/x;</p>
+<p>&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>Output:</p>
+<h1>Exception in thread "main" java.lang.ArithmeticException: / by zero&nbsp;&nbsp;&nbsp; at Main.main(Main.java:5)Java Result: 1</h1>
+<h1>throw and throws in Java</h1>
+<p><a href="https://www.geeksforgeeks.org/throw-throws-java/">https://www.geeksforgeeks.org/throw-throws-java/</a></p>
+<p><strong>throw</strong></p>
+<p>The throw keyword in Java is used to explicitly throw an exception from a method or any block of code. We can throw either&nbsp;<a href="https://www.geeksforgeeks.org/checked-vs-unchecked-exceptions-in-java/">checked or unchecked exception</a>. The throw keyword is mainly used to throw custom exceptions.<br />Syntax:</p>
+<h1><strong>throw </strong><em><strong>Instance</strong></em>Example:<strong>throw new ArithmeticException("/ by zero");</strong></h1>
+<p><strong>throws</strong></p>
+<p>throws is a keyword in Java which is used in the signature of method to indicate that this method might throw one of the listed type exceptions. The caller to these methods has to handle the exception using a try-catch block.<br /><strong>Syntax:</strong></p>
+<h1><strong>type method_name(parameters) throws exception_list</strong>exception_list is a comma separated list of all the exceptions which a method might throw.</h1>
+<p><strong>Important points to remember about throws keyword:</strong></p>
+<ul>
+<li>throws keyword is required only for checked exception and usage of throws keyword for unchecked exception is meaningless.</li>
+<li>throws keyword is required only to convince compiler and usage of throws keyword does not prevent abnormal termination of program.</li>
+<li>By the help of throws keyword we can provide information to the caller of the method about the exception.</li>
+</ul>
+<h1>Chained Exceptions in Java</h1>
+<p><a href="https://www.geeksforgeeks.org/chained-exceptions-java/">https://www.geeksforgeeks.org/chained-exceptions-java/</a></p>
+<p>Chained Exceptions allows to relate one exception with another exception, i.e one exception describes cause of another exception. For example, consider a situation in which a method throws an ArithmeticException because of an attempt to divide by zero but the actual cause of exception was an I/O error which caused the divisor to be zero. The method will throw only ArithmeticException to the caller. So the caller would not come to know about the actual cause of exception. Chained Exception is used in such type of situations.</p>
+<h1>Methods&nbsp;Of Throwable class Which support chained exceptions in java :</h1>
+<ol>
+<li>getCause() method :- This method returns actual cause of an exception.</li>
+<li>initCause(Throwable cause) method :- This method sets the cause for the calling exception.</li>
+</ol>
+<p>// Java program to demonstrate working of chained exceptions</p>
+<p>public class ExceptionHandling</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Creating an exception</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NumberFormatException ex =</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new NumberFormatException("Exception");</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Setting a cause of the exception</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ex.initCause(new NullPointerException(</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"This is actual cause of the exception"));</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Throwing an exception with cause.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw ex;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch(NumberFormatException ex)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// displaying the exception</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(ex);</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Getting the actual cause of the exception</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(ex.getCause());</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>Output:</p>
+<h1>java.lang.NumberFormatException: Exceptionjava.lang.NullPointerException: This is actual cause of the exception</h1>
+<h1>Infinity or Exception in Java when divide by 0?</h1>
+<p><a href="https://www.geeksforgeeks.org/g-fact-33-infinity-or-exception/">https://www.geeksforgeeks.org/g-fact-33-infinity-or-exception/</a></p>
+<p>Consider the following code snippets:</p>
+<p>public class Geeksforgeeks</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double p = 1;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(p/0);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p><strong>Output</strong>:</p>
+<h1>Infinity</h1>
+<p>public class Geeksforgeeks</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int p = 1;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(p/0);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p><strong>Output:</strong></p>
+<h1>Exception in thread "main" java.lang.ArithmeticException: / by zero&nbsp;&nbsp;&nbsp; at Geeksforgeeks.main(Geeksforgeeks.java:8)</h1>
+<p><strong>Explanation</strong>: In the first piece of code, a double value is being divided by 0 while in the other case an integer value is being divide by 0. However the solution for both of them differs.</p>
+<ul>
+<li>In case of double/float division, the output is&nbsp;<strong>Infinity</strong>, the basic reason behind that it implements the floating point arithmetic algorithm which specifies a special values like &ldquo;Not a number&rdquo; OR &ldquo;infinity&rdquo; for &ldquo;divided by zero cases&rdquo; as per IEEE 754 standards.</li>
+<li>In case of integer division, it throws ArithmeticException.</li>
+</ul>
+<p>&nbsp;</p>
+<h1>Types of Exception in Java with Examples</h1>
+<p><a href="https://www.geeksforgeeks.org/types-of-exception-in-java-with-examples/">https://www.geeksforgeeks.org/types-of-exception-in-java-with-examples/</a></p>
+<p>Java defines several types of exceptions that relate to its various class libraries. Java also allows users to define their own exceptions.</p>
+<p><a href="https://www.geeksforgeeks.org/built-exceptions-java-examples/"><strong>Built-in Exceptions</strong></a></p>
+<p>Built-in exceptions are the exceptions which are available in Java libraries. These exceptions are suitable to explain certain error situations. Below is the list of important built-in exceptions in Java.</p>
+<ol>
+<li><strong>ArithmeticException</strong><br />It is thrown when an exceptional condition has occurred in an arithmetic operation.</li>
+<li><strong>ArrayIndexOutOfBoundsException<br /></strong>It is thrown to indicate that an array has been accessed with an illegal index. The index is either negative or greater than or equal to the size of the array.</li>
+<li><strong>ClassNotFoundException<br /></strong>This Exception is raised when we try to access a class whose definition is not found</li>
+<li><strong>FileNotFoundException<br /></strong>This Exception is raised when a file is not accessible or does not open.</li>
+<li><strong>IOException<br /></strong>It is thrown when an input-output operation failed or interrupted</li>
+<li><strong>InterruptedException<br /></strong>It is thrown when a thread is waiting , sleeping , or doing some processing , and it is interrupted.</li>
+<li><strong>NoSuchFieldException<br /></strong>It is thrown when a class does not contain the field (or variable) specified</li>
+<li><strong>NoSuchMethodException<br /></strong>It is thrown when accessing a method which is not found.</li>
+<li><strong>NullPointerException<br /></strong>This exception is raised when referring to the members of a null object. Null represents nothing</li>
+<li><strong>NumberFormatException<br /></strong>This exception is raised when a method could not convert a string into a numeric format.</li>
+<li><strong>RuntimeException<br /></strong>This represents any exception which occurs during runtime.</li>
+<li><strong>StringIndexOutOfBoundsException<br /></strong>It is thrown by String class methods to indicate that an index is either negative than the size of the string</li>
+</ol>
+<p><strong>User-Defined Exceptions</strong></p>
+<p>Sometimes, the built-in exceptions in Java are not able to describe a certain situation. In such cases, user can also create exceptions which are called &lsquo;user-defined Exceptions&rsquo;.<br />Following steps are followed for the creation of user-defined Exception.</p>
+<ul>
+<li>The user should create an exception class as a subclass of Exception class. Since all the exceptions are subclasses of Exception class, the user should also make his class a subclass of it. This is done as:</li>
+</ul>
+<p>class MyException extends Exception</p>
+<ul>
+<li>We can write a default constructor in his own exception class.</li>
+</ul>
+<p>MyException(){}</p>
+<ul>
+<li>We can also create a parameterized constructor with a string as a parameter.<br />We can use this to store exception details. We can call super class(Exception) constructor from this and send the string there.</li>
+</ul>
+<p>MyException(String str)</p>
+<p>{</p>
+<p>&nbsp;&nbsp; super(str);</p>
+<p>}</p>
+<p>&nbsp;</p>
+<ul>
+<li>To raise exception of user-defined type, we need to create an object to his exception class and throw it using throw clause, as:</li>
+</ul>
+<p>MyException me = new MyException(&ldquo;Exception details&rdquo;);</p>
+<p>throw me;</p>
+<ul>
+<li>The following program illustrates how to create own exception class MyException.</li>
+<li>Details of account numbers, customer names, and balance amounts are taken in the form of three arrays.</li>
+<li>In main() method, the details are displayed using a for-loop. At this time, check is done if in any account the balance amount is less than the minimum balance amount to be ept in the account.</li>
+<li>If it is so, then MyException is raised and a message is displayed &ldquo;Balance amount is less&rdquo;.</li>
+</ul>
+<p>&nbsp;</p>
+<h1>Catching base and derived classes as exceptions</h1>
+<p><a href="https://www.geeksforgeeks.org/g-fact-60/">https://www.geeksforgeeks.org/g-fact-60/</a></p>
+<p><strong>Exception Handling &ndash; catching base and derived classes as exceptions:</strong></p>
+<p>If both base and derived classes are caught as exceptions then catch block of derived class must appear before the base class.</p>
+<p>In Java, catching a base class exception before derived is not allowed by the compiler itself.</p>
+<p>For example, following Java code fails in compilation with error message&nbsp;<em>&ldquo;exception Derived has already been caught&rdquo;</em></p>
+<p>//filename Main.java</p>
+<p>class Base extends Exception {}</p>
+<p>class Derived extends Base&nbsp; {}</p>
+<p>public class Main {</p>
+<p>&nbsp;&nbsp;public static void main(String args[]) {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;try {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new Derived();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;catch(Base b) {}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;catch(Derived d) {}</p>
+<p>&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>&nbsp;</p>
+</li>
+</ol>
+</li>
+</ol>
+
+</body>
+</html>

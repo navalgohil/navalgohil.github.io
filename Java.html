@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button type="button" onclick="document.location='index.html'" style="position:fixed;">Back To HOME</button>
+<br>
+<h1>Java Links</h1>
+
+<h3><strong>Explain JDK, JRE and JVM?</strong></h3>
+<table border="1"><caption>
+<h4><strong>JDK vs JRE vs JVM</strong></h4>
+</caption>
+<tbody>
+<tr>
+<td><strong>JDK</strong></td>
+<td><strong>JRE</strong></td>
+<td><strong>JVM</strong></td>
+</tr>
+<tr>
+<td>It stands for Java Development Kit.</td>
+<td>It stands for Java Runtime Environment.</td>
+<td>It stands for Java Virtual Machine.</td>
+</tr>
+<tr>
+<td>It is the tool necessary to compile, document and package Java programs.</td>
+<td>JRE refers to a runtime environment in which Java bytecode can be executed.</td>
+<td>It is an abstract machine. It is a specification that provides a run-time environment in which Java bytecode can be executed.</td>
+</tr>
+<tr>
+<td>It contains JRE + development tools.</td>
+<td>It&rsquo;s an implementation of the JVM which physically exists.</td>
+<td>JVM follows three notations: Specification,&nbsp;<strong>Implementation,&nbsp;</strong>and&nbsp;<strong>Runtime Instance</strong>.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>What is OutOfMemoryError in Java?</strong><br />OutOfMemoryError in Java is a subclass of java.lang.VirtualMachineError and it&rsquo;s thrown by JVM when it ran out of heap memory. We can fix this error by providing more memory to run the java application through java options.</p>
+<p><strong>What is the difference between Path and Classpath?</strong><br />Path and Classpath are operating system level environment variales. Path is used define where the system can find the executables(.exe) files and classpath is used to specify the location .class files.</p>
+<p><strong>Can a class be declared as protected?</strong><br />X A class can&rsquo;t be declared as protected. only methods can be declared as protected.<br />Classes and interfaces can be declared private or protected within their enclosing classes. A class which is local to a block is not a member, and so cannot be public, private , protected , or static. reflection can be used to bypass the java access rules.</p>
+<p><strong>What is meant by default access?</strong><br />Default(Friendly) access means the class, method, construtor or the variable can be accessed only within the package.</p>
+<p><strong>Can a final variable be declared inside a method?</strong><br />X No. Local variables cannot be declared as final.<br />Yes, final variable can be declared inside a method.</p>
+<p><strong>Why Java is platform independent?</strong><br />Java is called platform independent because of its byte codes which can run on any system irrespective of its underlying operating system.</p>
+<p><strong>Why Java is not 100% Object-oriented?</strong><br />Java is not 100% Object-oriented because it makes use of eight primitive data types such as boolean, byte, char, int, float, double, long, short which are not objects.</p>
+<h3><br /><br /></h3>
+
+<p><strong>What is difference between shallow copy and deep copy ?</strong><br />Only instances of classes that implement the Cloneable interface can be cloned. Trying to clone an object that does not implement the Cloneable interface throws a CloneNotSupportedException. Both shallow copy and deep copy object need to implement Cloneable Interface</p>
+<h2>Shallow Copy In Java :</h2>
+<p>The default version of clone() method creates the&nbsp;shallow copy of an object. The shallow copy of an object will have exact copy of all the fields of original object. If original object has any references to other objects as fields, then only references of those objects are copied into clone object, copy of those objects are not created. That means any changes made to those objects through clone object will be reflected in original object or vice-versa.&nbsp;Shallow copy is not 100% disjoint from&nbsp;original object. Shallow copy is not 100% independent of original object.</p>
+<p>&nbsp;</p>
+<h2>Deep Copy In Java :</h2>
+<p>Deep copy of an object will have exact copy of&nbsp;all the fields of original object just like shallow copy. But in additional, if original object has any references to other objects as fields, then copy of those objects are also created by calling clone() method on them. That means clone object and original object will be 100% disjoint. They will be 100% independent of each other. Any changes made to clone object will not be reflected in original object or vice-versa.</p>
+
+<p><strong>What is the difference between int and Interger? You can have question like why we need Wrapper Class(Integer )?</strong></p>
+<p>int is primitive type and Integer is Wrapper Class; if you are using Collection objects like Hashtable etc. you can't use int as a key. you have to use object so you can use Integer class.</p>
+<p><strong>Can I store a double value in a long variable without casting?</strong><br />No, you cannot store a double value into a long variable without casting because the range of double is more &nbsp;that long and you we need to type cast. It's not dificult to answer this question but many develoepr get it wrong due to confusion on which one is bigger between double and long in Java.</p>
+<p><strong>What will this return 3*0.1 == 0.3? true or false?&nbsp;</strong><br />This is one of the really tricky questions. Out of 100, only 5 developers answered this question and only of them have explained the concept correctly. The short answer is false because some floating point numbers can not be represented exactly.</p>
+
+<p><strong>Can we cast any other type to Boolean Type with type casting?</strong></p>
+<p><strong>Answer:-</strong>&nbsp;No, we can neither cast any other primitive type to Boolean data type nor can cast Boolean data type to any other primitive data type.</p>
+
+<h3><strong>How can we find the actual size of an object on the heap?</strong></h3>
+<p>In Java, there is no way to find out the actual size of an object on the heap.</p>
+<p>&nbsp;</p>
+<h3><strong>What is the difference between transient and volatile variables in Java?</strong></h3>
+<p>&nbsp;</p>
+<p><strong>Transient</strong>: In Java, it is used to specify whether a variable is not being serialized. Serialization is a process of saving an object&rsquo;s state in Java. When we want to persist the object&rsquo;s state by default, all instance variables in the object are stored. In some cases, we want to avoid persisting a few variables because we don&rsquo;t have the necessity to transfer across the network. So, we declare those variables as transient.</p>
+<p>If the variable is confirmed as transient, then it will not be persisted. The transient keyword is used with the instance variable that will not participate in the serialization process. We cannot use static with a transient variable as they are part of the instance variable.</p>
+<p><img class="aligncenter wp-image-212658 size-full lazyloaded" src="https://intellipaat.com/blog/wp-content/uploads/2015/09/transient-var-new.jpg" sizes="(max-width: 800px) 100vw, 800px" srcset="https://intellipaat.com/blog/wp-content/uploads/2015/09/transient-var-new.jpg 800w, https://intellipaat.com/blog/wp-content/uploads/2015/09/transient-var-new-768x259.jpg 768w" alt="Transient Variable" width="800" height="270" data-lazy-srcset="https://intellipaat.com/blog/wp-content/uploads/2015/09/transient-var-new.jpg 800w, https://intellipaat.com/blog/wp-content/uploads/2015/09/transient-var-new-768x259.jpg 768w" data-lazy-sizes="(max-width: 800px) 100vw, 800px" data-lazy-src="https://intellipaat.com/blog/wp-content/uploads/2015/09/transient-var-new.jpg" data-was-processed="true" /></p>
+<p><strong>Volatile</strong>: The volatile keyword is used with only one variable in Java, and it guarantees that the value of the volatile variable will always be read from the main memory and not from the thread&rsquo;s local cache; it can be static.</p>
+<p><img class="aligncenter wp-image-212659 size-full lazyloaded" src="https://intellipaat.com/blog/wp-content/uploads/2015/09/10.jpg" sizes="(max-width: 800px) 100vw, 800px" srcset="https://intellipaat.com/blog/wp-content/uploads/2015/09/10.jpg 800w, https://intellipaat.com/blog/wp-content/uploads/2015/09/10-768x259.jpg 768w" alt="Volatile Variable" width="800" height="270" data-lazy-srcset="https://intellipaat.com/blog/wp-content/uploads/2015/09/10.jpg 800w, https://intellipaat.com/blog/wp-content/uploads/2015/09/10-768x259.jpg 768w" data-lazy-sizes="(max-width: 800px) 100vw, 800px" data-lazy-src="https://intellipaat.com/blog/wp-content/uploads/2015/09/10.jpg" data-was-processed="true" /></p>
+<p>&nbsp;</p>
+
+<h4 id="q5-how-many-ways-to-create-an-object-instance-in-java-">How many ways to create an Object Instance in Java ?</h4>
+<ul>
+<li>New Keyword</li>
+<li>Cloning using&nbsp;<code>Object.clone()</code>&nbsp;method</li>
+<li>Reflection using&nbsp;<code>Class.newInstance()</code>&nbsp;method</li>
+<li>Reflection using&nbsp;<code>Class.getConstructor().newInstance()</code>&nbsp;method</li>
+<li>Object Serialization and Deserialization</li>
+</ul>
+
+<h4 id="q1-what-is-the-difference-between-heap-and-stack-memory-in-java">What is the difference between Heap and Stack Memory in Java?</h4>
+<table>
+<thead>
+<tr>
+<th align="left">Features</th>
+<th align="left">Stack</th>
+<th align="left">Heap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em><strong>Memory</strong></em></td>
+<td align="left">Stack memory is used only by one thread of execution.</td>
+<td align="left">Heap memory is used by all the parts of the application.</td>
+</tr>
+<tr>
+<td align="left"><em><strong>Access</strong></em></td>
+<td align="left">Stack memory can&rsquo;t be accessed by other threads.</td>
+<td align="left">Objects stored in the heap are globally accessible.</td>
+</tr>
+<tr>
+<td align="left"><em><strong>Memory Management</strong></em></td>
+<td align="left">Follows LIFO manner to free memory.</td>
+<td align="left">Memory management is based on the generation associated with each object.</td>
+</tr>
+<tr>
+<td align="left"><em><strong>Lifetime</strong></em></td>
+<td align="left">Exists until the end of execution of the thread.</td>
+<td align="left">Heap memory lives from the start till the end of application execution.</td>
+</tr>
+<tr>
+<td align="left"><em><strong>Usage</strong></em></td>
+<td align="left">Stack memory only contains local primitive and reference variables to objects in heap space.</td>
+<td align="left">
+<p>Whenever an object is created, it&rsquo;s always stored in the Heap space.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Sr. No.</th>
+<th>Key</th>
+<th>Web Server</th>
+<th>Application Server</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Purpose</td>
+<td>Web Server contains Web container only.</td>
+<td>Application Server contains Web Container plus EJB Container.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Useful</td>
+<td>A web server is good in case of static contents like static html pages.</td>
+<td>Applcation server is relevant in case of dynamic contents like bank websites.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Resource Consumption</td>
+<td>Web server consumes less resources like CPU, Memory etc. as compared to application server.</td>
+<td>Application server utilizes more resources.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Target Environment</td>
+<td>Web Server provides the runtime environment for web applications.</td>
+<td>Application server provides the runtime environment for enterprise applications.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Multithreading support</td>
+<td>Multithreading is not supported.</td>
+<td>Multithreading is supported.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Protocol(s) supported</td>
+<td>Web Server supports HTTP Protocol.</td>
+<td>Application Server suppots HTTP as well as RPC/RMI protocols.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Example</td>
+<td>Apache Web Server.</td>
+<td>Weblogic, JBoss.</td>
+</tr>
+</tbody>
+</table>
+
+<div>
+<h3><strong>Q11.&nbsp;</strong><strong>What is a package in Java? List down various advantages of packages.</strong></h3>
+<p>Packages in Java, are the collection of related classes and interfaces which are bundled together. By using packages, developers can easily modularize the code and optimize its reuse. Also, the code within the packages can be imported by other classes and reused. Below I have listed down a few of its advantages:</p>
+<ul class="points">
+<li>Packages help in avoiding name clashes</li>
+<li>They provide easier access control on the code</li>
+<li>Packages can also contain hidden classes which are not visible to the outer classes and only used within the package</li>
+<li>Creates a proper hierarchical structure which makes it easier to locate the related classes</li>
+</ul>
+<h3><strong>Q12.&nbsp;Why pointers are not used in Java?</strong></h3>
+<p>Java doesn&rsquo;t use pointers because they are unsafe and increases the complexity of the program. Since, Java is known for its simplicity of code, adding the concept of pointers will be contradicting. Moreover, since JVM is responsible for implicit memory&nbsp;allocation, thus in order to avoid direct access to memory by the user,&nbsp; pointers are discouraged in Java.</p>
+<h3><strong>Q13.&nbsp;</strong><strong>What is JIT compiler in Java?</strong></h3>
+<p>JIT stands for Just-In-Time compiler in Java. It is a program that helps in converting the Java bytecode into instructions that are sent directly to the processor. By default, the JIT compiler is enabled in Java and is activated whenever a Java method is invoked. The JIT compiler then compiles the bytecode of the invoked method into native machine code, compiling it &ldquo;just in time&rdquo; to execute. Once the method has been compiled, the JVM summons the compiled code of that method directly rather than interpreting it. This is why it is often responsible for the performance optimization of Java applications at the run time.</p>
+<h3><strong>Q14. What are access modifiers in Java?</strong></h3>
+</div>
+<p>In Java, access modifiers are special keywords which are used to restrict the access of a class, constructor, data member and method in another class. Java supports four types of access modifiers:</p>
+<ol>
+<li><em>Default</em></li>
+<li><em>Private</em></li>
+<li><em>Protected</em></li>
+<li><em>Public</em></li>
+</ol>
+<table border="1px" width="100%">
+<tbody>
+<tr>
+<td><strong>Modifier</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Private</strong></td>
+<td><strong>Protected</strong></td>
+<td><strong>Public</strong></td>
+</tr>
+<tr>
+<td><em>Same class</em></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td><em>Same Package subclass</em></td>
+<td>YES</td>
+<td>NO</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td><em>Same Package non-subclass</em></td>
+<td>YES</td>
+<td>NO</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td><em>Different package subclass</em></td>
+<td>NO</td>
+<td>NO</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td><em>Different package non-subclass</em></td>
+<td>NO</td>
+<td>NO</td>
+<td>NO</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+
+<h3><strong>Q19.&nbsp;What is the difference between a local variable and an instance variable?</strong></h3>
+<p>In Java, a&nbsp;<strong>local variable</strong>&nbsp;is typically used inside a method, constructor, or a&nbsp;<strong>block</strong>&nbsp;and has only local scope. Thus, this variable can be used only within the scope of a block. The best benefit of having a local variable is that other methods in the class won&rsquo;t be even aware of that variable.</p>
+<h4>Example</h4>
+<p>&nbsp;</p>
+<div>
+<div id="highlighter_240458" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">if</code><code class="java plain">(x &gt;&nbsp;</code><code class="java value">100</code><code class="java plain">)</code></div>
+<div class="line number2 index1 alt1"><code class="java plain">{</code></div>
+<div class="line number3 index2 alt2"><code class="java plain">String test =&nbsp;</code><code class="java string">"Edureka"</code><code class="java plain">;</code></div>
+<div class="line number4 index3 alt1"><code class="java plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Whereas, an&nbsp;<strong>instance variable</strong>&nbsp;in Java, is a variable which is bounded to its object itself. These variables are declared within a&nbsp;<strong>class</strong>, but outside a method. Every object of that class will create it&rsquo;s own copy of the variable while using it. Thus, any changes made to the variable won&rsquo;t reflect in any other instances of that class and will be bound to that particular instance only.</p>
+<div>
+<div id="highlighter_343606" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">class</code>&nbsp;<code class="java plain">Test{</code></div>
+<div class="line number2 index1 alt1"><code class="java keyword">public</code>&nbsp;<code class="java plain">String EmpName;</code></div>
+<div class="line number3 index2 alt2"><code class="java keyword">public</code>&nbsp;<code class="java keyword">int</code>&nbsp;<code class="java plain">empAge;</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<h3><strong>Q20.&nbsp;Differentiate between the constructors and methods in Java?</strong></h3>
+<table border="1px" width="100%">
+<tbody>
+<tr>
+<td><strong>Methods</strong></td>
+<td><strong>Constructors</strong></td>
+</tr>
+<tr>
+<td>1. Used to represent the behavior of an object</td>
+<td>1. Used to initialize the state of an object</td>
+</tr>
+<tr>
+<td>2. Must have a return type</td>
+<td>2. Do not have any return type</td>
+</tr>
+<tr>
+<td>3. Needs to be invoked explicitly</td>
+<td>3. Is invoked implicitly</td>
+</tr>
+<tr>
+<td>4. No default method is provided by the compiler</td>
+<td>4. A default constructor is provided by the compiler if the class has none</td>
+</tr>
+<tr>
+<td>5. Method name may or may not be same as class name</td>
+<td>5. Constructor name must always be the same as the class name</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>Q21.&nbsp;What is final keyword in Java?</strong></h3>
+<p><strong>final&nbsp;</strong>is a special keyword in Java that is used as a non-access modifier. A final variable can be used in different contexts such as:</p>
+<ul>
+<li><strong>final variable</strong></li>
+</ul>
+<p>When the final keyword is used with a variable then its value can&rsquo;t be changed once assigned. In case the no value has been assigned to the final variable then using only the class constructor a value can be assigned to it.</p>
+<ul>
+<li>
+<h4><strong>final method</strong></h4>
+</li>
+</ul>
+<p>When a method is declared final then it can&rsquo;t be overridden by the inheriting class.</p>
+<ul>
+<li>
+<h4><strong>final class</strong></h4>
+</li>
+</ul>
+<p>When a class is declared as final in Java, it can&rsquo;t be extended by any subclass class but it can extend other class.</p>
+<h3><strong>Q22.&nbsp;What is the difference between break and continue statements?</strong></h3>
+<table border="1px" width="100%">
+<tbody>
+<tr>
+<td><strong>break</strong></td>
+<td><strong>continue</strong></td>
+</tr>
+<tr>
+<td>1. Can be used in switch and loop (for, while, do while) statements</td>
+<td>1. Can be only used with loop statements</td>
+</tr>
+<tr>
+<td>2. It&nbsp;causes the&nbsp;switch&nbsp;or loop statements to terminate the moment it is executed</td>
+<td>2. It&nbsp;doesn&rsquo;t terminate the loop but causes the loop to jump to the next iteration</td>
+</tr>
+<tr>
+<td>3. It&nbsp;terminates the innermost enclosing loop or&nbsp;switch immediately</td>
+<td>3. A&nbsp;continue&nbsp;within a loop nested with a&nbsp;switch will cause the next loop iteration to execute</td>
+</tr>
+</tbody>
+</table>
+<div>&nbsp;</div>
+<div><em><strong>Example break:</strong></em></div>
+<div>&nbsp;</div>
+<div>
+<div>
+<div id="highlighter_737063" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">for</code>&nbsp;<code class="java plain">(</code><code class="java keyword">int</code>&nbsp;<code class="java plain">i =&nbsp;</code><code class="java value">0</code><code class="java plain">; i &lt;&nbsp;</code><code class="java value">5</code><code class="java plain">; i++)</code></div>
+<div class="line number2 index1 alt1"><code class="java plain">{</code></div>
+<div class="line number3 index2 alt2"><code class="java keyword">if</code>&nbsp;<code class="java plain">(i ==&nbsp;</code><code class="java value">3</code><code class="java plain">)</code></div>
+<div class="line number4 index3 alt1"><code class="java plain">{</code></div>
+<div class="line number5 index4 alt2"><code class="java keyword">break</code><code class="java plain">;</code></div>
+<div class="line number6 index5 alt1"><code class="java plain">}</code></div>
+<div class="line number7 index6 alt2"><code class="java plain">System.out.println(i);</code></div>
+<div class="line number8 index7 alt1"><code class="java plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div><em><strong>Example continue:</strong></em></div>
+<div>
+<div>
+<div id="highlighter_721544" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">for</code>&nbsp;<code class="java plain">(</code><code class="java keyword">int</code>&nbsp;<code class="java plain">i =&nbsp;</code><code class="java value">0</code><code class="java plain">; i &lt;&nbsp;</code><code class="java value">5</code><code class="java plain">; i++)</code></div>
+<div class="line number2 index1 alt1"><code class="java plain">{</code></div>
+<div class="line number3 index2 alt2"><code class="java keyword">if</code><code class="java plain">(i ==&nbsp;</code><code class="java value">2</code><code class="java plain">)</code></div>
+<div class="line number4 index3 alt1"><code class="java plain">{</code></div>
+<div class="line number5 index4 alt2"><code class="java keyword">continue</code><code class="java plain">;</code></div>
+<div class="line number6 index5 alt1"><code class="java plain">}</code></div>
+<div class="line number7 index6 alt2"><code class="java plain">System.out.println(i);</code></div>
+<div class="line number8 index7 alt1"><code class="java plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h3><strong>Q23.What is an infinite loop in Java? Explain with an example.</strong></h3>
+<p>An infinite loop is an instruction sequence in Java that loops endlessly when a functional exit isn&rsquo;t met. This type of loop can be the result of a programming error or may also be a deliberate action based on the application behavior. An infinite loop will terminate automatically once the application exits.</p>
+<p>For example:</p>
+<p>&nbsp;</p>
+<div>
+<div id="highlighter_180395" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">public</code>&nbsp;<code class="java keyword">class</code>&nbsp;<code class="java plain">InfiniteForLoopDemo</code></div>
+<div class="line number2 index1 alt1"><code class="java plain">{</code></div>
+<div class="line number3 index2 alt2"><code class="java keyword">public</code>&nbsp;<code class="java keyword">static</code>&nbsp;<code class="java keyword">void</code>&nbsp;<code class="java plain">main(String[] arg) {</code></div>
+<div class="line number4 index3 alt1"><code class="java keyword">for</code><code class="java plain">(;;)</code></div>
+<div class="line number5 index4 alt2"><code class="java plain">System.out.println(</code><code class="java string">"Welcome to Edureka!"</code><code class="java plain">);</code></div>
+<div class="line number6 index5 alt1"><code class="java comments">// To terminate this program press ctrl + c in the console.</code></div>
+<div class="line number7 index6 alt2"><code class="java plain">}</code></div>
+<div class="line number8 index7 alt1"><code class="java plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<h3><strong>Q24. What is the difference between this() and super() in Java?</strong></h3>
+<p>In Java, super() and this(), both are special keywords that are used to call the constructor.&nbsp;</p>
+<table border="1px" width="100%">
+<tbody>
+<tr>
+<td><strong>this()</strong></td>
+<td><strong>super()</strong></td>
+</tr>
+<tr>
+<td>1. this() represents the current instance of a class</td>
+<td>1. super() represents the current instance of a parent/base class</td>
+</tr>
+<tr>
+<td>2. Used to call the default constructor of the same class</td>
+<td>2. Used to call the default constructor of the parent/base class</td>
+</tr>
+<tr>
+<td>3. Used to access methods of the current class</td>
+<td>3. Used to access methods of the base class</td>
+</tr>
+<tr>
+<td>4.&nbsp; Used for pointing the current class instance</td>
+<td>4. Used for pointing the superclass instance</td>
+</tr>
+<tr>
+<td>5. Must be the first line of a block</td>
+<td>5. Must be the first line of a block</td>
+</tr>
+</tbody>
+</table>
+<div>&nbsp;</div>
+
+<h3><strong>Q26.&nbsp;Differentiate between static and non-static methods in Java.</strong></h3>
+<table border="1px" width="100%">
+<tbody>
+<tr>
+<td><strong>Static Method</strong></td>
+<td><strong>Non-Static Method</strong></td>
+</tr>
+<tr>
+<td>1.&nbsp;<em>The static</em>&nbsp;keyword must be used before the method name</td>
+<td>1. No need to use the&nbsp;<em>s</em><em class="markup--em markup--li-em">tatic</em>&nbsp;keyword before the method name</td>
+</tr>
+<tr>
+<td>2. It is called using the class (className.methodName)&nbsp;</td>
+<td>2. It is can be called like any general method</td>
+</tr>
+<tr>
+<td>3. They can&rsquo;t access any non-static instance variables or methods</td>
+<td>3. It can access any static method and any static variable without creating an instance of the class</td>
+</tr>
+</tbody>
+</table>
+
+<h3><strong>What is a classloader in Java?</strong></h3>
+<p>The&nbsp;<strong>Java ClassLoader</strong>&nbsp;is a subset of JVM (Java Virtual Machine) that is responsible for loading the class files. Whenever a Java program is executed it is first loaded by the classloader. Java provides three built-in classloaders:</p>
+<ol class="points">
+<li>Bootstrap ClassLoader</li>
+<li>Extension ClassLoader</li>
+<li>System/Application ClassLoader</li>
+</ol>
+<p><br /><br /></p>
+
+<h3><strong>Q17. What are the different types of garbage collectors in Java?</strong></h3>
+<p>Garbage collection in Java a program which helps in implicit memory management. Since in Java, using the new keyword you can create objects dynamically, which once created will consume some memory. Once the job is done and there are no more references left to the object, Java using garbage collection destroys the object and relieves the memory occupied by it. Java provides four types of garbage collectors:</p>
+<div class="RqBzHd">
+<ul class="i8Z77e">
+<li class="TrT0Xe">Serial Garbage Collector</li>
+<li class="TrT0Xe">Parallel Garbage Collector</li>
+<li class="TrT0Xe">CMS Garbage Collector</li>
+<li class="TrT0Xe">G1 Garbage Collector</li>
+</ul>
+</div>
+
+<ol>
+<li>
+<ol start="4">
+<li>
+<p><strong>Can a top level class be private or protected?</strong><br />&nbsp;</p>
+<p>Top level classes in java can&rsquo;t be private or protected, but inner classes in java can. The reason for not making a top level class as private is very obvious, because nobody can see a private class and thus they can not use it. Declaring a class as protected also doesn&rsquo;t make any sense. The only difference between default visibility and protected visibility is that we can use it in any package by inheriting it. Since in java there is no such concept of package inheritance, defining a class as protected is no different from default.</p>
+<h1>static keyword in java</h1>
+<p><a href="https://www.geeksforgeeks.org/static-keyword-java/">https://www.geeksforgeeks.org/static-keyword-java/</a></p>
+<p><em>&nbsp;</em></p>
+<p><em>static</em>&nbsp;is a non-access modifier in Java which is applicable for the following:</p>
+<ol>
+<li>blocks</li>
+<li>variables</li>
+<li>methods</li>
+<li>nested classes</li>
+</ol>
+<p>To create a static member(block,variable,method,nested class), precede its declaration with the keyword&nbsp;<em>static</em>. When a member is declared static, it can be accessed before any objects of its class are created, and without reference to any object. For example, in below java program, we are accessing static method&nbsp;<em>m1()</em>&nbsp;without creating any object of&nbsp;<em>Test</em>&nbsp;class.</p>
+<p><strong>Static blocks</strong></p>
+<p>If you need to do computation in order to initialize your&nbsp;<strong>static variables</strong>, you can declare a static block that gets executed exactly once, when the class is first loaded. Consider the following java program demonstrating use of static blocks.</p>
+<p>// Java program to demonstrate use of static blocks</p>
+<p>class Test</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static variable</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static int a = 10;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static int b;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static block</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Static block initialized.");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b = a * 4;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("from main");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Value of a : "+a);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Value of b : "+b);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>Output:</p>
+<p>Static block initialized.from mainValue of a : 10Value of b : 40</p>
+<p>For Detailed article on static blocks, see&nbsp;<a href="https://www.geeksforgeeks.org/g-fact-79/">static blocks</a></p>
+<p><strong>Static variables</strong></p>
+<p>When a variable is declared as static, then a single copy of variable is created and shared among all objects at class level. Static variables are, essentially, global variables. All instances of the class share the same static variable.</p>
+<p><strong>Important points for static variables :-</strong></p>
+<ul>
+<li>We can create static variables at class-level only. See&nbsp;<a href="https://www.geeksforgeeks.org/g-fact-47/">here</a></li>
+<li>static block and static variables are executed in order they are present in a program.</li>
+</ul>
+<p>Below is the java program to demonstrate that static block and static variables are executed in order they are present in a program.</p>
+<table width="722">
+<tbody>
+<tr>
+<td width="722">
+<p>// java program to demonstrate execution</p>
+<p>// of static blocks and variables</p>
+<p>class Test</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static variable</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static int a = m1();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static block</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Inside static block");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static method</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static int m1() {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("from m1");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 20;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static method(main !!)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Value of a : "+a);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("from main");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;</p>
+<p>}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Output:</p>
+<p>from m1</p>
+<p>Inside static block</p>
+<p>Value of a : 20</p>
+<p>from main</p>
+<p><strong>Static methods</strong></p>
+<p>When a method is declared with&nbsp;<em>static</em>&nbsp;keyword, it is known as static method. The most common example of a static method is&nbsp;<em>main( )</em>&nbsp;method.As discussed above, Any static member can be accessed before any objects of its class are created, and without reference to any object.Methods declared as static have several restrictions:</p>
+<ul>
+<li>They can only directly call other static methods.</li>
+<li>They can only directly access static data.</li>
+<li>They cannot refer to&nbsp;<a href="https://www.geeksforgeeks.org/this-reference-in-java/">this</a>or&nbsp;<a href="https://www.geeksforgeeks.org/super-keyword/">super</a>&nbsp;in any way.</li>
+</ul>
+<p>Below is the java program to demonstrate restrictions on static methods.</p>
+<table width="722">
+<tbody>
+<tr>
+<td width="722">
+<p>// java program to demonstrate restriction on static methods</p>
+<p>class Test</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static variable</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static int a = 10;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// instance variable</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;int b = 20;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static method</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static void m1()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a = 20;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("from m1");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Cannot make a static reference to the non-static field b</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b = 10; // compilation error</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Cannot make a static reference to the&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// non-static method m2() from the type Test</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m2();&nbsp; // compilation error</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp; Cannot use super in a static context</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(super.a); // compiler error&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// instance method</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;void m2()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("from m2");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// main method&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>When to use static variables and methods?</strong></p>
+<p>Use the static variable for the property that is common to all objects. For example, in class Student, all students shares the same college name. Use static methods for changing static variables.</p>
+<p>Consider the following java program, that illustrate the use of&nbsp;<em>static</em>&nbsp;keyword with variables and methods.</p>
+<table width="722">
+<tbody>
+<tr>
+<td width="722">
+<p>// A java program to demonstrate use of</p>
+<p>// static keyword with methods and variables</p>
+<p>&nbsp;&nbsp;</p>
+<p>// Student class</p>
+<p>class Student&nbsp;</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;String name;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;int rollNo;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static variable</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static String cllgName;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static counter to set unique roll no</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static <a href="https://scorecounter.com/click-counter/">int counter =</a> 0;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public Student(String name)&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.name = name;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.rollNo = setRollNo();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// getting unique rollNo</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// through static variable(counter)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static int setRollNo()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;counter++;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return counter;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static method</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static void setCllg(String name){</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cllgName = name ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// instance method</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;void getStudentInfo(){</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("name : " + this.name);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("rollNo : " + this.rollNo);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// accessing static variable</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("cllgName : " + cllgName);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>&nbsp;&nbsp;</p>
+<p>//Driver class</p>
+<p>public class StaticDemo&nbsp;</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// calling static method</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// without instantiating Student class</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student.setCllg("XYZ");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student s1 = new Student("Alice");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student s2 = new Student("Bob");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s1.getStudentInfo();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s2.getStudentInfo();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Output:</p>
+<p>name : Alice</p>
+<p>rollNo : 1</p>
+<p>cllgName : XYZ</p>
+<p>name : Bob</p>
+<p>rollNo : 2</p>
+<p>cllgName : XYZ</p>
+<p><strong>Static nested classes</strong><strong>&nbsp;:&nbsp;</strong>We can not declare top-level class with a static modifier, but can declare&nbsp;<a href="https://www.geeksforgeeks.org/nested-classes-java/">nested classes</a>&nbsp;as static. Such type of classes are called Nested static classes. For static nested class, see&nbsp;<a href="https://www.geeksforgeeks.org/static-class-in-java/">static nested class in java</a></p>
+</li>
+</ol>
+</li>
+</ol>
+
+<ol>
+<li>
+<ol start="4">
+<li>
+<p><strong>What is the&nbsp;</strong><strong><a href="https://www.geeksforgeeks.org/variable-scope-in-java/">scope of variables</a>&nbsp;in Java in following cases?&nbsp;</strong></p>
+<ul>
+<li><strong>Member Variables</strong>(Class Level Scope) :&nbsp;The&nbsp;member&nbsp;variables must be declared inside class (outside any function). They can be directly accessed anywhere in class</li>
+<li><strong>Local Variables&nbsp;</strong>(Method Level Scope) :&nbsp;Variables declared inside a method have method level scope and can&rsquo;t be accessed outside the method.</li>
+<li><strong>Loop Variables&nbsp;</strong>(Block Scope) :&nbsp;A variable declared inside pair of brackets &ldquo;{&rdquo; and &ldquo;}&rdquo; in a method has scope withing the brackets only.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+
+<ol>
+<li>
+<ol start="4">
+<li>
+<p><strong>Q5. What is</strong><strong><a href="http://quiz.geeksforgeeks.org/this-reference-in-java/">&nbsp;&ldquo;this&rdquo; keyword in java</a>?</strong><br />Within an instance method or a constructor, this is a reference to the current object &mdash; the object whose method or constructor is being called. You can refer to any member of the current object from within an instance method or a constructor by using this.<br />Usage of this keyword</p>
+<ul>
+<li>Used to refer current class instance variable.</li>
+<li>To invoke current class constructor.</li>
+<li>It can be passed as an argument in the method call.</li>
+<li>It can be passed as argument in the constructor call.</li>
+<li>Used to return the current class instance.</li>
+<li>Used to invoke current class method (implicitly)</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Q14. What is&nbsp;</strong><strong><a href="http://quiz.geeksforgeeks.org/super-keyword/">&ldquo;super&rdquo; keyword in java</a>?</strong><br />The super keyword in java is a reference variable that is used to refer parent class objects. The keyword &ldquo;super&rdquo; came into the picture with the concept of Inheritance. Whenever you create the instance of a subclass, an instance of parent class is created implicitly i.e. referred by super reference variable.<br />Various scenarios of using java super Keyword:</p>
+<ul>
+<li>super is used to refer immediate parent instance variable</li>
+<li>super is used to call parent class method</li>
+<li>super() is used to call&nbsp;immediate parent constructor</li>
+</ul>
+<p>&nbsp;</p>
+</li>
+</ol>
+</li>
+</ol>
+
+<ol>
+<li>
+<ol start="4">
+<li>
+<p><strong>What is&nbsp;</strong><strong><a href="https://www.geeksforgeeks.org/blank-final-in-java/">blank final variable</a>?</strong><br />A final variable in Java can be assigned a value only once, we can assign a value either in declaration or later.</p>
+<p>&nbsp;&nbsp;&nbsp; final int i = 10;&nbsp;&nbsp;&nbsp; i = 30; // Error because i is final.</p>
+<p>A&nbsp;<strong>blank final</strong>&nbsp;variable in Java is a&nbsp;<a href="https://www.geeksforgeeks.org/g-fact-48/">final</a>&nbsp;variable that is not initialized during declaration. Below is a simple example of blank final.</p>
+<p>&nbsp;&nbsp;&nbsp; // A simple blank final example &nbsp;&nbsp;&nbsp;&nbsp;final int i;&nbsp;&nbsp;&nbsp; i = 30;</p>
+</li>
+</ol>
+</li>
+</ol>
+
+<ol>
+<li>
+<ol start="4">
+<li>
+<p><strong>How are Java&nbsp;</strong><strong><a href="https://www.geeksforgeeks.org/g-fact-46/">objects stored in memory</a>?</strong><br />In Java, all objects are dynamically allocated on&nbsp;<strong>Heap</strong>.&nbsp;</p>
+<p>In Java, when we only declare a variable of a class type, only a reference is created (memory is not allocated for the object). To allocate memory to an object, we must use new(). So the object is always allocated memory on the heap</p>
+<p>&nbsp;</p>
+<p>The static variables are provided the memory in the the same memory segment where the code is stored i.e. Class Area. It is independent of the stack or heap segment of memory. It remains accessible during the complete duration of the program.</p>
+<p>&nbsp;</p>
+<p>We have 3 segments in our memory:</p>
+<ol>
+<li>Stack Segment &mdash; contains local variables and Reference variables (variables that hold the address of an object in the heap).</li>
+<li>Heap Segment &mdash; contains all created objects in runtime, objects only plus their object attributes (instance variables).</li>
+<li>Code Segment &mdash; the segment where the actual compiled Java bytecodes resides when loaded. Static members (variables or methods) are called class members, meaning they reside where the class (bytecode) resides, which is in the Code Segment.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+<ol>
+<li>
+<ol start="4">
+<li>
+<p><strong>Explain&nbsp;</strong><a href="https://www.geeksforgeeks.org/differences-jdk-jre-jvm/"><strong>JVM, JRE and JDK</strong></a><strong>?</strong></p>
+<p><br /><strong>JVM (Java Virtual Machine):</strong>&nbsp;JVM(Java Virtual Machine) acts as a run-time engine to run Java applications. JVM is the one that actually calls the main method present in a Java code. JVM is a part of JRE(Java Runtime Environment).</p>
+<p><strong>JRE (Java Runtime Environment):</strong>&nbsp;JRE refers to a runtime environment in which Java&nbsp;bytecode&nbsp;can be executed. It implements the JVM (Java Virtual Machine) and provides all the class libraries and other support files that JVM uses at runtime. So JRE is&nbsp;a software package that contains what is required to run a Java program. Basically, it&rsquo;s an implementation of the JVM which physically exists.&nbsp;</p>
+<p><strong>JDK(Java Development Kit):</strong>&nbsp;It is the tool necessary to compile, document and package Java programs. The JDK completely includes JRE which contains tools for Java programmers. The Java Development Kit is provided free of charge. Along with JRE, it includes an interpreter/loader, a compiler&nbsp;(javac), an archiver (jar), a documentation generator (javadoc) and other tools needed in Java development. In short, it contains JRE + development tools.</p>
+<p>&nbsp;</p>
+<p><strong>Q2. Explain public static void main(String args[]).</strong></p>
+<p><br /><strong>Public:</strong>&nbsp;Public is an access modifier. Public means that this Method will be accessible by any Class.<br /><strong>static&nbsp;:</strong>&nbsp;It&nbsp;is a keyword in java which identifies it is class-based i.e it can be accessed without creating the instance of a Class. Since we want the main method to be executed without any instance also, we use static.<br /><strong>Void:</strong>&nbsp;It is the return type of the method. Void defines the method which will not return any value.<br /><strong>main:</strong>&nbsp;This is the first method executed by JVM. The signature of the method must be the same.</p>
+<p>&nbsp;</p>
+<p><strong>In System.out.println(), what is System, out and println?</strong><br />System is a predefined final class, out is a PrintStream object and println is a built-in overloaded method in the out object.</p>
+<p>&nbsp;</p>
+<p><strong>Q3. Why Java is platform independent?</strong><br />Platform independent practically means &ldquo;write once run anywhere&rdquo;. Java is called so because of its&nbsp;<strong>byte codes</strong>&nbsp;which can run on any system irrespective of its underlying operating system.</p>
+<p>&nbsp;</p>
+<p><strong>Q4. Why is Java not pure Object-oriented?</strong><br />Java is not considered pure Object-oriented because it supports primitive data-types such as boolean, byte, char, int, float, double, long, short.</p>
+<p>&nbsp;</p>
+<p><strong>Q5. Define class and object. Explain them with an example using java.</strong></p>
+<p><br /><strong>Class:</strong>&nbsp;A class is a user-defined blueprint or prototype from which objects are created. &nbsp;It represents the set of properties or methods that are common to all objects of one type. In general, class declarations can include these components, in order:</p>
+<p><strong>Superclass(if any):</strong>&nbsp;The name of the class&rsquo;s parent (superclass), if any, preceded by the keyword extends. A class can only extend (subclass) one parent.</p>
+<p><strong>Interfaces:</strong>&nbsp;A comma-separated list of interfaces implemented by the class, if any, preceded by the keyword implements. A class can implement more than one interface.</p>
+<p>&nbsp;</p>
+<p><strong>Object:</strong>&nbsp;It is a basic unit of Object Oriented Programming&nbsp;and represents the real-life entities. &nbsp;A typical Java program creates many objects, which as you know, interact by invoking methods. An object consists of :</p>
+<p><strong>State&nbsp;:</strong>&nbsp;It is represented by attributes of an object. It also reflects the properties of an object.</p>
+<p><strong>Behavior&nbsp;:</strong>&nbsp;It is represented by methods of an object. It also reflects the response of an object with other objects.</p>
+<p><strong>Identity&nbsp;:</strong>&nbsp;It gives a unique name to an object and enables one object to interact with other objects.<br />For Example: Employee is an example of a class<br />A specific employee with unique identification is an example of an object.</p>
+<p>&nbsp;</p>
+<p><strong>Q7.Explain the difference between instance variable and a class variable.</strong></p>
+<p>&nbsp;</p>
+<p>An instance variable is a variable which has one copy per object/instance. That means every object will have one copy of it.<br />A class variable is a variable which has one copy per class. The class variables will not have a copy in the object.<br />Example&nbsp;:</p>
+<p>class Employee {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;int empNo;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;String empName, department;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;double salary;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static int officePhone;</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>An object referred by empObj1 is created by using the following:<br />Employee empObj1 = new Employee();</p>
+<p>The objects referred by instance variables empObj1 and empObj2 have separate copies empNo, empName, department, and salary. However, the officePhone belongs to the class(Class Variable) and can be accessed as Employee.officePhone.</p>
+<p><strong>Q8. Which class is the superclass of all classes?</strong><br /><a href="https://www.geeksforgeeks.org/object-class-in-java/">java.lang.Object&nbsp;</a>is the root class for all the java classes and we don&rsquo;t need to extend it.</p>
+<p>&nbsp;</p>
+</li>
+</ol>
+</li>
+</ol>
+
+<ol>
+<li>
+<ol start="4">
+<li>
+<p><strong>What are the different ways to create objects in Java?</strong><br />There are many different ways to create objects in Java.</p>
+<p><a href="https://www.geeksforgeeks.org/different-ways-create-objects-java/">https://www.geeksforgeeks.org/different-ways-create-objects-java/</a></p>
+<ul>
+<li><strong>Using new Keyword :</strong>Using new keyword is the most basic way to create an object. This is the most common way to create an object in java. Almost 99% of objects are created in this way.</li>
+<li><strong>Using&nbsp;</strong><a href="https://www.geeksforgeeks.org/new-operator-vs-newinstance-method-java/"><strong>New Instance&nbsp;</strong></a><strong>:&nbsp;</strong>If we know the name of the class &amp; if it has a public default constructor we can create an object &ndash;<strong>forName</strong>. We can use it to create the Object of a Class. Class.forName actually loads the Class in Java but doesn&rsquo;t create any Object. To Create an Object of the Class you have to use the new Instance Method of the Class.</li>
+<li><strong>Using&nbsp;</strong><a href="https://www.geeksforgeeks.org/clone-method-in-java-2/"><strong>clone() method:</strong></a>Whenever clone() is called on any object, the JVM actually creates a new object and copies all content of the previous object into it. Creating an object using the clone method does not invoke any constructor.<br />To use clone() method on an object we need to implement&nbsp;<strong>Cloneable</strong>&nbsp;and define the clone() method in it&nbsp;&nbsp;&nbsp;</li>
+</ul>
+<p><strong>Note :</strong></p>
+<ul>
+<li>Here we are creating the clone of an existing Object and not any new Object.</li>
+<li>Class need to implement Cloneable Interface otherwise it will throw&nbsp;<strong>CloneNotSupportedException</strong>.</li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>Using&nbsp;</strong><a href="https://www.geeksforgeeks.org/serialization-in-java/"><strong>deserialization&nbsp;</strong></a><strong>:</strong>Whenever we serialize and then deserialize an object, JVM creates a separate object. In&nbsp;<strong>deserialization</strong>, JVM doesn&rsquo;t use any constructor to create the object.<br />To deserialize an object we need to implement the Serializable interface in the class.</li>
+<li><strong>Using newInstance() method of Constructor class :</strong>&nbsp;This is similar to the newInstance() method of a class. There is one newInstance() method in the&nbsp;<strong>lang.reflect.Constructor</strong>&nbsp;class which we can use to create objects. It can also call parameterized constructor, and private constructor by using this newInstance() method.</li>
+</ul>
+<p>&nbsp;</p>
+<p>Both newInstance() methods are known as reflective ways to create objects. In fact newInstance() method of Class internally uses newInstance() method of Constructor class.</p>
+</li>
+</ol>
+</li>
+</ol>
+
+<ol>
+<li>
+<ol start="4">
+<li>
+<p><strong>What is implicit casting</strong>.</p>
+<p>Implicit casting is the process of simply assigning one entity to another without any transformation guidance to the compiler. This type of casting is not permitted in all kinds of transformations and may not work for all scenarios.</p>
+<p><strong><u>Example</u></strong></p>
+<table width="820">
+<tbody>
+<tr>
+<td>
+<p>&nbsp;</p>
+</td>
+<td width="786">
+<p>int i = 1000;</p>
+<p>long j = i; //Implicit casting</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Q16.&nbsp;<strong>What is explicit</strong>&nbsp;<strong>casting</strong>.</p>
+<p>Explicit casting in the process in which the complier are specifically informed to about transforming the object.</p>
+<p><strong><u>Example</u></strong></p>
+<table width="787">
+<tbody>
+<tr>
+<td width="1">
+<p>&nbsp;</p>
+</td>
+<td width="786">
+<p>long i = 700.20;</p>
+<p>int j = (int) i; //Explicit casting</p>
+<p>Q16.<strong>What is explicit</strong>&nbsp;<strong>casting</strong>.</p>
+<p>Explicit casting in the process in which the complier are specifically informed to about transforming the object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</li>
+</ol>
+
+<ol>
+<li>
+<ol start="4">
+<li>
+<p><strong>How can one prove that the array is not null but empty?</strong></p>
+<p>Print array.length. It will print 0. That means it is empty. But if it would have been null then it would have thrown a NullPointerException on attempting to print array.length.</p>
+<p><br /><br /></p>
+</li>
+</ol>
+</li>
+</ol>
+
+<h1><strong>final vs Immutability in Java</strong></h1>
+<p><strong>final :&nbsp;</strong>In Java,&nbsp;<a href="https://www.geeksforgeeks.org/final-keyword-java/">final</a>&nbsp;is a modifier which is used for class, method and variable also. When a variable is declared with final keyword, it&rsquo;s value can&rsquo;t be modified, essentially, a constant.</p>
+<p><a href="https://www.geeksforgeeks.org/create-immutable-class-java/">Immutability</a><strong>&nbsp;:&nbsp;</strong>In simple terms, immutability means unchanging over time or unable to be changed. In Java, we know that String objects are immutable means we cant change anything to the existing String objects.</p>
+<p><strong>Differences between final and immutability</strong></p>
+<ul>
+<li>final means that you can&rsquo;t change the object&rsquo;s reference to point to another reference or another object, but you can still mutate its state (using setter methods e.g). Whereas immutable means that the object&rsquo;s actual value can&rsquo;t be changed, but you can change its reference to another one.</li>
+<li>final modifier is applicable for variable but not for objects, Whereas immutability applicable for an object but not for variables.</li>
+<li>By declaring a reference variable as final, we won&rsquo;t get any immutability nature, Even though reference variable is final. We can perform any type of change in the corresponding Object. But we cant perform reassignment for that variable.</li>
+<li>final ensures that the address of the object remains the same whereas the Immutable suggests that we can&rsquo;t change the state of the object once created.</li>
+</ul>
+<p>&nbsp;</p>
+<p>// Java program to illustrate</p>
+<p>// difference between final</p>
+<p>// and immutability</p>
+<p>&nbsp;&nbsp;</p>
+<p>class Geeks {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final StringBuffer sb = new StringBuffer("Hello");</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Even though reference varibale sb is final</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// We can perform any changes</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sb.append("GFG");</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(sb);</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Here we will get Compile time error</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Because reassignment is not possible for final variable</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sb = new StringBuffer("Hello World");</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(sb);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>Geeks.java:14: error: cannot assign a value to final variable sb</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sb = new StringBuffer("Hello World");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ^</p>
+<p>1 error</p>
+<p><strong>Pictorial Representation of the above Program</strong></p>
+<p><strong>Explanation:</strong>&nbsp;In the above picture, we can see that we are creating an object of StringBuffer class by making reference final.</p>
+<ul>
+<li>Declaring reference variable as final, does not mean that the object is immutable.</li>
+<li>In the next line we are performing append() operation on the created object and it is successfully changed.</li>
+<li>If the object is immutable, then the above append operation can&rsquo;t be done.</li>
+<li>But it is executed successfully as we declare reference variable as final. final means we can&rsquo;t reassign anything to that reference variable again.</li>
+<li>Therefore when we try to create a new object of BufferedReader then it wont created any object by throwing an error to the console.</li>
+</ul>
+<p>&nbsp;</p>
+
+<h1><strong>Mutable and Immutable Objects</strong></h1>
+<p>&nbsp;</p>
+<p><strong>What is Mutable object?</strong> The objects in which you can change the fields and states after the object is created are known as Mutable objects.&nbsp;<strong><em>Example</em></strong>: java.util.Date, StringBuilder, and etc.</p>
+<p><strong>What is Immutable object?</strong> The&nbsp;<a href="https://www.edureka.co/blog/java-object/">objects</a>&nbsp;in which you cannot change anything once the object is created are known as Immutable objects.&nbsp;<strong><em>Example</em></strong>: Boxed primitive objects like Integer, Long and etc.</p>
+<table>
+<tbody>
+<tr>
+<td width="372">
+<p><strong>Mutable</strong></p>
+</td>
+<td width="372">
+<p><strong>Immutable</strong></p>
+</td>
+</tr>
+<tr>
+<td width="372">
+<p>Fields can be changed after the object creation</p>
+</td>
+<td width="372">
+<p>Fields cannot be changed after object creation</p>
+</td>
+</tr>
+<tr>
+<td width="372">
+<p>Generally provides a method to modify the field value</p>
+</td>
+<td width="372">
+<p>Does not have any method to modify the field value</p>
+</td>
+</tr>
+<tr>
+<td width="372">
+<p>Has Getter and Setter methods</p>
+</td>
+<td width="372">
+<p>Has only Getter method</p>
+</td>
+</tr>
+<tr>
+<td width="372">
+<p>Example: StringBuilder, java.util.Date</p>
+</td>
+<td width="372">
+<p>Example: String, Boxed primitive objects like Integer, Long and etc</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How to create a Mutable class?</strong></p>
+<p>To create a mutable class in Java you have to make sure the following requirements are satisfied:</p>
+<ol>
+<li><a href="https://www.edureka.co/blog/method-overloading-and-overriding-in-java/">Provide a method</a>&nbsp;to modify the field values</li>
+<li>Getter and Setter method</li>
+</ol>
+<p><strong>How to create an Immutable class?</strong></p>
+<ol>
+<li>A class should be declared as&nbsp;<a href="https://www.edureka.co/blog/final-finally-and-finalize-in-java/">final</a>&nbsp;so that it can&rsquo;t be extended.</li>
+<li>All the fields should be made private so that direct access is not allowed</li>
+<li>No setter methods</li>
+</ol>
+<p>Make all mutable fields final, so that they can be assigned only once</p>
+
+
+
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button type="button" onclick="document.location='index.html'" style="position:fixed;">Back To HOME</button>
+<br>
+<h1>static Links Links</h1>
+
+<p><strong>Can a class be declared as static?</strong><br />No a class cannot be defined as static in fact every class is &ldquo;static&rdquo;. Only a method, a variable or a block of code can be declared as static. But inner class can be static!</p>
+<p><strong>Can we declare a static variable inside a method?</strong><br />Static varaibles are class level variables and they can't be declared inside a method. If declared, the class will not compile.</p>
+<p><strong>Explain public static void main(String args[]) in Java.</strong><br />main() in Java is the entry point for any Java program. It is always written as public static void main(String[] args).<br />public: Public is an access modifier, which is used to specify who can access this method. Public means that this Method will be accessible by any Class.<br />static: It is a keyword in java which identifies it is class-based. main() is made static in Java so that it can be accessed without creating the instance of a Class. In case, main is not made static then the compiler will throw an error as main() is called by the JVM before any objects are made and only static methods can be directly invoked via the class. <br />void: It is the return type of the method. Void defines the method which will not return any value.<br />main: It is the name of the method which is searched by JVM as a starting point for an application with a particular signature only. It is the method where the main execution occurs.<br />String args[]: It is the parameter passed to the main method.</p>
+
+<ol>
+<li>
+<ol start="4">
+<li>
+<h1>static keyword in java</h1>
+<p><a href="https://www.geeksforgeeks.org/static-keyword-java/">https://www.geeksforgeeks.org/static-keyword-java/</a></p>
+<p><em>&nbsp;</em></p>
+<p><em>static</em>&nbsp;is a non-access modifier in Java which is applicable for the following:</p>
+<ol>
+<li>blocks</li>
+<li>variables</li>
+<li>methods</li>
+<li>nested classes</li>
+</ol>
+<p>To create a static member(block,variable,method,nested class), precede its declaration with the keyword&nbsp;<em>static</em>. When a member is declared static, it can be accessed before any objects of its class are created, and without reference to any object. For example, in below java program, we are accessing static method&nbsp;<em>m1()</em>&nbsp;without creating any object of&nbsp;<em>Test</em>&nbsp;class.</p>
+<p><strong>Static blocks</strong></p>
+<p>If you need to do computation in order to initialize your&nbsp;<strong>static variables</strong>, you can declare a static block that gets executed exactly once, when the class is first loaded. Consider the following java program demonstrating use of static blocks.</p>
+<p>// Java program to demonstrate use of static blocks</p>
+<p>class Test</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static variable</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static int a = 10;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static int b;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static block</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Static block initialized.");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b = a * 4;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("from main");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Value of a : "+a);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Value of b : "+b);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>Output:</p>
+<p>Static block initialized.from mainValue of a : 10Value of b : 40</p>
+<p>For Detailed article on static blocks, see&nbsp;<a href="https://www.geeksforgeeks.org/g-fact-79/">static blocks</a></p>
+<p><strong>Static variables</strong></p>
+<p>When a variable is declared as static, then a single copy of variable is created and shared among all objects at class level. Static variables are, essentially, global variables. All instances of the class share the same static variable.</p>
+<p><strong>Important points for static variables :-</strong></p>
+<ul>
+<li>We can create static variables at class-level only. See&nbsp;<a href="https://www.geeksforgeeks.org/g-fact-47/">here</a></li>
+<li>static block and static variables are executed in order they are present in a program.</li>
+</ul>
+<p>Below is the java program to demonstrate that static block and static variables are executed in order they are present in a program.</p>
+<table width="722">
+<tbody>
+<tr>
+<td width="722">
+<p>// java program to demonstrate execution</p>
+<p>// of static blocks and variables</p>
+<p>class Test</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static variable</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static int a = m1();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static block</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Inside static block");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static method</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static int m1() {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("from m1");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 20;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static method(main !!)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Value of a : "+a);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("from main");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;</p>
+<p>}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Output:</p>
+<p>from m1</p>
+<p>Inside static block</p>
+<p>Value of a : 20</p>
+<p>from main</p>
+<p><strong>Static methods</strong></p>
+<p>When a method is declared with&nbsp;<em>static</em>&nbsp;keyword, it is known as static method. The most common example of a static method is&nbsp;<em>main( )</em>&nbsp;method.As discussed above, Any static member can be accessed before any objects of its class are created, and without reference to any object.Methods declared as static have several restrictions:</p>
+<ul>
+<li>They can only directly call other static methods.</li>
+<li>They can only directly access static data.</li>
+<li>They cannot refer to&nbsp;<a href="https://www.geeksforgeeks.org/this-reference-in-java/">this</a>or&nbsp;<a href="https://www.geeksforgeeks.org/super-keyword/">super</a>&nbsp;in any way.</li>
+</ul>
+<p>Below is the java program to demonstrate restrictions on static methods.</p>
+<table width="722">
+<tbody>
+<tr>
+<td width="722">
+<p>// java program to demonstrate restriction on static methods</p>
+<p>class Test</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static variable</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static int a = 10;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// instance variable</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;int b = 20;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static method</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static void m1()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a = 20;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("from m1");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Cannot make a static reference to the non-static field b</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b = 10; // compilation error</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Cannot make a static reference to the&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// non-static method m2() from the type Test</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m2();&nbsp; // compilation error</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp; Cannot use super in a static context</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(super.a); // compiler error&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// instance method</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;void m2()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("from m2");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// main method&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>When to use static variables and methods?</strong></p>
+<p>Use the static variable for the property that is common to all objects. For example, in class Student, all students shares the same college name. Use static methods for changing static variables.</p>
+<p>Consider the following java program, that illustrate the use of&nbsp;<em>static</em>&nbsp;keyword with variables and methods.</p>
+<table width="722">
+<tbody>
+<tr>
+<td width="722">
+<p>// A java program to demonstrate use of</p>
+<p>// static keyword with methods and variables</p>
+<p>&nbsp;&nbsp;</p>
+<p>// Student class</p>
+<p>class Student&nbsp;</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;String name;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;int rollNo;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static variable</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static String cllgName;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static counter to set unique roll no</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static int counter = 0;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public Student(String name)&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.name = name;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.rollNo = setRollNo();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// getting unique rollNo</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// through static variable(counter)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static int setRollNo()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;counter++;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return counter;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// static method</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;static void setCllg(String name){</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cllgName = name ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;// instance method</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;void getStudentInfo(){</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("name : " + this.name);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("rollNo : " + this.rollNo);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// accessing static variable</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("cllgName : " + cllgName);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>&nbsp;&nbsp;</p>
+<p>//Driver class</p>
+<p>public class StaticDemo&nbsp;</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// calling static method</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// without instantiating Student class</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student.setCllg("XYZ");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student s1 = new Student("Alice");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student s2 = new Student("Bob");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s1.getStudentInfo();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s2.getStudentInfo();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Output:</p>
+<p>name : Alice</p>
+<p>rollNo : 1</p>
+<p>cllgName : XYZ</p>
+<p>name : Bob</p>
+<p>rollNo : 2</p>
+<p>cllgName : XYZ</p>
+<p><strong>Static nested classes</strong><strong>&nbsp;:&nbsp;</strong>We can not declare top-level class with a static modifier, but can declare&nbsp;<a href="https://www.geeksforgeeks.org/nested-classes-java/">nested classes</a>&nbsp;as static. Such type of classes are called Nested static classes. For static nested class, see&nbsp;<a href="https://www.geeksforgeeks.org/static-class-in-java/">static nested class in java</a></p>
+</li>
+</ol>
+</li>
+</ol>
+
+<ol>
+<li>
+<ol start="4">
+<li>
+<p><strong>Q2. Why the main method is static in java?</strong><br />The method is static because otherwise there would be ambiguity: which constructor should be called? Especially if your class looks like this:</p>
+<p>public class JavaClass</p>
+<p>{</p>
+<p>&nbsp; protected JavaClass(int x)</p>
+<p>&nbsp; {&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp; public void main(String[] args)</p>
+<p>&nbsp;&nbsp; {</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp; }</p>
+<p>}</p>
+<p>Should the JVM call new JavaClass(int)? What should it pass for x? If not, should the JVM instantiate JavaClass without running any constructor method? because that will special-case your entire class &ndash; sometimes you have an instance that hasn&rsquo;t been initialized, and you have to check for it in every method that could be called. There are just too many edge-cases and ambiguities for it to make sense for the JVM to have to instantiate a class before the entry point is called. That&rsquo;s why main is static.</p>
+<p>&nbsp;</p>
+<p><strong>Q3. What happens if you remove static modifier from the main method?</strong><br />Program compiles successfully. But at runtime throws an error &ldquo;NoSuchMethodError&rdquo;.</p>
+</li>
+</ol>
+</li>
+</ol>
+
+<ol>
+<li>
+<ol start="4">
+<li>
+<p><strong>What&rsquo;s the purpose of Static methods and static variables?</strong></p>
+<p><br />When there is a requirement to share a method or a variable between multiple objects of a class instead of creating separate copies for each object, we use static keyword to make a method or variable shared for all objects.<br /><strong>Static variable:</strong>&nbsp;Static variables are also known as Class variables.<br />These variables are declared similarly as instance variables, the difference is that static variables are declared using the static keyword within a class outside any method constructor or block.<br />Unlike instance variables, we can only have one copy of a static variable per class irrespective of how many objects we create.<br />Static variables are created at the start of program execution and destroyed automatically when execution ends.<br />To access static variables, we need not create an object of that class.<br />Static methods: A static method can be accessed without creating objects. Just by using the Class name the method can be accessed. The static method can only access static variables and not local or global non-static variables.</p>
+<p>&nbsp;</p>
+<p><strong>Q12. Why static methods cannot access non-static variables or methods?</strong></p>
+<p><br />Ans) A static method cannot access non-static variables or methods because static methods can be accessed without instantiating the class, so if the class is not instantiated the variables are not initialized and thus cannot be accessed from a static method.</p>
+<p>&nbsp;</p>
+<p><strong>Q13.What is a static class?</strong><br />A class can be said to be static class if all the variables and methods of the class are static and the constructor is private. Making the constructor private will prevent the class to be instantiated. So the only possibility to access is using the Class name only.</p>
+<p>&nbsp;</p>
+<p>Q14. How many types of Variable? Explain.<br />There are three types of variables in Java:</p>
+<ol>
+<li>Local Variables</li>
+<li>Instance Variables</li>
+<li>Static Variables</li>
+</ol>
+<p>&nbsp;</p>
+</li>
+</ol>
+</li>
+</ol>
+
+<ol>
+<li>
+<ol start="4">
+<li>
+<p><strong>When is static variable loaded? Is it at compile time or runtime? When exactly a static block is loaded in Java?</strong></p>
+<p>Static variable are loaded when classloader brings the class to the JVM. It is not necessary that an object has to be created. Static variables will be allocated memory space when they have been loaded. The code in a static block is loaded/executed only once i.e. when the class is first initialized. A class can have any number of static blocks. Static block is not member of a class, they do not have a return statement and they cannot be called directly. Cannot contain this or super. They are primarily used to initialize static fields.</p>
+</li>
+</ol>
+</li>
+</ol>
+
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button type="button" onclick="document.location='index.html'" style="position:fixed;">Back To HOME</button>
+<br>
+<h1>JAVA 8 Links</h1>
+
+<h3><strong>What are latest features introduced in Java 8?</strong></h3>
+<p>&nbsp;</p>
+<p>The below features are introduced in Java 8:</p>
+<ul>
+<li>Lambda Expressions</li>
+<li>Interface Default and Static Methods</li>
+<li>Method Reference</li>
+<li>Parameters Name</li>
+<li>Optional Streams</li>
+<li>Concurrency</li>
+</ul>
+<h3><strong>Name a few Java 8 annotations.</strong></h3>
+<p>&nbsp;</p>
+<p><strong>@Functional Interface annotation</strong>:&nbsp;It was introduced in Java SE 8, which indicates that the type declaration is intended to be a functional interface as defined by the Java language specification.</p>
+<p><strong>@Repeatable annotation</strong>: Introduced in Java SE 8, @Repeatable annotation indicates that the marked annotation can be applied many times to the same declaration or type use.</p>
+<h3><strong>Distinguish between a predicate and a function.</strong></h3>
+<p>&nbsp;</p>
+<p>A&nbsp;<strong>predicate</strong>&nbsp;takes one argument and returns a Boolean value.</p>
+<p>A&nbsp;<strong>function</strong>&nbsp;takes one argument and returns an object.&nbsp;Both are useful for evaluating lambda expressions.</p>
+
+<p><strong>What New Features Were Added in Java 8?</strong></p>
+<p><a href="https://javahungry.blogspot.com/2018/10/java-8-interview-questions-and-answers.html">https://javahungry.blogspot.com/2018/10/java-8-interview-questions-and-answers.html</a></p>
+<p>Java 8 ships with several new features but the most significant are the following:</p>
+<ul>
+<li><strong>Lambda Expressions&nbsp;</strong>&minus; a new language feature allowing treating actions as objects</li>
+<li><strong>Method References</strong>&nbsp;&minus; enable defining Lambda Expressions by referring to methods directly using their names</li>
+<li><strong><em>Optional</em></strong>&nbsp;&minus; special wrapper class used for expressing optionality</li>
+<li><strong>Functional Interface</strong>&nbsp;&ndash; an interface with maximum one abstract method, implementation can be provided using a Lambda Expression</li>
+<li><strong>Default methods</strong>&nbsp;&minus; give us the ability to add full implementations in interfaces besides abstract methods</li>
+<li><strong>Nashorn, JavaScript Engine</strong>&nbsp;&minus; Java-based engine for executing and evaluating JavaScript code</li>
+<li><strong><em>Stream</em></strong><strong>&nbsp;API</strong>&nbsp;&minus; a special iterator class that allows processing collections of objects in a functional manner</li>
+<li><strong>Date API</strong>&nbsp;&minus; an improved, immutable JodaTime-inspired Date API</li>
+</ul>
+<h3><strong>What Is a Lambda Expression and What Is It Used for</strong></h3>
+<p>In very simple terms, a lambda expression is a function that can be referenced and passed around as an object.</p>
+<p>Lambda expressions introduce functional style processing in Java and facilitate the writing of compact and easy-to-read code.</p>
+<p>Because of this, lambda expressions are a natural replacement for anonymous classes as method arguments. One of their main uses is to define inline implementations of functional interfaces.</p>
+<p><strong>Explain the Syntax and Characteristics of a Lambda Expression</strong></p>
+<p>A lambda expression consists of two parts: the parameter part and the expressions part separated by a forward arrow as below:</p>
+<table width="968">
+<tbody>
+<tr>
+<td>
+<p>1</p>
+</td>
+<td width="934">
+<p>params -&gt; expressions</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Any lambda expression has the following characteristics:</p>
+<ul>
+<li><strong>Optional type declaration</strong>&nbsp;&ndash; when declaring the parameters on the left-hand side of the lambda, we don't need to declare their types as the compiler can infer them from their values. So&nbsp;<em>int param -&gt; &hellip;</em>&nbsp;and&nbsp;<em>param -&gt;&hellip;</em>&nbsp;are all valid</li>
+<li><strong>Optional parentheses</strong>&nbsp;&ndash; when only a single parameter is declared, we don't need to place it in parentheses. This means&nbsp;<em>param -&gt; &hellip;</em>&nbsp;and&nbsp;<em>(param) -&gt; &hellip;</em>&nbsp;are all valid. But when more than one parameter is declared, parentheses are required</li>
+<li><strong>Optional curly braces</strong>&nbsp;&ndash; when the expressions part only has a single statement, there is no need for curly braces. This means that&nbsp;<em>param &ndash; &gt; statement</em>&nbsp;and&nbsp;<em>param &ndash; &gt; {statement;}</em>&nbsp;are all valid. But curly braces are required when there is more than one statement</li>
+<li><strong>Optional return statement</strong>&nbsp;&ndash; when the expression returns a value and it is wrapped inside curly braces, then we don't need a return statement. That means&nbsp;<em>(a, b) &ndash; &gt; {return a+b;}</em>&nbsp;and&nbsp;<em>(a, b) &ndash; &gt; {a+b;}</em>&nbsp;are both valid</li>
+</ul>
+<h3><strong>What Is a Stream? How Does It Differ from a Collection?</strong></h3>
+<p>In simple terms, a stream is an iterator whose role is to accept a set of actions to apply on each of the elements it contains.</p>
+<p><em>The stream</em>&nbsp;represents a sequence of objects from a source such as a collection, which supports aggregate operations. They were designed to make collection processing simple and concise. Contrary to the collections, the logic of iteration is implemented inside the stream, so we can use methods like&nbsp;<em>map</em>&nbsp;and&nbsp;<em>flatMap</em>&nbsp;for performing a declarative processing.</p>
+<p>Another difference is that the&nbsp;<em>Stream</em>&nbsp;API is fluent and allows pipelining:</p>
+<table width="968">
+<tbody>
+<tr>
+<td width="934">
+<p>int sum = Arrays.stream(new int[]{1, 2, 3})</p>
+<p>&nbsp;&nbsp;.filter(i -&gt; i &gt;= 2)</p>
+<p>&nbsp;&nbsp;.map(i -&gt; i * 3)</p>
+<p>&nbsp;&nbsp;.sum();</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>And yet another important distinction from collections is that streams are inherently lazily loaded and processed.</p>
+<h1><strong>Stream In Java</strong></h1>
+<p>Introduced in Java 8, the Stream API is used to process collections of objects. A stream is a sequence of objects that supports various methods which can be pipelined to produce the desired result.<br />The features of Java stream are &ndash;</p>
+<ul>
+<li>A stream is not a data structure instead it takes input from the Collections, Arrays or I/O channels.</li>
+<li>Streams don&rsquo;t change the original data structure, they only provide the result as per the pipelined methods.</li>
+<li>Each intermediate operation is lazily executed and returns a stream as a result, hence various intermediate operations can be pipelined. Terminal operations mark the end of the stream and return the result.</li>
+</ul>
+<p>Different Operations On Streams-<br /><strong>Intermediate Operations:</strong></p>
+<ol>
+<li><strong>map:&nbsp;</strong>The map method is used to returns a stream consisting of the results of applying the given function to the elements of this stream.<br />List number = Arrays.asList(2,3,4,5);<br />List square = number.stream().map(x-&gt;x*x).collect(Collectors.toList());</li>
+<li><strong>filter:</strong>The filter method is used to select elements as per the Predicate passed as argument.<br />List names = Arrays.asList("Reflection","Collection","Stream");<br />List result = names.stream().filter(s-&gt;s.startsWith("S")).collect(Collectors.toList());</li>
+<li><strong>sorted:</strong>The sorted method is used to sort the stream.<br />List names = Arrays.asList("Reflection","Collection","Stream");<br />List result = names.stream().sorted().collect(Collectors.toList());</li>
+</ol>
+<p><strong>Terminal Operations:</strong></p>
+<ol>
+<li><strong>collect:</strong>The collect method is used to return the result of the intermediate operations performed on the stream.<br />List number = Arrays.asList(2,3,4,5,3);<br />Set square = number.stream().map(x-&gt;x*x).collect(Collectors.toSet());</li>
+<li><strong>forEach:</strong>The forEach method is used to iterate through every element of the stream.<br />List number = Arrays.asList(2,3,4,5);<br />stream().map(x-&gt;x*x).forEach(y-&gt;System.out.println(y));</li>
+<li><strong>reduce:</strong>The reduce method is used to reduce the elements of a stream to a single value.<br />The reduce method takes a BinaryOperator as a parameter.</li>
+</ol>
+<p>List number = Arrays.asList(2,3,4,5);<br />int even = number.stream().filter(x-&gt;x%2==0).reduce(0,(ans,i)-&gt; ans+i);</p>
+<p>Here ans variable is assigned 0 as the initial value and i is added to it .</p>
+<p>&nbsp;</p>
+<p><strong>Important Points/Observations:</strong></p>
+<ol>
+<li>A stream consists of source followed by zero or more intermediate methods combined together (pipelined) and a terminal method to process the objects obtained from the source as per the methods described.</li>
+<li>Stream is used to compute elements as per the pipelined methods without altering the original value of the object.</li>
+</ol>
+<p><strong>&nbsp;</strong></p>
+<p>&nbsp;</p>
+<h3><strong>What Is a Method Reference?</strong></h3>
+<p>A method reference is a Java 8 construct that can be used for referencing a method without invoking it. It is used for treating methods as Lambda Expressions. They only work as syntactic sugar to reduce the verbosity of some lambdas. This way, the following code:</p>
+<table width="968">
+<tbody>
+<tr>
+<td>
+<p>1</p>
+</td>
+<td width="935">
+<p>(o) -&gt; o.toString();</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>can become:</p>
+<table width="968">
+<tbody>
+<tr>
+<td>
+<p>1</p>
+</td>
+<td width="935">
+<p>Object::toString();</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>A method reference can be identified by a double colon separating a class or object name and the name of the method. It has different variations such as constructor reference:</p>
+<table width="968">
+<tbody>
+<tr>
+<td>
+<p>1</p>
+</td>
+<td width="935">
+<p>String::new;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Static method reference:</p>
+<table width="968">
+<tbody>
+<tr>
+<td>
+<p>1</p>
+</td>
+<td width="935">
+<p>String::valueOf;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Bound instance method reference:</p>
+<table width="968">
+<tbody>
+<tr>
+<td>
+<p>1</p>
+</td>
+<td width="935">
+<p>str::toString;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Unbound instance method reference:</p>
+<table width="968">
+<tbody>
+<tr>
+<td>
+<p>1</p>
+</td>
+<td width="935">
+<p>String::toString;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>What Is&nbsp;</strong><em>Optional</em><strong>? How Can It Be Used?</strong></h3>
+<p><em>Optional</em>&nbsp;is a new class in Java 8 that encapsulates an optional value i.e. a value that is either there or not. It is a wrapper around an object, and you can think of it as a container of zero or one element.</p>
+<p><em>Optional</em>&nbsp;has a special&nbsp;<em>Optional.empty()</em>&nbsp;value instead of wrapped&nbsp;<em>null</em>. Thus it can be used instead of a nullable value to get rid of&nbsp;<em>NullPointerException</em>&nbsp;in many cases.</p>
+<p>You can read a dedicated article about&nbsp;<em>Optional</em>&nbsp;<a href="https://www.baeldung.com/java-optional">here</a>.</p>
+<p>The main purpose of&nbsp;<em>Optional</em>, as designed by its creators, was to be a return type of methods that previously would return&nbsp;<em>null</em>. Such methods would require you to write boilerplate code to check the return value and sometimes could forget to do a defensive check. In Java 8, an&nbsp;<em>Optional</em>&nbsp;return type explicitly requires you to handle null or non-null wrapped values differently.</p>
+<p>For instance, the&nbsp;<em>Stream.min()</em>&nbsp;method calculates the minimum value in a stream of values. But what if the stream is empty? If it was not for&nbsp;<em>Optional</em>, the method would return&nbsp;<em>null&nbsp;</em>or throw an exception.</p>
+<p>But it returns an&nbsp;<em>Optional</em>&nbsp;value which may be&nbsp;<em>Optional.empty()</em>&nbsp;(the second case). This allows us to easily handle such case:</p>
+<table width="968">
+<tbody>
+<tr>
+<td>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>6</p>
+<p>7</p>
+<p>8</p>
+<p>9</p>
+</td>
+<td width="935">
+<p>int min1 = Arrays.stream(new int[]{1, 2, 3, 4, 5})</p>
+<p>&nbsp;&nbsp;.min()</p>
+<p>&nbsp;&nbsp;.orElse(0);</p>
+<p>assertEquals(1, min1);</p>
+<p>&nbsp;</p>
+<p>int min2 = Arrays.stream(new int[]{})</p>
+<p>&nbsp;&nbsp;.min()</p>
+<p>&nbsp;&nbsp;.orElse(0);</p>
+<p>assertEquals(0, min2);</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Describe Some of the Functional Interfaces in the Standard Library.</strong></p>
+<p>There are a lot of functional interfaces in the&nbsp;<em>java.util.function</em>&nbsp;package, the more common ones include but not limited to:</p>
+<ul>
+<li><em>Function</em>&nbsp;&ndash; it takes one argument and returns a result</li>
+<li><em>Consumer</em>&nbsp;&ndash; it takes one argument and returns no result (represents a side effect)</li>
+<li><em>Supplier</em>&nbsp;&ndash; it takes not argument and returns a result</li>
+<li><em>Predicate</em>&nbsp;&ndash; it takes one argument and returns a boolean</li>
+<li><em>BiFunction</em>&nbsp;&ndash; it takes two arguments and returns a result</li>
+<li><em>BinaryOperator</em>&nbsp;&ndash; it is similar to a&nbsp;<em>BiFunction</em>, taking two arguments and returning a result. The two arguments and the result are all of the same types</li>
+<li><em>UnaryOperator</em>&nbsp;&ndash; it is similar to a&nbsp;<em>Function</em>, taking a single argument and returning a result of the same type</li>
+</ul>
+<h3><strong>What Is a Functional Interface? What Are the Rules of Defining a Functional Interface?</strong></h3>
+<p>A functional interface is an interface with no more, no less but one single abstract method (<em>default</em>&nbsp;methods do not count).</p>
+<p>Where an instance of such interface is required, a Lambda Expression can be used instead. More formally put:&nbsp;<em>Functional interfaces</em>&nbsp;provide target types for lambda expressions and method references.</p>
+<p>The arguments and return type of such expression directly match those of the single abstract method.</p>
+<p>For instance, the&nbsp;<em>Runnable</em>&nbsp;interface is a functional interface, so instead of:</p>
+<table width="968">
+<tbody>
+<tr>
+<td>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+</td>
+<td width="934">
+<p>Thread thread = new Thread(new Runnable() {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public void run() {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Hello World!");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>});</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>you could simply do:</p>
+<table width="968">
+<tbody>
+<tr>
+<td>
+<p>1</p>
+</td>
+<td width="934">
+<p>Thread thread = new Thread(() -&gt; System.out.println("Hello World!"));</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Functional interfaces are usually annotated with the&nbsp;<em>@FunctionalInterface</em>&nbsp;annotation &ndash; which is informative and does not affect the semantics.</p>
+<h3><strong>What Is a Default Method and When Do We Use It?</strong></h3>
+<p>A default method is a method with an implementation &ndash; which can be found in an interface.</p>
+<p>We can use a default method to add a new functionality to an interface while maintaining backward compatibility with classes that are already implementing the interface:</p>
+<table width="968">
+<tbody>
+<tr>
+<td>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>6</p>
+</td>
+<td width="934">
+<p>public interface Vehicle {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public void move();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;default void hoot() {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("peep!");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Usually, when a new abstract method is added to an interface, all implementing classes will break until they implement the new abstract method. In Java 8, this problem has been solved by the use of default method.</p>
+<p>For example,&nbsp;<em>Collection</em>&nbsp;interface does not have&nbsp;<em>forEach</em>&nbsp;method declaration. Thus, adding such method would simply break the whole collections API.</p>
+<p>Java 8 introduces default method so that&nbsp;<em>Collection</em>&nbsp;interface can have a default implementation of&nbsp;<em>forEach</em>&nbsp;method without requiring the classes implementing this interface to implement the same.</p>
+<h3><strong>&nbsp;</strong></h3>
+<p>&nbsp;</p>
+
+</body>
+</html>
