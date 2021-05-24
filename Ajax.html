@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button type="button" onclick="document.location='index.html'" style="position:fixed;">Back To HOME</button>
+<br>
+<h1>AJAX Links</h1>
+
+<h1>AJAX</h1>
+<h1>What is Ajax, Introduction to Ajax</h1>
+<p>Ajax is not a programming language, its the script.&nbsp; Ajax means, Asynchronous java script and xml, and this is the type of programming made popular in 2005 by Google suggest [Google search, while we are typing some thing in Google search box it will show you some suggestions automatically right that is Ajax]</p>
+<p>With Ajax we can move the data from our web page to the server, and we can update the part of our web page with out refreshing the entire page, cool na</p>
+<p>And mates,&nbsp; Ajax is the widely using scripting concept now a days in the real time projects.</p>
+<p>And its highly recommended to know JavaScript and CSS, xml a little before we start Ajax programs</p>
+<p>&nbsp;</p>
+<h2>What is Synchronous &amp; Asynchronous</h2>
+<p>Actually, Synchronous means at a time we can send single request and we need to wait for the response before send the second request, and Asynchronous means we can send the second request before we get the response of first request, Ajax is the example of this Asynchronous type.</p>
+<p><strong>Platform</strong><strong>:</strong> AJAX applications are platform independent, we can expect the exact working style in all the platforms</p>
+<h1>Ajax First Program With Explanation</h1>
+<p>&lt;html&gt;</p>
+<p>&lt;head&gt;</p>
+<p>&lt;script type="text/javascript"&gt;</p>
+<p>function fun1()</p>
+<p>{</p>
+<p>var a;</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;if (window.XMLHttpRequest)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{// If the browser if IE7+[or]Firefox[or]Chrome[or]Opera[or]Safari</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a=new XMLHttpRequest();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp; else</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{//If browser is IE6, IE5</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a=new ActiveXObject("Microsoft.XMLHTTP");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;</p>
+<p>a.onreadystatechange=function()</p>
+<p>{</p>
+<p>&nbsp;&nbsp;if (a.readyState==4 &amp;&amp; a.status==200)</p>
+<p>&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("myDiv").innerHTML=a.responseText;</p>
+<p>&nbsp;&nbsp; }</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>a.open("POST","java4s.txt",true);</p>
+<p>a.send();</p>
+<p>} // fun1() close</p>
+<p>&lt;/script&gt;</p>
+<p>&lt;/head&gt;</p>
+<p>&lt;body&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;div id="myDiv" style="width: 300px; height: 30px;"&gt;Click on the button below&lt;/div&gt;</p>
+<p>&lt;button type="button" onclick="fun1()"&gt;Change Content&lt;/button&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;/body&gt;</p>
+<p>&lt;/html&gt;</p>
+<h2><strong>Explanation</strong></h2>
+<ul>
+<li>Once the document loaded then immediately we will be able to see one button <strong>Change Content&nbsp;</strong>, and see i have been given onclick=&rdquo;fun1()&rdquo; [ line number 33 ] means once we click on this button controller will go to line number 4 and will starts execute that fun1()</li>
+<li>At line number 6, i have taken one variable with name <strong>a</strong></li>
+<li>For any ajax program, we must create one request object to send our ajax request to the server, that ajax object is nothing but XMLHttpRequest object</li>
+<li>See line number 8,&nbsp; i have written window.XMLHttpRequest means am checking whether my browser supports XMLHttpRequest object or not, if yes assigning XMLHttpRequest object into a [&nbsp;a=new XMLHttpRequest(); ] else i mean if our web browser doesnt supports&nbsp;XMLHttpRequest object then we can assign ActiveXObject&nbsp;&nbsp; [ which supports old web browsers ] into our variable a [&nbsp;&nbsp;a=new ActiveXObject(&ldquo;Microsoft.XMLHTTP&rdquo;); ]</li>
+<li>So from line numbers 8 -15 request object creation work been done</li>
+<li>Now controller directly jumps to line number 25,&nbsp; and opens the connection and send the request to java4s.txt (this is my notepad file), see actually the 3rd parameter i have given as <strong>true</strong> means Asynchronous data transfer will be activated</li>
+<li>Finally request will be sent in line number 26, that&rsquo;s it.</li>
+<li>If server sends the response back to our application then controller will automatically execute from line number 17 &ndash; 23, you may get one doubt like why its not executed initially&hellip; ? there is a reason actually this a.onreadystatechange=function() executes only when we get the response from the server, hope you are clear</li>
+</ul>
+<h2>java4s.txt</h2>
+<p>welcome to java4s.com</p>
+<p>&nbsp;</p>
+<p>That&rsquo;s it mates just put these <strong>2</strong> files, in one folder and test the example of your own, and i will explain more about this open() and send() methods in the next sessions, just don&rsquo;t think much about this</p>
+<h1>Ajax Request, open() and send() methods</h1>
+<p>In Ajax if we want to send the request to the server,&nbsp; we have 2 methods in XMLHttpRequest object to do this work,&nbsp; those are open() and send().</p>
+<p>Actually open() method will opens the connection with the server and send will sends our request object to the server.</p>
+<p>Let we took the XMLHttpRequest object into one variable called <strong>obj</strong> then</p>
+<p><strong>obj</strong>.open(&rdquo; POST &ldquo;, &rdquo; destination URL &ldquo;,true);<br /><strong>obj</strong>.send();</p>
+<ul>
+<li>open() method has <strong>3</strong> parameters, first parameter having the values POST/GET this is depends on our requirement, my choice is always POST, because its having security than GET</li>
+<li>Second parameter is the destination, to where we need to send the request.&nbsp; It may be any file path or url or url patterns [ in java ] or what ever</li>
+<li>Third parameter having the values true/false,&nbsp; actually true means we are opening Asynchronous data transfer, and false means Synchronous</li>
+</ul>
+<p>Actually, Synchronous means at a time we can send single request and we need to wait for the response before send the second request, and Asynchronous means we can send the second request before we get the response of first request, Ajax is the example of this Asynchronous type.</p>
+<p>Finally send() method will send the request object to the server.</p>
+<h1>Ajax Server Response, responseText and responseXML</h1>
+<p>Once we send the request to the destination [ server ], we will get the response from the server in two formats either in Text or XML, i mean we can get the response from the server by using responseText and responseXML propertys of our XMLHttpRequest object</p>
+<p>&nbsp;</p>
+<p>&lt;html&gt;</p>
+<p>&lt;head&gt;</p>
+<p>&lt;script type="text/javascript"&gt;</p>
+<p>function fun1()</p>
+<p>{</p>
+<p>var a;</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;if (window.XMLHttpRequest)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{// If the browser if IE7+[or]Firefox[or]Chrome[or]Opera[or]Safari</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a=new XMLHttpRequest();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp; else</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{//If browser is IE6, IE5</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a=new ActiveXObject("Microsoft.XMLHTTP");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;</p>
+<p>a.onreadystatechange=function()</p>
+<p>{</p>
+<p>&nbsp;&nbsp;if (a.readyState==4 &amp;&amp; a.status==200)</p>
+<p>&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("myDiv").innerHTML=a.responseText;</p>
+<p>&nbsp;&nbsp; }</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>a.open("POST","my.txt",true);</p>
+<p>a.send();</p>
+<p>} // fun1() close</p>
+<p>&lt;/script&gt;</p>
+<p>&lt;/head&gt;</p>
+<p>&lt;body&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;div id="myDiv" style="width: 300px; height: 30px;"&gt;</p>
+<p>Click on the button below</p>
+<p>&lt;/div&gt;</p>
+<p>&lt;button type="button" onclick="fun1()"&gt;Change Content&lt;/button&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;/body&gt;</p>
+<p>&lt;/html&gt;</p>
+<h2>Explanation</h2>
+<ul>
+<li>see we are getting the response in the form of text [ see line number <strong>21</strong> ]</li>
+<li>once the response is ready, our div content will be replaced with the response text [ see line number <strong>32</strong> ]</li>
+</ul>
+<p>Will see more while discussing Ajax with Servlets</p>
+<h1>Ajax onreadystatechange Event Of XMLHttpRequest Object</h1>
+<p>Once the request been sent to the server,&nbsp; changes will happen in the current webpage based on the response only.&nbsp; The onreadystatechange event will be triggered every time the readyState changes.</p>
+<p>Here the properties of XMLHttpRequest object</p>
+<h2>onreadystatechange</h2>
+<p>A function will be stored and will be called automatically each time readyState property changes</p>
+<h2>readyState</h2>
+<p>0 &ndash; request not initialized<br />1 &ndash; connection been established with the server<br />2 &ndash; request received from the server<br />3 &ndash; request being processing<br />4 &ndash; request finished and response is ready</p>
+<h2>status</h2>
+<p>200 : ok<br />404 : page not found, it&rsquo;s normal 404 error</p>
+<p>So, readyState = 4&nbsp; <strong>&amp;</strong> status = 200 then every thing will be perfect, i mean we got the response from the server, and&nbsp; our webpage will be modified with the response text/xml.</p>
+<p>&nbsp;</p>
+<h1>Ajax Onchange Fetch The Data From The Database</h1>
+<p>Let us see how to fetch the data from database onchange of drop down, actually this is the real time scenario, am using jsp&nbsp; you can integrate with any type of frame works ( in .java files ), concept is same.</p>
+<h2>Index.html</h2>
+<p>&lt;html&gt;</p>
+<p>&lt;head&gt;</p>
+<p>&lt;script type="text/javascript"&gt;</p>
+<p>function loadXMLDoc()</p>
+<p>{</p>
+<p>var xmlhttp;</p>
+<p>var keys=document.dummy.sele.value</p>
+<p>var urls="http://www.java4s.com:2011/On_select_from_database_dropdown/db_fetch.jsp?ok="+keys</p>
+<p>if (window.XMLHttpRequest)</p>
+<p>{// code for IE7+, Firefox, Chrome, Opera, Safari</p>
+<p>xmlhttp=new XMLHttpRequest();</p>
+<p>}</p>
+<p>else</p>
+<p>{// code for IE6, IE5</p>
+<p>xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");</p>
+<p>}</p>
+<p>xmlhttp.onreadystatechange=function()</p>
+<p>{</p>
+<p>if (xmlhttp.readyState==4)</p>
+<p>{</p>
+<p>var some=xmlhttp.responseXML.documentElement;</p>
+<p>document.getElementById("a").innerHTML=some.getElementsByTagName("empno")[0].childNodes[0].nodeValue;</p>
+<p>document.getElementById("b").innerHTML=some.getElementsByTagName("empname")[0].childNodes[0].nodeValue;</p>
+<p>document.getElementById("c").innerHTML=some.getElementsByTagName("empaddr")[0].childNodes[0].nodeValue;</p>
+<p>}</p>
+<p>}</p>
+<p>xmlhttp.open("GET",urls,true);</p>
+<p>xmlhttp.send();</p>
+<p>}</p>
+<p>&lt;/script&gt;</p>
+<p>&lt;/head&gt;</p>
+<p>&lt;body&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;form name="dummy"&gt;</p>
+<p>&lt;select name="sele" onchange="loadXMLDoc()"&gt;</p>
+<p>&lt;option&gt;value&lt;/option&gt;</p>
+<p>&lt;option value="100"&gt;100&lt;/option&gt;</p>
+<p>&lt;option value="101"&gt;101&lt;/option&gt;</p>
+<p>&lt;/select&gt;</p>
+<p>&lt;/form&gt;</p>
+<p>&nbsp;</p>
+<p>id: &lt;span id="a"&gt;&lt;/span&gt;&lt;br&gt;</p>
+<p>name: &lt;span id="b"&gt;&lt;/span&gt;&lt;br&gt;</p>
+<p>address: &lt;span id="c"&gt;&lt;/span&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;/body&gt;</p>
+<p>&lt;/html&gt;</p>
+<h2>db_fetch.jsp</h2>
+<p>&lt;%@ page import="java.io.*,java.sql.*" %&gt;</p>
+<p>&lt;%@ page contentType="text/html" pageEncoding="UTF-8"%&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;%</p>
+<p>&nbsp;</p>
+<p>response.setContentType("text/xml");</p>
+<p>String sn=request.getParameter("ok");</p>
+<p>int i=Integer.parseInt(sn);</p>
+<p>&nbsp;</p>
+<p>Class.forName("oracle.jdbc.driver.OracleDriver");</p>
+<p>Connection con =DriverManager.getConnection("jdbc:oracle:thin:@www.java4s.com:1521:XE","system","admin");</p>
+<p>Statement st=con.createStatement();</p>
+<p>ResultSet rs = st.executeQuery("select * from emp where empno="+i);</p>
+<p>if(rs.next())</p>
+<p>{</p>
+<p>&nbsp;</p>
+<p>out.println("&lt;emp&gt;");</p>
+<p>out.println("&lt;empno&gt;"+rs.getInt(1)+"&lt;/empno&gt;");</p>
+<p>out.println("&lt;empname&gt;"+rs.getString(2)+"&lt;/empname&gt;");</p>
+<p>out.println("&lt;empaddr&gt;"+rs.getString(3)+"&lt;/empaddr&gt;");</p>
+<p>out.println("&lt;/emp&gt;");</p>
+<p>&nbsp;</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>rs.close();</p>
+<p>st.close();</p>
+<p>con.close();</p>
+<p>&nbsp;</p>
+<p>%&gt;</p>
+<h1>Country State Dropdown Example With AJAX/Servlets</h1>
+<h1>&nbsp;</h1>
+<p>Folks this is similar to the country/state drop down using Ajax, i believe we have lot of examples regarding this country/state drop down so just would like to do little changes, so i converted into employee number and name. But total concept is exactly same&hellip;!</p>
+<h2>Index.html</h2>
+<p>&lt;html&gt;</p>
+<p>&lt;head&gt;</p>
+<p>&lt;script type="text/javascript"&gt;</p>
+<p>function loadXMLDoc()</p>
+<p>{</p>
+<p>var xmlhttp;</p>
+<p>var keys=document.dummy.sele.value</p>
+<p>var urls="http://www.java4s.com:2011/On_select_from_database_dropdown_Update_2/db_fetch.jsp?ok="+keys</p>
+<p>if (window.XMLHttpRequest)</p>
+<p>&nbsp; {</p>
+<p>&nbsp; xmlhttp=new XMLHttpRequest();</p>
+<p>&nbsp; }</p>
+<p>else</p>
+<p>&nbsp; {</p>
+<p>&nbsp; xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");</p>
+<p>&nbsp; }</p>
+<p>&nbsp;</p>
+<p>xmlhttp.onreadystatechange=function()</p>
+<p>&nbsp; {</p>
+<p>&nbsp;</p>
+<p>removeall();</p>
+<p>&nbsp;</p>
+<p>&nbsp; if (xmlhttp.readyState==4)</p>
+<p>&nbsp;&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z=0;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;var roott=xmlhttp.responseXML.documentElement;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;var ress=roott.getElementsByTagName("empname")[z].childNodes[0].nodeValue;</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;while(ress!=null)</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;addoptions(ress)</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;z++</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; var ress=roott.getElementsByTagName("empname")[z].childNodes[0].nodeValue;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;function removeall()</p>
+<p>&nbsp;&nbsp; &nbsp;{</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;var ct=document.dummy.sele2.length;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;for(i=ct; i&gt;=0; i--)&nbsp;&nbsp; &nbsp;{&nbsp;&nbsp; &nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;document.dummy.sele2.options[i]=null;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp; &nbsp;}</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;function addoptions(reslt)</p>
+<p>&nbsp;&nbsp; &nbsp;{</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;var ct1=document.createElement("OPTION");</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;ct1.text=reslt;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;ct1.value=reslt;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;document.dummy.sele2.options.add(ct1);</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;}</p>
+<p>}&nbsp;&nbsp; &nbsp;</p>
+<p>&nbsp;</p>
+<p>xmlhttp.open("GET",urls,true);</p>
+<p>xmlhttp.send();</p>
+<p>}</p>
+<p>&lt;/script&gt;</p>
+<p>&lt;/head&gt;</p>
+<p>&lt;body&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;form name="dummy"&gt;</p>
+<p>&lt;font face="verdana" size="2"&gt;</p>
+<p>Employee Number:&nbsp;&nbsp; &nbsp;&lt;select name="sele" onchange="loadXMLDoc()"&gt;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;option&gt;select&lt;/option&gt;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;option value="100"&gt;100&lt;/option&gt;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;option value="101"&gt;101&lt;/option&gt;</p>
+<p>&nbsp;&nbsp; &nbsp;&lt;/select&gt;</p>
+<p>&nbsp;</p>
+<p>Employee Name:&nbsp;&nbsp; &nbsp;&lt;select name="sele2"&gt;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;option&gt;--choose--&lt;/option&gt;</p>
+<p>&nbsp;&nbsp; &nbsp;&lt;/select&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;/form&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;/body&gt;</p>
+<p>&lt;/html&gt;</p>
+<h2>db_fetch.jsp</h2>
+<p>&lt;%@ page import="java.io.*,java.sql.*" %&gt;</p>
+<p>&lt;%@ page contentType="text/html" pageEncoding="UTF-8"%&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;%</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;response.setContentType("text/xml");</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;String sn=request.getParameter("ok");</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;int i=Integer.parseInt(sn);</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Class.forName("oracle.jdbc.driver.OracleDriver");</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Connection con =DriverManager.getConnection("jdbc:oracle:thin:@www.java4s.com:1521:XE","system","admin");</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Statement st=con.createStatement();</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;ResultSet rs = st.executeQuery("select empname from emp where empno="+i);</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;out.println("&lt;emp&gt;");</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;while(rs.next())</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;out.println("&lt;empname&gt;"+rs.getString(1)+"&lt;/empname&gt;");</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;out.println("&lt;/emp&gt;");</p>
+<p>&nbsp;</p>
+<p>rs.close();</p>
+<p>st.close();</p>
+<p>con.close();</p>
+<p>&nbsp;</p>
+<p>%&gt;</p>
+<h1>Ajax,jQuery Auto Fill Dropdown On Page Load</h1>
+<h2>Files Required</h2>
+<ul>
+<li>index.html</li>
+<li>db_fetch.jsp</li>
+<li>jquery-1.2.6.js (Add this jquery file at db_fetch.jsp location, same&nbsp; folder)</li>
+<li>web.xml</li>
+</ul>
+<h2>Index.html</h2>
+<p>&lt;html&gt;</p>
+<p>&lt;head&gt;</p>
+<p>&lt;script src="jquery-1.2.6.js" type="text/javascript"&gt;&lt;/script&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;script type="text/javascript"&gt;</p>
+<p>$(document).ready(function(){</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;var xmlhttp;</p>
+<p>&nbsp;&nbsp; &nbsp;var urls="http://www.java4s.com:2011/On_select_from_database_dropdown_jquery/db_fetch.jsp"</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;if (window.XMLHttpRequest)</p>
+<p>&nbsp;&nbsp; &nbsp;{</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; xmlhttp=new XMLHttpRequest();</p>
+<p>&nbsp;&nbsp; &nbsp;}</p>
+<p>&nbsp;&nbsp; &nbsp;else</p>
+<p>&nbsp;&nbsp; &nbsp;{</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");</p>
+<p>&nbsp;&nbsp; &nbsp;}</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp; xmlhttp.onreadystatechange=function()</p>
+<p>&nbsp;&nbsp; {</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z=0;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; removeall();</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp; if (xmlhttp.readyState==4)</p>
+<p>&nbsp;&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;var roott=xmlhttp.responseXML.documentElement;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;var ress=roott.getElementsByTagName("empname")[z].childNodes[0].nodeValue;</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;while(ress!=null)</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;addoptions(ress)</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;z++</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; var ress=roott.getElementsByTagName("empname")[z].childNodes[0].nodeValue;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;function removeall()</p>
+<p>&nbsp;&nbsp; &nbsp;{</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;var ct=document.dummy.sele2.length;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;for(i=ct; i&gt;=0; i--)&nbsp;&nbsp; &nbsp;{&nbsp;&nbsp; &nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;document.dummy.sele2.options[i]=null;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp; &nbsp;}</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;function addoptions(reslt)</p>
+<p>&nbsp;&nbsp; &nbsp;{</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;var ct1=document.createElement("OPTION");</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;ct1.text=reslt;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;ct1.value=reslt;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;document.dummy.sele2.options.add(ct1);</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;}</p>
+<p>&nbsp;}&nbsp;&nbsp; &nbsp;//onreadystatechnge function end</p>
+<p>&nbsp;</p>
+<p>xmlhttp.open("GET",urls,true);</p>
+<p>xmlhttp.send();</p>
+<p>&nbsp;</p>
+<p>});</p>
+<p>&nbsp;</p>
+<p>&lt;/script&gt;</p>
+<p>&lt;/head&gt;</p>
+<p>&lt;body&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;form name="dummy"&gt;</p>
+<p>EName:&nbsp;&nbsp; &nbsp;&lt;select name="sele2"&gt;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;option&gt;--choose--&lt;/option&gt;</p>
+<p>&nbsp;&nbsp; &nbsp;&lt;/select&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;/form&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;/body&gt;</p>
+<p>&lt;/html&gt;</p>
+<p><strong>Notes</strong>: See line number 6 in index.html ,$(document).ready(function() means we no need to send any request like onchange or onclick, once the page loads automatically the code in this $(document).ready(function() block will be executed, so indirectly we are calling this function on page load hope you are clear.</p>
+<h2>db_fetch.jsp</h2>
+<p>&lt;%@ page import="java.io.*,java.sql.*" %&gt;</p>
+<p>&lt;%@ page contentType="text/html" pageEncoding="UTF-8"%&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;%</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;response.setContentType("text/xml");&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Class.forName("oracle.jdbc.driver.OracleDriver");</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Connection con =DriverManager.getConnection("jdbc:oracle:thin:@www.java4s.com:1521:XE","system","admin");</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Statement st=con.createStatement();</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;ResultSet rs = st.executeQuery("select empname from emp");</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;out.println("&lt;emp&gt;");</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;while(rs.next())</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;out.println("&lt;empname&gt;"+rs.getString(1)+"&lt;/empname&gt;");</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;out.println("&lt;/emp&gt;");</p>
+<p>&nbsp;</p>
+<p>rs.close();</p>
+<p>st.close();</p>
+<p>con.close();</p>
+<p>&nbsp;</p>
+<p>%&gt;</p>
+<h1>Checking User Name Availability With AJAX &ndash; Google Style</h1>
+<p>We will see how to check the user name availability in the database with ajax,&nbsp; this is some thing what we can find out at time of gmail signup</p>
+<h2>Index.html</h2>
+<p>&lt;html&gt;</p>
+<p>&lt;head&gt;</p>
+<p>&lt;script type="text/javascript"&gt;</p>
+<p>function loadXMLDoc()</p>
+<p>{</p>
+<p>var xmlhttp;</p>
+<p>var k=document.getElementById("id2").value;</p>
+<p>var urls="pass.jsp?ver="+k;</p>
+<p>&nbsp;</p>
+<p>if (window.XMLHttpRequest)</p>
+<p>&nbsp; {</p>
+<p>&nbsp; xmlhttp=new XMLHttpRequest();</p>
+<p>&nbsp; }</p>
+<p>else</p>
+<p>&nbsp; {</p>
+<p>&nbsp; xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");</p>
+<p>&nbsp; }</p>
+<p>xmlhttp.onreadystatechange=function()</p>
+<p>&nbsp; {</p>
+<p>&nbsp; if (xmlhttp.readyState==4)</p>
+<p>&nbsp;&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//document.getElementById("err").style.color="red";</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;document.getElementById("err").innerHTML=xmlhttp.responseText;</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp; }</p>
+<p>xmlhttp.open("GET",urls,true);</p>
+<p>xmlhttp.send();</p>
+<p>}</p>
+<p>&lt;/script&gt;</p>
+<p>&lt;/head&gt;</p>
+<p>&lt;body&gt;</p>
+<p>&nbsp;</p>
+<p>Enter name: &lt;input type="text" name="id2" id="id2" onkeyup="loadXMLDoc()"&gt;</p>
+<p>&lt;span id="err"&gt; &lt;/span&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;/body&gt;</p>
+<p>&lt;/html&gt;</p>
+<h2>pass.jsp</h2>
+<p>&lt;%@ page import="java.io.*,java.sql.*" %&gt;</p>
+<p>&lt;%@ page contentType="text/html" pageEncoding="UTF-8"%&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;%</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;String sn=request.getParameter("ver");</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Class.forName("oracle.jdbc.driver.OracleDriver");</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Connection con =DriverManager.getConnection("jdbc:oracle:thin:@www.java4s.com:1521:XE","system","admin");</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Statement st=con.createStatement();</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//ResultSet rs = st.executeQuery("select * from emp where empno="+sn);</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;ResultSet rs = st.executeQuery("select * from emp where empname='"+sn+"'");&nbsp; // this is for name</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; if(rs.next())</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{&nbsp;&nbsp; &nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; out.println("&lt;font color=red&gt;");</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;out.println("Name already taken");</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;out.println("&lt;/font&gt;");</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}else {</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; out.println("&lt;font color=green&gt;");</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;out.println("Available");</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;out.println("&lt;/font&gt;");</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}</p>
+<p>&nbsp;</p>
+<p>rs.close();</p>
+<p>st.close();</p>
+<p>con.close();</p>
+<p>&nbsp;</p>
+<p>%&gt;</p>
+<p>&nbsp;</p>
+
+</body>
+</html>

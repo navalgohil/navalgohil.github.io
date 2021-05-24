@@ -4,66 +4,10 @@
 
 <button type="button" onclick="document.location='index.html'" style="position:fixed;">Back To HOME</button>
 <br>
-<h1>string Links Links</h1>
 
-<p><strong>Why CharArray() is preferred over String to store the password?</strong></p>
-<p>Answer:- String stays in the string pool until the garbage is collected. If we store the password into a string, it stays in the memory for a longer period, and anyone having the memory-dump can extract the password as clear text. On the other hand, Using CharArray() allows us to set it to blank whenever we are done with the password. It avoids the security threat with the string by enabling us to control the memory.</p>
 
-<h3><strong>&nbsp;What is the difference between equals() and == in Java?</strong></h3>
-<p>Equals() method is defined in Object class in Java and used for checking equality of two objects defined by business logic.<a name="difference-between-heap-and-stack"></a></p>
-<p>&ldquo;==&rdquo; or equality operator in Java is a binary operator provided by Java programming language and used to compare primitives and objects.&nbsp;<em>public boolean equals(Object o)</em>&nbsp;is the method provided by the Object class. The default implementation uses == operator to compare two objects. For example: method can be overridden like String class. equals() method is used to compare the values of two objects.</p>
 
-<h3><strong>Q25. What is Java String Pool?</strong></h3>
-<p>Java String pool refers to a collection of Strings which are stored in heap memory. In this, whenever a new object is created, String pool first checks whether the object is already present in the pool or not. If it is present, then the same reference is returned to the variable else new object will be created in the String pool and the respective reference will be returned.</p>
-<p>&nbsp;</p>
-<div>&nbsp;</div>
-
-<div>
-<p><strong>Difference between String, StringBuilder, and StringBuffer.</strong></p>
-</div>
-<table border="1px" width="100%">
-<tbody>
-<tr>
-<td><strong>Factor</strong></td>
-<td><strong>String</strong></td>
-<td><strong>StringBuilder</strong></td>
-<td><strong>StringBuffer</strong></td>
-</tr>
-<tr>
-<td><em>Storage Area</em></td>
-<td>Constant String Pool</td>
-<td>Heap Area</td>
-<td>Heap Area</td>
-</tr>
-<tr>
-<td><em>Mutability</em></td>
-<td>Immutable</td>
-<td>Mutable</td>
-<td>Mutable</td>
-</tr>
-<tr>
-<td><em>Thread Safety</em></td>
-<td>Yes</td>
-<td>No</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td><em>Performance</em></td>
-<td>Fast</td>
-<td>More efficient</td>
-<td>Less efficient</td>
-</tr>
-</tbody>
-</table>
-
-<h3><strong>Why Java Strings are immutable in nature?</strong></h3>
-<p>In Java,&nbsp;string objects are immutable in nature which simply means once the String object is created its state cannot be modified. Whenever you try to update the value of that object instead of updating the values of that particular object, Java creates a new string object. Java String objects are immutable as String objects are generally cached in the String pool. Since String literals are usually shared between multiple clients, action from one client might affect the rest. It enhances security, caching, synchronization, and performance of the application.&nbsp;</p>
-
-<ol>
-<li>
-<ol start="4">
-<li>
-<h1>Strings in Java</h1>
+<h1>String Concepts</h1>
 <p>Strings in Java are Objects that are backed internally by a char array. Since arrays are immutable(cannot grow), Strings are immutable as well. Whenever a change to a String is made, an entirely new String is created.</p>
 <p><a href="https://www.geeksforgeeks.org/string-class-in-java/">String</a>: String is a sequence of characters. In java, objects of String are immutable which means a constant and cannot be changed once created.</p>
 <p><strong>Creating a String</strong></p>
@@ -76,93 +20,74 @@
 <li><strong>Using&nbsp;<em>new</em>keyword</strong></li>
 </ul>
 <p>String s = new String (&ldquo;GeeksforGeeks&rdquo;);</p>
-<p>&nbsp;</p>
 <p><strong><sub>Memory allotment of String</sub></strong></p>
 <p>Whenever a String Object is created, two objects will be created- one in the Heap Area and one in the String constant pool and the String object reference always points to heap area object.</p>
-<p><br /><br /></p>
-</li>
-</ol>
-</li>
-</ol>
-
-
-<p>Java program to print Even length words in a String</p>
-<p><a href="https://www.geeksforgeeks.org/java-program-to-print-even-length-words-in-a-string/?ref=leftbar-rightbar">https://www.geeksforgeeks.org/java-program-to-print-even-length-words-in-a-string/?ref=leftbar-rightbar</a></p>
-<p>Given a string&nbsp;<strong>str</strong>, write a Java program to print all words with even length in the given string.</p>
-<p><strong>Examples:</strong></p>
-<p><strong>Input:</strong> s = "This is a java language"</p>
-<p><strong>Output:</strong> This</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; is</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; java</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; language</p>
-<p>&nbsp;</p>
-<p><strong>Input:</strong> s = "i am GFG"</p>
-<p><strong>Output:</strong> am</p>
-<p>&nbsp;</p>
-<ul>
-<li>Take the string</li>
-<li>Break the string into words with the help of&nbsp;<a href="https://www.geeksforgeeks.org/split-string-java-examples/">split() method in String class</a>. It takes the string by which the sentence is to be broken. So here&nbsp;<strong>&rdquo; &ldquo;(space)</strong>is passed as the parameter. As a result, the words of the string are split and returned as a string array</li>
-<li>String[] words = str.split(" ");</li>
-<li>Traverse each word in the string array returned with the help of&nbsp;<a href="https://www.geeksforgeeks.org/for-each-loop-in-java/">Foreach loop in Java</a>.</li>
-<li>for(String word : words)</li>
-<li>{ }</li>
-<li>Calculate the length of each word using&nbsp;<a href="https://www.geeksforgeeks.org/how-to-determine-length-or-size-of-a-string-in-java/">length()</a>function.</li>
-<li>int lengthOfWord = word.length();</li>
-<li>If the length is even, then print the word.</li>
-</ul>
-<p>&nbsp;</p>
-<p>/ Java program to print</p>
-<p>// even length words in a string</p>
-<p>&nbsp;&nbsp;</p>
-<p>class GfG {</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void printWords(String s)</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
-<p>&nbsp;&nbsp;</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Splits Str into all possible tokens</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (String word : s.split(" "))</p>
-<p>&nbsp;&nbsp;</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// if length is even</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (word.length() % 2 == 0)</p>
-<p>&nbsp;&nbsp;</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Print the word</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(word);</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
-<p>&nbsp;&nbsp;</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;// Driver Code</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
-<p>&nbsp;&nbsp;</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String s = "i am Geeks for Geeks and a Geek";</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printWords(s);</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
-<p>}</p>
-<h1>Program to remove vowels from a String</h1>
-<p><a href="https://www.geeksforgeeks.org/program-remove-vowels-string/">https://www.geeksforgeeks.org/program-remove-vowels-string/</a></p>
-<h1>Remove consecutive vowels from string</h1>
-<p><a href="https://www.geeksforgeeks.org/remove-consecutive-vowels-string/?ref=lbp">https://www.geeksforgeeks.org/remove-consecutive-vowels-string/?ref=lbp</a></p>
-<h1>Program to count vowels in a string (Iterative and Recursive)</h1>
-<p><a href="https://www.geeksforgeeks.org/program-count-vowels-string-iterative-recursive/?ref=lbp">https://www.geeksforgeeks.org/program-count-vowels-string-iterative-recursive/?ref=lbp</a></p>
-<h1>Number of distinct permutation a String can have</h1>
-<p><a href="https://www.geeksforgeeks.org/number-distinct-permutation-string-can/?ref=lbp">https://www.geeksforgeeks.org/number-distinct-permutation-string-can/?ref=lbp</a></p>
-<h1>Check if both halves of the string have same set of characters</h1>
-<p><a href="https://www.geeksforgeeks.org/check-half-string-character-frequency-character/?ref=lbp">https://www.geeksforgeeks.org/check-half-string-character-frequency-character/?ref=lbp</a></p>
-<h1>Count words that appear exactly two times in an array of words</h1>
-<p><a href="https://www.geeksforgeeks.org/count-words-appear-exactly-two-times-array-words/?ref=lbp">https://www.geeksforgeeks.org/count-words-appear-exactly-two-times-array-words/?ref=lbp</a></p>
-<h1>Check if frequency of all characters can become same by one removal</h1>
-<p><a href="https://www.geeksforgeeks.org/check-if-frequency-of-all-characters-can-become-same-by-one-removal/?ref=lbp">https://www.geeksforgeeks.org/check-if-frequency-of-all-characters-can-become-same-by-one-removal/?ref=lbp</a></p>
-<h1>Check if given words are present in a string</h1>
-<p><a href="https://www.geeksforgeeks.org/check-if-given-words-are-present-in-a-string/?ref=leftbar-rightbar">https://www.geeksforgeeks.org/check-if-given-words-are-present-in-a-string/?ref=leftbar-rightbar</a></p>
-<h1>Check if given string contains all the digits</h1>
-<p><a href="https://www.geeksforgeeks.org/check-if-given-string-contains-all-the-digits/?ref=leftbar-rightbar">https://www.geeksforgeeks.org/check-if-given-string-contains-all-the-digits/?ref=leftbar-rightbar</a></p>
-<h1>Count of subarrays whose sum is a perfect square</h1>
-<p><a href="https://www.geeksforgeeks.org/count-of-subarrays-whose-sum-is-a-perfect-square/?ref=leftbar-rightbar">https://www.geeksforgeeks.org/count-of-subarrays-whose-sum-is-a-perfect-square/?ref=leftbar-rightbar</a></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+<h3><strong>Why Java Strings are immutable in nature?</strong></h3>
+<p>In Java,&nbsp;string objects are immutable in nature which simply means once the String object is created its state cannot be modified. Whenever you try to update the value of that object instead of updating the values of that particular object, Java creates a new string object. Java String objects are immutable as String objects are generally cached in the String pool. Since String literals are usually shared between multiple clients, action from one client might affect the rest. It enhances security, caching, synchronization, and performance of the application.&nbsp;</p>
+<h3><strong>What is Java String Pool?</strong></h3>
+<p>Java String pool refers to a collection of Strings which are stored in heap memory. In this, whenever a new object is created, String pool first checks whether the object is already present in the pool or not. If it is present, then the same reference is returned to the variable else new object will be created in the String pool and the respective reference will be returned.</p>
+<p><strong>Why CharArray() is preferred over String to store the password?</strong></p>
+<p>Answer:- String stays in the string pool until the garbage is collected. If we store the password into a string, it stays in the memory for a longer period, and anyone having the memory-dump can extract the password as clear text. On the other hand, Using CharArray() allows us to set it to blank whenever we are done with the password. It avoids the security threat with the string by enabling us to control the memory.</p>
+<h3><strong>What is the difference between equals() and == in Java?</strong></h3>
+<p>Equals() method is defined in Object class in Java and used for checking equality of two objects defined by business logic.<a name="difference-between-heap-and-stack"></a></p>
+<p>&ldquo;==&rdquo; or equality operator in Java is a binary operator provided by Java programming language and used to compare primitives and objects.&nbsp;<em>public boolean equals(Object o)</em>&nbsp;is the method provided by the Object class. The default implementation uses == operator to compare two objects. For example: method can be overridden like String class. equals() method is used to compare the values of two objects.</p>
+<div>
+<p><strong>Difference between String, StringBuilder, and StringBuffer.</strong></p>
+</div>
+<table style="height: 121px; width: 100%;" border="1px" width="100%">
+<tbody>
+<tr style="height: 17px;">
+<td style="height: 17px;"><strong>Factor</strong></td>
+<td style="height: 17px;"><strong>String</strong></td>
+<td style="height: 17px;"><strong>StringBuilder</strong></td>
+<td style="height: 17px;"><strong>StringBuffer</strong></td>
+</tr>
+<tr style="height: 35px;">
+<td style="height: 35px;"><em>Storage Area</em></td>
+<td style="height: 35px;">Constant String Pool</td>
+<td style="height: 35px;">Heap Area</td>
+<td style="height: 35px;">Heap Area</td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px;"><em>Mutability</em></td>
+<td style="height: 17px;">Immutable</td>
+<td style="height: 17px;">Mutable</td>
+<td style="height: 17px;">Mutable</td>
+</tr>
+<tr style="height: 35px;">
+<td style="height: 35px;"><em>Thread Safety</em></td>
+<td style="height: 35px;">Yes</td>
+<td style="height: 35px;">No</td>
+<td style="height: 35px;">Yes</td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px;"><em>Performance</em></td>
+<td style="height: 17px;">Fast</td>
+<td style="height: 17px;">More efficient</td>
+<td style="height: 17px;">Less efficient</td>
+</tr>
+</tbody>
+</table>
+<h3>Program to remove vowels from a String</h3>
+<h3><a href="https://www.geeksforgeeks.org/program-remove-vowels-string/">https://www.geeksforgeeks.org/program-remove-vowels-string/</a></h3>
+<h3>Remove consecutive vowels from string</h3>
+<h3><a href="https://www.geeksforgeeks.org/remove-consecutive-vowels-string/?ref=lbp">https://www.geeksforgeeks.org/remove-consecutive-vowels-string/?ref=lbp</a></h3>
+<h3>Program to count vowels in a string (Iterative and Recursive)</h3>
+<h3><a href="https://www.geeksforgeeks.org/program-count-vowels-string-iterative-recursive/?ref=lbp">https://www.geeksforgeeks.org/program-count-vowels-string-iterative-recursive/?ref=lbp</a></h3>
+<h3>Number of distinct permutation a String can have</h3>
+<h3><a href="https://www.geeksforgeeks.org/number-distinct-permutation-string-can/?ref=lbp">https://www.geeksforgeeks.org/number-distinct-permutation-string-can/?ref=lbp</a></h3>
+<h3>Check if both halves of the string have same set of characters</h3>
+<h3><a href="https://www.geeksforgeeks.org/check-half-string-character-frequency-character/?ref=lbp">https://www.geeksforgeeks.org/check-half-string-character-frequency-character/?ref=lbp</a></h3>
+<h3>Count words that appear exactly two times in an array of words</h3>
+<h3><a href="https://www.geeksforgeeks.org/count-words-appear-exactly-two-times-array-words/?ref=lbp">https://www.geeksforgeeks.org/count-words-appear-exactly-two-times-array-words/?ref=lbp</a></h3>
+<h3>Check if frequency of all <a href="https://textfancy.com/characters/" target="_blank" rel="nofollow">characters can</a> become same by one removal</h3>
+<h3><a href="https://www.geeksforgeeks.org/check-if-frequency-of-all-characters-can-become-same-by-one-removal/?ref=lbp">https://www.geeksforgeeks.org/check-if-frequency-of-all-characters-can-become-same-by-one-removal/?ref=lbp</a></h3>
+<h3>Check if given words are present in a string</h3>
+<h3><a href="https://www.geeksforgeeks.org/check-if-given-words-are-present-in-a-string/?ref=leftbar-rightbar">https://www.geeksforgeeks.org/check-if-given-words-are-present-in-a-string/?ref=leftbar-rightbar</a></h3>
+<h3>Check if given string contains all the digits</h3>
+<h3><a href="https://www.geeksforgeeks.org/check-if-given-string-contains-all-the-digits/?ref=leftbar-rightbar">https://www.geeksforgeeks.org/check-if-given-string-contains-all-the-digits/?ref=leftbar-rightbar</a></h3>
+<h3>Count of subarrays whose sum is a perfect square</h3>
+<h3><a href="https://www.geeksforgeeks.org/count-of-subarrays-whose-sum-is-a-perfect-square/?ref=leftbar-rightbar">https://www.geeksforgeeks.org/count-of-subarrays-whose-sum-is-a-perfect-square/?ref=leftbar-rightbar</a></h3>
 
 
 </body>

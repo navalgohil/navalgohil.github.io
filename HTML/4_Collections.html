@@ -1,0 +1,381 @@
+<p>Collections in Java</p>
+<p><a href="https://www.javacodegeeks.com/2013/02/40-java-collections-interview-questions-and-answers.html">https://www.javacodegeeks.com/2013/02/40-java-collections-interview-questions-and-answers.html</a></p>
+<p>A Collection is a group of individual objects represented as a single unit. Java provides Collection Framework which defines several classes and interfaces to represent a group of objects as a single unit.</p>
+<p>The Collection interface (<strong>java.util.Collection</strong>) and Map interface (<strong>java.util.Map</strong>) are the two main &ldquo;root&rdquo; interfaces of Java collection classes.</p>
+<p><strong>Need for Collection Framework :</strong><br /> Before Collection Framework (or before JDK 1.2) was introduced, the standard methods for grouping Java objects (or collections) were Arrays or Vectors or Hashtables. All of these collections had no common interface.</p>
+<p>Accessing elements of these Data Structures was a hassle as each had a different method (and syntax) for accessing its members:</p>
+<p>// Java program to show why collection framework was needed</p>
+<p>import java.io.*;</p>
+<p>import java.util.*;</p>
+<p>&nbsp;&nbsp;</p>
+<p>class Test</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main (String[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Creating instances of array, vector and hashtable</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int arr[] = new int[] {1, 2, 3, 4};</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vector&lt;Integer&gt; v = new Vector();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hashtable&lt;Integer, String&gt; h = new Hashtable();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.addElement(1);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.addElement(2);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h.put(1,"geeks");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h.put(2,"4geeks");</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Array instance creation requires [], while Vector</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// and hastable require ()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Vector element insertion requires addElement(), but</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// hashtable element insertion requires put()</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Accessing first element of array, vector and hashtable</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(arr[0]);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(v.elementAt(0));</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(h.get(1));</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Array elements are accessed using [], vector elements</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// using elementAt() and hashtable elements using get()</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>Output:</p>
+<p>1</p>
+<p>1</p>
+<p>geeks</p>
+<p>As we can see, none of these collections (Array, Vector or Hashtable) implement a standard member access interface. It was very difficult for programmers to write algorithms that can work for all kinds of Collections. Another drawback being that most of the &lsquo;Vector&rsquo; methods are final, meaning we cannot extend the &rsquo;Vector&rsquo; class to implement a similar kind of Collection.<br /> <strong><em>Java developers decided to come up with a common interface to deal with the above mentioned problems and introduced the Collection Framework in JDK 1.2</em></strong>.</p>
+<p>Both legacy Vectors and Hashtables were modified to conform to the Collection Framework.</p>
+<p><strong>Advantages of Collection Framework:</strong></p>
+<ol>
+<li>Consistent API : The API has a basic set of interfaces like Collection, Set, List, or Map. All classes (ArrayList, LinkedList, Vector, etc) that implement these interfaces have&nbsp;<em>some</em>common set of methods.</li>
+<li>Reduces programming effort: A programmer doesn&rsquo;t have to worry about the design of Collection, and he can focus on its best use in his program.</li>
+<li>Increases program speed and quality: Increases performance by providing high-performance implementations of useful data structures and algorithms.</li>
+</ol>
+<p>&nbsp;</p>
+<p><strong>Hierarchy of Collection Framework</strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Collection&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Map&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; Set&nbsp;&nbsp;&nbsp; List&nbsp;&nbsp;&nbsp; Queue&nbsp; Dequeue&nbsp;&nbsp; SortedMap&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp; / SortedSet &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Core Interfaces in Collections</strong>&nbsp;Note that this diagram only shows core interfaces.&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Collection :</strong> Root interface with basic methods like add(), remove(), &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contains(), isEmpty(), addAll(), ... etc. <a href="https://www.geeksforgeeks.org/set-in-java/"><strong>Set</strong></a><strong> :</strong> Doesn't allow duplicates. Example implementations of Set &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interface are HashSet (Hashing based) and TreeSet (balanced&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BST based). Note that TreeSet implements <strong>SortedSet</strong>.<strong>&nbsp;</strong><a href="https://www.geeksforgeeks.org/list-interface-java-examples/"><strong>List</strong></a><strong> : </strong>Can contain duplicates and elements are ordered. Example&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; implementations are LinkedList (linked list based) and&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.geeksforgeeks.org/array-vs-arraylist-in-java/">ArrayList</a> (dynamic array based)&nbsp;<a href="https://www.geeksforgeeks.org/queue-interface-java/"><strong>Queue</strong></a><strong> : </strong>Typically order elements in FIFO order except exceptions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; like PriorityQueue.&nbsp; &nbsp;<a href="https://www.geeksforgeeks.org/deque-interface-java-example/"><strong>Deque</strong></a><strong> :</strong> Elements can be inserted and removed at both ends. Allows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; both LIFO and FIFO. &nbsp;<a href="https://www.geeksforgeeks.org/map-interface-java-examples/"><strong>Map</strong></a><strong> :</strong> Contains Key value pairs. Doesn't allow duplicates.&nbsp; Example&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; implementation are <a href="http://www.geeksforgeeks.org/java-util-hashmap-in-java/">HashMap</a> and TreeMap. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.geeksforgeeks.org/treemap-in-java/">TreeMap</a> implements <strong>SortedMap</strong>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;The difference between Set and Map interface is that in Set we have only keys, whereas in Map, we have key, value pairs.</p>
+<p>&nbsp;</p>
+<h1>Comparable vs Comparator in Java</h1>
+<p><a href="https://www.geeksforgeeks.org/comparable-vs-comparator-in-java/">https://www.geeksforgeeks.org/comparable-vs-comparator-in-java/</a></p>
+<p>Java provides two interfaces to sort objects using data members of the class:</p>
+<ol>
+<li>Comparable</li>
+<li>Comparator</li>
+</ol>
+<p><strong>Using Comparable Interface</strong></p>
+<p>A comparable object is capable of comparing itself with another object. The class itself must implements the&nbsp;<strong>java.lang.Comparable</strong>&nbsp;interface to compare its instances.</p>
+<p>Consider a Movie class that has members like, rating, name, year. Suppose we wish to sort a list of Movies based on year of release. We can implement the Comparable interface with the Movie class, and we override the method compareTo() of Comparable interface.</p>
+<p><strong>Using Comparator</strong></p>
+<p>Unlike Comparable, Comparator is external to the element type we are comparing. It&rsquo;s a separate class. We create multiple separate classes (that implement Comparator) to compare by different members.</p>
+<p>Collections class has a second sort() method and it takes Comparator. The sort() method invokes the compare() to sort objects.</p>
+<p>To compare movies by Rating, we need to do 3 things :</p>
+<ol>
+<li>Create a class that implements Comparator (and thus the compare() method that does the work previously done by compareTo()).</li>
+<li>Make an instance of the Comparator class.</li>
+<li>Call the overloaded sort() method, giving it both the list and the instance of the class that implements Comparator.</li>
+</ol>
+<p>&nbsp;</p>
+<ul>
+<li>Comparable is meant for objects with natural ordering which means the object itself must know how it is to be ordered. For example Roll Numbers of students. Whereas, Comparator interface sorting is done through a separate class.</li>
+<li>Logically, Comparable interface compares &ldquo;this&rdquo; reference with the object specified and Comparator in Java compares two different class objects provided.</li>
+<li>If any class implements Comparable interface in Java then collection of that object either List or Array can be sorted automatically by using Collections.sort() or Arrays.sort() method and objects will be sorted based on there natural order defined by CompareTo method.</li>
+</ul>
+<p><strong><em>To summarize, if sorting of objects needs to be based on natural order then use Comparable whereas if you sorting needs to be done on attributes of different objects, then use Comparator in Java.</em></strong></p>
+<p>&nbsp;</p>
+<h1>Five ways to traverse collections:</h1>
+<ol>
+<li><strong> By using Iterator</strong></li>
+<li><strong> By using ListIterator</strong></li>
+<li><strong> By using Enumeration</strong></li>
+<li><strong> By using for-each</strong></li>
+<li><strong> By using for loop</strong></li>
+</ol>
+<p><strong>1 . Iterator interface :</strong></p>
+<p>Iterator interface used to traverse the elements in forward direction only.</p>
+<p><em>Iterator</em>&nbsp;which is used to traverse most of the classes in the collection framework including legacy classes. Iterator can be used in&nbsp;<strong>List, Set , Queue, and Vector etc.</strong></p>
+<p>You get an Iterator for a collection by calling its&nbsp;<strong>iterator(</strong>) method.</p>
+<p><strong><em>There are three methods in the Iterator interface. They are:</em></strong></p>
+<ol>
+<li>List&lt;String&gt; obj =<strong>new</strong> ArrayList&lt;String&gt;();</li>
+<li>obj.add("Mango");</li>
+<li>obj.add("Apple");</li>
+<li></li>
+<li>Iterator&lt;String&gt; ite=obj.iterator();//obj is collection object</li>
+<li><strong>while</strong>(ite.hasNext())//It returns true if iterator has more elements.</li>
+<li>{</li>
+<li>System.<strong>out</strong>.println(ite.<strong>next</strong>()); //print the value</li>
+<li>}</li>
+</ol>
+<p>&nbsp;</p>
+<ol start="2">
+<li><strong> ListIterator interface :</strong></li>
+</ol>
+<p>ListIterator interface extends Iterator interface.</p>
+<p>ListIterator interface used to traverse the elements in both directions (forward and backward), but reverse apply only for LinkedList elements only.</p>
+<p>ListIterator can be used to traverse for&nbsp;<strong>List-type Objects</strong>, but not for Set-type of Objects.</p>
+<p>You get a ListIterator for a collection by calling its&nbsp;<strong>listIterator()</strong>&nbsp;method.</p>
+<p><strong>There are many methods in the ListIterator interface. But commonly used listed below:</strong></p>
+<p>&nbsp;</p>
+<ol>
+<li>List&lt;String&gt; obj=<strong>new</strong> LinkedList&lt;String&gt;();</li>
+<li>obj.add("Mango");</li>
+<li>obj.add("Apple");</li>
+<li>obj.add("Orange");</li>
+<li></li>
+<li>ListIterator lte=obj.listIterator(); //obj is LinkedList object</li>
+<li><strong>while</strong>(lte.hasPrevious()) // has previous supports only LinkedList</li>
+<li>{</li>
+<li>System.<strong>out</strong>.println("&nbsp; "+lte.previous());&nbsp; //print reverse order</li>
+</ol>
+<ul>
+<li>}</li>
+</ul>
+<p>&nbsp;</p>
+<ol start="3">
+<li><strong> Enumeration interface :</strong></li>
+</ol>
+<p>The Enumeration interface defines the methods by which you can enumerate (obtain one at a time) the elements in a collection of objects. It supports most of the collections objects.</p>
+<p><em>Enumeration</em>&nbsp;is a&nbsp;<strong>legacy interface</strong>&nbsp;used to&nbsp;<strong>traverse only the legacy classes like&nbsp;<em>Vector</em>,&nbsp;<em>HashTable</em>&nbsp;and&nbsp;<em>Stack</em>.</strong></p>
+<p>There is only one legacy interface called&nbsp;<strong>Enumeration.</strong></p>
+<p>You get an Enumeration for a collection by calling its&nbsp;<strong>elements()</strong>&nbsp;method.</p>
+<p><strong>There are two methods in the Enumeration interface. They are:</strong></p>
+<p>&nbsp;</p>
+<ol>
+<li>Vector obj=<strong>new</strong> Vector();</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; obj.add("Mango");</li>
+<li>obj.add("Apple");</li>
+<li></li>
+<li>Enumeration&lt;String&gt; enu=obj.elements(); //obj is Vector object</li>
+<li><strong>while</strong>(enu.hasMoreElements())</li>
+<li>{</li>
+<li>System.<strong>out</strong>.println(" "+ enu.nextElement());</li>
+<li>}</li>
+</ol>
+<p>&nbsp;</p>
+<ol start="4">
+<li><strong> By using for-each</strong></li>
+</ol>
+<p>It is mainly used to traverse array or collection elements. The advantage of for-each loop is that it eliminates the possibility of bugs and makes the code more readable.</p>
+<p>Please refer below example so that you can understand better.</p>
+<p><strong>Example:</strong></p>
+<p><strong>traverse collection using for-each:</strong></p>
+<ol>
+<li>List&lt;String&gt; obj =<strong>new</strong> ArrayList&lt;String&gt;();</li>
+<li>obj.add("Mango");</li>
+<li>obj.add("Apple");</li>
+<li></li>
+<li><strong>for</strong>(String kk:obj) ////obj is collection object</li>
+<li>{</li>
+<li>System.<strong>out</strong>.println("Elements :"+kk);</li>
+<li>}</li>
+</ol>
+<p><strong>traverse array using for-each:</strong></p>
+<ol>
+<li><strong>int</strong> arr[]={12,13,14,44};</li>
+<li></li>
+<li><strong>for</strong>(<strong>int</strong> i:arr){</li>
+<li>System.<strong>out</strong>.println(i);</li>
+<li>}</li>
+<li><strong> By using for loop</strong></li>
+</ol>
+<p><strong>Example:</strong></p>
+<ol>
+<li>LinkedList obj=<strong>new</strong> LinkedList();</li>
+<li>obj.add("Mango");</li>
+<li>obj.add("Apple");</li>
+<li>obj.add("Banana");</li>
+<li></li>
+<li><strong>for</strong>(<strong>int</strong> i=0;i&lt;obj.size();i++) {</li>
+<li>System.<strong>out</strong>.println(" "+obj.<strong>get</strong>(i));</li>
+<li>}</li>
+</ol>
+<p>&nbsp;</p>
+<h1>Differences between TreeMap, HashMap and LinkedHashMap in Java</h1>
+<p><a href="https://www.geeksforgeeks.org/differences-treemap-hashmap-linkedhashmap-java/?ref=lbp">https://www.geeksforgeeks.org/differences-treemap-hashmap-linkedhashmap-java/?ref=lbp</a></p>
+<ol>
+<li><strong>HashMap:</strong>HashMap offers&nbsp;<strong>0(1)</strong>&nbsp;lookup and insertion. If you iterate through the keys, though, the ordering of the keys is essentially arbitrary. It is implemented by an array of linked lists.<br /> <strong>Syntax:</strong></li>
+</ol>
+<p>&nbsp;</p>
+<p><strong>public class HashMap extends AbstractMap </strong></p>
+<p><strong>implements Map,Cloneable, Serializable</strong></p>
+<ul>
+<li>A HashMap contains values based on the key.</li>
+<li>It contains only unique elements.</li>
+<li>It may have one null key and multiple null values.</li>
+<li>It maintains&nbsp;<strong>no order</strong>.</li>
+</ul>
+<p>&nbsp;</p>
+<ol start="2">
+<li><strong>LinkedHashMap:&nbsp;</strong>LinkedHashMap offers&nbsp;<strong>0(1)</strong>lookup and insertion. Keys are ordered by their insertion order. It is implemented by doubly-linked buckets.<br /> <strong>Syntax:</strong></li>
+</ol>
+<p><strong>&nbsp;</strong></p>
+<p><strong>public class LinkedHashMap extends HashMap </strong></p>
+<p><strong>0implements Map</strong></p>
+<ul>
+<li>A LinkedHashMap contains values based on the key.</li>
+<li>It contains only unique elements.</li>
+<li>It may have one null key and multiple null values.</li>
+<li>It is same as HashMap instead&nbsp;<strong>maintains insertion order</strong>.</li>
+</ul>
+<p>&nbsp;</p>
+<ol start="3">
+<li><strong>TreeMap:</strong>TreeMap offers&nbsp;<strong>O(log N)</strong>&nbsp;lookup and insertion. Keys are ordered, so if you need to iterate through the keys in sorted order, you can. This means that keys must implement the Comparable interface. TreeMap is implemented by a Red-Black Tree.<br /> <strong>Syntax:</strong></li>
+</ol>
+<p><strong>&nbsp;</strong></p>
+<p><strong>public class TreeMap extends AbstractMap implements</strong></p>
+<p><strong>NavigableMap, Cloneable, Serializable</strong></p>
+<ul>
+<li>A TreeMap contains values based on the key. It implements the NavigableMap interface and extends AbstractMap class.</li>
+<li>It contains only unique elements.</li>
+<li>It cannot have null key but can have multiple null values.</li>
+<li>It is same as HashMap instead&nbsp;<strong>maintains ascending order(Sorted using the natural order of its key</strong>).</li>
+</ul>
+<p>&nbsp;</p>
+<ol start="4">
+<li><strong>Hashtable:&nbsp;</strong>&ldquo;Hashtable&rdquo; is the generic name for hash-based maps.<br /> <strong>Syntax:</strong></li>
+</ol>
+<p><strong>&nbsp;</strong></p>
+<p><strong>public class Hashtable extends Dictionary implements</strong></p>
+<p><strong>Map, Cloneable, Serializable</strong></p>
+<ul>
+<li>A Hashtable is an array of list. Each list is known as a bucket. The position of bucket is identified by calling the hashcode() method. A Hashtable contains values based on the key.</li>
+<li>It contains only unique elements.</li>
+<li>It may have not have any null key or value.</li>
+<li>It is synchronized.</li>
+<li>It is a legacy class</li>
+</ul>
+<h1>Differences between HashMap and HashTable</h1>
+<p><a href="https://www.geeksforgeeks.org/differences-between-hashmap-and-hashtable-in-java/?ref=lbp">https://www.geeksforgeeks.org/differences-between-hashmap-and-hashtable-in-java/?ref=lbp</a></p>
+<p>&nbsp;</p>
+<p>HashMap and Hashtable store key/value pairs in a hash table. When using a Hashtable or HashMap, we specify an object that is used as a key, and the value that you want linked to that key.&nbsp;The key is then hashed, and the resulting hash code is used as the index at which the value is stored within the table.</p>
+<p>Sample Java code.</p>
+<p>// A sample Java program to demonstrate HashMap and HashTable</p>
+<p>import java.util.*;</p>
+<p>import java.lang.*;</p>
+<p>import java.io.*;</p>
+<p>&nbsp;&nbsp;</p>
+<p>/* Name of the class has to be "Main" only if the class is public. */</p>
+<p>class Ideone</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String args[])</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//----------hashtable -------------------------</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hashtable&lt;Integer,String&gt; ht=new Hashtable&lt;Integer,String&gt;();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ht.put(101," ajay");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ht.put(101,"Vijay");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ht.put(102,"Ravi");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ht.put(103,"Rahul");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("-------------Hash table--------------");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (Map.Entry m:ht.entrySet()) {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(m.getKey()+" "+m.getValue());</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//----------------hashmap--------------------------------</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HashMap&lt;Integer,String&gt; hm=new HashMap&lt;Integer,String&gt;();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hm.put(100,"Amit");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hm.put(104,"Amit");&nbsp; // hash map allows duplicate values</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hm.put(101,"Vijay");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hm.put(102,"Rahul");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("-----------Hash map-----------");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (Map.Entry m:hm.entrySet()) {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(m.getKey()+" "+m.getValue());</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>Output:</p>
+<p>-------------Hash table--------------</p>
+<p>103 Rahul</p>
+<p>102 Ravi</p>
+<p>101 Vijay</p>
+<p>-----------Hash map-----------</p>
+<p>100 Amit</p>
+<p>101 Vijay</p>
+<p>102 Rahul</p>
+<p>104 Amit</p>
+<p><strong>Hashmap vs Hashtable</strong><br /> 1. HashMap is non synchronized. It is not-thread safe and can&rsquo;t be shared between many threads without proper synchronization code whereas Hashtable is synchronized. It is thread-safe and can be shared with many threads.<br /> 2. HashMap allows one null key and multiple null values whereas Hashtable doesn&rsquo;t allow any null key or value.<br /> 3. HashMap is generally preferred over HashTable if thread synchronization is not needed</p>
+<p>Why HashTable doesn&rsquo;t allow null and HashMap does?<br /> To successfully store and retrieve objects from a HashTable, the objects used as keys must implement the hashCode method and the equals method. Since null is not an object, it can&rsquo;t implement these methods. HashMap is an advanced version and improvement on the Hashtable. HashMap was created later.</p>
+<p>&nbsp;</p>
+<h1>HashMap and TreeMap in Java</h1>
+<p><a href="https://www.geeksforgeeks.org/hashmap-treemap-java/?ref=lbp">https://www.geeksforgeeks.org/hashmap-treemap-java/?ref=lbp</a></p>
+<h1>LinkedHashMap in Java</h1>
+<p><a href="https://www.geeksforgeeks.org/linkedhashmap-class-java-examples/?ref=lbp">https://www.geeksforgeeks.org/linkedhashmap-class-java-examples/?ref=lbp</a></p>
+<h1>ConcurrentHashMap in java</h1>
+<p><a href="https://www.geeksforgeeks.org/concurrenthashmap-in-java/">https://www.geeksforgeeks.org/concurrenthashmap-in-java/</a></p>
+<p><a href="https://java2blog.com/concurrenthashmap-in-java/">https://java2blog.com/concurrenthashmap-in-java/</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p><strong>ConcurrentHashMap</strong>&nbsp;ConcurrentHashMap class is introduced in JDK 1.5, which implements ConcurrentMap as well as Serializable interface also. ConcureentHashMap is enhancement of HashMap as we know that while dealing with Threads in our application HashMap is not a good choice because performance wise HashMap is not upto the mark.</p>
+<p>&nbsp;</p>
+<p><strong>Key points of ConcurrentHashMap:</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p>It may have not have any null key or value.</p>
+<ul>
+<li>The underlined data structure for ConcurrentHashMap is Hashtable.</li>
+<li>ConcurrentHashMap class is thread-safe i.e. multiple thread can operate on a single object without any complications.</li>
+<li>At a time any number of threads are applicable for read operation without locking the ConcurrentHashMap object which is not there in HashMap.</li>
+<li>In ConcurrentHashMap, the Object is divided into number of segments according to the concurrency level.</li>
+<li>Default concurrency-level of ConcurrentHashMap is 16.</li>
+<li>In ConcurrentHashMap, at a time any number of threads can perform retrieval operation but for updation in object, thread must lock the particular segment in which thread want to operate.This type of locking mechanism is known as&nbsp;<strong>Segment locking or bucket locking</strong>.Hence at a time 16 updation operations can be performed by threads.</li>
+<li>null insertion is not possible in ConcurrentHashMap as key or value.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Constructors of ConcurrentHashMap:</strong></p>
+<p><strong>&nbsp;</strong></p>
+<ol>
+<li><strong>ConcurrentHashMap m=new ConcurrentHashMap();</strong>:Creates a new, empty map with a default initial capacity (16), load factor (0.75) and concurrencyLevel (16).</li>
+<li><strong>ConcurrentHashMap m=new ConcurrentHashMap(int initialCapacity);</strong>:Creates a new, empty map with the specified initial capacity, and with default load factor (0.75) and concurrencyLevel (16).</li>
+<li><strong>ConcurrentHashMap m=new ConcurrentHashMap(int initialCapacity, float loadFactor);</strong>:<br /> Creates a new, empty map with the specified initial capacity and load factor and with the default concurrencyLevel (16).</li>
+<li><strong>ConcurrentHashMap m=new ConcurrentHashMap(int initialCapacity, float loadFactor, int concurrencyLevel);</strong>:Creates a new, empty map with the specified initial capacity, load factor and concurrency level.</li>
+<li><strong>ConcurrentHashMap m=new ConcurrentHashMap(Map m);</strong>:Creates a new map with the same mappings as the given map.</li>
+</ol>
+<p>&nbsp;</p>
+<p>// Java program to demonstrate working of ConcurrentHashMap</p>
+<p>import java.util.concurrent.*;</p>
+<p>class ConcurrentHashMapDemo {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ConcurrentHashMap m = new ConcurrentHashMap();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m.put(100, "Hello");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m.put(101, "Geeks");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m.put(102, "Geeks");</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Here we cant add Hello because 101 key</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// is already present in ConcurrentHashMap object</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m.putIfAbsent(101, "Hello");</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// We can remove entry because 101 key</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// is associated with For value</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m.remove(101, "Geeks");</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Now we can add Hello</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m.putIfAbsent(103, "Hello");</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// We cant replace Hello with For</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m.replace(101, "Hello", "For");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(m);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>}</p>
+<p>Output:</p>
+<p>{100=Hello, 102=Geeks, 103=Hello}</p>
+<p>Notes :</p>
+<ul>
+<li>Hashtableis belongs to the Collection framework;&nbsp;ConcurrentHashMap&nbsp;belongs to the Executor framework.</li>
+<li>Hashtableuses&nbsp;<strong>single lock</strong>&nbsp;for whole data.&nbsp;ConcurrentHashMap&nbsp;uses&nbsp;<strong>multiple locks</strong>&nbsp;on segment level (16 by default) instead of object level i.e. whole&nbsp;Map.</li>
+<li>ConcurrentHashMaplocking is applied only for updates. In case of retrievals, it allows full concurrency, retrievals reflect the results of the most recently completed update operations. So reads can happen very fast while writes are done with a lock.</li>
+<li>ConcurrentHashMapdoesn't throw a&nbsp;ConcurrentModificationException&nbsp;if one thread tries to modify it while another is iterating over it and does not allow null values.</li>
+<li>ConcurrentHashMapreturns&nbsp;Iterator, which fails-safe (i.e. iterator will make a copy of the internal data structure) on concurrent modification.</li>
+<li>ConcurrentHashMapuses a database shards logic (Segment&lt;K, V&gt;[] segments) is known as&nbsp;<strong>Concurrency-Level</strong>, i.e. divides the data into shards(segments) than puts locks on each shard (segment) instead of putting a single lock for whole data (Map). The default value is 16.</li>
+</ul>
+<p><strong>The following analogy helps you get understand the concept only(not logic)</strong></p>
+<ul>
+<li>Assume&nbsp;Hashtableand&nbsp;ConcurrentHashMap&nbsp;are two types of Homes.</li>
+<li>Hashtablelocks home's main door.</li>
+<li>ConcurrentHashMaplocks specific room door instead of main door.</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h1>Fail Fast and Fail Safe Iterators in Java</h1>
+<p><a href="https://www.geeksforgeeks.org/linkedhashmap-class-java-examples/?ref=lbp">https://www.geeksforgeeks.org/linkedhashmap-class-java-examples/?ref=lbp</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<h1>Choosing the right Collection</h1>
+<p><a href="http://www.javapractices.com/topic/TopicAction.do?Id=65">http://www.javapractices.com/topic/TopicAction.do?Id=65</a></p>
+<p><strong>&nbsp;</strong></p>
+<h1>Naval need to write worked on each collection in detailed time 06JUNE 5:35PM</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

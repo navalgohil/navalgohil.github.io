@@ -1,0 +1,141 @@
+<p><strong><a href="https://www.monsterindia.com/career-advice/top-10-tricky-hibernate-interview-questions-that-you-should-know-7860.html">https://www.monsterindia.com/career-advice/top-10-tricky-hibernate-interview-questions-that-you-should-know-7860.html</a></strong></p>
+<p><strong>1. How to complete a transaction in Hibernate?<br /></strong><br />There are two distinct actions if you&rsquo;re looking to complete a transaction in hibernate:<br />&bull; Commit<br />&bull; Rollback<br /><br />Once a transaction is committed, the transaction data is written to the database. In case there is a rollback, the data exchange is flushed and never written or updated to the database.</p>
+<p><strong>2. Can you touch upon the different types of relationships available in Hibernate mapping?<br /></strong><br />Hibernate consists of three different types of relationships:<br />&bull; One-to-One mapping<br />&bull; One-to-Many mapping<br />&bull; Many-to-Many mapping<br /><br /><strong>3. What is the purpose of Session.beginTransaction()?</strong><br /><br />Hibernate keeps a log of every data exchange with the help of a transaction. Thereon, in case a new exchange of date is about to get initiated, the function Session.beginTransaction is executed in order to begin the transaction.<br /><br /><strong>4. Where is object/relational mappings defined in Hibernate?<br /></strong><br />An XML document is where object/relational mappings are usually defined in. This mapping file gives instructions to Hibernate on how to accurately map the defined class/classes to the database tables. In addition, the format .hbm.xml. should be used to save the file with the mapping document.<br /><br /><strong>5. What is lazy loading?<br /></strong><br />Lazy loading is defined as a technique in which objects are loaded on an on-demand basis. It has been enabled by default since the advent of Hibernate 3 to ensure that child objects are not loaded when the parent is.<br /><br /><strong>6. What are the ways to express joins in HQL?</strong><br /><br />HQL allows you to express joins in four ways:<br />&bull; An implicit association join<br />&bull; A fetch join in the FROM clause<br />&bull; A theta-style join in the WHERE clause<br />&bull; An ordinary join in the FROM clause</p>
+<p><strong>7. How would you define automatic dirty checking?<br /></strong><br />Automatic dirty checking can be defined as a feature that helps us in saving the effort of explicitly asking Hibernate to update the database every time we modify or make changes to the state of an object inside a transaction.<br /><br /><strong>8. Explain the different ways Hibernate manages concurrency?<br /></strong><br />Hibernate has numerous ways of managing concurrency. They are as listed below:<br />&bull; Automatic versioning<br />&bull; Detached object<br />&bull; Extended user sessions<br /><br /><strong>9. Can you detail out the various collection types in Hibernate?<br /></strong><br />There are five distinct collection types that are used in hibernate for one-to-many relationship mappings.<br />&bull; Bag<br />&bull; Set<br />&bull; List<br />&bull; Array<br />&bull; Map</p>
+<p><a href="https://www.journaldev.com/3633/hibernate-interview-questions-and-answers#session-factory-thread-safe">https://www.journaldev.com/3633/hibernate-interview-questions-and-answers#session-factory-thread-safe</a></p>
+<h3>What are the advantages of Hibernate over JDBC?</h3>
+<p>Some of the important advantages of Hibernate framework over JDBC are:</p>
+<ol>
+<li>Hibernate removes a lot of boiler-plate code that comes with JDBC API, the code looks more cleaner and readable.</li>
+<li>Hibernate supports inheritance, associations and collections. These features are not present with JDBC API.</li>
+<li>Hibernate implicitly provides transaction management, in fact most of the queries can&rsquo;t be executed outside transaction. In JDBC API, we need to write code for transaction management using commit and rollback. Read more at&nbsp;<a href="https://www.journaldev.com/2483/java-jdbc-transaction-management-savepoint">JDBC Transaction Management</a>.</li>
+<li>JDBC API throws&nbsp;<code>SQLException</code>&nbsp;that is a checked exception, so we need to write a lot of try-catch block code. Most of the times it&rsquo;s redundant in every JDBC call and used for transaction management. Hibernate wraps JDBC exceptions and throw&nbsp;<code>JDBCException</code>&nbsp;or&nbsp;<code>HibernateException</code>&nbsp;un-checked exception, so we don&rsquo;t need to write code to handle it. Hibernate built-in transaction management removes the usage of try-catch blocks.</li>
+<li>Hibernate Query Language (HQL) is more object oriented and close to java programming language. For JDBC, we need to write native sql queries.</li>
+<li>Hibernate supports caching that is better for performance, JDBC queries are not cached hence performance is low.</li>
+<li>Hibernate provide option through which we can create database tables too, for JDBC tables must exist in the database.</li>
+<li>Hibernate configuration helps us in using JDBC like connection as well as JNDI DataSource for connection pool. This is very important feature in enterprise application and completely missing in JDBC API.</li>
+<li>Hibernate supports JPA annotations, so code is independent of implementation and easily replaceable with other ORM tools. JDBC code is very tightly coupled with the application.</li>
+</ol>
+<h3>What is Hibernate Session and how to get it?</h3>
+<p>Hibernate Session is the interface between java application layer and hibernate. This is the core interface used to perform database operations. Lifecycle of a session is bound by the beginning and end of a transaction.</p>
+<p>Session provide methods to perform create, read, update and delete operations for a persistent object. We can execute HQL queries, SQL native queries and create criteria using Session object.</p>
+<h3>What is Hibernate SessionFactory and how to configure it?</h3>
+<p>SessionFactory is the factory class used to get the Session objects. SessionFactory is responsible to read the hibernate configuration parameters and connect to the database and provide Session objects. Usually an application has a single SessionFactory instance and threads servicing client requests obtain Session instances from this factory.</p>
+<p>The internal state of a SessionFactory is immutable. Once it is created this internal state is set. This internal state includes all of the metadata about Object/Relational Mapping.</p>
+<p>SessionFactory also provide methods to get the Class metadata and Statistics instance to get the stats of query executions, second level cache details etc.</p>
+<h3>Hibernate SessionFactory is thread safe?</h3>
+<p>Internal state of SessionFactory is immutable, so it&rsquo;s thread safe. Multiple threads can access it simultaneously to get Session instances.</p>
+<h3>What is difference between openSession and getCurrentSession?</h3>
+<p>Hibernate SessionFactory getCurrentSession() method returns the session bound to the context. But for this to work, we need to configure it in hibernate configuration file. Since this session object belongs to the hibernate context, we don&rsquo;t need to close it. Once the session factory is closed, this session object gets closed.</p>
+<pre><code class="hljs xml">
+<span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"hibernate.current_session_context_class"</span>&gt;</span>thread<span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>
+</code></pre>
+<p>Hibernate SessionFactory openSession() method always opens a new session. We should close this session object once we are done with all the database operations. We should open a new session for each request in multi-threaded environment.</p>
+<p>There is another method openStatelessSession() that returns stateless session, for more details with examples please read&nbsp;<a href="https://www.journaldev.com/3522/hibernate-sessionfactory">Hibernate openSession vs getCurrentSession</a>.</p>
+<h3>What is difference between Hibernate Session get() and load() method?</h3>
+<p>Hibernate session comes with different methods to load data from database. get and load are most used methods, at first look they seems similar but there are some differences between them.</p>
+<ol>
+<li>get() loads the data as soon as it&rsquo;s called whereas load() returns a proxy object and loads data only when it&rsquo;s actually required, so load() is better because it support lazy loading.</li>
+<li>Since load() throws exception when data is not found, we should use it only when we know data exists.</li>
+<li>We should use get() when we want to make sure data exists in the database.</li>
+</ol>
+<p>For clarification regarding the differences, please read&nbsp;<a href="https://www.journaldev.com/3472/hibernate-session-get-vs-load-difference-with-examples">Hibernate get vs load</a>.</p>
+<p>&nbsp;</p>
+<h3>What is hibernate caching? Explain Hibernate first level cache?</h3>
+<p>As the name suggests, hibernate caches query data to make our application faster. Hibernate Cache can be very useful in gaining fast application performance if used correctly. The idea behind cache is to reduce the number of database queries, hence reducing the throughput time of the application.</p>
+<p>Hibernate first level cache is associated with the Session object. Hibernate first level cache is enabled by default and there is no way to disable it. However hibernate provides methods through which we can delete selected objects from the cache or clear the cache completely.<br />Any object cached in a session will not be visible to other sessions and when the session is closed, all the cached objects will also be lost.</p>
+<p>&nbsp;</p>
+<h3>What are different states of an entity bean?</h3>
+<p>An entity bean instance can exist is one of the three states.</p>
+<ol>
+<li><strong>Transient</strong>: When an object is never persisted or associated with any session, it&rsquo;s in transient state. Transient instances may be made persistent by calling save(), persist() or saveOrUpdate(). Persistent instances may be made transient by calling delete().</li>
+<li><strong>Persistent</strong>: When an object is associated with a unique session, it&rsquo;s in persistent state. Any instance returned by a get() or load() method is persistent.</li>
+<li><strong>Detached</strong>: When an object is previously persistent but not associated with any session, it&rsquo;s in detached state. Detached instances may be made persistent by calling update(), saveOrUpdate(), lock() or replicate(). The state of a transient or detached instance may also be made persistent as a new persistent instance by calling merge().</li>
+</ol>
+<h3>What is use of Hibernate Session merge() call?</h3>
+<p>Hibernate merge can be used to update existing values, however this method create a copy from the passed entity object and return it. The returned object is part of persistent context and tracked for any changes, passed object is not tracked. For example program, read&nbsp;<a href="https://www.journaldev.com/3481/hibernate-session-merge-vs-update-save-saveorupdate-persist-example">Hibernate merge</a>.</p>
+<p>&nbsp;</p>
+<h3>What is difference between Hibernate save(), saveOrUpdate() and persist() methods?</h3>
+<p>Hibernate save can be used to save entity to database. Problem with save() is that it can be invoked without a transaction and if we have mapping entities, then only the primary object gets saved causing data inconsistencies. Also save returns the generated id immediately.</p>
+<p>Hibernate persist is similar to save with transaction. I feel it&rsquo;s better than save because we can&rsquo;t use it outside the boundary of transaction, so all the object mappings are preserved. Also persist doesn&rsquo;t return the generated id immediately, so data persistence happens when needed.</p>
+<p>Hibernate saveOrUpdate results into insert or update queries based on the provided data. If the data is present in the database, update query is executed. We can use saveOrUpdate() without transaction also, but again you will face the issues with mapped objects not getting saved if session is not flushed. For example usage of these methods, read&nbsp;<a href="https://www.journaldev.com/3481/hibernate-session-merge-vs-update-save-saveorupdate-persist-example">Hibernate save vs persist</a>.</p>
+<p>&nbsp;</p>
+<h3>What is HQL and what are it&rsquo;s benefits?</h3>
+<p>Hibernate Framework comes with a powerful object-oriented query language &ndash; Hibernate Query Language (HQL). It&rsquo;s very similar to SQL except that we use Objects instead of table names, that makes it more close to object oriented programming.</p>
+<p>Hibernate query language is case-insensitive except for java class and variable names. So SeLeCT is the same as sELEct is the same as SELECT, but com.journaldev.model.Employee is not same as com.journaldev.model.EMPLOYEE.</p>
+<p>The HQL queries are cached but we should avoid it as much as possible, otherwise we will have to take care of associations. However it&rsquo;s a better choice than native sql query because of Object-Oriented approach. Read more at&nbsp;<a href="https://www.journaldev.com/2954/hibernate-query-language-hql-example-tutorial">HQL Example</a>.</p>
+<p>&nbsp;</p>
+<h3>Can we execute native sql query in hibernate?</h3>
+<p>Hibernate provide option to execute native SQL queries through the use of&nbsp;<code>SQLQuery</code>&nbsp;object.</p>
+<p>For normal scenarios, it is however not the recommended approach because we loose benefits related to hibernate association and hibernate first level caching. Read more at&nbsp;<a href="https://www.journaldev.com/3422/hibernate-native-sql-query-example">Hibernate Native SQL Query Example</a>.</p>
+<p>&nbsp;</p>
+<h3>What is the benefit of native sql query support in hibernate?</h3>
+<p>Native SQL Query comes handy when we want to execute database specific queries that are not supported by Hibernate API such as query hints or the CONNECT keyword in Oracle Database.</p>
+<p>&nbsp;</p>
+<h3>What is the benefit of Hibernate Criteria API?</h3>
+<p>Hibernate provides Criteria API that is more object oriented for querying the database and getting results. We can&rsquo;t use Criteria to run update or delete queries or any DDL statements. It&rsquo;s only used to fetch the results from the database using more object oriented approach.</p>
+<p>Some of the common usage of Criteria API are:</p>
+<ul>
+<li>Criteria API provides Projection that we can use for aggregate functions such as sum(), min(), max() etc.</li>
+<li>Criteria API can be used with ProjectionList to fetch selected columns only.</li>
+<li>Criteria API can be used for join queries by joining multiple tables, useful methods are createAlias(), setFetchMode() and setProjection()</li>
+<li>Criteria API can be used for fetching results with conditions, useful methods are add() where we can add Restrictions.</li>
+<li>Criteria API provides addOrder() method that we can use for ordering the results.</li>
+</ul>
+<p>Learn some quick examples at&nbsp;<a href="https://www.journaldev.com/2963/hibernate-criteria-example-tutorial">Hibernate Criteria Example</a>.</p>
+<p>&nbsp;</p>
+<h3>How to log hibernate generated sql queries in log files?</h3>
+<p>We can set below property for hibernate configuration to log SQL queries.</p>
+<pre><code class="hljs xml">
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"hibernate.show_sql"</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>
+</code></pre>
+<p>However we should use it only in Development or Testing environment and turn it off in production environment.</p>
+<p>&nbsp;</p>
+<h3>What is Hibernate Proxy and how it helps in lazy loading?</h3>
+<p>Hibernate uses proxy object to support lazy loading. Basically when you load data from tables, hibernate doesn&rsquo;t load all the mapped objects. As soon as you reference a child or lookup object via getter methods, if the linked entity is not in the session cache, then the proxy code will go to the database and load the linked object. It uses javassist to effectively and dynamically generate sub-classed implementations of your entity objects.</p>
+<p>&nbsp;</p>
+<h3>How to implement relationships in hibernate?</h3>
+<p>We can easily implement one-to-one, one-to-many and many-to-many relationships in hibernate. It can be done using JPA annotations as well as XML based configurations. For better understanding, you should go through following tutorials.</p>
+<ol>
+<li><a href="https://www.journaldev.com/2916/hibernate-one-to-one-mapping-example-annotation">Hibernate One to One Mapping</a></li>
+<li><a href="https://www.journaldev.com/2924/hibernate-one-to-many-mapping-annotation">Hibernate One to Many Mapping</a></li>
+<li><a href="https://www.journaldev.com/2934/hibernate-many-to-many-mapping-join-tables">Hibernate Many to Many Mapping</a></li>
+</ol>
+<h3>How transaction management works in Hibernate?</h3>
+<p>Transaction management is very easy in hibernate because most of the operations are not permitted outside of a transaction. So after getting the session from SessionFactory, we can call session&nbsp;<code>beginTransaction()</code>&nbsp;to start the transaction. This method returns the Transaction reference that we can use later on to either commit or rollback the transaction.</p>
+<p>Overall hibernate transaction management is better than JDBC transaction management because we don&rsquo;t need to rely on exceptions for rollback. Any exception thrown by session methods automatically rollback the transaction.</p>
+<p>&nbsp;</p>
+<h3>What is cascading and what are different types of cascading?</h3>
+<p>When we have relationship between entities, then we need to define how the different operations will affect the other entity. This is done by cascading and there are different types of it.</p>
+<p>Here is a simple example of applying cascading between primary and secondary entities.</p>
+<pre><code class="hljs java">
+<span class="hljs-keyword">import</span> org.hibernate.annotations.Cascade;
+
+<span class="hljs-meta">@Entity</span>
+<span class="hljs-meta">@Table</span>(name = <span class="hljs-string">"EMPLOYEE"</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Employee</span> </span>{
+
+<span class="hljs-meta">@OneToOne</span>(mappedBy = <span class="hljs-string">"employee"</span>)
+<span class="hljs-meta">@Cascade</span>(value = org.hibernate.annotations.CascadeType.ALL)
+<span class="hljs-keyword">private</span> Address address;
+
+}
+</code></pre>
+<p>Note that Hibernate CascadeType enum constants are little bit different from JPA&nbsp;<code>javax.persistence.CascadeType</code>, so we need to use the Hibernate CascadeType and Cascade annotations for mappings, as shown in above example.<br />Commonly used cascading types as defined in CascadeType enum are:</p>
+<ol>
+<li>None: No Cascading, it&rsquo;s not a type but when we don&rsquo;t define any cascading then no operations in parent affects the child.</li>
+<li>ALL: Cascades save, delete, update, evict, lock, replicate, merge, persist. Basically everything</li>
+<li>SAVE_UPDATE: Cascades save and update, available only in hibernate.</li>
+<li>DELETE: Corresponds to the Hibernate native DELETE action, only in hibernate.</li>
+<li>DETATCH, MERGE, PERSIST, REFRESH and REMOVE &ndash; for similar operations</li>
+<li>LOCK: Corresponds to the Hibernate native LOCK action.</li>
+<li>REPLICATE: Corresponds to the Hibernate native REPLICATE action.</li>
+</ol>
+<h3>Which design patterns are used in Hibernate framework?</h3>
+<p>Some of the design patterns used in Hibernate Framework are:</p>
+<ul>
+<li>Domain Model Pattern &ndash; An object model of the domain that incorporates both behavior and data.</li>
+<li>Data Mapper &ndash; A layer of Mappers that moves data between objects and a database while keeping them independent of each other and the mapper itself.</li>
+<li><a href="https://www.journaldev.com/1572/proxy-design-pattern">Proxy Pattern</a>&nbsp;for lazy loading</li>
+<li><a title="Factory Design Pattern in Java" href="https://www.journaldev.com/1392/factory-design-pattern-in-java">Factory pattern</a>&nbsp;in SessionFactory</li>
+</ul>

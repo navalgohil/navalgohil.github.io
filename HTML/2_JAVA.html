@@ -1,0 +1,1981 @@
+<h2><strong>
+<a href="https://html-online.com/editor/" target="_blank" >https://html-online.com/editor/</a><br />
+<a href="https://www.edureka.co/blog/interview-questions/java-interview-questions/" target="_blank" >https://www.edureka.co/blog/interview-questions/java-interview-questions/</a><br />
+<a href="https://dev.to/javinpaul/50-core-java-interview-questions-with-answers-for-programmers-3bc" target="_blank" >https://dev.to/javinpaul/50-core-java-interview-questions-with-answers-for-programmers-3bc</a><br />
+<a href="https://www.edureka.co/blog/interview-questions/sql-interview-questions" target="_blank" >https://www.edureka.co/blog/interview-questions/sql-interview-questions</a><br />
+<a href="https://www.edureka.co/blog/interview-questions/hibernate-interview-questions/" target="_blank" >https://www.edureka.co/blog/interview-questions/hibernate-interview-questions/</a><br />
+<a href="https://www.edureka.co/blog/interview-questions/spring-interview-questions/" target="_blank" >https://www.edureka.co/blog/interview-questions/spring-interview-questions/</a><br />
+<a href="https://www.edureka.co/blog/interview-questions/spring-boot-interview-questions/" target="_blank" >https://www.edureka.co/blog/interview-questions/spring-boot-interview-questions/</a><br />
+<a href="https://javarevisited.blogspot.com/2018/11/top-20-spring-mvc-interview-questions-answers-for-java-developers.html" target="_blank" >https://javarevisited.blogspot.com/2018/11/top-20-spring-mvc-interview-questions-answers-for-java-developers.html</a><br />
+</strong></h2>
+<p>"Asynchronous JavaScript and XML")</p>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Sr. No.</th>
+<th>Key</th>
+<th>Web Server</th>
+<th>Application Server</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Purpose</td>
+<td>Web Server contains Web container only.</td>
+<td>Application Server contains Web Container plus EJB Container.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Useful</td>
+<td>A web server is good in case of static contents like static html pages.</td>
+<td>Applcation server is relevant in case of dynamic contents like bank websites.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Resource Consumption</td>
+<td>Web server consumes less resources like CPU, Memory etc. as compared to application server.</td>
+<td>Application server utilizes more resources.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Target Environment</td>
+<td>Web Server provides the runtime environment for web applications.</td>
+<td>Application server provides the runtime environment for enterprise applications.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Multithreading support</td>
+<td>Multithreading is not supported.</td>
+<td>Multithreading is supported.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Protocol(s) supported</td>
+<td>Web Server supports HTTP Protocol.</td>
+<td>Application Server suppots HTTP as well as RPC/RMI protocols.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Example</td>
+<td>Apache Web Server.</td>
+<td>Weblogic, JBoss.</td>
+</tr>
+</tbody>
+</table>
+<h2><strong>Basic Java Interview Questions</strong></h2>
+<h3><strong>Q1. Explain JDK, JRE and JVM?</strong></h3>
+<table border="1"><caption>
+<h4><strong>JDK vs JRE vs JVM</strong></h4>
+</caption>
+<tbody>
+<tr>
+<td><strong>JDK</strong></td>
+<td><strong>JRE</strong></td>
+<td><strong>JVM</strong></td>
+</tr>
+<tr>
+<td>It stands for Java Development Kit.</td>
+<td>It stands for Java Runtime Environment.</td>
+<td>It stands for Java Virtual Machine.</td>
+</tr>
+<tr>
+<td>It is the tool necessary to compile, document and package Java programs.</td>
+<td>JRE refers to a runtime environment in which Java bytecode can be executed.</td>
+<td>It is an abstract machine. It is a specification that provides a run-time environment in which Java bytecode can be executed.</td>
+</tr>
+<tr>
+<td>It contains JRE + development tools.</td>
+<td>It&rsquo;s an implementation of the JVM which physically exists.</td>
+<td>JVM follows three notations: Specification,&nbsp;<strong>Implementation,&nbsp;</strong>and&nbsp;<strong>Runtime Instance</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="explain-public-static-void-main"></a></p>
+<h3><strong>Q2. Explain public static void main(String args[]) in Java.</strong></h3>
+<p>main() in Java is the entry point for any Java program. It is always written as&nbsp;<strong>public&nbsp;static void main(String[] args)</strong>.</p>
+<ul>
+<li><strong>public</strong>: Public is an access modifier,&nbsp;which is used to specify who can access this method. Public means that this Method will be accessible by any Class.</li>
+<li><strong>static</strong>: It is a keyword in java which identifies it is class-based. main() is made static in Java so that it can be accessed without creating the instance of a Class. In case, main is not made static then the compiler will throw an error as&nbsp;<strong>main</strong>() is called by the JVM before any objects are made and only static methods can be directly invoked via the class.&nbsp;</li>
+<li><strong>void</strong>:&nbsp;It is the return type of the method. Void defines the method which will not return any value.</li>
+<li><strong>main</strong>: It is the name of the method which is searched by JVM as a starting point for an application with a particular signature only. It is the method where the main execution occurs.</li>
+<li><strong>String args[]</strong>: It is the parameter passed to the main method.</li>
+</ul>
+<div>&nbsp;</div>
+<p><a name="java-platform-independent"></a></p>
+<h3><strong>Q3. Why Java is platform independent?</strong></h3>
+<p>Java is called platform independent because of its byte codes which can run on any system irrespective of its underlying operating system.</p>
+<p><a name="why-java-100%-oriented"></a></p>
+<h3><strong>Q4. Why Java is not 100% Object-oriented?</strong></h3>
+<p><a name="wrapper-classes"></a><br />Java is not 100% Object-oriented because it makes use of eight primitive data types such as boolean, byte, char, int, float, double, long, short which are not objects.</p>
+<h3><strong>Q5. What are wrapper classes in Java?</strong></h3>
+<p><a name="%22constructors-in-java"></a></p>
+<p>Wrapper classes convert the Java primitives into the reference types (objects). Every primitive data type has a class dedicated to it. These are known as wrapper classes because they &ldquo;wrap&rdquo; the primitive data type into an object of that class. Refer to the below image which displays different primitive type, wrapper class and constructor argument.</p>
+<p><a name="constructors-in-java"></a></p>
+<h3><strong>Q6. What are constructors in Java?</strong></h3>
+<p>In Java, constructor refers to a block of code which is used to initialize an object. It must have the same name as that of the class. Also, it has no return type and it is automatically called when an object is created.</p>
+<p>There are two types of constructors:</p>
+<ol>
+<li><strong>Default Constructor:</strong>&nbsp;In Java, a default constructor is the one which does not take any inputs. In other words, default constructors are the no argument constructors which will be created by default in case you no other constructor is defined by the user. Its main purpose is to initialize the instance variables with the default values. Also, it is majorly used for object creation.&nbsp;</li>
+<li><strong>Parameterized Constructor:</strong>&nbsp;The parameterized constructor in Java, is the constructor which is capable of initializing the instance variables with the provided values. In other words, the constructors which take the arguments are called parameterized constructors.</li>
+</ol>
+<p><a name="difference-between-arraylist-and-vector"></a></p>
+<h3><strong>Q7. What is singleton class in Java and how can we make a class singleton?</strong></h3>
+<p>Singleton class is a class whose only one instance can be created at any given time, in one JVM. A class can be made singleton by making its constructor private.</p>
+<h3><strong>Q8. What is the difference between Array list and vector in Java?</strong></h3>
+<div>
+<table border="1px" width="100%">
+<tbody>
+<tr>
+<th>ArrayList</th>
+<th><strong>Vector</strong></th>
+</tr>
+<tr>
+<td>Array List is not synchronized.</td>
+<td>&nbsp;Vector is synchronized.</td>
+</tr>
+<tr>
+<td>Array List is fast as it&rsquo;s non-synchronized.</td>
+<td>Vector is slow as it is thread safe.</td>
+</tr>
+<tr>
+<td>If an element is inserted into the Array List, it increases its Array size by 50%.</td>
+<td>Vector defaults to doubling size of its array.</td>
+</tr>
+<tr>
+<td>Array List does not define the increment size.</td>
+<td>Vector defines the increment size.</td>
+</tr>
+<tr>
+<td>Array List can only use Iterator for traversing an Array List.</td>
+<td>Vector can use both Enumeration and Iterator for traversing.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="difference-between-equals-and=="></a></p>
+</div>
+<h3><strong>Q9. What is the difference between equals() and == in Java?</strong></h3>
+<p>Equals() method is defined in Object class in Java and used for checking equality of two objects defined by business logic.<a name="difference-between-heap-and-stack"></a></p>
+<p>&ldquo;==&rdquo; or equality operator in Java is a binary operator provided by Java programming language and used to compare primitives and objects.&nbsp;<em>public boolean equals(Object o)</em>&nbsp;is the method provided by the Object class. The default implementation uses == operator to compare two objects. For example: method can be overridden like String class. equals() method is used to compare the values of two objects.</p>
+<h3><strong>Q10. What are the differences between Heap and Stack Memory in Java?</strong></h3>
+<div>
+<p>The major difference between Heap and Stack memory are:</p>
+<div>
+<table border="1px" width="100%">
+<tbody>
+<tr>
+<th><strong>Features</strong></th>
+<th><strong>Stack</strong></th>
+<th><strong>Heap</strong></th>
+</tr>
+<tr>
+<th><em>Memory</em></th>
+<td>Stack memory is used only by one thread of execution.</td>
+<td>Heap memory is used by all the parts of the application.</td>
+</tr>
+<tr>
+<th><em>Access</em></th>
+<td>Stack memory can&rsquo;t be accessed by other threads.</td>
+<td>Objects&nbsp;stored in the heap are globally accessible.</td>
+</tr>
+<tr>
+<th><em>Memory Management</em></th>
+<td>Follows LIFO manner to free memory.</td>
+<td>Memory management is based on the generation associated with each object.</td>
+</tr>
+<tr>
+<th><em>Lifetime</em></th>
+<td>Exists until the end of execution of the thread.</td>
+<td>Heap memory lives from the start till the end of application execution.</td>
+</tr>
+<tr>
+<th><em>Usage</em></th>
+<td>Stack memory only contains local primitive and reference variables to objects in heap space.</td>
+<td>Whenever an object is created, it&rsquo;s always stored in the Heap space.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3><strong>Q11.&nbsp;</strong><strong>What is a package in Java? List down various advantages of packages.</strong></h3>
+<p>Packages in Java, are the collection of related classes and interfaces which are bundled together. By using packages, developers can easily modularize the code and optimize its reuse. Also, the code within the packages can be imported by other classes and reused. Below I have listed down a few of its advantages:</p>
+<ul class="points">
+<li>Packages help in avoiding name clashes</li>
+<li>They provide easier access control on the code</li>
+<li>Packages can also contain hidden classes which are not visible to the outer classes and only used within the package</li>
+<li>Creates a proper hierarchical structure which makes it easier to locate the related classes</li>
+</ul>
+<h3><strong>Q12.&nbsp;Why pointers are not used in Java?</strong></h3>
+<p>Java doesn&rsquo;t use pointers because they are unsafe and increases the complexity of the program. Since, Java is known for its simplicity of code, adding the concept of pointers will be contradicting. Moreover, since JVM is responsible for implicit memory&nbsp;allocation, thus in order to avoid direct access to memory by the user,&nbsp; pointers are discouraged in Java.</p>
+<h3><strong>Q13.&nbsp;</strong><strong>What is JIT compiler in Java?</strong></h3>
+<p>JIT stands for Just-In-Time compiler in Java. It is a program that helps in converting the Java bytecode into instructions that are sent directly to the processor. By default, the JIT compiler is enabled in Java and is activated whenever a Java method is invoked. The JIT compiler then compiles the bytecode of the invoked method into native machine code, compiling it &ldquo;just in time&rdquo; to execute. Once the method has been compiled, the JVM summons the compiled code of that method directly rather than interpreting it. This is why it is often responsible for the performance optimization of Java applications at the run time.</p>
+<h3><strong>Q14. What are access modifiers in Java?</strong></h3>
+</div>
+<p>In Java, access modifiers are special keywords which are used to restrict the access of a class, constructor, data member and method in another class. Java supports four types of access modifiers:</p>
+<ol>
+<li><em>Default</em></li>
+<li><em>Private</em></li>
+<li><em>Protected</em></li>
+<li><em>Public</em></li>
+</ol>
+<table border="1px" width="100%">
+<tbody>
+<tr>
+<td><strong>Modifier</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Private</strong></td>
+<td><strong>Protected</strong></td>
+<td><strong>Public</strong></td>
+</tr>
+<tr>
+<td><em>Same class</em></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td><em>Same Package subclass</em></td>
+<td>YES</td>
+<td>NO</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td><em>Same Package non-subclass</em></td>
+<td>YES</td>
+<td>NO</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td><em>Different package subclass</em></td>
+<td>NO</td>
+<td>NO</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td><em>Different package non-subclass</em></td>
+<td>NO</td>
+<td>NO</td>
+<td>NO</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>Q15.&nbsp;Define a Java Class.</strong></h3>
+<p>A class in Java is a blueprint which includes all your data.&nbsp; A class contains fields (variables) and methods to describe the behavior of an object. Let&rsquo;s have a look at the syntax of a class.</p>
+<div>
+<div id="highlighter_938152" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">class</code> <code class="java plain">Abc {</code></div>
+<div class="line number2 index1 alt1"><code class="java plain">member variables </code><code class="java comments">// class body</code></div>
+<div class="line number3 index2 alt2"><code class="java plain">methods}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div>
+<div id="highlighter_661952" class="syntaxhighlighter java">
+<h3><strong>Q16. What is an object in Java and how is it created?</strong></h3>
+<p>An object is a real-world entity that has a state and behavior. An object has three characteristics:</p>
+<ol>
+<li>State</li>
+<li>Behavior</li>
+<li>Identity</li>
+</ol>
+<p>An object is created using the &lsquo;new&rsquo; keyword. For example:</p>
+<p>ClassName obj = new ClassName();</p>
+<h3><strong>Q17.&nbsp;What is Object Oriented Programming?</strong></h3>
+<p>Object-oriented programming or popularly known as OOPs is a programming model or approach where the programs are organized around objects rather than logic and functions. In other words, OOP mainly focuses on the objects that are required to be manipulated instead of logic. This approach is ideal for the programs large and complex codes and needs to be actively updated or maintained.</p>
+</div>
+</div>
+<h3><strong>Q18.&nbsp;What are the main concepts of OOPs in Java?</strong></h3>
+<p>Object-Oriented Programming or OOPs is a programming style that is associated with concepts like:</p>
+<ol>
+<li><em>Inheritance:&nbsp;</em>Inheritance is a process where one class acquires the properties of another.</li>
+<li><em>Encapsulation:&nbsp;</em>Encapsulation in Java is a mechanism of wrapping up the data and code together as a single unit.</li>
+<li><em>Abstraction:&nbsp;</em>Abstraction is the methodology of hiding the implementation details from the user and only providing the functionality to the users.&nbsp;</li>
+<li><em>Polymorphism:&nbsp;</em>Polymorphism is the ability of a variable, function or object to take multiple forms.</li>
+</ol>
+<h3><strong>Q19.&nbsp;What is the difference between a local variable and an instance variable?</strong></h3>
+<p>In Java, a&nbsp;<strong>local variable</strong>&nbsp;is typically used inside a method, constructor, or a&nbsp;<strong>block</strong>&nbsp;and has only local scope. Thus, this variable can be used only within the scope of a block. The best benefit of having a local variable is that other methods in the class won&rsquo;t be even aware of that variable.</p>
+<h4>Example</h4>
+<p>&nbsp;</p>
+<div>
+<div id="highlighter_240458" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">if</code><code class="java plain">(x &gt; </code><code class="java value">100</code><code class="java plain">)</code></div>
+<div class="line number2 index1 alt1"><code class="java plain">{</code></div>
+<div class="line number3 index2 alt2"><code class="java plain">String test = </code><code class="java string">"Edureka"</code><code class="java plain">;</code></div>
+<div class="line number4 index3 alt1"><code class="java plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Whereas, an&nbsp;<strong>instance variable</strong>&nbsp;in Java, is a variable which is bounded to its object itself. These variables are declared within a&nbsp;<strong>class</strong>, but outside a method. Every object of that class will create it&rsquo;s own copy of the variable while using it. Thus, any changes made to the variable won&rsquo;t reflect in any other instances of that class and will be bound to that particular instance only.</p>
+<div>
+<div id="highlighter_343606" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">class</code> <code class="java plain">Test{</code></div>
+<div class="line number2 index1 alt1"><code class="java keyword">public</code> <code class="java plain">String EmpName;</code></div>
+<div class="line number3 index2 alt2"><code class="java keyword">public</code> <code class="java keyword">int</code> <code class="java plain">empAge;</code></div>
+<div class="line number4 index3 alt1"><code class="java plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3><strong>Q20.&nbsp;Differentiate between the constructors and methods in Java?</strong></h3>
+<table border="1px" width="100%">
+<tbody>
+<tr>
+<td><strong>Methods</strong></td>
+<td><strong>Constructors</strong></td>
+</tr>
+<tr>
+<td>1. Used to represent the behavior of an object</td>
+<td>1. Used to initialize the state of an object</td>
+</tr>
+<tr>
+<td>2. Must have a return type</td>
+<td>2. Do not have any return type</td>
+</tr>
+<tr>
+<td>3. Needs to be invoked explicitly</td>
+<td>3. Is invoked implicitly</td>
+</tr>
+<tr>
+<td>4. No default method is provided by the compiler</td>
+<td>4. A default constructor is provided by the compiler if the class has none</td>
+</tr>
+<tr>
+<td>5. Method name may or may not be same as class name</td>
+<td>5. Constructor name must always be the same as the class name</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>Q21.&nbsp;What is final keyword in Java?</strong></h3>
+<p><strong>final&nbsp;</strong>is a special keyword in Java that is used as a non-access modifier. A final variable can be used in different contexts such as:</p>
+<ul>
+<li><strong>final variable</strong></li>
+</ul>
+<p>When the final keyword is used with a variable then its value can&rsquo;t be changed once assigned. In case the no value has been assigned to the final variable then using only the class constructor a value can be assigned to it.</p>
+<ul>
+<li>
+<h4><strong>final method</strong></h4>
+</li>
+</ul>
+<p>When a method is declared final then it can&rsquo;t be overridden by the inheriting class.</p>
+<ul>
+<li>
+<h4><strong>final class</strong></h4>
+</li>
+</ul>
+<p>When a class is declared as final in Java, it can&rsquo;t be extended by any subclass class but it can extend other class.</p>
+<h3><strong>Q22.&nbsp;What is the difference between break and continue statements?</strong></h3>
+<table border="1px" width="100%">
+<tbody>
+<tr>
+<td><strong>break</strong></td>
+<td><strong>continue</strong></td>
+</tr>
+<tr>
+<td>1. Can be used in switch and loop (for, while, do while) statements</td>
+<td>1. Can be only used with loop statements</td>
+</tr>
+<tr>
+<td>2. It&nbsp;causes the&nbsp;switch&nbsp;or loop statements to terminate the moment it is executed</td>
+<td>2. It&nbsp;doesn&rsquo;t terminate the loop but causes the loop to jump to the next iteration</td>
+</tr>
+<tr>
+<td>3. It&nbsp;terminates the innermost enclosing loop or&nbsp;switch immediately</td>
+<td>3. A&nbsp;continue&nbsp;within a loop nested with a&nbsp;switch will cause the next loop iteration to execute</td>
+</tr>
+</tbody>
+</table>
+<div>&nbsp;</div>
+<div><em><strong>Example break:</strong></em></div>
+<div>&nbsp;</div>
+<div>
+<div>
+<div id="highlighter_737063" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">for</code> <code class="java plain">(</code><code class="java keyword">int</code> <code class="java plain">i = </code><code class="java value">0</code><code class="java plain">; i &lt; </code><code class="java value">5</code><code class="java plain">; i++)</code></div>
+<div class="line number2 index1 alt1"><code class="java plain">{</code></div>
+<div class="line number3 index2 alt2"><code class="java keyword">if</code> <code class="java plain">(i == </code><code class="java value">3</code><code class="java plain">)</code></div>
+<div class="line number4 index3 alt1"><code class="java plain">{</code></div>
+<div class="line number5 index4 alt2"><code class="java keyword">break</code><code class="java plain">;</code></div>
+<div class="line number6 index5 alt1"><code class="java plain">}</code></div>
+<div class="line number7 index6 alt2"><code class="java plain">System.out.println(i);</code></div>
+<div class="line number8 index7 alt1"><code class="java plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div><em><strong>Example continue:</strong></em></div>
+<div>
+<div>
+<div id="highlighter_721544" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">for</code> <code class="java plain">(</code><code class="java keyword">int</code> <code class="java plain">i = </code><code class="java value">0</code><code class="java plain">; i &lt; </code><code class="java value">5</code><code class="java plain">; i++)</code></div>
+<div class="line number2 index1 alt1"><code class="java plain">{</code></div>
+<div class="line number3 index2 alt2"><code class="java keyword">if</code><code class="java plain">(i == </code><code class="java value">2</code><code class="java plain">)</code></div>
+<div class="line number4 index3 alt1"><code class="java plain">{</code></div>
+<div class="line number5 index4 alt2"><code class="java keyword">continue</code><code class="java plain">;</code></div>
+<div class="line number6 index5 alt1"><code class="java plain">}</code></div>
+<div class="line number7 index6 alt2"><code class="java plain">System.out.println(i);</code></div>
+<div class="line number8 index7 alt1"><code class="java plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h3><strong>Q23.What is an infinite loop in Java? Explain with an example.</strong></h3>
+<p>An infinite loop is an instruction sequence in Java that loops endlessly when a functional exit isn&rsquo;t met. This type of loop can be the result of a programming error or may also be a deliberate action based on the application behavior. An infinite loop will terminate automatically once the application exits.</p>
+<p>For example:</p>
+<p>&nbsp;</p>
+<div>
+<div id="highlighter_180395" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">public</code> <code class="java keyword">class</code> <code class="java plain">InfiniteForLoopDemo</code></div>
+<div class="line number2 index1 alt1"><code class="java plain">{</code></div>
+<div class="line number3 index2 alt2"><code class="java keyword">public</code> <code class="java keyword">static</code> <code class="java keyword">void</code> <code class="java plain">main(String[] arg) {</code></div>
+<div class="line number4 index3 alt1"><code class="java keyword">for</code><code class="java plain">(;;)</code></div>
+<div class="line number5 index4 alt2"><code class="java plain">System.out.println(</code><code class="java string">"Welcome to Edureka!"</code><code class="java plain">);</code></div>
+<div class="line number6 index5 alt1"><code class="java comments">// To terminate this program press ctrl + c in the console.</code></div>
+<div class="line number7 index6 alt2"><code class="java plain">}</code></div>
+<div class="line number8 index7 alt1"><code class="java plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<h3><strong>Q24. What is the difference between this() and super() in Java?</strong></h3>
+<p>In Java, super() and this(), both are special keywords that are used to call the constructor.&nbsp;</p>
+<table border="1px" width="100%">
+<tbody>
+<tr>
+<td><strong>this()</strong></td>
+<td><strong>super()</strong></td>
+</tr>
+<tr>
+<td>1. this() represents the current instance of a class</td>
+<td>1. super() represents the current instance of a parent/base class</td>
+</tr>
+<tr>
+<td>2. Used to call the default constructor of the same class</td>
+<td>2. Used to call the default constructor of the parent/base class</td>
+</tr>
+<tr>
+<td>3. Used to access methods of the current class</td>
+<td>3. Used to access methods of the base class</td>
+</tr>
+<tr>
+<td>4.&nbsp; Used for pointing the current class instance</td>
+<td>4. Used for pointing the superclass instance</td>
+</tr>
+<tr>
+<td>5. Must be the first line of a block</td>
+<td>5. Must be the first line of a block</td>
+</tr>
+</tbody>
+</table>
+<div>
+<h3><strong>Q25. What is Java String Pool?</strong></h3>
+<p>Java String pool refers to a collection of Strings which are stored in heap memory. In this, whenever a new object is created, String pool first checks whether the object is already present in the pool or not. If it is present, then the same reference is returned to the variable else new object will be created in the String pool and the respective reference will be returned.</p>
+<p><strong><img class=" wp-image-87288 aligncenter" src="https://www.edureka.co/blog/content/ver.1556012641/uploads/2019/04/String-pool.png" sizes="(max-width: 444px) 100vw, 444px" srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2019/04/String-pool.png 941w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2019/04/String-pool-150x89.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2019/04/String-pool-300x179.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2019/04/String-pool-768x458.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2019/04/String-pool-503x300.png 503w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2019/04/String-pool-302x180.png 302w" alt="String pool - Java Interview Questions - Edureka" width="444" height="264" /></strong></p>
+<h3><strong>Q26.&nbsp;Differentiate between static and non-static methods in Java.</strong></h3>
+<table border="1px" width="100%">
+<tbody>
+<tr>
+<td><strong>Static Method</strong></td>
+<td><strong>Non-Static Method</strong></td>
+</tr>
+<tr>
+<td>1.&nbsp;<em>The static</em>&nbsp;keyword must be used before the method name</td>
+<td>1. No need to use the&nbsp;<em>s</em><em class="markup--em markup--li-em">tatic</em>&nbsp;keyword before the method name</td>
+</tr>
+<tr>
+<td>2. It is called using the class (className.methodName)&nbsp;</td>
+<td>2. It is can be called like any general method</td>
+</tr>
+<tr>
+<td>3. They can&rsquo;t access any non-static instance variables or methods</td>
+<td>3. It can access any static method and any static variable without creating an instance of the class</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>Q27.&nbsp;What is constructor chaining in Java?</strong></h3>
+<p>In Java, constructor chaining is the process of calling one constructor from another with respect to the current object. Constructor chaining is possible only through legacy where a subclass constructor is responsible for invoking the superclass&rsquo; constructor first. There could be any number of classes in the constructor chain. Constructor chaining can be achieved in two ways:</p>
+<ol>
+<li>Within the same class using this()</li>
+<li>From base class using super()</li>
+</ol>
+<p><strong>Q28. Difference between String, StringBuilder, and StringBuffer.</strong></p>
+</div>
+<table border="1px" width="100%">
+<tbody>
+<tr>
+<td><strong>Factor</strong></td>
+<td><strong>String</strong></td>
+<td><strong>StringBuilder</strong></td>
+<td><strong>StringBuffer</strong></td>
+</tr>
+<tr>
+<td><em>Storage Area</em></td>
+<td>Constant String Pool</td>
+<td>Heap Area</td>
+<td>Heap Area</td>
+</tr>
+<tr>
+<td><em>Mutability</em></td>
+<td>Immutable</td>
+<td>Mutable</td>
+<td>Mutable</td>
+</tr>
+<tr>
+<td><em>Thread Safety</em></td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><em>Performance</em></td>
+<td>Fast</td>
+<td>More efficient</td>
+<td>Less efficient</td>
+</tr>
+</tbody>
+</table>
+<div>&nbsp;</div>
+<div>
+<h3><strong>Q29. What is a classloader in Java?</strong></h3>
+<p>The&nbsp;<strong>Java ClassLoader</strong>&nbsp;is a subset of JVM (Java Virtual Machine) that is responsible for loading the class files. Whenever a Java program is executed it is first loaded by the classloader. Java provides three built-in classloaders:</p>
+<ol class="points">
+<li>Bootstrap ClassLoader</li>
+<li>Extension ClassLoader</li>
+<li>System/Application ClassLoader</li>
+</ol>
+<h3><strong>Q30. Why Java Strings are immutable in nature?</strong></h3>
+<p>In Java,&nbsp;string objects are immutable in nature which simply means once the String object is created its state cannot be modified. Whenever you try to update the value of that object instead of updating the values of that particular object, Java creates a new string object. Java String objects are immutable as String objects are generally cached in the String pool. Since String literals are usually shared between multiple clients, action from one client might affect the rest. It enhances security, caching, synchronization, and performance of the application.&nbsp;</p>
+<h3><strong>Q31. What is the difference between an array and an array list?</strong></h3>
+<table border="1px">
+<tbody>
+<tr>
+<th>Array</th>
+<th><strong>ArrayList</strong></th>
+</tr>
+<tr>
+<td>Cannot contain values of different data types</td>
+<td>Can contain values of different data types.</td>
+</tr>
+<tr>
+<td>Size must be defined at the time of declaration</td>
+<td>Size can be dynamically changed</td>
+</tr>
+<tr>
+<td>Need to specify the index in order to add data</td>
+<td>No need to specify the index</td>
+</tr>
+<tr>
+<td>Arrays are not type parameterized</td>
+<td>Arraylists are type&nbsp;</td>
+</tr>
+<tr>
+<td>Arrays can contain primitive data types as well as objects</td>
+<td>Arraylists can contain only objects, no primitive data types are allowed</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>Q32. What is a Map in Java?</strong></h3>
+<p>In Java, Map is an interface of Util package which maps unique keys to values. The Map interface is not a subset of the main Collection interface&nbsp;and thus it behaves little different from the other collection types. Below are a few of the characteristics of Map interface:&nbsp;</p>
+<ol>
+<li>Map doesn&rsquo;t contain duplicate keys.</li>
+<li>
+<p>Each key can map at max one value.</p>
+</li>
+</ol>
+<h3><strong>Q33. What is collection class in Java? List down its methods and interfaces.</strong></h3>
+<p>In Java, the collection is a framework that acts as an architecture for storing and manipulating a group of objects. Using Collections you can perform various tasks like searching, sorting, insertion, manipulation, deletion, etc. Java collection framework includes the following:</p>
+<ul>
+<li>Interfaces</li>
+<li>Classes</li>
+<li>Methods</li>
+</ul>
+<p>The below image shows the complete hierarchy of the Java Collection.</p>
+<p><img class="aligncenter" src="https://www.edureka.co/blog/wp-content/uploads/2017/05/Collection-framework-hierarchy.png" alt="FrameworkHierarchy - Java Collections - Edureka" width="718" height="584" /><a name="OOPs"></a></p>
+<p>&nbsp;</p>
+<p>In case you are facing any challenges with these java interview questions, please comment on your problems in the section below.</p>
+<h2><strong>OOPS Java Interview Questions</strong></h2>
+<h3><strong>Q1. What is Polymorphism?</strong></h3>
+<p>Polymorphism is briefly described as &ldquo;one interface, many implementations&rdquo;. Polymorphism is a characteristic of being able to assign a different meaning or usage to something in different contexts &ndash; specifically, to allow an entity such as a variable, a function, or an object to have more than one form. There are two types of polymorphism:<img class="wp-image-45540 alignright  blur-up lazyloaded" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Polymorphism-483x300.png" sizes="(max-width: 300px) 100vw, 300px" srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Polymorphism-483x300.png 483w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Polymorphism-150x93.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Polymorphism-300x186.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Polymorphism-768x477.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Polymorphism-290x180.png 290w" alt="" width="300" height="187" data-src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Polymorphism-483x300.png" data-srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Polymorphism-483x300.png 483w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Polymorphism-150x93.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Polymorphism-300x186.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Polymorphism-768x477.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Polymorphism-290x180.png 290w" data-sizes="(max-width: 300px) 100vw, 300px" /></p>
+<ol>
+<li>Compile time polymorphism</li>
+<li>Run time polymorphism</li>
+</ol>
+<p>Compile time polymorphism is method overloading whereas Runtime time polymorphism is done using inheritance and interface.</p>
+<h3>&nbsp;</h3>
+<h3>&nbsp;</h3>
+<h3>&nbsp;</h3>
+<h3><strong>Q2. What is runtime polymorphism or dynamic method dispatch?</strong></h3>
+<p>In Java, runtime polymorphism or dynamic method dispatch is a process in which a call to an overridden method is resolved at runtime rather than at compile-time. In this process, an overridden method is called through the reference variable of a superclass.&nbsp;Let&rsquo;s take a&nbsp;look at the example below to understand it better.</p>
+<div>
+<div id="highlighter_740730" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+<div class="line number15 index14 alt2">15</div>
+<div class="line number16 index15 alt1">16</div>
+<div class="line number17 index16 alt2">17</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">class</code> <code class="java plain">Car {</code></div>
+<div class="line number2 index1 alt1"><code class="java keyword">void</code> <code class="java plain">run()</code></div>
+<div class="line number3 index2 alt2"><code class="java plain">{</code></div>
+<div class="line number4 index3 alt1"><code class="java plain">System.out.println(&ldquo;car is running&rdquo;); </code></div>
+<div class="line number5 index4 alt2"><code class="java plain">}</code></div>
+<div class="line number6 index5 alt1"><code class="java plain">}</code></div>
+<div class="line number7 index6 alt2"><code class="java keyword">class</code> <code class="java plain">Audi </code><code class="java keyword">extends</code> <code class="java plain">Car {</code></div>
+<div class="line number8 index7 alt1"><code class="java keyword">void</code> <code class="java plain">run()</code></div>
+<div class="line number9 index8 alt2"><code class="java plain">{</code></div>
+<div class="line number10 index9 alt1"><code class="java plain">System.out.prinltn(&ldquo;Audi is running safely with 100km&rdquo;);</code></div>
+<div class="line number11 index10 alt2"><code class="java plain">}</code></div>
+<div class="line number12 index11 alt1"><code class="java keyword">public</code> <code class="java keyword">static</code> <code class="java keyword">void</code> <code class="java plain">main(String args[])</code></div>
+<div class="line number13 index12 alt2"><code class="java plain">{</code></div>
+<div class="line number14 index13 alt1"><code class="java plain">Car b= </code><code class="java keyword">new</code> <code class="java plain">Audi();&nbsp;&nbsp;&nbsp; </code><code class="java comments">//upcasting</code></div>
+<div class="line number15 index14 alt2"><code class="java plain">b.run();</code></div>
+<div class="line number16 index15 alt1"><code class="java plain">}</code></div>
+<div class="line number17 index16 alt2"><code class="java plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3><strong>Q3.&nbsp;</strong><strong>What is abstraction in Java?</strong></h3>
+<p>Abstraction refers to the quality of dealing with ideas rather than events. It basically deals with hiding the details and showing the essential things to the user. Thus you can say that abstraction in Java is the process of hiding the implementation details from the user and revealing only the functionality to them. Abstraction can be achieved in two ways:</p>
+<ol>
+<li><strong>Abstract Classes</strong>&nbsp;(0-100% of abstraction can be achieved)</li>
+<li><strong>Interfaces</strong>&nbsp;(100% of abstraction can be achieved)</li>
+</ol>
+<h3><strong>Q4. What do you mean by an interface in Java?</strong></h3>
+<p>An interface in Java is a blueprint of a class or you can say it is a collection of abstract methods and static constants. In an interface, each method is public and abstract but it does not contain any constructor. Thus, interface basically is a group of related methods with empty bodies. Example:</p>
+<div>public interface Animal {</div>
+<div>&nbsp; public void eat();</div>
+<div>&nbsp; public void sleep();</div>
+<div>&nbsp; public void run();</div>
+<div>}</div>
+<h3><strong>Q5.&nbsp;What is the difference between abstract classes and interfaces?</strong></h3>
+<div>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<th><strong>Abstract Class</strong></th>
+<th><strong>Interfaces</strong></th>
+</tr>
+<tr>
+<td>An abstract class can provide complete, default code and/or just the details that have to be overridden</td>
+<td>An interface cannot provide any code at all, just the signature</td>
+</tr>
+<tr>
+<td>In the case of an abstract class, a class may extend only one abstract class</td>
+<td>A Class may implement several interfaces</td>
+</tr>
+<tr>
+<td>An abstract class can have non-abstract methods</td>
+<td>All methods of an Interface are abstract</td>
+</tr>
+<tr>
+<td>An abstract class can have instance variables</td>
+<td>An Interface cannot have instance variables</td>
+</tr>
+<tr>
+<td>An abstract class can have any visibility: public, private, protected</td>
+<td>An Interface visibility must be public (or) none</td>
+</tr>
+<tr>
+<td>If we add a new method to an abstract class then we have the option of providing default implementation and therefore all the existing code might work properly</td>
+<td>If we add a new method to an Interface then we have to track down all the implementations of the interface and define implementation for the new method</td>
+</tr>
+<tr>
+<td>An abstract class can contain constructors</td>
+<td>An Interface cannot contain constructors</td>
+</tr>
+<tr>
+<td>Abstract classes are fast</td>
+<td>Interfaces are slow as it requires extra indirection to find the corresponding method in the actual class</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Q6.&nbsp;What is inheritance in Java?</strong></p>
+<p>Inheritance in Java is the concept where the properties of one class can be inherited by the other. It helps to reuse the code and establish a relationship between different classes. Inheritance is performed between two types of classes:</p>
+<ol>
+<li>Parent class (Super or Base class)</li>
+<li>Child class (Subclass or Derived class)</li>
+</ol>
+<p><a name="singleton-class"></a></p>
+<p>A class which inherits the properties is known as Child Class whereas a class whose properties are inherited is known as Parent class.</p>
+<h3><strong>Q7. What are the different types of inheritance in Java?</strong></h3>
+<p>Java supports four types of inheritance which are:</p>
+<ol>
+<li><strong>Single Inheritance:</strong>&nbsp;In single inheritance, one class inherits the properties of another i.e there will be only one parent as well as one child class.</li>
+<li class="TrT0Xe"><strong>Multilevel Inheritance:&nbsp;</strong>When a class is derived from a class which is also derived from another class, i.e. a&nbsp;class having more than one parent class but at different levels, such type of inheritance is called Multilevel Inheritance.</li>
+<li class="TrT0Xe"><strong>Hierarchical Inheritance:&nbsp;</strong>When&nbsp;a class has more than one child classes (subclasses) or in other words, more than one child classes have the same parent class, then such kind of inheritance is known as&nbsp;hierarchical.</li>
+<li class="TrT0Xe"><strong>Hybrid Inheritance:&nbsp;</strong>Hybrid inheritance&nbsp;is a combination of two<em>&nbsp;or more types</em>&nbsp;of inheritance.</li>
+</ol>
+<h3><strong>Q8. What is method overloading and method overriding?</strong></h3>
+<h4><strong>Method Overloading :</strong></h4>
+<ul>
+<li>In Method Overloading, Methods of the same class shares the same name but each method must have a different number of parameters or parameters having different types and order.</li>
+<li>Method Overloading is to &ldquo;add&rdquo; or &ldquo;extend&rdquo; more to the method&rsquo;s behavior.</li>
+<li>It is a compile-time polymorphism.</li>
+<li>The methods must have a different signature.</li>
+<li>It may or may not need inheritance in Method Overloading.</li>
+</ul>
+<p>Let&rsquo;s take a&nbsp;look at the example below to understand it better.</p>
+<div>
+<div id="highlighter_284289" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">class</code> <code class="java plain">Adder {</code></div>
+<div class="line number2 index1 alt1"><code class="java plain">Static </code><code class="java keyword">int</code> <code class="java plain">add(</code><code class="java keyword">int</code> <code class="java plain">a, </code><code class="java keyword">int</code> <code class="java plain">b)</code></div>
+<div class="line number3 index2 alt2"><code class="java plain">{</code></div>
+<div class="line number4 index3 alt1"><code class="java keyword">return</code> <code class="java plain">a+b;</code></div>
+<div class="line number5 index4 alt2"><code class="java plain">}</code></div>
+<div class="line number6 index5 alt1"><code class="java plain">Static </code><code class="java keyword">double</code> <code class="java plain">add( </code><code class="java keyword">double</code> <code class="java plain">a, </code><code class="java keyword">double</code> <code class="java plain">b)</code></div>
+<div class="line number7 index6 alt2"><code class="java plain">{</code></div>
+<div class="line number8 index7 alt1"><code class="java keyword">return</code> <code class="java plain">a+b;</code></div>
+<div class="line number9 index8 alt2"><code class="java plain">}</code></div>
+<div class="line number10 index9 alt1"><code class="java keyword">public</code> <code class="java keyword">static</code> <code class="java keyword">void</code> <code class="java plain">main(String args[])</code></div>
+<div class="line number11 index10 alt2"><code class="java plain">{</code></div>
+<div class="line number12 index11 alt1"><code class="java plain">System.out.println(Adder.add(</code><code class="java value">11</code><code class="java plain">,</code><code class="java value">11</code><code class="java plain">));</code></div>
+<div class="line number13 index12 alt2"><code class="java plain">System.out.println(Adder.add(</code><code class="java value">12.3</code><code class="java plain">,</code><code class="java value">12.6</code><code class="java plain">));</code></div>
+<div class="line number14 index13 alt1"><code class="java plain">}}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h4><strong>Method Overriding:&nbsp;&nbsp;</strong></h4>
+<ul>
+<li>In Method Overriding, the subclass has the same method with the same name and exactly the same number and type of parameters and same return type as a superclass.</li>
+<li>Method Overriding is to &ldquo;Change&rdquo; existing behavior of the method.</li>
+<li>It is a run time polymorphism.</li>
+<li>The methods must have the same signature.</li>
+<li>It always requires inheritance in Method Overriding.</li>
+</ul>
+<p>Let&rsquo;s take a&nbsp;look at the example below to understand it better.</p>
+<div>
+<div id="highlighter_837831" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+<div class="line number15 index14 alt2">15</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">class</code> <code class="java plain">Car {</code></div>
+<div class="line number2 index1 alt1"><code class="java keyword">void</code> <code class="java plain">run(){</code></div>
+<div class="line number3 index2 alt2"><code class="java plain">System.out.println(&ldquo;car is running&rdquo;); </code></div>
+<div class="line number4 index3 alt1"><code class="java plain">}</code></div>
+<div class="line number5 index4 alt2"><code class="java plain">Class Audi </code><code class="java keyword">extends</code> <code class="java plain">Car{</code></div>
+<div class="line number6 index5 alt1"><code class="java keyword">void</code> <code class="java plain">run()</code></div>
+<div class="line number7 index6 alt2"><code class="java plain">{</code></div>
+<div class="line number8 index7 alt1"><code class="java plain">System.out.prinltn(</code><code class="java string">"Audi is running safely with 100km"</code><code class="java plain">);</code></div>
+<div class="line number9 index8 alt2"><code class="java plain">}</code></div>
+<div class="line number10 index9 alt1"><code class="java keyword">public</code> <code class="java keyword">static</code> <code class="java keyword">void</code> <code class="java plain">main( String args[])</code></div>
+<div class="line number11 index10 alt2"><code class="java plain">{</code></div>
+<div class="line number12 index11 alt1"><code class="java plain">Car b=</code><code class="java keyword">new</code> <code class="java plain">Audi();</code></div>
+<div class="line number13 index12 alt2"><code class="java plain">b.run();</code></div>
+<div class="line number14 index13 alt1"><code class="java plain">}</code></div>
+<div class="line number15 index14 alt2"><code class="java plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3><strong>Q9. Can you override a private or static method in Java?</strong></h3>
+<p>You cannot override a private or static method in Java. If you create a similar method with the same return type and same method arguments in child class then it will hide the superclass method; this is known as method hiding. Similarly, you cannot override a private method in subclass because it&rsquo;s not accessible there. What you can do is create another private method with the same name in the child class. Let&rsquo;s take a look at the example below to understand it better.</p>
+<div>
+<div id="highlighter_792986" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+<div class="line number15 index14 alt2">15</div>
+<div class="line number16 index15 alt1">16</div>
+<div class="line number17 index16 alt2">17</div>
+<div class="line number18 index17 alt1">18</div>
+<div class="line number19 index18 alt2">19</div>
+<div class="line number20 index19 alt1">20</div>
+<div class="line number21 index20 alt2">21</div>
+<div class="line number22 index21 alt1">22</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">class</code> <code class="java plain">Base {</code></div>
+<div class="line number2 index1 alt1"><code class="java keyword">private</code> <code class="java keyword">static</code> <code class="java keyword">void</code> <code class="java plain">display() {</code></div>
+<div class="line number3 index2 alt2"><code class="java plain">System.out.println(</code><code class="java string">"Static or class method from Base"</code><code class="java plain">);</code></div>
+<div class="line number4 index3 alt1"><code class="java plain">}</code></div>
+<div class="line number5 index4 alt2"><code class="java keyword">public</code> <code class="java keyword">void</code> <code class="java plain">print() {</code></div>
+<div class="line number6 index5 alt1"><code class="java plain">System.out.println(</code><code class="java string">"Non-static or instance method from Base"</code><code class="java plain">);</code></div>
+<div class="line number7 index6 alt2"><code class="java plain">}</code></div>
+<div class="line number8 index7 alt1"><code class="java keyword">class</code> <code class="java plain">Derived </code><code class="java keyword">extends</code> <code class="java plain">Base {</code></div>
+<div class="line number9 index8 alt2"><code class="java keyword">private</code> <code class="java keyword">static</code> <code class="java keyword">void</code> <code class="java plain">display() {</code></div>
+<div class="line number10 index9 alt1"><code class="java plain">System.out.println(</code><code class="java string">"Static or class method from Derived"</code><code class="java plain">);</code></div>
+<div class="line number11 index10 alt2"><code class="java plain">}</code></div>
+<div class="line number12 index11 alt1"><code class="java keyword">public</code> <code class="java keyword">void</code> <code class="java plain">print() {</code></div>
+<div class="line number13 index12 alt2"><code class="java plain">System.out.println(</code><code class="java string">"Non-static or instance method from Derived"</code><code class="java plain">);</code></div>
+<div class="line number14 index13 alt1"><code class="java plain">}</code></div>
+<div class="line number15 index14 alt2"><code class="java keyword">public</code> <code class="java keyword">class</code> <code class="java plain">test {</code></div>
+<div class="line number16 index15 alt1"><code class="java keyword">public</code> <code class="java keyword">static</code> <code class="java keyword">void</code> <code class="java plain">main(String args[])</code></div>
+<div class="line number17 index16 alt2"><code class="java plain">{</code></div>
+<div class="line number18 index17 alt1"><code class="java plain">Base obj= </code><code class="java keyword">new</code> <code class="java plain">Derived();</code></div>
+<div class="line number19 index18 alt2"><code class="java plain">obj1.display();</code></div>
+<div class="line number20 index19 alt1"><code class="java plain">obj1.print();</code></div>
+<div class="line number21 index20 alt2"><code class="java plain">}</code></div>
+<div class="line number22 index21 alt1"><code class="java plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3><strong>Q10. What is multiple inheritance? Is it supported by Java?</strong></h3>
+<p><img class="alignleft wp-image-45684  blur-up lazyloaded" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/MultipleInheritance-Java-240x300.png" sizes="(max-width: 168px) 100vw, 168px" srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/MultipleInheritance-Java-240x300.png 240w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/MultipleInheritance-Java-120x150.png 120w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/MultipleInheritance-Java-768x960.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/MultipleInheritance-Java-144x180.png 144w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/MultipleInheritance-Java.png 902w" alt="MultipleInheritance - Java Interview Questions - Edureka" width="168" height="210" data-src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/MultipleInheritance-Java-240x300.png" data-srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/MultipleInheritance-Java-240x300.png 240w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/MultipleInheritance-Java-120x150.png 120w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/MultipleInheritance-Java-768x960.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/MultipleInheritance-Java-144x180.png 144w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/MultipleInheritance-Java.png 902w" data-sizes="(max-width: 168px) 100vw, 168px" />If a child class inherits the property from multiple classes is known as multiple inheritance. Java does not allow to extend multiple classes.</p>
+<p>The problem with multiple inheritance is that if multiple parent classes have the same method name, then at runtime it becomes difficult for the compiler to decide which method to execute from the child class.</p>
+<p>Therefore, Java doesn&rsquo;t support multiple inheritance. The problem is commonly referred to as Diamond Problem.</p>
+<h3><strong>Q11.&nbsp;</strong><strong>What is encapsulation in Java?</strong></h3>
+<p>Encapsulation is a mechanism where you bind your data(variables) and code(methods) together as a single unit. Here, the data is hidden from the outer world and can be accessed only via current class methods. This helps in protecting the data from any unnecessary modification.&nbsp;We can achieve encapsulation in Java by:</p>
+<ul>
+<li>Declaring the variables of a class as private.</li>
+<li>Providing public setter and getter methods to modify and view the values of the variables.</li>
+</ul>
+<h3><strong>Q12. What is an association?</strong></h3>
+<p>Association is a relationship where all object have their own lifecycle and there is no owner. Let&rsquo;s take the example of Teacher and Student. Multiple students can associate with a single teacher and a single student can associate with multiple teachers but there is no ownership between the objects and both have their own lifecycle. These relationships can be one to one, one to many, many to one and many to many.</p>
+<h3><strong>Q13. What do you mean by aggregation?</strong></h3>
+<p>An aggregation is a specialized form of Association where all object has their own lifecycle but there is ownership and child object can not belong to another parent object. Let&rsquo;s take an example of Department and teacher. A single teacher can not belong to multiple departments, but if we delete the department teacher object will not destroy.&nbsp;</p>
+<h3><strong>Q14. What is composition in Java?</strong></h3>
+<p>Composition is again a specialized form of Aggregation and we can call this as a &ldquo;death&rdquo; relationship. It is a strong type of Aggregation. Child object does not have their lifecycle and if parent object deletes all child object will also be deleted. Let&rsquo;s take again an example of a relationship between House and rooms. House can contain multiple rooms there is no independent life of room and any room can not belongs to two different houses if we delete the house room will automatically delete.</p>
+<p><strong>Q15. What is a marker interface?</strong></p>
+<p>A Marker interface can be defined as the interface having no data member and member functions. In simpler terms, an empty interface is called the Marker interface. The most common examples of Marker interface in Java are Serializable, Cloneable etc. The marker interface can be declared as follows.</p>
+<div>
+<div id="highlighter_491975" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">public</code> <code class="java keyword">interface</code> <code class="java plain">Serializable{</code></div>
+<div class="line number2 index1 alt1"><code class="java plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>Q16</strong><strong>.&nbsp;What is object cloning in Java?</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<p>Object cloning in Java is the process of creating an exact copy of an object. It basically means the ability to create an object with a similar state as the original object. To achieve this, Java provides a method&nbsp;<strong>clone</strong><strong>()</strong>&nbsp;to make use of this functionality. This method creates a new instance of the class of the current object and then initializes all its fields with the exact same contents of corresponding fields. To object clone(), the marker interface&nbsp;<strong>java.lang.Cloneable&nbsp;</strong>must be implemented to avoid any runtime exceptions. One thing you must note is Object clone() is a protected method, thus you need to override it.</p>
+<h3><strong>Q17. What is a copy constructor in Java?</strong></h3>
+<p>Copy constructor is a member function that is used to initialize an object using another object of the same class. Though there is no need for copy constructor in Java since all objects are passed by reference. Moreover, Java does not even support automatic pass-by-value.</p>
+<h3><strong>Q18. What is a constructor overloading in Java?</strong></h3>
+<p>In Java, constructor overloading&nbsp;is a technique of adding&nbsp;any number of&nbsp;constructors to a class each having a different parameter list. The compiler uses the number of parameters and their types in the list to differentiate the overloaded constructors.</p>
+<div>
+<div id="highlighter_384131" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">class</code> <code class="java plain">Demo</code></div>
+<div class="line number2 index1 alt1"><code class="java plain">{</code></div>
+<div class="line number3 index2 alt2"><code class="java keyword">int</code> <code class="java plain">i;</code></div>
+<div class="line number4 index3 alt1"><code class="java keyword">public</code> <code class="java plain">Demo(</code><code class="java keyword">int</code> <code class="java plain">a)</code></div>
+<div class="line number5 index4 alt2"><code class="java plain">{</code></div>
+<div class="line number6 index5 alt1"><code class="java plain">i=k;</code></div>
+<div class="line number7 index6 alt2"><code class="java plain">}</code></div>
+<div class="line number8 index7 alt1"><code class="java keyword">public</code> <code class="java plain">Demo(</code><code class="java keyword">int</code> <code class="java plain">a, </code><code class="java keyword">int</code> <code class="java plain">b)</code></div>
+<div class="line number9 index8 alt2"><code class="java plain">{</code></div>
+<div class="line number10 index9 alt1"><code class="java comments">//body</code></div>
+<div class="line number11 index10 alt2"><code class="java plain">}</code></div>
+<div class="line number12 index11 alt1"><code class="java plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h2><strong>Servlets Interview Questions&nbsp;&nbsp;</strong></h2>
+<h3><strong>Q1. What is a servlet?</strong></h3>
+<ul>
+<li>Java Servlet is server-side technologies to extend the capability of web servers by providing support for dynamic response and data persistence.</li>
+<li>The javax.servlet and javax.servlet.http packages provide interfaces and classes for writing our own servlets.</li>
+<li>All servlets must implement the javax.servlet.Servlet interface, which defines servlet lifecycle methods. When implementing a generic service, we can extend the GenericServlet class provided with the Java Servlet API. The HttpServlet class provides methods, such as doGet() and doPost(), for handling HTTP-specific services.</li>
+<li>Most of the times, web applications are accessed using HTTP protocol and thats why we mostly extend HttpServlet class. Servlet API hierarchy is shown in below image.</li>
+</ul>
+<p><img class="aligncenter wp-image-45559 size-large  blur-up lazyloaded" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-340x300.png" sizes="(max-width: 340px) 100vw, 340px" srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-340x300.png 340w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-150x132.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-300x264.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-768x677.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-204x180.png 204w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java.png 1248w" alt="Servlet - Java Interview Questions - Edureka" width="340" height="300" data-src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-340x300.png" data-srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-340x300.png 340w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-150x132.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-300x264.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-768x677.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-204x180.png 204w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java.png 1248w" data-sizes="(max-width: 340px) 100vw, 340px" /></p>
+<h3><strong>Q2. What are the differences between Get and Post methods?</strong></h3>
+<div>
+<table border="1">
+<tbody>
+<tr>
+<th><strong>Get</strong></th>
+<th><strong>Post</strong></th>
+</tr>
+<tr>
+<td>Limited amount of data can be sent because data is sent in header.</td>
+<td>Large amount of data can be sent because data is sent in body.</td>
+</tr>
+<tr>
+<td>&nbsp;Not Secured because data is exposed in URL bar.</td>
+<td>&nbsp;Secured because data is not exposed in URL bar.</td>
+</tr>
+<tr>
+<td>&nbsp;Can be bookmarked</td>
+<td>&nbsp;Cannot be bookmarked</td>
+</tr>
+<tr>
+<td>&nbsp;Idempotent</td>
+<td>&nbsp;Non-Idempotent</td>
+</tr>
+<tr>
+<td>&nbsp;It is more efficient and used than Post</td>
+<td>&nbsp;It is less efficient and used</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3><strong>Q3.&nbsp;What is Request Dispatcher?</strong></h3>
+<p>RequestDispatcher interface is used to forward the request to another resource that can be HTML, JSP or another servlet in same application. We can also use this to include the content of another resource to the response.</p>
+<p>There are two methods defined in this interface:</p>
+<p>1.void forward()</p>
+<p>2.void include()</p>
+<h2><strong><img class="aligncenter wp-image-45583   blur-up lazyloaded" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method.png" sizes="(max-width: 697px) 100vw, 697px" srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method.png 1404w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method-150x51.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method-300x101.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method-768x260.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method-528x179.png 528w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method-532x180.png 532w" alt="ForwardMethod - Java Interview Questions - Edureka" width="697" height="236" data-src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method.png" data-srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method.png 1404w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method-150x51.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method-300x101.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method-768x260.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method-528x179.png 528w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method-532x180.png 532w" data-sizes="(max-width: 697px) 100vw, 697px" /></strong></h2>
+<h2><strong><img class="aligncenter wp-image-45584   blur-up lazyloaded" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method.png" sizes="(max-width: 657px) 100vw, 657px" srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method.png 1404w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method-150x57.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method-300x114.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method-768x292.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method-528x200.png 528w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method-474x180.png 474w" alt="IncludeMethod - Java Interview Questions - Edureka" width="657" height="249" data-src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method.png" data-srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method.png 1404w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method-150x57.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method-300x114.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method-768x292.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method-528x200.png 528w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method-474x180.png 474w" data-sizes="(max-width: 657px) 100vw, 657px" /></strong></h2>
+<h3><strong>Q4. What are the differences between forward() method and sendRedirect() methods?</strong></h3>
+<div><a><br /></a>
+<p>&nbsp;</p>
+<table border="1">
+<tbody>
+<tr>
+<th><strong>forward() method</strong></th>
+<th><strong>SendRedirect() method</strong></th>
+</tr>
+<tr>
+<td>forward() sends the same request to another resource.</td>
+<td>sendRedirect() method sends new request always because it uses the URL bar of the browser.</td>
+</tr>
+<tr>
+<td>&nbsp;forward() method works at server side.</td>
+<td>&nbsp;sendRedirect() method works at client side.</td>
+</tr>
+<tr>
+<td>&nbsp;forward() method works within the server only.</td>
+<td>sendRedirect() method works within and outside the server.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3><strong>Q5. What is the life-cycle of a servlet?</strong></h3>
+<p>There are 5 stages in the lifecycle of a servlet:<strong><img class="aligncenter wp-image-45581 size-medium  blur-up lazyloaded" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-300x284.png" sizes="(max-width: 300px) 100vw, 300px" srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-300x284.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-150x142.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-768x727.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-317x300.png 317w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-190x180.png 190w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet.png 1216w" alt="LifeCycleServlet - Java Interview Questions - Edureka" width="300" height="284" data-src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-300x284.png" data-srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-300x284.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-150x142.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-768x727.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-317x300.png 317w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-190x180.png 190w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet.png 1216w" data-sizes="(max-width: 300px) 100vw, 300px" /></strong></p>
+<ol>
+<li>Servlet is loaded</li>
+<li>Servlet is instantiated</li>
+<li>Servlet is initialized</li>
+<li>Service the request</li>
+<li>Servlet is destroyed</li>
+</ol>
+<h3><strong>Q6. How does cookies work in Servlets?</strong></h3>
+<ul>
+<li>Cookies are text data sent by server to the client and it gets saved at the client local machine.</li>
+<li>Servlet API provides cookies support through javax.servlet.http.Cookie class that implements Serializable and Cloneable interfaces.</li>
+<li>HttpServletRequest getCookies() method is provided to get the array of Cookies from request, since there is no point of adding Cookie to request, there are no methods to set or add cookie to request.</li>
+<li>Similarly HttpServletResponse addCookie(Cookie c) method is provided to attach cookie in response header, there are no getter methods for cookie.</li>
+</ul>
+<h3><strong>Q7. What are the differences between ServletContext vs ServletConfig?</strong></h3>
+<p>The difference between ServletContext and ServletConfig in Servlets JSP is in below tabular format.</p>
+<div>
+<table border="1">
+<tbody>
+<tr>
+<th><strong>ServletConfig</strong></th>
+<th><strong>ServletContext</strong></th>
+</tr>
+<tr>
+<td>Servlet config object represent single servlet</td>
+<td>It represent whole web application running on particular JVM and common for all the servlet</td>
+</tr>
+<tr>
+<td>Its like local parameter associated with particular servlet</td>
+<td>Its like global parameter associated with whole application</td>
+</tr>
+<tr>
+<td>It&rsquo;s a name value pair defined inside the servlet section of web.xml file so it has servlet wide scope</td>
+<td>ServletContext has application wide scope so define outside of servlet tag in web.xml file.</td>
+</tr>
+<tr>
+<td>getServletConfig() method is used to get the config object</td>
+<td>getServletContext() method is &nbsp;used to get the context object.</td>
+</tr>
+<tr>
+<td>for example shopping cart of a user is a specific to particular user so here we can use servlet config</td>
+<td>To get the MIME type of a file or application session related information is stored using servlet context object.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a name="singleton-class"></a></p>
+<h3><strong>Q8. What are the different methods of session management in servlets?</strong></h3>
+<p>Session is a conversational state between client and server and it can consists of multiple request and response between client and server. Since HTTP and Web Server both are stateless, the only way to maintain a session is when some unique information about the session (session id) is passed between server and client in every request and response.</p>
+<p>Some of the common ways of session management in servlets are:</p>
+<ol>
+<li>User Authentication</li>
+<li>HTML Hidden Field</li>
+<li>Cookies</li>
+<li>URL Rewriting</li>
+<li>Session Management API</li>
+</ol>
+<p><a name="JDBC"></a></p>
+<p>In case you are facing any challenges with these java interview questions, please comment your problems in the section below.<a name="JDBC"></a>&nbsp;Apart from this Java Interview Questions Blog, if you want to get trained from professionals on this technology, you can opt for a structured training from edureka! Click below to know more.</p>
+<h2><strong>JDBC Interview Questions&nbsp;</strong></h2>
+<h3><strong>1. What is JDBC Driver?</strong></h3>
+<p>JDBC Driver is a software component that enables java application to interact with the database. There are 4 types of JDBC drivers:</p>
+<ol>
+<li>JDBC-ODBC bridge driver</li>
+<li>Native-API driver (partially java driver)</li>
+<li>Network Protocol driver (fully java driver)</li>
+<li>Thin driver (fully java driver)</li>
+</ol>
+<h3><strong><img class="aligncenter wp-image-45721 size-full  blur-up lazyloaded" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/JDBC.png" sizes="(max-width: 300px) 100vw, 300px" srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/JDBC.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/JDBC-134x150.png 134w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/JDBC-269x300.png 269w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/JDBC-161x180.png 161w" alt="" width="300" height="335" data-src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/JDBC.png" data-srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/JDBC.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/JDBC-134x150.png 134w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/JDBC-269x300.png 269w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/JDBC-161x180.png 161w" data-sizes="(max-width: 300px) 100vw, 300px" />2. What are the steps to connect to a database in java?</strong></h3>
+<ul>
+<li>Registering the driver class</li>
+<li>Creating connection</li>
+<li>Creating statement</li>
+<li>Executing queries</li>
+<li>Closing connection</li>
+</ul>
+<h3><strong>3. What are the JDBC API components?</strong></h3>
+<p>The java.sql package contains interfaces and classes for JDBC API.</p>
+<h4><strong>Interfaces:</strong></h4>
+<ul>
+<li>Connection</li>
+<li>Statement</li>
+<li>PreparedStatement</li>
+<li>ResultSet</li>
+<li>ResultSetMetaData</li>
+<li>DatabaseMetaData</li>
+<li>CallableStatement etc.</li>
+</ul>
+<h4><strong>Classes:</strong></h4>
+<ul>
+<li>DriverManager</li>
+<li>Blob</li>
+<li>Clob</li>
+<li>Types</li>
+<li>SQLException etc.</li>
+</ul>
+<h3><strong>4. What is the role of JDBC DriverManager class?</strong></h3>
+<p>The&nbsp;DriverManager<em>&nbsp;class</em>&nbsp;manages the registered drivers. It can be used to register and unregister drivers. It provides factory method that returns the instance of Connection.</p>
+<h3><strong>5. What is JDBC Connection interface?</strong></h3>
+<p>The&nbsp;Connection interface&nbsp;maintains a session with the database. It can be used for transaction management. It provides factory methods that returns the instance of Statement, PreparedStatement, CallableStatement and DatabaseMetaData.</p>
+<h3><strong>6. &nbsp;What is the purpose of JDBC ResultSet interface?</strong></h3>
+<p>The ResultSet object represents a row of a table. It can be used to change the cursor pointer and get the information from the database.</p>
+<h3><strong>7. What is JDBC ResultSetMetaData interface?</strong></h3>
+<p>The ResultSetMetaData interface returns the information of table such as total number of columns, column name, column type etc.</p>
+<h3><strong>8. What is JDBC DatabaseMetaData interface?</strong></h3>
+<p>The DatabaseMetaData interface returns the information of the database such as username, driver name, driver version, number of tables, number of views etc.</p>
+<h3><strong>9. What do you mean by batch processing in JDBC?</strong></h3>
+<p>Batch processing helps you to group related SQL statements into a batch and execute them instead of executing a single query. By using batch processing technique in JDBC, you can execute multiple queries which makes the performance faster.</p>
+<h3><strong>10. What is the difference between execute, executeQuery, executeUpdate?</strong></h3>
+<p>Statement&nbsp;<strong><em>execute(String query)</em></strong>&nbsp;is used to execute any SQL query and it returns TRUE if the result is an ResultSet such as running Select queries. The output is FALSE when there is no ResultSet object such as running Insert or Update queries. We can use&nbsp;<em>getResultSet()</em>&nbsp;to get the ResultSet and&nbsp;<em>getUpdateCount()</em>&nbsp;method to retrieve the update count.</p>
+<p>Statement&nbsp;<strong><em>executeQuery(String query)</em></strong>&nbsp;is used to execute Select queries and returns the ResultSet. ResultSet returned is never null even if there are no records matching the query. When executing select queries we should use executeQuery method so that if someone tries to execute insert/update statement it will throw java.sql.SQLException with message &ldquo;executeQuery method can not be used for update&rdquo;.</p>
+<p>Statement&nbsp;<strong>executeUpdate(String query</strong>) is used to execute Insert/Update/Delete (DML) statements or DDL statements that returns nothing. The output is int and equals to the row count for SQL Data Manipulation Language (DML) statements. For DDL statements, the output is 0.</p>
+<p>You should use execute() method only when you are not sure about the type of statement else use executeQuery or executeUpdate method.</p>
+<h3><strong>Q11. What do you understand by JDBC Statements?</strong></h3>
+<p>JDBC statements are basically the statements which are used to send SQL commands to the database and retrieve data back from the database. Various methods like execute(), executeUpdate(), executeQuery, etc. are provided by JDBC to interact with the database.</p>
+<p>JDBC supports 3 types of statements:</p>
+<ol>
+<li><em>Statement:&nbsp;</em>Used for general purpose access to the database and executes a static SQL query at runtime.</li>
+<li><em>PreparedStatement:&nbsp;</em>Used to provide input parameters to the query during execution.</li>
+<li><em>CallableStatement:&nbsp;</em>Used to access the database stored procedures and helps in accepting runtime parameters.<a name="Spring"></a></li>
+</ol>
+<p>In case you are facing any challenges with these java interview questions, please comment your problems in the section below. Apart from this Java Interview Questions Blog, if you want to get trained from professionals on this technology, you can opt for a structured training from edureka!</p>
+<h2><strong>Spring Interview Questions&nbsp;</strong></h2>
+<h3><strong>Q1. What is Spring?</strong></h3>
+<p>Wikipedia defines the Spring framework as &ldquo;an application framework and inversion of control container for the Java platform. The framework&rsquo;s core features can be used by any Java application, but there are extensions for building web applications on top of the Java EE platform.&rdquo; Spring is essentially a lightweight, integrated framework that can be used for developing enterprise applications in java.</p>
+<h3><strong>Q2. Name the different modules of the Spring framework.</strong></h3>
+<p>Some of the important Spring Framework modules are:</p>
+<ul>
+<li>Spring Context &ndash; for dependency injection.</li>
+<li>Spring AOP &ndash; for aspect oriented programming.</li>
+<li>Spring DAO &ndash; for database operations using DAO pattern</li>
+<li>Spring JDBC &ndash; for JDBC and DataSource support.</li>
+<li>Spring ORM &ndash; for ORM tools support such as Hibernate</li>
+<li>Spring Web Module &ndash; for creating web applications.</li>
+<li>Spring MVC &ndash; Model-View-Controller implementation for creating web applications, web services etc.</li>
+</ul>
+<h3><strong><img class="aligncenter wp-image-45826  blur-up lazyloaded" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Spring-Framework-Java.png" sizes="(max-width: 883px) 100vw, 883px" srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Spring-Framework-Java.png 1366w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Spring-Framework-Java-150x109.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Spring-Framework-Java-300x219.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Spring-Framework-Java-768x559.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Spring-Framework-Java-412x300.png 412w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Spring-Framework-Java-247x180.png 247w" alt="SpringFramework - Java Interview Questions - Edureka" width="883" height="642" data-src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Spring-Framework-Java.png" data-srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Spring-Framework-Java.png 1366w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Spring-Framework-Java-150x109.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Spring-Framework-Java-300x219.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Spring-Framework-Java-768x559.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Spring-Framework-Java-412x300.png 412w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Spring-Framework-Java-247x180.png 247w" data-sizes="(max-width: 883px) 100vw, 883px" />Q3. List some of the important annotations in annotation-based Spring configuration.</strong></h3>
+<p>The important annotations are:</p>
+<ul>
+<li>@Required</li>
+<li>@Autowired</li>
+<li>@Qualifier</li>
+<li>@Resource</li>
+<li>@PostConstruct</li>
+<li>@PreDestroy</li>
+</ul>
+<h3><strong>Q4. Explain Bean in Spring and List the different Scopes of Spring bean.</strong></h3>
+<p>Beans are objects that form the backbone of a Spring application. They are managed by the Spring IoC container. In other words, a bean is an object that is instantiated, assembled, and managed by a Spring IoC container.</p>
+<p>There are five Scopes defined in Spring beans.</p>
+<ul>
+<li><strong>Singleton</strong>: Only one instance of the bean will be created for each container. This is the default scope for the spring beans. While using this scope, make sure spring bean doesn&rsquo;t have shared instance variables otherwise it might lead to data inconsistency issues because it&rsquo;s not thread-safe.</li>
+<li><strong>Prototype</strong>: A new instance will be created every time the bean is requested.</li>
+<li><strong>Request</strong>: This is same as prototype scope, however it&rsquo;s meant to be used for web applications. A new instance of the bean will be created for each HTTP request.</li>
+<li><strong>Session</strong>: A new bean will be created for each HTTP session by the container.</li>
+<li><strong>Global-session</strong>: This is used to create global session beans for Portlet applications.</li>
+</ul>
+<h3><strong>Q5. Explain the role of DispatcherServlet and ContextLoaderListener.</strong></h3>
+<p><strong>DispatcherServlet</strong>&nbsp;is basically the front controller in the Spring MVC application as it loads the spring bean configuration file and initializes all the beans that have been configured. If annotations are enabled, it also scans the packages to configure any bean annotated with @Component, @Controller, @Repository or @Service annotations.</p>
+<p><strong><img class="aligncenter wp-image-45678   blur-up lazyloaded" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Dispatcher-Servlet.png" sizes="(max-width: 561px) 100vw, 561px" srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Dispatcher-Servlet.png 1291w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Dispatcher-Servlet-150x123.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Dispatcher-Servlet-300x247.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Dispatcher-Servlet-768x632.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Dispatcher-Servlet-365x300.png 365w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Dispatcher-Servlet-219x180.png 219w" alt="DispatcherServlet - Java Interview Questions - Edureka" width="561" height="461" data-src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Dispatcher-Servlet.png" data-srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Dispatcher-Servlet.png 1291w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Dispatcher-Servlet-150x123.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Dispatcher-Servlet-300x247.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Dispatcher-Servlet-768x632.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Dispatcher-Servlet-365x300.png 365w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Dispatcher-Servlet-219x180.png 219w" data-sizes="(max-width: 561px) 100vw, 561px" />ContextLoaderListener,</strong>&nbsp;on the other hand, is the listener to start up and shut down the WebApplicationContext in Spring root. Some of its important functions includes tying up the lifecycle of Application Context to the lifecycle of the ServletContext and automating the creation of ApplicationContext.</p>
+<h3><strong><img class="aligncenter wp-image-45594 size-large  blur-up lazyloaded" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/ContextloaderListener-528x201.png" sizes="(max-width: 528px) 100vw, 528px" srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/ContextloaderListener-528x201.png 528w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/ContextloaderListener-150x57.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/ContextloaderListener-300x114.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/ContextloaderListener-768x292.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/ContextloaderListener-473x180.png 473w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/ContextloaderListener.png 951w" alt="ContextLoader - Java Interview Questions - Edureka" width="528" height="201" data-src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/ContextloaderListener-528x201.png" data-srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/ContextloaderListener-528x201.png 528w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/ContextloaderListener-150x57.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/ContextloaderListener-300x114.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/ContextloaderListener-768x292.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/ContextloaderListener-473x180.png 473w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/ContextloaderListener.png 951w" data-sizes="(max-width: 528px) 100vw, 528px" /></strong></h3>
+<h3><strong>Q6. What are the differences between constructor injection and setter injection?</strong></h3>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>No.</strong></td>
+<td><strong>Constructor Injection</strong></td>
+<td><strong>Setter Injection</strong></td>
+</tr>
+<tr>
+<td>&nbsp;1)</td>
+<td>&nbsp;No Partial Injection</td>
+<td>&nbsp;Partial Injection</td>
+</tr>
+<tr>
+<td>&nbsp;2)</td>
+<td>&nbsp;Doesn&rsquo;t override the setter property</td>
+<td>&nbsp;Overrides the constructor property if both are defined.</td>
+</tr>
+<tr>
+<td>&nbsp;3)</td>
+<td>Creates a new instance if any modification occurs</td>
+<td>Doesn&rsquo;t create a new instance if you change the property value</td>
+</tr>
+<tr>
+<td>&nbsp;4)&nbsp;</td>
+<td>&nbsp;Better for too many properties</td>
+<td>&nbsp;Better for a few properties.</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>Q7. What is autowiring in Spring? What are the autowiring modes?</strong></h3>
+<p>Autowiring enables the programmer to inject the bean automatically. We don&rsquo;t need to write explicit injection logic.&nbsp;Let&rsquo;s see the code to inject bean using dependency injection.</p>
+</div>
+<ol>
+<li>&lt;bean id=&ldquo;emp&rdquo;&nbsp;class=&ldquo;com.javatpoint.Employee&rdquo;&nbsp;autowire=&ldquo;byName&rdquo;&nbsp;/&gt; &nbsp;</li>
+</ol>
+<p>The autowiring modes are given below:</p>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>No.</strong></td>
+<td><strong>Mode</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>&nbsp;1)</td>
+<td>&nbsp;no</td>
+<td>&nbsp;this is the default mode, it means autowiring is not enabled.</td>
+</tr>
+<tr>
+<td>&nbsp;2)</td>
+<td>&nbsp;byName</td>
+<td>&nbsp;Injects the bean based on the property name. It uses setter method.</td>
+</tr>
+<tr>
+<td>&nbsp;3)</td>
+<td>&nbsp;byType</td>
+<td>&nbsp;Injects the bean based on the property type. It uses setter method.</td>
+</tr>
+<tr>
+<td>&nbsp;4)</td>
+<td>&nbsp;constructor</td>
+<td>&nbsp;It injects the bean using constructor</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>Q8. How to handle exceptions in Spring MVC Framework?</strong></h3>
+<p>Spring MVC Framework provides the following ways to help us achieving robust exception handling.</p>
+<h4><strong>Controller Based:</strong></h4>
+<p>We can define exception handler methods in our controller classes. All we need is to annotate these methods with @ExceptionHandler annotation.</p>
+<h4><strong>Global Exception Handler:</strong></h4>
+<p>Exception Handling is a cross-cutting concern and Spring provides @ControllerAdvice annotation that we can use with any class to define our global exception handler.</p>
+<h4><strong>HandlerExceptionResolver implementation:</strong>&nbsp;</h4>
+<p>For generic exceptions, most of the times we serve static pages. Spring Framework provides HandlerExceptionResolver interface that we can implement to create global exception handler. The reason behind this additional way to define global exception handler is that Spring framework also provides default implementation classes that we can define in our spring bean configuration file to get spring framework exception handling benefits.</p>
+<p><a name="difference-between-arraylist-and-vector"></a></p>
+<h3><strong>Q9. What are some of the important Spring annotations which you have used?</strong></h3>
+<p>Some of the Spring annotations that I have used in my project are:</p>
+<p><strong>@Controller</strong>&nbsp;&ndash; for controller classes in Spring MVC project.</p>
+<p><strong>@RequestMapping</strong>&nbsp;&ndash; for configuring URI mapping in controller handler methods. This is a very important annotation, so you should go through Spring MVC RequestMapping Annotation Examples</p>
+<p><strong>@ResponseBody</strong>&nbsp;&ndash; for sending Object as response, usually for sending XML or JSON data as response.</p>
+<p><strong>@PathVariable</strong>&nbsp;&ndash; for mapping dynamic values from the URI to handler method arguments.</p>
+<p><strong>@Autowired</strong>&nbsp;&ndash; for autowiring dependencies in spring beans.</p>
+<p><strong>@Qualifier</strong>&nbsp;&ndash; with @Autowired annotation to avoid confusion when multiple instances of bean type is present.</p>
+<p><strong>@Service</strong>&nbsp;&ndash; for service classes.</p>
+<p><strong>@Scope</strong>&nbsp;&ndash; for configuring the scope of the spring bean.</p>
+<p><strong>@Configuration, @ComponentScan and @Bean</strong>&nbsp;&ndash; for java based configurations.</p>
+<p>AspectJ annotations for configuring aspects and advices , @Aspect, @Before, @After, @Around, @Pointcut, etc.</p>
+<h3><strong>Q10. How to integrate Spring and Hibernate Frameworks?</strong></h3>
+<p>We can use Spring ORM module to integrate Spring and Hibernate frameworks if you are using Hibernate 3+ where SessionFactory provides current session, then you should avoid using&nbsp;HibernateTemplate&nbsp;or&nbsp;HibernateDaoSupport&nbsp;classes and better to use DAO pattern with dependency injection for the integration.<a name="hibernate"></a></p>
+<p>Also, Spring ORM provides support for using Spring declarative transaction management, so you should utilize that rather than going for hibernate boiler-plate code for transaction management.<strong>&nbsp;</strong></p>
+<h3><strong>Q11. Name the types of transaction management that Spring supports.</strong></h3>
+<p>Two types of transaction management are supported by Spring. They are:</p>
+<ol>
+<li><strong>Programmatic transaction management:&nbsp;</strong>In this, the transaction is managed with the help of programming. It provides you extreme flexibility, but it is very difficult to maintain.</li>
+<li><strong>Declarative transaction management:&nbsp;</strong>In this, transaction management is separated from the business code. Only annotations or XML based configurations are used to manage the transactions.</li>
+</ol>
+<p>In case you are facing any challenges with these java interview questions, please comment your problems in the section below. Apart from this Java Interview Questions Blog, if you want to get trained from professionals on this technology, you can opt for structured training from edureka!</p>
+<h2><strong>Hibernate Interview Questions</strong></h2>
+<h3><strong>1. What is Hibernate Framework?</strong></h3>
+<p>Object-relational mapping or ORM is the programming technique to map application domain model objects to the relational database tables. Hibernate is Java-based ORM tool that provides a framework for mapping application domain objects to the relational database tables and vice versa.</p>
+<p>Hibernate provides a reference implementation of Java Persistence API, that makes it a great choice as ORM tool with benefits of loose coupling. We can use the Hibernate persistence API for CRUD operations. Hibernate framework provide option to map plain old java objects to traditional database tables with the use of JPA annotations as well as XML based configuration.</p>
+<p>Similarly, hibernate configurations are flexible and can be done from XML configuration file as well as programmatically.</p>
+<h3><strong>2. What are the important benefits of using Hibernate Framework?</strong></h3>
+<p>Some of the important benefits of using hibernate framework are:</p>
+<ol>
+<li>Hibernate eliminates all the boiler-plate code that comes with JDBC and takes care of managing resources, so we can focus on business logic.</li>
+<li>Hibernate framework provides support for XML as well as JPA annotations, that makes our code implementation independent.</li>
+<li>Hibernate provides a powerful query language (HQL) that is similar to SQL. However, HQL is fully object-oriented and understands concepts like inheritance, polymorphism, and association.</li>
+<li>Hibernate is an open source project from Red Hat Community and used worldwide. This makes it a better choice than others because learning curve is small and there are tons of online documentation and help is easily available in forums.</li>
+<li>Hibernate is easy to integrate with other Java EE frameworks, it&rsquo;s so popular that Spring Framework provides built-in support for integrating hibernate with Spring applications.</li>
+<li>Hibernate supports lazy initialization using proxy objects and perform actual database queries only when it&rsquo;s required.</li>
+<li>Hibernate cache helps us in getting better performance.</li>
+<li>For database vendor specific feature, hibernate is suitable because we can also execute native sql queries.</li>
+</ol>
+<p>Overall hibernate is the best choice in current market for ORM tool, it contains all the features that you will ever need in an ORM tool.</p>
+<h3><strong>3. Explain Hibernate architecture.</strong></h3>
+<p><img class="aligncenter wp-image-45586   blur-up lazyloaded" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Hibernate-Architecture.png" sizes="(max-width: 614px) 100vw, 614px" srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Hibernate-Architecture.png 1698w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Hibernate-Architecture-150x102.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Hibernate-Architecture-300x205.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Hibernate-Architecture-768x524.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Hibernate-Architecture-440x300.png 440w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Hibernate-Architecture-264x180.png 264w" alt="HibernateArchitecture - Java Interview Questions - Edureka" width="614" height="419" data-src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Hibernate-Architecture.png" data-srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Hibernate-Architecture.png 1698w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Hibernate-Architecture-150x102.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Hibernate-Architecture-300x205.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Hibernate-Architecture-768x524.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Hibernate-Architecture-440x300.png 440w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Hibernate-Architecture-264x180.png 264w" data-sizes="(max-width: 614px) 100vw, 614px" /></p>
+<h3><strong>4. What are the differences between get and load methods?</strong></h3>
+<p>The differences between get() and load() methods are given below.</p>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>No.</strong></td>
+<td><strong>get()</strong></td>
+<td><strong>load()</strong></td>
+</tr>
+<tr>
+<td>&nbsp;1)</td>
+<td>&nbsp;Returns&nbsp;null&nbsp;if object is not found.</td>
+<td>Throws&nbsp;ObjectNotFoundException&nbsp;if an object is not found.</td>
+</tr>
+<tr>
+<td>&nbsp;2)</td>
+<td>&nbsp;get() method always&nbsp;hit the database.</td>
+<td>&nbsp;load() method&nbsp;doesn&rsquo;t hit&nbsp;the database.</td>
+</tr>
+<tr>
+<td>&nbsp;3)</td>
+<td>&nbsp;It returns a real object,&nbsp;not a proxy.</td>
+<td>&nbsp;It returns a&nbsp;proxy object.</td>
+</tr>
+<tr>
+<td>&nbsp;4)</td>
+<td>It should be used if&nbsp;you are not sure&nbsp;about the existence of instance.</td>
+<td>It should be used if&nbsp;you are sure&nbsp;that the instance exists.</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>5. What are the advantages of Hibernate over JDBC?</strong></h3>
+<p>Some of the important advantages of Hibernate framework over JDBC are:</p>
+<ol>
+<li>Hibernate removes a lot of boiler-plate code that comes with JDBC API, the code looks cleaner and readable.</li>
+<li>Hibernate supports inheritance, associations, and collections. These features are not present with JDBC API.</li>
+<li>Hibernate implicitly provides transaction management, in fact, most of the queries can&rsquo;t be executed outside transaction. In JDBC API, we need to write code for transaction management using commit and rollback.&nbsp;</li>
+<li>JDBC API throws&nbsp;SQLException&nbsp;that is a checked exception, so we need to write a lot of try-catch block code. Most of the times it&rsquo;s redundant in every JDBC call and used for transaction management. Hibernate wraps JDBC exceptions and throw&nbsp;JDBCException&nbsp;or&nbsp;HibernateException&nbsp;un-checked exception, so we don&rsquo;t need to write code to handle it. Hibernate built-in transaction management removes the usage of try-catch blocks.</li>
+<li>Hibernate Query Language (HQL) is more object-oriented and close to Java programming language. For JDBC, we need to write native SQL queries.</li>
+<li>Hibernate supports caching that is better for performance, JDBC queries are not cached hence performance is low.</li>
+<li>Hibernate provides option through which we can create database tables too, for JDBC tables must exist in the database.</li>
+<li>Hibernate configuration helps us in using JDBC like connection as well as JNDI DataSource for the connection pool. This is a very important feature in enterprise application and completely missing in JDBC API.</li>
+<li>Hibernate supports JPA annotations, so the code is independent of the implementation and easily replaceable with other ORM tools. JDBC code is very tightly coupled with the application.</li>
+</ol>
+<p><a name="jsp"></a></p>
+<p>In case you are facing any challenges with these Java interview questions, please comment on your problems in the section below. Apart from this Java Interview Questions Blog, if you want to get trained from professionals on this technology, you can opt for structured training from edureka!</p>
+<h2><strong>Java Interview Questions:&nbsp;</strong><strong>JSP</strong></h2>
+<h3><strong>1. What are the life-cycle methods for a jsp?</strong></h3>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>Methods</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>&nbsp;public void jspInit()</td>
+<td>It is invoked only once, same as init method of servlet.</td>
+</tr>
+<tr>
+<td>public void _jspService(ServletRequest request,ServletResponse)throws ServletException,IOException</td>
+<td>It is invoked at each request, same as service() method of servlet.</td>
+</tr>
+<tr>
+<td>&nbsp;public void jspDestroy()</td>
+<td>It is invoked only once, same as destroy() method of servlet.</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>2. What are the JSP implicit objects?</strong></h3>
+<p>JSP provides 9 implicit objects by default. They are as follows:</p>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>Object</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr>
+<td>1) out</td>
+<td>&nbsp;JspWriter</td>
+</tr>
+<tr>
+<td>2) request</td>
+<td>&nbsp;HttpServletRequest</td>
+</tr>
+<tr>
+<td>3) response</td>
+<td>&nbsp;HttpServletResponse</td>
+</tr>
+<tr>
+<td>4) config</td>
+<td>&nbsp;ServletConfig</td>
+</tr>
+<tr>
+<td>5) session</td>
+<td>&nbsp;HttpSession</td>
+</tr>
+<tr>
+<td>6) application</td>
+<td>&nbsp;ServletContext</td>
+</tr>
+<tr>
+<td>7) pageContext</td>
+<td>&nbsp;PageContext</td>
+</tr>
+<tr>
+<td>8) page</td>
+<td>&nbsp;Object</td>
+</tr>
+<tr>
+<td>9) exception</td>
+<td>&nbsp;Throwable</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>3. What are the differences between include directive and include action?</strong></h3>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>include directive</strong></td>
+<td><strong>include action</strong></td>
+</tr>
+<tr>
+<td>The include directive includes the content at page translation time.</td>
+<td>The include action includes the content at request time.</td>
+</tr>
+<tr>
+<td>The include directive includes the original content of the page so page size increases at runtime.</td>
+<td>The include action doesn&rsquo;t include the original content rather invokes the include() method of Vendor provided class.</td>
+</tr>
+<tr>
+<td>&nbsp;It&rsquo;s better for static pages.</td>
+<td>&nbsp;It&rsquo;s better for dynamic pages.</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>4. How to disable caching on back button of the browser?</strong></h3>
+<p><strong>&lt;</strong>%<br />response.setHeader(&ldquo;Cache-Control&rdquo;,&rdquo;no-store&rdquo;);<br />response.setHeader(&ldquo;Pragma&rdquo;,&rdquo;no-cache&rdquo;);<br />response.setHeader (&ldquo;Expires&rdquo;, &ldquo;0&rdquo;); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//prevents caching at the proxy server<br />%<strong>&gt;</strong>&nbsp;&nbsp;&nbsp;</p>
+<h3><strong>5. What are the different tags provided in JSTL?</strong></h3>
+<p>There are 5 type of JSTL tags.</p>
+<ol>
+<li>core tags</li>
+<li>sql tags</li>
+<li>xml tags</li>
+<li>internationalization tags</li>
+<li>functions tags</li>
+</ol>
+<h3><strong>6. How to disable session in JSP?</strong></h3>
+<ol>
+<li><strong>&lt;</strong>%@ page&nbsp;session=&ldquo;false&rdquo;&nbsp;%<strong>&gt;</strong>&nbsp;&nbsp;&nbsp;</li>
+</ol>
+<h3><strong>7. &nbsp;How to delete a Cookie in a JSP?</strong></h3>
+<p>The following code explains how to delete a Cookie in a JSP :</p>
+<div>
+<div id="highlighter_163246" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java plain">Cookie mycook = </code><code class="java keyword">new</code> <code class="java plain">Cookie(</code><code class="java string">"name1"</code><code class="java plain">,</code><code class="java string">"value1"</code><code class="java plain">);</code></div>
+<div class="line number2 index1 alt1">&nbsp;</div>
+<div class="line number3 index2 alt2"><code class="java plain">response.addCookie(mycook1);</code></div>
+<div class="line number4 index3 alt1">&nbsp;</div>
+<div class="line number5 index4 alt2"><code class="java plain">Cookie killmycook = </code><code class="java keyword">new</code> <code class="java plain">Cookie(</code><code class="java string">"mycook1"</code><code class="java plain">,</code><code class="java string">"value1"</code><code class="java plain">);</code></div>
+<div class="line number6 index5 alt1">&nbsp;</div>
+<div class="line number7 index6 alt2"><code class="java plain">killmycook . set MaxAge ( </code><code class="java value">0</code> <code class="java plain">);</code></div>
+<div class="line number8 index7 alt1">&nbsp;</div>
+<div class="line number9 index8 alt2"><code class="java plain">killmycook . set Path (</code><code class="java string">"/"</code><code class="java plain">);</code></div>
+<div class="line number10 index9 alt1">&nbsp;</div>
+<div class="line number11 index10 alt2"><code class="java plain">killmycook . addCookie ( killmycook </code><code class="java value">1</code> <code class="java plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3><strong>8. Explain the jspDestroy() method.</strong></h3>
+<p>jspDestry() method is invoked from&nbsp;<strong>javax.servlet.jsp.JspPage</strong>&nbsp;interface whenever a JSP page is about to be destroyed. Servlets destroy methods can be easily overridden to perform cleanup, like when closing a database connection.</p>
+<h3><strong>9. &nbsp;How is JSP better than Servlet technology?</strong></h3>
+<p>JSP is a technology on the server&rsquo;s side to make content generation simple. They are document-centric, whereas servlets are programs. A Java server page can contain fragments of Java program, which execute and instantiate Java classes. However, they occur inside an HTML template file. It provides the framework for the development of a Web Application.</p>
+<h3><strong>10. Why should we not configure JSP standard tags in web.xml?</strong></h3>
+<p><a name="exception"></a></p>
+<p>We don&rsquo;t need to configure JSP standard tags in web.xml because when container loads the web application and find TLD files, it automatically configures them to be used directly in the application JSP pages. We just need to include it in the JSP page using taglib directive.</p>
+<h3><strong>11. How will you use JSP EL in order to get the HTTP method name?</strong></h3>
+<p>Using pageContext JSP EL implicit object you can get the request object reference and make use of the dot operator to retrieve the HTTP method name in the JSP page. The JSP EL code for this purpose will look like&nbsp;${pageContext.request.method}.</p>
+<p>In case you are facing any challenges with these java interview questions, please comment on your problems in the section below. Apart from this Java Interview Questions Blog, if you want to get trained from professionals on this technology, you can opt for structured training from edureka!</p>
+<h2><strong>Exception and Thread Java Interview Questions</strong></h2>
+<h3><strong>Q1. What is the difference between Error and Exception?</strong></h3>
+<p>An error is an irrecoverable condition occurring at runtime. Such as OutOfMemory error. These JVM errors you cannot repair them at runtime. Though error can be caught in the catch block but the execution of application will come to a halt and is not recoverable.</p>
+<p>While exceptions are conditions that occur because of bad input or human error etc. e.g. FileNotFoundException will be thrown if the specified file does not exist. Or a NullPointerException will take place if you try using a null reference. In most of the cases it is possible to recover from an exception (probably by giving the user feedback for entering proper values etc.</p>
+<h3><strong>Q2. How can you handle Java exceptions?</strong></h3>
+<p>There are five keywords used to handle exceptions in Java:&nbsp;</p>
+<ol>
+<li>try</li>
+<li>catch</li>
+<li>finally</li>
+<li>throw</li>
+<li>throws</li>
+</ol>
+<h3><strong>Q3. What are the differences between Checked Exception and Unchecked Exception?</strong></h3>
+<h4><strong>Checked Exception</strong></h4>
+<ul>
+<li>The classes that extend Throwable class except RuntimeException and Error are known as checked exceptions.&nbsp;</li>
+<li>Checked exceptions are checked at compile-time.</li>
+<li>Example: IOException, SQLException etc.</li>
+</ul>
+<h4><strong>Unchecked Exception</strong></h4>
+<ul>
+<li>The classes that extend RuntimeException are known as unchecked exceptions.&nbsp;</li>
+<li>Unchecked exceptions are not checked at compile-time.</li>
+<li>Example: ArithmeticException, NullPointerException etc.</li>
+</ul>
+<h3><strong>Q4. What purpose do the keywords final, finally, and finalize fulfill?&nbsp;</strong></h3>
+<h4><strong>Final:</strong></h4>
+<p>Final is used to apply restrictions on class, method, and variable. A final class can&rsquo;t be inherited, final method can&rsquo;t be overridden and final variable value can&rsquo;t be changed. Let&rsquo;s take a look at the example below to understand it better.</p>
+<div>
+<div id="highlighter_529202" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">class</code> <code class="java plain">FinalVarExample {</code></div>
+<div class="line number2 index1 alt1"><code class="java keyword">public</code> <code class="java keyword">static</code> <code class="java keyword">void</code> <code class="java plain">main( String args[])</code></div>
+<div class="line number3 index2 alt2"><code class="java plain">{</code></div>
+<div class="line number4 index3 alt1"><code class="java keyword">final</code> <code class="java keyword">int</code> <code class="java plain">a=</code><code class="java value">10</code><code class="java plain">;&nbsp;&nbsp; </code><code class="java comments">// Final variable</code></div>
+<div class="line number5 index4 alt2"><code class="java plain">a=</code><code class="java value">50</code><code class="java plain">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><code class="java comments">//Error as value can't be changed</code></div>
+<div class="line number6 index5 alt1"><code class="java plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h4><strong>Finally</strong></h4>
+<p>Finally is used to place important code, it will be executed whether the exception is handled or not. Let&rsquo;s take a look at the example below to understand it better.</p>
+<div>
+<div id="highlighter_863308" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">class</code> <code class="java plain">FinallyExample {</code></div>
+<div class="line number2 index1 alt1"><code class="java keyword">public</code> <code class="java keyword">static</code> <code class="java keyword">void</code> <code class="java plain">main(String args[]){</code></div>
+<div class="line number3 index2 alt2"><code class="java keyword">try</code> <code class="java plain">{</code></div>
+<div class="line number4 index3 alt1"><code class="java keyword">int</code> <code class="java plain">x=</code><code class="java value">100</code><code class="java plain">;</code></div>
+<div class="line number5 index4 alt2"><code class="java plain">}</code></div>
+<div class="line number6 index5 alt1"><code class="java keyword">catch</code><code class="java plain">(Exception e) {</code></div>
+<div class="line number7 index6 alt2"><code class="java plain">System.out.println(e);</code></div>
+<div class="line number8 index7 alt1"><code class="java plain">}</code></div>
+<div class="line number9 index8 alt2"><code class="java keyword">finally</code> <code class="java plain">{</code></div>
+<div class="line number10 index9 alt1"><code class="java plain">System.out.println(</code><code class="java string">"finally block is executing"</code><code class="java plain">);}</code></div>
+<div class="line number11 index10 alt2"><code class="java plain">}}</code></div>
+<div class="line number12 index11 alt1"><code class="java plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h4><strong>Finalize</strong></h4>
+<p>Finalize is used to perform clean up processing just before the object is garbage collected. Let&rsquo;s take a look at the example below to understand it better.</p>
+<div>
+<div id="highlighter_35078" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">class</code> <code class="java plain">FinalizeExample {</code></div>
+<div class="line number2 index1 alt1"><code class="java keyword">public</code> <code class="java keyword">void</code> <code class="java plain">finalize() {</code></div>
+<div class="line number3 index2 alt2"><code class="java plain">System.out.println(</code><code class="java string">"Finalize is called"</code><code class="java plain">);</code></div>
+<div class="line number4 index3 alt1"><code class="java plain">}</code></div>
+<div class="line number5 index4 alt2"><code class="java keyword">public</code> <code class="java keyword">static</code> <code class="java keyword">void</code> <code class="java plain">main(String args[])</code></div>
+<div class="line number6 index5 alt1"><code class="java plain">{</code></div>
+<div class="line number7 index6 alt2"><code class="java plain">FinalizeExample f1=</code><code class="java keyword">new</code> <code class="java plain">FinalizeExample();</code></div>
+<div class="line number8 index7 alt1"><code class="java plain">FinalizeExample f2=</code><code class="java keyword">new</code> <code class="java plain">FinalizeExample();</code></div>
+<div class="line number9 index8 alt2"><code class="java plain">f1= NULL;</code></div>
+<div class="line number10 index9 alt1"><code class="java plain">f2=NULL;</code></div>
+<div class="line number11 index10 alt2"><code class="java plain">System.gc();</code></div>
+<div class="line number12 index11 alt1"><code class="java plain">}</code></div>
+<div class="line number13 index12 alt2"><code class="java plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3>&nbsp;<strong>Q5. What are the differences between throw and throws?&nbsp;</strong></h3>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>throw keyword</strong></td>
+<td><strong>throws keyword</strong></td>
+</tr>
+<tr>
+<td>Throw is used to explicitly throw an exception.</td>
+<td>Throws is used to declare an exception.</td>
+</tr>
+<tr>
+<td>Checked exceptions can not be propagated with throw only.</td>
+<td>Checked exception can be propagated with throws.</td>
+</tr>
+<tr>
+<td>Throw is followed by an instance.</td>
+<td>Throws is followed by class.</td>
+</tr>
+<tr>
+<td>Throw is used within the method.</td>
+<td>Throws is used with the method signature.</td>
+</tr>
+<tr>
+<td>You cannot throw multiple exception</td>
+<td>You can declare multiple exception e.g. public void method()throws IOException,SQLException.</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>Q6. What is exception hierarchy in java?</strong></h3>
+<p>The hierarchy is as follows:</p>
+<div class="row batch-schedule-widget m-0 my-4 p-3">
+<div class="col-xl-4 col-lg-4 col-md-4 col-12"><img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/themes/edu-new/img/batch-schedule.png" alt="Course Curriculum" /></div>
+<div class="col-xl-8 col-lg-8 col-md-8 col-12 course-details-section">
+<h3>Java, J2EE &amp; SOA Certification Training</h3>
+<span class="batch-week">Weekday / Weekend Batches</span><button class="btn">See Batch Details</button></div>
+</div>
+<p>Throwable is a parent class of all Exception classes. There are two types of Exceptions: Checked exceptions and UncheckedExceptions or RunTimeExceptions. Both type of exceptions extends Exception class whereas errors are further classified into Virtual Machine error and Assertion error.</p>
+<p><img class="aligncenter wp-image-45689 size-large  blur-up lazyloaded" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-516x300.png" sizes="(max-width: 516px) 100vw, 516px" srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-516x300.png 516w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-150x87.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-300x174.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-768x447.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-310x180.png 310w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy.png 1154w" alt="ExceptionHierarchy - Java Interview Questions - Edureka" width="516" height="300" data-src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-516x300.png" data-srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-516x300.png 516w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-150x87.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-300x174.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-768x447.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy-310x180.png 310w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Exception-hierarchy.png 1154w" data-sizes="(max-width: 516px) 100vw, 516px" /></p>
+<h3><strong>Q7. How to create a custom Exception?</strong></h3>
+<p>To create you own exception extend the Exception class or any of its subclasses.</p>
+<ul>
+<li>class New1Exception extends Exception { } &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // this will create Checked Exception</li>
+<li>class NewException extends IOException { } &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // this will create Checked exception</li>
+<li>class NewException extends NullPonterExcpetion { } &nbsp;// this will create UnChecked exception</li>
+</ul>
+<h3><strong>Q8. What are the important methods of Java Exception Class?</strong></h3>
+<p>Exception and all of it&rsquo;s subclasses doesn&rsquo;t provide any specific methods and all of the methods are defined in the base class Throwable.</p>
+<ol>
+<li><strong>String getMessage()</strong>&nbsp;&ndash; This method returns the message String of Throwable and the message can be provided while creating the exception through it&rsquo;s constructor.</li>
+<li><strong>String getLocalizedMessage(</strong>) &ndash; This method is provided so that subclasses can override it to provide locale specific message to the calling program. Throwable class implementation of this method simply use&nbsp;getMessage()&nbsp;method to return the exception message.</li>
+<li><strong>Synchronized Throwable getCause()</strong>&nbsp;&ndash; This method returns the cause of the exception or null id the cause is unknown.</li>
+<li><strong>String toString()</strong>&nbsp;&ndash; This method returns the information about Throwable in String format, the returned String contains the name of Throwable class and localized message.</li>
+<li><strong>void printStackTrace()</strong>&nbsp;&ndash; This method prints the stack trace information to the standard error stream, this method is overloaded and we can pass PrintStream or PrintWriter as an argument to write the stack trace information to the file or stream.</li>
+</ol>
+<h3><strong>Q9. What are the differences between processes and threads?</strong></h3>
+<table border="1">
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td><strong>Process</strong></td>
+<td><strong>Thread</strong></td>
+</tr>
+<tr>
+<td><strong>Definition</strong></td>
+<td>An executing instance of a program is called a process.</td>
+<td>A thread is a subset of the process.</td>
+</tr>
+<tr>
+<td><strong>Communication</strong></td>
+<td>Processes must use inter-process communication to communicate with sibling processes.</td>
+<td>Threads can directly communicate with other threads of its process.</td>
+</tr>
+<tr>
+<td><strong>Control</strong></td>
+<td>Processes can only exercise control over child processes.</td>
+<td>Threads can exercise considerable control over threads of the same process.</td>
+</tr>
+<tr>
+<td><strong>Changes</strong></td>
+<td>Any change in the parent process does not affect child processes.</td>
+<td>Any change in the main thread may affect the behavior of the other threads of the process.</td>
+</tr>
+<tr>
+<td><strong>Memory</strong></td>
+<td>Run in separate memory spaces.</td>
+<td>Run in shared memory spaces.</td>
+</tr>
+<tr>
+<td><strong>Controlled by</strong></td>
+<td>Process is controlled by the operating system.</td>
+<td>Threads are controlled by programmer in a program.</td>
+</tr>
+<tr>
+<td><strong>Dependence</strong></td>
+<td>Processes are independent.</td>
+<td>Threads are dependent.</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>Q10. What is a finally block? Is there a&nbsp;case when finally will not execute?</strong></h3>
+<p>Finally block is a block which always executes a set of statements. It is always associated with a try block regardless of any exception that occurs or not.&nbsp;<br />Yes, finally will not be executed if the program exits either by&nbsp;calling System.exit() or by causing a fatal error that causes the process to abort.</p>
+<h3><strong>Q11. What is synchronization?</strong></h3>
+<p>Synchronization refers to multi-threading. A synchronized block of code can be executed by only one thread at a time. As Java supports execution of multiple threads, two or more threads may access the same fields or objects. Synchronization is a process which keeps all concurrent threads in execution to be in sync. Synchronization avoids memory consistency errors caused due to inconsistent view of shared memory. When a method is declared as synchronized the thread holds the monitor for that method&rsquo;s object. If another thread is executing the synchronized method the thread is blocked until that thread releases the monitor.&nbsp;</p>
+<p><img class="aligncenter wp-image-45481 size-full  blur-up lazyloaded" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Synchronization.png" sizes="(max-width: 1463px) 100vw, 1463px" srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Synchronization.png 1463w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Synchronization-150x59.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Synchronization-300x119.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Synchronization-768x304.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Synchronization-528x209.png 528w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Synchronization-454x180.png 454w" alt="Synchronization - Java Interview Questions - Edureka" width="1463" height="580" data-src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Synchronization.png" data-srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Synchronization.png 1463w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Synchronization-150x59.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Synchronization-300x119.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Synchronization-768x304.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Synchronization-528x209.png 528w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Synchronization-454x180.png 454w" data-sizes="(max-width: 1463px) 100vw, 1463px" /></p>
+<h3>&nbsp;<strong>Q12.&nbsp;Can we write multiple catch blocks under single try block?&nbsp;</strong></h3>
+<p>Yes we can have multiple catch blocks under single try block but the approach should be from specific to general. Let&rsquo;s understand this with a programmatic example.</p>
+<div>
+<div id="highlighter_752943" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+<div class="line number15 index14 alt2">15</div>
+<div class="line number16 index15 alt1">16</div>
+<div class="line number17 index16 alt2">17</div>
+<div class="line number18 index17 alt1">18</div>
+<div class="line number19 index18 alt2">19</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java keyword">public</code> <code class="java keyword">class</code> <code class="java plain">Example {</code></div>
+<div class="line number2 index1 alt1"><code class="java keyword">public</code> <code class="java keyword">static</code> <code class="java keyword">void</code> <code class="java plain">main(String args[]) {</code></div>
+<div class="line number3 index2 alt2"><code class="java keyword">try</code> <code class="java plain">{</code></div>
+<div class="line number4 index3 alt1"><code class="java keyword">int</code> <code class="java plain">a[]= </code><code class="java keyword">new</code> <code class="java keyword">int</code><code class="java plain">[</code><code class="java value">10</code><code class="java plain">];</code></div>
+<div class="line number5 index4 alt2"><code class="java plain">a[</code><code class="java value">10</code><code class="java plain">]= </code><code class="java value">10</code><code class="java plain">/</code><code class="java value">0</code><code class="java plain">;</code></div>
+<div class="line number6 index5 alt1"><code class="java plain">}</code></div>
+<div class="line number7 index6 alt2"><code class="java keyword">catch</code><code class="java plain">(ArithmeticException e)</code></div>
+<div class="line number8 index7 alt1"><code class="java plain">{</code></div>
+<div class="line number9 index8 alt2"><code class="java plain">System.out.println(</code><code class="java string">"Arithmetic exception in first catch block"</code><code class="java plain">);</code></div>
+<div class="line number10 index9 alt1"><code class="java plain">}</code></div>
+<div class="line number11 index10 alt2"><code class="java keyword">catch</code><code class="java plain">(ArrayIndexOutOfBoundsException e)</code></div>
+<div class="line number12 index11 alt1"><code class="java plain">{</code></div>
+<div class="line number13 index12 alt2"><code class="java plain">System.out.println(</code><code class="java string">"Array index out of bounds in second catch block"</code><code class="java plain">);</code></div>
+<div class="line number14 index13 alt1"><code class="java plain">}</code></div>
+<div class="line number15 index14 alt2"><code class="java keyword">catch</code><code class="java plain">(Exception e)</code></div>
+<div class="line number16 index15 alt1"><code class="java plain">{</code></div>
+<div class="line number17 index16 alt2"><code class="java plain">System.out.println(</code><code class="java string">"Any exception in third catch block"</code><code class="java plain">);</code></div>
+<div class="line number18 index17 alt1"><code class="java plain">}</code></div>
+<div class="line number19 index18 alt2"><code class="java plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3><strong>Q13.&nbsp;What are the important methods of Java Exception Class?</strong></h3>
+<p>Methods are defined in the base class Throwable. Some of the important methods of Java exception class are stated below.&nbsp;</p>
+<ol>
+<li><strong>String getMessage()</strong>&nbsp;&ndash; This method returns the message String about the exception. The message can be provided through its constructor.</li>
+<li><strong>public StackTraceElement[] getStackTrace() &ndash;&nbsp;</strong>This method returns an array containing each element on the stack trace. The element at index 0 represents the top of the call stack whereas the last element in the array represents the method at the bottom of the call stack.</li>
+<li>
+<p><strong>Synchronized Throwable getCause()</strong>&nbsp;&ndash; This method returns the cause of the exception or null id as represented by a Throwable object.</p>
+</li>
+<li><strong>String toString()</strong>&nbsp;&ndash; This method returns the information in String format. The returned String contains the name of Throwable class and localized message.</li>
+<li><strong>void printStackTrace()</strong>&nbsp;&ndash; This method prints the stack trace information to the standard error stream.&nbsp;</li>
+</ol>
+<h3><strong>Q14. What is OutOfMemoryError in Java?</strong></h3>
+<p>OutOfMemoryError is the subclass of java.lang.Error which generally occurs when our JVM runs out of memory.</p>
+<h3 class="codeblock"><strong>Q15. What is a Thread?</strong></h3>
+<p>A thread is the smallest piece of programmed instructions which can be executed independently by a scheduler. In Java, all the&nbsp;programs will have at least one thread which is known as the&nbsp;main&nbsp;thread. This main thread is created by the JVM when the program starts its execution. The main thread is used to invoke the main() of the program.</p>
+<div class="codeblock">
+<h3><strong>Q16. What are the two ways to create a thread?</strong></h3>
+<p>In Java,&nbsp;threads can be created in the following two ways:-&nbsp;</p>
+<ul>
+<li>By&nbsp;implementing&nbsp;the&nbsp;Runnable&nbsp;interface.</li>
+<li>By&nbsp;extending&nbsp;the&nbsp;Thread</li>
+</ul>
+<h3><strong>Q17. What are the different types of garbage collectors in Java?</strong></h3>
+<p>Garbage collection in Java a program which helps in implicit memory management. Since in Java, using the new keyword you can create objects dynamically, which once created will consume some memory. Once the job is done and there are no more references left to the object, Java using garbage collection destroys the object and relieves the memory occupied by it. Java provides four types of garbage collectors:</p>
+<div class="RqBzHd">
+<ul class="i8Z77e">
+<li class="TrT0Xe">Serial Garbage Collector</li>
+<li class="TrT0Xe">Parallel Garbage Collector</li>
+<li class="TrT0Xe">CMS Garbage Collector</li>
+<li class="TrT0Xe">G1 Garbage Collector</li>
+</ul>
+</div>
+</div>
+</div>
+</div>

@@ -216,5 +216,977 @@
 <li><a title="Factory Design Pattern in Java" href="https://www.journaldev.com/1392/factory-design-pattern-in-java">Factory pattern</a>&nbsp;in SessionFactory</li>
 </ul>
 
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;HIBERNATE</strong></p>
+<p>What is Hibernate &ndash; Hibernate Introduction =&gt; In this tutorial am going to explain, why Hibernate came into picture though we have JDBC for connecting to the database, and what is this hibernate frame work first let us see what are the draw backs of JDBC.</p>
+<h2><strong>Draw Backs of JDBC:</strong></h2>
+<ul>
+<li>In JDBC, if we open a database connection we need to write in try, and if any exceptions&nbsp;occurred&nbsp;catch block will takers about it, and finally used to close the connections.</li>
+<li>here as a programmer we must close the connection, or we may get a chance to get our of connections message&hellip;!</li>
+<li>Actually if we didn&rsquo;t close the connection in the finally block, then jdbc&nbsp;doesn&rsquo;t&nbsp;responsible to close that connection.</li>
+<li>In JDBC we need to write Sql commands in various places, after the program has created if the table structure is modified then the JDBC program&nbsp;doesn&rsquo;t&nbsp;work, again we need to modify and compile and re-deploy required, which is tedious.</li>
+<li>JDBC used to generate database related error codes if an exception will occurs, but java programmers are unknown about this error codes right.</li>
+<li>In the Enterprise applications, the data flow with in an application from class to class will be in the form of objects, but while storing data finally in a database using JDBC then that object will be converted into text. &nbsp;Because JDBC doesn&rsquo;t transfer objects directly.</li>
+</ul>
+<p>In order to overcome above problems, &nbsp;Hibernate came into picture..!</p>
+<h2>What is Hibernate:</h2>
+<ul>
+<li>Hibernate is the ORM tool given to transfer the data between a java (object) application and a database (Relational) in the form of the objects. &nbsp;Hibernate is the open source light weight tool given by <strong>Gavin King</strong>.</li>
+<li>Hibernate is a non-invasive framework, &nbsp;means it wont forces the programmers to extend/implement any class/interface, and in hibernate we have all POJO classes so its light weight.</li>
+<li>Hibernate can runs with in or with out server, i mean it will suitable for all types of java applications (stand alone or desktop or any servlets bla bla.)</li>
+<li>Hibernate is purely for persistence (to store/retrieve data from Database).</li>
+</ul>
+<h2>Mapping And Configuration Files In Hibernate</h2>
+<p>Mapping and Configuration are very familiar keywords&nbsp;we used to here in the hibernate, every hibernate program must need these 2 xml files.</p>
+<h2>Mapping:</h2>
+<ul>
+<li>Mapping file is the heart of hibernate application.</li>
+<li>Every ORM tool needs this mapping, mapping is the mechanism of placing an object properties into column&rsquo;s of a table.</li>
+<li>Mapping can be given to an ORM tool either in the form of an XML or in the form of the annotations.</li>
+<li>The mapping file contains mapping from a pojo class name to a table name and pojo class variable names to table column names.</li>
+<li>While writing an hibernate application, we can construct one or more mapping files, mean a hibernate application can contain any number of &nbsp;mapping files.</li>
+</ul>
+<p>generally an object contains 3 properties like</p>
+<ul>
+<li>Identity (Object Name)</li>
+<li>State (Object values)</li>
+<li>Behavior&nbsp;(Object Methods)</li>
+</ul>
+<p>But while storing an object into the database, we need to store only the values(State) right ? but how to avoid identity,&nbsp;behavior.. its not possible.&nbsp;In order to inform what value of an object has to be stored in what column of the table, will be taking care by the&nbsp;mapping, &nbsp;actually mapping can be done using 2 ways,</p>
+<ul>
+<li>XML</li>
+<li>Annotations.</li>
+</ul>
+<p>Actually annotations are introduced into java from JDK 1.5.</p>
+<h2><strong>Syntax Of Mapping xml:</strong></h2>
+<p>&lt;hibernate-mapping&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;class name="POJO class name" table="table name in database"&gt;</p>
+<p>&lt;id name="variable name" column="column name in database" type="java/hibernate type" /&gt;</p>
+<p>&lt;property name="variable1 name" column="column name in database" type="java/hibernate type" /&gt;</p>
+<p>&lt;property name="variable2 name" column="column name in database" type="java/hibernate type" /&gt;</p>
+<p>&lt;/class&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;/hibernate-mapping&gt;</p>
+<p>&nbsp;</p>
+<h2>Configuration:</h2>
+<p>Configuration is the file loaded into an hibernate application when working with hibernate, this configuration file contains 3 types of information..</p>
+<ul>
+<li>Connection Properties</li>
+<li>Hibernate Properties</li>
+<li>Mapping file name(s)</li>
+</ul>
+<p>We must create one configuration file for each database we are going to use, suppose if we want to connect with 2 databases, like Oracle, MySql, then we must create 2 configuration files.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; No. of databases we are using &nbsp;= That many number of configuration files</p>
+<p>We can write this configuration in 2 ways&hellip;</p>
+<ul>
+<li>xml</li>
+<li>By writing Properties file.&nbsp; We don&rsquo;t have annotations here, actually in hibernate 1, 2.x we defined this configuration file by writing .properties file, but from 3.x xml came into picture.</li>
+</ul>
+<p>so, finally</p>
+<p>&nbsp;Mapping &ndash;&gt; xml, annotations<br />Configuration &ndash;&gt; xml, .properties (old style)</p>
+<h2>Syntax Of Configuration xml:</h2>
+<p>&lt;hibernate-configuration&gt;</p>
+<p>&lt;session-factory&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;!-- Related to the connection START --&gt;</p>
+<p>&lt;property name="connection.driver_class"&gt;Driver Class Name &lt;/property&gt;</p>
+<p>&lt;property name="connection.url"&gt;URL &lt;/property&gt;</p>
+<p>&lt;property name="connection.user"&gt;user &lt;/property&gt;</p>
+<p>&lt;property name="connection.password"&gt;password&lt;/property&gt;</p>
+<p>&lt;!-- Related to the connection END --&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;!-- Related to hibernate properties START --&gt;</p>
+<p>&lt;property name="show_sql"&gt;true/false&lt;/property&gt;</p>
+<p>&lt;property name="dialet"&gt;Database dialet class&lt;/property&gt;</p>
+<p>&lt;property name="hbm2ddl.auto"&gt;create/update or what ever&lt;/property&gt;</p>
+<p>&lt;!-- Related to hibernate properties END--&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;!-- Related to mapping START--&gt;</p>
+<p>&lt;mapping resource="hbm file 1 name .xml" / &gt;</p>
+<p>&lt;mapping resource="hbm file 2 name .xml" / &gt;</p>
+<p>&lt;!-- Related to the mapping END --&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;/session-factory&gt;</p>
+<p>&lt;/hibernate-configuration&gt;</p>
+<p>But XML files are always recommended to work.</p>
+<p>&nbsp;</p>
+<h2>Main Advantage And Disadvantages Of Hibernates</h2>
+<h2>Advantages of hibernates:</h2>
+<ul>
+<li>Hibernate supports&nbsp;Inheritance, Associations, Collections</li>
+<li>In hibernate if we save the derived class object, &nbsp;then its base class object will also be stored into the database, it means hibernate supporting&nbsp;inheritance</li>
+<li>Hibernate supports relationships like One-To-Many,One-To-One, Many-To-Many-to-Many, Many-To-One</li>
+<li>This will also supports collections like List,Set,Map (Only new collections)</li>
+<li>In jdbc all exceptions are checked exceptions, so we must write code in try, catch and throws, but in hibernate we only have&nbsp;Un-checked exceptions, so no need to write try, catch, or no need to write throws. &nbsp;Actually in hibernate we have the&nbsp;translator&nbsp;which converts checked to Un-checked</li>
+<li>Hibernate has&nbsp;capability&nbsp;to generate primary keys automatically while we are storing the records into database</li>
+<li>Hibernate has its own query language, i.e hibernate query language which is database independent</li>
+<li>So if we change the database, then also our application will works as HQL is database independent</li>
+<li>HQL contains database&nbsp;independent&nbsp;commands</li>
+<li>While we are inserting any record, if we don&rsquo;t have any particular table in the database, JDBC will rises an error like &ldquo;View not exist&rdquo;, and throws exception, but in case of hibernate, if it not found any table in the database this will create the table for us</li>
+<li>Hibernate supports caching mechanism by this, the number of round trips between an application and the database will be reduced, by using this caching technique an application performance will be increased automatically.</li>
+<li>Hibernate supports annotations, apart from XML</li>
+<li>Hibernate provided Dialect classes, so we no need to write sql queries in hibernate, instead we use the methods provided by that API.</li>
+<li>Getting pagination in hibernate is quite simple.</li>
+</ul>
+<p>&nbsp;</p>
+<h2>Disadvantages of hibernates:</h2>
+<ul>
+<li>I don&rsquo;t think there are disadvantages in hibernate</li>
+<li>You know some thing.., Its saying hibernate is little slower than pure JDBC, actually the reason being hibernate used to generate many SQL statements in run time, but i guess this is not the disadvantage</li>
+<li>But there is one major disadvantage, which was boilerplate code issue, actually we need to write same code in several files in the same application, but spring eliminated this.</li>
+</ul>
+<h2>Steps To Use Hibernate In Any Java Application</h2>
+<p>Whether the java application will run in the server or&nbsp;without&nbsp;server, and the&nbsp;application&nbsp;may be desktop or stand alone, swing, awt, servlet&hellip;what ever, but the steps are&nbsp;common&nbsp;to all.</p>
+<p>In order to work with hibernate we&nbsp;don&rsquo;t&nbsp;required any server as mandatory but we need hibernate software (.jar(s) files).</p>
+<h2>Follow The Steps:</h2>
+<ol>
+<li>Import the hibernate API, they are many more, but these 2 are more than enough&hellip;</li>
+</ol>
+<p>import org.hibernate.*;<br />import org.hibernate.cfg.*;</p>
+<ol start="2">
+<li>Among Configuration, Mapping xml files, first we need to load configuration xml, because once we load the configuration file, automatically mapping file will be loaded as we registered this mapping xml in the configuration file.</li>
+</ol>
+<p>So to load configuration xml, we need to create object of <strong>Configuration</strong> class, which is given in <strong>org.hibernate.cfg.*</strong>; &nbsp;and we need to call <strong>configure()</strong> method in that class, by passing xml configuration file name as parameter.</p>
+<p>Eg:</p>
+<p>Configuration <strong>cf</strong> = new Configuration();<br />cf.configure(&ldquo;hibernate.cfg.xml&rdquo;);</p>
+<p>Here our configuration file name is your choice, but by default am have been given hibernate.cfg.xml, &nbsp;so once this configuration file is loaded in our java app, then we can say that hibernate environment is started in our program.</p>
+<p>So once we write the line_&nbsp;<strong>cf.configure(&ldquo;hibernate.cfg.xml&rdquo;), </strong>configuration object<strong> cf </strong>will reads this xml file<strong> hibernate.cfg.xml, </strong>actually internally cf will uses DOM parsers to read the file.</p>
+<p>Finally&hellip;</p>
+<ul>
+<li>cf will reads data from hibernate.cfg.xml</li>
+<li>Stores the data in different variables</li>
+<li>And finally all these variables are grouped and create one high level hibernate object we can call as SessionFactory object.</li>
+<li>So Configuration class only can create this SessionFactory object</li>
+</ul>
+<p>Like SessionFactory <strong>sf</strong> = &nbsp;cf.buildSessionFactory();</p>
+<p>Actually SessionFactory is an interface not a class, and SessionFactoryImpl is the implimented class for SessionFactory, so we are internally creating object of SessionFactoryImpl class and storing in the interface reference, so this SessionFactory object <strong>sf </strong>contains all the data regarding the configuation file so we can call<strong> sf </strong>as heavy weight object.</p>
+<ol start="3">
+<li>Creating an object of session,</li>
+</ol>
+<ul>
+<li>Session is an interface and SessionImpl is&nbsp;implemented&nbsp;class, both are given in org.hibernate.*;</li>
+<li>When ever session is opened then internally a database connection will be opened, in order to get a session or open a session we need to call openSession() method in SessionFactory, it means SessionFactory produces sessions.</li>
+</ul>
+<p>Session <strong>session</strong> = <strong>sf</strong>.openSession();</p>
+<p><strong>sf</strong> = SessfionFactory object</p>
+<ol start="4">
+<li>Create a logical transaction</li>
+</ol>
+<p>While working with insert, update, delete, operations from an hibernate application onto the database then hibernate needs a logical Transaction, if we are selecting an object from the database then we do not require any logical transaction in hibernate. &nbsp;In order to begin a logical&nbsp;transaction in hibernate then we need to call a method beginTransaction() given by Session Interface.</p>
+<p>Transaction tx = <strong>sessio</strong>n.beginTransaction();</p>
+<p><strong>session</strong> is the object of Session Interface</p>
+<ol start="5">
+<li>Use the methods given by Session Interface, &nbsp;to move the objects from application to database and &nbsp;from database to application</li>
+</ol>
+<table>
+<tbody>
+<tr>
+<td>
+<p>session .save(s)</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>Inserting object &lsquo;<strong>s</strong>&lsquo; into database</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>session.update(s)</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>Updating object &lsquo;<strong>s</strong>&lsquo; in the database</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>session.load(s)</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>Selecting object &lsquo;<strong>s</strong>&lsquo; object</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>session.delete(s)</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>Deleting object &lsquo;<strong>s</strong>&lsquo; from database</p>
+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>So finally we need to call <strong>commit() </strong>in Transaction, like <strong>tx.commit()</strong>;</li>
+<li>As i told earlier, &nbsp;when we open session a connection to the database will be created right, so we must close that connection as session. close().</li>
+<li>And finally close the SessionFactory as <strong>sf.close()</strong></li>
+<li>That&rsquo;s it.., we are done.</li>
+</ul>
+<p>Final flow will be &nbsp;Configuration &agrave; SessionFactory&agrave;Session&agrave;Transaction&agrave;Close Statements</p>
+<p>--------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Configuration cfg = new Configuration();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cfg.configure("hibernate.cfg.xml");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SessionFactory factory = cfg.buildSessionFactory();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Session session = factory.openSession();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Product p=new Product();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.setProductId(101);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.setProName("iPhone");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.setPrice(25000);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Transaction tx = session.beginTransaction();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; session.save(p);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println("Object saved successfully.....!!");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tx.commit();&nbsp; session.close();&nbsp;&nbsp;&nbsp; factory.close();</p>
+<p>---------------------------------------------------------------------------------------------------------------------------------------------</p>
+<p>Object o=session.load(Product.class,new Integer(101));</p>
+<p>Product s=(Product)o;</p>
+<p>// For loading Transaction scope is not necessary...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>System.out.println("Loaded object product name is___"+s.getProName());</p>
+<p>Object o=session.load(Product.class,new Integer(103));</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Product p=(Product)o;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Transaction tx = session.beginTransaction();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session.delete(p);</p>
+<p>his is the program to update an object (1 complete row) in the database, which is already persisted in the database, then we have the following two approaches&hellip;</p>
+<h2>Approach 1 &agrave; Load that object from the database, and modify its values, now hibernate automatically modifies the values on to database also, when ever the transaction is committed.</h2>
+<h2>Approach 2 &agrave; If we want to modify object in the database, then create new object with same id and we must call update() given by session interface.</h2>
+<p>&nbsp;</p>
+<p>Approach &agrave; 1)</p>
+<p>Object o=session.load(Product.class,new Integer(105));</p>
+<p>Product s=(Product)o;</p>
+<p>&nbsp;</p>
+<p>Transaction tx = session.beginTransaction();</p>
+<p>&nbsp;</p>
+<p>//s.setStno(105);&nbsp;&nbsp; should not update, because we loaded with that number right..?</p>
+<p>s.setPrice(4000);&nbsp;&nbsp; // implicitly update method will be called..</p>
+<p>&nbsp;</p>
+<p>tx.commit();</p>
+<p>&nbsp;</p>
+<ul>
+<li>When ever an object is loaded from the database then hibernate stores the loaded object in cache-memory maintained by session-interface</li>
+<li>Once an object is loaded, if we do any modifications on that object by calling its setter methods, then these modification are stored in the object maintained by cache-memory</li>
+<li>if we modify the loaded object for multiple times then also the modifications will be stored in object maintained by the cache-memory only.</li>
+<li>when ever we issue commit() operation then hibernate verify whether any changes are there between the object stored in the cache and object in the database, if changes exists then hibernate automatically updates the database by generating any update operation.</li>
+<li>What am saying is hibernate automatically maintains synchronization between cache-memory object and database table objects (rows)</li>
+</ul>
+<p>Approach &agrave; 2)</p>
+<p>Product p=new Product();</p>
+<p>p.setProductId(104);&nbsp;&nbsp;// 104 must be in the DB</p>
+<p>p.setProName("Someting");</p>
+<p>&nbsp;</p>
+<p>Transaction tx = session.beginTransaction();</p>
+<p>session.update(p);</p>
+<p>tx.commit();</p>
+<p>Here we no need to load an object from the database . we will create a new object, and we will assign same id no&rsquo;s to it and we will call update() explicitly in order to make the changes on the object that is stored in the database</p>
+<p>That&rsquo;s it, actually first approach is&nbsp; recommended always..</p>
+<h2>Hibernate Versioning Example, Hibernate Versioning Of Objects</h2>
+<p>Once an object is saved in a database, we can modify that object any number of times right, If we want to know how many no of times that an object is modified then we need to apply this versioning concept.<br />When ever we use versioning then hibernate inserts version number as <strong>zero</strong>, when ever object is saved for the first time in the database.&nbsp; Later hibernate increments that version no by one automatically when ever a modification is done on that particular object.<br />In order to use this versioning concept, we need the following two changes in our application.</p>
+<ul>
+<li>Add one property of type int in our pojo class&nbsp;&nbsp; as &agrave; private int v ;</li>
+<li>In hibernate mapping file, add an element called version soon after id element. &agrave; &lt;version name="v" column="ver" /&gt;</li>
+<li>In this above mapping file, find the &lt;version&gt; element, there i have given column name as <strong>version</strong>, actually you can write any name its not predefined.</li>
+<li>Remember friends, first we must run the logic to <strong>save</strong> the object then hibernate will inset 0 (Zero) by default in the version column of the database, its very important point in the interview point of view also</li>
+<li>First save logic to let the hibernate to insert zero in the version column, then any number of update logic&rsquo;s (programs) we run, hibernate will increments +1 to the previous value</li>
+<li>But if we run the update logic for the first time, hibernate will not insert zero..! it will try to increment the previous value which is NULL in the database so we will get the exception.</li>
+<li>Guys your know some thing.., actually we can run any logic (Save or Update) for the first time, but make sure the versioning column is a number (&gt;=0), but save logic has ability to insert zero by default if there is no value, and update logic will directly tries to increments already existing value by 1, it wont insert any value by default if its null.</li>
+</ul>
+<h1>Importance Of Wrapper And Primitive Types In Hibernate</h1>
+<h1>Primitive type insert zero in database whereas wrapper type insert null blank value in db .</h1>
+<h2>Hibernate Lifecycle Of pojo Class Objects</h2>
+<p>Actually our POJO class object having 3 states like&hellip;</p>
+<ul>
+<li>Transient state</li>
+<li>Persistent state</li>
+<li>Detached state</li>
+</ul>
+<h2>Transient &amp; Persistent states:</h2>
+<ul>
+<li>When ever an object of a pojo class is created then it will be in the Transient state</li>
+<li>When the object is in a Transient state it doesn&rsquo;t represent any row of the database, i mean not associated with any Session object, if we speak more we can say no relation with the database its just an normal object</li>
+<li>If we modify the data of a pojo class object, when it is in transient state then it doesn&rsquo;t effect on the database table</li>
+<li>When the object is in persistent state, then it represent one row of the database, if the object is in persistent state then it is associated with the unique Session</li>
+<li>if we want to move an object from persistent to detached state, we need to do either closing that session or need to clear the cache of the session</li>
+<li>if we want to move an object from persistent state into transient state then we need to delete that object permanently from the database</li>
+</ul>
+<p>&nbsp;</p>
+<p>Configuration cfg = new Configuration();</p>
+<p>cfg.configure("hibernate.cfg.xml");</p>
+<p>&nbsp;</p>
+<p>SessionFactory factory = cfg.buildSessionFactory();</p>
+<p>Session session = factory.openSession();</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Transient state_____start</p>
+<p>Product p=new Product();</p>
+<p>p.setProductId(101);</p>
+<p>p.setProName("iPhone");</p>
+<p>p.setPrice(25000);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Transient state_____end</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Persistent state_____start</p>
+<p>Transaction tx = session.beginTransaction();</p>
+<p>session.save(p);</p>
+<p>System.out.println("Object saved successfully.....!!");</p>
+<p>tx.commit();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Persistent state_____end&nbsp;&nbsp;</p>
+<p>&nbsp;</p>
+<p>session.close();</p>
+<p>factory.close();</p>
+<p>&nbsp;</p>
+<h1>&nbsp;</h1>
+<p>if we want to convert the object from Transient state to Persistentstate we can do in 2 ways</p>
+<ul>
+<li>By saving that object like above</li>
+<li>By loading object from database</li>
+</ul>
+<p>If we do any modifications all the changes will first applied to the object in session cache only (Let__ we do the modifications 5 times, then 5 times we need to save the changes into the database right, which means number of round trips from our application to database will be increased, Actually if we load an object from the database, first it will saves in the cache-memory so if we do any number of changes all will be effected at cache level only and finally we can call save or update method so with the single call of save or update method the data will be saved into the database.</p>
+<p>If we want to save an object into database then we need to call any one of the following 3 methods</p>
+<ul>
+<li>save()</li>
+<li>persist()</li>
+<li>saveOrUpdate()</li>
+</ul>
+<p>i will explain about persist, saveOrUpdate methods later&hellip;.</p>
+<p>If we want to load an object from database, then we need to call either load() or get() methods</p>
+<h2>Transient:</h2>
+<p>One newly created object,with out having any relation with the database, means never persistent, not associated with any Session object</p>
+<h2>Persistent:</h2>
+<p>Having the relation with the database, associated with a unique Session object</p>
+<h2>Detached:</h2>
+<p>previously having relation with the database [persistent ], now not associated with any Session</p>
+<h2>Hibernate Converting Object From Detached to Persistent state</h2>
+<p>&nbsp;Configuration cfg = new Configuration();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cfg.configure("hibernate.cfg.xml");</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SessionFactory factory = cfg.buildSessionFactory();</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Session session1 = factory.openSession();</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Product p=null;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Transient state..</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Object o=session1.get(Product.class, new Integer(1001));</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p=(Product)o;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //now p is in Persistent state..</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session1.close();</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p.setPrice(36000);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// p is in Detached state</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Session session2=factory.openSession();</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Transaction tx=session2.beginTransaction();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session2.update(p);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// now p reached to Persistent state</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tx.commit();</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session2.close();</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;factory.close();</p>
+<ul>
+<li>We have opened the session1 at line number <strong>14</strong> and closed at line number <strong>20</strong>, see i have been loaded the Product class object by using get(-,-) method</li>
+<li><strong>Remember</strong> get() method always returns the super class object (Object)</li>
+<li>so i typecast into my pojo class object type, so now we can use print any value from this object so its in the Persistent state</li>
+<li>see line number <strong>22</strong>,&nbsp; am trying to change the Price,&nbsp; but it wont effect the database because its not in the session cache so i need to take one more session to update this value in the database, so for that reason i took one more session from line numbers 24 &ndash; 30</li>
+<li>Gun short point is, things related to database must go with in the session only that&rsquo;s it</li>
+</ul>
+<h2>Hibernate Inheritance: Table Per Class Hierarchy</h2>
+<p>Here is the explanation and one example on hibernate table per class hierarchy, consider we have base class named Payment and 2 derived classes like CreditCard, Cheque.</p>
+<p>&nbsp;</p>
+<p>If we save the derived class object like CreditCard or Cheque then automatically Payment class object will also be saved into the database, and in the database all the data will be stored into a <strong>single table</strong> only, which is base class table for sure. But here we must use one extra discriminator column in the database,&nbsp; just to identify which derived class object we have been saved in the table along with the base class object,&nbsp; if we are not using this column hibernate will throws the exception, see this example so that you will get one idea on this concept.</p>
+<p>Payment &agrave; int paymentId , double amount.</p>
+<p>creaditCard &agrave;string &nbsp;creaditcardTYpe</p>
+<p>cheque &agrave; string chequetype</p>
+<p>Configuration cfg = new Configuration();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cfg.configure("hibernate.cfg.xml");</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SessionFactory factory = cfg.buildSessionFactory();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Session session = factory.openSession();</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CreditCard c=new CreditCard();</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c.setPaymentId(10);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c.setAmount(2500);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c.setCreditCardType("Visa");</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cheque c1=new Cheque();</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c1.setPaymentId(11);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c1.setAmount(2600);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c1.setChequeType("ICICI");</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Transaction tx = session.beginTransaction();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; session.save(c);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; session.save(c1);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println("Object saved successfully.....!!");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tx.commit();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; session.close();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; factory.close();</p>
+<h2>Payment.hbm.xml:</h2>
+<p>&lt;hibernate-mapping&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;class name="str.Payment" table="PAYMENT"&gt;</p>
+<p>&lt;id name="paymentId" column="pid" /&gt;</p>
+<p>&lt;discriminator column="dcolumn" type="string" length="5"/&gt;</p>
+<p>&lt;property name="amount" column="amt" /&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;subclass name="str.CreditCard" discriminator-value="CC"&gt;</p>
+<p>&lt;property name="CreditCardType" column="cctype" length="10" /&gt;</p>
+<p>&lt;/subclass&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;subclass name="str.Cheque" discriminator-value="cq"&gt;</p>
+<p>&lt;property name="ChequeType" column="cqtype" length="10" /&gt;</p>
+<p>&lt;/subclass&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;/class&gt;</p>
+<p>&lt;/hibernate-mapping&gt;</p>
+<ul>
+<li>Payment.java, CreditCard.java, Cheque.java are just pojo classes nothing to explain, but see in CreditCard.java, Cheque.java i have inherited the Payment.java.</li>
+<li>In this inheritance concept, mapping file is the central part, see in line number <strong>10</strong>,&nbsp; we added one new line&nbsp; discriminator, after the id element just to identify which derived class object we have been saved in the table (see the oracle console once)</li>
+<li>every thing has been saved in a single table</li>
+</ul>
+<h2>Hibernate Inheritance: Table Per subClass Hierarchy</h2>
+<p>This is also just like previous example, but some changes are there, in table per class hierarchy all the data was saved in a single table but here,</p>
+<p>&agrave; &nbsp;x number of classes = x number of tables in the database.</p>
+<p>If we save the CreditCard class object, then first hibernate will saves the data related to super class object into the super class related table in the database and then CreditCard object data in CreditCard related table in the database, so first base class data will be saved</p>
+<p>&lt;hibernate-mapping&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;class name="str.Payment" table="PAYMENT"&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;id name="paymentId" column="pid" /&gt;</p>
+<p>&lt;property name="amount" column="amt" /&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;joined-subclass name="str.CreditCard" table="CreditCard"&gt;</p>
+<p>&lt;key column="dummy1" /&gt;</p>
+<p>&lt;property name="CreditCardType" column="cctype" length="10" /&gt;</p>
+<p>&lt;/joined-subclass&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;joined-subclass name="str.Cheque" table="Cheque"&gt;</p>
+<p>&lt;key column="dummy2" /&gt;</p>
+<p>&lt;property name="ChequeType" column="cqtype" length="10" /&gt;</p>
+<p>&lt;/joined-subclass&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;/class&gt;</p>
+<p>&lt;/hibernate-mapping&gt;</p>
+<p>In the mapping file,&nbsp; &lt;key &ndash;&gt; element is because,&nbsp; once we save the derived class object, then hibernate will first save the baseclass object then derived class object right ..!, so at the time of saving the derived class object hibernate will copy the primary key value of the base class into the corresponding derived class, see in the above output 10 copied into dummy1 column of CreditCard table and 11 copied into Dummy2 column of the cheque table.</p>
+<h2>Hibernate Inheritance: Table Per Concrete Class Hierarchy</h2>
+<p>Something like previous example but the changes are at mapping file only, and one more thing is..</p>
+<p>&agrave; x number of derived classes = x number of tables in the database</p>
+<ul>
+<li>Once we save the derived class object, then derived class data and base class data will be saved in the derived class related table in the database</li>
+<li>for this type we need the tables for derived classes, but not for the base class</li>
+<li>in the mapping file we need to use one new element &lt;union-subclass &mdash; &gt;under &lt;class &mdash;&gt;</li>
+</ul>
+<p>&lt;hibernate-mapping&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;class name="str.Payment" table="PAYMENT"&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;id name="paymentId" column="pid" /&gt;</p>
+<p>&lt;property name="amount" column="amt" /&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;union-subclass name="str.CreditCard"&gt;</p>
+<p>&lt;property name="CreditCardType" column="cctype" length="10" /&gt;</p>
+<p>&lt;/union-subclass&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;union-subclass name="str.Cheque"&gt;</p>
+<p>&lt;property name="ChequeType" column="cqtype" length="10" /&gt;</p>
+<p>&lt;/union-subclass&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;/class&gt;</p>
+<p>&lt;/hibernate-mapping&gt;</p>
+<h2>Example On Composite Primary Keys In Hibernate</h2>
+<p>Composite primary keys means having more than one primary key, let us see few points on this concept</p>
+<ul>
+<li>If the table has a primary key then in the hibernate mapping file we need to configure that column by using &lt;id /&gt; element right..!</li>
+<li>Even though the database table doesn&rsquo;t have any primary key, we must configure one column as id (one primary key is must)</li>
+<li>If the database table has more than one column as primary key then we call it as composite primary key, so if the table has multiple primary key columns , in order to configure these primary key columns in the hibernate mapping file we need to use one new element called <strong>&lt;composite-id</strong> &hellip;..&gt; <strong>&lt;/composite-id&gt;</strong></li>
+</ul>
+<p><sup>public class Product implements java.io.Serializable{</sup></p>
+<p><sup>&nbsp;</sup></p>
+<p><sup>private int productId;</sup></p>
+<p><sup>private String proName;</sup></p>
+<p><sup>private double price;</sup></p>
+<p><sup>&nbsp;</sup></p>
+<p><sup>------------------------------------------------------------------------------------------</sup></p>
+<table>
+<tbody>
+<tr>
+<td>
+<p><sup>&lt;hibernate-mapping&gt;</sup></p>
+<p><sup>&lt;class name="str.Product" table="products"&gt;</sup></p>
+<p><sup>&lt;composite-id&gt;</sup></p>
+<p><sup>&lt;key-property name="productId" column="pid"&nbsp; /&gt;</sup></p>
+<p><sup>&lt;key-property name="proName" column="pname" length="10" /&gt;</sup></p>
+<p><sup>&lt;/composite-id&gt;</sup></p>
+<p><sup>&lt;property name="price"/&gt;</sup></p>
+<p><sup>&lt;/class&gt;</sup></p>
+<p><sup>&lt;/hibernate-mapping&gt;</sup></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><sup>-----------------------------------------------------------------------</sup></p>
+<p><sup>SessionFactory factory = cfg.buildSessionFactory();</sup></p>
+<p><sup>Session session = factory.openSession();</sup></p>
+<p><sup>&nbsp;</sup></p>
+<p><sup>Product p=new Product();</sup></p>
+<p><sup>&nbsp;</sup></p>
+<p><sup>p.setProductId(101);</sup></p>
+<p><sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p.setProName("iPhone");</sup></p>
+<p><sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p.setPrice(25000); </sup></p>
+<p><sup>&nbsp;</sup></p>
+<p><sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Transaction tx=session.beginTransaction();</sup></p>
+<p><sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session.save(p);</sup></p>
+<p><sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Object Loaded successfully.....!!");</sup></p>
+<p><sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tx.commit();&nbsp;&nbsp;&nbsp;&nbsp; </sup></p>
+<p>&nbsp;</p>
+<ul>
+<li>see Product.java pojo class, in line number 3 i have implemented the <strong>java.io.Serializable </strong>interface,&nbsp; this is the first time am writing this implementation for the pojo class right&hellip;!&nbsp; we will see the reason why we use this serializable interface later.</li>
+<li>But remember, if we want to use the composite primary keys we must implement our pojo class with <strong>Serializable</strong> interface</li>
+<li><strong>hibernate.cfg.xml</strong> is normal as previous programs, something like hello world program</li>
+<li>come to <strong>Product.hbm.xml</strong>, see line number <strong>9</strong>-<strong>12, </strong>this time we are using one new element&lt;<strong>composite-id</strong>&gt;</li>
+<li>Actually if we have a single primary key, we need to use &lt;id&gt; element, but this time we have multiple primary keys, so we need to use this new element &lt;composite-id&gt;</li>
+<li>Actually we will see the exact concept of this composite primary keys in the next example (loading an object with composite key)</li>
+</ul>
+<h2>Generators &lt;generator&gt; In Hibernate</h2>
+<p>&lt;generator /&gt; is one of main element we are using in the hibernate framework [in the mapping file],&nbsp; let us see the concept behind this generators.</p>
+<ul>
+<li>Up to now in our hibernate mapping file, we used to write &lt;generator /&gt; in the id element scope, actually this is default like whether you write this assigned generator or not hibernate will takes automatically</li>
+<li>In fact this assigned means hibernate will understand that, while saving any object hibernate is not responsible to create any primary key value for the current inserting object, user has to take the response</li>
+<li>The thing is, while saving an object into the database, the generator informs to the hibernate that, how the primary key value for the new record is going to generate</li>
+<li>hibernate using different primary key generator algorithms, for each algorithm internally a class is created by hibernate for its implementation</li>
+<li>hibernate provided different primary key generator classes and all these classes are implemented from</li>
+</ul>
+<p>org.hibernate.id.IdentifierGeneratar Interface</p>
+<p>while configuring &lt;generator /&gt; element in mapping file, we need to pass parameters if that generator class need any parameters, actually one sub element of &lt;generator /&gt; element is &lt;param /&gt;, will talk more about this</p>
+<p>&lt;generator class=""&gt;</p>
+<p>&lt;param name=""&gt; value &lt;/param&gt;</p>
+<p>&lt;/generator&gt;</p>
+<p>&nbsp;</p>
+<h2>List of generators</h2>
+<p>The following are the list of main generators we are using in the hibernate framework</p>
+<ul>
+<li>assigned</li>
+<li>increment</li>
+<li>sequence</li>
+<li>identity</li>
+<li>hilo</li>
+<li>native</li>
+<li>foregin</li>
+<li>uuid.hex</li>
+<li>uuid.string</li>
+</ul>
+<p>In the above generators list, the first <strong>7</strong> are used for int,long,short types of primary keys, and last <strong>2</strong> are used when the primary key column type is String type (varchar2)</p>
+<h2>assigned</h2>
+<ul>
+<li>This generator supports in all the databases</li>
+<li>This is the default generator class used by the hibernate, if we do not specify &lt;generator &ndash;&gt; element under id element then hibernate by default assumes it as &ldquo;assigned&rdquo;</li>
+<li>If generator class is assigned, then the programmer is responsible for assigning the primary key value to object which is going to save into the database</li>
+</ul>
+<p>&nbsp;</p>
+<p>&lt;id name="prodId" column="pid"&gt;</p>
+<p>&lt;generator /&gt;</p>
+<p>&lt;/id&gt;</p>
+<p>&nbsp;</p>
+<h2>Increment</h2>
+<ul>
+<li>This generator supports in all the databases, database independent</li>
+<li>This generator is used for generating the id value for the new record by using the formula</li>
+</ul>
+<p>Max of id value in Database + 1</p>
+<ul>
+<li>if we manually assigned the value for primary key for an object, then hibernate doesn&rsquo;t considers that value and uses <strong>max value of id in database + 1</strong> concept only</li>
+<li>If there is no record initially in the database, then for the first time this will saves primary key value as 1, as&hellip;</li>
+</ul>
+<p>max of id value in database + 1<br />0 + 1<br />result -&gt; 1</p>
+<h2>sequence</h2>
+<ul>
+<li>Not has the support with MySql</li>
+<li>This generator class is database dependent it means, we cannot use this generator class for all the database, we should know whether the database supports sequence or not before we are working with it</li>
+<li>while inserting a new record in a database, hibernate gets next value from the sequence under assigns that value for the new record</li>
+<li>If programmer has created a sequence in the database then that sequence name should be passed as the generator</li>
+</ul>
+<p>&lt;id name="productId" column="pid"&gt;</p>
+<p>&lt;generator&gt;</p>
+<p>&lt;param name="sequence"&gt;MySequence&lt;/param&gt;</p>
+<p>&lt;/genetator&gt;</p>
+<p>&lt;/id&gt;</p>
+<ul>
+<li>If the programmer has not passed any sequence name, then hibernate creates its own sequence with name &ldquo;<strong>Hibernate-Sequence</strong>&rdquo; and gets next value from that sequence, and than assigns that id value for new record</li>
+<li>But remember, if hibernate want&rsquo;s to create its own sequence, in hibernate configuration file, <strong>hbm2ddl.auto</strong> property must be set enabled</li>
+</ul>
+<p>sql&gt; create sequence MySequence incremented by 5;</p>
+<ul>
+<li>first it will starts with 1 by default</li>
+<li>though you send the primary key value., hibernate uses this sequence concept only</li>
+<li>But if we not create any sequence, then first 1 and increments by 1..bla bla. in this case hibernate creating right..? so ensure we have hbm2ddl.auto enabled in the configuration file</li>
+</ul>
+<h2>identity</h2>
+<ul>
+<li>This is database dependent, actually its not working in oracle</li>
+<li>In this case (identity generator) the id value is generated by the database, but not by the hibernate, but in case of increment hibernate will take over this</li>
+<li>this identity generator doesn&rsquo;t needs any parameters to pass</li>
+<li>this identity generator is similar to increment generator, but the difference was increment generator is database independent and hibernate uses a select operation for selecting max of id before inserting new record</li>
+<li>But in case of identity, no select operation will be generated in order to insert an id value for new record by the hibernate</li>
+</ul>
+<p>&lt;id name="productid" column="pid"&gt;</p>
+<p>&lt;generator class="......."/&gt;</p>
+<p>&lt;/id&gt;</p>
+<h2>hilo</h2>
+<ul>
+<li>This generator is database independent</li>
+<li>for the first record, the id value will be inserted as 1</li>
+<li>for the second record the id value will be inserted as 32768</li>
+<li>for the next records the id value will be incremented by 32768 and will stores into the database (i mean adds to the previous)</li>
+<li>actually this hibernate stores the count of id values generated in a column of separated table, with name &ldquo;<strong>hibernate_unique_key</strong>&rdquo; by default with the column name &ldquo;<strong>next_hi&rdquo;</strong></li>
+<li>if we want to modify the table and column names theen wee need to pass 2 parameter&rsquo;s for the hilo generators</li>
+</ul>
+<p>&lt;id name="productId" column="pid"&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;generator&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;param name="table"&gt;your table name&lt;/param&gt;</p>
+<p>&lt;param name="column"&gt;your column name &lt;/param&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;/generator&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;/id&gt;</p>
+<h2>native</h2>
+<p>when we use this generator class, it first checks whether the database supports identity or not, if not checks for sequence and if not, then hilo will be used finally the order will be..</p>
+<ul>
+<li>identity</li>
+<li>sequence</li>
+<li>hilo</li>
+</ul>
+<p>For example, if we are connecting with oracle, if we use generator class as native then it is equal to the generator class sequence.</p>
+<h2>foreign</h2>
+<p>we will see about this generator in one-to-one relationship, else you may not understand.</p>
+<h2>Criteria Query</h2>
+<p>&nbsp;</p>
+<p>Unlike HQL, Criteria is only for selecting the data from the database, that to we can select complete objects only not partial objects, in fact by combining criteria and projections concept we can select partial objects too we will see this angle later,&nbsp; but for now see how we are using criteria for selecting complete objects form the database. We cant perform non-select operations using this criteria.&nbsp; Criteria is suitable for executing dynamic queries too, let us see how to use this criteria queries in the hibernate.</p>
+<p>Criteria crit = session.createCriteria(Employee.class);</p>
+<p>// let Product is our pojo class</p>
+<p>List l = crit.list()</p>
+<p>// need to call list() to execute criteria</p>
+<p>Iterator it = l.iterator();</p>
+<p>while(it.hasNext())</p>
+<p>{</p>
+<p>Object o = it.next();</p>
+<p>Product p = (Product)o;</p>
+<p>------ ----- -----</p>
+<p>}</p>
+<h2>Adding Conditions To Criteria</h2>
+<ul>
+<li>If we want to put conditions to load data from database, using criteria then we need to create one Criterion Interface object and we need to add this object to Criteria Class object</li>
+<li>Criterion is an interface given in &ldquo;org.hibernate.criterion&rdquo; package</li>
+<li>In order to get Criterion object, we need to use Restrictions class</li>
+<li>Restrictions is the factory for producing Criterion objects, but friends there is no explicit relation between Criterion interface and Restrictions class, it means Restrictions class is not implemented from Criterion Interface</li>
+<li>In Restrictions class, we have all static methods and each method of this class returns Criterion object</li>
+<li>Restrictions class is also given in &ldquo;org.hibernate.criterion&rdquo; package</li>
+</ul>
+<p>Criteria crit = session.createCriteria(Products.class);</p>
+<p>Criterion c1=Restrictions.gt("price", new Integer(12000));</p>
+<p>//price is our pojo class variable</p>
+<p>crit.add(c1); // adding criterion object to criteria class object</p>
+<p>List l = crit.list(); // executing criteria query</p>
+<p>Note: See line number 2, am calling gt(-,-) method of Restrictions class, (means greater than), in our above example am fetching the data by comparing price greater than (&gt;) 12000</p>
+<p>If we want to put more conditions on the data (multiple conditions) then we can use <strong>and</strong> method , <strong>or</strong> method give by the Restrictions class</p>
+<p>crit.add(Restrictions.and(Restrictions.like("proName","%R%"),</p>
+<p>Restrictions.eq("price",new Integer(12000))));</p>
+<p>List l=crit.list();</p>
+<p>Iterator it = l.iterator();</p>
+<p>&nbsp;</p>
+<p>Configuration cfg = new Configuration();</p>
+<p>cfg.configure("hibernate.cfg.xml");</p>
+<p>&nbsp;</p>
+<p>SessionFactory factory = cfg.buildSessionFactory();</p>
+<p>Session session = factory.openSession();</p>
+<p>&nbsp;</p>
+<p>Criteria crit = session.createCriteria(Product.class);</p>
+<p>Criterion cn = Restrictions.gt("price",new Double(17000));</p>
+<p>crit.add(cn);</p>
+<p>List l=crit.list();</p>
+<p>System.out.println("List total size..._"+l.size());</p>
+<p>Iterator it=l.iterator();</p>
+<p>&nbsp;</p>
+<p>while(it.hasNext())</p>
+<p>{</p>
+<p>Product p=(Product)it.next();</p>
+<p>System.out.println(p.getProductId());</p>
+<p>System.out.println(p.getProName());</p>
+<p>System.out.println(p.getPrice());</p>
+<p>System.out.println("-----------------");</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>session.close();</p>
+<p>factory.close();</p>
+<ul>
+<li>In line number 25, created object of Criteria</li>
+<li>In line number 26,&nbsp; created Criterion interface object by using Restrictions class</li>
+<li>In line number 27, added criterion interface object to criteria object</li>
+<li>In line number 28,&nbsp; executed criteria query by calling list() method in criteria</li>
+<li>See line number 34, in this case we must typecast into our POJO class type only</li>
+</ul>
+<p>Actually the internal concept is,&nbsp; once we called the list() method in criteria (line number 28) all objects (records) will come and stores in list object, from there we used to take iterate then typecast into our POJO class type bla bla.</p>
+<h2>Hibernate Projections Introduction</h2>
+<p>S o far in criteria, we are able to load complete object right&hellip;.! let us see how to load the partial objects while working with criteria.&nbsp; The projections concept is introduced in hibernate 3.0 and mainly we can do the following 2 operations using the projection</p>
+<ul>
+<li>We can load partial object from the database</li>
+<li>We can find the Result of Aggregate functions</li>
+</ul>
+<p><em>Projection</em> is an Interface given in &ldquo;org.hibernate.criterion&rdquo; package, <em>Projections</em> is an class given in same package,&nbsp; actually Projection is an interface, and Projections is an class and is a factory for producing projection objects.</p>
+<p>In Projections class, we have all static methods and each method of this class returns Projection interface object.</p>
+<p>If we want to add a Projection object to Criteria then we need to call a method <strong>setProjection()</strong></p>
+<p><strong>Remember</strong>, while adding projection object to criteria, it is possible to add one object at a time.&nbsp; It means if we add 2nd projection object then this 2nd one will overrides the first one (first one wont be work), so at a time we can only one projection object to criteria object.</p>
+<p>Using criteria, if we want to load partial object from the database, then we need to create a projection object for property that is to be loaded from the database</p>
+<p><strong>Example:</strong></p>
+<p>Criteria crit = session.createCriteria(Products.class);</p>
+<p>crit.setProjection(Projections.proparty("proName"));</p>
+<p>List l=crit.list();</p>
+<p>Iterator it=l.iterator();</p>
+<p>while(it.hasNext())</p>
+<p>{</p>
+<p>String s = (String)it.next();</p>
+<p>// ---- print -----</p>
+<p>}</p>
+<p>If we add multiple projections to criteria then the last projection added will be considered to execute see&hellip;</p>
+<p>Criteria crit = session.createCriteria(Products.class);</p>
+<p>&nbsp;</p>
+<p>Projection p1 = Projection.property("proName");</p>
+<p>Projection p2 = Projection.property("price");</p>
+<p>&nbsp;</p>
+<p>crit.setProjection(p1):</p>
+<p>crit.setProjection(p2):</p>
+<p>List l=crit.list();</p>
+<p>-------------- ----</p>
+<p>------- - ---&nbsp;&nbsp;----</p>
+<p>&nbsp;</p>
+<p>Here collections list l, is going to contain the price in the form of Double objects, but product names are over ridden,&nbsp; second projection over rides the first one, i mean p2 only will works p1 will not works, actually there is a way to add multiple projections to criteria to select more than one column from the database i will tell you in the next example</p>
+<h2>Difference between HQL and Criteria Query in Hibernate</h2>
+<ul>
+<li>HQL is to perform both select and non-select operations on the data,&nbsp; but Criteria is only for selecting the data, we cannot perform non-select operations using criteria</li>
+<li>HQL is suitable for executing Static Queries, where as Criteria is suitable for executing Dynamic Queries</li>
+<li>HQL doesn&rsquo;t support pagination concept, but we can achieve pagination with Criteria</li>
+<li>Criteria used to take more time to execute then HQL</li>
+<li>With Criteria we are safe with SQL Injection because of its dynamic query generation but in HQL as your queries are either fixed or parametrized, there is no safe from SQL Injection.</li>
+</ul>
+<h2>Hibernate Native SQL Query Example</h2>
+<p>Native SQL is another technique of performing bulk operations on the data using hibernate</p>
+<ul>
+<li>By using Native SQL, we can perform both select, non-select operations on the data</li>
+<li>In face&nbsp;Native SQL means using the direct SQL command specific to the particular (current using) database and executing it with using hibernate</li>
+</ul>
+<h2>Advantages and Disadvantages of Native SQL</h2>
+<ul>
+<li>We can use the database specific keywords (commands), to get the data from the database</li>
+<li>While migrating a JDBC program into hibernate, the task becomes very simple because JDBC uses direct SQL commands and hibernate also supports the same commands by using this Native SQL</li>
+<li>The main draw back of Native SQL is, some times it makes the hibernate application as database dependent one</li>
+</ul>
+<p>If we want to execute Native SQL Queries on the database then, we need to construct an object of SQLQuery, actually this SQLQuery is an interface extended from Query and it is given in &rdquo; org.hibernate package &rdquo;</p>
+<p>In order to get an object of SQLQuery, we need to use a method createSQLQuery() given by session interface.</p>
+<p>While executing native sql queries on the database, we use directly tables, column names directly in our command.</p>
+<p><strong>Remember</strong>, while executing Native SQL Queries, even though we are selecting complete objects from teh database we need to type cast into object array only, not into our pojo class type, because we are giving direct table, column names in the Native SQL Querie so it does&rsquo;nt know our class name</p>
+<p>If we execute the command, always first it will put&rsquo;s data in <strong>ResultSet</strong> and from there List</p>
+<p>SQLQuery qry = session.createSQLQuery("select * from PRODUCTS");</p>
+<p>// Here PRODUCTS is the table in the database...</p>
+<p>List l = qry.list();</p>
+<p>Iterator it = l.iterator();</p>
+<p>while(it.hasNext())</p>
+<p>{</p>
+<p>Object row[] = (Object[])it.next();&nbsp; }</p>
+<ul>
+<li>while selecting data from the table, even though you are selecting the complete object from the table, in while loop still we type cast into object array only right</li>
+<li>See the above code, we typecast into the object[] arrays right..,&nbsp; in case if we want to type cast into our POJO class (i mean to get POJO class obj), then we need to go with entityQuery concept</li>
+<li>In order to inform the hibernate that convert each row of ResultSet into an object of the POJO class back, we need to make the query as an entityQuery</li>
+<li>to make the query as an entityQuery, we need to call addEntity() method.</li>
+</ul>
+<p>//We are letting hibernate to know our pojo class too</p>
+<p>SQLQuery qry = session.createSQLQuery("select * from PRODUCTs").addEntity(Product.class);</p>
+<p>List l = qry.list();</p>
+<p>Iterator it = l.iterator();</p>
+<p>while(it.hasNext())</p>
+<p>{</p>
+<p>Product p = (Product)it.next();</p>
+<p>--- -------</p>
+<p>}</p>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>See line number 2, i have been added addEntity(Product.class) at the end, which will let the hibernate to know about our POJO class, so now we can typecast into our POJO class type like what i have done at&nbsp; line number 7</li>
+<li>And that&rsquo;s it, this is the total concept on this Native SQL, am not going to give any example on this separately hope you understood the concept</li>
+</ul>
+<h2>Hibernate Relationships</h2>
+<p>U sing hibernate, if we want to put relationship between two entities [ objects of two pojo classes ], then in the database tables, there must exist foreign key relationship, we call it as Referential integrity.</p>
+<p>The main advantage of putting relation ship between objects is, we can do operation on one object, and the same operation can transfer onto the other object in the database [ remember, object means one row in hibernate terminology ]</p>
+<p>While selecting, it is possible to get data from multiple tables at a time if there exits relationship between the tables, nothing but in hibernate relationships between the objects</p>
+<p>Using hibernate we can put the following 4 types of relationships</p>
+<ul>
+<li>One-To-One</li>
+<li>Many-To-One</li>
+<li>Many-To-Many</li>
+<li>One-To-Many</li>
+</ul>
+<h2>Hibernate Cascade Options &ndash; Cascade Attribute In Hibernate</h2>
+<p>M ain concept of hibernate relations is to getting the relation between parent and child class objects</p>
+<p>Cascade attribute is mandatory, when ever we apply relationship between objects, cascade attribute transfers operations done on one object onto its related child objects</p>
+<p>If we write cascade = &ldquo;all&rdquo; then changes at parent class object will be effected to child class object too,&nbsp; if we write cascade = &ldquo;all&rdquo; then all operations like insert, delete, update at parent object will be effected to child object also</p>
+<p>Example: if we apply insert(or update or delete) operation on parent class object, then child class objects will also be stored into the database.</p>
+<p>default value of cascade =&rdquo;none&rdquo; means no operations will be transfers to the child class</p>
+<p>Example: if we apply insert(or update or delete) operation on parent class object, then child class objects will not be effected, if cascade = &ldquo;none&rdquo;</p>
+<p>Cascade having the values&hellip;&hellip;.</p>
+<ul>
+<li>none (default)</li>
+<li>save</li>
+<li>update</li>
+<li>save-update</li>
+<li>delete</li>
+<li>all</li>
+<li>all-delete-orphan</li>
+</ul>
+<p>In hibernate relations, if we load one parent object from the database then child objects related to that parent object will be loaded into one collection right (see one-to-many insert example).</p>
+<p>Now if we delete one child object from that collection, then the relationship between the parent object and that child object will be removed, but the record (object) in the database will remains at it is, so if we load the same parent object again then this deleted child will not be loaded [ but it will be available on the database ]</p>
+<p>so finally what am saying is all-delete-orphan means, breaking relation between objects not deleting the objects from the database, hope you got what am saying</p>
+<p><strong>Note</strong>:<br />what is orphan record ..?<br />an orphan record means it is a record in child table but it doesn&rsquo;t have association with its parent in the application.</p>
+<p>[ <strong>And</strong> ]</p>
+<p>In an application, if a child record is removed from the collection and if we want to remove that child record immediately from the database, then we need to set the cascade =&rdquo;all-delete-orphan&rdquo;</p>
+<p>And that&rsquo;s it about this cascade attribute in hibernate, hope i explained all the values..!!</p>
+<h2>Joins In Hibernate</h2>
+<ul>
+<li>We use join statements, to select the data from multiple tables of the database, when there exist relationship</li>
+<li>with joins, its possible to select data from multiple tables of the database by construction a single query</li>
+</ul>
+<p>Hibernate supports 4 types of joins..</p>
+<ul>
+<li>Left Join</li>
+<li>Right&nbsp; Join</li>
+<li>Full Join</li>
+<li>Inner Join</li>
+</ul>
+<p>the <strong>DEFAULT</strong> join in hibernate is Inner join</p>
+<ul>
+<li>Left join means, the objects from both sides of the join are selected and more objects&nbsp; from left side are selected, even though no equal objects are there at right side</li>
+<li>Right join means equal objects are selected from database and more objects are from right side of join are selected even though there is no equal objects are exist left side</li>
+<li>Full join means, both equal and un-equal objects from both sides of join are selected</li>
+<li>Inner join means only equal objects are selected&nbsp; and the remaining are discarded</li>
+<li>At the time of construction the join statements, we need to use the properties created in pojo class to apply relationship between the objects</li>
+<li>To construct a join statement, we use either HQL, or NativeSql</li>
+</ul>
+<h2>Hibernate Annotations Introduction Gun short point :-&nbsp; Annotations are replacement for XML</h2>
+<p>Let us see few points regarding annotations in hibernate</p>
+<ul>
+<li>Annotations are introduced in java along with JDK 1.5, annotations are used to provide META data to the classes, variables, methods of java</li>
+<li>Annotations are given by SUN as replacement to the use of xml files in java</li>
+<li>In hibernate annotations are given to replace hibernate mapping [ xml ] files</li>
+<li>While working with annotations in hibernate, we do not require any mapping files, but hibernate xml configuration file is must</li>
+<li>hibernate borrowed annotations from java persistence API but hibernate it self doesn&rsquo;t contain its own annotations</li>
+<li>Every annotations is internally an Interface, but the key words starts with @ symbol</li>
+</ul>
+<ul>
+<li>For working with annotations, our java version must be 1.5 or higher and hibernate version must be hibernate 3.3 or higher, actually up to now we have been used hibernate 2.2 in our previous tutorials, get ready to download the higher version</li>
+<li>At j2se level, sun has provided very limited set of annotations like @Override and @Deprecated &hellip;etc&hellip;</li>
+<li>Sun has provided the annotations related to j2se level under java.lang.annotations.* package</li>
+<li>Most of the annotations related to j2ee level are given by sun and their implementations are given by the vendors</li>
+<li>In hibernate, the annotations supported are given by sun under javax.persistence package and hibernate has provided implementations for annotations given in that package</li>
+</ul>
+<p>The basic annotations we are using while creating hibernate pojo classes are&hellip;</p>
+<ul>
+<li>@Entity</li>
+<li>@Table</li>
+<li>@Id</li>
+<li>@Column</li>
+</ul>
+<p>Actually @Entity, @Table are class level annotations, and @Id, @Column are the field level annotations, no worries you will be able to understand while seeing the first example</p>
+<ul>
+<li>in hibernate, if we are annotations in the pojo class then hibernate mapping file is not required, it means annotations are reducing the use of xml files in the hibernate</li>
+</ul>
+<p>Though we are using annotations in our pojo class with mapping xml also, then hibernate will give first preference to xml only not for annotations,&nbsp; actually this concept is same in struts, hibernate, spring too</p>
+<h2><a href="http://www.java4s.com/wp-content/uploads/2011/06/base-derived.png"><br /></a>Difference Between Merge And Update Methods In Hibernate</h2>
+<p>B oth update() and merge() methods in hibernate are used to convert the object which is in detached state into persistence state.&nbsp; But there is little difference.&nbsp; Let us see which method will be used in what situation.</p>
+<p>SessionFactory factory = cfg.buildSessionFactory();</p>
+<p>Session session1 = factory.openSession();</p>
+<p>&nbsp;</p>
+<p>Student s1 = null;</p>
+<p>Object o = session1.get(Student.class, new Integer(101));</p>
+<p>s1 = (Student)o;</p>
+<p>session1.close();</p>
+<p>&nbsp;</p>
+<p>s1.setMarks(97);</p>
+<p>&nbsp;</p>
+<p>Session session2 = factory.openSession();</p>
+<p>Student s2 = null;</p>
+<p>Object o1 = session2.get(Student.class, new Integer(101));</p>
+<p>s2 = (Student)o1;</p>
+<p>Transaction tx=session2.beginTransaction();</p>
+<p>&nbsp;</p>
+<p>session2.merge(s1);</p>
+<p>&nbsp;</p>
+<ul>
+<li>See from line numbers 6 &ndash; 9, we just loaded one object s1 into session1 cache and closed session1 at line number 9, so now object s1 in the session1 cache will be destroyed as session1 cache will expires when ever we say session1.close()</li>
+<li>Now s1 object will be in some RAM location, not in the session1 cache</li>
+<li>here s1 is in detached state, and at line number 11 we modified that detached object s1, now if we call update() method then hibernate will throws an error, because we can update the object in the session only</li>
+<li>So we opened another session [session2] at line number 13,&nbsp; and again loaded the same student object from the database, but with name s2</li>
+<li>so in this session2, we called <strong>session2.merge(s1)</strong>; now into s2 object s1 changes will be merged and saved into the database</li>
+</ul>
+<p>Hope you are clear&hellip;, actually update and merge methods will come into picture when ever we loaded the same object again and again into the database, like above.</p>
+<h2>Difference Between Hibernate Save And Persist Methods</h2>
+<p>A ctually the difference between hibernate save() and persist() methods is depends on generator class we are using.</p>
+<ul>
+<li>If our generator class is assigned, then there is no difference between save() and persist() methods. Because generator &lsquo;assigned&rsquo; means, as&nbsp; a programmer we need to give the primary key value to save in the database right [ Hope you know this generators concept ]</li>
+<li>In case of other than assigned generator class, suppose if our generator class name is Increment means hibernate it self will assign the primary key id value into the database right [ other than assigned generator, hibernate only used to take care the primary key id value remember ], so in this case if we call save() or persist() method then it will insert the record into the database normally</li>
+</ul>
+<p>But here thing is,&nbsp; save() method can return that primary key id value which is generated by hibernate and we can see it by</p>
+<p>long s = session.save(k);</p>
+<p>In this same case, persist() will never give any value back to the client, hope you are clear.</p>
+<h2>Difference Between Hibernate get() and load() Methods ?</h2>
+<p>W hat is the difference between hibernate get() and load() methods ? this is one of the famous hibernate interview questions,&nbsp; most of us will use hibernate get and load methods irrespective of knowing their exact behavior will you</p>
+<p>accept that ? of course even myself too in the initial stages Today i will try to clear that confusion.</p>
+<h2>Few Points About Hibernate get() &amp; load()</h2>
+<ul>
+<li>Both are from Session interface, and we will call them as session.get() &amp; session.load()</li>
+<li>Both will be use for retrieving the object (a row) from the database</li>
+</ul>
+<p>Then what&rsquo;s the difference them ? lets start with load() and then get() method.</p>
+<p>Consider a Student class having 3 properties <em><u>stdId</u>, <u>stdName</u>, <u>stdCountry</u></em></p>
+<h2>1. session.load()</h2>
+<ul>
+<li>When you call session.load() method, it will always return a &ldquo;proxy&rdquo; object,&nbsp; whats the meaning of proxy object ?</li>
+<li>Proxy means, hibernate will prepare some fake object with given <em>identifier value</em> in the memory without hitting the database, for example if we call <em>session.load(Student.class,new Integer(107));</em>&nbsp; &gt; hibernate will create one fake Student object [row] in the memory with id 107, but remaining properties of Student class will not even be initialized, observe this graphical representation&hellip;</li>
+<li>It will hit the database only when we try to retrieve the other properties of Student object i mean stdName, stdCountry.&nbsp; If we call s2.getStdName() then hibernate will hit the database and search the row with student id 107 and retrieve the values, if object [row] not found in the database it will throws ObjectNotFoundException.,</li>
+</ul>
+<p>Let me explain each point by taking an example</p>
+<p>System.out.println("Student is calling with load()");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>s2 =(Student) session.load(Student.class,new Integer(107));&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>System.out.println("Student called with load()");</p>
+<p>System.out.println("Printing Student Name___"+s2.getStdtId());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>System.out.println("Printing Student Name___"+s2.getStdName());</p>
+<p>&nbsp;</p>
+<p>In index.jsp &gt; line number 4,&nbsp; i have called <strong>s2.getStdtId()</strong> and hibernate simply printed 107 [at Output &gt; line number 3] without creating any database query why ? because as i have explained hibernate will prepare some fake object with given <em>identifier value</em> in the memory without hitting the database.&nbsp; So when we call load() method (at index.jsp &gt; line number 2 ) with 107 value, hibernate will create a fake object with 107 as identifier value, i mean temporarily it will consider the student id as 107.&nbsp; If you observe the output, hibernate was generated the database query (at Output &gt; line number 4 )&nbsp; when we called <strong>s2.getStdName()</strong>; ( index.jsp &gt; line number 5 ).</p>
+<p>That&rsquo;s it, so finally we came to know that session.load() will hit the database only when we start retrieving the object (row) values.</p>
+<p>&nbsp;</p>
+<h2>2. session.get()</h2>
+<ul>
+<li>When you call session.get() method, it will hit the database immediately and returns the original object</li>
+</ul>
+<p>If the row is not available in the database, it returns null</p>
+<p>System.out.println("Student is calling with get()");&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</p>
+<p>s1 = (Student) session.get(Student.class,new Integer(107));&nbsp;&nbsp; &nbsp;</p>
+<p>System.out.println("Student called with get()");</p>
+<p>System.out.println("Printing Student Name___"+s1.getStdtId());&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</p>
+<p>System.out.println("Printing Student Name___"+s1.getStdName());</p>
+<p>&nbsp;</p>
+<p>Nothing to explain here as i told, when we call session.get() method hibernate will hit the database and returns the original object [ row ], that&rsquo;s the reason it was generated a query [ check line number 2 in the output screen]</p>
+<p>Hmm&hellip;, so which is the best method to use, hibernate load() or get() ? its completely your choice</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
 </body>
 </html>

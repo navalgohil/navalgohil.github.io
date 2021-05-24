@@ -1,0 +1,412 @@
+<h3><span id="what-is-oops">What is OOPS?</span></h3>
+<p>Object Oriented Programming System is the programming technique to write programs based on the real world objects. The states and behaviors of an object are represented as the member variables and methods. In OOPS programming programs are organized around objects and data rather than actions and logic.</p>
+<h3><span id="what-is-the-difference-between-procedural-programming-and-oops">What is the difference between Procedural programming and OOPS?</span></h3>
+<ol>
+<li>Procedural language is based on functions but object oriented language is based on real world objects.</li>
+<li>Procedural language gives importance on the sequence of function execution but object oriented language gives importance on states and behaviors of the objects.</li>
+<li>Procedural language exposes the data to the entire program but object oriented language encapsulates the data.</li>
+<li>Procedural language follows top down programming paradigm but object oriented language follows bottom up programming paradigm.</li>
+<li>Procedural language is complex in nature so it is difficult to modify, extend and maintain but object oriented language is less complex in nature so it is easier to modify, extend and maintain.</li>
+<li>Procedural language provides less scope of code reuse but object oriented language provides more scope of code reuse.</li>
+</ol>
+<h3><span id="what-are-the-core-concepts-of-oops">What are the core concepts of OOPS?</span></h3>
+<p>OOPS core concepts are;</p>
+<ol>
+<li>Abstraction</li>
+<li>Encapsulation</li>
+<li>Polymorphism</li>
+<li>Inheritance</li>
+<li>Composition</li>
+<li>Association</li>
+<li>Aggregation</li>
+</ol>
+<h3><span id="what-is-abstraction">What is Abstraction?</span></h3>
+<p>Abstraction is an OOPS concept to construct the structure of the real world objects. During this construction only the general states and behaviors are taken and more specific states and behaviors are left aside for the implementers.</p>
+<h3><span id="what-is-encapsulation">What is Encapsulation?</span></h3>
+<p>Encapsulation is an OOPS concept to create and define the permissions and restrictions of an object and its member variables and methods. A very simple example to explain the concept is to make the member variables of a class private and providing public getter and setter methods. Java provides four types of access level modifiers: public, protected, no modifier and private.</p>
+<h3><span id="what-is-the-difference-between-abstraction-and-encapsulation">What is the difference between Abstraction and Encapsulation?</span></h3>
+<ol>
+<li>&ldquo;Program to interfaces, not implementations&rdquo; is the principle for Abstraction and &ldquo;Encapsulate what varies&rdquo; is the OO principle for Encapsulation.</li>
+<li>Abstraction provides a general structure of a class and leaves the details for the implementers. Encapsulation is to create and define the permissions and restrictions of an object and its member variables and methods.</li>
+<li>Abstraction is implemented in Java using interface and abstract class while Encapsulation is implemented using four types of access level modifiers: public, protected, no modifier and private.</li>
+</ol>
+<h3><span id="what-is-polymorphism">What is Polymorphism?</span></h3>
+<p>Polymorphism is the occurrence of something in various forms. Java supports various forms of polymorphism like polymorphic reference variables, polymorphic method, polymorphic return types and polymorphic argument types.</p>
+<h3><span id="what-is-inheritance">What is Inheritance?</span></h3>
+<p>A subclass can inherit the states and behaviors of it&rsquo;s super class is known as inheritance.</p>
+<h3><span id="what-is-multiple-inheritance">What is multiple inheritance?</span></h3>
+<p>A child class inheriting states and behaviors from multiple parent classes is known as multiple inheritance.</p>
+<h3><span id="what-is-the-diamond-problem-in-inheritance">What is the diamond problem in inheritance?</span></h3>
+<p>In case of multiple inheritance, suppose class A has two subclasses B and C, and a class D has two super classes B and C.If a method present in A is overridden by both B and C but not by D then from which class D will inherit that method B or C? This problem is known as diamond problem.</p>
+<h3><span id="why-java-does-not-support-multiple-inheritance">Why Java does not support multiple inheritance?</span></h3>
+<p>Java was designed to be a simple language and multiple inheritance introduces complexities like diamond problem. Inheriting states or behaviors from two different type of classes is a case which in reality very rare and it can be achieved easily through an object association.</p>
+<h3><span id="what-is-static-binding-and-dynamic-binding">What is Static Binding and Dynamic Binding?</span></h3>
+<p>Static or early binding is resolved at compile time. Method overloading is an example of static binding.</p>
+<p>Dynamic or late or virtual binding is resolved at run time. Method overriding is an example of dynamic binding.</p>
+<h3><span id="what-is-the-meaning-of-8220is-a8221-and-8220has-a8221-relationship">What is the meaning of &ldquo;IS-A&rdquo; and &ldquo;HAS-A&rdquo; relationship?</span></h3>
+<p>&ldquo;IS-A&rdquo; relationship implies inheritance. A sub class object is said to have &ldquo;IS-A&rdquo; relationship with the super class or interface. If class A extends B then A &ldquo;IS-A&rdquo; B. It is transitive, that is, if class A extends B and class B extends C then A &ldquo;IS-A&rdquo; C. The &ldquo;instanceof&rdquo; operator in java determines the &ldquo;IS-A&rdquo; relationship.</p>
+<p>When a class A has a member reference variable of type B then A &ldquo;HAS-A&rdquo; B. It is also known as Aggregation.</p>
+<h3><span id="what-is-association">What is Association?</span></h3>
+<p>Association is a relationship between two objects with multiplicity.</p>
+<h3><span id="what-is-aggregation">What is Aggregation?</span></h3>
+<p>Aggregation is also known as &ldquo;HAS-A&rdquo; relationship. When class Car has a member reference variable of type Wheel then the relationship between the classes Car and Wheel is known as Aggregation. Aggregation can be understood as &ldquo;whole to its parts&rdquo; relationship.</p>
+<p>Car is the whole and Wheel is part. Wheel can exist without the Car. Aggregation is a weak association.</p>
+<h3><span id="what-is-composition">What is Composition?</span></h3>
+<p>Composition is a special form of Aggregation where the part cannot exist without the whole. Composition is a strong Association. Composition relationship is represented like aggregation with one difference that the diamond shape is filled.</p>
+<p>&nbsp;</p>
+<h3>What is OutOfMemoryError in Java?</h3>
+<p>OutOfMemoryError in Java is a subclass of java.lang.VirtualMachineError and it&rsquo;s thrown by JVM when it ran out of heap memory. We can fix this error by providing more memory to run the java application through java options.</p>
+<p>&nbsp;</p>
+<p><strong>What is the difference between Path and Classpath?</strong><br />Path and Classpath are operating system level environment variales. Path is used define where the system can find the executables(.exe) files and classpath is used to specify the location .class files.</p>
+<p><strong>Can a main method be overloaded?</strong><br />Yes. You can have any number of main methods with different method signature and implementation in the class.</p>
+<p><strong>Can a class be declared as static?</strong><br />No a class cannot be defined as static in fact every class is &ldquo;static&rdquo;. Only a method, a variable or a block of code can be declared as static. But inner class can be static!</p>
+<p><strong>Can a class be declared as protected?</strong><br />X A class can&rsquo;t be declared as protected. only methods can be declared as protected.<br />Classes and interfaces can be declared private or protected within their enclosing classes. A class which is local to a block is not a member, and so cannot be public, private , protected , or static. reflection can be used to bypass the java access rules.</p>
+<p><strong>What is meant by default access?</strong><br />Default(Friendly) access means the class, method, construtor or the variable can be accessed only within the package.</p>
+<p><strong>Can a final variable be declared inside a method?</strong><br />X No. Local variables cannot be declared as final.<br />Yes, final variable can be declared inside a method.</p>
+<p><strong>Can we declare a static variable inside a method?</strong><br />Static varaibles are class level variables and they can't be declared inside a method. If declared, the class will not compile.</p>
+<p>&nbsp;</p>
+<p><strong>What is the difference between interface and abstract class?</strong><br /> interface contains methods that must be abstract; abstract class may contain concrete methods.<br /> interface contains variables that must be static and final ; abstract class may contain non final and final variables.<br /> members in an interface are public by default, abstract class may contain non public members.<br /> interf ace is used to " implements "; whereas abstract class is used to " extends<br /> interface can be used to achieve multiple inheritance ; abstract class can be used as a single inheritance.<br /> interface can " extends " another interface , abstract class can " extends " ano ther class and "implements" multiple<br />interfaces.<br /> interface is absolutely abstract ; abstract class can be invoked if a main() exists.<br /> interface is more flexible than abstract class because one class can only "extends" one super class, but<br />"implements" multi ple interfaces.<br /> If given a choice, use interface instead of abstract class.</p>
+<p>&nbsp;</p>
+<p><strong>Can a abstract class be defined without any abstract methods?</strong><br />Yes it's possible. This is basically to avoid instance creation of the class.</p>
+<p><strong>What happens if a subclass has inherited a abstract class but has not provided implementation for all the abstract methods of the super class?</strong><br />Then the subclass also becomes abstract. This will be enforced by the compiler</p>
+<p>&nbsp;</p>
+<p><strong>Can you create an object of an abstract class?</strong><br />Not possible. Abstract classes are not concrete and hence can't be instantiated. If you try instantiating, you will get compilation error.</p>
+<p>&nbsp;</p>
+<p><strong>Can I create a reference for an abstract class?</strong><br />Yes. You can create a reference for an abstract class only when the object being provided the implementation for the abstract class - it means that the object should be of a concrete subclass of the abstract class. This applies to interfaces also. Below is an example for interface referencing an object:java.sql.Connection con = java.sql.DriverManager.getConnection("");</p>
+<p>&nbsp;</p>
+<p><strong>Can a method inside an Interface be declared as final?</strong><br />Not possible. Doing so will result in compilation error. Final method can not be override. public and abstract are the only applicable modifiers for method declaration in an interface</p>
+<p>&nbsp;</p>
+<p><strong>Why is an Interface able to extend more than one Interface but a Class can't extend more than one Class?</strong><br />Basically Java doesn't allow multiple inheritance, so a Class is restricted to extend only one Class. But an Interface is a pure abstraction model and doesn't have inheritance hierarchy like classes (do remember that the base class of all classes is Object). So an Interface is allowed to extend more than one Interface.</p>
+<p>&nbsp;</p>
+<p><strong>What modifiers are allowed for methods in an Interface?</strong><br />Only public and abstract modifiers are allowed for methods in interfaces.<br />In this case, an interface is intended to serve as a public protocol for communicating with an object</p>
+<p>&nbsp;</p>
+<p><strong>What is difference between shallow copy and deep copy ?</strong><br />Only instances of classes that implement the Cloneable interface can be cloned. Trying to clone an object that does not implement the Cloneable interface throws a CloneNotSupportedException. Both shallow copy and deep copy object need to implement Cloneable Interface</p>
+<h2>Shallow Copy In Java :</h2>
+<p>The default version of clone() method creates the&nbsp;shallow copy of an object. The shallow copy of an object will have exact copy of all the fields of original object. If original object has any references to other objects as fields, then only references of those objects are copied into clone object, copy of those objects are not created. That means any changes made to those objects through clone object will be reflected in original object or vice-versa.&nbsp;Shallow copy is not 100% disjoint from&nbsp;original object. Shallow copy is not 100% independent of original object.</p>
+<p>&nbsp;</p>
+<h2>Deep Copy In Java :</h2>
+<p>Deep copy of an object will have exact copy of&nbsp;all the fields of original object just like shallow copy. But in additional, if original object has any references to other objects as fields, then copy of those objects are also created by calling clone() method on them. That means clone object and original object will be 100% disjoint. They will be 100% independent of each other. Any changes made to clone object will not be reflected in original object or vice-versa.</p>
+<p>&nbsp;</p>
+<p><strong>What is the difference between int and Interger? You can have question like why we need Wrapper Class(Integer )?</strong></p>
+<p>&nbsp;</p>
+<p>int is primitive type and Integer is Wrapper Class; if you are using Collection objects like Hashtable etc. you can't use int as a key. you have to use object so you can use Integer class</p>
+<p>---------------------------------------------------------------------------------------------</p>
+<p><strong>https://javarevisited.blogspot.com/2015/10/133-java-interview-questions-answers-from-last-5-years.html</strong></p>
+<p><strong>25)Can I store a double value in a long variable without casting?&nbsp;</strong>(<a href="http://java67.blogspot.com/2014/11/how-to-convert-double-to-long-in-java-example.html" target="_blank" rel="noopener">answer</a>)<br />No, you cannot store a double value into a long variable without casting because the range of double is more &nbsp;that long and you we need to type cast. It's not dificult to answer this question but many develoepr get it wrong due to confusion on which one is bigger between double and long in Java.</p>
+<p>&nbsp;</p>
+<p><strong>&nbsp;26) What will this return 3*0.1 == 0.3? true or false?&nbsp;</strong>(answer)<br />This is one of the really tricky questions. Out of 100, only 5 developers answered this question and only of them have explained the concept correctly. The short answer is false because some floating point numbers can not be represented exactly.</p>
+<p>---------------------------------------------------------------------------------------------</p>
+<p><strong>What is Comparable and Comparator interface?</strong><br />Java provides Comparable interface which should be implemented by any custom class if we want to use Arrays or Collections sorting methods. Comparable interface has compareTo(T obj) method which is used by sorting methods. We should override this method in such a way that it returns a negative integer, zero, or a positive integer if &ldquo;this&rdquo; object is less than, equal to, or greater than the object passed as argument.<br />But, in most real life scenarios, we want sorting based on different parameters. For example, as a CEO, I would like to sort the employees based on Salary, an HR would like to sort them based on the age. This is the situation where we need to use Comparator interface because Comparable.compareTo(Object o) method implementation can sort based on one field only and we can&rsquo;t chose the field on which we want to sort the Object.<br />Comparator interface compare(Object o1, Object o2) method need to be implemented that takes two Object argument, it should be implemented in such a way that it returns negative int if first argument is less than the second one and returns zero if they are equal and positive int if first argument is greater than second one.</p>
+<p>&nbsp;</p>
+<p><strong>What is the difference between HashSet and TreeSet?</strong><br /> HashSet Class implements java.util.Set interface to eliminate the duplicate entries and uses hashin g for storage.<br />Hashing is nothing but mapping between a key value and a data item , this provides efficient searching<br /> The TreeSet Class implements java.util.Set interface provides an ordered set , eliminates duplicate entries and uses tree<br />for storage.</p>
+<p><strong>35) How do WeakHashMap works?&nbsp;</strong>(answer)<br />WeakHashMap works like a normal HashMap but uses WeakReference for keys, which means if the key object doesn't have any reference then both key/value mapping will become eligible for garbage collection.</p>
+<p><strong>45) What is a.hashCode() used for? How is it related to a.equals(b)?&nbsp;</strong>(<a href="http://javarevisited.blogspot.sg/2011/10/override-hashcode-in-java-example.html" target="_blank" rel="noopener">answer</a>)<br />hashCode() method returns an int hash value corresponding to an object. It's used in hash based collection classes e.g Hashtable, HashMap, LinkedHashMap and so on. It's very tightly related to equals() method. According to Java specification, two objects which are equal to each other using equals() method must have same hash code.</p>
+<p><strong>51) Difference between ArrayList and LinkedList in Java?</strong>&nbsp;(<a href="http://java67.blogspot.sg/2012/12/difference-between-arraylist-vs-LinkedList-java.html" target="_blank" rel="noopener">answer</a>)<br />The obvious difference between them is that ArrrayList is backed by array data structure, supprots random access and LinkedList is backed by linked list data structure and doesn't supprot&nbsp;random access. Accessing an element with the index is O(1) in ArrayList but its O(n) in LinkedList. See the answer for more detailed discussion.<br /><br /><br /><strong>52) What is a couple of ways that you could sort a collection?</strong>&nbsp;(<a href="http://java67.blogspot.sg/2012/07/sort-list-ascending-descending-order-set-arraylist.html" target="_blank" rel="noopener">answer</a>)<br />You can either use the Sorted collection like TreeSet or TreeMap or you can sort using the ordered collection like a list and using Collections.sort() method.<br /><br /><br /><strong>53) How do you print Array in Java?</strong>&nbsp;(<a href="http://java67.blogspot.sg/2014/03/how-to-print-array-in-java-example-tutorial.html" target="_blank" rel="noopener">answer</a>)<br />You can print an array by using the Arrays.toString() and Arrays.deepToString() method. Since array doesn't implement toString() by itself, just passing an array to System.out.println() will not print its contents but Arrays.toString() will print each element.<br /><br /></p>
+<div><strong>54) LinkedList in Java is doubly or singly linked list?</strong>&nbsp;(answer)<br />It's a doubly linked list, you can check the code in JDK. In Eclipse, you can use the&nbsp;<a href="http://javarevisited.blogspot.com/2010/10/eclipse-tutorial-most-useful-eclipse.html">shortcut</a>, Ctrl&nbsp;+ T to directly open this class in Editor.<br /><br /><strong>55) Which kind of tree is used to implement TreeMap in Java?</strong>&nbsp;(answer)<br />A Red Black tree is used to implement TreeMap in Java.</div>
+<div>&nbsp;</div>
+<div><strong>56) What is the difference between Hashtable and HashMap?&nbsp;</strong>(<a href="http://java67.blogspot.sg/2012/08/5-difference-between-hashtable-hashmap-Java-collection.html" target="_blank" rel="noopener">answer</a>)<br />There are many differences between these two classes, some of them are following:<br />a) Hashtable is a legacy class and present from JDK 1, HashMap was added later.<br />b) Hashtable is synchronized and slower but HashMap is not synchronized and faster.<br />c) Hashtable doesn't allow null keys but HashMap allows one null key.<br />See the answer for more differences between HashMap and Hashtable in Java.<br /><br /><br /><strong>57) How HashSet works internally in Java?</strong>&nbsp;(<a href="http://java67.blogspot.sg/2014/01/how-hashset-is-implemented-or-works-internally-java.html" target="_blank" rel="noopener">answer</a>)<br />HashSet is internally implemented using an HashMap. Since a Map needs key and value, a default value is used for all keys. Similar to HashMap, HashSet doesn't allow duplicate keys and only one null key, I mean you can only store one null object in HashSet.</div>
+<div>&nbsp;</div>
+<div><strong>58) Write code to remove elements from ArrayList while iterating?</strong>&nbsp;(<a href="http://javarevisited.blogspot.sg/2014/01/ow-to-remove-objects-from-collection-arraylist-java-iterator-traversing.html" target="_blank" rel="noopener">answer</a>)<br />&nbsp;Key here is to check whether candidate uses ArrayList's remove() or Iterator's remove(). Here is the&nbsp;<a href="http://java67.blogspot.com/2015/10/how-to-solve-concurrentmodificationexception-in-java-arraylist.html" target="_blank" rel="noopener">sample code</a>&nbsp;which uses right way o remove elements from ArrayList while looping over and avoids ConcurrentModificationException.</div>
+<div>&nbsp;</div>
+<div><strong>60) What is default size of ArrayList and HashMap in Java?&nbsp;</strong>(<a href="http://javarevisited.blogspot.sg/2014/07/java-optimization-empty-arraylist-and-Hashmap-cost-less-memory-jdk-17040-update.html" target="_blank" rel="noopener">answer</a>)<br />As of Java 7 now, default size of ArrayList is 10 and default capacity of HashMap is 16, it must be power of 2. Here is code snippet from ArrayList &nbsp;and HashMap class :<br />
+<pre>// from ArrayList.java JDK 1.7
+private static final int DEFAULT_CAPACITY = 10;  
+
+//from HashMap.java JDK 7
+static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
+<br /><br /><br /><strong>61) Is it possible for two unequal objects to have the same hashcode?</strong><br />Yes, two unequal objects can have same hashcode that's why collision happen in a hashmap.<br />the equal hashcode contract only says that two equal objects must have the same hashcode it doesn't say anything about the unequal object.<br /><br /><strong>62) Can two equal object have the different hash code?</strong><br />No, thats not possible according to hash code contract.<br /><br />Read more:&nbsp;<a href="https://javarevisited.blogspot.com/2015/10/133-java-interview-questions-answers-from-last-5-years.html#ixzz6X07niR5p">https://javarevisited.blogspot.com/2015/10/133-java-interview-questions-answers-from-last-5-years.html#ixzz6X07niR5p</a></div>
+<p><br /><strong>While passing a Collection as argument to a function, how can we make sure the function will not be able to modify it?</strong><br />We can create a read-only collection using Collections.unmodifiableCollection(Collection c) method before passing it as argument, this will make sure that any operation to change the collection will throw UnsupportedOperationException.</p>
+<p><strong>What is Big-O notation? Give some examples?</strong><br />The Big-O notation describes the performance of an algorithm in terms of number of elements in a data structure. Since Collection classes are actually data structures, we usually tend to use Big-O notation to choose the collection implementation to use based on time, memory and performance.<br />Example 1: ArrayList get(index i) is a constant-time operation and doesn&rsquo;t depend on the number of elements in the list. So it&rsquo;s performance in Big-O notation is O(1). Example 2: A linear search on array or list performance is O(n) because we need to search through entire list of elements to find the element.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Can we cast any other type to Boolean Type with type casting?</strong></p>
+<p><strong>Answer:-</strong>&nbsp;No, we can neither cast any other primitive type to Boolean data type nor can cast Boolean data type to any other primitive data type.</p>
+<p>&nbsp;</p>
+<p><strong>Is there a way to increase the size of an array after its declaration?</strong></p>
+<p><strong>Answer:-</strong>&nbsp;Arrays are static and once we have specified its size, we can't change it. If we want to use such collections where we may require a change of size ( no of items), we should prefer vector over array.</p>
+<p><strong>Why CharArray() is preferred over String to store the password?</strong></p>
+<p>Answer:- String stays in the string pool until the garbage is collected. If we store the password into a string, it stays in the memory for a longer period, and anyone having the memory-dump can extract the password as clear text. On the other hand, Using CharArray() allows us to set it to blank whenever we are done with the password. It avoids the security threat with the string by enabling us to control the memory.</p>
+<p><span style="text-decoration: underline;"><em><strong>https://intellipaat.com/blog/interview-question/java-interview-questions/</strong></em></span></p>
+<h3><strong>How can we find the actual size of an object on the heap?</strong></h3>
+<p>In Java, there is no way to find out the actual size of an object on the heap.</p>
+<p>&nbsp;</p>
+<h3><strong>What is the difference between transient and volatile variables in Java?</strong></h3>
+<p>&nbsp;</p>
+<p><strong>Transient</strong>: In Java, it is used to specify whether a variable is not being serialized. Serialization is a process of saving an object&rsquo;s state in Java. When we want to persist the object&rsquo;s state by default, all instance variables in the object are stored. In some cases, we want to avoid persisting a few variables because we don&rsquo;t have the necessity to transfer across the network. So, we declare those variables as transient.</p>
+<p>If the variable is confirmed as transient, then it will not be persisted. The transient keyword is used with the instance variable that will not participate in the serialization process. We cannot use static with a transient variable as they are part of the instance variable.</p>
+<p><img class="aligncenter wp-image-212658 size-full lazyloaded" src="https://intellipaat.com/blog/wp-content/uploads/2015/09/transient-var-new.jpg" sizes="(max-width: 800px) 100vw, 800px" srcset="https://intellipaat.com/blog/wp-content/uploads/2015/09/transient-var-new.jpg 800w, https://intellipaat.com/blog/wp-content/uploads/2015/09/transient-var-new-768x259.jpg 768w" alt="Transient Variable" width="800" height="270" data-lazy-srcset="https://intellipaat.com/blog/wp-content/uploads/2015/09/transient-var-new.jpg 800w, https://intellipaat.com/blog/wp-content/uploads/2015/09/transient-var-new-768x259.jpg 768w" data-lazy-sizes="(max-width: 800px) 100vw, 800px" data-lazy-src="https://intellipaat.com/blog/wp-content/uploads/2015/09/transient-var-new.jpg" data-was-processed="true" /></p>
+<p><strong>Volatile</strong>: The volatile keyword is used with only one variable in Java, and it guarantees that the value of the volatile variable will always be read from the main memory and not from the thread&rsquo;s local cache; it can be static.</p>
+<p><img class="aligncenter wp-image-212659 size-full lazyloaded" src="https://intellipaat.com/blog/wp-content/uploads/2015/09/10.jpg" sizes="(max-width: 800px) 100vw, 800px" srcset="https://intellipaat.com/blog/wp-content/uploads/2015/09/10.jpg 800w, https://intellipaat.com/blog/wp-content/uploads/2015/09/10-768x259.jpg 768w" alt="Volatile Variable" width="800" height="270" data-lazy-srcset="https://intellipaat.com/blog/wp-content/uploads/2015/09/10.jpg 800w, https://intellipaat.com/blog/wp-content/uploads/2015/09/10-768x259.jpg 768w" data-lazy-sizes="(max-width: 800px) 100vw, 800px" data-lazy-src="https://intellipaat.com/blog/wp-content/uploads/2015/09/10.jpg" data-was-processed="true" /></p>
+<p>&nbsp;</p>
+<h3><strong>Why Map interface does not extend the Collection interface in the Java Collections Framework?</strong></h3>
+<p>&nbsp;</p>
+<p>The Map interface is not compatible with the Collection interface, because Map requires a key as well as a value, for example, if we want to add a key&ndash;value pair, we will use put(Object key, Object value).</p>
+<p>There are two parameters required to add an element to HashMap object. In Collection interface, add(Object o) has only one parameter.</p>
+<p>The other reasons are: Map supports valueSet, keySet, and other suitable methods that have just different views from the Collection interface.</p>
+<h3><strong>What are latest features introduced in Java 8?</strong></h3>
+<p>&nbsp;</p>
+<p>The below features are introduced in Java 8:</p>
+<ul>
+<li>Lambda Expressions</li>
+<li>Interface Default and Static Methods</li>
+<li>Method Reference</li>
+<li>Parameters Name</li>
+<li>Optional Streams</li>
+<li>Concurrency</li>
+</ul>
+<h3><strong>Name a few Java 8 annotations.</strong></h3>
+<p>&nbsp;</p>
+<p><strong>@Functional Interface annotation</strong>:&nbsp;It was introduced in Java SE 8, which indicates that the type declaration is intended to be a functional interface as defined by the Java language specification.</p>
+<p><strong>@Repeatable annotation</strong>: Introduced in Java SE 8, @Repeatable annotation indicates that the marked annotation can be applied many times to the same declaration or type use.</p>
+<h3><strong>Distinguish between a predicate and a function.</strong></h3>
+<p>&nbsp;</p>
+<p>A&nbsp;<strong>predicate</strong>&nbsp;takes one argument and returns a Boolean value.</p>
+<p>A&nbsp;<strong>function</strong>&nbsp;takes one argument and returns an object.&nbsp;Both are useful for evaluating lambda expressions.</p>
+<h3><strong>&nbsp;What is the use of batch processing in JDBC?</strong></h3>
+<p>&nbsp;</p>
+<p>Batch processing is a technique that is used to group a set of related SQL queries and execute them in order. This is done to avoid the execution of a single query at a time.</p>
+<p><img class="aligncenter wp-image-212664 size-full lazyloaded" src="https://intellipaat.com/blog/wp-content/uploads/2015/09/batch-processing-1.jpg" sizes="(max-width: 800px) 100vw, 800px" srcset="https://intellipaat.com/blog/wp-content/uploads/2015/09/batch-processing-1.jpg 800w, https://intellipaat.com/blog/wp-content/uploads/2015/09/batch-processing-1-768x259.jpg 768w" alt="Batch Processing" width="800" height="270" data-lazy-srcset="https://intellipaat.com/blog/wp-content/uploads/2015/09/batch-processing-1.jpg 800w, https://intellipaat.com/blog/wp-content/uploads/2015/09/batch-processing-1-768x259.jpg 768w" data-lazy-sizes="(max-width: 800px) 100vw, 800px" data-lazy-src="https://intellipaat.com/blog/wp-content/uploads/2015/09/batch-processing-1.jpg" data-was-processed="true" /></p>
+<p>Making use of batch processing ensures that the queries execute faster, thereby maintaining the high efficiency and overall speed of execution.</p>
+<h3><strong>What are the types of statements supported by JDBC?</strong></h3>
+<p>&nbsp;</p>
+<p>There are three types of statements supported by JDBC as shown below:</p>
+<ul>
+<li>Statement: Used to execute static queries and for general access to the database</li>
+<li>CallableStatement: Provides access to stored procedures and runtime parameters</li>
+<li>PreparedStatement: Provides input parameters to queries while they are executing</li>
+</ul>
+<h3><strong>What is a collection in Java?</strong></h3>
+<p>&nbsp;</p>
+<p>A collection is a framework that is used to store and manipulate a container of objects in Java.</p>
+<p>Collections can be used for performing a variety of operations such as:</p>
+<ul>
+<li>Search</li>
+<li>Sort</li>
+<li>Manipulate</li>
+<li>Delete</li>
+</ul>
+<p>Below is the chart that represents the hierarchy of collections in Java:</p>
+<p><img class="aligncenter wp-image-212666 size-full lazyloaded" src="https://intellipaat.com/blog/wp-content/uploads/2015/09/2.jpg" sizes="(max-width: 800px) 100vw, 800px" srcset="https://intellipaat.com/blog/wp-content/uploads/2015/09/2.jpg 800w, https://intellipaat.com/blog/wp-content/uploads/2015/09/2-768x370.jpg 768w, https://intellipaat.com/blog/wp-content/uploads/2015/09/2-561x270.jpg 561w" alt="Collectiions in Java" width="800" height="385" data-lazy-srcset="https://intellipaat.com/blog/wp-content/uploads/2015/09/2.jpg 800w, https://intellipaat.com/blog/wp-content/uploads/2015/09/2-768x370.jpg 768w, https://intellipaat.com/blog/wp-content/uploads/2015/09/2-561x270.jpg 561w" data-lazy-sizes="(max-width: 800px) 100vw, 800px" data-lazy-src="https://intellipaat.com/blog/wp-content/uploads/2015/09/2.jpg" data-was-processed="true" /></p>
+<p>&nbsp;</p>
+<h3><strong>&nbsp;What is the meaning of constructor overloading in Java?</strong></h3>
+<p>&nbsp;</p>
+<p>Constructor overloading is a technique that is popular among programmers who have a requirement of adding multiple constructors to a single class with a different parameter list.</p>
+<p>&nbsp;</p>
+<p><em><span style="text-decoration: underline;"><strong><a href="https://codingnconcepts.com/top-java-interview-questions/">https://codingnconcepts.com/top-java-interview-questions/</a></strong></span></em></p>
+<p>&nbsp;</p>
+<h4 id="q1-how-hashmap-works">How HashMap Works?</h4>
+<p>This is also most commonly asked question in collections. Interviewer start this question asking about collections and what are the data structure/collection you have used in development. Candidate generally answers HashMap, LinkedList, ArrayList, HashSet. Then interviewer check your knowledge of equals, hashcode and hashing algorithm. You should be aware of HashMap class internal implementation. Follow up questions in HashMap are as follows:</p>
+<ul>
+<li><em><strong>How to use HashMap in multi threading environment?</strong></em><br />You should know that&nbsp;<em>HashTable</em>&nbsp;is thread safe. You can make HashMap thread safe by using&nbsp;<em>Collections.synchronizedMap(Map)</em></li>
+<li><em><strong>What is Concurrent HashMap? How it is better then thread safe HashMap in multi threading environment?</strong></em></li>
+</ul>
+<h4 id="q2-what-is-the-difference-in-arraylist-and-linkedlist">What is the difference in ArrayList and LinkedList?</h4>
+<h6 id="arraylist-vs-linkedlist">ArrayList vs LinkedList</h6>
+<table style="height: 410px;" width="572">
+<thead>
+<tr>
+<th style="width: 14px;" align="left">&nbsp;</th>
+<th style="width: 326px;" align="left"><code>ArrayList</code></th>
+<th style="width: 259px;" align="left"><code>LinkedList</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="width: 14px;" align="left">1.</td>
+<td style="width: 326px;" align="left">ArrayList implements&nbsp;<em>List</em>&nbsp;and&nbsp;<em>RandomAccess</em>&nbsp;interfaces</td>
+<td style="width: 259px;" align="left">LinkedList implements&nbsp;<em>List</em>&nbsp;and&nbsp;<em>Deque</em>&nbsp;interface</td>
+</tr>
+<tr>
+<td style="width: 14px;" align="left">2.</td>
+<td style="width: 326px;" align="left">ArrayList internally uses a&nbsp;<strong>dynamic array</strong>&nbsp;to store the elements.</td>
+<td style="width: 259px;" align="left">LinkedList internally uses a&nbsp;<strong>doubly linked list</strong>&nbsp;to store the elements.</td>
+</tr>
+<tr>
+<td style="width: 14px;" align="left">3.</td>
+<td style="width: 326px;" align="left">ArrayList elements are stored in&nbsp;<strong>contiguous memory location</strong>&nbsp;where each memory location represents an index</td>
+<td style="width: 259px;" align="left">Each LinkedList element can be stored at&nbsp;<strong>different memory location</strong>&nbsp;where each element has address of it previous and next element.</td>
+</tr>
+<tr>
+<td style="width: 14px;" align="left">4.</td>
+<td style="width: 326px;" align="left"><strong>Insertion and Deletion of elements is slow</strong>&nbsp;in ArrayList as these operations require all the elements to shift by one index to either make the space or fill the empty space</td>
+<td style="width: 259px;" align="left"><strong>Insertion and Deletion of elements is faster</strong>&nbsp;in LinkedList as these operations just require to change the addresses in previous and next block</td>
+</tr>
+<tr>
+<td style="width: 14px;" align="left">5.</td>
+<td style="width: 326px;" align="left"><strong>Read operation of random element is much faster</strong>&nbsp;in ArrayList due to indices and support of fast random access</td>
+<td style="width: 259px;" align="left"><strong>Read operation of random element in slower</strong>&nbsp;in LinkedList as need to traverse the list of find element</td>
+</tr>
+<tr>
+<td style="width: 14px;" align="left">6.</td>
+<td style="width: 326px;" align="left">
+<p><strong>Recommended when read operation is more</strong>&nbsp;than the number of insertions and deletions</p>
+</td>
+<td style="width: 259px;" align="left">
+<p><strong>Recommended when insertion and deletion rate is higher</strong>&nbsp;then the read operation</p>
+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>ArrayList:</strong>&nbsp;Many of the operations need n/2 steps on average, constant number of steps in the best case (end of list), n steps in the worst case (start of list)</li>
+<li><strong>LinkedList:</strong>&nbsp;Many of the operations need n/4 steps on average, constant number of steps in the best case (e.g. index = 0), and n/2 steps in worst case (middle of list)</li>
+</ul>
+<h4 id="q3-how-to-find-middle-element-of-linked-list">How to find middle element of Linked List?</h4>
+<ul>
+<li>It is always better to keep track of Linked list size by increasing or decreasing the counter by 1, on addition or deletion of nodes from linked list respectively. In this way, middle element&rsquo;s index will be (size -1)/2</li>
+<li>When size of the linked list is unknown and only head node is given then you should use Fast and Slow pointer approach.<br />In this approach, we iterate through the linked list using two pointers. Fast pointer jumps 2 nodes in each iteration, and the slow pointer jumps only one node per iteration.<br />When the fast pointer reaches the end of the list, the slow pointer will be at the middle element.</li>
+<li>
+<blockquote>
+<p>Also read&nbsp;<a href="https://codingnconcepts.com/java/middle-element-of-linked-list-java/">How to find middle element of LinkedList in Java</a>&nbsp;for more details</p>
+</blockquote>
+<h4 id="q4-how-to-find-a-loop-in-linkedlist">How to find a loop in LinkedList?</h4>
+<p>If you answer it then follow up question might be asked:</p>
+<ul>
+<li>How to find the starting point of loop in LinkedList?</li>
+<li>How to find the length of the loop in LinkedList?</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-java-threads">Java Threads</h2>
+<p>Interviewer can ask you any of following questions related to multi threading:</p>
+<h4 id="q1-how-to-run-5-threads-sequentially">Q1. How to run 5 threads sequentially?</h4>
+<h4 id="q2-print-number-1-to-10-using-two-threads-where-thread-1-prints-even-number-and-thread-2-prints-odd-number">Q2. Print number 1 to 10 using two threads where thread 1 prints even number and thread 2 prints odd number.</h4>
+<h4 id="q3-producer-consumer-implementation-using-wait-notify">Q3. Producer consumer implementation using wait notify.</h4>
+<h4 id="q4-what-is-deadlock-and-how-to-identify-it-in-java-application-how-to-prevent-deadlock-situations-in-application-development">Q4. What is DeadLock and How to identify it in Java Application? How to prevent DeadLock situations in Application Development?</h4>
+<h4 id="q5-countdownlatch-vs-cyclicbarrier">Q5. CountDownLatch vs CyclicBarrier?</h4>
+<h4 id="q6-future-object-threadlocal-etc">Q6. Future Object, ThreadLocal etc.</h4>
+<h4 id="q7-how-to-name-a-thread-in-executor-service">Q7. How to name a thread in executor service?</h4>
+<h4 id="q8-how-to-interrupt-a-thread-explicitly">Q8. How to interrupt a thread explicitly?</h4>
+<p>&nbsp;</p>
+<h4 id="q1-explain-each-keyword-in-main-method-ie-public-static-void-mainstring-args">Explain each keyword in main method i.e. public static void main(String[] args).</h4>
+<div class="highlight">
+<pre><code class="language-java" data-lang="java">public class MyClass {
+  public static void main(String[] args) {}
+}
+</code></pre>
+</div>
+<ul>
+<li><strong>public</strong>&nbsp;method have public access and can be executed from outside the class. It has to be public so that java runtime can execute this method.</li>
+<li><strong>static</strong>&nbsp;associates the method with class rather than object. This helps JVM to call main method without class instantiation.</li>
+<li><strong>void</strong>&nbsp;is a return type of main method which returns nothing</li>
+<li><strong>main</strong>&nbsp;is name of java main method and it is fixed. When you execute a class fine, it looks for main method.</li>
+<li><strong>String[] args</strong>&nbsp;It stores Java command line arguments and is an array of type String.</li>
+</ul>
+<h4 id="q3-explain-jdk-jre-and-jvm">Explain JDK, JRE and JVM</h4>
+<table>
+<thead>
+<tr>
+<th align="left">JDK</th>
+<th align="left">JRE</th>
+<th align="left">JVM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">It stands for Java Development Kit.</td>
+<td align="left">It stands for Java Runtime Environment.</td>
+<td align="left">It stands for Java Virtual Machine.</td>
+</tr>
+<tr>
+<td align="left">It is the tool necessary to compile, document and package Java programs.</td>
+<td align="left">JRE refers to a runtime environment in which Java bytecode can be executed.</td>
+<td align="left">It is an abstract machine. It is a specification that provides a run-time environment in which Java bytecode can be executed.</td>
+</tr>
+<tr>
+<td align="left">It contains JRE + development tools.</td>
+<td align="left">It&rsquo;s an implementation of the JVM which physically exists.</td>
+<td align="left">JVM follows three notations: Specification, Implementation, and Runtime Instance.</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h4 id="q4-why-java-is-platform-independent">Why Java is platform independent?</h4>
+<p>Java is platform independent. Let&rsquo;s understand this</p>
+<ul>
+<li>When you write a program in Java&nbsp;<em>(.java file)</em>&nbsp;and compile it using&nbsp;<code>javac</code>. It is converted to&nbsp;<strong>ByteCode</strong>&nbsp;<em>(.class file)</em>.</li>
+<li>This ByteCode is not something which any machine or OS can understand. You need an interpreter to execute this ByteCode and that interpreter is JVM (Java Virtual Machine) in case of Java.</li>
+<li>JVM is platform dependent. You need to install platform specific JVM based on Operating System you are using Mac OS X, Windows or Linux.</li>
+<li>You can execute the same ByteCode&nbsp;<em>(.class file)</em>&nbsp;on any platform&rsquo;s JVM regardless of its Operating System.</li>
+</ul>
+<p>So we can say, JVM is platform dependent but Java is platform independent from its magic ByteCode.</p>
+<h4 id="q5-how-many-ways-to-create-an-object-instance-in-java-">How many ways to create an Object Instance in Java ?</h4>
+<ul>
+<li>New Keyword</li>
+<li>Cloning using&nbsp;<code>Object.clone()</code>&nbsp;method</li>
+<li>Reflection using&nbsp;<code>Class.newInstance()</code>&nbsp;method</li>
+<li>Reflection using&nbsp;<code>Class.getConstructor().newInstance()</code>&nbsp;method</li>
+<li>Object Serialization and Deserialization</li>
+</ul>
+<h4 id="q6-can-you-override-a-static-method-and-private-method-">Can you override a static method and private method ?</h4>
+<ul>
+<li>No, you cannot override static method since static method is associated with a class whereas overriding is an object instance feature.</li>
+<li>No, you cannot override private method since private method is not visible outside of a class.</li>
+</ul>
+<h4 id="q1-what-is-the-difference-between-heap-and-stack-memory-in-java">What is the difference between Heap and Stack Memory in Java?</h4>
+<table>
+<thead>
+<tr>
+<th align="left">Features</th>
+<th align="left">Stack</th>
+<th align="left">Heap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em><strong>Memory</strong></em></td>
+<td align="left">Stack memory is used only by one thread of execution.</td>
+<td align="left">Heap memory is used by all the parts of the application.</td>
+</tr>
+<tr>
+<td align="left"><em><strong>Access</strong></em></td>
+<td align="left">Stack memory can&rsquo;t be accessed by other threads.</td>
+<td align="left">Objects stored in the heap are globally accessible.</td>
+</tr>
+<tr>
+<td align="left"><em><strong>Memory Management</strong></em></td>
+<td align="left">Follows LIFO manner to free memory.</td>
+<td align="left">Memory management is based on the generation associated with each object.</td>
+</tr>
+<tr>
+<td align="left"><em><strong>Lifetime</strong></em></td>
+<td align="left">Exists until the end of execution of the thread.</td>
+<td align="left">Heap memory lives from the start till the end of application execution.</td>
+</tr>
+<tr>
+<td align="left"><em><strong>Usage</strong></em></td>
+<td align="left">Stack memory only contains local primitive and reference variables to objects in heap space.</td>
+<td align="left">
+<p>Whenever an object is created, it&rsquo;s always stored in the Heap space.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-java-basics">Java Basics</h2>
+<h4 id="q1-solid-5-class-design-principle-in-java-">Q1. S.O.L.I.D. (5 class design principle) in Java ?</h4>
+<p>These 5 design principle are know as SOLID principles:-</p>
+<ul>
+<li><strong>Single Responsibility Principle</strong>&nbsp;- One class should have one and only one responsibility</li>
+<li><strong>Open Close Principle</strong>&nbsp;- Software components should be open for extension, but closed for modification</li>
+<li><strong>Liskov Substitution</strong>&nbsp;- Derived types must be completely substitutable for their base types</li>
+<li><strong>Interface Segregation</strong>&nbsp;- Clients should not be forced to implement unnecessary methods which they will not use</li>
+<li><strong>Dependency Inversion</strong>&nbsp;- Depend on abstractions, not on concretions</li>
+</ul>
+<h4 id="q2-anti-patterns-in-java-what-is-god-class-">Anti patterns in Java. What is god class ?</h4>
+<p>Anti patterns in java is:-</p>
+<ul>
+<li>Any pattern or coding habit which is considered as bad practice</li>
+<li>Which are against SOLID design principles</li>
+</ul>
+<p><strong>God class</strong>&nbsp;is one of the Anti pattern example. A god class is a class which is having too many properties or methods or dependencies and hence lots of responsibilities which violates single-responsibility SOLID design principle. Writing thousands lines of code in single class becomes a nightmare to debug, unit-test and document.</p>
+<h4 id="q3-how-classes-are-related-to-each-other-through-association-aggregation-and-composition">Q3. How classes are related to each other through association, aggregation and composition.</h4>
+<ul>
+<li><strong>Association</strong>&nbsp;(bidirectional one to one, one to many, many to one or many to many association, represented by line with arrow in UML) for e.g. Teacher and Student. Multiple students can associate with a single teacher and a single student can associate with multiple teachers but there is no ownership between the objects and both have their own lifecycle.</li>
+<li><strong>Aggregation</strong>&nbsp;(Has-a relationship, unidirectional association, parent and child can survive individually, represented by line with diamond in UML) for e.g. Car and Wheel. Car can have multiple wheels but wheel can not belong to multiple cars and if we delete the car, wheel need not to be destroyed and used in another car.</li>
+<li><strong>Composition</strong>&nbsp;(Part-of relationship, unidirectional association, child can not survive without parent, represented by line with filled diamond in UML) for e.g. House and Rooms. House can contain multiple rooms there is no independent life of room and any room can not belongs to two different house if we delete the house room will automatically delete.</li>
+</ul>
+<h4 id="q4-what-is-marker-interface">What is Marker Interface?</h4>
+<p>A Marker interface can be defined as the interface having no data member and member functions. In simpler terms, an empty interface is called the Marker interface. The most common examples of Marker interface in Java are&nbsp;<code>Serializable</code>,&nbsp;<code>Cloneable</code>&nbsp;etc. The marker interface can be declared as follows.</p>
+<div class="highlight">
+<pre><code class="language-java" data-lang="java">public interface Serializable{
+}</code></pre>
+</div>

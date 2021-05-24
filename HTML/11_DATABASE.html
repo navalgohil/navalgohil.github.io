@@ -1,0 +1,272 @@
+<h3><strong>State the differences between HAVING and WHERE clauses.</strong></h3>
+<p>&nbsp;</p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<td>
+<p><strong>Basis for Comparison</strong></p>
+</td>
+<td><strong>WHERE</strong></td>
+<td><strong>HAVING</strong></td>
+</tr>
+<tr>
+<td>Implemented in</td>
+<td>Row operations</td>
+<td>Column operations</td>
+</tr>
+<tr>
+<td>Applied to</td>
+<td>A single row</td>
+<td>The summarized row or groups</td>
+</tr>
+<tr>
+<td>Used for</td>
+<td>Fetching specific data from specific rows according to the given condition</td>
+<td>Fetching the entire data and separating according to the given condition</td>
+</tr>
+<tr>
+<td>Aggregate functions</td>
+<td>Cannot have them</td>
+<td>Can have them</td>
+</tr>
+<tr>
+<td>Statements</td>
+<td>Can be used with SELECT, UPDATE, and DELETE</td>
+<td>Cannot be used without a SELECT statement</td>
+</tr>
+<tr>
+<td>GROUP BY clause</td>
+<td>Comes after the WHERE clause</td>
+<td>
+<p>Comes before the HAVING clause</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>&nbsp;Explain the different types of SQL commands.</strong></h3>
+<p>&nbsp;</p>
+<p><img class="size-full wp-image-205886 aligncenter lazyloaded" src="https://intellipaat.com/blog/wp-content/uploads/2015/09/different-types-of-SQL-commands.png" sizes="(max-width: 602px) 100vw, 602px" srcset="https://intellipaat.com/blog/wp-content/uploads/2015/09/different-types-of-SQL-commands.png 602w, https://intellipaat.com/blog/wp-content/uploads/2015/09/different-types-of-SQL-commands-538x270.png 538w" alt="different types of SQL commands" width="602" height="302" data-lazy-srcset="https://intellipaat.com/blog/wp-content/uploads/2015/09/different-types-of-SQL-commands.png 602w, https://intellipaat.com/blog/wp-content/uploads/2015/09/different-types-of-SQL-commands-538x270.png 538w" data-lazy-sizes="(max-width: 602px) 100vw, 602px" data-lazy-src="https://intellipaat.com/blog/wp-content/uploads/2015/09/different-types-of-SQL-commands.png" data-was-processed="true" /></p>
+<ul>
+<li><strong>Data Definition Language</strong>: DDL is that part of SQL which defines the data structure of the database in the initial stage when the database is about to be created. It is mainly used to create and restructure database objects. Commands in DDL are:
+<ul>
+<li>Create table</li>
+<li>Alter table</li>
+<li>Drop table</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>Data Manipulation Language</strong>: DML is used to manipulate the already existing data in the database. That is, it helps users retrieve and manipulate the data. It is used to perform operations like inserting data into the database through the&nbsp;<strong>insert&nbsp;</strong>command,&nbsp;updating the data with the&nbsp;<strong>update</strong>&nbsp;command, and deleting the data from the database through the&nbsp;<strong>delete</strong>&nbsp;command.</li>
+<li><strong>Data Control Language:</strong>&nbsp;DCL is used to control access to the data in the database. DCL commands are normally used to create objects related to user access and also to control the distribution of privileges among users. The commands that are used in DCL are&nbsp;<strong>Grant&nbsp;</strong>and&nbsp;<strong>Revoke</strong>.</li>
+<li><strong>Transaction Control Language:&nbsp;</strong>It is used to control the changes made by DML commands. It also authorizes the statements to assemble in conjunction into logical transactions. The commands that are used in TCL are&nbsp;<strong>Commit</strong>,&nbsp;<strong>Rollback</strong>,&nbsp;<strong>Savepoint</strong>,&nbsp;<strong>Begin</strong>, and&nbsp;<strong>Transaction</strong>.</li>
+</ul>
+<p><strong>What is an Index?</strong></p>
+<p>&nbsp;</p>
+<p>Indexes help speed up searching in the database. If there is no index on any column in the WHERE clause, then the SQL server has to skim through the entire table and check each and every row to find matches, which might result in slow operation on large data.</p>
+<p>Indexes are used to find all rows matching with some columns and then to skim through only those subsets of the data to find the matches.</p>
+<p><strong>Syntax</strong>:</p>
+<pre>CREATE INDEX INDEX_NAME ON TABLE_NAME (COLUMN)</pre>
+<h3><strong>Explain the types of Indexes.</strong></h3>
+<p>&nbsp;</p>
+<p><img class="size-full wp-image-205898 aligncenter lazyloaded" src="https://intellipaat.com/blog/wp-content/uploads/2015/09/Explain-the-types-of-Indexes..png" sizes="(max-width: 602px) 100vw, 602px" srcset="https://intellipaat.com/blog/wp-content/uploads/2015/09/Explain-the-types-of-Indexes..png 602w, https://intellipaat.com/blog/wp-content/uploads/2015/09/Explain-the-types-of-Indexes.-538x270.png 538w" alt="Explain the types of Indexes." width="602" height="302" data-lazy-srcset="https://intellipaat.com/blog/wp-content/uploads/2015/09/Explain-the-types-of-Indexes..png 602w, https://intellipaat.com/blog/wp-content/uploads/2015/09/Explain-the-types-of-Indexes.-538x270.png 538w" data-lazy-sizes="(max-width: 602px) 100vw, 602px" data-lazy-src="https://intellipaat.com/blog/wp-content/uploads/2015/09/Explain-the-types-of-Indexes..png" data-was-processed="true" /></p>
+<ul>
+<li><strong>Single-column Indexes</strong>: A single-column index is created for only one column of a table.
+<ul>
+<li><strong>Syntax</strong>:</li>
+</ul>
+</li>
+</ul>
+<pre>CREATE INDEX index_name
+ON table_name(column_name);
+</pre>
+<ul>
+<li><strong>Composite-column Indexes</strong>: A composite-column index is an index created for two or more columns of the table.
+<ul>
+<li><strong>Syntax</strong>:</li>
+</ul>
+</li>
+</ul>
+<pre>CREATE INDEX index_name
+ON table_name (column1, column2)
+</pre>
+<ul>
+<li><strong>Unique Indexes</strong>: Unique indexes are used for maintaining the data integrity of the table. They don&rsquo;t allow multiple values to be inserted into the table.
+<ul>
+<li><strong>Syntax</strong>:</li>
+</ul>
+</li>
+</ul>
+<pre>CREATE UNIQUE INDEX index
+ON table_name(column_name)<br /><br /></pre>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td><strong>DELETE</strong></td>
+<td><strong>TRUNCATE</strong></td>
+</tr>
+<tr>
+<td>Delete command is used to delete a row in a table.</td>
+<td>Truncate is used to delete all the rows from a table.</td>
+</tr>
+<tr>
+<td>You can rollback data after using delete statement.<a name="uniquekey"></a></td>
+<td>You cannot rollback data.</td>
+</tr>
+<tr>
+<td>It is a DML command.</td>
+<td>It is a DDL command.</td>
+</tr>
+<tr>
+<td>It is slower than truncate statement.</td>
+<td>It is faster.</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2><strong>What is the difference between DROP and TRUNCATE commands?</strong></h2>
+<p>DROP command removes a table and it cannot be rolled back from the database whereas TRUNCATE command removes all the rows from the table.</p>
+<pre><br /><br /></pre>
+<h2><strong>What is ACID property in a database?</strong></h2>
+<p>ACID stands for Atomicity,&nbsp;Consistency, Isolation, Durability. It is used to ensure that the data transactions are processed reliably in a database system.&nbsp;</p>
+<p><strong>Atomicity:</strong>&nbsp;Atomicity refers to the transactions that are completely done or failed where transaction refers to a single logical operation of a data.&nbsp;It means if one part of any transaction fails, the entire transaction fails and the database state is left unchanged.</p>
+<p><strong>Consistency:</strong>&nbsp;Consistency ensures that the data must meet all the validation rules. In simple words, &nbsp;you can say that your transaction never leaves the database without completing its state.</p>
+<p><strong>Isolation:</strong>&nbsp;The main goal of isolation is concurrency control.</p>
+<p><strong>Durability:</strong>&nbsp;Durability means that if a transaction has been committed, it will occur whatever may come in between such as power loss, crash or any sort of error.</p>
+<h2><strong>What do you mean by &ldquo;Trigger&rdquo; in SQL?</strong></h2>
+<p>Trigger in SQL is are a special type of stored procedures that are defined to execute automatically in place or after data modifications. It allows you to execute a batch of code when an insert, update or any other query is executed against a specific table.</p>
+<h2><strong>Are NULL values same as that of zero or a blank space?&nbsp;</strong></h2>
+<p>A NULL value is not at all same as that of zero or a blank space. NULL value represents a value which is unavailable, unknown, assigned or not applicable whereas a zero is a number and blank space is a character.</p>
+<h2><strong>What is the difference between cross join and natural join?</strong></h2>
+<p>The cross join produces the cross product or Cartesian product of two tables whereas the natural join is based on all the columns having the same name and data types in both the tables.</p>
+<h2><strong>What is the main difference between &lsquo;BETWEEN&rsquo; and &lsquo;IN&rsquo; condition operators?</strong></h2>
+<p>BETWEEN operator is used to display rows based on a range of values in a row whereas the IN condition operator is used to check for values contained in a specific set of values.</p>
+<h3><strong>Example of BETWEEN:</strong></h3>
+<pre>SELECT * FROM Students where ROLL_NO BETWEEN 10 AND 50;</pre>
+<div>
+<div id="highlighter_953540" class="syntaxhighlighter plain"><strong>Example of IN:</strong></div>
+</div>
+<pre>SELECT * FROM students where ROLL_NO IN (8,15,25);<br /><br /></pre>
+<h2><strong>What are aggregate and scalar functions?</strong></h2>
+<p>Aggregate functions are used to evaluate mathematical calculation and returns a single value. These calculations are done from the columns in a table. For example- max(),count() are calculated with respect to numeric.</p>
+<p><strong>There are 7 aggregate functions in SQL:</strong></p>
+<ul>
+<li><strong>AVG():</strong>&nbsp;Returns the average value from specified columns.</li>
+<li><strong>COUNT():</strong>&nbsp;Returns number of table rows.</li>
+<li><strong>MAX():</strong>&nbsp;Returns the largest value among the records.</li>
+<li><strong>MIN():</strong>&nbsp;Returns smallest value among the records.</li>
+<li><strong>SUM():</strong>&nbsp;Returns the sum of specified column values.</li>
+<li><strong>FIRST():</strong>&nbsp;Returns the first value.</li>
+<li><strong>LAST():</strong>&nbsp;Returns last value.</li>
+</ul>
+<p>Scalar functions return a single value based on the input value. For example &ndash; UCASE(), NOW() are calculated with respect to string.</p>
+<p><strong>Scalar Functions are as follows:</strong></p>
+<ul>
+<li><strong>UCASE():&nbsp;</strong>Converts the specified field in the upper case.</li>
+<li><strong>LCASE():&nbsp;</strong>Converts the specified field in lower case.</li>
+<li><strong>MID():&nbsp;</strong>Extracts and returns character from the text field.</li>
+<li><strong>FORMAT():&nbsp;</strong>Specifies the display format.</li>
+<li><strong>LEN():&nbsp;</strong>Specifies the length of the text field.</li>
+<li><strong>ROUND():&nbsp;</strong>Rounds up the decimal field value to a number.</li>
+</ul>
+<h2><strong>How can you fetch first 5 characters of the string?</strong></h2>
+<p>There are a lot of ways to fetch characters from a string. For example:</p>
+<p>Select SUBSTRING(StudentName,1,5) as studentname from student</p>
+<h2><strong>What are STUFF and REPLACE function?</strong></h2>
+<div class="tech-question"><strong>STUFF Function</strong>: This function is used to overwrite existing character or inserts a string into another string. Syntax:</div>
+<div>&nbsp;</div>
+<pre>STUFF(string_expression,start, length, replacement_characters)</pre>
+<div>where,<br /><em>string_expression</em>: it is the string that will have characters substituted</div>
+<div><em>start:</em>&nbsp;This refers to the starting position<br /><em>length</em>: It refers to the number of characters in the string which are substituted.</div>
+<div><em>replacement_string</em>: They are the new characters which are injected in the string.</div>
+<div>&nbsp;</div>
+<p>&nbsp;</p>
+<div><strong>REPLACE function</strong>: This function is used to replace the existing characters of all the occurrences. Syntax:</div>
+<pre>REPLACE (string_expression, search_string, replacement_string)</pre>
+<div>Here every search_string in the string_expression will be replaced with the replacement_string.</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>
+<h3><strong>State the differences between Views and Tables.</strong></h3>
+<p>&nbsp;</p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<td width="312"><strong>Views</strong></td>
+<td width="312"><strong>Tables</strong></td>
+</tr>
+<tr>
+<td width="312">It is a virtual table that is extracted from a database.</td>
+<td width="312">A table is structured with a set number of columns and a boundless number of rows.</td>
+</tr>
+<tr>
+<td width="312">Views do not hold data themselves.</td>
+<td width="312">Table contains data and stores the data in databases.</td>
+</tr>
+<tr>
+<td width="312">A view is also utilized to query certain information contained in a few distinct tables.</td>
+<td width="312">A table holds fundamental client information and the cases of a characterized object.</td>
+</tr>
+<tr>
+<td width="312">&nbsp;In a view, we will get frequently queried information.</td>
+<td width="312">In a table, changing the information in the database changes the information that appears in the view</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>What is the difference between Union and Union All operators?</strong></h3>
+<p>&nbsp;</p>
+<p>The&nbsp;<strong>Union</strong>&nbsp;operator is used to combine the result set of two or more select statements. For example, the first select statement returns the fish shown in Image A, and the second returns the fish shown in Image B. Then, the Union operator will return the result of the two select statements as shown in Image A U B. Also, if there is a record present in both tables, then we will get only one of them in the final result.</p>
+<p><img class="size-full wp-image-206254 aligncenter lazyloaded" src="https://intellipaat.com/blog/wp-content/uploads/2015/09/SQL-Union-Example.jpg" sizes="(max-width: 800px) 100vw, 800px" srcset="https://intellipaat.com/blog/wp-content/uploads/2015/09/SQL-Union-Example.jpg 800w, https://intellipaat.com/blog/wp-content/uploads/2015/09/SQL-Union-Example-768x260.jpg 768w, https://intellipaat.com/blog/wp-content/uploads/2015/09/SQL-Union-Example-797x270.jpg 797w" alt="SQL Union Example" width="800" height="271" data-lazy-srcset="https://intellipaat.com/blog/wp-content/uploads/2015/09/SQL-Union-Example.jpg 800w, https://intellipaat.com/blog/wp-content/uploads/2015/09/SQL-Union-Example-768x260.jpg 768w, https://intellipaat.com/blog/wp-content/uploads/2015/09/SQL-Union-Example-797x270.jpg 797w" data-lazy-sizes="(max-width: 800px) 100vw, 800px" data-lazy-src="https://intellipaat.com/blog/wp-content/uploads/2015/09/SQL-Union-Example.jpg" data-was-processed="true" /></p>
+<p><strong>Syntax</strong>:</p>
+<pre>SELECT column_list FROM table1
+</pre>
+<p><strong>Union</strong>:</p>
+<pre>SELECT column_list FROM table2
+</pre>
+<p>Now, we will execute it in the SQL server.</p>
+<p>These are the two tables in which we will use the Union operator.</p>
+<p><img class="alignnone size-full wp-image-205916 lazyloaded" src="https://intellipaat.com/blog/wp-content/uploads/2015/09/output-16.png" alt="output 16" width="338" height="213" data-lazy-src="https://intellipaat.com/blog/wp-content/uploads/2015/09/output-16.png" data-was-processed="true" /></p>
+<pre>select * from student_details1
+</pre>
+<p><strong>Union</strong>:</p>
+<pre>select * from student_details2
+</pre>
+<p><strong>Output</strong>:</p>
+<p><img class="alignnone size-full wp-image-205917 lazyloaded" src="https://intellipaat.com/blog/wp-content/uploads/2015/09/output-17.png" alt="output 17" width="244" height="142" data-lazy-src="https://intellipaat.com/blog/wp-content/uploads/2015/09/output-17.png" data-was-processed="true" /></p>
+<p>Now,&nbsp;<strong>Union All</strong>&nbsp;gives all the records from both tables including the duplicates.</p>
+<p><img class="size-full wp-image-205918 aligncenter lazyloaded" src="https://intellipaat.com/blog/wp-content/uploads/2015/09/between-Union-and-Union-All-operators.png" alt="between Union and Union All operators" width="602" height="191" data-lazy-src="https://intellipaat.com/blog/wp-content/uploads/2015/09/between-Union-and-Union-All-operators.png" data-was-processed="true" /></p>
+<p>Let us implement in it the SQL server.</p>
+<p><strong>Syntax</strong>:</p>
+<pre>select * from student_details1
+</pre>
+<p><strong>Union All</strong>:</p>
+<pre>select * from student_details2
+</pre>
+<p><strong>Output</strong>:<br /><img class="alignnone size-full wp-image-205919 lazyloaded" src="https://intellipaat.com/blog/wp-content/uploads/2015/09/output-18.png" alt="output 18" width="252" height="155" data-lazy-src="https://intellipaat.com/blog/wp-content/uploads/2015/09/output-18.png" data-was-processed="true" /></p>
+<p><strong>&nbsp;What are the types of subquery?</strong></p>
+<p>There are two types of subquery &ndash; Correlated and Non-Correlated.</p>
+<p>A correlated subquery cannot be considered as independent query, but it can refer the column in a table listed in the FROM the list of the main query.</p>
+<p>A Non-Correlated sub query can be considered as independent query and the output of subquery are substituted in the main query.</p>
+<p><strong>What is Online Transaction Processing (OLTP)?</strong></p>
+<p>Online Transaction Processing (OLTP) manages transaction based applications which can be used for data entry, data retrieval and data processing. OLTP makes data management simple and efficient. Unlike OLAP systems goal of OLTP systems is serving real-time transactions.</p>
+<p>Example &ndash; Bank Transactions on a daily basis.</p>
+<p><strong>What are different Clauses used in SQL?</strong></p>
+<p><strong>Answer:</strong></p>
+<p><a href="https://cdn.softwaretestinghelp.com/wp-content/qa/uploads/2016/07/Clauses-used-in-SQL.jpg"><img class="alignnone wp-image-9998 size-full lazyloaded" src="https://cdn.softwaretestinghelp.com/wp-content/qa/uploads/2016/07/Clauses-used-in-SQL.jpg" sizes="(max-width: 485px) 100vw, 485px" srcset="https://cdn.softwaretestinghelp.com/wp-content/qa/uploads/2016/07/Clauses-used-in-SQL.jpg 485w, https://cdn.softwaretestinghelp.com/wp-content/qa/uploads/2016/07/Clauses-used-in-SQL-300x188.jpg 300w" alt="Clauses used in SQL" width="485" height="304" data-lazy-srcset="https://cdn.softwaretestinghelp.com/wp-content/qa/uploads/2016/07/Clauses-used-in-SQL.jpg 485w, https://cdn.softwaretestinghelp.com/wp-content/qa/uploads/2016/07/Clauses-used-in-SQL-300x188.jpg 300w" data-lazy-sizes="(max-width: 485px) 100vw, 485px" data-lazy-src="https://cdn.softwaretestinghelp.com/wp-content/qa/uploads/2016/07/Clauses-used-in-SQL.jpg" data-was-processed="true" /></a></p>
+<p><strong>How do we use the DISTINCT statement? What is its use?</strong></p>
+<p><strong>Answer:&nbsp;</strong>The DISTINCT statement is used with the SELECT statement. If the record contains duplicate values then the DISTINCT statement is used to select different values among duplicate records.</p>
+<p><strong>Why do we use SQL constraints? Which constraints we can use while creating a database in SQL?</strong></p>
+<p><strong>Answer:&nbsp;</strong>Constraints are used to set the rules for all records in the table. If any constraints get violated then it can abort the action that caused it.</p>
+<p>Constraints are defined while creating the database itself with the CREATE TABLE statement or even after the table is created once with the ALTER TABLE statement.</p>
+<p><strong>There are 5 major constraints are used in SQL, such as</strong></p>
+<ul>
+<li><strong>NOT NULL:</strong>&nbsp;That indicates that the column must have some value and cannot be left NULL.</li>
+<li><strong>UNIQUE:</strong>&nbsp;This constraint is used to ensure that each row and column has a unique value and no value is being repeated in any other row or column.</li>
+<li><strong>PRIMARY KEY:</strong>&nbsp;This constraint is used in association with NOT NULL and UNIQUE constraints such as on one or the combination of more than one column to identify the particular record with a unique identity.</li>
+<li><strong>FOREIGN KEY:</strong>&nbsp;It is used to ensure the referential integrity of data in the table. It matches the value in one table with another using the PRIMARY KEY.</li>
+<li><strong>CHECK:</strong>&nbsp;It ensures whether the value in columns fulfills the specified condition.</li>
+</ul>
+<p>&nbsp;</p>
+<p><a href="https://www.softwaretestinghelp.com/50-popular-sql-interview-questions-for-testers/">https://www.softwaretestinghelp.com/50-popular-sql-interview-questions-for-testers/</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>

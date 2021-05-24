@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button type="button" onclick="document.location='index.html'" style="position:fixed;">Back To HOME</button>
+<br>
+<h1>JSON Links</h1>
+
+<h1>JSON</h1>
+<h1>What Is JSON, Complete Introduction To JSON</h1>
+<p>JSON is JavaScript Object Notation [ it&rsquo;s the damn default definition ], and was invented by Douglas Crockford. Actually JSON is lightweight alternative to XML, language and platform independent script. Even JSON parsers &amp; libraries are exists for many programming languages.</p>
+<p>Converting JSON text to something in JavaScript will takes one line of code by using eval function , to create an object from JSON text, just pass the string to eval function after surrounding the text with parentheses that&rsquo;s it.</p>
+<h2>Creating JSON Object From JSON text</h2>
+<p>var names = "{"nameslist": ["java4s","php4s","visa4s"]}";</p>
+<ul>
+<li>The variable names will hold the JSON text</li>
+<li>Whole JSON text must be surrounded by quotes</li>
+</ul>
+<h2>Convert This Variable (names) Into JavaScript object</h2>
+<p>Actually we can convert JSON text into JavaScript object with eval function. eval() is the JavaScript function which converts JSON text into an JavaScript object, see this&hellip;</p>
+<p>var MyJavaScriptObject = eval("(" + names + ")");</p>
+<p>&nbsp;</p>
+<h2>How To Access This JSON Object</h2>
+<p>&nbsp;</p>
+<p>var namesArray = MyJavaScriptObject["nameslist"];</p>
+<p>Now you can print the values&hellip;</p>
+<p>namesArray[0] will prints - java4s</p>
+<p>namesArray[1] will prints - php4s</p>
+<p>namesArray[2] will prints - visa4s</p>
+<p>&nbsp;</p>
+<p>Note: Index always start from zero</p>
+<p>Rather using eval() function It is safer to use a JSON parser to convert a JSON text to a JavaScript object. A JSON parser will recognize only JSON text and will not compile scripts, will see the complete example in the next tutorial.</p>
+<h1>Example On Converting JSON Text To JavaScript Object</h1>
+<ul>
+<li>JSON arrays are written inside square brackets</li>
+<li>Array can contain any number of objects</li>
+</ul>
+<h2>Syntax</h2>
+<p>{"names": ['+'{"name" : "java4s",&nbsp;&nbsp;"address"&nbsp;&nbsp;: "United States", "admin"&nbsp;&nbsp;: "sivateja",&nbsp;&nbsp;"age"&nbsp;&nbsp;: 25},'+'{"name" : "php4s",&nbsp;&nbsp;"address"&nbsp;&nbsp;: "United States", "admin"&nbsp;&nbsp;: "teja",&nbsp;&nbsp;"age"&nbsp;&nbsp;: 26}'+']}</p>
+<p>&nbsp;</p>
+<p>Here names is an array containing 2 objects. By using JavaScript syntax we can access the values with the help of &ldquo;.&rdquo; operator, will show you this in the following example.</p>
+<p>&lt;html&gt;</p>
+<p>&lt;head&gt;</p>
+<p>&lt;title&gt;</p>
+<p>How To Create JSON Object Array</p>
+<p>&lt;/title&gt;</p>
+<p>&lt;script language="javascript" &gt;</p>
+<p>&nbsp;</p>
+<p>var JsonObjecttext = '{"names": ['+'{"name" : "java4s",&nbsp;&nbsp;"address"&nbsp;&nbsp;: "United States", "admin"&nbsp;&nbsp;: "sivateja",&nbsp;&nbsp;"age"&nbsp;&nbsp;: 25},'+'{"name" : "php4s",&nbsp;&nbsp;"address"&nbsp;&nbsp;: "United States", "admin"&nbsp;&nbsp;: "teja",&nbsp;&nbsp;"age"&nbsp;&nbsp;: 26}'+']}';</p>
+<p>&nbsp;</p>
+<p>var JsonObjectName = eval ("(" + JsonObjecttext + ")");</p>
+<p>&nbsp;</p>
+<p>document.write("&lt;font color='#148ee3' size='2' face='verdana'&gt;Name - &lt;font color='#000'&gt;" +JsonObjectName.names[0].name+"&lt;/font&gt;&lt;/font&gt; || ");</p>
+<p>document.write("&lt;font color='#148ee3' size='2' face='verdana'&gt;Age. - &lt;font color='#000'&gt;" +JsonObjectName.names[0].age+"&lt;/font&gt;&lt;/font&gt; || ");</p>
+<p>document.write("&lt;font color='#148ee3' size='2' face='verdana'&gt;name - &lt;font color='#000'&gt;" +JsonObjectName.names[1].name+"&lt;/font&gt;&lt;/font&gt; || ");</p>
+<p>document.write("&lt;font color='#148ee3' size='2' face='verdana'&gt;name - &lt;font color='#000'&gt;" +JsonObjectName.names[1].age+"&lt;/font&gt;&lt;/font&gt;");</p>
+<p>&nbsp;</p>
+<p>&lt;/script&gt;</p>
+<p>&lt;/head&gt;</p>
+<p>&lt;body&gt;</p>
+<p>&lt;br&gt;</p>
+<p>&lt;font face="verdana" size="4"&gt;Example On Createing JSON Object Array&lt;/font&gt;&lt;br&gt;&lt;br&gt;</p>
+<p>&nbsp;</p>
+<p>&lt;font face="verdana" color="#ff0024" size="2"&gt;</p>
+<p>Note:&lt;br&gt;</p>
+<p>&lt;font color="#000"&gt;</p>
+<p>var JsonObjectName - Here JsonObjectName is the object name, &lt;br&gt;can give your own name.&lt;/font&gt;&lt;/font&gt;</p>
+<p>&lt;/body&gt;</p>
+<p>&lt;/html&gt;</p>
+<p>&nbsp;</p>
+
+</body>
+</html>

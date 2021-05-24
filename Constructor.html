@@ -4,37 +4,12 @@
 
 <button type="button" onclick="document.location='index.html'" style="position:fixed;">Back To HOME</button>
 <br>
-<h1>Constructor Links</h1>
 
-<ol>
-<li><strong>What is a&nbsp;</strong><a href="https://www.geeksforgeeks.org/constructors-in-java/"><strong>Constructor?</strong></a><br />Constructors are used to initialize the object&rsquo;s state. Like methods, a constructor also contains collection of statements(i.e. instructions) that are executed at time of Object creation.</li>
-</ol>
-<p>&nbsp;</p>
-<ol start="2">
-<li><strong>Do we have&nbsp;</strong><a href="https://www.geeksforgeeks.org/copy-constructor-in-java/"><strong>Copy Constructor in Java</strong></a><strong>?</strong><br />Like C++, Java also supports copy constructor. But, unlike C++, Java&nbsp;<strong>doesn&rsquo;t create a default copy constructor</strong>if you don&rsquo;t write your own.<br />To copy the values of one object into another in java, you can use:
-<ul>
-<li>Constructor</li>
-<li>Assigning the values of one object into another</li>
-<li><a href="https://www.geeksforgeeks.org/clone-method-in-java-2/">clone() method</a>of Object class</li>
-</ul>
-</li>
-</ol>
 
-<h3><strong>What is the meaning of constructor overloading in Java?</strong></h3>
-<p>&nbsp;</p>
-<p>Constructor overloading is a technique that is popular among programmers who have a requirement of adding multiple constructors to a single class with a different parameter list.</p>
 
-<h3><strong>Q27.&nbsp;What is constructor chaining in Java?</strong></h3>
-<p>In Java, constructor chaining is the process of calling one constructor from another with respect to the current object. Constructor chaining is possible only through legacy where a subclass constructor is responsible for invoking the superclass&rsquo; constructor first. There could be any number of classes in the constructor chain. Constructor chaining can be achieved in two ways:</p>
-<ol>
-<li>Within the same class using this()</li>
-<li>From base class using super()</li>
-</ol>
-<h3><br /><br /></h3>
-
-<h1>Constructors in Java</h1>
+<h1>Constructor Concepts</h1>
 <p><a href="https://www.geeksforgeeks.org/constructors-in-java/">https://www.geeksforgeeks.org/constructors-in-java/</a></p>
-<p>&nbsp;</p>
+<p><strong>What is a&nbsp;</strong><a href="https://www.geeksforgeeks.org/constructors-in-java/"><strong>Constructor?</strong></a><br />Constructors are used to initialize the object&rsquo;s state. Like methods, a constructor also contains collection of statements(i.e. instructions) that are executed at time of Object creation.</p>
 <p>Constructors are used to initialize the object&rsquo;s state. Like&nbsp;<a href="https://www.geeksforgeeks.org/methods-in-java/">methods</a>, a constructor also contains&nbsp;<strong>collection of statements(i.e. instructions)</strong>&nbsp;that are executed at time of Object creation.</p>
 <p><strong>Need of Constructor</strong><br />Think of a Box. If we talk about a box class then it will have some class variables (say length, breadth, and height). But when it comes to creating its object(i.e Box will now exist in computer&rsquo;s memory), then can a box be there with no value defined for its dimensions. The answer is no.<br />So constructors are used to assign values to the class variables at the time of object creation, either explicitly done by the programmer or by Java itself (default constructor).</p>
 <p><strong>When is a Constructor called ?</strong><br />Each time an object is created using&nbsp;<strong>new()</strong>&nbsp;keyword at least one constructor (it could be default constructor) is invoked to assign initial values to the&nbsp;<strong>data members&nbsp;</strong>of the same class.</p>
@@ -52,7 +27,6 @@
 <li><strong>No-argument constructor:&nbsp;</strong>A constructor that has no parameter is known as default constructor. If we don&rsquo;t define a constructor in a class, then compiler creates&nbsp;<strong>default constructor(with no arguments)</strong>for the class. And if we write a constructor with arguments or no-arguments then the compiler does not create a default constructor.<br />Default constructor provides the default values to the object like 0, null, etc. depending on the type.</li>
 <li><strong>Parameterized Constructor:&nbsp;</strong>A constructor that has parameters is known as parameterized constructor. If we want to initialize fields of the class with your own values, then use a parameterized constructor.</li>
 </ol>
-<p>&nbsp;</p>
 <p><strong>Does constructor return any value?</strong></p>
 <p>There are no &ldquo;return value&rdquo; statements in constructor, but constructor returns current class instance. We can write &lsquo;return&rsquo; inside a constructor.</p>
 <p><strong>Constructor Overloading</strong></p>
@@ -63,9 +37,26 @@
 <li>Constructor(s) do not return any type while method(s) have the return type or&nbsp;<strong>void</strong>if does not return any value.</li>
 <li>Constructor is called only once at the time of Object creation while method(s) can be called any numbers of time.</li>
 </ul>
-<p>&nbsp;</p>
+<p><strong>Do we have&nbsp;</strong><a href="https://www.geeksforgeeks.org/copy-constructor-in-java/"><strong>Copy Constructor in Java</strong></a><strong>?</strong><br />Like C++, Java also supports copy constructor. But, unlike C++, Java&nbsp;<strong>doesn&rsquo;t create a default copy constructor</strong>if you don&rsquo;t write your own.<br />To copy the values of one object into another in java, you can use:</p>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li>Constructor</li>
+<li>Assigning the values of one object into another</li>
+<li><a href="https://www.geeksforgeeks.org/clone-method-in-java-2/">clone() method</a>of Object class</li>
+</ul>
+</li>
+</ul>
+<h3><strong>What is the meaning of constructor overloading in Java?</strong></h3>
+<p>Constructor overloading is a technique that is popular among programmers who have a requirement of adding multiple constructors to a single class with a different parameter list.</p>
+<p><strong>When do we need&nbsp;</strong><a href="https://www.geeksforgeeks.org/constructor-overloading-java/"><strong>Constructor Overloading</strong></a><strong>?</strong><br />Sometimes there is a need of initializing an object in different ways. This can be done using constructor overloading. Different constructors can do different work by implementing different line of codes and are called based on the type and no of parameters passed.<br />According to the situation , a constructor is called with specific number of parameters among overloaded constructors.</p>
+<h3><strong>What is constructor chaining in Java?</strong></h3>
+<p>In Java, constructor chaining is the process of calling one constructor from another with respect to the current object. Constructor chaining is possible only through legacy where a subclass constructor is responsible for invoking the superclass&rsquo; constructor first. There could be any number of classes in the constructor chain. Constructor chaining can be achieved in two ways:</p>
+<ol>
+<li>Within the same class using this()</li>
+<li>From base class using super()</li>
+</ol>
 <p><strong>Why Constructors are not inherited in Java?</strong></p>
-<p><strong>&nbsp;</strong></p>
 <p>Constructor is a block of code that allows you to create an object of class and has same name as class with no explicit return type.</p>
 <p>Whenever a class (child class) extends another class (parent class), the sub class inherits state and behavior in the form of variables and methods from its super class but it does not inherit constructor of super class because of following reasons:</p>
 <ul>
@@ -74,62 +65,25 @@
 <li>A constructor cannot be called as a method. It is called when object of the class is created so it does not make sense of creating child class object using parent class constructor notation. i.e. Child c = new Parent();</li>
 <li>A parent class constructor is not inherited in child class and this is why super() is added automatically in child class constructor if there is no explicit call to super or this</li>
 </ul>
-
-<ol>
-<li>
-<ol start="4">
-<li><strong>Can we call sub class constructor from super class constructor?</strong><br />There is no way in java to call sub class constructor from a super class constructor.</li>
-</ol>
-<p>&nbsp;</p>
-<ol start="5">
-<li><strong>What happens if you keep a return type for a constructor?</strong><br />Ideally, Constructor must not have a return type. By definition, if a method has a return type, it&rsquo;s not a constructor.(<a href="http://docs.oracle.com/javase/specs/#8.8">8 Declaration</a>) It will be treated as a normal method. But compiler gives a warning saying that method has a constructor name.Example:</li>
-</ol>
+<p><strong>Can we call sub class constructor from super class constructor?</strong><br />There is no way in java to call sub class constructor from a super class constructor</p>
+<p><strong>What happens if you keep a return type for a constructor?</strong><br />Ideally, Constructor must not have a return type. By definition, if a method has a return type, it&rsquo;s not a constructor.(<a href="http://docs.oracle.com/javase/specs/#8.8">8 Declaration</a>) It will be treated as a normal method. But compiler gives a warning saying that method has a constructor name.Example:</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; class GfG {&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int GfG() {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 0;&nbsp;&nbsp;&nbsp; // Warning for the return type&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
-<ol start="6">
-<li><strong>What is No-arg constructor?</strong><br />Constructor without arguments is called no-arg constructor. Default constructor in java is always a no-arg constructor.</li>
-</ol>
+<p><strong>What is No-arg constructor?</strong><br />Constructor without arguments is called no-arg constructor. Default constructor in java is always a no-arg constructor.</p>
 <p>&nbsp; class GfG {</p>
 <p>&nbsp;&nbsp;&nbsp; public GfG() {&nbsp; //No-arg constructor &nbsp;}</p>
 <p>&nbsp; }</p>
-<ol start="7">
-<li><strong>How a no &ndash; argument constructor is different from&nbsp;</strong><a href="https://www.geeksforgeeks.org/g-fact-50/"><strong>default Constructor</strong></a><strong>?</strong><br />If a class contains no constructor declarations, then a default constructor with no formal parameters and no throws clause is implicitly declared.</li>
-</ol>
+<p><strong>How a no &ndash; argument constructor is different from&nbsp;</strong><a href="https://www.geeksforgeeks.org/g-fact-50/"><strong>default Constructor</strong></a><strong>?</strong><br />If a class contains no constructor declarations, then a default constructor with no formal parameters and no throws clause is implicitly declared.</p>
 <p>If the class being declared is the primordial class Object, then the default constructor has an empty body. Otherwise, the default constructor simply invokes the superclass constructor with no arguments.</p>
-<ol start="8">
-<li><strong>What are&nbsp;</strong><a href="https://www.geeksforgeeks.org/private-constructors-and-singleton-classes-in-java/"><strong>private constructors</strong></a><strong>and where are they used?</strong><br />Like any method we can provide access specifier to the constructor. If it&rsquo;s made private, then it can only be accessed inside the class.<br />The major scenarios where we use private constructor:
+<p><strong>What are&nbsp;</strong><a href="https://www.geeksforgeeks.org/private-constructors-and-singleton-classes-in-java/"><strong>private constructors</strong></a><strong>and where are they used?</strong><br />Like any method we can provide access specifier to the constructor. If it&rsquo;s made private, then it can only be accessed inside the class.<br />The major scenarios where we use private constructor:</p>
+<ul>
+<li style="list-style-type: none;">
 <ul>
 <li>Internal Constructor chaining</li>
 <li>Singleton class design pattern</li>
 </ul>
 </li>
-</ol>
-<p>&nbsp;</p>
-<ol start="9">
-<li><strong>When do we need&nbsp;</strong><a href="https://www.geeksforgeeks.org/constructor-overloading-java/"><strong>Constructor Overloading</strong></a><strong>?</strong><br />Sometimes there is a need of initializing an object in different ways. This can be done using constructor overloading. Different constructors can do different work by implementing different line of codes and are called based on the type and no of parameters passed.<br />According to the situation , a constructor is called with specific number of parameters among overloaded constructors.</li>
-</ol>
-<p>&nbsp;</p>
-<ol start="10">
-<li><strong>Do we have destructors in Java?</strong><br />No, Because Java is a garbage collected language you cannot predict when (or even if) an object will be destroyed. Hence there is no direct equivalent of a destructor.</li>
-</ol>
-<p>&nbsp;</p>
-</li>
-</ol>
-
-<ol>
-<li>
-<ol start="4">
-<li>
-<p><strong>What are constructors in Java?</strong><br />In Java, constructor refers to a block of code which is used to initialize an object. It must have the same name as that of the class. Also, it has no return type and it is automatically called when an object is created.<br />If a class does not explicitly declare any, the Java compiler automatically provides a no-argument constructor, also called the default constructor.<br />This default constructor calls the class parent&rsquo;s no-argument constructor (as it contains only one statement i.e. super();), or the&nbsp;Object&nbsp;class constructor if the class has no other parent (as Object class is a parent of all classes either directly or indirectly).<br />There are two types of constructors:</p>
-<ol>
-<li>Default constructor</li>
-<li>Parametrized constructor</li>
-</ol>
-<p>&nbsp;</p>
-</li>
-</ol>
-</li>
-</ol>
-
+</ul>
+<p><strong>Do we have destructors in Java?</strong><br />No, Because Java is a garbage collected language you cannot predict when (or even if) an object will be destroyed. Hence there is no direct equivalent of a destructor.</p>
 
 
 </body>

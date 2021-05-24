@@ -8,5 +8,1040 @@
 
 <p><strong>What is Big-O notation? Give some examples?</strong><br />The Big-O notation describes the performance of an algorithm in terms of number of elements in a data structure. Since Collection classes are actually data structures, we usually tend to use Big-O notation to choose the collection implementation to use based on time, memory and performance.<br />Example 1: ArrayList get(index i) is a constant-time operation and doesn&rsquo;t depend on the number of elements in the list. So it&rsquo;s performance in Big-O notation is O(1). Example 2: A linear search on array or list performance is O(n) because we need to search through entire list of elements to find the element.</p>
 
+<p><strong>Introduction to Data Structures</strong></p>
+<p>Data Structure is a way of collecting and organising data in such a way that we can perform operations on these data in an effective way. Data Structures is about rendering data elements in terms of some relationship, for better organization and storage. For example, we have data player's name "Virat" and age 26. Here "Virat" is of <strong>String</strong> data type and 26 is of <strong>integer</strong> data type.</p>
+<p>We can organize this data as a record like <strong>Player</strong> record. Now we can collect and store player's records in a file or database as a data structure. For example: "Dhoni" 30, "Gambhir" 31, "Sehwag" 33</p>
+<p>In simple language, Data Structures are structures programmed to store ordered data, so that various operations can be performed on it easily.</p>
+<p><strong>Basic types of Data Structures</strong></p>
+<p>As we discussed above, anything that can store data can be called as a data strucure, hence Integer, Float, Boolean, Char etc, all are data structures. They are known as <strong>Primitive Data Structures</strong>.</p>
+<p>Then we also have some complex Data Structures, which are used to store large and connected data. Some example of <strong>Abstract Data Structure</strong> are :</p>
+<ul>
+<li>Linked List</li>
+<li>Tree</li>
+<li>Graph</li>
+<li>Stack, Queue etc.</li>
+</ul>
+<p>All these data structures allow us to perform different operations on data. We select these data structures based on which type of operation is required. We will look into these data structures in more details in our later lessons.</p>
+<p><strong>What is Algorithm ?</strong></p>
+<p>An algorithm is a finite set of instructions or logic, written in order, to accomplish a certain predefined task. Algorithm is not the complete code or program, it is just the core logic(solution) of a problem, which can be expressed either as an informal high level description as <strong>pseudocode</strong> or using a <strong>flowchart</strong>.</p>
+<p>An algorithm is said to be efficient and fast, if it takes less time to execute and consumes less memory space. The performance of an algorithm is measured on the basis of following properties :</p>
+<ol>
+<li>Time Complexity</li>
+<li>Space Complexity</li>
+</ol>
+<p><strong>Space Complexity</strong></p>
+<p>Its the amount of memory space required by the algorithm, during the course of its execution. Space complexity must be taken seriously for multi-user systems and in situations where limited memory is available.</p>
+<p>An algorithm generally requires space for following components :</p>
+<ul>
+<li><strong>Instruction Space :</strong> Its the space required to store the executable version of the program. This space is fixed, but varies depending upon the number of lines of code in the program.</li>
+<li><strong>Data Space :</strong> Its the space required to store all the constants and variables value.</li>
+<li><strong>Environment Space :</strong> Its the space required to store the environment information needed to resume the suspended function.</li>
+</ul>
+<p><strong>Time Complexity</strong></p>
+<p>Time Complexity is a way to represent the amount of time needed by the program to run to completion. We will study this in details in our section.</p>
+<p><strong>NOTE:</strong> Before going deep into data structure, you should have a good knowledge of programming either in C or in C++ or Java.</p>
+<p><strong>Time Complexity of Algorithms</strong></p>
+<p>Time complexity of an algorithm signifies the total time required by the program to run to completion. The time complexity of algorithms is most commonly expressed using the <strong>big O notation</strong>.</p>
+<p>Time Complexity is most commonly estimated by counting the number of elementary functions performed by the algorithm. And since the algorithm's performance may vary with different types of input data, hence for an algorithm we usually use the <strong>worst-case Time complexity</strong> of an algorithm because that is the maximum time taken for any input size.</p>
+<p><strong>Calculating Time Complexity</strong></p>
+<p>Now lets tap onto the next big topic related to Time complexity, which is How to Calculate Time Complexity. It becomes very confusing some times, but we will try to explain it in the simplest way.</p>
+<p>Now the most common metric for calculating time complexity is Big O notation. This removes all constant factors so that the running time can be estimated in relation to <strong>N</strong>, as N approaches infinity. In general you can think of it like this :</p>
+<p>statement;</p>
+<p>Above we have a single statement. Its Time Complexity will be <strong>Constant</strong>. The running time of the statement will not change in relation to N.</p>
+<p>&nbsp;</p>
+<p>for(i=0; i &lt; N; i++)</p>
+<p>{</p>
+<p>&nbsp; statement;</p>
+<p>}</p>
+<p>The time complexity for the above algorithm will be <strong>Linear</strong>. The running time of the loop is directly proportional to N. When N doubles, so does the running time.</p>
+<p>&nbsp;</p>
+<p>for(i=0; i &lt; N; i++)</p>
+<p>{</p>
+<p>&nbsp; for(j=0; j &lt; N;j++)</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; statement;</p>
+<p>&nbsp; }</p>
+<p>}</p>
+<p>This time, the time complexity for the above code will be <strong>Quadratic</strong>. The running time of the two loops is proportional to the square of N. When N doubles, the running time increases by N * N.</p>
+<p>&nbsp;</p>
+<p>while(low &lt;= high)</p>
+<p>{</p>
+<p>&nbsp; mid = (low + high) / 2;</p>
+<p>&nbsp; if (target &lt; list[mid])</p>
+<p>&nbsp;&nbsp;&nbsp; high = mid - 1;</p>
+<p>&nbsp; else if (target &gt; list[mid])</p>
+<p>&nbsp;&nbsp;&nbsp; low = mid + 1;</p>
+<p>&nbsp; else break;</p>
+<p>}</p>
+<p>This is an algorithm to break a set of numbers into halves, to search a particular field(we will study this in detail later). Now, this algorithm will have a <strong>Logarithmic</strong> Time Complexity. The running time of the algorithm is proportional to the number of times N can be divided by 2(N is high-low here). This is because the algorithm divides the working area in half with each iteration.</p>
+<p>&nbsp;</p>
+<p>void quicksort(int list[], int left, int right)</p>
+<p>{</p>
+<p>&nbsp; int pivot = partition(list, left, right);</p>
+<p>&nbsp; quicksort(list, left, pivot - 1);</p>
+<p>&nbsp; quicksort(list, pivot + 1, right);</p>
+<p>}</p>
+<p>Taking the previous algorithm forward, above we have a small logic of Quick Sort(we will study this in detail later). Now in Quick Sort, we divide the list into halves every time, but we repeat the iteration N times(where N is the size of list). Hence time complexity will be <strong>N*log( N )</strong>. The running time consists of N loops (iterative or recursive) that are logarithmic, thus the algorithm is a combination of linear and logarithmic.</p>
+<p><strong>NOTE : </strong>In general, doing something with every item in one dimension is linear, doing something with every item in two dimensions is quadratic, and dividing the working area in half is logarithmic.</p>
+<p><strong>Types of Notations for Time Complexity</strong></p>
+<p>Now we will discuss and understand the various notations used for Time Complexity.</p>
+<ol>
+<li><strong>Big Oh</strong> denotes "<em>fewer than or the same as</em>" &lt;expression&gt; iterations.</li>
+<li><strong>Big Omega</strong> denotes "<em>more than or the same as</em>" &lt;expression&gt; iterations.</li>
+<li><strong>Big Theta</strong> denotes "<em>the same as</em>" &lt;expression&gt; iterations.</li>
+<li><strong>Little Oh</strong> denotes "<em>fewer than</em>" &lt;expression&gt; iterations.</li>
+<li><strong>Little Omega</strong> denotes "<em>more than</em>" &lt;expression&gt; iterations.</li>
+</ol>
+<p><strong>Understanding Notations of Time Complexity with Example</strong></p>
+<p><strong>O(expression)</strong> is the set of functions that grow slower than or at the same rate as expression.</p>
+<p><strong>Omega(expression)</strong> is the set of functions that grow faster than or at the same rate as expression.</p>
+<p><strong>Theta(expression)</strong> consist of all the functions that lie in both O(expression) and Omega(expression).</p>
+<p>Suppose you've calculated that an algorithm takes f(n) operations, where,</p>
+<p>f(n) = 3*n^2 + 2*n + 4.&nbsp;&nbsp; // n^2 means square of n</p>
+<p>Since this polynomial grows at the same rate as <strong>n^2</strong>, then you could say that the function <strong>f</strong> lies in the set <strong>Theta(n^2)</strong>. (It also lies in the sets <strong>O(n^2)</strong> and <strong>Omega(n^2)</strong> for the same reason.)</p>
+<p>The simplest explanation is, because <strong>Theta</strong> denotes <em>the same as</em> the expression. Hence, as <strong>f(n)</strong> grows by a factor of <strong>n^2</strong>, the time complexity can be best represented as <strong>Theta(n^2)</strong>.</p>
+<p><strong>Introduction to Sorting</strong></p>
+<p>Sorting is nothing but storage of data in sorted order, it can be in ascending or descending order. The term Sorting comes into picture with the term Searching. There are so many things in our real life that we need to search, like a particular record in database, roll numbers in merit list, a particular telephone number, any particular page in a book etc.</p>
+<p><strong>Sorting</strong> arranges data in a sequence which makes searching easier. Every record which is going to be sorted will contain one key. Based on the key the record will be sorted. For example, suppose we have a record of students, every such record will have the following data:</p>
+<ul>
+<li>Roll No.</li>
+<li>Name</li>
+<li>Age</li>
+<li>Class</li>
+</ul>
+<p>Here Student roll no. can be taken as key for sorting the records in ascending or descending order. Now suppose we have to search a Student with roll no. 15, we don't need to search the complete record we will simply search between the Students with roll no. 10 to 20.</p>
+<p><strong>Sorting Efficiency</strong></p>
+<p>There are many techniques for sorting. Implementation of particular sorting technique depends upon situation. Sorting techniques mainly depends on two parameters. First parameter is the execution time of program, which means time taken for execution of program. Second is the space, which means space taken by the program.</p>
+<p><strong>Types of Sorting Techniques</strong></p>
+<p>There are many types of Sorting techniques, differentiated by their efficiency and space requirements. Following are some sorting techniques which we will be covering in next sections.</p>
+<ol>
+<li>Bubble Sort</li>
+<li>Insertion Sort</li>
+<li>Selection Sort</li>
+<li>Quick Sort</li>
+<li>Merge Sort</li>
+<li>Heap Sort</li>
+</ol>
+<p><strong>Bubble Sorting</strong></p>
+<p><strong>Bubble Sort</strong> is an algorithm which is used to sort <strong>N</strong> elements that are given in a memory for eg: an Array with <strong>N</strong> number of elements. Bubble Sort compares all the element one by one and sort them based on their values.</p>
+<p>It is called Bubble sort, because with each iteration the smaller element in the list bubbles up towards the first place, just like a water bubble rises up to the water surface.</p>
+<p>Sorting takes place by stepping through all the data items one-by-one in pairs and comparing adjacent data items and swapping each pair that is out of order.</p>
+<p><strong>Sorting using Bubble Sort Algorithm</strong></p>
+<p>Let's consider an array with values {5, 1, 6, 2, 4, 3}</p>
+<p>int a[6] = {5, 1, 6, 2, 4, 3};</p>
+<p>int i, j, temp;</p>
+<p>for(i=0; i&lt;6; i++)</p>
+<p>{</p>
+<p>&nbsp; for(j=0; j&lt;6-i-1; j++)</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; if( a[j] &gt; a[j+1])</p>
+<p>&nbsp;&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; temp = a[j];</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a[j] = a[j+1];</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a[j+1] = temp;</p>
+<p>&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp; }</p>
+<p>}</p>
+<p>//now you can print the sorted array after this</p>
+<p>Above is the algorithm, to sort an array using Bubble Sort. Although the above logic will sort and unsorted array, still the above algorithm isn't efficient and can be enhanced further. Because as per the above logic, the for loop will keep going for six iterations even if the array gets sorted after the second iteration.</p>
+<p>Hence we can insert a flag and can keep checking whether swapping of elements is taking place or not. If no swapping is taking place that means the array is sorted and wew can jump out of the for loop.</p>
+<p>int a[6] = {5, 1, 6, 2, 4, 3};</p>
+<p>int i, j, temp;</p>
+<p>for(i=0; i&lt;6; i++)</p>
+<p>{</p>
+<p>&nbsp; int <strong>flag</strong> = 0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>//taking a flag variable</em></p>
+<p>&nbsp; for(j=0; j&lt;6-i-1; j++)</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; if( a[j] &gt; a[j+1])</p>
+<p>&nbsp;&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; temp = a[j];</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a[j] = a[j+1];</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a[j+1] = temp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>flag</strong> = 1;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>//setting flag as 1, if swapping occurs</em></p>
+<p>&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp; }</p>
+<p>&nbsp; if(!<strong>flag</strong>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>//breaking out of for loop if no swapping takes place</em></p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; break;</p>
+<p>&nbsp; }</p>
+<p>}</p>
+<p>In the above code, if in a complete single cycle of j iteration(inner for loop), no swapping takes place, and flag remains 0, then we will break out of the for loops, because the array has already been sorted.</p>
+<p><strong>Complexity Analysis of Bubble Sorting</strong></p>
+<p>In Bubble Sort, n-1 comparisons will be done in 1st pass, n-2 in 2nd pass, n-3 in 3rd pass and so on. So the total number of comparisons will be</p>
+<p>(n-1)+(n-2)+(n-3)+.....+3+2+1</p>
+<p>Sum = n(n-1)/2</p>
+<p>i.e O(n<sup>2</sup>)</p>
+<p>Hence the complexity of Bubble Sort is <strong>O(n<sup>2</sup>)</strong>.</p>
+<p>The main advantage of Bubble Sort is the simplicity of the algorithm.Space complexity for Bubble Sort is <strong>O(1)</strong>, because only single additional memory space is required for <strong>temp</strong> variable</p>
+<p><strong>Best-case</strong> Time Complexity will be <strong>O(n)</strong>, it is when the list is already sorted.</p>
+<p><strong>Insertion Sorting</strong></p>
+<p>It is a simple Sorting algorithm which sorts the array by shifting elements one by one. Following are some of the important characteristics of Insertion Sort.</p>
+<ol>
+<li>It has one of the simplest implementation</li>
+<li>It is efficient for smaller data sets, but very inefficient for larger lists.</li>
+<li>Insertion Sort is adaptive, that means it reduces its total number of steps if given a partially sorted list, hence it increases its efficiency.</li>
+<li>It is better than Selection Sort and Bubble Sort algorithms.</li>
+<li>Its space complexity is less, like Bubble Sorting, inerstion sort also requires a single additional memory space.</li>
+<li>It is <strong>Stable</strong>, as it does not change the relative order of elements with equal keys</li>
+</ol>
+<p><strong>How Insertion Sorting Works</strong></p>
+<p><strong>Sorting using Insertion Sort Algorithm</strong></p>
+<p>int a[6] = {5, 1, 6, 2, 4, 3};</p>
+<p>int i, j, key;</p>
+<p>for(i=1; i&lt;6; i++)</p>
+<p>{</p>
+<p>&nbsp; key = a[i];</p>
+<p>&nbsp; j = i-1;</p>
+<p>&nbsp; while(j&gt;=0 &amp;&amp; key &lt; a[j])</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; a[j+1] = a[j];</p>
+<p>&nbsp;&nbsp;&nbsp; j--;</p>
+<p>&nbsp; }</p>
+<p>&nbsp; a[j+1] = key;</p>
+<p>}</p>
+<p>Now lets, understand the above simple insertion sort algorithm. We took an array with 6 integers. We took a variable <strong>key</strong>, in which we put each element of the array, in each pass, starting from the second element, that is <strong>a[1]</strong>.</p>
+<p>Then using the while loop, we iterate, until <strong>j</strong> becomes equal to zero or we find an element which is greater than <strong>key</strong>, and then we insert the key at that position.</p>
+<p>In the above array, first we pick 1 as key, we compare it with 5(element before 1), 1 is smaller than 5, we shift 1 before 5. Then we pick 6, and compare it with 5 and 1, no shifting this time. Then 2 becomes the key and is compared with, 6 and 5, and then 2 is placed after 1. And this goes on, until complete array gets sorted.</p>
+<p><strong>Insertion Sorting in C++</strong></p>
+<p>#include &lt;stdlib.h&gt;</p>
+<p>#include &lt;iostream.h&gt;</p>
+<p>&nbsp;</p>
+<p>using namespace std;</p>
+<p>&nbsp;</p>
+<p><em>//member functions declaration</em></p>
+<p>void <strong>insertionSort</strong>(int arr[], int length);</p>
+<p>void <strong>printArray</strong>(int array[],int size);</p>
+<p>&nbsp;</p>
+<p>int <strong>main</strong>() {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int array[5]= {5,4,3,2,1};</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>insertionSort</strong>(<em>array</em>,5);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 0;</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>void <strong>insertionSort</strong>(int arr[], int length) {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int i, j ,tmp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (i = 1; i &lt; length; i++) {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j = i;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while (j &gt; 0 &amp;&amp; arr[j - 1] &gt; arr[j]) {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tmp = arr[j];</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; arr[j] = arr[j - 1];</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; arr[j - 1] = tmp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j--;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printArray(arr,5);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>void <strong>printArray</strong>(int array[], int size){</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout&lt;&lt; "Sorting tha array using Insertion sort... ";</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int j;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (j=0; j &lt; size;j++)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (j=0; j &lt; size;j++)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt;" "&lt;&lt; array[j];</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt; endl;</p>
+<p>}</p>
+<p><strong>Complexity Analysis of Insertion Sorting</strong></p>
+<p><strong>Worst Case Time Complexity :</strong> O(n<sup>2</sup>)</p>
+<p><strong>Best Case Time Complexity :</strong> O(n)</p>
+<p><strong>Average Time Complexity :</strong> O(n<sup>2</sup>)</p>
+<p><strong>Space Complexity : </strong>O(1)</p>
+<p>&nbsp;</p>
+<p><strong>Selection Sorting</strong></p>
+<p>Selection sorting is conceptually the most simplest sorting algorithm. This algorithm first finds the smallest element in the array and exchanges it with the element in the first position, then find the second smallest element and exchange it with the element in the second position, and continues in this way until the entire array is sorted.</p>
+<p><strong>How Selection Sorting Works</strong></p>
+<p>In the first pass, the smallest element found is 1, so it is placed at the first position, then leaving first element, smallest element is searched from the rest of the elements, 3 is the smallest, so it is then placed at the second position. Then we leave 1 nad 3, from the rest of the elements, we search for the smallest and put it at third position and keep doing this, until array is sorted.</p>
+<p><strong>Sorting using Selection Sort Algorithm</strong></p>
+<p>void selectionSort(int a[], int size)</p>
+<p>{</p>
+<p>&nbsp; int i, j, min, temp;</p>
+<p>&nbsp; for(i=0; i &lt; size-1; i++ )</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; min = i;&nbsp;&nbsp; //setting min as i</p>
+<p>&nbsp;&nbsp;&nbsp; for(j=i+1; j &lt; size; j++)</p>
+<p>&nbsp;&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(a[j] &lt; a[min])&nbsp;&nbsp; //if element at j is less than element at min position</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; min = j;&nbsp;&nbsp;&nbsp; //then set min as j</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp; temp = a[i];</p>
+<p>&nbsp;&nbsp; a[i] = a[min];</p>
+<p>&nbsp;&nbsp; a[min] = temp;</p>
+<p>&nbsp; }</p>
+<p>}</p>
+<p><strong>Complexity Analysis of Selection Sorting</strong></p>
+<p><strong>Worst Case Time Complexity :</strong> O(n<sup>2</sup>)</p>
+<p><strong>Best Case Time Complexity :</strong> O(n<sup>2</sup>)</p>
+<p><strong>Average Time Complexity :</strong> O(n<sup>2</sup>)</p>
+<p><strong>Space Complexity : </strong>O(1)</p>
+<p>&nbsp;</p>
+<p><strong>Quick Sort Algorithm</strong></p>
+<p>Quick Sort, as the name suggests, sorts any list very quickly. Quick sort is not stable search, but it is very fast and requires very less aditional space. It is based on the rule of <strong>Divide and Conquer</strong>(also called <em>partition-exchange sort</em>). This algorithm divides the list into three main parts :</p>
+<ol>
+<li>Elements less than the Pivot element</li>
+<li>Pivot element</li>
+<li>Elements greater than the pivot element</li>
+</ol>
+<p>In the list of elements, mentioned in below example, we have taken <strong>25</strong> as pivot. So after the first pass, the list will be changed like this.</p>
+<p>6 8 17 14 <strong>25</strong> 63 37 52</p>
+<p>Hnece after the first pass, pivot will be set at its position, with all the elements smaller to it on its left and all the elements larger than it on the right. Now 6 8 17 14 and 63 37 52 are considered as two separate lists, and same logic is applied on them, and we keep doing this until the complete list is sorted.</p>
+<p><strong>How Quick Sorting Works</strong></p>
+<p><strong>Sorting using Quick Sort Algorithm</strong></p>
+<p>/*&nbsp; a[] is the array, p is starting index, that is 0,</p>
+<p>and r is the last index of array.&nbsp; */</p>
+<p>&nbsp;</p>
+<p>void <strong>quicksort</strong>(int a[], int p, int r)&nbsp;&nbsp;&nbsp;</p>
+<p>{</p>
+<p>&nbsp; if(p &lt; r)</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; int q;</p>
+<p>&nbsp;&nbsp;&nbsp; q = partition(a, p, r);</p>
+<p>&nbsp;&nbsp;&nbsp; quicksort(a, p, q);</p>
+<p>&nbsp;&nbsp;&nbsp; quicksort(a, q+1, r);</p>
+<p>&nbsp; }</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>int <strong>partition</strong>(int a[], int p, int r)</p>
+<p>{</p>
+<p>&nbsp; int i, j, pivot, temp;</p>
+<p>&nbsp; pivot = a[p];</p>
+<p>&nbsp; i = p;</p>
+<p>&nbsp; j = r;</p>
+<p>&nbsp; while(1)</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp; while(a[i] &lt; pivot &amp;&amp; a[i] != pivot)</p>
+<p>&nbsp;&nbsp; i++;</p>
+<p>&nbsp;&nbsp; while(a[j] &gt; pivot &amp;&amp; a[j] != pivot)</p>
+<p>&nbsp;&nbsp; j--;</p>
+<p>&nbsp;&nbsp; if(i &lt; j)</p>
+<p>&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; temp = a[i];</p>
+<p>&nbsp;&nbsp;&nbsp; a[i] = a[j];</p>
+<p>&nbsp;&nbsp;&nbsp; a[j] = temp;</p>
+<p>&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp; else</p>
+<p>&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; return j;</p>
+<p>&nbsp;&nbsp; }</p>
+<p>&nbsp; }</p>
+<p>}</p>
+<p><strong>Complexity Analysis of Quick Sort</strong></p>
+<p><strong>Worst Case Time Complexity :</strong> O(n<sup>2</sup>)</p>
+<p><strong>Best Case Time Complexity :</strong> O(n log n)</p>
+<p><strong>Average Time Complexity :</strong> O(n log n)</p>
+<p><strong>Space Complexity : </strong>O(n log n)</p>
+<ul>
+<li>Space required by quick sort is very less, only O(n log n) additional space is required.</li>
+<li>Quick sort is not a stable sorting technique, so it might change the occurence of two similar elements in the list while sorting.</li>
+</ul>
+<p><strong>Merge Sort Algorithm</strong></p>
+<p>Merge Sort follows the rule of <strong>Divide and Conquer</strong>. But it doesn't divides the list into two halves. In merge sort the unsorted list is divided into N sublists, each having one element, because a list of one element is considered sorted. Then, it repeatedly merge these sublists, to produce new sorted sublists, and at lasts one sorted list is produced.</p>
+<p>Merge Sort is quite fast, and has a time complexity of <strong>O(n log n)</strong>. It is also a stable sort, which means the "equal" elements are ordered in the same order in the sorted list.</p>
+<p><strong>How Merge Sort Works</strong></p>
+<p>&nbsp;</p>
+<p>Like we can see in the above example, merge sort first breaks the unsorted list into sorted sublists, and then keep merging these sublists, to finlly get the complete sorted list.</p>
+<p><strong>Sorting using Merge Sort Algorithm</strong></p>
+<p>/*&nbsp; a[] is the array, p is starting index, that is 0,</p>
+<p>and r is the last index of array.&nbsp; */</p>
+<p>&nbsp;</p>
+<p>Lets take a[5] = {32, 45, 67, 2, 7} as the array to be sorted.</p>
+<p>&nbsp;</p>
+<p>void <strong>mergesort</strong>(int a[], int p, int r)</p>
+<p>{</p>
+<p>&nbsp; int q;</p>
+<p>&nbsp; if(p &lt; r)</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; q = floor( (p+r) / 2);</p>
+<p>&nbsp;&nbsp;&nbsp; mergesort(a, p, q);</p>
+<p>&nbsp;&nbsp;&nbsp; mergesort(a, q+1, r);</p>
+<p>&nbsp;&nbsp;&nbsp; merge(a, p, q, r);</p>
+<p>&nbsp; }</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>void <strong>merge</strong>(int a[], int p, int q, int r)</p>
+<p>{</p>
+<p>&nbsp; int b[5];&nbsp;&nbsp;&nbsp;&nbsp; //same size of a[]</p>
+<p>&nbsp; int i, j, k;</p>
+<p>&nbsp; k = 0;</p>
+<p>&nbsp; i = p;</p>
+<p>&nbsp; j = q+1;</p>
+<p>&nbsp; while(i &lt;= q &amp;&amp; j &lt;= r)</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; if(a[i] &lt; a[j])</p>
+<p>&nbsp;&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b[k++] = a[i++];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // same as b[k]=a[i]; k++; i++;</p>
+<p>&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp;&nbsp; else</p>
+<p>&nbsp;&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b[k++] = a[j++];</p>
+<p>&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp; }</p>
+<p>&nbsp;</p>
+<p>&nbsp; while(i &lt;= q)</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; b[k++] = a[i++];</p>
+<p>&nbsp; }</p>
+<p>&nbsp;</p>
+<p>&nbsp; while(j &lt;= r)</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; b[k++] = a[j++];</p>
+<p>&nbsp; }</p>
+<p>&nbsp;</p>
+<p>&nbsp; for(i=r; i &gt;= p; i--)</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; a[i] = b[--k];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // copying back the sorted list to a[]</p>
+<p>&nbsp; }</p>
+<p>&nbsp;</p>
+<p>}</p>
+<p><strong>Complexity Analysis of Merge Sort</strong></p>
+<p><strong>Worst Case Time Complexity :</strong> O(n log n)</p>
+<p><strong>Best Case Time Complexity :</strong> O(n log n)</p>
+<p><strong>Average Time Complexity :</strong> O(n log n)</p>
+<p><strong>Space Complexity : </strong>O(n)</p>
+<ul>
+<li>Time complexity of Merge Sort is O(n Log n) in all 3 cases (worst, average and best) as merge sort always divides the array in two halves and take linear time to merge two halves.</li>
+<li>It requires equal amount of additional space as the unsorted list. Hence its not at all recommended for searching large unsorted lists.</li>
+<li>It is the best Sorting technique for sorting <strong>Linked Lists</strong>.</li>
+</ul>
+<p><strong>Heap Sort Algorithm</strong></p>
+<p>Heap Sort is one of the best sorting methods being in-place and with no quadratic worst-case scenarios. Heap sort algorithm is divided into two basic parts :</p>
+<ul>
+<li>Creating a Heap of the unsorted list.</li>
+<li>Then a sorted array is created by repeatedly removing the largest/smallest element from the heap, and inserting it into the array. The heap is reconstructed after each removal.</li>
+</ul>
+<p><strong>What is a Heap ?</strong></p>
+<p>Heap is a special tree-based data structure, that satisfies the following special heap properties :</p>
+<ol>
+<li><strong>Shape Property :</strong> Heap data structure is always a Complete Binary Tree, which means all levels of the tree are fully filled.</li>
+</ol>
+<ol>
+<li><strong>Heap Property :</strong> All nodes are either <em>[greater than or equal to]</em> or <em>[less than or equal to]</em> each of its children. If the parent nodes are greater than their children, heap is called a <strong>Max-Heap</strong>, and if the parent nodes are smalled than their child nodes, heap is called <strong>Min-Heap</strong>.</li>
+</ol>
+<p><strong>How Heap Sort Works</strong></p>
+<p>Initially on receiving an unsorted list, the first step in heap sort is to create a Heap data structure(Max-Heap or Min-Heap). Once heap is built, the first element of the Heap is either largest or smallest(depending upon Max-Heap or Min-Heap), so we put the first element of the heap in our array. Then we again make heap using the remaining elements, to again pick the first element of the heap and put it into the array. We keep on doing the same repeatedly untill we have the complete sorted list in our array.</p>
+<p>In the below algorithm, initially <strong>heapsort()</strong> function is called, which calls <strong>buildheap()</strong> to build heap, which inturn uses <strong>satisfyheap()</strong> to build the heap.</p>
+<p><strong>Sorting using Heap Sort Algorithm</strong></p>
+<p>/*&nbsp; Below program is written in C++ language&nbsp; */</p>
+<p>&nbsp;</p>
+<p>void heapsort(int[], int);</p>
+<p>void buildheap(int [], int);</p>
+<p>void satisfyheap(int [], int, int);</p>
+<p>&nbsp;</p>
+<p>void main()</p>
+<p>{</p>
+<p>&nbsp; int a[10], i, size;</p>
+<p>&nbsp; cout &lt;&lt; "Enter size of list";&nbsp;&nbsp;&nbsp; // less than 10, because max size of array is 10</p>
+<p>&nbsp; cin &gt;&gt; size;</p>
+<p>&nbsp; cout &lt;&lt; "Enter" &lt;&lt; size &lt;&lt; "elements";</p>
+<p>&nbsp; for( i=0; i &lt; size; i++)</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; cin &gt;&gt; a[i];</p>
+<p>&nbsp; }</p>
+<p>&nbsp; heapsort(a, size);</p>
+<p>&nbsp; getch();</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>void <strong>heapsort</strong>(int a[], int length)</p>
+<p>{</p>
+<p>&nbsp; buildheap(a, length);</p>
+<p>&nbsp; int heapsize, i, temp;</p>
+<p>&nbsp; heapsize = length - 1;</p>
+<p>&nbsp; for( i=heapsize; i &gt;= 0; i--)</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; temp = a[0];</p>
+<p>&nbsp;&nbsp;&nbsp; a[0] = a[heapsize];</p>
+<p>&nbsp;&nbsp;&nbsp; a[heapsize] = temp;</p>
+<p>&nbsp;&nbsp;&nbsp; heapsize--;</p>
+<p>&nbsp;&nbsp;&nbsp; satisfyheap(a, 0, heapsize);</p>
+<p>&nbsp; }</p>
+<p>&nbsp; for( i=0; i &lt; length; i++)</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; cout &lt;&lt; "\t" &lt;&lt; a[i];</p>
+<p>&nbsp; }</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>void <strong>buildheap</strong>(int a[], int length)</p>
+<p>{</p>
+<p>&nbsp; int i, heapsize;</p>
+<p>&nbsp; heapsize = length - 1;</p>
+<p>&nbsp; for( i=(length/2); i &gt;= 0; i--)</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; satisfyheap(a, i, heapsize);</p>
+<p>&nbsp; }</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>void <strong>satisfyheap</strong>(int a[], int i, int heapsize)</p>
+<p>{</p>
+<p>&nbsp; int l, r, largest, temp;</p>
+<p>&nbsp; l = 2*i;</p>
+<p>&nbsp; r = 2*i + 1;</p>
+<p>&nbsp; if(l &lt;= heapsize &amp;&amp; a[l] &gt; a[i])</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; largest = l;</p>
+<p>&nbsp; }</p>
+<p>&nbsp; else</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; largest = i;</p>
+<p>&nbsp; }</p>
+<p>&nbsp; if( r &lt;= heapsize &amp;&amp; a[r] &gt; a[largest])</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; largest = r;</p>
+<p>&nbsp; }</p>
+<p>&nbsp; if(largest != i)</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; temp = a[i];</p>
+<p>&nbsp;&nbsp;&nbsp; a[i] = a[largest];</p>
+<p>&nbsp;&nbsp;&nbsp; a[largest] = temp;</p>
+<p>&nbsp;&nbsp;&nbsp; satisfyheap(a, largest, heapsize);</p>
+<p>&nbsp; }</p>
+<p>}</p>
+<p><strong>Complexity Analysis of Heap Sort</strong></p>
+<p><strong>Worst Case Time Complexity :</strong> O(n log n)</p>
+<p><strong>Best Case Time Complexity :</strong> O(n log n)</p>
+<p><strong>Average Time Complexity :</strong> O(n log n)</p>
+<p><strong>Space Complexity : </strong>O(n)</p>
+<ul>
+<li>Heap sort is not a Stable sort, and requires a constant space for sorting a list.</li>
+<li>Heap Sort is very fast and is widely used for sorting.</li>
+</ul>
+<p><strong>Searching Algorithms on Array</strong></p>
+<p>Before studying searching algorithms on array we should know what is an algorithm?</p>
+<p>An <strong>algorithm</strong> is a step-by-step procedure or method for solving a problem by a computer in a given number of steps. The steps of an algorithm may include repetition depending upon the problem for which the algorithm is being developed. The algorithm is written in human readable and understandable form. To search an element in a given array, it can be done in two ways Linear search and Binary search.</p>
+<p><strong>Linear Search</strong></p>
+<p>A linear search is the basic and simple search algorithm. A linear search searches an element or value from an array till the desired element or value is not found and it searches in a sequence order. It compares the element with all the other elements given in the list and if the element is matched it returns the value index else it return -1. Linear Search is applied on the unsorted or unordered list when there are fewer elements in a list.</p>
+<p><strong>Example with Implementation</strong></p>
+<p>To search the element 5 it will go step by step in a sequence order.</p>
+<p>function <strong>findIndex</strong>(values, target)</p>
+<p>&nbsp;{</p>
+<p>&nbsp;&nbsp; for(var i = 0; i &lt; values.length; ++i)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (values[i] == target)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return i;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp; return -1;</p>
+<p>&nbsp;}</p>
+<p>//<em>call the function findIndex with array and number to be searched</em></p>
+<p>findIndex([ 8 , 2 , 6 , 3 , 5 ] , 5) ;</p>
+<p><strong>Binary Search</strong></p>
+<p>Binary Search is applied on the sorted array or list. In binary search, we first compare the value with the elements in the middle position of the array. If the value is matched, then we return the value. If the value is less than the middle element, then it must lie in the lower half of the array and if it's greater than the element then it must lie in the upper half of the array. We repeat this procedure on the lower (or upper) half of the array. Binary Search is useful when there are large numbers of elements in an array.</p>
+<p><strong>Example with Implementation</strong></p>
+<p>To search an element 13 from the sorted array or list.</p>
+<p>function findIndex(values, target)</p>
+<p>{</p>
+<p>&nbsp; return <strong>binarySearch</strong>(values, target, 0, values.length - 1);</p>
+<p>};</p>
+<p>&nbsp;</p>
+<p>function binarySearch(values, target, start, end) {</p>
+<p>&nbsp; if (start &gt; end) { return -1; } <em>//does not exist</em></p>
+<p>&nbsp;</p>
+<p>&nbsp; var middle = Math.floor((start + end) / 2);</p>
+<p>&nbsp; var value = values[middle];</p>
+<p>&nbsp;</p>
+<p>&nbsp; if (value &gt; target) { return <strong>binarySearch</strong>(values, target, start, middle-1); }</p>
+<p>&nbsp; if (value &lt; target) { return <strong>binarySearch</strong>(values, target, middle+1, end); }</p>
+<p>&nbsp; return middle; <em>//found!</em></p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>findIndex([2, 4, 7, 9, 13, 15], 13);</p>
+<p>In the above program logic, we are first comparing the middle number of the list, with the target, if it matches we return. If it doesn't, we see whether the middle number is greater than or smaller than the target.</p>
+<p>If the Middle number is greater than the Target, we start the binary search again, but this time on the left half of the list, that is from the start of the list to the middle, not beyond that.</p>
+<p>If the Middle number is smaller than the Target, we start the binary search again, but on the right half of the list, that is from the middle of the list to the end of the list.</p>
+<h1>======Data Structures======</h1>
+<p><strong>Stacks</strong></p>
+<p>Stack is an abstract data type with a bounded(predefined) capacity. It is a simple data structure that allows adding and removing elements in a particular order. Every time an element is added, it goes on the top of the stack, the only element that can be removed is the element that was at the top of the stack, just like a pile of objects.</p>
+<p><strong>Basic features of Stack</strong></p>
+<ol>
+<li>Stack is an ordered list of similar data type.</li>
+<li>Stack is a <strong>LIFO</strong> structure. (Last in First out).</li>
+<li><strong>push()</strong> function is used to insert new elements into the Stack and <strong>pop()</strong> is used to delete an element from the stack. Both insertion and deletion are allowed at only one end of Stack called <strong>Top</strong>.</li>
+<li>Stack is said to be in <strong>Overflow</strong> state when it is completely full and is said to be in <strong>Underflow</strong> state if it is completely empty.</li>
+</ol>
+<p><strong>Applications of Stack</strong></p>
+<p>The simplest application of a stack is to reverse a word. You push a given word to stack - letter by letter - and then pop letters from the stack.</p>
+<p>There are other uses also like : <strong>Parsing</strong>, <strong>Expression Conversion</strong>(Infix to Postfix, Postfix to Prefix etc) and many more.</p>
+<p><strong>Implementation of Stack</strong></p>
+<p>Stack can be easily implemented using an Array or a Linked List. Arrays are quick, but are limited in size and Linked List requires overhead to allocate, link, unlink, and deallocate, but is not limited in size. Here we will implement Stack using array.</p>
+<p>/*&nbsp; Below program is written in C++ language&nbsp; */</p>
+<p>&nbsp;</p>
+<p>Class <strong>Stack</strong></p>
+<p>{</p>
+<p>&nbsp; int top;</p>
+<p>&nbsp; public:</p>
+<p>&nbsp; int a[10];&nbsp;&nbsp;&nbsp; //Maximum size of Stack</p>
+<p>&nbsp; Stack()</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; top = -1;</p>
+<p>&nbsp; }</p>
+<p>};</p>
+<p>&nbsp;</p>
+<p>void Stack::<strong>push(int x)</strong></p>
+<p>{</p>
+<p>&nbsp; if( top &gt;= 10)</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; cout &lt;&lt; "Stack Overflow";</p>
+<p>&nbsp; }</p>
+<p>&nbsp; else</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; a[++top] = x;</p>
+<p>&nbsp;&nbsp;&nbsp; cout &lt;&lt; "Element Inserted";</p>
+<p>&nbsp; }</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>int Stack::<strong>pop()</strong></p>
+<p>{</p>
+<p>&nbsp; if(top &lt; 0)</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; cout &lt;&lt; "Stack Underflow";</p>
+<p>&nbsp;&nbsp;&nbsp; return 0;</p>
+<p>&nbsp; }</p>
+<p>&nbsp; else</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; int d = a[top--];</p>
+<p>&nbsp;&nbsp;&nbsp; return d;</p>
+<p>&nbsp; }</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>void Stack::<strong>isEmpty()</strong></p>
+<p>{</p>
+<p>&nbsp; if(top &lt; 0)</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; cout &lt;&lt; "Stack is empty";</p>
+<p>&nbsp; }</p>
+<p>&nbsp; else</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; cout &lt;&lt; "Stack is not empty";</p>
+<p>&nbsp; }</p>
+<p>}</p>
+<p>&nbsp;</p>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>Position of Top</strong></p>
+</td>
+<td>
+<p><strong>Status of Stack</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>-1</p>
+</td>
+<td>
+<p>Stack is Empty</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>Only one element in Stack</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>N-1</p>
+</td>
+<td>
+<p>Stack is Full</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>N</p>
+</td>
+<td>
+<p>Overflow state of Stack</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Analysis of Stacks</strong></p>
+<p>Below mentioned are the time complexities for various operations that can be performed on the Stack data structure.</p>
+<ul>
+<li><strong>Push Operation</strong> : O(1)</li>
+<li><strong>Pop Operation</strong> : O(1)</li>
+<li><strong>Top Operation</strong> : O(1)</li>
+<li><strong>Search Operation</strong> : O(n)</li>
+</ul>
+<p><strong>Queue Data Structures</strong></p>
+<p>Queue is also an abstract data type or a linear data structure, in which the first element is inserted from one end called <strong>REAR</strong>(also called tail), and the deletion of exisiting element takes place from the other end called as <strong>FRONT</strong>(also called head). This makes queue as FIFO data structure, which means that element inserted first will also be removed first.</p>
+<p>The process to add an element into queue is called <strong>Enqueue</strong> and the process of removal of an element from queue is called <strong>Dequeue</strong>.</p>
+<p><strong>Basic features of Queue</strong></p>
+<ol>
+<li>Like Stack, Queue is also an ordered list of elements of similar data types.</li>
+<li>Queue is a FIFO( First in First Out ) structure.</li>
+<li>Once a new element is inserted into the Queue, all the elements inserted before the new element in the queue must be removed, to remove the new element.</li>
+<li><strong>peek( )</strong> function is oftenly used to return the value of first element without dequeuing it.</li>
+</ol>
+<p><strong>Applications of Queue</strong></p>
+<p>Queue, as the name suggests is used whenever we need to have any group of objects in an order in which the first one coming in, also gets out first while the others wait for there turn, like in the following scenarios :</p>
+<ol>
+<li>Serving requests on a single shared resource, like a printer, CPU task scheduling etc.</li>
+<li>In real life, Call Center phone systems will use Queues, to hold people calling them in an order, until a service representative is free.</li>
+<li>Handling of interrupts in real-time systems. The interrupts are handled in the same order as they arrive, First come first served.</li>
+</ol>
+<p><strong>Implementation of Queue</strong></p>
+<p>Queue can be implemented using an Array, Stack or Linked List. The easiest way of implementing a queue is by using an Array. Initially the <strong>head</strong>(FRONT) and the <strong>tail</strong>(REAR) of the queue points at the first index of the array (starting the index of array from 0). As we add elements to the queue, the tail keeps on moving ahead, always pointing to the position where the next element will be inserted, while the head remains at the first index.</p>
+<p>When we remove element from Queue, we can follow two possible approaches (mentioned [A] and [B] in above diagram). In [A] approach, we remove the element at <strong>head</strong> position, and then one by one move all the other elements on position forward. In approach [B] we remove the element from <strong>head</strong> position and then move <strong>head</strong> to the next position.</p>
+<p>In approach [A] there is an overhead of shifting the elements one position forward every time we remove the first element. In approach [B] there is no such overhead, but whener we move head one position ahead, after removal of first element, the size on Queue is reduced by one space each time.</p>
+<p>/* Below program is wtitten in C++ language */</p>
+<p>&nbsp;</p>
+<p>#define SIZE 100</p>
+<p>class <strong>Queue</strong></p>
+<p>{</p>
+<p>&nbsp; int a[100];</p>
+<p>&nbsp; int rear;&nbsp;&nbsp;&nbsp;&nbsp; //same as tail</p>
+<p>&nbsp; int front;&nbsp;&nbsp;&nbsp; //same as head</p>
+<p>&nbsp;</p>
+<p>&nbsp; public:</p>
+<p>&nbsp; Queue()</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; rear = front = -1;</p>
+<p>&nbsp; }</p>
+<p>&nbsp; void enqueue(int x);&nbsp;&nbsp;&nbsp;&nbsp; //declaring enqueue, dequeue and display functions</p>
+<p>&nbsp; int dequeue();</p>
+<p>&nbsp; void display();</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>void Queue :: <strong>enqueue</strong>(int x)</p>
+<p>{</p>
+<p>&nbsp; if( rear = SIZE-1)</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; cout &lt;&lt; "Queue is full";</p>
+<p>&nbsp; }</p>
+<p>&nbsp; else</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; a[++rear] = x;</p>
+<p>&nbsp; }</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>int queue :: <strong>dequeue</strong>()</p>
+<p>{</p>
+<p>&nbsp; return a[++front];&nbsp;&nbsp;&nbsp;&nbsp; //following approach [B], explained above</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>void queue :: <strong>display</strong>()</p>
+<p>{</p>
+<p>&nbsp; int i;</p>
+<p>&nbsp; for( i = front; i &lt;= rear; i++)</p>
+<p>&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp; cout &lt;&lt; a[i];</p>
+<p>&nbsp; }</p>
+<p>}</p>
+<p>To implement approach [A], you simply need to change the dequeue method, and include a for loop which will shift all the remaining elements one position.</p>
+<p>return a[0];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //returning first element</p>
+<p>for (i = 0; i &lt; tail-1; i++)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //shifting all other elements</p>
+<p>{</p>
+<p>&nbsp; a[i]= a[i+1];</p>
+<p>&nbsp; tail--;</p>
+<p>}</p>
+<p><strong>Analysis of Queue</strong></p>
+<ul>
+<li>Enqueue : <strong>O(1)</strong></li>
+<li>Dequeue : <strong>O(1)</strong></li>
+<li>Size : <strong>O(1)</strong></li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Queue Data Structure using Stack</strong></p>
+<p>A Queue is defined by its property of FIFO, which means First in First Out, i.e the element which is added first is taken out first. Hence we can implement a Queue using Stack for storage instead of array.</p>
+<p>For performing <strong>enqueue</strong> we require only one stack as we can directly <strong>push</strong> data into stack, but to perform <strong>dequeue</strong> we will require two Stacks, because we need to follow queue's FIFO property and if we directly <strong>pop</strong> any data element out of Stack, it will follow LIFO approach(Last in First Out).</p>
+<p><strong>Implementation of Queue using Stacks</strong></p>
+<p>In all we will require two Stacks, we will call them InStack and OutStack.</p>
+<p>class Queue {</p>
+<p>&nbsp; public:</p>
+<p>&nbsp; Stack S1, S2;</p>
+<p>&nbsp; <em>//defining methods</em></p>
+<p>&nbsp;</p>
+<p>&nbsp; void <strong>enqueue</strong>(int x);</p>
+<p>&nbsp;</p>
+<p>&nbsp; int <strong>dequeue</strong>();</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>We know that, Stack is a data structure, in which data can be added using <strong>push()</strong> method and data can be deleted using <strong>pop()</strong> method. To learn about Stack, follow the link : <a href="http://www.studytonight.com/data-structures/stack-data-structure">Stack Data Structure</a></p>
+<p>&nbsp;</p>
+<p><strong>Adding Data to Queue</strong></p>
+<p>As our Queue has Stack for data storage in place of arrays, hence we will be adding data to Stack, which can be done using the push() method, hence :</p>
+<p>void Queue :: <strong>enqueue</strong>(int x) {</p>
+<p>&nbsp; S1.<strong>push</strong>(x);</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p><strong>Removing Data from Queue</strong></p>
+<p>When we say remove data from Queue, it always means taking out the First element first and so on, as we have to follow the FIFO approach. But if we simply perform S1.pop() in our <strong>dequeue</strong> method, then it will remove the Last element first. So what to do now?</p>
+<p>int Queue :: dequeue() {</p>
+<p>&nbsp; while(S1.isEmpty()) {</p>
+<p>&nbsp;&nbsp;&nbsp; x = S1.<strong>pop</strong>();</p>
+<p>&nbsp;&nbsp;&nbsp; S2.<strong>push</strong>();</p>
+<p>&nbsp; }</p>
+<p>&nbsp;</p>
+<p>&nbsp; <em>//removing the element</em></p>
+<p>&nbsp; x = S2.pop();</p>
+<p>&nbsp;</p>
+<p>&nbsp; while(!S2.isEmpty()) {</p>
+<p>&nbsp;&nbsp;&nbsp; x = S2.<strong>pop</strong>();</p>
+<p>&nbsp;&nbsp;&nbsp; S1.<strong>push</strong>(x);</p>
+<p>&nbsp; }</p>
+<p>&nbsp;</p>
+<p>&nbsp; return x;</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p><strong>Introduction to Linked Lists</strong></p>
+<p>Linked List is a linear data structure and it is very common data structure which consists of group of nodes in a sequence which is divided in two parts. Each node consists of its own data and the address of the next node and forms a chain. Linked Lists are used to create trees and graphs.</p>
+<p><strong>Advantages of Linked Lists</strong></p>
+<ul>
+<li>They are a dynamic in nature which allocates the memory when required.</li>
+<li>Insertion and deletion operations can be easily implemented.</li>
+<li>Stacks and queues can be easily executed.</li>
+<li>Linked List reduces the access time.</li>
+</ul>
+<p><strong>Disadvantages of Linked Lists</strong></p>
+<ul>
+<li>The memory is wasted as pointers require extra memory for storage.</li>
+<li>No element can be accessed randomly; it has to access each node sequentially.</li>
+<li>Reverse Traversing is difficult in linked list.</li>
+</ul>
+<p><strong>Applications of Linked Lists</strong></p>
+<ul>
+<li>Linked lists are used to implement stacks, queues, graphs, etc.</li>
+<li>Linked lists let you insert elements at the beginning and end of the list.</li>
+<li>In Linked Lists we don&rsquo;t need to know the size in advance.</li>
+</ul>
+<p><strong>Types of Linked Lists</strong></p>
+<ul>
+<li><strong>Singly Linked List :</strong> Singly linked lists contain nodes which have a data part as well as an address part i.e. next, which points to the next node in sequence of nodes. The operations we can perform on singly linked lists are insertion, deletion and traversal.</li>
+</ul>
+<ul>
+<li><strong>Doubly Linked List :</strong> In a doubly linked list, each node contains two links the first link points to the previous node and the next link points to the next node in the sequence.</li>
+</ul>
+<ul>
+<li><strong>Circular Linked List :</strong> In the circular linked list the last node of the list contains the address of the first node and forms a circular chain.</li>
+</ul>
+<p><strong>Linear Linked List</strong></p>
+<p>The element can be inserted in linked list in 2 ways :</p>
+<ul>
+<li>Insertion at beginning of the list.</li>
+<li>Insertion at the end of the list.</li>
+</ul>
+<p>We will also be adding some more useful methods like :</p>
+<ul>
+<li>Checking whether Linked List is empty or not.</li>
+<li>Searching any element in the Linked List</li>
+<li>Deleting a particular Node from the List</li>
+</ul>
+<p>Before inserting the node in the list we will create a class <strong>Node</strong>. Like shown below :</p>
+<p>class <strong>Node</strong> {</p>
+<p>&nbsp; public:</p>
+<p>&nbsp; int data;</p>
+<p>&nbsp; <em>//pointer to the next node</em></p>
+<p>&nbsp; node* next;</p>
+<p>&nbsp;</p>
+<p>&nbsp; <strong>node</strong>() {</p>
+<p>&nbsp;&nbsp;&nbsp; data = 0;</p>
+<p>&nbsp;&nbsp;&nbsp; next = NULL;</p>
+<p>&nbsp; }</p>
+<p>&nbsp;</p>
+<p>&nbsp; <strong>node</strong>(int x) {</p>
+<p>&nbsp;&nbsp;&nbsp; data = x;</p>
+<p>&nbsp;&nbsp;&nbsp; next = NULL;</p>
+<p>&nbsp; }</p>
+<p>}</p>
+<p>We can also make the properties data and next as private, in that case we will need to add the getter and setter methods to access them. You can add the getters and setter like this :</p>
+<p>int <strong>getData</strong>() {</p>
+<p>&nbsp; return data;</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>void <strong>setData</strong>(int x) {</p>
+<p>&nbsp; this.data = x;</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>node* <strong>getNext</strong>() {</p>
+<p>&nbsp; return next;</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>void <strong>setNext</strong>(node *n) {</p>
+<p>&nbsp; this.next = n;</p>
+<p>}</p>
+<p>Node class basically creates a node for the data which you enter to be included into Linked List. Once the node is created, we use various functions to fit in that node into the Linked List.</p>
+<p><strong>Linked List class</strong></p>
+<p>As we are following the complete OOPS methodology, hence we will create a separate class for <strong>Linked List</strong>, which will have all its methods. Following will be the Linked List class :</p>
+<p>class <strong>LinkedList</strong> {</p>
+<p>&nbsp; public:</p>
+<p>&nbsp; node *head;</p>
+<p>&nbsp; <em>//declaring the functions</em></p>
+<p>&nbsp;</p>
+<p>&nbsp; <em>//function to add Node at front</em></p>
+<p>&nbsp; int addAtFront(node *n);</p>
+<p>&nbsp; <em>//function to check whether Linked list is empty</em></p>
+<p>&nbsp; int isEmpty();</p>
+<p>&nbsp; <em>//function to add Node at the End of list</em></p>
+<p>&nbsp; int addAtEnd(node *n);</p>
+<p>&nbsp; <em>//function to search a value</em></p>
+<p>&nbsp; node* search(int k);</p>
+<p>&nbsp; <em>//function to delete any Node</em></p>
+<p>&nbsp; node* deleteNode(int x);</p>
+<p>&nbsp;</p>
+<p>&nbsp; <strong>LinkedList</strong>() {</p>
+<p>&nbsp;&nbsp;&nbsp; head = NULL;</p>
+<p>&nbsp; }</p>
+<p>}</p>
+<p><strong>Insertion at the Beginning</strong></p>
+<p>Steps to insert a Node at beginning :</p>
+<ol>
+<li>The first Node is the Head for any Linked List.</li>
+<li>When a new Linked List is instantiated, it just has the Head, which is Null.</li>
+<li>Else, the Head holds the pointer to the first Node of the List.</li>
+<li>When we want to add any Node at the front, we must make the head point to it.</li>
+<li>And the Next pointer of the newly added Node, must point to the previous Head, whether it be NULL(in case of new List) or the pointer to the first Node of the List.</li>
+<li>The previous Head Node is now the second Node of Linked List, because the new Node is added at the front.</li>
+</ol>
+<p>int LinkedList :: <strong>addAtFront</strong>(node *n) {</p>
+<p>&nbsp; int i = 0;</p>
+<p>&nbsp; <em>//making the next of the new Node point to Head</em></p>
+<p>&nbsp; n<strong>-&gt;</strong>next = head;</p>
+<p>&nbsp; <em>//making the new Node as Head</em></p>
+<p>&nbsp; head = n;</p>
+<p>&nbsp; i++;</p>
+<p>&nbsp; <em>//returning the position where Node is added</em></p>
+<p>&nbsp; return i;</p>
+<p>}</p>
+<p><strong>Inserting at the End</strong></p>
+<p>Steps to insert a Node at the end :</p>
+<ol>
+<li>If the Linked List is empty then we simply, add the new Node as the Head of the Linked List.</li>
+<li>If the Linked List is not empty then we find the last node, and make it' next to the new Node, hence making the new node the last Node.</li>
+</ol>
+<p>int LinkedList :: <strong>addAtEnd</strong>(node *n) {</p>
+<p>&nbsp; <em>//If list is empty</em></p>
+<p>&nbsp; if(head == NULL) {</p>
+<p>&nbsp;&nbsp;&nbsp; <em>//making the new Node as Head</em></p>
+<p>&nbsp;&nbsp;&nbsp; head = n;</p>
+<p>&nbsp;&nbsp;&nbsp; <em>//making the next pointe of the new Node as Null</em></p>
+<p>&nbsp;&nbsp;&nbsp; n<strong>-&gt;</strong>next = NULL;</p>
+<p>&nbsp; }</p>
+<p>&nbsp; else {</p>
+<p>&nbsp;&nbsp;&nbsp; <em>//getting the last node</em></p>
+<p>&nbsp;&nbsp;&nbsp; node *n2 = <strong>getLastNode</strong>();</p>
+<p>&nbsp;&nbsp;&nbsp; n2<strong>-&gt;</strong>next = n;</p>
+<p>&nbsp; }</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>node* LinkedList :: <strong>getLastNode</strong>() {</p>
+<p>&nbsp; <em>//creating a pointer pointing to Head</em></p>
+<p>&nbsp; node* ptr = head;</p>
+<p>&nbsp; <em>//Iterating over the list till the node whose Next pointer points to null</em></p>
+<p>&nbsp; <em>//Return that node, because that will be the last node.</em></p>
+<p>&nbsp; while(ptr<strong>-&gt;</strong>next!=NULL) {</p>
+<p>&nbsp;&nbsp;&nbsp; <em>//if Next is not Null, take the pointer one step forward</em></p>
+<p>&nbsp;&nbsp;&nbsp; ptr = ptr<strong>-&gt;</strong>next;</p>
+<p>&nbsp; }</p>
+<p>&nbsp; return ptr;</p>
+<p>}</p>
+<p><strong>Searching for an Element in the List</strong></p>
+<p>In searhing we do not have to do much, we just need to traverse like we did while getting the last node, in this case we will also compare the <strong>data</strong> of the Node. If we get the Node with the same data, we will return it, otherwise we will make our pointer point the next Node, and so on.</p>
+<p>node* LinkedList :: <strong>search</strong>(int x) {</p>
+<p>&nbsp; node *ptr = head;</p>
+<p>&nbsp; while(ptr != NULL &amp;&amp; ptr<strong>-&gt;</strong>data != x) {</p>
+<p>&nbsp;&nbsp;&nbsp; <em>//until we reach the end or we find a Node with data x, we keep moving</em></p>
+<p>&nbsp;&nbsp;&nbsp; ptr = ptr<strong>-&gt;</strong>next;</p>
+<p>&nbsp; }</p>
+<p>&nbsp; return ptr;</p>
+<p>}</p>
+<p><strong>Deleting a Node from the List</strong></p>
+<p>Deleting a node can be done in many ways, like we first search the Node with <strong>data</strong> which we want to delete and then we delete it. In our approach, we will define a method which will take the <strong>data</strong> to be deleted as argument, will use the search method to locate it and will then remove the Node from the List.</p>
+<p>To remove any Node from the list, we need to do the following :</p>
+<ul>
+<li>If the Node to be deleted is the first node, then simply set the Next pointer of the Head to point to the next element from the Node to be deleted.</li>
+<li>If the Node is in the middle somewhere, then find the Node before it, and make the Node before it point to the Node next to it.</li>
+</ul>
+<p>node* LinkedList :: <strong>deleteNode</strong>(int x) {</p>
+<p>&nbsp; <em>//searching the Node with data x</em></p>
+<p>&nbsp; node *n = <strong>search</strong>(x);</p>
+<p>&nbsp; node *ptr = head;</p>
+<p>&nbsp; if(ptr == n) {</p>
+<p>&nbsp;&nbsp;&nbsp; ptr<strong>-&gt;</strong>next = n<strong>-&gt;</strong>next;</p>
+<p>&nbsp;&nbsp;&nbsp; return n;</p>
+<p>&nbsp; }</p>
+<p>&nbsp; else {</p>
+<p>&nbsp;&nbsp;&nbsp; while(ptr<strong>-&gt;</strong>next != n) {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ptr = ptr<strong>-&gt;</strong>next;</p>
+<p>&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp;&nbsp; ptr<strong>-&gt;</strong>next = n<strong>-&gt;</strong>next;</p>
+<p>&nbsp;&nbsp;&nbsp; return n;</p>
+<p>&nbsp; }</p>
+<p>}</p>
+<p><strong>Checking whether the List is empty or not</strong></p>
+<p>We just need to check whether the <strong>Head</strong> of the List is NULL or not.</p>
+<p>int LinkedList :: <strong>isEmpty</strong>() {</p>
+<p>&nbsp; if(head == NULL) {</p>
+<p>&nbsp;&nbsp;&nbsp; return <strong>1</strong>;</p>
+<p>&nbsp; }</p>
+<p>&nbsp; else { return <strong>0</strong>; }</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>Now you know a lot about how to handle List, how to traverse it, how to search an element. You can yourself try to write new methods around the List.</p>
+<p>If you are still figuring out, how to call all these methods, then below is how your main() method will look like. As we have followed OOP standards, we will create the objects of <strong>LinkedList</strong> class to initialize our List and then we will create objects of <strong>Node</strong> class whenever we want to add any new node to the List.</p>
+<p>int main() {</p>
+<p>&nbsp; LinkedList L;</p>
+<p>&nbsp; <em>//We will ask value from user, read the value and add the value to our Node</em></p>
+<p>&nbsp; int x;</p>
+<p>&nbsp; cout &lt;&lt; "Please enter an integer value : ";</p>
+<p>&nbsp; cin &gt;&gt; x;</p>
+<p>&nbsp; Node *n1;</p>
+<p>&nbsp; <em>//Creating a new node with data as x</em></p>
+<p>&nbsp; n1 = new Node(x);</p>
+<p>&nbsp; <em>//Adding the node to the list</em></p>
+<p>&nbsp; L.addAtFront(n1);</p>
+<p>}</p>
+<p>Similarly you can call any of the functions of the LinkedList class, add as many Nodes you want to your List.</p>
+<h2>Circular Linked List</h2>
+<p>Circular Linked List is little more complicated linked data structure. In the circular linked list we can insert elements anywhere in the list whereas in the array we cannot insert element anywhere in the list because it is in the contiguous memory. In the circular linked list the previous element stores the address of the next element and the last element stores the address of the starting element. The elements points to each other in a circular way which forms a circular chain. The circular linked list has a dynamic size which means the memory can be allocated when it is required.</p>
+<h4>Application of Circular Linked List</h4>
+<ul>
+<li>The real life application where the circular linked list is used is our Personal Computers, where multiple applications are running. All the running applications are kept in a circular linked list and the OS gives a fixed time slot to all for running. The Operating System keeps on iterating over the linked list until all the applications are completed.</li>
+<li>Another example can be Multiplayer games. All the Players are kept in a Circular Linked List and the pointer keeps on moving forward as a player's chance ends.</li>
+<li>Circular Linked List can also be used to create Circular Queue. In a Queue we have to keep two pointers, FRONT and REAR in memory all the time, where as in Circular Linked List, only one pointer is required.</li>
+</ul>
+<h3>Implementing Circular Linked List</h3>
+<p>Implementing a circular linked list is very easy and almost similar to linear linked list implementation, with the only difference being that, in circular linked list the last <strong>Node</strong> will have it's <strong>next</strong> point to the <strong>Head</strong> of the List. In Linear linked list the last Node simply holds NULL in it's next pointer.</p>
+<p>So this will be oue Node class, as we have already studied in the lesson, it will be used to form the List.</p>
+<p>class <strong>Node</strong> {&nbsp; public:&nbsp; int data;&nbsp; <em>//pointer to the next node</em>&nbsp; node* next;&nbsp; &nbsp;&nbsp;<strong>node</strong>() {&nbsp;&nbsp;&nbsp; data = 0;&nbsp;&nbsp;&nbsp; next = NULL;&nbsp; }&nbsp; &nbsp;&nbsp;<strong>node</strong>(int x) {&nbsp;&nbsp;&nbsp; data = x;&nbsp;&nbsp;&nbsp; next = NULL;&nbsp; }}</p>
+<h4>Circular Linked List</h4>
+<p>Circular Linked List class will be almost same as the Linked List class that we studied in the previous lesson, with a few difference in the implementation of class methods.</p>
+<p>class <strong>CircularLinkedList</strong> {&nbsp; public:&nbsp; node *head;&nbsp; <em>//declaring the functions</em>&nbsp; &nbsp;&nbsp;<em>//function to add Node at front</em>&nbsp; int addAtFront(node *n);&nbsp; <em>//function to check whether Linked list is empty</em>&nbsp; int isEmpty();&nbsp; <em>//function to add Node at the End of list</em>&nbsp; int addAtEnd(node *n);&nbsp; <em>//function to search a value</em>&nbsp; node* search(int k);&nbsp; <em>//function to delete any Node</em>&nbsp; node* deleteNode(int x);&nbsp; &nbsp;&nbsp;<strong>CircularLinkedList</strong>() {&nbsp;&nbsp;&nbsp; head = NULL;&nbsp; }}</p>
+<h4>Insertion at the Beginning</h4>
+<p>Steps to insert a Node at beginning :</p>
+<ol>
+<li>The first Node is the Head for any Linked List.</li>
+<li>When a new Linked List is instantiated, it just has the Head, which is Null.</li>
+<li>Else, the Head holds the pointer to the fisrt Node of the List.</li>
+<li>When we want to add any Node at the front, we must make the head point to it.</li>
+<li>And the Next pointer of the newly added Node, must point to the previous Head, whether it be NULL(in case of new List) or the pointer to the first Node of the List.</li>
+<li>The previous Head Node is now the second Node of Linked List, because the new Node is added at the front.</li>
+</ol>
+<p>int CircularLinkedList :: <strong>addAtFront</strong>(node *n) {&nbsp; int i = 0;&nbsp; <em>/* If the list is empty */</em>&nbsp; if(head == NULL) {&nbsp;&nbsp;&nbsp; n<strong>-&gt;</strong>next = head;&nbsp;&nbsp;&nbsp; <em>//making the new Node as Head</em>&nbsp;&nbsp;&nbsp; head = n;&nbsp;&nbsp;&nbsp; i++;&nbsp; }&nbsp; else {&nbsp;&nbsp;&nbsp; n-&gt;next = head;&nbsp;&nbsp;&nbsp; <em>//get the Last Node and make its next point to new Node</em>&nbsp;&nbsp;&nbsp; Node* last = <strong>getLastNode</strong>();&nbsp;&nbsp;&nbsp; last-&gt;next = n;&nbsp;&nbsp;&nbsp; <em>//also make the head point to the new first Node</em>&nbsp;&nbsp;&nbsp; head = n;&nbsp;&nbsp;&nbsp; i++;&nbsp; }&nbsp; <em>//returning the position where Node is added</em>&nbsp; return i;}</p>
+<h4>Insertion at the End</h4>
+<p>Steps to insert a Node at the end :</p>
+<ol>
+<li>If the Linked List is empty then we simply, add the new Node as the Head of the Linked List.</li>
+<li>If the Linked List is not empty then we find the last node, and make it' next to the new Node, and make the next of the Newly added Node point to the Head of the List.</li>
+</ol>
+<p>int CircularLinkedList :: <strong>addAtEnd</strong>(node *n) {&nbsp; <em>//If list is empty</em>&nbsp; if(head == NULL) {&nbsp;&nbsp;&nbsp; <em>//making the new Node as Head</em>&nbsp;&nbsp;&nbsp; head = n;&nbsp;&nbsp;&nbsp; <em>//making the next pointer of the new Node as Null</em>&nbsp;&nbsp;&nbsp; n<strong>-&gt;</strong>next = NULL;&nbsp; }&nbsp; else {&nbsp;&nbsp;&nbsp; <em>//getting the last node</em>&nbsp;&nbsp;&nbsp; node *last = <strong>getLastNode</strong>();&nbsp;&nbsp;&nbsp; last<strong>-&gt;</strong>next = n;&nbsp;&nbsp;&nbsp; <em>//making the next pointer of new node point to head</em>&nbsp;&nbsp;&nbsp; n<strong>-&gt;</strong>next = head;&nbsp; } }</p>
+<h4>Searching for an Element in the List</h4>
+<p>In searhing we do not have to do much, we just need to traverse like we did while getting the last node, in this case we will also compare the <strong>data</strong> of the Node. If we get the Node with the same data, we will return it, otherwise we will make our pointer point the next Node, and so on.</p>
+<p>node* CircularLinkedList :: <strong>search</strong>(int x) {&nbsp; node *ptr = head;&nbsp; while(ptr != NULL &amp;&amp; ptr<strong>-&gt;</strong>data != x) {&nbsp;&nbsp;&nbsp; <em>//until we reach the end or we find a Node with data x, we keep moving</em>&nbsp;&nbsp;&nbsp; ptr = ptr<strong>-&gt;</strong>next;&nbsp; }&nbsp; return ptr;}</p>
+<h4>Deleting a Node from the List</h4>
+<p>Deleting a node can be done in many ways, like we first search the Node with <strong>data</strong> which we want to delete and then we delete it. In our approach, we will define a method which will take the <strong>data</strong> to be deleted as argument, will use the search method to locate it and will then remove the Node from the List.</p>
+<p>To remove any Node from the list, we need to do the following :</p>
+<ul>
+<li>If the Node to be deleted is the first node, then simply set the Next pointer of the Head to point to the next element from the Node to be deleted. And update the next pointer of the Last Node as well.</li>
+<li>If the Node is in the middle somewhere, then find the Node before it, and make the Node before it point to the Node next to it.</li>
+<li>If the Node is at the end, then remove it and make the new last node point to the head.</li>
+</ul>
+<p>node* CircularLinkedList :: <strong>deleteNode</strong>(int x) {&nbsp; <em>//searching the Node with data x</em>&nbsp; node *n = <strong>search</strong>(x);&nbsp; node *ptr = head;&nbsp; <strong>if</strong>(ptr == NULL) {&nbsp;&nbsp;&nbsp; cout &lt;&lt; "List is empty";&nbsp;&nbsp;&nbsp; return NULL;&nbsp; }&nbsp; <strong>else if</strong>(ptr == n) {&nbsp;&nbsp;&nbsp; ptr<strong>-&gt;</strong>next = n<strong>-&gt;</strong>next;&nbsp;&nbsp;&nbsp; return n;&nbsp; }&nbsp; <strong>else</strong> {&nbsp;&nbsp;&nbsp; while(ptr<strong>-&gt;</strong>next != n) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ptr = ptr<strong>-&gt;</strong>next;&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp; ptr<strong>-&gt;</strong>next = n<strong>-&gt;</strong>next;&nbsp;&nbsp;&nbsp; return n;&nbsp; }}</p>
+<p>&nbsp;</p>
+
 </body>
 </html>
