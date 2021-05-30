@@ -4,70 +4,63 @@
 
 <button type="button" onclick="document.location='index.html'" style="position:fixed;">Back To HOME</button>
 <br>
-<h1>JSON Links</h1>
+<h1>JSON Concepts</h1>
 
-<h1>JSON</h1>
-<h1>What Is JSON, Complete Introduction To JSON</h1>
-<p>JSON is JavaScript Object Notation [ it&rsquo;s the damn default definition ], and was invented by Douglas Crockford. Actually JSON is lightweight alternative to XML, language and platform independent script. Even JSON parsers &amp; libraries are exists for many programming languages.</p>
-<p>Converting JSON text to something in JavaScript will takes one line of code by using eval function , to create an object from JSON text, just pass the string to eval function after surrounding the text with parentheses that&rsquo;s it.</p>
-<h2>Creating JSON Object From JSON text</h2>
-<p>var names = "{"nameslist": ["java4s","php4s","visa4s"]}";</p>
-<ul>
-<li>The variable names will hold the JSON text</li>
-<li>Whole JSON text must be surrounded by quotes</li>
-</ul>
-<h2>Convert This Variable (names) Into JavaScript object</h2>
-<p>Actually we can convert JSON text into JavaScript object with eval function. eval() is the JavaScript function which converts JSON text into an JavaScript object, see this&hellip;</p>
-<p>var MyJavaScriptObject = eval("(" + names + ")");</p>
 <p>&nbsp;</p>
-<h2>How To Access This JSON Object</h2>
-<p>&nbsp;</p>
-<p>var namesArray = MyJavaScriptObject["nameslist"];</p>
-<p>Now you can print the values&hellip;</p>
-<p>namesArray[0] will prints - java4s</p>
-<p>namesArray[1] will prints - php4s</p>
-<p>namesArray[2] will prints - visa4s</p>
-<p>&nbsp;</p>
-<p>Note: Index always start from zero</p>
-<p>Rather using eval() function It is safer to use a JSON parser to convert a JSON text to a JavaScript object. A JSON parser will recognize only JSON text and will not compile scripts, will see the complete example in the next tutorial.</p>
-<h1>Example On Converting JSON Text To JavaScript Object</h1>
-<ul>
-<li>JSON arrays are written inside square brackets</li>
-<li>Array can contain any number of objects</li>
-</ul>
-<h2>Syntax</h2>
-<p>{"names": ['+'{"name" : "java4s",&nbsp;&nbsp;"address"&nbsp;&nbsp;: "United States", "admin"&nbsp;&nbsp;: "sivateja",&nbsp;&nbsp;"age"&nbsp;&nbsp;: 25},'+'{"name" : "php4s",&nbsp;&nbsp;"address"&nbsp;&nbsp;: "United States", "admin"&nbsp;&nbsp;: "teja",&nbsp;&nbsp;"age"&nbsp;&nbsp;: 26}'+']}</p>
-<p>&nbsp;</p>
-<p>Here names is an array containing 2 objects. By using JavaScript syntax we can access the values with the help of &ldquo;.&rdquo; operator, will show you this in the following example.</p>
-<p>&lt;html&gt;</p>
-<p>&lt;head&gt;</p>
-<p>&lt;title&gt;</p>
-<p>How To Create JSON Object Array</p>
-<p>&lt;/title&gt;</p>
-<p>&lt;script language="javascript" &gt;</p>
-<p>&nbsp;</p>
-<p>var JsonObjecttext = '{"names": ['+'{"name" : "java4s",&nbsp;&nbsp;"address"&nbsp;&nbsp;: "United States", "admin"&nbsp;&nbsp;: "sivateja",&nbsp;&nbsp;"age"&nbsp;&nbsp;: 25},'+'{"name" : "php4s",&nbsp;&nbsp;"address"&nbsp;&nbsp;: "United States", "admin"&nbsp;&nbsp;: "teja",&nbsp;&nbsp;"age"&nbsp;&nbsp;: 26}'+']}';</p>
-<p>&nbsp;</p>
-<p>var JsonObjectName = eval ("(" + JsonObjecttext + ")");</p>
-<p>&nbsp;</p>
-<p>document.write("&lt;font color='#148ee3' size='2' face='verdana'&gt;Name - &lt;font color='#000'&gt;" +JsonObjectName.names[0].name+"&lt;/font&gt;&lt;/font&gt; || ");</p>
-<p>document.write("&lt;font color='#148ee3' size='2' face='verdana'&gt;Age. - &lt;font color='#000'&gt;" +JsonObjectName.names[0].age+"&lt;/font&gt;&lt;/font&gt; || ");</p>
-<p>document.write("&lt;font color='#148ee3' size='2' face='verdana'&gt;name - &lt;font color='#000'&gt;" +JsonObjectName.names[1].name+"&lt;/font&gt;&lt;/font&gt; || ");</p>
-<p>document.write("&lt;font color='#148ee3' size='2' face='verdana'&gt;name - &lt;font color='#000'&gt;" +JsonObjectName.names[1].age+"&lt;/font&gt;&lt;/font&gt;");</p>
-<p>&nbsp;</p>
-<p>&lt;/script&gt;</p>
-<p>&lt;/head&gt;</p>
-<p>&lt;body&gt;</p>
-<p>&lt;br&gt;</p>
-<p>&lt;font face="verdana" size="4"&gt;Example On Createing JSON Object Array&lt;/font&gt;&lt;br&gt;&lt;br&gt;</p>
-<p>&nbsp;</p>
-<p>&lt;font face="verdana" color="#ff0024" size="2"&gt;</p>
-<p>Note:&lt;br&gt;</p>
-<p>&lt;font color="#000"&gt;</p>
-<p>var JsonObjectName - Here JsonObjectName is the object name, &lt;br&gt;can give your own name.&lt;/font&gt;&lt;/font&gt;</p>
-<p>&lt;/body&gt;</p>
-<p>&lt;/html&gt;</p>
-<p>&nbsp;</p>
+<p><strong>What does JSON stand for?</strong></p>
+<p>JSON stands for &ldquo;JavaScript Object Notation&rdquo;.</p>
+<p><strong>what is JSON?</strong></p>
+<p>&nbsp;<a href="https://en.wikipedia.org/wiki/JSON" target="_blank" rel="noopener">JSON</a> is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. It is based on a subset of the JavaScript Programming Language, Standard ECMA.</p>
+<p><strong>What programming languages supported by JSON?</strong></p>
+<p>JSON is a text format that is completely language independent but uses conventions that are familiar to programmers of the C-family of languages, including C, C++, C#, Java, JavaScript, Perl, Python, and many others.</p>
+<p><strong>What is JSON Syntax?</strong></p>
+<p>JSON syntax is derived from JavaScript object notation syntax. Data is in name/value pairs. Data is separated by commas. Curly braces hold objects. Square brackets hold arrays.</p>
+<p><strong>Is JSON is a language?</strong></p>
+<p>JSON is a data format. It could be classified as a language, but not a programming language. Its relationship to JavaScript is that it shares its syntax (more or less) with a subset of JavaScript literals.</p>
+<p><strong>Why do we use JSON?</strong></p>
+<p>The JSON format is often used for serializing and transmitting structured data over a network connection. It is used primarily to transmit data between a server and web application, serving as an alternative to XML.</p>
+<p><strong>What is JSON Value?</strong></p>
+<p>A JSON value can be an object, array, number, string, true, false, or null.</p>
+<p><strong>&nbsp;What is JSON data?</strong></p>
+<p>JSON, or JavaScript Object Notation, is a minimal, readable format for structuring data. In JSON data is nothing but a information. It is used primarily to transmit data between a server and web application, as an alternative to XML.</p>
+<p><strong>What is JSON Array?</strong></p>
+<p>An array structure is a pair of square bracket tokens surrounding zero or more values. An array is an ordered collection of values. An array begins with [ (left bracket) and ends with ] (right bracket). Values are separated by , (comma).</p>
+<p>The values are separated by commas. The JSON syntax does not define any specific meaning to the ordering of the values. However, the JSON array structure is often used in situations where there is some semantics to the ordering.</p>
+<p><strong>What is the difference between XML and JSON?</strong></p>
+<p>The fundamental difference, which no other answer seems to have mentioned, is that XML is a markup language (as it actually says in its name), whereas JSON is a way of representing objects (as also noted in its name). This is what makes markup languages so useful for representing documents.</p>
+<p><strong>Why JSON format is better than XML?</strong></p>
+<p>JSON and XML used different formats. When compared both JSON is easy to write and use it applications then XML. The XML format can also be determined by the XML DTD or XML Schema (XSL) and can be tested.</p>
+<p>The JSON a data-exchange format which is getting more popular as the JavaScript applications possible format. Basically this is an object notation array. JSON has a very simple syntax so can be easily learned.</p>
+<p><strong>Is JSON markup language?</strong></p>
+<p>JSON is like XML in that it is used to structure data in <a href="https://textfancy.com" target="_blank">a text</a> format and is commonly used to exchange data over the Internet. JSON is not a markup language. JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write.</p>
+<p><strong>What are the properties of JSON?</strong></p>
+<p>These properties make JSON an ideal data-interchange language.</p>
+<p>JSON is built on two structures:</p>
+<p>A collection of name/value pairs. In various languages, this is realized as an object, record, struct, dictionary, hash table, keyed list, or associative array.</p>
+<p>An ordered list of values. In most languages, this is realized as an array, vector, list, or sequence.</p>
+<p>These are universal data structures. Virtually all modern programming languages support them in one form or another. It makes sense that a data format that is interchangeable with programming languages also be based on these structures.</p>
+<p><strong>What is a JSON parser?</strong></p>
+<p>JSON parser to parse JSON object and MAINTAIN comments. By using JSON, when receiving data from a web server, the data should be always in a string format. We use JSON.parse() to parse the data and it becomes a JavaScript object.</p>
+<p>The JSON.parse() method parses a JSON string, constructing the JavaScript value or object described by the string. An optional reviver function can be provided to perform a transformation on the resulting object before it is returned.</p>
+<p><strong>&nbsp;Which browser provides native JSON support?</strong></p>
+<p>All modern browsers support native JSON encoding/decoding (Internet Explorer 8+, Firefox 3.1+, Safari 4+, and Chrome 3+). Basically, JSON.parse(str) will parse the JSON string in str and return an object, and JSON.stringify(obj) will return the JSON representation of the object obj.</p>
+<p><strong>What is the difference between JSON parse and JSON Stringify?</strong></p>
+<p>JSON.stringify() is to create a JSON string out of an object/array. They are the inverse of each other. JSON.stringify() serializes a JS object into a JSON string, whereas JSON.parse() will deserialize a JSON string into a JS object.</p>
+<p><strong>What is the MIME type of JSON?</strong></p>
+<p>The MIME media type for JSON text is application/json . The default encoding is UTF-8.</p>
+<p><strong>&nbsp;What is the use of JSON Stringify?</strong></p>
+<p>The JSON.stringify() method converts a JavaScript value to a JSON string, optionally replacing values if a replacer function is specified, or optionally including only the specified properties if a replacer array is specified.</p>
+<p><strong>What does JSON </strong>parse<strong>&nbsp;do?</strong></p>
+<p>The JSON.parse() method parses a JSON string, constructing the JavaScript value or object described by the string. An optional reviver function can be provided to perform a transformation on the resulting object before it is returned.</p>
+<p><strong>What is JSON Formatter?</strong></p>
+<p>&nbsp;The JSON Formatter &amp; Validator helps debugging JSON data by formatting and validating JSON data so that it can easily be read by human beings.</p>
+<p><strong>What is JSON Viewer?</strong></p>
+<p>JSON Viewer &ndash; Convert JSON Strings to a Friendly Readable Format.</p>
+<p><strong>What is JSON Validator?</strong></p>
+<p>The JSON Validator helps debugging JSON data by formatting and validating JSON data so that it can easily be read by human beings.</p>
+<p><strong>What is JSON Schema?</strong></p>
+<p>JSON Schema is a specification for JSON based format for defining the structure of JSON data.</p>
+
 
 </body>
 </html>

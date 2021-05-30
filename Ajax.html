@@ -6,24 +6,188 @@
 <br>
 <h1>AJAX Links</h1>
 
-<h1>AJAX</h1>
-<h1>What is Ajax, Introduction to Ajax</h1>
+
+
+
+<p>&nbsp;</p>
+<p><a href="https://www.educba.com/ajax-interview-questions/" target="_blank">https://www.educba.com/ajax-interview-questions/</a></p>
+<p><a href="https://www.javatpoint.com/ajax-interview-questions" target="_blank">https://www.javatpoint.com/ajax-interview-questions</a></p>
+<h3 class="h3">What is AJAX?</h3>
+<p>AJAX stands for Asynchronous JavaScript and XML. It is a group of related technologies used to display data asynchronously. In other words, it sends and retrieves data without reloading the web page</p>
+<h3 class="h3">What are the advantages of AJAX?</h3>
+<ul class="points">
+<li>Quick Response</li>
+<li>Bandwidth utilization</li>
+<li>The user is not blocked until data is retrieved from the server.</li>
+<li>It allows us to send only important data to the server.</li>
+<li>It makes the application interactive and faster.</li>
+</ul>
+<h3 class="h3">What are the disadvantages of AJAX?</h3>
+<ul class="points">
+<li>Dependent on JavaScript</li>
+<li>Security issues</li>
+<li>Debugging is difficult</li>
+</ul>
+<h3 class="h3">What are the real web applications of AJAX currently running in the market?</h3>
+<ul class="points">
+<li>Twitter</li>
+<li>Facebook</li>
+<li>Gmail</li>
+<li>Javatpoint</li>
+<li>Youtube</li>
+</ul>
+<h3 class="h3">What are the security issues with AJAX?</h3>
+<ul class="points">
+<li>AJAX source code is readable</li>
+<li>Attackers can insert the script into the system</li>
+</ul>
+<h3 class="h3">What is the difference between synchronous and asynchronous requests?</h3>
+<p>Synchronous request blocks the user until a response is retrieved whereas asynchronous doesn't block the user.&nbsp;<a href="https://www.javatpoint.com/understanding-synchronous-vs-asynchronous">More details.</a></p>
+<h4 class="h4">Synchronous Request</h4>
+<p><img src="https://www.javatpoint.com/images/ajax/synchronous.gif" alt="synchronous request" /></p>
+<h4 class="h4">Asynchronous Request</h4>
+<p><img src="https://www.javatpoint.com/images/ajax/asynchronous.gif" alt="asynchronous request" /></p>
+<p>&nbsp;</p>
+<h3 class="h3">What are the technologies used by AJAX?</h3>
+<ul class="points">
+<li>HTML/XHTML <a href="https://htmlcheatsheet.com/css/" target="_blank" rel="nofollow">and CSS -</a> These technologies are used for displaying content and style.</li>
+<li>DOM - It is used for dynamic display and interaction with data.</li>
+<li>XML - It is used for carrying data to and from server</li>
+<li>XMLHttpRequest - It is used for asynchronous communication between client and server.</li>
+<li>JavaScript - It is used mainly for client-side validation</li>
+</ul>
+<h3 class="h3">What is the purpose of XMLHttpRequest?</h3>
+<ul class="points">
+<li>It sends data in the background to the server.</li>
+<li>It requests data from the server.</li>
+<li>It receives data from the server.</li>
+<li>It updates data without reloading the page.</li>
+</ul>
+<h3 class="h3">What are the properties of XMLHttpRequest?</h3>
+<p>The important properties of the XMLHttpRequest object are given below.</p>
+<ul class="points">
+<li>onReadyStateChange - It is called whenever readystate attribute changes.</li>
+<li>readyState - It represents the state of the request.</li>
+<li>responseText - It returns response as text.</li>
+<li>responseXML - It returns response as XML.</li>
+<li>status - It returns the status number of a request.</li>
+<li>statusText - It returns the details of status.</li>
+</ul>
+<h3 class="h3">What are the important methods of XMLHttpRequest?</h3>
+<ul class="points">
+<li>abort() - It is used to cancel the current request.</li>
+<li>getAllResponseHeaders() - It returns the header details.</li>
+<li>getResponseHeader() - It returns the specific header details.</li>
+<li>open() - It is used to open the request.</li>
+<li>send() - It is used to send the request.</li>
+<li>setRequestHeader() - It adds request header.</li>
+</ul>
+<h3 class="h3">What are the types of open() method used for XMLHttpRequest?</h3>
+<ul class="points">
+<li>open(method, URL) - It opens the request specifying get or post method and URL.</li>
+<li>open(method, URL, async) - It is same as above but specifies asynchronous or not.</li>
+<li>open(method, URL, async, username, password) - It is same as above but specifies the username and password</li>
+</ul>
+<h3 class="h3">What are the types of send() method used for XMLHttpRequest?</h3>
+<ul class="points">
+<li>send() - It sends get request</li>
+<li>send(string) - It sends post request.</li>
+</ul>
+<h3 class="h3">What is the role of the callback function in AJAX?</h3>
+<p>The callback function passes a function as a parameter to another function. If we have to perform various AJAX tasks on a website, then we can create one function for executing XMLHttpRequest and a callback function to execute each AJAX task.</p>
+<p><img src="https://www.javatpoint.com/images/ajax/howajaxworks.png" alt="how ajax works, flow of ajax" /></p>
+<h3 class="h3">What is JSON in AJAX?</h3>
+<p>JSON stands for JavaScript Object Notation. In AJAX, it is used to exchange data between a browser and a server. It is easy to understand, and data exchange is faster than XML. It supports array, object, string, number, and values.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<ol class="dp-xml" start="1">
+<li class="alt"><span class="attribute">request.onreadystatechange</span>&nbsp;&nbsp;=&nbsp;<span class="attribute-value">function</span>(){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(<span class="attribute">request.readyState</span>&nbsp;==&nbsp;4&nbsp;&nbsp;)&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;<span class="attribute">jsonObj</span>&nbsp;=&nbsp;<span class="attribute-value">JSON</span>.parse(request.responseText);//JSON.parse()&nbsp;returns&nbsp;JSON&nbsp;object&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("date")<span class="attribute">.innerHTML</span>&nbsp;=&nbsp;&nbsp;<span class="attribute-value">jsonObj</span>.date;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("time")<span class="attribute">.innerHTML</span>&nbsp;=&nbsp;<span class="attribute-value">jsonObj</span>.time;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+</ol>
+<h3 class="h3">What are the tools for debugging AJAX applications?</h3>
+<p>There are several tools for debugging AJAX applications.</p>
+<ul class="points">
+<li>Firebug for Mozilla Firefox</li>
+<li>Fiddler for IE (Internet Explorer)</li>
+<li>JavaScript HTML Debugger</li>
+<li>MyEclipse AJAX Tools</li>
+<li>Script Debugger</li>
+</ul>
+<h3 class="h3">What are the types of post back in AJAX?</h3>
+<p>There are two types of post back in AJAX.</p>
+<ul class="points">
+<ul class="points">
+<li>Synchronous Postback - It blocks the client until the operation completes.</li>
+</ul>
+</ul>
+<p><img src="https://www.javatpoint.com/images/ajax/synchronousrequest.jpg" alt="how synchronous request works" /></p>
+<ul class="points">
+<ul class="points">
+<li>Asynchronous Postback - It doesn?t block the client.</li>
+</ul>
+</ul>
+<p><img src="https://www.javatpoint.com/images/ajax/asynchronousrequest.jpg" alt="how asynchronous request works" /></p>
+<h3 class="h3">What are the different ready states of a request in AJAX?</h3>
+<p>There are 5 ready states of a request in AJAX.</p>
+<ul class="points">
+<li>0 means UNOPENED</li>
+<li>1 means OPENED</li>
+<li>2 means HEADERS_RECEIVED</li>
+<li>3 means LOADING</li>
+<li>4 means DONE</li>
+</ul>
+<h3 class="h3">What are the common AJAX frameworks?</h3>
+<ul class="points">
+<li>Dojo Toolkit</li>
+<li>YUI</li>
+<li>Google Web Toolkit (GWT)</li>
+<li>Spry</li>
+<li>MooTools</li>
+<li>Prototype</li>
+</ul>
+<h3 class="h3">How can you test the AJAX code?</h3>
+<p>JUnit is the open source unit testing framework for client-side JavaScript. It is required to create test cases. The unit test case is a code which ensures that the program logic works as expected.</p>
+<p>&nbsp;</p>
+<h3 class="h3">What is the difference between JavaScript and AJAX?</h3>
+<table class="alt">
+<tbody>
+<tr>
+<td>JavaScript is an object-based scripting language.</td>
+<td>AJAX is a group of inter-related technologies like JavaScript, XML, HTML, CSS etc</td>
+</tr>
+<tr>
+<td>It requests the server and waits for the response.</td>
+<td>It sends a request to the server and doesn't wait for the response.</td>
+</tr>
+<tr>
+<td>It consumes more bandwidth as it reloads the page.</td>
+<td>It doesn't reload the page so consumes less bandwidth.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h4>What is Ajax, Introduction to Ajax</h4>
 <p>Ajax is not a programming language, its the script.&nbsp; Ajax means, Asynchronous java script and xml, and this is the type of programming made popular in 2005 by Google suggest [Google search, while we are typing some thing in Google search box it will show you some suggestions automatically right that is Ajax]</p>
 <p>With Ajax we can move the data from our web page to the server, and we can update the part of our web page with out refreshing the entire page, cool na</p>
 <p>And mates,&nbsp; Ajax is the widely using scripting concept now a days in the real time projects.</p>
 <p>And its highly recommended to know JavaScript and CSS, xml a little before we start Ajax programs</p>
-<p>&nbsp;</p>
-<h2>What is Synchronous &amp; Asynchronous</h2>
+<h4>What is Synchronous &amp; Asynchronous</h4>
 <p>Actually, Synchronous means at a time we can send single request and we need to wait for the response before send the second request, and Asynchronous means we can send the second request before we get the response of first request, Ajax is the example of this Asynchronous type.</p>
-<p><strong>Platform</strong><strong>:</strong> AJAX applications are platform independent, we can expect the exact working style in all the platforms</p>
-<h1>Ajax First Program With Explanation</h1>
+<p><strong>Platform</strong><strong>:</strong>&nbsp;AJAX applications are platform independent, we can expect the exact working style in all the platforms</p>
+<h4>Ajax First Program With Explanation</h4>
 <p>&lt;html&gt;</p>
 <p>&lt;head&gt;</p>
 <p>&lt;script type="text/javascript"&gt;</p>
 <p>function fun1()</p>
 <p>{</p>
 <p>var a;</p>
-<p>&nbsp;</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;if (window.XMLHttpRequest)</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;{// If the browser if IE7+[or]Firefox[or]Chrome[or]Opera[or]Safari</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a=new XMLHttpRequest();</p>
@@ -32,7 +196,6 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;{//If browser is IE6, IE5</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a=new ActiveXObject("Microsoft.XMLHTTP");</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
-<p>&nbsp;</p>
 <p>a.onreadystatechange=function()</p>
 <p>{</p>
 <p>&nbsp;&nbsp;if (a.readyState==4 &amp;&amp; a.status==200)</p>
@@ -40,56 +203,50 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("myDiv").innerHTML=a.responseText;</p>
 <p>&nbsp;&nbsp; }</p>
 <p>}</p>
-<p>&nbsp;</p>
 <p>a.open("POST","java4s.txt",true);</p>
 <p>a.send();</p>
 <p>} // fun1() close</p>
 <p>&lt;/script&gt;</p>
 <p>&lt;/head&gt;</p>
 <p>&lt;body&gt;</p>
-<p>&nbsp;</p>
 <p>&lt;div id="myDiv" style="width: 300px; height: 30px;"&gt;Click on the button below&lt;/div&gt;</p>
 <p>&lt;button type="button" onclick="fun1()"&gt;Change Content&lt;/button&gt;</p>
-<p>&nbsp;</p>
 <p>&lt;/body&gt;</p>
 <p>&lt;/html&gt;</p>
-<h2><strong>Explanation</strong></h2>
+<h4>Explanation</h4>
 <ul>
-<li>Once the document loaded then immediately we will be able to see one button <strong>Change Content&nbsp;</strong>, and see i have been given onclick=&rdquo;fun1()&rdquo; [ line number 33 ] means once we click on this button controller will go to line number 4 and will starts execute that fun1()</li>
-<li>At line number 6, i have taken one variable with name <strong>a</strong></li>
+<li>Once the document loaded then immediately we will be able to see one button&nbsp;<strong>Change Content&nbsp;</strong>, and see i have been given onclick=&rdquo;fun1()&rdquo; [ line number 33 ] means once we click on this button controller will go to line number 4 and will starts execute that fun1()</li>
+<li>At line number 6, i have taken one variable with name&nbsp;<strong>a</strong></li>
 <li>For any ajax program, we must create one request object to send our ajax request to the server, that ajax object is nothing but XMLHttpRequest object</li>
 <li>See line number 8,&nbsp; i have written window.XMLHttpRequest means am checking whether my browser supports XMLHttpRequest object or not, if yes assigning XMLHttpRequest object into a [&nbsp;a=new XMLHttpRequest(); ] else i mean if our web browser doesnt supports&nbsp;XMLHttpRequest object then we can assign ActiveXObject&nbsp;&nbsp; [ which supports old web browsers ] into our variable a [&nbsp;&nbsp;a=new ActiveXObject(&ldquo;Microsoft.XMLHTTP&rdquo;); ]</li>
 <li>So from line numbers 8 -15 request object creation work been done</li>
-<li>Now controller directly jumps to line number 25,&nbsp; and opens the connection and send the request to java4s.txt (this is my notepad file), see actually the 3rd parameter i have given as <strong>true</strong> means Asynchronous data transfer will be activated</li>
+<li>Now controller directly jumps to line number 25,&nbsp; and opens the connection and send the request to java4s.txt (this is my notepad file), see actually the 3rd parameter i have given as&nbsp;<strong>true</strong>&nbsp;means Asynchronous data transfer will be activated</li>
 <li>Finally request will be sent in line number 26, that&rsquo;s it.</li>
 <li>If server sends the response back to our application then controller will automatically execute from line number 17 &ndash; 23, you may get one doubt like why its not executed initially&hellip; ? there is a reason actually this a.onreadystatechange=function() executes only when we get the response from the server, hope you are clear</li>
 </ul>
-<h2>java4s.txt</h2>
+<h4>java4s.txt</h4>
 <p>welcome to java4s.com</p>
-<p>&nbsp;</p>
-<p>That&rsquo;s it mates just put these <strong>2</strong> files, in one folder and test the example of your own, and i will explain more about this open() and send() methods in the next sessions, just don&rsquo;t think much about this</p>
-<h1>Ajax Request, open() and send() methods</h1>
+<p>That&rsquo;s it mates just put these&nbsp;<strong>2</strong>&nbsp;files, in one folder and test the example of your own, and i will explain more about this open() and send() methods in the next sessions, just don&rsquo;t think much about this</p>
+<h4>Ajax Request, open() and send() methods</h4>
 <p>In Ajax if we want to send the request to the server,&nbsp; we have 2 methods in XMLHttpRequest object to do this work,&nbsp; those are open() and send().</p>
 <p>Actually open() method will opens the connection with the server and send will sends our request object to the server.</p>
-<p>Let we took the XMLHttpRequest object into one variable called <strong>obj</strong> then</p>
+<p>Let we took the XMLHttpRequest object into one variable called&nbsp;<strong>obj</strong>&nbsp;then</p>
 <p><strong>obj</strong>.open(&rdquo; POST &ldquo;, &rdquo; destination URL &ldquo;,true);<br /><strong>obj</strong>.send();</p>
 <ul>
-<li>open() method has <strong>3</strong> parameters, first parameter having the values POST/GET this is depends on our requirement, my choice is always POST, because its having security than GET</li>
+<li>open() method has&nbsp;<strong>3</strong>&nbsp;parameters, first parameter having the values POST/GET this is depends on our requirement, my choice is always POST, because its having security than GET</li>
 <li>Second parameter is the destination, to where we need to send the request.&nbsp; It may be any file path or url or url patterns [ in java ] or what ever</li>
 <li>Third parameter having the values true/false,&nbsp; actually true means we are opening Asynchronous data transfer, and false means Synchronous</li>
 </ul>
 <p>Actually, Synchronous means at a time we can send single request and we need to wait for the response before send the second request, and Asynchronous means we can send the second request before we get the response of first request, Ajax is the example of this Asynchronous type.</p>
 <p>Finally send() method will send the request object to the server.</p>
-<h1>Ajax Server Response, responseText and responseXML</h1>
+<h4>Ajax Server Response, responseText and responseXML</h4>
 <p>Once we send the request to the destination [ server ], we will get the response from the server in two formats either in Text or XML, i mean we can get the response from the server by using responseText and responseXML propertys of our XMLHttpRequest object</p>
-<p>&nbsp;</p>
 <p>&lt;html&gt;</p>
 <p>&lt;head&gt;</p>
 <p>&lt;script type="text/javascript"&gt;</p>
 <p>function fun1()</p>
 <p>{</p>
 <p>var a;</p>
-<p>&nbsp;</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;if (window.XMLHttpRequest)</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;{// If the browser if IE7+[or]Firefox[or]Chrome[or]Opera[or]Safari</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a=new XMLHttpRequest();</p>
@@ -98,7 +255,6 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;{//If browser is IE6, IE5</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a=new ActiveXObject("Microsoft.XMLHTTP");</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
-<p>&nbsp;</p>
 <p>a.onreadystatechange=function()</p>
 <p>{</p>
 <p>&nbsp;&nbsp;if (a.readyState==4 &amp;&amp; a.status==200)</p>
@@ -106,41 +262,38 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("myDiv").innerHTML=a.responseText;</p>
 <p>&nbsp;&nbsp; }</p>
 <p>}</p>
-<p>&nbsp;</p>
 <p>a.open("POST","my.txt",true);</p>
 <p>a.send();</p>
 <p>} // fun1() close</p>
 <p>&lt;/script&gt;</p>
 <p>&lt;/head&gt;</p>
 <p>&lt;body&gt;</p>
-<p>&nbsp;</p>
 <p>&lt;div id="myDiv" style="width: 300px; height: 30px;"&gt;</p>
 <p>Click on the button below</p>
 <p>&lt;/div&gt;</p>
 <p>&lt;button type="button" onclick="fun1()"&gt;Change Content&lt;/button&gt;</p>
-<p>&nbsp;</p>
 <p>&lt;/body&gt;</p>
 <p>&lt;/html&gt;</p>
-<h2>Explanation</h2>
+<h4>Explanation</h4>
 <ul>
-<li>see we are getting the response in the form of text [ see line number <strong>21</strong> ]</li>
-<li>once the response is ready, our div content will be replaced with the response text [ see line number <strong>32</strong> ]</li>
+<li>see we are getting the response in the form of text [ see line number&nbsp;<strong>21</strong>&nbsp;]</li>
+<li>once the response is ready, our div content will be replaced with the response <a href="https://textfancy.com" rel="nofollow">text [</a> see line number&nbsp;<strong>32</strong>&nbsp;]</li>
 </ul>
 <p>Will see more while discussing Ajax with Servlets</p>
-<h1>Ajax onreadystatechange Event Of XMLHttpRequest Object</h1>
+<h4>Ajax onreadystatechange Event Of XMLHttpRequest Object</h4>
 <p>Once the request been sent to the server,&nbsp; changes will happen in the current webpage based on the response only.&nbsp; The onreadystatechange event will be triggered every time the readyState changes.</p>
 <p>Here the properties of XMLHttpRequest object</p>
-<h2>onreadystatechange</h2>
+<h4>onreadystatechange</h4>
 <p>A function will be stored and will be called automatically each time readyState property changes</p>
-<h2>readyState</h2>
+<h4>readyState</h4>
 <p>0 &ndash; request not initialized<br />1 &ndash; connection been established with the server<br />2 &ndash; request received from the server<br />3 &ndash; request being processing<br />4 &ndash; request finished and response is ready</p>
-<h2>status</h2>
+<h4>status</h4>
 <p>200 : ok<br />404 : page not found, it&rsquo;s normal 404 error</p>
-<p>So, readyState = 4&nbsp; <strong>&amp;</strong> status = 200 then every thing will be perfect, i mean we got the response from the server, and&nbsp; our webpage will be modified with the response text/xml.</p>
+<p>So, readyState = 4&nbsp;&nbsp;<strong>&amp;</strong>&nbsp;status = 200 then every thing will be perfect, i mean we got the response from the server, and&nbsp; our webpage will be modified with the response text/xml.</p>
 <p>&nbsp;</p>
-<h1>Ajax Onchange Fetch The Data From The Database</h1>
+<h4>Ajax Onchange Fetch The Data From The Database</h4>
 <p>Let us see how to fetch the data from database onchange of drop down, actually this is the real time scenario, am using jsp&nbsp; you can integrate with any type of frame works ( in .java files ), concept is same.</p>
-<h2>Index.html</h2>
+<h4>Index.html</h4>
 <p>&lt;html&gt;</p>
 <p>&lt;head&gt;</p>
 <p>&lt;script type="text/javascript"&gt;</p>
@@ -173,7 +326,6 @@
 <p>&lt;/script&gt;</p>
 <p>&lt;/head&gt;</p>
 <p>&lt;body&gt;</p>
-<p>&nbsp;</p>
 <p>&lt;form name="dummy"&gt;</p>
 <p>&lt;select name="sele" onchange="loadXMLDoc()"&gt;</p>
 <p>&lt;option&gt;value&lt;/option&gt;</p>
@@ -188,7 +340,7 @@
 <p>&nbsp;</p>
 <p>&lt;/body&gt;</p>
 <p>&lt;/html&gt;</p>
-<h2>db_fetch.jsp</h2>
+<h4>db_fetch.jsp</h4>
 <p>&lt;%@ page import="java.io.*,java.sql.*" %&gt;</p>
 <p>&lt;%@ page contentType="text/html" pageEncoding="UTF-8"%&gt;</p>
 <p>&nbsp;</p>
@@ -218,7 +370,7 @@
 <p>con.close();</p>
 <p>&nbsp;</p>
 <p>%&gt;</p>
-<h1>Country State Dropdown Example With AJAX/Servlets</h1>
+<h4>Country State Dropdown Example With AJAX/Servlets</h4>
 <h1>&nbsp;</h1>
 <p>Folks this is similar to the country/state drop down using Ajax, i believe we have lot of examples regarding this country/state drop down so just would like to do little changes, so i converted into employee number and name. But total concept is exactly same&hellip;!</p>
 <h2>Index.html</h2>
@@ -328,7 +480,7 @@
 <p>con.close();</p>
 <p>&nbsp;</p>
 <p>%&gt;</p>
-<h1>Ajax,jQuery Auto Fill Dropdown On Page Load</h1>
+<h4>Ajax,jQuery Auto Fill Dropdown On Page Load</h4>
 <h2>Files Required</h2>
 <ul>
 <li>index.html</li>
@@ -439,7 +591,7 @@
 <p>con.close();</p>
 <p>&nbsp;</p>
 <p>%&gt;</p>
-<h1>Checking User Name Availability With AJAX &ndash; Google Style</h1>
+<h4>Checking User Name Availability With AJAX &ndash; Google Style</h4>
 <p>We will see how to check the user name availability in the database with ajax,&nbsp; this is some thing what we can find out at time of gmail signup</p>
 <h2>Index.html</h2>
 <p>&lt;html&gt;</p>
@@ -512,7 +664,8 @@
 <p>con.close();</p>
 <p>&nbsp;</p>
 <p>%&gt;</p>
-<p>&nbsp;</p>
+
+
 
 </body>
 </html>

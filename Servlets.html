@@ -4,9 +4,11 @@
 
 <button type="button" onclick="document.location='index.html'" style="position:fixed;">Back To HOME</button>
 <br>
-<h1>Servlets Links</h1>
+<h1>Servlets Concepts</h1>
 
-<h3><strong>Q1. What is a servlet?</strong></h3>
+
+
+<h3><strong>What is a servlet?</strong></h3>
 <ul>
 <li>Java Servlet is server-side technologies to extend the capability of web servers by providing support for dynamic response and data persistence.</li>
 <li>The javax.servlet and javax.servlet.http packages provide interfaces and classes for writing our own servlets.</li>
@@ -14,7 +16,7 @@
 <li>Most of the times, web applications are accessed using HTTP protocol and thats why we mostly extend HttpServlet class. Servlet API hierarchy is shown in below image.</li>
 </ul>
 <p><img class="aligncenter wp-image-45559 size-large  blur-up lazyloaded" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-340x300.png" sizes="(max-width: 340px) 100vw, 340px" srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-340x300.png 340w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-150x132.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-300x264.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-768x677.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-204x180.png 204w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java.png 1248w" alt="Servlet - Java Interview Questions - Edureka" width="340" height="300" data-src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-340x300.png" data-srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-340x300.png 340w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-150x132.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-300x264.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-768x677.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java-204x180.png 204w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Servlet-Java.png 1248w" data-sizes="(max-width: 340px) 100vw, 340px" /></p>
-<h3><strong>Q2. What are the differences between Get and Post methods?</strong></h3>
+<h3><strong>What are the differences between Get and Post methods?</strong></h3>
 <div>
 <table border="1">
 <tbody>
@@ -45,16 +47,15 @@
 </tbody>
 </table>
 </div>
-<h3><strong>Q3.&nbsp;What is Request Dispatcher?</strong></h3>
+<h3><strong>What is Request Dispatcher?</strong></h3>
 <p>RequestDispatcher interface is used to forward the request to another resource that can be HTML, JSP or another servlet in same application. We can also use this to include the content of another resource to the response.</p>
 <p>There are two methods defined in this interface:</p>
 <p>1.void forward()</p>
 <p>2.void include()</p>
 <h2><strong><img class="aligncenter wp-image-45583   blur-up lazyloaded" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method.png" sizes="(max-width: 697px) 100vw, 697px" srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method.png 1404w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method-150x51.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method-300x101.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method-768x260.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method-528x179.png 528w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method-532x180.png 532w" alt="ForwardMethod - Java Interview Questions - Edureka" width="697" height="236" data-src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method.png" data-srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method.png 1404w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method-150x51.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method-300x101.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method-768x260.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method-528x179.png 528w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Forward-Method-532x180.png 532w" data-sizes="(max-width: 697px) 100vw, 697px" /></strong></h2>
 <h2><strong><img class="aligncenter wp-image-45584   blur-up lazyloaded" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method.png" sizes="(max-width: 657px) 100vw, 657px" srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method.png 1404w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method-150x57.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method-300x114.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method-768x292.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method-528x200.png 528w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method-474x180.png 474w" alt="IncludeMethod - Java Interview Questions - Edureka" width="657" height="249" data-src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method.png" data-srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method.png 1404w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method-150x57.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method-300x114.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method-768x292.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method-528x200.png 528w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Include-Method-474x180.png 474w" data-sizes="(max-width: 657px) 100vw, 657px" /></strong></h2>
-<h3><strong>Q4. What are the differences between forward() method and sendRedirect() methods?</strong></h3>
-<div><a><br /></a>
-<p>&nbsp;</p>
+<h3><strong>What are the differences between forward() method and sendRedirect() methods?</strong></h3>
+<div>
 <table border="1">
 <tbody>
 <tr>
@@ -76,7 +77,7 @@
 </tbody>
 </table>
 </div>
-<h3><strong>Q5. What is the life-cycle of a servlet?</strong></h3>
+<h3><strong>What is the life-cycle of a servlet?</strong></h3>
 <p>There are 5 stages in the lifecycle of a servlet:<strong><img class="aligncenter wp-image-45581 size-medium  blur-up lazyloaded" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-300x284.png" sizes="(max-width: 300px) 100vw, 300px" srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-300x284.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-150x142.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-768x727.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-317x300.png 317w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-190x180.png 190w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet.png 1216w" alt="LifeCycleServlet - Java Interview Questions - Edureka" width="300" height="284" data-src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-300x284.png" data-srcset="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-300x284.png 300w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-150x142.png 150w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-768x727.png 768w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-317x300.png 317w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet-190x180.png 190w, https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/Life-Cycle-Servlet.png 1216w" data-sizes="(max-width: 300px) 100vw, 300px" /></strong></p>
 <ol>
 <li>Servlet is loaded</li>
@@ -85,14 +86,14 @@
 <li>Service the request</li>
 <li>Servlet is destroyed</li>
 </ol>
-<h3><strong>Q6. How does cookies work in Servlets?</strong></h3>
+<h3><strong>How does cookies work in Servlets?</strong></h3>
 <ul>
-<li>Cookies are text data sent by server to the client and it gets saved at the client local machine.</li>
+<li>Cookies are <a href="https://textfancy.com" rel="nofollow">text data</a> sent by server to the client and it gets saved at the client local machine.</li>
 <li>Servlet API provides cookies support through javax.servlet.http.Cookie class that implements Serializable and Cloneable interfaces.</li>
 <li>HttpServletRequest getCookies() method is provided to get the array of Cookies from request, since there is no point of adding Cookie to request, there are no methods to set or add cookie to request.</li>
 <li>Similarly HttpServletResponse addCookie(Cookie c) method is provided to attach cookie in response header, there are no getter methods for cookie.</li>
 </ul>
-<h3><strong>Q7. What are the differences between ServletContext vs ServletConfig?</strong></h3>
+<h3><strong>What are the differences between ServletContext vs ServletConfig?</strong></h3>
 <p>The difference between ServletContext and ServletConfig in Servlets JSP is in below tabular format.</p>
 <div>
 <table border="1">
@@ -124,8 +125,7 @@
 </tbody>
 </table>
 </div>
-<p><a name="singleton-class"></a></p>
-<h3><strong>Q8. What are the different methods of session management in servlets?</strong></h3>
+<h3><strong>What are the different methods of session management in servlets?</strong></h3>
 <p>Session is a conversational state between client and server and it can consists of multiple request and response between client and server. Since HTTP and Web Server both are stateless, the only way to maintain a session is when some unique information about the session (session id) is passed between server and client in every request and response.</p>
 <p>Some of the common ways of session management in servlets are:</p>
 <ol>
@@ -135,8 +135,35 @@
 <li>URL Rewriting</li>
 <li>Session Management API</li>
 </ol>
-<p><a name="JDBC"></a></p>
-<p>In case you are facing any challenges with these java interview questions, please comment your problems in the section below.<a name="JDBC"></a>&nbsp;Apart from this Java Interview Questions Blog, if you want to get trained from professionals on this technology, you can opt for a structured training from edureka! Click below to know more.</p>
+<p><strong>In&nbsp;</strong>web<strong>.</strong>xml<strong>&nbsp;file&nbsp;&nbsp; &lt;load-on-startup&gt;1&lt;/load-on-startup&gt; is defined between &lt;servlet&gt;&lt;/servlet&gt; tag what does it means</strong><br />Whenever we request for any servlet the servlet container will initialize the servlet and load it which is defined in our config file called web.xml by default it will not initialize when our context is loaded .defining like this &lt;load-on-startup&gt;1&lt;/load-on-startup&gt; is also known as pre-initialization of servlet means now the servlet for which we have defined this tag has been initialized in starting when the context is loaded before getting any request.</p>
+<p style="font-weight: 400;"><strong>How can we create deadlock condition on our servlet?&nbsp;</strong></p>
+<p style="font-weight: 400;">&nbsp;one simple way to call doPost() method inside doGet() and doGet()method inside doPost() it will create deadlock situation for a servlet.</p>
+<p style="font-weight: 400;"><strong>For initializing a servlet can we use a constructor in place of init()?&nbsp;</strong></p>
+<p style="font-weight: 400;">Ans: No, we can not use constructor for initializing a servlet because for initialization we need an object of servletConfig using this object we get all the parameter which are defined in deployment descriptor for initializing a servlet and in servlet class we have only default constructor according to older version of java so if we want to pass a&nbsp;Config object we don&rsquo;t have parametrized constructor and apart from this servlet is loaded and initialized by container so it's a job of container to call the method according to servlet specification they have lifecycle method so&nbsp;init()&nbsp;method is called firstly.</p>
+<p style="font-weight: 400;"><strong>How can we refresh servlet on client and server side automatically?</strong></p>
+<p style="font-weight: 400;">Ans: On the client side we can use Meta HTTP refresh and server side we can use server push.</p>
+<p style="font-weight: 400;"><strong>How can you get the information about one servlet context in another servlet</strong>?&nbsp;(detailed answer)</p>
+<p style="font-weight: 400;">Ans: In context object we can set the attribute which we want on another servlet and we can get that attribute using their name on another servlet.</p>
+<p style="font-weight: 400;">Context.setAttribute (&ldquo;name&rdquo;,&rdquo; value&rdquo;)</p>
+<p style="font-weight: 400;">Context.getAttribute (&ldquo;name&rdquo;)</p>
+<p style="font-weight: 400;"><strong>Why we need to implement Single Thread model in the case of Servlet.&nbsp;</strong>(detailed answer)</p>
+<p style="font-weight: 400;">Ans: In J2EE we can implement our servlet in two different ways either by using:</p>
+<ol>
+<li style="font-weight: 400;">Single Thread Model</li>
+<li style="font-weight: 400;">Multithread Model</li>
+</ol>
+<p style="font-weight: 400;">Depending upon our scenario, if we have implemented single thread means only one instance is going handle one request at a time no two thread will concurrently execute service method of the servlet.<br /><br /></p>
+<p style="font-weight: 400;"><strong>The example</strong>&nbsp;in banking accounts where sensitive data is handled mostly this scenario was used this interface is deprecated in Servlet API version 2.4.</p>
+<p style="font-weight: 400;"><span style="font-weight: 400;">&nbsp;</span></p>
+<p style="font-weight: 400;"><strong>What is servlet collaboration?&nbsp;</strong>(<a href="http://java67.blogspot.com/2016/01/6-difference-between-include-directive-and-include-action-in-jsp.html">detailed answer</a>)</p>
+<p style="font-weight: 400;">Ans communication between two servlets is called servlet collaboration which is achieved by 3 ways.</p>
+<ol>
+<li style="font-weight: 400;"><strong> RequestDispatchers include () and forward() method .</strong></li>
+<li style="font-weight: 400;"><strong> Using<a href="http://javarevisited.blogspot.com/2011/09/sendredirect-forward-jsp-servlet.html">sendRedirect()</a>method of Response object.</strong></li>
+<li style="font-weight: 400;"><strong> Using servlet Context methods</strong></li>
+</ol>
+<p style="font-weight: 400;"><span style="font-weight: 400;"><br /></span><a href="https://www.journaldev.com/2015/servlet-interview-questions-and-answers" target="_blank">https://www.journaldev.com/2015/servlet-interview-questions-and-answers</a></p>
+<p style="font-weight: 400;"><a href="https://www.javatpoint.com/servletinterview" target="_blank">https://www.javatpoint.com/servletinterview</a></p>
 
 
 </body>

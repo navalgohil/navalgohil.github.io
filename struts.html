@@ -4,8 +4,476 @@
 
 <button type="button" onclick="document.location='index.html'" style="position:fixed;">Back To HOME</button>
 <br>
-<h1>struts Links Links</h1>
+<h1>Struts Concepts</h1>
 
+<p>&nbsp;</p>
+<p><strong><a href="https://career.guru99.com/top-50-struts-interview-questions/" target="_blank">https://career.guru99.com/top-50-struts-interview-questions/</a></strong></p>
+<p><strong><a href="https://javarevisited.blogspot.com/2011/11/struts-interview-questions-answer-j2ee.html#axzz6wM9neBqV" target="_blank">https://javarevisited.blogspot.com/2011/11/struts-interview-questions-answer-j2ee.html#axzz6wM9neBqV</a></strong></p>
+<p><strong>What are the components of Struts Framework?</strong></p>
+<p>Ans: Struts framework is comprised of following components:</p>
+<ol>
+<li>Java Servlets</li>
+<li>JSP (Java Server Pages)</li>
+<li>Custom Tags</li>
+<li>Message Resources</li>
+</ol>
+<p><strong>What&rsquo;s the role of a handler in MVC based applications?</strong></p>
+<p>Ans:. It&rsquo;s the job of handlers to transfer the requests to appropriate models as they are bound to the model layer of MVC architecture. Handlers use mapping information from configuration files for request transfer.</p>
+<p><strong>What&rsquo;s the flow of requests in Struts based applications?</strong></p>
+<p>Ans: Struts based applications use MVC design pattern. The flow of requests is as follows:</p>
+<ul>
+<li>User interacts with View by clicking any link or by submitting any form.</li>
+<li>Upon user&rsquo;s interaction, the request is passed towards the controller.</li>
+<li>Controller is responsible for passing the request to appropriate action.</li>
+<li>Action is responsible for calling a function in Model which has all business logic implemented.</li>
+<li>Response from the model layer is received back by the action which then passes it towards the view where user is able to see the response.</li>
+</ul>
+<p><strong>Which file is used by controller to get mapping information for request routing?</strong></p>
+<p>Ans: Controller uses a configuration file &ldquo;struts-config.<a class="wpil_keyword_link" title="xml" href="https://career.guru99.com/xml-interview-questions/" data-wpil-keyword-link="linked">xml</a>&nbsp;file to get all mapping information to decide which action to use for routing of user&rsquo;s request.</p>
+<p><strong>What&rsquo;s the role of Action Class in Struts?</strong></p>
+<p>Ans: In Struts, Action Class acts as a controller and performs following key tasks:</p>
+<ul>
+<li>After receiving user request, it processes the user&rsquo;s request.</li>
+<li>Uses appropriate model and pulls data from model (if required).</li>
+<li>Selects proper view to show the response to the user.</li>
+</ul>
+<p><strong>How an actionForm bean is created?</strong></p>
+<p>actionForm bean is created by extending the class&nbsp;<code>org.apache.struts.action.ActionForm</code></p>
+<p><strong>What are the two types of validations supported by Validator FrameWork?</strong></p>
+<p>Ans: Validator Framework is used for form data validation. This framework provides two types of validations:</p>
+<ol>
+<li>Client Side validation on user&rsquo;s browser</li>
+<li>Server side validation</li>
+</ol>
+<p><strong>What are the steps of Struts Installation?</strong></p>
+<p>Ans: In order to use Struts framework, we only need to add Struts.Jar file in our development environment. Once jar file is available in the CLASSPATH, we can use the framework and develop Strut based applications</p>
+<p><strong>How client side validation is enabled on a JSP form?</strong></p>
+<p>Ans: In order to enable client side validation in Struts, first we need to enable validator plug-in in struts-config.xml file. This is done by adding following configuration entries in this file:</p>
+<div id="crayon-60b32a6896321067923402" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" touchscreen minimize scroll-mouseover">
+<div class="crayon-main">
+<table class="crayon-table" style="width: 436px;">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-code" style="width: 426.667px;">
+<div class="crayon-pre">
+<div id="crayon-60b32a6896321067923402-1" class="crayon-line"><span class="crayon-c">&lt;!--&nbsp; Validator plugin --&gt;</span></div>
+<div id="crayon-60b32a6896321067923402-2" class="crayon-line crayon-striped-line"><span class="crayon-r ">&lt;plug-in </span><span class="crayon-e ">className</span>=<span class="crayon-s ">"org.apache.struts.validator.ValidatorPlugIn"</span><span class="crayon-r ">&gt;</span></div>
+<div id="crayon-60b32a6896321067923402-3" class="crayon-line"><span class="crayon-r ">&lt;set-property</span></div>
+<div id="crayon-60b32a6896321067923402-4" class="crayon-line crayon-striped-line"><span class="crayon-e ">property</span>=<span class="crayon-s ">"pathnames"</span></div>
+<div id="crayon-60b32a6896321067923402-5" class="crayon-line"><span class="crayon-e ">value</span>=<span class="crayon-s ">"https://cdn.career.guru99.com/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"</span><span class="crayon-r ">/&gt;</span></div>
+<div id="crayon-60b32a6896321067923402-6" class="crayon-line crayon-striped-line"><span class="crayon-r ">&lt;/plug-in&gt;</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Then Validation rules are defined in validation.xml file. If a form contains email field and we want to enable client side validation for this field, following code is added in validation.xml file:</p>
+<div id="crayon-60b32a6896322705709564" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" touchscreen minimize scroll-mouseover">
+<div class="crayon-main">
+<table class="crayon-table" style="width: 217px;">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-code" style="width: 207.333px;">
+<div class="crayon-pre">
+<div id="crayon-60b32a6896322705709564-1" class="crayon-line"><span class="crayon-r ">&lt;form </span><span class="crayon-e ">name</span>=<span class="crayon-s ">"testForm"</span><span class="crayon-r ">&gt;</span></div>
+<div id="crayon-60b32a6896322705709564-2" class="crayon-line crayon-striped-line"><span class="crayon-r ">&lt;field&nbsp; </span><span class="crayon-e ">property</span>=<span class="crayon-s ">"email"</span></div>
+<div id="crayon-60b32a6896322705709564-3" class="crayon-line"><span class="crayon-e ">depends</span>=<span class="crayon-s ">"required"</span><span class="crayon-r ">&gt;</span></div>
+<div id="crayon-60b32a6896322705709564-4" class="crayon-line crayon-striped-line"><span class="crayon-r ">&lt;arg </span><span class="crayon-e ">key</span>=<span class="crayon-s ">"testForm.email"</span><span class="crayon-r ">/&gt;</span></div>
+<div id="crayon-60b32a6896322705709564-5" class="crayon-line"><span class="crayon-r ">&lt;/field&gt;</span></div>
+<div id="crayon-60b32a6896322705709564-6" class="crayon-line crayon-striped-line"><span class="crayon-r ">&lt;/form&gt;</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How action-mapping tag is used for request forwarding in Struts configuration file?</strong></p>
+<p>Ans: In Struts configuration file (struts-config.xml), forwarding options are defined under action-mapping tag.</p>
+<p>In the following example, when a user will click on the hyperlink&nbsp;<strong>test.do</strong>, request will be forwarded to&nbsp;<strong>/pages/testing.jsp&nbsp;</strong>using following configurations from struts-config.xml file:</p>
+<div id="crayon-60b32a6896323515970265" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" touchscreen minimize scroll-mouseover">
+<div class="crayon-main">
+<table class="crayon-table" style="width: 457px;">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-code" style="width: 447.333px;">
+<div class="crayon-pre">
+<div id="crayon-60b32a6896323515970265-1" class="crayon-line"><span class="crayon-r ">&lt;action&nbsp; </span><span class="crayon-e ">path</span>=<span class="crayon-s ">"/test"</span> <span class="crayon-e ">forward</span>=<span class="crayon-s ">"https://cdn.career.guru99.com/pages/testing.jsp"</span><span class="crayon-r ">&gt;</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>This forwarding will take place when user will click on following hyperlink on the jsp page:</p>
+<div id="crayon-60b32a6896324189508180" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" touchscreen minimize scroll-mouseover">
+<div class="crayon-main">
+<table class="crayon-table" style="width: 457px;">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-code" style="width: 447.333px;">
+<div class="crayon-pre">
+<div id="crayon-60b32a6896324189508180-1" class="crayon-line"><span class="crayon-r ">&lt;html:link</span><span class="crayon-r ">&lt;/strong&gt;</span><span class="crayon-i "> page="/test.do</span><span class="crayon-r ">&lt;/strong&gt;</span>"<span class="crayon-r ">&gt;</span><span class="crayon-i ">Controller Example</span><span class="crayon-r ">&lt;/html:link&gt;</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How duplicate form submission can be controlled in Struts?</strong></p>
+<p>Ans: In Struts, action class provides two important methods which can be used to avoid duplicate form submissions.</p>
+<p>saveToken() method of action class generates a unique token and saves it in the user&rsquo;s session. isTokenValid() method is used then used to check uniqueness of tokens.</p>
+<p><strong>&nbsp;In Struts, how can we access Java beans and their properties?</strong></p>
+<p>Ans: Bean Tag Library is a Struts library which can be used for accessing Java beans.</p>
+<p><strong>Which configuration file is used for storing JSP configuration information in Struts?</strong></p>
+<p>Ans: For JSP configuration details, Web.xml file is used.</p>
+<p><strong>What&rsquo;s the purpose of Execute method of action class?</strong></p>
+<p>Ans: Execute method of action class is responsible for execution of business logic. If any processing is required on the user&rsquo;s request, it&rsquo;s performed in this method. This method returns actionForward object which routes the application to appropriate page.</p>
+<p>In the following example, execute method will return an object of actionForward defined in struts-config.xml with the name &ldquo;exampleAction&rdquo;:</p>
+<div id="crayon-60b32a6896326362931469" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" touchscreen minimize scroll-mouseover">
+<div class="crayon-main">
+<table class="crayon-table" style="width: 360px;">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-code" style="width: 350.667px;">
+<div class="crayon-pre">
+<div id="crayon-60b32a6896326362931469-1" class="crayon-line"><span class="crayon-r">import</span> <span class="crayon-i">javax</span><span class="crayon-sy">.</span><span class="crayon-i">servlet</span><span class="crayon-sy">.</span><span class="crayon-i">http</span><span class="crayon-sy">.</span><span class="crayon-i">HttpServletRequest</span><span class="crayon-sy">;</span></div>
+<div id="crayon-60b32a6896326362931469-2" class="crayon-line crayon-striped-line"><span class="crayon-r">import</span> <span class="crayon-i">javax</span><span class="crayon-sy">.</span><span class="crayon-i">servlet</span><span class="crayon-sy">.</span><span class="crayon-i">http</span><span class="crayon-sy">.</span><span class="crayon-i">HttpServletResponse</span><span class="crayon-sy">;</span></div>
+<div id="crayon-60b32a6896326362931469-3" class="crayon-line">&nbsp;</div>
+<div id="crayon-60b32a6896326362931469-4" class="crayon-line crayon-striped-line"><span class="crayon-r">import</span> <span class="crayon-i">org</span><span class="crayon-sy">.</span><span class="crayon-i">apache</span><span class="crayon-sy">.</span><span class="crayon-i">struts</span><span class="crayon-sy">.</span><span class="crayon-i">action</span><span class="crayon-sy">.</span><span class="crayon-i">Action</span><span class="crayon-sy">;</span></div>
+<div id="crayon-60b32a6896326362931469-5" class="crayon-line"><span class="crayon-r">import</span> <span class="crayon-i">org</span><span class="crayon-sy">.</span><span class="crayon-i">apache</span><span class="crayon-sy">.</span><span class="crayon-i">struts</span><span class="crayon-sy">.</span><span class="crayon-i">action</span><span class="crayon-sy">.</span><span class="crayon-i">ActionForm</span><span class="crayon-sy">;</span></div>
+<div id="crayon-60b32a6896326362931469-6" class="crayon-line crayon-striped-line"><span class="crayon-r">import</span> <span class="crayon-i">org</span><span class="crayon-sy">.</span><span class="crayon-i">apache</span><span class="crayon-sy">.</span><span class="crayon-i">struts</span><span class="crayon-sy">.</span><span class="crayon-i">action</span><span class="crayon-sy">.</span><span class="crayon-i">ActionForward</span><span class="crayon-sy">;</span></div>
+<div id="crayon-60b32a6896326362931469-7" class="crayon-line"><span class="crayon-r">import</span> <span class="crayon-i">org</span><span class="crayon-sy">.</span><span class="crayon-i">apache</span><span class="crayon-sy">.</span><span class="crayon-i">struts</span><span class="crayon-sy">.</span><span class="crayon-i">action</span><span class="crayon-sy">.</span><span class="crayon-i">ActionMapping</span><span class="crayon-sy">;</span></div>
+<div id="crayon-60b32a6896326362931469-8" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a6896326362931469-9" class="crayon-line"><span class="crayon-m">public</span> <span class="crayon-t">class</span> <span class="crayon-e">actionExample</span> <span class="crayon-r">extends</span> <span class="crayon-e">Action</span></div>
+<div id="crayon-60b32a6896326362931469-10" class="crayon-line crayon-striped-line"><span class="crayon-sy">{</span></div>
+<div id="crayon-60b32a6896326362931469-11" class="crayon-line"><span class="crayon-m">public</span> <span class="crayon-e">ActionForward </span><span class="crayon-e">execute</span><span class="crayon-sy">(</span></div>
+<div id="crayon-60b32a6896326362931469-12" class="crayon-line crayon-striped-line"><span class="crayon-e">ActionMapping </span><span class="crayon-i">mapping</span><span class="crayon-sy">,</span></div>
+<div id="crayon-60b32a6896326362931469-13" class="crayon-line"><span class="crayon-e">ActionForm </span><span class="crayon-i">form</span><span class="crayon-sy">,</span></div>
+<div id="crayon-60b32a6896326362931469-14" class="crayon-line crayon-striped-line"><span class="crayon-e">HttpServletRequest </span><span class="crayon-i">request</span><span class="crayon-sy">,</span></div>
+<div id="crayon-60b32a6896326362931469-15" class="crayon-line"><span class="crayon-e">HttpServletResponse </span><span class="crayon-i">response</span><span class="crayon-sy">)</span> <span class="crayon-m">throws</span> <span class="crayon-e">Exception</span><span class="crayon-sy">{</span></div>
+<div id="crayon-60b32a6896326362931469-16" class="crayon-line crayon-striped-line"><span class="crayon-st">return</span> <span class="crayon-i">mapping</span><span class="crayon-sy">.</span><span class="crayon-e">findForward</span><span class="crayon-sy">(</span><span class="crayon-s">"exampleAction"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div>
+<div id="crayon-60b32a6896326362931469-17" class="crayon-line"><span class="crayon-sy">}</span></div>
+<div id="crayon-60b32a6896326362931469-18" class="crayon-line crayon-striped-line"><span class="crayon-sy">}</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>&nbsp;What&rsquo;s the difference between validation.xml and validator-rules.xml files in Struts Validation framework?</strong></p>
+<p>Ans: In Validation.xml, we define validation rules for any specific Java bean while in validator-rules.xml file, standard and generic validation rules are defined.</p>
+<p><strong>&nbsp;How can we display all validation errors to user on JSP page?</strong></p>
+<p>Ans: To display all validation errors based on the validation rules defined in validation.xml file, we use &lt;html:errors /&gt; tag in our JSP file.</p>
+<p><strong>What&rsquo;s declarative exception handling in Struts?</strong></p>
+<p>Ans: When logic for exception handling is defined in struts-config.xml or within the action tag, it&rsquo;s known as declarative exception handling in Struts.</p>
+<p>In the following example, we have defined exception in struts-config.xml file for NullPointerException:</p>
+<div id="crayon-60b32a6896327740326244" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" touchscreen minimize scroll-mouseover">
+<div class="crayon-main">
+<table class="crayon-table" style="width: 457px;">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-code" style="width: 447.333px;">
+<div class="crayon-pre">
+<div id="crayon-60b32a6896327740326244-1" class="crayon-line"><span class="crayon-r ">&lt;global-exceptions&gt;</span></div>
+<div id="crayon-60b32a6896327740326244-2" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a6896327740326244-3" class="crayon-line"><span class="crayon-r ">&lt;exception </span><span class="crayon-e ">key</span>=<span class="crayon-s ">"test.key"</span></div>
+<div id="crayon-60b32a6896327740326244-4" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a6896327740326244-5" class="crayon-line"><span class="crayon-e ">Type</span>=<span class="crayon-s ">"java.lang.NullPointerException"</span></div>
+<div id="crayon-60b32a6896327740326244-6" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a6896327740326244-7" class="crayon-line"><span class="crayon-e ">Path</span>=<span class="crayon-s ">"https://cdn.career.guru99.com/WEB-INF/errors/error_page.jsp"</span></div>
+<div id="crayon-60b32a6896327740326244-8" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a6896327740326244-9" class="crayon-line"><span class="crayon-r ">&lt;/global-exceptions&gt;</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>&nbsp;What&rsquo;s DynaActionForm?</strong></p>
+<p>Ans: DynaActionForm is a special type of actionForm class (sub-class of ActionForm Class) that&rsquo;s used for dynamically creating form beans. It uses configuration files for form bean creation.</p>
+<p><strong>&nbsp;What configuration changes are required to use Tiles in Struts?</strong></p>
+<p>Ans: To create reusable components with Tiles framework, we need to add following plugin definition code in struts-config.xml file:</p>
+<div id="crayon-60b32a6896328315411724" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" touchscreen minimize scroll-mouseover">
+<div class="crayon-main">
+<table class="crayon-table" style="width: 457px;">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-code" style="width: 447.333px;">
+<div class="crayon-pre">
+<div id="crayon-60b32a6896328315411724-1" class="crayon-line"><span class="crayon-r ">&lt;plug-in </span><span class="crayon-e ">className</span>=<span class="crayon-s ">"org.apache.struts.tiles.TilesPlugin"</span><span class="crayon-r "> &gt;</span></div>
+<div id="crayon-60b32a6896328315411724-2" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a6896328315411724-3" class="crayon-line"><span class="crayon-r ">&lt;set-property </span><span class="crayon-e ">property</span>=<span class="crayon-s ">"definitions-config"</span> <span class="crayon-e ">value</span>=<span class="crayon-s ">"https://cdn.career.guru99.com/WEB-INF/tiles-defs.xml"</span><span class="crayon-r "> /&gt;</span></div>
+<div id="crayon-60b32a6896328315411724-4" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a6896328315411724-5" class="crayon-line"><span class="crayon-r ">&lt;set-property </span><span class="crayon-e ">property</span>=<span class="crayon-s ">"moduleAware"</span> <span class="crayon-e ">value</span>=<span class="crayon-s ">"true"</span><span class="crayon-r "> /&gt;</span></div>
+<div id="crayon-60b32a6896328315411724-6" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a6896328315411724-7" class="crayon-line"><span class="crayon-r ">&lt;/plug-in&gt;</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>&nbsp;What&rsquo;s the difference between Jakarta Struts and Apache Struts? Which one is better to use?</strong></p>
+<p>Ans: Both are same and there is no difference between them.</p>
+<p><strong>What&rsquo;s the use of Struts.xml configuration file?</strong></p>
+<p>Ans: Struts.xml file is one the key configuration files of Struts framework which is used to define mapping between URL and action. When a user&rsquo;s request is received by the controller, controller uses mapping information from this file to select appropriate action class.</p>
+<p><strong>How tag libraries are defined in Struts?</strong></p>
+<p>Ans: Tag libraries are defined in the configuration file (web.xml) inside &lt;taglib&gt; tag as follows:</p>
+<div id="crayon-60b32a6896329692064693" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" touchscreen minimize scroll-mouseover">
+<div class="crayon-main">
+<table class="crayon-table" style="width: 437px;">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-code" style="width: 427.333px;">
+<div class="crayon-pre">
+<div id="crayon-60b32a6896329692064693-1" class="crayon-line"><span class="crayon-r ">&lt;taglib&gt;</span></div>
+<div id="crayon-60b32a6896329692064693-2" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a6896329692064693-3" class="crayon-line"><span class="crayon-r ">&lt;taglib-uri&gt;</span><span class="crayon-i ">/WEB-INF/struts-bean.tld</span><span class="crayon-r ">&lt;/taglib-uri&gt;</span></div>
+<div id="crayon-60b32a6896329692064693-4" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a6896329692064693-5" class="crayon-line"><span class="crayon-r ">&lt;taglib-location&gt;</span><span class="crayon-i ">/WEB-INF/struts-bean.tld</span><span class="crayon-r ">&lt;/taglib-location&gt;</span></div>
+<div id="crayon-60b32a6896329692064693-6" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a6896329692064693-7" class="crayon-line"><span class="crayon-r ">&lt;/taglib&gt;</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>What&rsquo;s the significance of logic tags in Struts?</strong></p>
+<p>Ans: Use of logic tags in Struts helps in writing a clean and efficient code at presentation layer without use of scriptlets.</p>
+<p><strong>&nbsp;What are the two scope types for formbeans?</strong></p>
+<p>Ans: 1. Request Scope: Formbean values are available in the current request only</p>
+<p>2. Session Scope: Formbean values are available for all requests in the current session.</p>
+<p><strong>How can we group related actions in one group in Struts?</strong></p>
+<p>Ans: To group multiple related actions in one group, we can use DispatcherAction class.</p>
+<p><strong>When should we use SwtichAction?</strong></p>
+<p>Ans: The best scenario to use SwitchAction class is when we have a modular application with multiple modules working separately. Using SwitchAction class we can switch from a resource in one module to another resource in some different module of the application.</p>
+<p><strong>What are the benefits of Struts framework?</strong></p>
+<p>Ans: Struts is based on MVC and hence there is a good separation of different layers in Struts which makes Struts applications development and customization easy. Use of different configuration files makes Struts applications easily configurable. Also, Struts is open source and hence, cost effective.</p>
+<p><strong>&nbsp;What steps are required to for an application migration from Struts1 to Struts2?</strong></p>
+<p>Ans: Following Steps are required for Struts1 to Struts2 migration:</p>
+<ol>
+<li>Move Struts1 actionForm to Struts2 POJO.</li>
+<li>Convert Struts1 configuration file (struts-config.xml) to Struts2 configuration file (struts.xml)</li>
+</ol>
+<p><strong>How properties of a form are validated in Struts?</strong></p>
+<p>Ans: For validation of populated properties, validate() method of ActionForm class is used before handling the control of formbean to Action class.</p>
+<p><strong>&nbsp;What&rsquo;s the use of reset method of ActionForm class?</strong></p>
+<p>Ans: reset method of actionForm class is used to clear the values of a form before initiation of a new request.</p>
+<p><strong>What are disadvantages of Struts?</strong></p>
+<p>Ans: Although Struts have large number of advantages associated, it also requires bigger learning curve and also reduces transparency in the development process.</p>
+<p>Struts also lack proper documentation and for many of its components, users are unable to get proper online resources for help.</p>
+<p><strong>What&rsquo;s the use of resourcebundle.properties file in Struts Validation framework?</strong></p>
+<p>Ans: resourcebundle.properties file is used to define specific error messages in key value pairs for any possible errors that may occur in the code.</p>
+<p>This approach helps to keep the code clean as developer doesn&rsquo;t need to embed all error messages inside code.</p>
+<p><strong>Can I have <a class="wpil_keyword_link" title="html" href="https://career.guru99.com/top-50-html-interview-questions/" data-wpil-keyword-link="linked">html</a>&nbsp;form property without associated getter and setter formbean methods?</strong></p>
+<p>Ans: For each html form property, getter and setter methods in the formbean must be defined otherwise application results in an error.</p>
+<p><strong>How many servlet controllers are used in a Struts Application?</strong></p>
+<p>Ans: Struts framework works on the concept of centralized control approach and the whole application is controlled by a single servlet controller. Hence, we require only one servlet controller in a servlet application.</p>
+<p><strong>For a single Struts application, can we have multiple struts-config.xml files?</strong></p>
+<p>Ans: We can have any number of Struts-config.xml files for a single application.</p>
+<p>We need following configurations for this:</p>
+<div id="crayon-60b32a689632a806808487" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" touchscreen minimize scroll-mouseover">
+<div class="crayon-main">
+<table class="crayon-table" style="width: 285px;">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-code" style="width: 275.333px;">
+<div class="crayon-pre">
+<div id="crayon-60b32a689632a806808487-1" class="crayon-line"><span class="crayon-r ">&lt;servlet&gt;</span></div>
+<div id="crayon-60b32a689632a806808487-2" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a689632a806808487-3" class="crayon-line"><span class="crayon-r ">&lt;servlet-name&gt;</span><span class="crayon-i ">action</span><span class="crayon-r ">&lt;/servlet-name&gt;</span></div>
+<div id="crayon-60b32a689632a806808487-4" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a689632a806808487-5" class="crayon-line"><span class="crayon-r ">&lt;servlet-class&gt;</span></div>
+<div id="crayon-60b32a689632a806808487-6" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a689632a806808487-7" class="crayon-line"><span class="crayon-i ">org.apache.struts.action.ActionServlet</span></div>
+<div id="crayon-60b32a689632a806808487-8" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a689632a806808487-9" class="crayon-line"><span class="crayon-r ">&lt;/servlet-class&gt;</span></div>
+<div id="crayon-60b32a689632a806808487-10" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a689632a806808487-11" class="crayon-line"><span class="crayon-r ">&lt;init-param&gt;</span></div>
+<div id="crayon-60b32a689632a806808487-12" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a689632a806808487-13" class="crayon-line"><span class="crayon-r ">&lt;param-name&gt;</span><span class="crayon-i ">config</span><span class="crayon-r ">&lt;/param-name&gt;</span></div>
+<div id="crayon-60b32a689632a806808487-14" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a689632a806808487-15" class="crayon-line"><span class="crayon-r ">&lt;param-value&gt;</span></div>
+<div id="crayon-60b32a689632a806808487-16" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a689632a806808487-17" class="crayon-line"><span class="crayon-i ">/WEB-INF/struts-config.xml</span></div>
+<div id="crayon-60b32a689632a806808487-18" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a689632a806808487-19" class="crayon-line"><span class="crayon-i ">/WEB-INF/struts-config_user.xml</span></div>
+<div id="crayon-60b32a689632a806808487-20" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a689632a806808487-21" class="crayon-line"><span class="crayon-i ">/WEB-INF/struts-config_admin.xml</span></div>
+<div id="crayon-60b32a689632a806808487-22" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a689632a806808487-23" class="crayon-line"><span class="crayon-r ">&lt;/param-value&gt;</span></div>
+<div id="crayon-60b32a689632a806808487-24" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a689632a806808487-25" class="crayon-line"><span class="crayon-r ">&lt;/init-param&gt;</span></div>
+<div id="crayon-60b32a689632a806808487-26" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a689632a806808487-27" class="crayon-line"><span class="crayon-i ">.............</span></div>
+<div id="crayon-60b32a689632a806808487-28" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a689632a806808487-29" class="crayon-line"><span class="crayon-i ">.............</span></div>
+<div id="crayon-60b32a689632a806808487-30" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a689632a806808487-31" class="crayon-line"><span class="crayon-r ">&lt;/servlet&gt;</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>Which model components are supported by Struts?</strong></p>
+<p>Ans: Struts support all types of models including Java beans, EJB, CORBA. However, Struts doesn&rsquo;t have any in-built support for any specific model and it&rsquo;s the developer&rsquo;s choice to opt for any model.</p>
+<p><strong>When it&rsquo;s useful to use IncludeAction?</strong></p>
+<p>Ans: IncludeAction is action class provided by Struts which is useful when an integration is required between Struts and Servlet based application.</p>
+<p><strong>Is Struts thread safe?</strong></p>
+<p>Ans: Yes Struts are thread safe. In Struts, a new servlet object is not required to handle each request; rather a new thread of action class object is used for each new request.</p>
+<p><strong>What configuration changes are required to use resource files in Struts?</strong></p>
+<p>Ans: &nbsp;Resource files (.properties files) can be used in Struts by adding following configuration entry in struts-config.xml file:</p>
+<div id="crayon-60b32a689632b153754550" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" touchscreen minimize scroll-mouseover">
+<div class="crayon-main">
+<table class="crayon-table" style="width: 457px;">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-code" style="width: 447.333px;">
+<div class="crayon-pre">
+<div id="crayon-60b32a689632b153754550-1" class="crayon-line"><span class="crayon-h">&lt;</span><span class="crayon-i">message</span>-<span class="crayon-e">resources </span><span class="crayon-i">parameter</span>=<span class="crayon-s">"com.login.struts.ApplicationResources"</span>/<span class="crayon-h">&gt;</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="crayon-main">&nbsp;</div>
+<div class="crayon-main"><strong>How nested beans can be used in Struts applications?</strong></div>
+</div>
+<p>Ans: Struts provide a separate tag library (Nested Tag Library) for this purpose. Using this library, we can nest the beans in any Struts based application.</p>
+<p><strong>What are the Core classes of Struts Framework?</strong></p>
+<p>Ans: Following are the core classes provided by Struts Framework:</p>
+<ul>
+<li>Action Class</li>
+<li>ActionForm Class</li>
+<li>ActionMapping Class</li>
+<li>ActionForward Class</li>
+<li>ActionServlet Class</li>
+</ul>
+<p><strong>Can we handle exceptions in Struts programmatically?</strong></p>
+<p>Ans: Yes we can handle exceptions in Struts programmatically by using try, catch blocks in the code.</p>
+<div id="crayon-60b32a689632c271545387" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" touchscreen minimize scroll-mouseover">
+<div class="crayon-main">
+<table class="crayon-table" style="width: 193px;">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-code" style="width: 183.333px;">
+<div class="crayon-pre">
+<div id="crayon-60b32a689632c271545387-1" class="crayon-line">try <span class="crayon-sy">{</span></div>
+<div id="crayon-60b32a689632c271545387-2" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a689632c271545387-3" class="crayon-line">// Struts code</div>
+<div id="crayon-60b32a689632c271545387-4" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a689632c271545387-5" class="crayon-line"><span class="crayon-sy">}</span></div>
+<div id="crayon-60b32a689632c271545387-6" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a689632c271545387-7" class="crayon-line">Catch <span class="crayon-sy">(</span>Exception e<span class="crayon-sy">)</span> <span class="crayon-sy">{</span></div>
+<div id="crayon-60b32a689632c271545387-8" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a689632c271545387-9" class="crayon-line">// exception handling code</div>
+<div id="crayon-60b32a689632c271545387-10" class="crayon-line crayon-striped-line">&nbsp;</div>
+<div id="crayon-60b32a689632c271545387-11" class="crayon-line"><span class="crayon-sy">}</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>&nbsp;Is Struts Framework part of <a class="wpil_keyword_link" title="J2EE" href="https://career.guru99.com/top-50-j2ee-interview-questions/" data-wpil-keyword-link="linked">J2EE</a>?</strong></p>
+<p>Ans: Although Struts framework is based on J2EE technologies like JSP, Java Beans, Servlets etc but it&rsquo;s not a part of J2EE standards.</p>
+<p><strong>&nbsp;How action mapping is configured in Struts?</strong></p>
+<p>Ans: Action mappings are configured in the configuration file struts-config.xml under the tag &lt;action-mapping&gt; as follows:</p>
+<div id="crayon-60b32a689633b078146435" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" touchscreen minimize scroll-mouseover">
+<div class="crayon-main">
+<table class="crayon-table" style="width: 457px;">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-code" style="width: 447.333px;">
+<div class="crayon-pre">
+<div id="crayon-60b32a689633b078146435-1" class="crayon-line"><span class="crayon-r ">&lt;pre&gt;</span><span class="crayon-r ">&lt;action-mappings&gt;</span></div>
+<div id="crayon-60b32a689633b078146435-2" class="crayon-line crayon-striped-line"><span class="crayon-r ">&lt;action </span><span class="crayon-e ">path</span>=<span class="crayon-s ">"/login"</span></div>
+<div id="crayon-60b32a689633b078146435-3" class="crayon-line"><span class="crayon-e ">type</span>=<span class="crayon-s ">"login.loginAction"</span></div>
+<div id="crayon-60b32a689633b078146435-4" class="crayon-line crayon-striped-line"><span class="crayon-e ">name</span>=<span class="crayon-s ">"loginForm"</span></div>
+<div id="crayon-60b32a689633b078146435-5" class="crayon-line"><span class="crayon-e ">input</span>=<span class="crayon-s ">"https://cdn.career.guru99.com/login.jsp"</span></div>
+<div id="crayon-60b32a689633b078146435-6" class="crayon-line crayon-striped-line"><span class="crayon-e ">scope</span>=<span class="crayon-s ">"request"</span></div>
+<div id="crayon-60b32a689633b078146435-7" class="crayon-line"><span class="crayon-e ">validate</span>=<span class="crayon-s ">"true"</span><span class="crayon-r ">&gt;</span></div>
+<div id="crayon-60b32a689633b078146435-8" class="crayon-line crayon-striped-line"><span class="crayon-r ">&lt;forward </span><span class="crayon-e ">name</span>=<span class="crayon-s ">"success"</span> <span class="crayon-e ">path</span>=<span class="crayon-s ">"https://cdn.career.guru99.com/index.jsp"</span><span class="crayon-r ">/&gt;</span></div>
+<div id="crayon-60b32a689633b078146435-9" class="crayon-line"><span class="crayon-r ">&lt;forward </span><span class="crayon-e ">name</span>=<span class="crayon-s ">"failure"</span> <span class="crayon-e ">path</span>=<span class="crayon-s ">"https://cdn.career.guru99.com/login_error.jsp"</span><span class="crayon-r ">/&gt;</span></div>
+<div id="crayon-60b32a689633b078146435-10" class="crayon-line crayon-striped-line"><span class="crayon-r ">&lt;/action&gt;</span></div>
+<div id="crayon-60b32a689633b078146435-11" class="crayon-line"><span class="crayon-r ">&lt;/action-mappings&gt;</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>When should be opt for Struts Framework?</strong></p>
+<p>Ans: Struts should be used when any or some of the following conditions are true:</p>
+<ul>
+<li>A highly robust enterprise level application development is required.</li>
+<li>A reusable, highly configurable application is required.</li>
+<li>A loosely coupled, MVC based application is required with clear segregation of different layers.</li>
+</ul>
+<p><strong>&nbsp;Why ActionServlet is singleton in Struts?</strong></p>
+<p>Ans: In Struts framework, actionServlet acts as a controller and all the requests made by users are controlled by this controller. ActionServlet is based on singleton design patter as only one object needs to be created for this controller class. Multiple threads are created later for each user request.</p>
+<p><strong>&nbsp;What are the steps required for setting up validator framework in Struts?</strong></p>
+<p>Ans: Following Steps are required to setup validator framework in Struts: &ndash;&nbsp;<strong><em>Wrong Spelling</em></strong></p>
+<ol>
+<li>In WEB-INF directory place valdator-rules.xml and validation.xml files.</li>
+<li>Enable validation plugin in struts-config.xml files by adding following:</li>
+</ol>
+<div id="crayon-60b32a689633c342929103" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" touchscreen minimize scroll-mouseover">
+<div class="crayon-toolbar" data-settings="">
+<div class="crayon-tools">
+<div class="crayon-button crayon-popup-button" title="Open Code In New Window">&nbsp;</div>
+</div>
+</div>
+<div class="crayon-main">
+<table class="crayon-table" style="width: 457px;">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-code" style="width: 447.333px;">
+<div class="crayon-pre">
+<div id="crayon-60b32a689633c342929103-1" class="crayon-line"><span class="crayon-r ">&lt;plug-in </span><span class="crayon-e ">className</span>=<span class="crayon-s ">"org.apache.struts.validator.ValidatorPlugIn"</span><span class="crayon-r ">&gt;</span></div>
+<div id="crayon-60b32a689633c342929103-2" class="crayon-line crayon-striped-line"><span class="crayon-r ">&lt;set-property </span><span class="crayon-e ">property</span>=<span class="crayon-s ">"pathnames"</span> <span class="crayon-e ">value</span>=<span class="crayon-s ">"/WEB-INF/validator-rules.xml,</span></div>
+<div id="crayon-60b32a689633c342929103-3" class="crayon-line"><span class="crayon-s ">/WEB-INF/validation.xml"</span><span class="crayon-r ">/&gt;</span></div>
+<div id="crayon-60b32a689633c342929103-4" class="crayon-line crayon-striped-line"><span class="crayon-r ">&lt;/plug-in&gt;</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>&nbsp;Which technologies can be used at View Layer in Struts?</strong></p>
+<p>Ans: In Struts, we can use any of the following technologies in view layer:</p>
+<ul>
+<li>JSP</li>
+<li>HTML</li>
+<li>XML/XSLT</li>
+<li>WML Files</li>
+<li>Velocity Templates</li>
+<li>Servlets</li>
+</ul>
+<p><strong>What are the conditions for actionForm to work correctly?</strong></p>
+<p>Ans: ActionForm must fulfill following conditions to work correctly:</p>
+<ul>
+<li>It must have a no argument constructor.</li>
+<li>It should have public getter and setter methods for all its properties.</li>
+</ul>
+<p><strong>&nbsp; Which library is provided by Struts for form elements like check boxes, text boxes etc?</strong></p>
+<p>Ans: Struts <a href="https://htmlcheatsheet.com/" target="_blank" rel="nofollow">provide HTML Tags</a> library which can be used for adding form elements like text fields, <a href="https://textfancy.com" rel="nofollow">text boxes</a>, radio buttons etc.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
 </body>

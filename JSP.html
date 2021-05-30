@@ -4,10 +4,11 @@
 
 <button type="button" onclick="document.location='index.html'" style="position:fixed;">Back To HOME</button>
 <br>
-<h1>JSP Links</h1>
+<h1>JSP Concepts </h1>
 
-<div class="dp-highlighter">
-<h3><strong>1. What are the life-cycle methods for a jsp?</strong></h3>
+<p><strong>What is JSP?</strong></p>
+<p>JSP is an abbreviation for <strong>Java Servlet Page</strong>. It is a Server-Side Programming Language used to create dynamic web-pages in the form of HTML.&nbsp;The JSP page is implicitly converted into a servlet and it enables some additional features such as Expression Language, Custom Tags, and many more.</p>
+<h3><strong>What are the life-cycle methods for a jsp?</strong></h3>
 <table border="1">
 <tbody>
 <tr>
@@ -28,7 +29,7 @@
 </tr>
 </tbody>
 </table>
-<h3><strong>2. What are the JSP implicit objects?</strong></h3>
+<h3><strong>What are the JSP implicit objects?</strong></h3>
 <p>JSP provides 9 implicit objects by default. They are as follows:</p>
 <table border="1">
 <tbody>
@@ -74,30 +75,80 @@
 </tr>
 </tbody>
 </table>
-<h3><strong>3. What are the differences between include directive and include action?</strong></h3>
-<table border="1">
+<p><strong>Mention some important JSP Action Tags.</strong></p>
+<p>&nbsp;The most frequently used <strong>JSP Action</strong>&nbsp;Tags are as follows:</p>
+<table class="aligncenter" border="1px solid black">
 <tbody>
 <tr>
-<td><strong>include directive</strong></td>
-<td><strong>include action</strong></td>
+<td><strong>JSP Action Tags</strong></td>
+<td><strong>Description</strong></td>
 </tr>
 <tr>
-<td>The include directive includes the content at page translation time.</td>
-<td>The include action includes the content at request time.</td>
+<td>jsp:forward</td>
+<td>Forward the request and response to another resource</td>
 </tr>
 <tr>
-<td>The include directive includes the original content of the page so page size increases at runtime.</td>
-<td>The include action doesn&rsquo;t include the original content rather invokes the include() method of Vendor provided class.</td>
+<td>jsp:include</td>
+<td>To include another Resource</td>
 </tr>
 <tr>
-<td>&nbsp;It&rsquo;s better for static pages.</td>
-<td>&nbsp;It&rsquo;s better for dynamic pages.</td>
+<td>jsp:useBean</td>
+<td>Locate/Create another bean object</td>
+</tr>
+<tr>
+<td>jsp:setProperty</td>
+<td>Sets the property value in a bean object</td>
+</tr>
+<tr>
+<td>jsp:getPropety</td>
+<td>Prints Property Value of the bean object</td>
+</tr>
+<tr>
+<td>jsp:fallback</td>
+<td>Used to print a message if the plugin is working</td>
+</tr>
+<tr>
+<td>jsp:plugin</td>
+<td>Used to embed another component such as an applet</td>
+</tr>
+<tr>
+<td>jsp:param</td>
+<td>Sets the Parameter value</td>
 </tr>
 </tbody>
 </table>
-<h3><strong>4. How to disable caching on back button of the browser?</strong></h3>
+<p><strong>Differentiate between Include Directive and Include Action.</strong></p>
+<p>The Difference between both can be explained as follows:</p>
+<table class="aligncenter" border="1px solid black">
+<tbody>
+<tr>
+<td><strong>Include Directive</strong></td>
+<td><strong>Include Action</strong></td>
+</tr>
+<tr>
+<td>Includes content at page translation time</td>
+<td>Includes content at page request time</td>
+</tr>
+<tr>
+<td>Preferred in Static Pages</td>
+<td>Preferred in Dynamic Pages</td>
+</tr>
+<tr>
+<td>Includes Original content of the page</td>
+<td>Does not include Original content of the page</td>
+</tr>
+<tr>
+<td>Cannot invoke include() method</td>
+<td>Can invoke include() method</td>
+</tr>
+<tr>
+<td>Page size can be increased in the run-time</td>
+</tr>
+</tbody>
+</table>
+<h3><strong style="font-size: 14px;"><br />How to disable caching on back button of the browser?</strong></h3>
 <p><strong>&lt;</strong>%<br />response.setHeader(&ldquo;Cache-Control&rdquo;,&rdquo;no-store&rdquo;);<br />response.setHeader(&ldquo;Pragma&rdquo;,&rdquo;no-cache&rdquo;);<br />response.setHeader (&ldquo;Expires&rdquo;, &ldquo;0&rdquo;); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//prevents caching at the proxy server<br />%<strong>&gt;</strong>&nbsp;&nbsp;&nbsp;</p>
-<h3><strong>5. What are the different tags provided in JSTL?</strong></h3>
+<h3><strong>What are the different tags provided in JSTL?</strong></h3>
 <p>There are 5 type of JSTL tags.</p>
 <ol>
 <li>core tags</li>
@@ -106,30 +157,15 @@
 <li>internationalization tags</li>
 <li>functions tags</li>
 </ol>
-<h3><strong>6. How to disable session in JSP?</strong></h3>
-<ol>
-<li><strong>&lt;</strong>%@ page&nbsp;session=&ldquo;false&rdquo;&nbsp;%<strong>&gt;</strong>&nbsp;&nbsp;&nbsp;</li>
-</ol>
-<h3><strong>7. &nbsp;How to delete a Cookie in a JSP?</strong></h3>
+<h3><strong>&nbsp;How to disable session in JSP?</strong></h3>
+<p><strong>&lt;</strong>%@ page&nbsp;session=&ldquo;false&rdquo;&nbsp;%<strong>&gt;</strong>&nbsp;&nbsp;&nbsp;</p>
+<p><strong>&nbsp;How to delete a Cookie in a JSP?</strong></p>
 <p>The following code explains how to delete a Cookie in a JSP :</p>
 <div>
 <div id="highlighter_163246" class="syntaxhighlighter  java">
 <table border="0" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
-<td class="gutter">
-<div class="line number1 index0 alt2">1</div>
-<div class="line number2 index1 alt1">2</div>
-<div class="line number3 index2 alt2">3</div>
-<div class="line number4 index3 alt1">4</div>
-<div class="line number5 index4 alt2">5</div>
-<div class="line number6 index5 alt1">6</div>
-<div class="line number7 index6 alt2">7</div>
-<div class="line number8 index7 alt1">8</div>
-<div class="line number9 index8 alt2">9</div>
-<div class="line number10 index9 alt1">10</div>
-<div class="line number11 index10 alt2">11</div>
-</td>
 <td class="code">
 <div class="container">
 <div class="line number1 index0 alt2"><code class="java plain">Cookie mycook =&nbsp;</code><code class="java keyword">new</code>&nbsp;<code class="java plain">Cookie(</code><code class="java string">"name1"</code><code class="java plain">,</code><code class="java string">"value1"</code><code class="java plain">);</code></div>
@@ -150,18 +186,177 @@
 </table>
 </div>
 </div>
-<h3><strong>8. Explain the jspDestroy() method.</strong></h3>
+<h3><strong>Explain the jspDestroy() method.</strong></h3>
 <p>jspDestry() method is invoked from&nbsp;<strong>javax.servlet.jsp.JspPage</strong>&nbsp;interface whenever a JSP page is about to be destroyed. Servlets destroy methods can be easily overridden to perform cleanup, like when closing a database connection.</p>
-<h3><strong>9. &nbsp;How is JSP better than Servlet technology?</strong></h3>
-<p>JSP is a technology on the server&rsquo;s side to make content generation simple. They are document-centric, whereas servlets are programs. A Java server page can contain fragments of Java program, which execute and instantiate Java classes. However, they occur inside an HTML template file. It provides the framework for the development of a Web Application.</p>
-<h3><strong>10. Why should we not configure JSP standard tags in web.xml?</strong></h3>
-<p><a name="exception"></a></p>
+<h3><strong>How is JSP better than Servlet technology?</strong></h3>
+<p>JSP is a technology on the server&rsquo;s side to make content generation simple. They are document-centric, whereas servlets are programs. A Java server page can contain fragments of Java program, which execute and instantiate Java classes. However, they occur inside <a href="https://htmlcheatsheet.com/" rel="nofollow">an HTML</a> template file. It provides the framework for the development of a Web Application.</p>
+<h3><strong>Why should we not configure JSP standard tags in web.xml?</strong></h3>
 <p>We don&rsquo;t need to configure JSP standard tags in web.xml because when container loads the web application and find TLD files, it automatically configures them to be used directly in the application JSP pages. We just need to include it in the JSP page using taglib directive.</p>
-<h3><strong>11. How will you use JSP EL in order to get the HTTP method name?</strong></h3>
+<h3><strong>How will you use JSP EL in order to get the HTTP method name?</strong></h3>
 <p>Using pageContext JSP EL implicit object you can get the request object reference and make use of the dot operator to retrieve the HTTP method name in the JSP page. The JSP EL code for this purpose will look like&nbsp;${pageContext.request.method}.</p>
-<p>In case you are facing any challenges with these java interview questions, please comment on your problems in the section below. Apart from this Java Interview Questions Blog, if you want to get trained from professionals on this technology, you can opt for structured training from edureka!</p>
+<p><strong>What do you mean by Context Initialization Parameters?</strong></p>
+<p>Context Initialization Parameters are the <strong>Initializing Parameters</strong>&nbsp;for the whole application. They are not specific to any&nbsp;<strong>Servlet</strong>&nbsp;or a&nbsp;<strong>JSP.</strong>&nbsp;Context Initialization Parameters are specified using the following syntax in a&nbsp;<strong>web.xml</strong>&nbsp;file.</p>
+<div>
+<div id="highlighter_398531" class="syntaxhighlighter  java">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="java plain">&lt;context-param&gt;&nbsp; </code></div>
+<div class="line number2 index1 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;param-name&gt;parametername&lt;/param-name&gt;&nbsp; </code></div>
+<div class="line number3 index2 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;param-value&gt;parametervalue&lt;/param-value&gt;&nbsp; </code></div>
+<div class="line number4 index3 alt1"><code class="java plain">&lt;/context-param&gt;</code></div>
 </div>
-<button type="button" onclick="document.location='NG_JSP.docx'" >JSP</button>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mention the scope values for &lt;jsp.useBean&gt; tag.</strong></p>
+<p>There are mainly four scope values available for <strong>&lt;jsp.useBean&gt;</strong>&nbsp;tag.</p>
+<ul>
+<li>page</li>
+<li>request</li>
+<li>application</li>
+<li>session</li>
+</ul>
+<p><strong>What are the Literals used in JSP?</strong></p>
+<p>The <strong>Literals</strong>&nbsp;used in JSP are as follows:</p>
+<ul>
+<li>Null</li>
+<li>Boolean</li>
+<li>String</li>
+<li>Integer</li>
+<li>Float</li>
+</ul>
+<p><strong>What is the major difference between ServletContext and PageContext?&nbsp;</strong></p>
+<p><strong>&nbsp;</strong>The major difference between ServletContect and PageContext is, the&nbsp;<strong>ServletContext</strong>&nbsp;is designed to provide information about the&nbsp;<strong>Container</strong>&nbsp;and on the other hand, the&nbsp;<strong>PageContext</strong>&nbsp;is designed to provide information about the&nbsp;<strong>Request.</strong></p>
+<p><strong>Why are the request.getRequestDispatcher() and context.getRequestDispatcher() used?</strong></p>
+<p>The <strong>RequestDispatcher()</strong>&nbsp;and the&nbsp;<strong>context.getRequestDispatcher()</strong>&nbsp;are used for the following purposes.</p>
+<ul>
+<li><strong>request.getRequestDispatcher()</strong>&nbsp;is used to create request. We need to give the relative path of the resource.</li>
+<li><strong>context.getRequestDispatcher()</strong>&nbsp;is used to create context. We need to give the absolute path of the resource.</li>
+</ul>
+<p><strong>List down the major differences between the JSP Custom Tags and Java Beans.</strong></p>
+<p>The Major Differences between <strong>JSP Custom Tags</strong>&nbsp;and&nbsp;<strong>Java Beans</strong>&nbsp;are as follows:</p>
+<table class="aligncenter" style="width: 455px;" border="1px solid black">
+<tbody>
+<tr>
+<td style="width: 216px;"><strong>Custom Tags</strong></td>
+<td style="width: 223.333px;"><strong>Java Beans</strong></td>
+</tr>
+<tr>
+<td style="width: 216px;">Custom Tags can manipulate JSP content</td>
+<td style="width: 223.333px;">Java Beans cannot manipulate JSP content</td>
+</tr>
+<tr>
+<td style="width: 216px;">Executing complex operations is simple</td>
+<td style="width: 223.333px;">Executing complex operations is difficult</td>
+</tr>
+<tr>
+<td style="width: 216px;">Custom Tags are hard to set up</td>
+<td style="width: 223.333px;">Java Beans are simple to set up</td>
+</tr>
+<tr>
+<td style="width: 216px;">Custom Tags are available only in JSP 1.1</td>
+<td style="width: 223.333px;">Java Beans are used in all JSP 1.x versions</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How are Custom Tags in JSP created?</strong></p>
+<p>&nbsp;Custom Tags in JSP are created using the following steps.</p>
+<ol>
+<li>Creating the Tag Handler Class</li>
+<li>Creating the TLD File</li>
+<li>Creating the JSP File</li>
+</ol>
+<p><strong>Creating the Tag Handler Class:</strong></p>
+<p>To create a Tag Handler Class, we need to inherit the TagSupport Class and then override&nbsp;<strong>doStartTag()</strong>&nbsp;method. To write the data for JSP, we need to use the&nbsp;<strong>JspWriter</strong>&nbsp;class.&nbsp;The PageContext class provides&nbsp;<strong>getOut()</strong>&nbsp;method which returns the instance of the&nbsp;<strong>JspWriter</strong>&nbsp;class. Later, the&nbsp;<strong>TagSupport</strong>&nbsp;class provides an instance of&nbsp;<strong>pageContext</strong>&nbsp;by default.</p>
+<p><strong>Creating the TLD File:</strong></p>
+<p>TLD stands for&nbsp;<strong>Tag Library Descriptor</strong>&nbsp;file. It contains the information related to the tag and Tag Hander classes. It must be held inside the&nbsp;<strong>WEB-INF</strong>&nbsp;directory.</p>
+<p><strong>Creating the JSP File:</strong></p>
+<p>We will be specifying the path of the TLD file directly. It is recommended to use the URI name instead of full a path of the TLD file. It uses&nbsp;<strong>taglib</strong>&nbsp;directive to use the tags defined in the TLD file.</p>
+<p><strong>Mention the three important tags used in the development of JSP Bean.</strong></p>
+<p>The Three tags used in the <strong>JSP Bean development</strong>&nbsp;are as follows:</p>
+<ul>
+<li>jsp:useBean</li>
+<li>jsp:setProperty</li>
+<li>jsp:getProperty</li>
+</ul>
+<p><strong>How can we stop errors on Display in a JSP Page?</strong></p>
+<p><strong>Ans:</strong>&nbsp;We can stop errors in display in a JSP Page by setting up an&nbsp;<strong>&ldquo;ErrorPage&rdquo;</strong>&nbsp; attribute of the PAGE directory to the name of the error page in the JSP page, and then in the error JSP page set&nbsp;<strong>&ldquo;isErrorpage=&rdquo;TRUE&rdquo;.</strong></p>
+<p><strong>Can a Constructor be used in place of init() method to initialize a servlet?</strong></p>
+<p><strong>Ans:</strong>&nbsp;Yes, We can use a constructor in place of&nbsp;<strong>init()</strong>&nbsp;method. But it is not preferred because init() was developed because earlier Java versions could not invoke constructors with arguments dynamically. So they could not assign a&nbsp;<strong>servletConfig.</strong>&nbsp;However, servlet containers still call an only no-arg constructor. So there is no access to&nbsp;<strong>servletContext</strong>&nbsp;or&nbsp;<strong>servletConfig.</strong></p>
+<p><strong>Explain Client-Side and Server-Side Validation.</strong></p>
+<p><strong>Ans:&nbsp;</strong>The&nbsp;<strong>Client-Side</strong>&nbsp;validation is done using&nbsp;<strong>JavaScript.</strong>&nbsp;The validation takes place within the browser. Javascript is used to submit the data in the form when the validation is&nbsp;<strong>successful.</strong>&nbsp;Validation errors do not require any extra network trip because the form cannot be submitted if there are any errors.</p>
+<p>Similar kind of data validation is carried out in the&nbsp;<strong>Server-Side</strong>&nbsp;after submission of the form. In if the validation&nbsp;<strong>fails,</strong>&nbsp;then, the extra network trip is required to&nbsp;<strong>resend</strong>&nbsp;the form to the client to refill the form with the correct data.</p>
+<p><strong>Differentiate between JSP Scriptlet tag and Declaration tag.</strong></p>
+<p><strong>Ans:</strong>&nbsp;The difference in both is discussed as follows:</p>
+<table class="aligncenter" border="1px solid black">
+<tbody>
+<tr>
+<td><strong>JSP Scriptlet Tag</strong></td>
+<td><strong>Declaration Tag</strong></td>
+</tr>
+<tr>
+<td>JSP Scriptlet Tag can only declare Variables</td>
+<td>Declaration Tag declares Methods and Variables</td>
+</tr>
+<tr>
+<td>Scriptlet Tag is placed within _jspService()</td>
+<td>Declaration Tag is placed outside _jspService()</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p><strong><label>Mention the advantages of JSP over Pure Servlets?</label></strong></p>
+<div class="toggle-content">
+<p><strong>Ans:&nbsp;</strong>Some of the Major Advantages of JSP over Pure Servlets are as discussed below:</p>
+<ul>
+<li>It is more convenient to write and modify normal&nbsp;<strong>HTML</strong>&nbsp;than to have plenty of&nbsp;<strong>println</strong>&nbsp;statements that generate the&nbsp;<strong>HTML.</strong></li>
+<li><strong>Embedding</strong>&nbsp;of Java code in HTML pages.</li>
+<li><strong>Platform</strong>&nbsp;independence.</li>
+<li>Creation of&nbsp;<strong>database-driven</strong>&nbsp;Web applications.</li>
+<li><strong><a name="advanced"></a>Server-side</strong>&nbsp;programming capabilities.</li>
+</ul>
+</div>
+<p><strong>How are JSP(Java Server Pages) better than ASP(Active Server Pages)?</strong></p>
+<p><strong>Ans:</strong>&nbsp;The advantages of&nbsp;<strong>JSP</strong>&nbsp;over&nbsp;<strong>ASP</strong>&nbsp;are as follows:</p>
+<ul>
+<li>The dynamic part of the code is written in&nbsp;<strong>Java,</strong>&nbsp;not in&nbsp;<strong>Visual Basic</strong>&nbsp;or the&nbsp;<strong>Microsoft-specific</strong>&nbsp;language. Hence, it is&nbsp;<strong>powerful</strong>&nbsp;and&nbsp;<strong>easier</strong>&nbsp;to use.</li>
+<li>It is&nbsp;<strong>portable</strong>&nbsp;to other operating systems and&nbsp;<strong>Non-Microsoft</strong>&nbsp;Web servers.</li>
+</ul>
+<p><a href="https://www.edureka.co/blog/interview-questions/jsp-interview-questions/" target="_blank">https://www.edureka.co/blog/interview-questions/jsp-interview-questions/</a></p>
+<p><strong>Explain handling of runtime exceptions.</strong></p>
+<p>Errorpage attribute is used to uncatch the run-time exceptions forwarded automatically to an error processing page.</p>
+<p>It redirects the browser to JSP page error.jsp if any uncaught exception is faces during request handling. It is an error processing page.</p>
+<p><strong>Why does _jspService() start with an &lsquo;_&rsquo; but other lifecycle methods do not?</strong></p>
+<p>Whatever content made in a jsp page goes inside the _jspService() method by the container. If it is override, the compiler gives an error, but the other 2 lifecycles can be easily override. So &lsquo;_&rsquo; shows that we cannot override this method.</p>
+<p><strong>Show the 2 types of comments in JSP.</strong></p>
+<p>The 2 types are :</p>
+<pre>&lt;%&ndash;JSP Comment&ndash;%&gt;
+&lt;!&ndash;HTML comment&ndash;&gt;</pre>
+<p><strong>Explain JSP directives.</strong></p>
+<p>JSP directives are messages to JSP Engine. They serve as a message from page to container and control the processing of the entire page. They can set global values like class declaration. They do not produce output and are enclosed in &lt;%@....%&gt;</p>
+<p><strong>Explain pge Directives.</strong></p>
+<p>Page Directives inform the JSP Engine about headers and facilities that the page receives from the environment. It is found at the top of all JSP pages. Its syntax is &lt;%@ page attribute=&rdquo;value&rdquo;&gt;</p>
+<p><strong>Show attributes of page directives.</strong></p>
+<p>1)Session : It shows if a session data is available to the page.</p>
+<p>2)Import : it shows packages that are imported.</p>
+<p>3)isELIgnored : It shows whether EL expressions are ignored when JSP translates into a servlet.</p>
+<p>4)contentType : it allows the user to specify the content type of page.</p>
+<p><strong>What is Include directive?</strong></p>
+<p>The include directive statically inserts the contents of a resource into the current JSP. It helps in the reuse of code without duplication. and includes contents of the file at translation time. Its syntax is as follows &lt;%@ include file=&rdquo;Filename&rdquo;%&gt;.</p>
+<p><strong>&nbsp;What is Translation Phase?</strong></p>
+<p>JSP engine translates and compiles a JSP file to a servlet. This servlet moves to the execution phase where requests and responses are handled. They are compiled for the first time they are accessed unless manually compiled ahead of time. The manual or explicit compilation is useful for long and convoluted programs.</p>
+<p><strong>Perform a Browser Redirection from a JSP Page.</strong></p>
+<pre>&lt;% response.sendRedirect(URL); %&gt;</pre>
+<p>or we can change the location of the HTTP header attribute as follows:</p>
+<pre>&lt;% response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY); response.setHeader(URL); %&gt;</pre>
+<p><strong>How to forward a request to another source.</strong></p>
+<pre>&lt;jsp:forward page="/Page2.jsp" /&gt;<br /><br /><a href="https://www.guru99.com/jsp-interview-questions.html" target="_blank">https://www.guru99.com/jsp-interview-questions.html</a></pre>
+</div>
+</div>
 
 
 </body>
