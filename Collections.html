@@ -4,9 +4,781 @@
 
 <button type="button" onclick="document.location='index.html'" style="position:fixed;">Back To HOME</button>
 <br>
-<h1>Collections Links Links</h1>
 
+<h1>Collections&nbsp;</h1>
+<p>The&nbsp;<strong>Collection in Java</strong>&nbsp;is a framework that provides an architecture to store and manipulate the group of objects.</p>
+<p>Java Collections can achieve all the operations that you perform on a data such as searching, sorting, insertion, manipulation, and deletion.</p>
+<p>Java Collection means a single unit of objects. Java Collection framework provides many interfaces (Set, List, Queue, Deque) and classes (<a href="https://www.javatpoint.com/java-arraylist">ArrayList</a>, Vector,&nbsp;<a href="https://www.javatpoint.com/java-linkedlist">LinkedList</a>,&nbsp;<a href="https://www.javatpoint.com/java-priorityqueue">PriorityQueue</a>, HashSet, LinkedHashSet, TreeSet).</p>
+<h4 class="h3">What is Collection in Java</h4>
+<p>A Collection represents a single unit of objects, i.e., a group.</p>
+<p>A collection is a framework that is used to store and manipulate a container of objects in Java.</p>
+<p>Collections can be used for performing a variety of operations such as:</p>
+<ul>
+<li>Search</li>
+<li>Sort</li>
+<li>Manipulate</li>
+<li>Delete</li>
+</ul>
+<p>Below is the chart that represents the hierarchy of collections in Java:</p>
+<p><img class="aligncenter wp-image-212666 size-full lazyloaded" src="https://intellipaat.com/blog/wp-content/uploads/2015/09/2.jpg" sizes="(max-width: 800px) 100vw, 800px" srcset="https://intellipaat.com/blog/wp-content/uploads/2015/09/2.jpg 800w, https://intellipaat.com/blog/wp-content/uploads/2015/09/2-768x370.jpg 768w, https://intellipaat.com/blog/wp-content/uploads/2015/09/2-561x270.jpg 561w" alt="Collectiions in Java" width="800" height="385" data-lazy-srcset="https://intellipaat.com/blog/wp-content/uploads/2015/09/2.jpg 800w, https://intellipaat.com/blog/wp-content/uploads/2015/09/2-768x370.jpg 768w, https://intellipaat.com/blog/wp-content/uploads/2015/09/2-561x270.jpg 561w" data-lazy-sizes="(max-width: 800px) 100vw, 800px" data-lazy-src="https://intellipaat.com/blog/wp-content/uploads/2015/09/2.jpg" data-was-processed="true" /></p>
+<h3 id="h2">Iterator interface</h3>
+<table>
+<tbody>
+<tr>
+<td>Iterator interface provides the facility of iterating the elements in a forward direction only.</td>
+</tr>
+</tbody>
+</table>
+<h4 class="h4">Methods of Iterator interface</h4>
+<p>There are only three methods in the Iterator interface. They are:</p>
+<table class="alt">
+<tbody>
+<tr>
+<th>No.</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>public boolean hasNext()</td>
+<td>It returns true if the iterator has more elements otherwise it returns false.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>public Object next()</td>
+<td>It returns the element and moves the cursor pointer to the next element.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>public void remove()</td>
+<td>It removes the last elements returned by the iterator. It is less used.</td>
+</tr>
+</tbody>
+</table>
+<h2 class="h2">Iterable Interface</h2>
+<p>The Iterable interface is the root interface for all the collection classes. The Collection interface extends the Iterable interface and therefore all the subclasses of Collection interface also implement the Iterable interface.</p>
+<p>It contains only one abstract method. i.e.,</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<ol class="dp-j" start="1">
+<li class="alt">Iterator&lt;T&gt;&nbsp;iterator()&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>It returns the iterator over the elements of type T.</p>
+<h2 class="h2">Collection Interface</h2>
+<p>The Collection interface is the interface which is implemented by all the classes in the collection framework. It declares the methods that every collection will have. In other words, we can say that the Collection interface builds the foundation on which the collection framework depends.</p>
+<p>Some of the methods of Collection interface are Boolean add ( Object obj), Boolean addAll ( Collection c), void clear(), etc. which are implemented by all the subclasses of Collection interface.</p>
+<h2 class="h2">List Interface</h2>
+<p>List interface is the child interface of Collection interface. It inhibits a list type data structure in which we can store the ordered collection of objects. It can have duplicate values.</p>
+<p>List interface is implemented by the classes ArrayList, LinkedList, Vector, and Stack.</p>
+<p>To instantiate the List interface, we must use :</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<ol class="dp-j" start="1">
+<li class="alt">List&nbsp;&lt;data-type&gt;&nbsp;list1=&nbsp;<span class="keyword">new</span>&nbsp;ArrayList();&nbsp;&nbsp;</li>
+<li class="">List&nbsp;&lt;data-type&gt;&nbsp;list2&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;LinkedList();&nbsp;&nbsp;</li>
+<li class="alt">List&nbsp;&lt;data-type&gt;&nbsp;list3&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;Vector();&nbsp;&nbsp;</li>
+<li class="">List&nbsp;&lt;data-type&gt;&nbsp;list4&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;Stack();&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>There are various methods in List interface that can be used to insert, delete, and access the elements from the list.</p>
+<p>The classes that implement the List interface are given below.</p>
+<h2 class="h2">ArrayList</h2>
+<p>The ArrayList class implements the List interface. It uses a dynamic array to store the duplicate element of different data types. The ArrayList class maintains the insertion order and is non-synchronized. The elements stored in the ArrayList class can be randomly accessed. Consider the following example.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<p><em>import java.util.*; </em><br /><em>class TestJavaCollection1{ </em><br /><em>public static void main(String args[]){ </em><br /><em>ArrayList&lt;String&gt; list=new ArrayList&lt;String&gt;();//Creating arraylist </em><br /><em>list.add("Ravi");//Adding object in arraylist </em><br /><em>list.add("Vijay"); </em><br /><em>list.add("Ravi"); </em><br /><em>list.add("Ajay"); </em><br /><em>//Traversing list through Iterator </em><br /><em>Iterator itr=list.iterator(); </em><br /><em>while(itr.hasNext()){ </em><br /><em>System.out.println(itr.next()); </em><br /><em>} </em><br /><em>} </em><br /><em>} </em></p>
+</div>
+</div>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>Ravi
+Vijay
+Ravi
+Ajay<br /><br /></pre>
+<h2 class="h2">LinkedList</h2>
+<p>LinkedList implements the Collection interface. It uses a doubly linked list internally to store the elements. It can store the duplicate elements. It maintains the insertion order and is not synchronized. In LinkedList, the manipulation is fast because no shifting is required.</p>
+<p>Consider the following example.</p>
+<p>import java.util.*; <br />public class TestJavaCollection2{ <br />public static void main(String args[]){ <br />LinkedList&lt;String&gt; al=new LinkedList&lt;String&gt;(); <br />al.add("Ravi"); <br />al.add("Vijay"); <br />al.add("Ravi"); <br />al.add("Ajay"); <br />Iterator&lt;String&gt; itr=al.iterator(); <br />while(itr.hasNext()){ <br />System.out.println(itr.next()); <br />} <br />} <br />}</p>
+<p>output:</p>
+<pre>Ravi
+Vijay
+Ravi
+Ajay</pre>
+<h2 class="h2">Vector</h2>
+<p>Vector uses a dynamic array to store the data elements. It is similar to ArrayList. However, It is synchronized and contains many methods that are not the part of Collection framework.</p>
+<p>Consider the following example.</p>
+<p>import java.util.*; <br />public class TestJavaCollection3{ <br />public static void main(String args[]){ <br />Vector&lt;String&gt; v=new Vector&lt;String&gt;(); <br />v.add("Ayush"); <br />v.add("Amit"); <br />v.add("Ashish"); <br />v.add("Garima"); <br />Iterator&lt;String&gt; itr=v.iterator(); <br />while(itr.hasNext()){ <br />System.out.println(itr.next()); <br />} <br />} <br />}</p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>Ayush
+Amit
+Ashish
+Garima</pre>
+<h2 class="h2">Stack</h2>
+<p>The stack is the subclass of Vector. It implements the last-in-first-out data structure, i.e., Stack. The stack contains all of the methods of Vector class and also provides its methods like boolean push(), boolean peek(), boolean push(object o), which defines its properties.</p>
+<p>Consider the following example.</p>
+<p>import java.util.*; <br />public class TestJavaCollection4{ <br />public static void main(String args[]){ <br />Stack&lt;String&gt; stack = new Stack&lt;String&gt;(); <br />stack.push("Ayush"); <br />stack.push("Garvit"); <br />stack.push("Amit"); <br />stack.push("Ashish"); <br />stack.push("Garima"); <br />stack.pop(); <br />Iterator&lt;String&gt; itr=stack.iterator(); <br />while(itr.hasNext()){ <br />System.out.println(itr.next()); <br />} <br />} <br />}</p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>Ayush
+Garvit
+Amit
+Ashish</pre>
+<h2 class="h2">Queue Interface</h2>
+<p>Queue interface maintains the first-in-first-out order. It can be defined as an ordered list that is used to hold the elements which are about to be processed. There are various classes like PriorityQueue, Deque, and ArrayDeque which implements the Queue interface.</p>
+<p>Queue interface can be instantiated as:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<ol class="dp-j" start="1">
+<li class="alt">Queue&lt;String&gt;&nbsp;q1&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;PriorityQueue();&nbsp;&nbsp;</li>
+<li class="">Queue&lt;String&gt;&nbsp;q2&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;ArrayDeque();&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>There are various classes that implement the Queue interface, some of them are given below.</p>
+<h2 class="h2">PriorityQueue</h2>
+<p>The PriorityQueue class implements the Queue interface. It holds the elements or objects which are to be processed by their priorities. PriorityQueue doesn't allow null values to be stored in the queue.</p>
+<p>Consider the following example.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">import</span>&nbsp;java.util.*;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;TestJavaCollection5{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class="">PriorityQueue&lt;String&gt;&nbsp;queue=<span class="keyword">new</span>&nbsp;PriorityQueue&lt;String&gt;();&nbsp;&nbsp;</li>
+<li class="alt">queue.add(<span class="string">"Amit&nbsp;Sharma"</span>);&nbsp;&nbsp;</li>
+<li class="">queue.add(<span class="string">"Vijay&nbsp;Raj"</span>);&nbsp;&nbsp;</li>
+<li class="alt">queue.add(<span class="string">"JaiShankar"</span>);&nbsp;&nbsp;</li>
+<li class="">queue.add(<span class="string">"Raj"</span>);&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(<span class="string">"head:"</span>+queue.element());&nbsp;&nbsp;</li>
+<li class="">System.out.println(<span class="string">"head:"</span>+queue.peek());&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(<span class="string">"iterating&nbsp;the&nbsp;queue&nbsp;elements:"</span>);&nbsp;&nbsp;</li>
+<li class="">Iterator&nbsp;itr=queue.iterator();&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">while</span>(itr.hasNext()){&nbsp;&nbsp;</li>
+<li class="">System.out.println(itr.next());&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">queue.remove();&nbsp;&nbsp;</li>
+<li class="alt">queue.poll();&nbsp;&nbsp;</li>
+<li class="">System.out.println(<span class="string">"after&nbsp;removing&nbsp;two&nbsp;elements:"</span>);&nbsp;&nbsp;</li>
+<li class="alt">Iterator&lt;String&gt;&nbsp;itr2=queue.iterator();&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">while</span>(itr2.hasNext()){&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(itr2.next());&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>head:Amit Sharma
+head:Amit Sharma
+iterating the queue elements:
+Amit Sharma
+Raj
+JaiShankar
+Vijay Raj
+after removing two elements:
+Raj
+Vijay Raj
+</pre>
+</div>
+<h2 class="h2">Deque Interface</h2>
+<p>Deque interface extends the Queue interface. In Deque, we can remove and add the elements from both the side. Deque stands for a double-ended queue which enables us to perform the operations at both the ends.</p>
+<p>Deque can be instantiated as:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<ol class="dp-j" start="1">
+<li class="alt">Deque&nbsp;d&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;ArrayDeque();&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h2 class="h2">ArrayDeque</h2>
+<p>ArrayDeque class implements the Deque interface. It facilitates us to use the Deque. Unlike queue, we can add or delete the elements from both the ends.</p>
+<p>ArrayDeque is faster than ArrayList and Stack and has no capacity restrictions.</p>
+<p>Consider the following example.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools">&nbsp;</div>
+</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">import</span>&nbsp;java.util.*;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;TestJavaCollection6{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//Creating&nbsp;Deque&nbsp;and&nbsp;adding&nbsp;elements</span>&nbsp;&nbsp;</li>
+<li class="alt">Deque&lt;String&gt;&nbsp;deque&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;ArrayDeque&lt;String&gt;();&nbsp;&nbsp;</li>
+<li class="">deque.add(<span class="string">"Gautam"</span>);&nbsp;&nbsp;</li>
+<li class="alt">deque.add(<span class="string">"Karan"</span>);&nbsp;&nbsp;</li>
+<li class="">deque.add(<span class="string">"Ajay"</span>);&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//Traversing&nbsp;elements</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">for</span>&nbsp;(String&nbsp;str&nbsp;:&nbsp;deque)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(str);&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>Gautam
+Karan
+Ajay
+</pre>
+</div>
+<h2 class="h2">Set Interface</h2>
+<p>Set Interface in Java is present in java.util package. It extends the Collection interface. It represents the unordered set of elements which doesn't allow us to store the duplicate items. We can store at most one null value in Set. Set is implemented by HashSet, LinkedHashSet, and TreeSet.</p>
+<p>Set can be instantiated as:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools">&nbsp;</div>
+</div>
+<ol class="dp-j" start="1">
+<li class="alt">Set&lt;data-type&gt;&nbsp;s1&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;HashSet&lt;data-type&gt;();&nbsp;&nbsp;</li>
+<li class="">Set&lt;data-type&gt;&nbsp;s2&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;LinkedHashSet&lt;data-type&gt;();&nbsp;&nbsp;</li>
+<li class="alt">Set&lt;data-type&gt;&nbsp;s3&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;TreeSet&lt;data-type&gt;();&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h2 class="h2">HashSet</h2>
+<p>HashSet class implements Set Interface. It represents the collection that uses a hash table for storage. Hashing is used to store the elements in the HashSet. It contains unique items.</p>
+<p>Consider the following example.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools">&nbsp;</div>
+</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">import</span>&nbsp;java.util.*;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;TestJavaCollection7{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//Creating&nbsp;HashSet&nbsp;and&nbsp;adding&nbsp;elements</span>&nbsp;&nbsp;</li>
+<li class="alt">HashSet&lt;String&gt;&nbsp;set=<span class="keyword">new</span>&nbsp;HashSet&lt;String&gt;();&nbsp;&nbsp;</li>
+<li class="">set.add(<span class="string">"Ravi"</span>);&nbsp;&nbsp;</li>
+<li class="alt">set.add(<span class="string">"Vijay"</span>);&nbsp;&nbsp;</li>
+<li class="">set.add(<span class="string">"Ravi"</span>);&nbsp;&nbsp;</li>
+<li class="alt">set.add(<span class="string">"Ajay"</span>);&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//Traversing&nbsp;elements</span>&nbsp;&nbsp;</li>
+<li class="alt">Iterator&lt;String&gt;&nbsp;itr=set.iterator();&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">while</span>(itr.hasNext()){&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(itr.next());&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>Vijay
+Ravi
+Ajay
+</pre>
+</div>
+<h2 class="h2">LinkedHashSet</h2>
+<p>LinkedHashSet class represents the LinkedList implementation of Set Interface. It extends the HashSet class and implements Set interface. Like HashSet, It also contains unique elements. It maintains the insertion order and permits null elements.</p>
+<p>Consider the following example.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools">&nbsp;</div>
+</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">import</span>&nbsp;java.util.*;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;TestJavaCollection8{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class="">LinkedHashSet&lt;String&gt;&nbsp;set=<span class="keyword">new</span>&nbsp;LinkedHashSet&lt;String&gt;();&nbsp;&nbsp;</li>
+<li class="alt">set.add(<span class="string">"Ravi"</span>);&nbsp;&nbsp;</li>
+<li class="">set.add(<span class="string">"Vijay"</span>);&nbsp;&nbsp;</li>
+<li class="alt">set.add(<span class="string">"Ravi"</span>);&nbsp;&nbsp;</li>
+<li class="">set.add(<span class="string">"Ajay"</span>);&nbsp;&nbsp;</li>
+<li class="alt">Iterator&lt;String&gt;&nbsp;itr=set.iterator();&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">while</span>(itr.hasNext()){&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(itr.next());&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>Ravi
+Vijay
+Ajay
+</pre>
+</div>
+<h2 class="h2">SortedSet Interface</h2>
+<p>SortedSet is the alternate of Set interface that provides a total ordering on its elements. The elements of the SortedSet are arranged in the increasing (ascending) order. The SortedSet provides the additional methods that inhibit the natural ordering of the elements.</p>
+<p>The SortedSet can be instantiated as:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools">&nbsp;</div>
+</div>
+<ol class="dp-j" start="1">
+<li class="alt">SortedSet&lt;data-type&gt;&nbsp;set&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;TreeSet();&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h2 class="h2">TreeSet</h2>
+<p>Java TreeSet class implements the Set interface that uses a tree for storage. Like HashSet, TreeSet also contains unique elements. However, the access and retrieval time of TreeSet is quite fast. The elements in TreeSet stored in ascending order.</p>
+<p>Consider the following example:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools">&nbsp;</div>
+</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">import</span>&nbsp;java.util.*;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;TestJavaCollection9{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//Creating&nbsp;and&nbsp;adding&nbsp;elements</span>&nbsp;&nbsp;</li>
+<li class="alt">TreeSet&lt;String&gt;&nbsp;set=<span class="keyword">new</span>&nbsp;TreeSet&lt;String&gt;();&nbsp;&nbsp;</li>
+<li class="">set.add(<span class="string">"Ravi"</span>);&nbsp;&nbsp;</li>
+<li class="alt">set.add(<span class="string">"Vijay"</span>);&nbsp;&nbsp;</li>
+<li class="">set.add(<span class="string">"Ravi"</span>);&nbsp;&nbsp;</li>
+<li class="alt">set.add(<span class="string">"Ajay"</span>);&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//traversing&nbsp;elements</span>&nbsp;&nbsp;</li>
+<li class="alt">Iterator&lt;String&gt;&nbsp;itr=set.iterator();&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">while</span>(itr.hasNext()){&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(itr.next());&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Output:</p>
+<pre>Ajay
+Ravi
+Vijay<br /><br /></pre>
+<h3 class="h3">Ways to iterate the elements of the collection in Java</h3>
+<p>There are various ways to traverse the collection elements:</p>
+<ol class="points">
+<li>By Iterator interface.</li>
+<li>By for-each loop.</li>
+<li>By ListIterator interface.</li>
+<li>By for loop.</li>
+<li>By forEach() method.</li>
+<li>By forEachRemaining() method.</li>
+</ol>
+<h3 class="h3">Iterating Collection through remaining ways</h3>
+<p>Let's see an example to traverse the ArrayList elements through other ways</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools">&nbsp;</div>
+</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">import</span>&nbsp;java.util.*;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">class</span>&nbsp;ArrayList4{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;<span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;ArrayList&lt;String&gt;&nbsp;list=<span class="keyword">new</span>&nbsp;ArrayList&lt;String&gt;();<span class="comment">//Creating&nbsp;arraylist</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list.add(<span class="string">"Ravi"</span>);<span class="comment">//Adding&nbsp;object&nbsp;in&nbsp;arraylist</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list.add(<span class="string">"Vijay"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list.add(<span class="string">"Ravi"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list.add(<span class="string">"Ajay"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"Traversing&nbsp;list&nbsp;through&nbsp;List&nbsp;Iterator:"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//Here,&nbsp;element&nbsp;iterates&nbsp;in&nbsp;reverse&nbsp;order</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ListIterator&lt;String&gt;&nbsp;list1=list.listIterator(list.size());&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>(list1.hasPrevious())&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;str=list1.previous();&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(str);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"Traversing&nbsp;list&nbsp;through&nbsp;for&nbsp;loop:"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;i=<span class="number">0</span>;i&lt;list.size();i++)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(list.get(i));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"Traversing&nbsp;list&nbsp;through&nbsp;forEach()&nbsp;method:"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//The&nbsp;forEach()&nbsp;method&nbsp;is&nbsp;a&nbsp;new&nbsp;feature,&nbsp;introduced&nbsp;in&nbsp;Java&nbsp;8.</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list.forEach(a-&gt;{&nbsp;<span class="comment">//Here,&nbsp;we&nbsp;are&nbsp;using&nbsp;lambda&nbsp;expression</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(a);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"Traversing&nbsp;list&nbsp;through&nbsp;forEachRemaining()&nbsp;method:"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Iterator&lt;String&gt;&nbsp;itr=list.iterator();&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;itr.forEachRemaining(a-&gt;&nbsp;<span class="comment">//Here,&nbsp;we&nbsp;are&nbsp;using&nbsp;lambda&nbsp;expression</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(a);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;</li>
+<li class="">&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Traversing list through List Iterator:
+Ajay
+Ravi
+Vijay
+Ravi
+Traversing list through for loop:
+Ravi
+Vijay
+Ravi
+Ajay
+Traversing list through forEach() method:
+Ravi
+Vijay
+Ravi
+Ajay
+Traversing list through forEachRemaining() method:
+Ravi
+Vijay
+Ravi
+Ajay
+</pre>
+<h3 class="h3">What is the difference between Collection and Collections?</h3>
+<p>The differences between the Collection and Collections are given below.</p>
+<ul class="points">
+<li>The Collection is an interface whereas Collections is a class.</li>
+<li>The Collection interface provides the standard functionality of data structure to List, Set, and Queue. However, Collections class is to sort and synchronize the collection elements.</li>
+<li>The Collection interface provides the methods that can be used for data structure whereas Collections class provides the static methods which can be used for various operation on a collection.</li>
+</ul>
+<h3 class="h3">What are the main differences between array and collection?</h3>
+<p>Array and Collection are somewhat similar regarding storing the references of objects and manipulating the data, but they differ in many ways. The main differences between the array and Collection are defined below:</p>
+<ul class="points">
+<li>Arrays are always of fixed size, i.e., a user can not increase or decrease the length of the array according to their requirement or at runtime, but In Collection, size can be changed dynamically as per need.</li>
+<li>Arrays can only store homogeneous or similar type objects, but in Collection, heterogeneous objects can be stored.</li>
+<li>Arrays cannot provide the ?ready-made? methods for user requirements as sorting, searching, etc. but Collection includes readymade methods to use.</li>
+</ul>
+<h3 class="h3">Explain various interfaces used in Collection framework?</h3>
+<p>Collection framework implements various interfaces, Collection interface and Map interface (java.util.Map) are the mainly used interfaces of Java Collection Framework. List of interfaces of Collection Framework is given below:</p>
+<p><strong>1. Collection interface:</strong>&nbsp;Collection (java.util.Collection) is the primary interface, and every collection must implement this interface.</p>
+<p><strong>Syntax:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">interface</span>&nbsp;Collection&lt;E&gt;<span class="keyword">extends</span>&nbsp;Iterable&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Where &lt;E&gt; represents that this interface is of Generic type</p>
+<p><strong>2. List interface:&nbsp;</strong>List interface extends the Collection interface, and it is an ordered collection of objects. It contains duplicate elements. It also allows random access of elements.</p>
+<p><strong>Syntax:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools">&nbsp;</div>
+</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">interface</span>&nbsp;List&lt;E&gt;&nbsp;<span class="keyword">extends</span>&nbsp;Collection&lt;E&gt;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>3. Set interface:</strong>&nbsp;Set (java.util.Set) interface is a collection which cannot contain duplicate elements. It can only include inherited methods of Collection interface</p>
+<p><strong>Syntax:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools">&nbsp;</div>
+</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">interface</span>&nbsp;Set&lt;E&gt;&nbsp;<span class="keyword">extends</span>&nbsp;Collection&lt;E&gt;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Queue interface:&nbsp;</strong>Queue (java.util.Queue) interface defines queue data structure, which stores the elements in the form FIFO (first in first out).</p>
+<p><strong>Syntax:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools">&nbsp;</div>
+</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">interface</span>&nbsp;Queue&lt;E&gt;&nbsp;<span class="keyword">extends</span>&nbsp;Collection&lt;E&gt;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>4. Dequeue interface:</strong>&nbsp;it is a double-ended-queue. It allows the insertion and removal of elements from both ends. It implants the properties of both Stack and queue so it can perform LIFO (Last in first out) stack and FIFO (first in first out) queue, operations.</p>
+<p><strong>Syntax:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools">&nbsp;</div>
+</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">interface</span>&nbsp;Dequeue&lt;E&gt;&nbsp;<span class="keyword">extends</span>&nbsp;Queue&lt;E&gt;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>5. Map interface:&nbsp;</strong>A Map (java.util.Map) represents a key, value pair storage of elements. Map interface does not implement the Collection interface. It can only contain a unique key but can have duplicate elements. There are two interfaces which implement Map in java that are Map interface and Sorted Map.</p>
+<p>&nbsp;</p>
+<h3 class="h3">What is the difference between ArrayList and Vector?</h3>
+<table class="alt">
+<tbody>
+<tr>
+<th>No.</th>
+<th>ArrayList</th>
+<th>Vector</th>
+</tr>
+<tr>
+<td>1)</td>
+<td>ArrayList is not synchronized.</td>
+<td>Vector is synchronized.</td>
+</tr>
+<tr>
+<td>2)</td>
+<td>ArrayList is not a legacy class.</td>
+<td>Vector is a legacy class.</td>
+</tr>
+<tr>
+<td>3)</td>
+<td>ArrayList increases its size by 50% of the array size.</td>
+<td>Vector increases its size by doubling the array size.</td>
+</tr>
+<tr>
+<td>4)</td>
+<td>ArrayList is not ?thread-safe? as it is not synchronized.</td>
+<td>Vector list is ?thread-safe? as it?s every method is synchronized.</td>
+</tr>
+</tbody>
+</table>
+<h3 class="h3">What is the difference between ArrayList and LinkedList?</h3>
+<table class="alt">
+<tbody>
+<tr>
+<th>No.</th>
+<th>ArrayList</th>
+<th>LinkedList</th>
+</tr>
+<tr>
+<td>1)</td>
+<td>ArrayList uses a dynamic array.</td>
+<td>LinkedList uses a doubly linked list.</td>
+</tr>
+<tr>
+<td>2)</td>
+<td>ArrayList is not efficient for manipulation because too much is required.</td>
+<td>LinkedList is efficient for manipulation.</td>
+</tr>
+<tr>
+<td>3)</td>
+<td>ArrayList is better to store and fetch data.</td>
+<td>LinkedList is better to manipulate data.</td>
+</tr>
+<tr>
+<td>4)</td>
+<td>ArrayList provides random access.</td>
+<td>LinkedList does not provide random access.</td>
+</tr>
+<tr>
+<td>5)</td>
+<td>ArrayList takes less memory overhead as it stores only object</td>
+<td>LinkedList takes more memory overhead, as it stores the object as well as the address of that object.</td>
+</tr>
+</tbody>
+</table>
+<h3 class="h3">What is the difference between Iterator and ListIterator?</h3>
+<p>Iterator traverses the elements in the forward direction only whereas ListIterator traverses the elements into forward and backward direction.</p>
+<table class="alt">
+<tbody>
+<tr>
+<th>No.</th>
+<th>Iterator</th>
+<th>ListIterator</th>
+</tr>
+<tr>
+<td>1)</td>
+<td>The Iterator traverses the elements in the forward direction only.</td>
+<td>ListIterator traverses the elements in backward and forward directions both.</td>
+</tr>
+<tr>
+<td>2)</td>
+<td>The Iterator can be used in List, Set, and Queue.</td>
+<td>ListIterator can be used in List only.</td>
+</tr>
+<tr>
+<td>3)</td>
+<td>The Iterator can only perform remove operation while traversing the collection.</td>
+<td>
+<p>ListIterator can perform ?add,? ?remove,? and ?set? operation while traversing the collection.</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 class="h3">What is the difference between Iterator and Enumeration?</h3>
+<table class="alt">
+<tbody>
+<tr>
+<th>No.</th>
+<th>Iterator</th>
+<th>Enumeration</th>
+</tr>
+<tr>
+<td>1)</td>
+<td>The Iterator can traverse legacy and non-legacy elements.</td>
+<td>Enumeration can traverse only legacy elements.</td>
+</tr>
+<tr>
+<td>2)</td>
+<td>The Iterator is fail-fast.</td>
+<td>Enumeration is not fail-fast.</td>
+</tr>
+<tr>
+<td>3)</td>
+<td>The Iterator is slower than Enumeration.</td>
+<td>Enumeration is faster than Iterator.</td>
+</tr>
+<tr>
+<td>4)</td>
+<td>The Iterator can perform remove operation while traversing the collection.</td>
+<td>The Enumeration can perform only traverse operation on the collection.</td>
+</tr>
+</tbody>
+</table>
+<h3 class="h3">What is the difference between List and Set?</h3>
+<p>The List and Set both extend the collection interface. However, there are some differences between the both which are listed below.</p>
+<ul class="points">
+<li>The List can contain duplicate elements whereas Set includes unique items.</li>
+<li>The List is an ordered collection which maintains the insertion order whereas Set is an unordered collection which does not preserve the insertion order.</li>
+<li>The List interface contains a single legacy class which is Vector class whereas Set interface does not have any legacy class.</li>
+<li>The List interface can allow n number of null values whereas Set interface only allows a single null value.</li>
+</ul>
+<h3 class="h3">What is the difference between HashSet and TreeSet?</h3>
+<p>The HashSet and TreeSet, both classes, implement Set interface. The differences between the both are listed below.</p>
+<ul class="points">
+<li>HashSet maintains&nbsp;no order&nbsp;whereas TreeSet maintains&nbsp;ascending order.</li>
+<li>HashSet impended by hash table whereas TreeSet implemented by a Tree structure.</li>
+<li>HashSet performs faster than TreeSet.</li>
+<li>HashSet is backed by HashMap whereas TreeSet is backed by TreeMap.</li>
+</ul>
+<h3 class="h3">What is the difference between Set and Map?</h3>
+<p>The differences between the Set and Map are given below.</p>
+<ul class="points">
+<li>Set contains values only whereas Map contains key and values both.</li>
+<li>Set contains unique values whereas Map can contain unique Keys with duplicate values.</li>
+<li>Set holds a single number of null value whereas Map can include a single null key with n number of null values.</li>
+</ul>
+<h3 class="h3">What is the difference between HashSet and HashMap?</h3>
+<p>The differences between the HashSet and HashMap are listed below.</p>
+<ul class="points">
+<li>HashSet contains only values whereas HashMap includes the entry (key, value). HashSet can be iterated, but HashMap needs to convert into Set to be iterated.</li>
+<li>HashSet implements Set interface whereas HashMap implements the Map interface</li>
+<li>HashSet cannot have any duplicate value whereas HashMap can contain duplicate values with unique keys.</li>
+<li>HashSet contains the only single number of null value whereas HashMap can hold a single null key with n number of null values.</li>
+</ul>
+<h3 class="h3">What is the difference between HashMap and TreeMap?</h3>
+<p>The differences between the HashMap and TreeMap are given below.</p>
+<ul class="points">
+<li>HashMap maintains&nbsp;no order, but TreeMap maintains&nbsp;ascending order.</li>
+<li>HashMap is implemented by hash table whereas TreeMap is implemented by a Tree structure.</li>
+<li>HashMap can be sorted by Key or value whereas TreeMap can be sorted by Key.</li>
+<li>HashMap may contain a null key with multiple null values whereas TreeMap cannot hold a null key but can have multiple null values.</li>
+</ul>
+<h3 class="h3">What is the difference between HashMap and Hashtable?</h3>
+<table class="alt">
+<tbody>
+<tr>
+<th>No.</th>
+<th>HashMap</th>
+<th>Hashtable</th>
+</tr>
+<tr>
+<td>1)</td>
+<td>HashMap is not synchronized.</td>
+<td>Hashtable is synchronized.</td>
+</tr>
+<tr>
+<td>2)</td>
+<td>HashMap can contain one null key and multiple null values.</td>
+<td>Hashtable cannot contain any null key or null value.</td>
+</tr>
+<tr>
+<td>3)</td>
+<td>HashMap is not ?thread-safe,? so it is useful for non-threaded applications.</td>
+<td>Hashtable is thread-safe, and it can be shared between various threads.</td>
+</tr>
+<tr>
+<td>4)</td>
+<td>4) HashMap inherits the AbstractMap class</td>
+<td>Hashtable inherits the Dictionary class.</td>
+</tr>
+</tbody>
+</table>
+<h3 class="h3">&nbsp;<a href="https://www.javatpoint.com/array-vs-arraylist-in-java">What is the difference between Array and ArrayList?</a></h3>
+<p>The main differences between the Array and ArrayList are given below.</p>
+<table class="alt">
+<tbody>
+<tr>
+<th>SN</th>
+<th>Array</th>
+<th>ArrayList</th>
+</tr>
+<tr>
+<td>1</td>
+<td>The Array is of fixed size, means we cannot resize the array as per need.</td>
+<td>ArrayList is not of the fixed size we can change the size dynamically.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Arrays are of the static type.</td>
+<td>ArrayList is of dynamic size.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Arrays can store primitive data types as well as objects.</td>
+<td>ArrayList cannot store the primitive data types it can only store the objects.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>----------------------------------------------------------------------------</p>
+<h3 class="h3">What is the difference between Comparable and Comparator?</h3>
+<table class="alt">
+<tbody>
+<tr>
+<th>No.</th>
+<th>Comparable</th>
+<th>Comparator</th>
+</tr>
+<tr>
+<td>1)</td>
+<td>Comparable provides only one sort of sequence.</td>
+<td>The Comparator provides multiple sorts of sequences.</td>
+</tr>
+<tr>
+<td>2)</td>
+<td>It provides one method named compareTo().</td>
+<td>It provides one method named compare().</td>
+</tr>
+<tr>
+<td>3)</td>
+<td>It is found in java.lang package.</td>
+<td>It is located in java.util package.</td>
+</tr>
+<tr>
+<td>4)</td>
+<td>If we implement the Comparable interface, The actual class is modified.</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://www.javatpoint.com/difference-between-comparable-and-comparator" target="_blank">https://www.javatpoint.com/difference-between-comparable-and-comparator</a></p>
 <p><strong>What is Comparable and Comparator interface?</strong><br />Java provides Comparable interface which should be implemented by any custom class if we want to use Arrays or Collections sorting methods. Comparable interface has compareTo(T obj) method which is used by sorting methods. We should override this method in such a way that it returns a negative integer, zero, or a positive integer if &ldquo;this&rdquo; object is less than, equal to, or greater than the object passed as argument.<br />But, in most real life scenarios, we want sorting based on different parameters. For example, as a CEO, I would like to sort the employees based on Salary, an HR would like to sort them based on the age. This is the situation where we need to use Comparator interface because Comparable.compareTo(Object o) method implementation can sort based on one field only and we can&rsquo;t chose the field on which we want to sort the Object.<br />Comparator interface compare(Object o1, Object o2) method need to be implemented that takes two Object argument, it should be implemented in such a way that it returns negative int if first argument is less than the second one and returns zero if they are equal and positive int if first argument is greater than second one.</p>
+<p>----------------------------------------------------------------------------</p>
+<h3 class="h3">What do you understand by fail-fast?</h3>
+<p>The Iterator in java which immediately throws ConcurrentmodificationException, if any structural modification occurs in, is called as a Fail-fast iterator. Fail-fats iterator does not require any extra space in memory.</p>
+<p>&nbsp;</p>
+<p>=====================================</p>
+<p><a href="https://www.javatpoint.com/java-collections-interview-questions" target="_blank">https://www.javatpoint.com/java-collections-interview-questions</a></p>
+<p>==================================</p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p><strong>What is the difference between HashSet and TreeSet?</strong><br /> HashSet Class implements java.util.Set interface to eliminate the duplicate entries and uses hashin g for storage.<br />Hashing is nothing but mapping between a key value and a data item , this provides efficient searching<br /> The TreeSet Class implements java.util.Set interface provides an ordered set , eliminates duplicate entries and uses tree<br />for storage.</p>
 <p><strong>35) How do WeakHashMap works?&nbsp;</strong>(answer)<br />WeakHashMap works like a normal HashMap but uses WeakReference for keys, which means if the key object doesn't have any reference then both key/value mapping will become eligible for garbage collection.</p>
@@ -26,30 +798,15 @@ private static final int DEFAULT_CAPACITY = 10;
 static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 <br /><br /><br /><strong>61) Is it possible for two unequal objects to have the same hashcode?</strong><br />Yes, two unequal objects can have same hashcode that's why collision happen in a hashmap.<br />the equal hashcode contract only says that two equal objects must have the same hashcode it doesn't say anything about the unequal object.<br /><br /><strong>62) Can two equal object have the different hash code?</strong><br />No, thats not possible according to hash code contract.<br /><br />Read more:&nbsp;<a href="https://javarevisited.blogspot.com/2015/10/133-java-interview-questions-answers-from-last-5-years.html#ixzz6X07niR5p">https://javarevisited.blogspot.com/2015/10/133-java-interview-questions-answers-from-last-5-years.html#ixzz6X07niR5p</a></div>
 <p><br /><strong>While passing a Collection as argument to a function, how can we make sure the function will not be able to modify it?</strong><br />We can create a read-only collection using Collections.unmodifiableCollection(Collection c) method before passing it as argument, this will make sure that any operation to change the collection will throw UnsupportedOperationException.</p>
-
 <p><strong>Is there a way to increase the size of an array after its declaration?</strong></p>
 <p><strong>Answer:-</strong>&nbsp;Arrays are static and once we have specified its size, we can't change it. If we want to use such collections where we may require a change of size ( no of items), we should prefer vector over array.</p>
-
 <h3><strong>Why Map interface does not extend the Collection interface in the Java Collections Framework?</strong></h3>
 <p>&nbsp;</p>
 <p>The Map interface is not compatible with the Collection interface, because Map requires a key as well as a value, for example, if we want to add a key&ndash;value pair, we will use put(Object key, Object value).</p>
 <p>There are two parameters required to add an element to HashMap object. In Collection interface, add(Object o) has only one parameter.</p>
 <p>The other reasons are: Map supports valueSet, keySet, and other suitable methods that have just different views from the Collection interface.</p>
-
-<h3><strong>What is a collection in Java?</strong></h3>
 <p>&nbsp;</p>
-<p>A collection is a framework that is used to store and manipulate a container of objects in Java.</p>
-<p>Collections can be used for performing a variety of operations such as:</p>
-<ul>
-<li>Search</li>
-<li>Sort</li>
-<li>Manipulate</li>
-<li>Delete</li>
-</ul>
-<p>Below is the chart that represents the hierarchy of collections in Java:</p>
-<p><img class="aligncenter wp-image-212666 size-full lazyloaded" src="https://intellipaat.com/blog/wp-content/uploads/2015/09/2.jpg" sizes="(max-width: 800px) 100vw, 800px" srcset="https://intellipaat.com/blog/wp-content/uploads/2015/09/2.jpg 800w, https://intellipaat.com/blog/wp-content/uploads/2015/09/2-768x370.jpg 768w, https://intellipaat.com/blog/wp-content/uploads/2015/09/2-561x270.jpg 561w" alt="Collectiions in Java" width="800" height="385" data-lazy-srcset="https://intellipaat.com/blog/wp-content/uploads/2015/09/2.jpg 800w, https://intellipaat.com/blog/wp-content/uploads/2015/09/2-768x370.jpg 768w, https://intellipaat.com/blog/wp-content/uploads/2015/09/2-561x270.jpg 561w" data-lazy-sizes="(max-width: 800px) 100vw, 800px" data-lazy-src="https://intellipaat.com/blog/wp-content/uploads/2015/09/2.jpg" data-was-processed="true" /></p>
 <p>&nbsp;</p>
-
 <h4 id="q1-how-hashmap-works">How HashMap Works?</h4>
 <p>This is also most commonly asked question in collections. Interviewer start this question asking about collections and what are the data structure/collection you have used in development. Candidate generally answers HashMap, LinkedList, ArrayList, HashSet. Then interviewer check your knowledge of equals, hashcode and hashing algorithm. You should be aware of HashMap class internal implementation. Follow up questions in HashMap are as follows:</p>
 <ul>
@@ -109,7 +866,7 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 </ul>
 <h4 id="q3-how-to-find-middle-element-of-linked-list">How to find middle element of Linked List?</h4>
 <ul>
-<li>It is always better to keep track of Linked list size by increasing or decreasing the counter by 1, on addition or deletion of nodes from linked list respectively. In this way, middle element&rsquo;s index will be (size -1)/2</li>
+<li>It is always better to keep track of Linked list size by increasing or decreasing the <a href="https://scorecounter.com/click-counter/" rel="nofollow">counter by</a> 1, on addition or deletion of nodes from linked list respectively. In this way, middle element&rsquo;s index will be (size -1)/2</li>
 <li>When size of the linked list is unknown and only head node is given then you should use Fast and Slow pointer approach.<br />In this approach, we iterate through the linked list using two pointers. Fast pointer jumps 2 nodes in each iteration, and the slow pointer jumps only one node per iteration.<br />When the fast pointer reaches the end of the list, the slow pointer will be at the middle element.</li>
 <li>
 <blockquote>
@@ -123,7 +880,6 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 </ul>
 </li>
 </ul>
-
 <h3><strong>What is the difference between Array list and vector in Java?</strong></h3>
 <div>
 <table border="1px" width="100%">
@@ -156,7 +912,6 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 </table>
 </div>
 <p>&nbsp;</p>
-
 <h3><strong>What is the difference between an array and an array list?</strong></h3>
 <table border="1px">
 <tbody>
@@ -186,14 +941,11 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 </tr>
 </tbody>
 </table>
-
-
-
 <p>Collections in Java</p>
 <p><a href="https://www.javacodegeeks.com/2013/02/40-java-collections-interview-questions-and-answers.html">https://www.javacodegeeks.com/2013/02/40-java-collections-interview-questions-and-answers.html</a></p>
 <p>A Collection is a group of individual objects represented as a single unit. Java provides Collection Framework which defines several classes and interfaces to represent a group of objects as a single unit.</p>
 <p>The Collection interface (<strong>java.util.Collection</strong>) and Map interface (<strong>java.util.Map</strong>) are the two main &ldquo;root&rdquo; interfaces of Java collection classes.</p>
-<p><strong>Need for Collection Framework :</strong><br /> Before Collection Framework (or before JDK 1.2) was introduced, the standard methods for grouping Java objects (or collections) were Arrays or Vectors or Hashtables. All of these collections had no common interface.</p>
+<p><strong>Need for Collection Framework :</strong><br />Before Collection Framework (or before JDK 1.2) was introduced, the standard methods for grouping Java objects (or collections) were Arrays or Vectors or Hashtables. All of these collections had no common interface.</p>
 <p>Accessing elements of these Data Structures was a hassle as each had a different method (and syntax) for accessing its members:</p>
 <p>// Java program to show why collection framework was needed</p>
 <p>import java.io.*;</p>
@@ -230,7 +982,7 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 <p>1</p>
 <p>1</p>
 <p>geeks</p>
-<p>As we can see, none of these collections (Array, Vector or Hashtable) implement a standard member access interface. It was very difficult for programmers to write algorithms that can work for all kinds of Collections. Another drawback being that most of the &lsquo;Vector&rsquo; methods are final, meaning we cannot extend the &rsquo;Vector&rsquo; class to implement a similar kind of Collection.<br /> <strong><em>Java developers decided to come up with a common interface to deal with the above mentioned problems and introduced the Collection Framework in JDK 1.2</em></strong>.</p>
+<p>As we can see, none of these collections (Array, Vector or Hashtable) implement a standard member access interface. It was very difficult for programmers to write algorithms that can work for all kinds of Collections. Another drawback being that most of the &lsquo;Vector&rsquo; methods are final, meaning we cannot extend the &rsquo;Vector&rsquo; class to implement a similar kind of Collection.<br /><strong><em>Java developers decided to come up with a common interface to deal with the above mentioned problems and introduced the Collection Framework in JDK 1.2</em></strong>.</p>
 <p>Both legacy Vectors and Hashtables were modified to conform to the Collection Framework.</p>
 <p><strong>Advantages of Collection Framework:</strong></p>
 <ol>
@@ -242,7 +994,7 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 <p><strong>Hierarchy of Collection Framework</strong></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Collection&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Map&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; Set&nbsp;&nbsp;&nbsp; List&nbsp;&nbsp;&nbsp; Queue&nbsp; Dequeue&nbsp;&nbsp; SortedMap&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp; / SortedSet &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Core Interfaces in Collections</strong>&nbsp;Note that this diagram only shows core interfaces.&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>Collection :</strong> Root interface with basic methods like add(), remove(), &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contains(), isEmpty(), addAll(), ... etc. <a href="https://www.geeksforgeeks.org/set-in-java/"><strong>Set</strong></a><strong> :</strong> Doesn't allow duplicates. Example implementations of Set &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interface are HashSet (Hashing based) and TreeSet (balanced&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BST based). Note that TreeSet implements <strong>SortedSet</strong>.<strong>&nbsp;</strong><a href="https://www.geeksforgeeks.org/list-interface-java-examples/"><strong>List</strong></a><strong> : </strong>Can contain duplicates and elements are ordered. Example&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; implementations are LinkedList (linked list based) and&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.geeksforgeeks.org/array-vs-arraylist-in-java/">ArrayList</a> (dynamic array based)&nbsp;<a href="https://www.geeksforgeeks.org/queue-interface-java/"><strong>Queue</strong></a><strong> : </strong>Typically order elements in FIFO order except exceptions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; like PriorityQueue.&nbsp; &nbsp;<a href="https://www.geeksforgeeks.org/deque-interface-java-example/"><strong>Deque</strong></a><strong> :</strong> Elements can be inserted and removed at both ends. Allows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; both LIFO and FIFO. &nbsp;<a href="https://www.geeksforgeeks.org/map-interface-java-examples/"><strong>Map</strong></a><strong> :</strong> Contains Key value pairs. Doesn't allow duplicates.&nbsp; Example&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; implementation are <a href="http://www.geeksforgeeks.org/java-util-hashmap-in-java/">HashMap</a> and TreeMap. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.geeksforgeeks.org/treemap-in-java/">TreeMap</a> implements <strong>SortedMap</strong>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;The difference between Set and Map interface is that in Set we have only keys, whereas in Map, we have key, value pairs.</p>
+<p><strong>Collection :</strong>&nbsp;Root interface with basic methods like add(), remove(), &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contains(), isEmpty(), addAll(), ... etc.&nbsp;<a href="https://www.geeksforgeeks.org/set-in-java/"><strong>Set</strong></a><strong>&nbsp;:</strong>&nbsp;Doesn't allow duplicates. Example implementations of Set &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interface are HashSet (Hashing based) and TreeSet (balanced&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BST based). Note that TreeSet implements&nbsp;<strong>SortedSet</strong>.<strong>&nbsp;</strong><a href="https://www.geeksforgeeks.org/list-interface-java-examples/"><strong>List</strong></a><strong>&nbsp;:&nbsp;</strong>Can contain duplicates and elements are ordered. Example&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; implementations are LinkedList (linked list based) and&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.geeksforgeeks.org/array-vs-arraylist-in-java/">ArrayList</a>&nbsp;(dynamic array based)&nbsp;<a href="https://www.geeksforgeeks.org/queue-interface-java/"><strong>Queue</strong></a><strong>&nbsp;:&nbsp;</strong>Typically order elements in FIFO order except exceptions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; like PriorityQueue.&nbsp; &nbsp;<a href="https://www.geeksforgeeks.org/deque-interface-java-example/"><strong>Deque</strong></a><strong>&nbsp;:</strong>&nbsp;Elements can be inserted and removed at both ends. Allows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; both LIFO and FIFO. &nbsp;<a href="https://www.geeksforgeeks.org/map-interface-java-examples/"><strong>Map</strong></a><strong>&nbsp;:</strong>&nbsp;Contains Key value pairs. Doesn't allow duplicates.&nbsp; Example&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; implementation are&nbsp;<a href="http://www.geeksforgeeks.org/java-util-hashmap-in-java/">HashMap</a>&nbsp;and TreeMap. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.geeksforgeeks.org/treemap-in-java/">TreeMap</a>&nbsp;implements&nbsp;<strong>SortedMap</strong>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;The difference between Set and Map interface is that in Set we have only keys, whereas in Map, we have key, value pairs.</p>
 <p>&nbsp;</p>
 <h1>Comparable vs Comparator in Java</h1>
 <p><a href="https://www.geeksforgeeks.org/comparable-vs-comparator-in-java/">https://www.geeksforgeeks.org/comparable-vs-comparator-in-java/</a></p>
@@ -273,11 +1025,11 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 <p>&nbsp;</p>
 <h1>Five ways to traverse collections:</h1>
 <ol>
-<li><strong> By using Iterator</strong></li>
-<li><strong> By using ListIterator</strong></li>
-<li><strong> By using Enumeration</strong></li>
-<li><strong> By using for-each</strong></li>
-<li><strong> By using for loop</strong></li>
+<li><strong>By using Iterator</strong></li>
+<li><strong>By using ListIterator</strong></li>
+<li><strong>By using Enumeration</strong></li>
+<li><strong>By using for-each</strong></li>
+<li><strong>By using for loop</strong></li>
 </ol>
 <p><strong>1 . Iterator interface :</strong></p>
 <p>Iterator interface used to traverse the elements in forward direction only.</p>
@@ -285,10 +1037,10 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 <p>You get an Iterator for a collection by calling its&nbsp;<strong>iterator(</strong>) method.</p>
 <p><strong><em>There are three methods in the Iterator interface. They are:</em></strong></p>
 <ol>
-<li>List&lt;String&gt; obj =<strong>new</strong> ArrayList&lt;String&gt;();</li>
+<li>List&lt;String&gt; obj =<strong>new</strong>&nbsp;ArrayList&lt;String&gt;();</li>
 <li>obj.add("Mango");</li>
 <li>obj.add("Apple");</li>
-<li></li>
+<li>&nbsp;</li>
 <li>Iterator&lt;String&gt; ite=obj.iterator();//obj is collection object</li>
 <li><strong>while</strong>(ite.hasNext())//It returns true if iterator has more elements.</li>
 <li>{</li>
@@ -297,7 +1049,7 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 </ol>
 <p>&nbsp;</p>
 <ol start="2">
-<li><strong> ListIterator interface :</strong></li>
+<li><strong>ListIterator interface :</strong></li>
 </ol>
 <p>ListIterator interface extends Iterator interface.</p>
 <p>ListIterator interface used to traverse the elements in both directions (forward and backward), but reverse apply only for LinkedList elements only.</p>
@@ -306,11 +1058,11 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 <p><strong>There are many methods in the ListIterator interface. But commonly used listed below:</strong></p>
 <p>&nbsp;</p>
 <ol>
-<li>List&lt;String&gt; obj=<strong>new</strong> LinkedList&lt;String&gt;();</li>
+<li>List&lt;String&gt; obj=<strong>new</strong>&nbsp;LinkedList&lt;String&gt;();</li>
 <li>obj.add("Mango");</li>
 <li>obj.add("Apple");</li>
 <li>obj.add("Orange");</li>
-<li></li>
+<li>&nbsp;</li>
 <li>ListIterator lte=obj.listIterator(); //obj is LinkedList object</li>
 <li><strong>while</strong>(lte.hasPrevious()) // has previous supports only LinkedList</li>
 <li>{</li>
@@ -321,7 +1073,7 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 </ul>
 <p>&nbsp;</p>
 <ol start="3">
-<li><strong> Enumeration interface :</strong></li>
+<li><strong>Enumeration interface :</strong></li>
 </ol>
 <p>The Enumeration interface defines the methods by which you can enumerate (obtain one at a time) the elements in a collection of objects. It supports most of the collections objects.</p>
 <p><em>Enumeration</em>&nbsp;is a&nbsp;<strong>legacy interface</strong>&nbsp;used to&nbsp;<strong>traverse only the legacy classes like&nbsp;<em>Vector</em>,&nbsp;<em>HashTable</em>&nbsp;and&nbsp;<em>Stack</em>.</strong></p>
@@ -330,10 +1082,10 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 <p><strong>There are two methods in the Enumeration interface. They are:</strong></p>
 <p>&nbsp;</p>
 <ol>
-<li>Vector obj=<strong>new</strong> Vector();</li>
+<li>Vector obj=<strong>new</strong>&nbsp;Vector();</li>
 <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; obj.add("Mango");</li>
 <li>obj.add("Apple");</li>
-<li></li>
+<li>&nbsp;</li>
 <li>Enumeration&lt;String&gt; enu=obj.elements(); //obj is Vector object</li>
 <li><strong>while</strong>(enu.hasMoreElements())</li>
 <li>{</li>
@@ -342,17 +1094,17 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 </ol>
 <p>&nbsp;</p>
 <ol start="4">
-<li><strong> By using for-each</strong></li>
+<li><strong>By using for-each</strong></li>
 </ol>
 <p>It is mainly used to traverse array or collection elements. The advantage of for-each loop is that it eliminates the possibility of bugs and makes the code more readable.</p>
 <p>Please refer below example so that you can understand better.</p>
 <p><strong>Example:</strong></p>
 <p><strong>traverse collection using for-each:</strong></p>
 <ol>
-<li>List&lt;String&gt; obj =<strong>new</strong> ArrayList&lt;String&gt;();</li>
+<li>List&lt;String&gt; obj =<strong>new</strong>&nbsp;ArrayList&lt;String&gt;();</li>
 <li>obj.add("Mango");</li>
 <li>obj.add("Apple");</li>
-<li></li>
+<li>&nbsp;</li>
 <li><strong>for</strong>(String kk:obj) ////obj is collection object</li>
 <li>{</li>
 <li>System.<strong>out</strong>.println("Elements :"+kk);</li>
@@ -360,21 +1112,21 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 </ol>
 <p><strong>traverse array using for-each:</strong></p>
 <ol>
-<li><strong>int</strong> arr[]={12,13,14,44};</li>
-<li></li>
-<li><strong>for</strong>(<strong>int</strong> i:arr){</li>
+<li><strong>int</strong>&nbsp;arr[]={12,13,14,44};</li>
+<li>&nbsp;</li>
+<li><strong>for</strong>(<strong>int</strong>&nbsp;i:arr){</li>
 <li>System.<strong>out</strong>.println(i);</li>
 <li>}</li>
-<li><strong> By using for loop</strong></li>
+<li><strong>By using for loop</strong></li>
 </ol>
 <p><strong>Example:</strong></p>
 <ol>
-<li>LinkedList obj=<strong>new</strong> LinkedList();</li>
+<li>LinkedList obj=<strong>new</strong>&nbsp;LinkedList();</li>
 <li>obj.add("Mango");</li>
 <li>obj.add("Apple");</li>
 <li>obj.add("Banana");</li>
-<li></li>
-<li><strong>for</strong>(<strong>int</strong> i=0;i&lt;obj.size();i++) {</li>
+<li>&nbsp;</li>
+<li><strong>for</strong>(<strong>int</strong>&nbsp;i=0;i&lt;obj.size();i++) {</li>
 <li>System.<strong>out</strong>.println(" "+obj.<strong>get</strong>(i));</li>
 <li>}</li>
 </ol>
@@ -382,10 +1134,10 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 <h1>Differences between TreeMap, HashMap and LinkedHashMap in Java</h1>
 <p><a href="https://www.geeksforgeeks.org/differences-treemap-hashmap-linkedhashmap-java/?ref=lbp">https://www.geeksforgeeks.org/differences-treemap-hashmap-linkedhashmap-java/?ref=lbp</a></p>
 <ol>
-<li><strong>HashMap:</strong>HashMap offers&nbsp;<strong>0(1)</strong>&nbsp;lookup and insertion. If you iterate through the keys, though, the ordering of the keys is essentially arbitrary. It is implemented by an array of linked lists.<br /> <strong>Syntax:</strong></li>
+<li><strong>HashMap:</strong>HashMap offers&nbsp;<strong>0(1)</strong>&nbsp;lookup and insertion. If you iterate through the keys, though, the ordering of the keys is essentially arbitrary. It is implemented by an array of linked lists.<br /><strong>Syntax:</strong></li>
 </ol>
 <p>&nbsp;</p>
-<p><strong>public class HashMap extends AbstractMap </strong></p>
+<p><strong>public class HashMap extends AbstractMap</strong></p>
 <p><strong>implements Map,Cloneable, Serializable</strong></p>
 <ul>
 <li>A HashMap contains values based on the key.</li>
@@ -395,10 +1147,10 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 </ul>
 <p>&nbsp;</p>
 <ol start="2">
-<li><strong>LinkedHashMap:&nbsp;</strong>LinkedHashMap offers&nbsp;<strong>0(1)</strong>lookup and insertion. Keys are ordered by their insertion order. It is implemented by doubly-linked buckets.<br /> <strong>Syntax:</strong></li>
+<li><strong>LinkedHashMap:&nbsp;</strong>LinkedHashMap offers&nbsp;<strong>0(1)</strong>lookup and insertion. Keys are ordered by their insertion order. It is implemented by doubly-linked buckets.<br /><strong>Syntax:</strong></li>
 </ol>
 <p><strong>&nbsp;</strong></p>
-<p><strong>public class LinkedHashMap extends HashMap </strong></p>
+<p><strong>public class LinkedHashMap extends HashMap</strong></p>
 <p><strong>0implements Map</strong></p>
 <ul>
 <li>A LinkedHashMap contains values based on the key.</li>
@@ -408,7 +1160,7 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 </ul>
 <p>&nbsp;</p>
 <ol start="3">
-<li><strong>TreeMap:</strong>TreeMap offers&nbsp;<strong>O(log N)</strong>&nbsp;lookup and insertion. Keys are ordered, so if you need to iterate through the keys in sorted order, you can. This means that keys must implement the Comparable interface. TreeMap is implemented by a Red-Black Tree.<br /> <strong>Syntax:</strong></li>
+<li><strong>TreeMap:</strong>TreeMap offers&nbsp;<strong>O(log N)</strong>&nbsp;lookup and insertion. Keys are ordered, so if you need to iterate through the keys in sorted order, you can. This means that keys must implement the Comparable interface. TreeMap is implemented by a Red-Black Tree.<br /><strong>Syntax:</strong></li>
 </ol>
 <p><strong>&nbsp;</strong></p>
 <p><strong>public class TreeMap extends AbstractMap implements</strong></p>
@@ -421,7 +1173,7 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 </ul>
 <p>&nbsp;</p>
 <ol start="4">
-<li><strong>Hashtable:&nbsp;</strong>&ldquo;Hashtable&rdquo; is the generic name for hash-based maps.<br /> <strong>Syntax:</strong></li>
+<li><strong>Hashtable:&nbsp;</strong>&ldquo;Hashtable&rdquo; is the generic name for hash-based maps.<br /><strong>Syntax:</strong></li>
 </ol>
 <p><strong>&nbsp;</strong></p>
 <p><strong>public class Hashtable extends Dictionary implements</strong></p>
@@ -481,8 +1233,8 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 <p>101 Vijay</p>
 <p>102 Rahul</p>
 <p>104 Amit</p>
-<p><strong>Hashmap vs Hashtable</strong><br /> 1. HashMap is non synchronized. It is not-thread safe and can&rsquo;t be shared between many threads without proper synchronization code whereas Hashtable is synchronized. It is thread-safe and can be shared with many threads.<br /> 2. HashMap allows one null key and multiple null values whereas Hashtable doesn&rsquo;t allow any null key or value.<br /> 3. HashMap is generally preferred over HashTable if thread synchronization is not needed</p>
-<p>Why HashTable doesn&rsquo;t allow null and HashMap does?<br /> To successfully store and retrieve objects from a HashTable, the objects used as keys must implement the hashCode method and the equals method. Since null is not an object, it can&rsquo;t implement these methods. HashMap is an advanced version and improvement on the Hashtable. HashMap was created later.</p>
+<p><strong>Hashmap vs Hashtable</strong><br />1. HashMap is non synchronized. It is not-thread safe and can&rsquo;t be shared between many threads without proper synchronization code whereas Hashtable is synchronized. It is thread-safe and can be shared with many threads.<br />2. HashMap allows one null key and multiple null values whereas Hashtable doesn&rsquo;t allow any null key or value.<br />3. HashMap is generally preferred over HashTable if thread synchronization is not needed</p>
+<p>Why HashTable doesn&rsquo;t allow null and HashMap does?<br />To successfully store and retrieve objects from a HashTable, the objects used as keys must implement the hashCode method and the equals method. Since null is not an object, it can&rsquo;t implement these methods. HashMap is an advanced version and improvement on the Hashtable. HashMap was created later.</p>
 <p>&nbsp;</p>
 <h1>HashMap and TreeMap in Java</h1>
 <p><a href="https://www.geeksforgeeks.org/hashmap-treemap-java/?ref=lbp">https://www.geeksforgeeks.org/hashmap-treemap-java/?ref=lbp</a></p>
@@ -511,7 +1263,7 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 <ol>
 <li><strong>ConcurrentHashMap m=new ConcurrentHashMap();</strong>:Creates a new, empty map with a default initial capacity (16), load factor (0.75) and concurrencyLevel (16).</li>
 <li><strong>ConcurrentHashMap m=new ConcurrentHashMap(int initialCapacity);</strong>:Creates a new, empty map with the specified initial capacity, and with default load factor (0.75) and concurrencyLevel (16).</li>
-<li><strong>ConcurrentHashMap m=new ConcurrentHashMap(int initialCapacity, float loadFactor);</strong>:<br /> Creates a new, empty map with the specified initial capacity and load factor and with the default concurrencyLevel (16).</li>
+<li><strong>ConcurrentHashMap m=new ConcurrentHashMap(int initialCapacity, float loadFactor);</strong>:<br />Creates a new, empty map with the specified initial capacity and load factor and with the default concurrencyLevel (16).</li>
 <li><strong>ConcurrentHashMap m=new ConcurrentHashMap(int initialCapacity, float loadFactor, int concurrencyLevel);</strong>:Creates a new, empty map with the specified initial capacity, load factor and concurrency level.</li>
 <li><strong>ConcurrentHashMap m=new ConcurrentHashMap(Map m);</strong>:Creates a new map with the same mappings as the given map.</li>
 </ol>
@@ -570,9 +1322,8 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-
 <ol>
-<li>
+<li style="list-style-type: none;">
 <ol start="4">
 <li>
 <p>Collections in Java</p>
@@ -628,7 +1379,7 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 <p><strong>Hierarchy of Collection Framework</strong></p>
 <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Collection&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Map&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; Set&nbsp;&nbsp;&nbsp; List&nbsp;&nbsp;&nbsp; Queue&nbsp; Dequeue&nbsp;&nbsp; SortedMap&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp; / SortedSet &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Core Interfaces in Collections</strong>&nbsp;Note that this diagram only shows core interfaces.&nbsp;</h1>
 <p>&nbsp;</p>
-<h1><strong>Collection :</strong> Root interface with basic methods like add(), remove(), &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contains(), isEmpty(), addAll(), ... etc. <a href="https://www.geeksforgeeks.org/set-in-java/"><strong>Set</strong></a><strong> :</strong> Doesn't allow duplicates. Example implementations of Set &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interface are HashSet (Hashing based) and TreeSet (balanced&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BST based). Note that TreeSet implements <strong>SortedSet</strong>.<strong>&nbsp;</strong><a href="https://www.geeksforgeeks.org/list-interface-java-examples/"><strong>List</strong></a><strong> : </strong>Can contain duplicates and elements are ordered. Example&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; implementations are LinkedList (linked list based) and&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.geeksforgeeks.org/array-vs-arraylist-in-java/">ArrayList</a> (dynamic array based)&nbsp;<a href="https://www.geeksforgeeks.org/queue-interface-java/"><strong>Queue</strong></a><strong> : </strong>Typically order elements in FIFO order except exceptions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; like PriorityQueue.&nbsp; &nbsp;<a href="https://www.geeksforgeeks.org/deque-interface-java-example/"><strong>Deque</strong></a><strong> :</strong> Elements can be inserted and removed at both ends. Allows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; both LIFO and FIFO. &nbsp;<a href="https://www.geeksforgeeks.org/map-interface-java-examples/"><strong>Map</strong></a><strong> :</strong> Contains Key value pairs. Doesn't allow duplicates.&nbsp; Example&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; implementation are <a href="http://www.geeksforgeeks.org/java-util-hashmap-in-java/">HashMap</a> and TreeMap. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.geeksforgeeks.org/treemap-in-java/">TreeMap</a> implements <strong>SortedMap</strong>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;The difference between Set and Map interface is that in Set we have only keys, whereas in Map, we have key, value pairs.</h1>
+<h1><strong>Collection :</strong>&nbsp;Root interface with basic methods like add(), remove(), &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contains(), isEmpty(), addAll(), ... etc.&nbsp;<a href="https://www.geeksforgeeks.org/set-in-java/"><strong>Set</strong></a><strong>&nbsp;:</strong>&nbsp;Doesn't allow duplicates. Example implementations of Set &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interface are HashSet (Hashing based) and TreeSet (balanced&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BST based). Note that TreeSet implements&nbsp;<strong>SortedSet</strong>.<strong>&nbsp;</strong><a href="https://www.geeksforgeeks.org/list-interface-java-examples/"><strong>List</strong></a><strong>&nbsp;:&nbsp;</strong>Can contain duplicates and elements are ordered. Example&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; implementations are LinkedList (linked list based) and&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.geeksforgeeks.org/array-vs-arraylist-in-java/">ArrayList</a>&nbsp;(dynamic array based)&nbsp;<a href="https://www.geeksforgeeks.org/queue-interface-java/"><strong>Queue</strong></a><strong>&nbsp;:&nbsp;</strong>Typically order elements in FIFO order except exceptions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; like PriorityQueue.&nbsp; &nbsp;<a href="https://www.geeksforgeeks.org/deque-interface-java-example/"><strong>Deque</strong></a><strong>&nbsp;:</strong>&nbsp;Elements can be inserted and removed at both ends. Allows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; both LIFO and FIFO. &nbsp;<a href="https://www.geeksforgeeks.org/map-interface-java-examples/"><strong>Map</strong></a><strong>&nbsp;:</strong>&nbsp;Contains Key value pairs. Doesn't allow duplicates.&nbsp; Example&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; implementation are&nbsp;<a href="http://www.geeksforgeeks.org/java-util-hashmap-in-java/">HashMap</a>&nbsp;and TreeMap. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.geeksforgeeks.org/treemap-in-java/">TreeMap</a>&nbsp;implements&nbsp;<strong>SortedMap</strong>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;The difference between Set and Map interface is that in Set we have only keys, whereas in Map, we have key, value pairs.</h1>
 <p>&nbsp;</p>
 <h1>Comparable vs Comparator in Java</h1>
 <p>Java provides two interfaces to sort objects using data members of the class:</p>
@@ -658,11 +1409,11 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 <p>&nbsp;</p>
 <p><strong>There are five ways to traverse collections:</strong></p>
 <ol>
-<li><strong> By using Iterator</strong></li>
-<li><strong> By using ListIterator</strong></li>
-<li><strong> By using Enumeration</strong></li>
-<li><strong> By using for-each</strong></li>
-<li><strong> By using for loop</strong></li>
+<li><strong>By using Iterator</strong></li>
+<li><strong>By using ListIterator</strong></li>
+<li><strong>By using Enumeration</strong></li>
+<li><strong>By using for-each</strong></li>
+<li><strong>By using for loop</strong></li>
 </ol>
 <p><strong>1 . Iterator interface :</strong></p>
 <p>Iterator interface used to traverse the elements in forward direction only.</p>
@@ -670,7 +1421,7 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 <p>You get an Iterator for a collection by calling its&nbsp;<strong>iterator(</strong>) method.</p>
 <p><strong><em>There are three methods in the Iterator interface. They are:</em></strong></p>
 <ol>
-<li>List&lt;String&gt; obj =<strong>new</strong> ArrayList&lt;String&gt;();</li>
+<li>List&lt;String&gt; obj =<strong>new</strong>&nbsp;ArrayList&lt;String&gt;();</li>
 <li>obj.add("Mango");</li>
 <li>obj.add("Apple");</li>
 <li>&nbsp;</li>
@@ -682,7 +1433,7 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 </ol>
 <p>&nbsp;</p>
 <ol start="2">
-<li><strong> ListIterator interface :</strong></li>
+<li><strong>ListIterator interface :</strong></li>
 </ol>
 <p>ListIterator interface extends Iterator interface.</p>
 <p>ListIterator interface used to traverse the elements in both directions (forward and backward), but reverse apply only for LinkedList elements only.</p>
@@ -691,7 +1442,7 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 <p><strong>There are many methods in the ListIterator interface. But commonly used listed below:</strong></p>
 <p>&nbsp;</p>
 <ol>
-<li>List&lt;String&gt; obj=<strong>new</strong> LinkedList&lt;String&gt;();</li>
+<li>List&lt;String&gt; obj=<strong>new</strong>&nbsp;LinkedList&lt;String&gt;();</li>
 <li>obj.add("Mango");</li>
 <li>obj.add("Apple");</li>
 <li>obj.add("Orange");</li>
@@ -706,7 +1457,7 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 </ul>
 <p>&nbsp;</p>
 <ol start="3">
-<li><strong> Enumeration interface :</strong></li>
+<li><strong>Enumeration interface :</strong></li>
 </ol>
 <p>The Enumeration interface defines the methods by which you can enumerate (obtain one at a time) the elements in a collection of objects. It supports most of the collections objects.</p>
 <p><em>Enumeration</em>&nbsp;is a&nbsp;<strong>legacy interface</strong>&nbsp;used to&nbsp;<strong>traverse only the legacy classes like&nbsp;<em>Vector</em>,&nbsp;<em>HashTable</em>&nbsp;and&nbsp;<em>Stack</em>.</strong></p>
@@ -715,7 +1466,7 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 <p><strong>There are two methods in the Enumeration interface. They are:</strong></p>
 <p>&nbsp;</p>
 <ol>
-<li>Vector obj=<strong>new</strong> Vector();</li>
+<li>Vector obj=<strong>new</strong>&nbsp;Vector();</li>
 <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; obj.add("Mango");</li>
 <li>obj.add("Apple");</li>
 <li>&nbsp;</li>
@@ -727,14 +1478,14 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 </ol>
 <p>&nbsp;</p>
 <ol start="4">
-<li><strong> By using for-each</strong></li>
+<li><strong>By using for-each</strong></li>
 </ol>
 <p>It is mainly used to traverse array or collection elements. The advantage of for-each loop is that it eliminates the possibility of bugs and makes the code more readable.</p>
 <p>Please refer below example so that you can understand better.</p>
 <p><strong>Example:</strong></p>
 <p><strong>traverse collection using for-each:</strong></p>
 <ol>
-<li>List&lt;String&gt; obj =<strong>new</strong> ArrayList&lt;String&gt;();</li>
+<li>List&lt;String&gt; obj =<strong>new</strong>&nbsp;ArrayList&lt;String&gt;();</li>
 <li>obj.add("Mango");</li>
 <li>obj.add("Apple");</li>
 <li>&nbsp;</li>
@@ -745,21 +1496,21 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 </ol>
 <p><strong>traverse array using for-each:</strong></p>
 <ol>
-<li><strong>int</strong> arr[]={12,13,14,44};</li>
+<li><strong>int</strong>&nbsp;arr[]={12,13,14,44};</li>
 <li>&nbsp;</li>
-<li><strong>for</strong>(<strong>int</strong> i:arr){</li>
+<li><strong>for</strong>(<strong>int</strong>&nbsp;i:arr){</li>
 <li>System.<strong>out</strong>.println(i);</li>
 <li>}</li>
-<li><strong> By using for loop</strong></li>
+<li><strong>By using for loop</strong></li>
 </ol>
 <p><strong>Example:</strong></p>
 <ol>
-<li>LinkedList obj=<strong>new</strong> LinkedList();</li>
+<li>LinkedList obj=<strong>new</strong>&nbsp;LinkedList();</li>
 <li>obj.add("Mango");</li>
 <li>obj.add("Apple");</li>
 <li>obj.add("Banana");</li>
 <li>&nbsp;</li>
-<li><strong>for</strong>(<strong>int</strong> i=0;i&lt;obj.size();i++) {</li>
+<li><strong>for</strong>(<strong>int</strong>&nbsp;i=0;i&lt;obj.size();i++) {</li>
 <li>System.<strong>out</strong>.println(" "+obj.<strong>get</strong>(i));</li>
 <li>}</li>
 </ol>
@@ -769,7 +1520,7 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 <li><strong>HashMap:</strong>HashMap offers&nbsp;<strong>0(1)</strong>&nbsp;lookup and insertion. If you iterate through the keys, though, the ordering of the keys is essentially arbitrary. It is implemented by an array of linked lists.<br /><strong>Syntax:</strong></li>
 </ol>
 <p>&nbsp;</p>
-<p><strong>public class HashMap extends AbstractMap </strong></p>
+<p><strong>public class HashMap extends AbstractMap</strong></p>
 <p><strong>implements Map,Cloneable, Serializable</strong></p>
 <ul>
 <li>A HashMap contains values based on the key.</li>
@@ -782,7 +1533,7 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 <li><strong>LinkedHashMap:&nbsp;</strong>LinkedHashMap offers&nbsp;<strong>0(1)</strong>lookup and insertion. Keys are ordered by their insertion order. It is implemented by doubly-linked buckets.<br /><strong>Syntax:</strong></li>
 </ol>
 <p><strong>&nbsp;</strong></p>
-<p><strong>public class LinkedHashMap extends HashMap </strong></p>
+<p><strong>public class LinkedHashMap extends HashMap</strong></p>
 <p><strong>0implements Map</strong></p>
 <ul>
 <li>A LinkedHashMap contains values based on the key.</li>
@@ -893,6 +1644,11 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</pre>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
+</li>
+</ol>
+</li>
+</ol>
+
 
 </body>
 </html>

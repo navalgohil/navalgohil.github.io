@@ -4,131 +4,181 @@
 
 <button type="button" onclick="document.location='index.html'" style="position:fixed;">Back To HOME</button>
 <br>
-<h1>REGEX Links</h1>
 
-<p>Regular Expressions in Java</p>
+
+
+<h1>Regular Expressions in Java (REGEX)</h1>
+<p>&nbsp;</p>
 <p><a href="https://www.geeksforgeeks.org/regular-expressions-in-java/?ref=lbp">https://www.geeksforgeeks.org/regular-expressions-in-java/?ref=lbp</a></p>
 <p>Regular Expressions or Regex (in short) is an API for defining String patterns that can be used for searching, manipulating and editing a string in Java. Email validation and passwords are few areas of strings where Regex are widely used to define the constraints. Regular Expressions are provided under java.util.regex package. This consists of 3 classes and 1 interface.</p>
-<p><strong>The java.util.regex</strong>&nbsp;package primarily consists of the following three classes:</p>
+<p><img class="alignnone size-medium wp-image-251584" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/javaRegex-min.png" sizes="(max-width: 1600px) 100vw, 1600px" srcset="https://www.geeksforgeeks.org/wp-content/uploads/javaRegex-min.png 1600w, https://www.geeksforgeeks.org/wp-content/uploads/javaRegex-min-300x150.png 300w, https://www.geeksforgeeks.org/wp-content/uploads/javaRegex-min-768x384.png 768w, https://www.geeksforgeeks.org/wp-content/uploads/javaRegex-min-1024x512.png 1024w, https://www.geeksforgeeks.org/wp-content/uploads/javaRegex-min-660x330.png 660w" alt="" /><br /><strong>The java.util.regex</strong>&nbsp;package primarily consists of the following three classes:</p>
 <table width="100%">
 <thead>
 <tr>
-<td>
-<p><strong>CLASS</strong></p>
-</td>
-<td>
-<p><strong>DESCRIPTION</strong></p>
-</td>
+<th>Class</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>
-<p>util.regex.Pattern</p>
-</td>
-<td>
-<p>Used for defining patterns</p>
-</td>
+<td>util.regex.Pattern</td>
+<td>Used for defining patterns</td>
 </tr>
 <tr>
-<td>
-<p>util.regex.Matcher</p>
-</td>
-<td>
-<p>Used for performing match operations on text using patterns</p>
-</td>
+<td>util.regex.Matcher</td>
+<td>Used for performing match operations on text using patterns</td>
 </tr>
 <tr>
-<td>
-<p>PatternSyntaxException</p>
-</td>
-<td>
-<p>Used for indicating syntax error in a regular expression pattern</p>
-</td>
+<td>PatternSyntaxException</td>
+<td>Used for indicating syntax error in a regular expression pattern</td>
 </tr>
 </tbody>
 </table>
 <p><strong>MatchResult interface:</strong>&nbsp;This interface is used to determine the result of a match operation for a regular expression. It must be noted that although the match boundaries, groups and group boundaries can be seen, the modification is not allowed through a MatchResult.</p>
-<p>&nbsp;</p>
-<ol>
-<li><strong>util.regex.Pattern class:&nbsp;</strong>This class is a compilation of regular expressions that can be used to define various types of patters, providing no public constructors. This can be created by invoking the compile() method which accepts a regular expression as the first argument, thus returns a pattern after execution.</li>
-</ol>
-<p>// A Simple Java program to demonstrate working of</p>
-<p>// Pattern.matches() in Java</p>
-<p>import java.util.regex.Pattern;</p>
-<p>&nbsp;&nbsp;</p>
-<p>class Demo</p>
-<p>{</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String args[])</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Following line prints "true" because the whole</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// text "geeksforgeeks" matches pattern "geeksforge*ks"</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println (Pattern.matches("geeksforge*ks",</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"geeksforgeeks"));</p>
-<p>&nbsp;&nbsp;</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Following line prints "false" because the whole</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// text "geeksfor" doesn't match pattern "g*geeks*"</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println (Pattern.matches("g*geeks*",</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"geeksfor"));</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
-<p>}</p>
-<p>&nbsp;</p>
-<ol start="2">
-<li><strong>util.regex.Matcher class:&nbsp;</strong>This object is used to perform match operations for an input string in java, thus interpreting the previously explained patterns. This too defines no public constructors. This can be implemented by invoking a matcher() on any pattern object.</li>
-</ol>
+<p><strong>java.util.regex.Pattern class:</strong>&nbsp;This class is a compilation of regular expressions that can be used to define various types of patters, providing no public constructors. This can be created by invoking the compile() method which accepts a regular expression as the first argument, thus returns a pattern after execution.</p>
+<div class="line number3 index2 alt2"><em><code class="keyword">import</code> <code class="plain">java.util.regex.Pattern;</code></em></div>
+<div class="line number4 index3 alt1"><em><code class="undefined spaces">&nbsp;</code>&nbsp;</em></div>
+<div class="line number5 index4 alt2"><em><code class="keyword">class</code> <code class="plain">Demo</code></em></div>
+<div class="line number6 index5 alt1"><em><code class="plain">{</code></em></div>
+<div class="line number7 index6 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">public</code> <code class="keyword">static</code> <code class="keyword">void</code> <code class="plain">main(String args[])</code></em></div>
+<div class="line number8 index7 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">{</code></em></div>
+<div class="line number9 index8 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Following line prints "true" because the whole</code></em></div>
+<div class="line number10 index9 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// text "geeksforgeeks" matches pattern "geeksforge*ks"</code></em></div>
+<div class="line number11 index10 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">System.out.println (Pattern.matches(</code><code class="string">"geeksforge*ks"</code><code class="plain">,</code></em></div>
+<div class="line number12 index11 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="string">"geeksforgeeks"</code><code class="plain">));</code></em></div>
+<div class="line number13 index12 alt2"><em><code class="undefined spaces">&nbsp;</code>&nbsp;</em></div>
+<div class="line number14 index13 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Following line prints "false" because the whole</code></em></div>
+<div class="line number15 index14 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// text "geeksfor" doesn't match pattern "g*geeks*"</code></em></div>
+<div class="line number16 index15 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">System.out.println (Pattern.matches(</code><code class="string">"g*geeks*"</code><code class="plain">,</code></em></div>
+<div class="line number17 index16 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="string">"geeksfor"</code><code class="plain">));</code></em></div>
+<div class="line number18 index17 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></em></div>
+<div class="line number19 index18 alt2"><em><code class="plain">}</code></em></div>
+<div class="line number19 index18 alt2"><strong>java.util.regex.Matcher class:&nbsp;</strong>This object is used to perform match operations for an input string in java, thus interpreting the previously explained patterns. This too defines no public constructors. This can be implemented by invoking a matcher() on any pattern object.</div>
+<div class="line number19 index18 alt2">
 <p>Note that Pattern.matches() checks if the whole text matches with a pattern or not. Other methods (demonstrated below) are mainly used to find multiple occurrences of pattern in text.</p>
 <p><strong>Java Programs to demonstrate workings of compile(), find(), start(), end() and split() :</strong></p>
-<p><strong>Java Program to demonstrate simple pattern searching</strong></p>
-<p>// A Simple Java program to demonstrate working of</p>
-<p>// String matching in Java</p>
-<p>import java.util.regex.Matcher;</p>
-<p>import java.util.regex.Pattern;</p>
-<p>&nbsp;&nbsp;</p>
-<p>class Demo</p>
-<p>{</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String args[])</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Create a pattern to be searched</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pattern pattern = Pattern.compile("geeks");</p>
-<p>&nbsp;</p>
-<p>&nbsp; // Create a pattern to be searched</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pattern pattern = Pattern.compile("ge*");</p>
-<p>&nbsp;</p>
-<p>&nbsp;&nbsp;</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Search above pattern in "geeksforgeeks.org"</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Matcher m = pattern.matcher("geeksforgeeks.org");</p>
-<p>&nbsp;&nbsp;</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Print starting and ending indexes of the pattern</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// in text</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (m.find())</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Pattern found from " + m.start() +</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" to " + (m.end()-1));</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
-<p>}</p>
-<p>&nbsp;</p>
+<div class="line number1 index0 alt2"><em><code class="comments">// A Simple Java program to demonstrate working of</code></em></div>
+<div class="line number2 index1 alt1"><em><code class="comments">// String matching in Java</code></em></div>
+<div class="line number3 index2 alt2"><em><code class="keyword">import</code> <code class="plain">java.util.regex.Matcher;</code></em></div>
+<div class="line number4 index3 alt1"><em><code class="keyword">import</code> <code class="plain">java.util.regex.Pattern;</code></em></div>
+<div class="line number5 index4 alt2"><em><code class="undefined spaces">&nbsp;</code>&nbsp;</em></div>
+<div class="line number6 index5 alt1"><em><code class="keyword">class</code> <code class="plain">Demo</code></em></div>
+<div class="line number7 index6 alt2"><em><code class="plain">{</code></em></div>
+<div class="line number8 index7 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">public</code> <code class="keyword">static</code> <code class="keyword">void</code> <code class="plain">main(String args[])</code></em></div>
+<div class="line number9 index8 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">{</code></em></div>
+<div class="line number10 index9 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Create a pattern to be searched</code></em></div>
+<div class="line number11 index10 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">Pattern pattern = Pattern.compile(</code><code class="string">"geeks"</code><code class="plain">);</code></em></div>
+<div class="line number12 index11 alt1"><em><code class="undefined spaces">&nbsp;</code>&nbsp;</em></div>
+<div class="line number13 index12 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Search above pattern in "geeksforgeeks.org"</code></em></div>
+<div class="line number14 index13 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">Matcher m = pattern.matcher(</code><code class="string">"geeksforgeeks.org"</code><code class="plain">);</code></em></div>
+<div class="line number15 index14 alt2"><em><code class="undefined spaces">&nbsp;</code>&nbsp;</em></div>
+<div class="line number16 index15 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Print starting and ending indexes of the pattern</code></em></div>
+<div class="line number17 index16 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// in text</code></em></div>
+<div class="line number18 index17 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">while</code> <code class="plain">(m.find())</code></em></div>
+<div class="line number19 index18 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">System.out.println(</code><code class="string">"Pattern found from "</code> <code class="plain">+ m.start() +</code></em></div>
+<div class="line number20 index19 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="string">" to "</code> <code class="plain">+ (m.end()-</code><code class="value">1</code><code class="plain">));</code></em></div>
+<div class="line number21 index20 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></em></div>
+<div class="line number22 index21 alt1"><em><code class="plain">}</code></em></div>
+</div>
+<div class="line number19 index18 alt2">
 <p>Output:</p>
-<p>Pattern found from 0 to 4</p>
-<p>Pattern found from 8 to 12</p>
-<ol start="3">
-<li><strong>PatternSyntaxException class:&nbsp;</strong>This object of Regex is used to indicate a syntax error in a regular expression pattern and is an unchecked exception.</li>
-</ol>
-<p><strong>&nbsp;</strong></p>
+<pre>Pattern found from 0 to 4
+Pattern found from 8 to 12<br /><br /><em><strong>Java Program to demonstrate simple regular expression searching</strong><br /></em></pre>
+<div class="line number1 index0 alt2"><code class="comments">// A Simple Java program to demonstrate working of</code></div>
+<div class="line number2 index1 alt1"><code class="comments">// String matching in Java</code></div>
+<div class="line number3 index2 alt2"><code class="keyword">import</code> <code class="plain">java.util.regex.Matcher;</code></div>
+<div class="line number4 index3 alt1"><code class="keyword">import</code> <code class="plain">java.util.regex.Pattern;</code></div>
+<div class="line number5 index4 alt2"><code class="undefined spaces">&nbsp;</code>&nbsp;</div>
+<div class="line number6 index5 alt1"><code class="keyword">class</code> <code class="plain">Demo</code></div>
+<div class="line number7 index6 alt2"><code class="plain">{</code></div>
+<div class="line number8 index7 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">public</code> <code class="keyword">static</code> <code class="keyword">void</code> <code class="plain">main(String args[])</code></div>
+<div class="line number9 index8 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">{</code></div>
+<div class="line number10 index9 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Create a pattern to be searched</code></div>
+<div class="line number11 index10 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">Pattern pattern = Pattern.compile(</code><code class="string">"ge*"</code><code class="plain">);</code></div>
+<div class="line number12 index11 alt1"><code class="undefined spaces">&nbsp;</code>&nbsp;</div>
+<div class="line number13 index12 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Search above pattern in "geeksforgeeks.org"</code></div>
+<div class="line number14 index13 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">Matcher m = pattern.matcher(</code><code class="string">"geeksforgeeks.org"</code><code class="plain">);</code></div>
+<div class="line number15 index14 alt2"><code class="undefined spaces">&nbsp;</code>&nbsp;</div>
+<div class="line number16 index15 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Print starting and ending indexes of the pattern</code></div>
+<div class="line number17 index16 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// in text</code></div>
+<div class="line number18 index17 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">while</code> <code class="plain">(m.find())</code></div>
+<div class="line number19 index18 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">System.out.println(</code><code class="string">"Pattern found from "</code> <code class="plain">+ m.start() +</code></div>
+<div class="line number20 index19 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="string">" to "</code> <code class="plain">+ (m.end()-</code><code class="value">1</code><code class="plain">));</code></div>
+<div class="line number21 index20 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></div>
+<div class="line number22 index21 alt1"><code class="plain">}</code></div>
+<p>Output:</p>
+<pre>Pattern found from 0 to 2
+Pattern found from 8 to 10
+Pattern found from 16 to 16<br /><br /><strong>Java program to demonstrate Case Insensitive Searching</strong></pre>
+<div class="line number1 index0 alt2"><em><code class="comments">// A Simple Java program to demonstrate working of</code></em></div>
+<div class="line number2 index1 alt1"><em><code class="comments">// String matching in Java</code></em></div>
+<div class="line number3 index2 alt2"><em><code class="keyword">import</code> <code class="plain">java.util.regex.Matcher;</code></em></div>
+<div class="line number4 index3 alt1"><em><code class="keyword">import</code> <code class="plain">java.util.regex.Pattern;</code></em></div>
+<div class="line number5 index4 alt2"><em><code class="undefined spaces">&nbsp;</code>&nbsp;</em></div>
+<div class="line number6 index5 alt1"><em><code class="keyword">class</code> <code class="plain">Demo</code></em></div>
+<div class="line number7 index6 alt2"><em><code class="plain">{</code></em></div>
+<div class="line number8 index7 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">public</code> <code class="keyword">static</code> <code class="keyword">void</code> <code class="plain">main(String args[])</code></em></div>
+<div class="line number9 index8 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">{</code></em></div>
+<div class="line number10 index9 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Create a pattern to be searched</code></em></div>
+<div class="line number11 index10 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">Pattern pattern =&nbsp;</code></em></div>
+<div class="line number12 index11 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">Pattern.compile(</code><code class="string">"ge*"</code><code class="plain">, Pattern.CASE_INSENSITIVE);</code></em></div>
+<div class="line number13 index12 alt2"><em><code class="undefined spaces">&nbsp;</code>&nbsp;</em></div>
+<div class="line number14 index13 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Search above pattern in "geeksforgeeks.org"</code></em></div>
+<div class="line number15 index14 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">Matcher m = pattern.matcher(</code><code class="string">"GeeksforGeeks.org"</code><code class="plain">);</code></em></div>
+<div class="line number16 index15 alt1"><em><code class="undefined spaces">&nbsp;</code>&nbsp;</em></div>
+<div class="line number17 index16 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Print starting and ending indexes of the pattern</code></em></div>
+<div class="line number18 index17 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// in text</code></em></div>
+<div class="line number19 index18 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">while</code> <code class="plain">(m.find())</code></em></div>
+<div class="line number20 index19 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">System.out.println(</code><code class="string">"Pattern found from "</code> <code class="plain">+ m.start() +</code></em></div>
+<div class="line number21 index20 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="string">" to "</code> <code class="plain">+ (m.end()-</code><code class="value">1</code><code class="plain">));</code></em></div>
+<div class="line number22 index21 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></em></div>
+<div class="line number23 index22 alt2"><em><code class="plain">}</code></em></div>
+</div>
+<p>Output:</p>
+<pre>Pattern found from 0 to 2
+Pattern found from 8 to 10
+Pattern found from 16 to 16<br /><br /><strong>Java program to demonstrate working of split() to split a text based on a delimiter pattern<br /></strong></pre>
+<div class="line number1 index0 alt2"><em><code class="comments">// Java program to demonstrate working of splitting a text by a</code></em></div>
+<div class="line number2 index1 alt1"><em><code class="comments">// given pattern</code></em></div>
+<div class="line number3 index2 alt2"><em><code class="keyword">import</code> <code class="plain">java.util.regex.Matcher;</code></em></div>
+<div class="line number4 index3 alt1"><em><code class="keyword">import</code> <code class="plain">java.util.regex.Pattern;</code></em></div>
+<div class="line number5 index4 alt2"><em><code class="undefined spaces">&nbsp;</code>&nbsp;</em></div>
+<div class="line number6 index5 alt1"><em><code class="keyword">class</code> <code class="plain">Demo</code></em></div>
+<div class="line number7 index6 alt2"><em><code class="plain">{</code></em></div>
+<div class="line number8 index7 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">public</code> <code class="keyword">static</code> <code class="keyword">void</code> <code class="plain">main(String args[])</code></em></div>
+<div class="line number9 index8 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">{</code></em></div>
+<div class="line number10 index9 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">String text = </code><code class="string">"geeks1for2geeks3"</code><code class="plain">;</code></em></div>
+<div class="line number11 index10 alt2"><em><code class="undefined spaces">&nbsp;</code>&nbsp;</em></div>
+<div class="line number12 index11 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Specifies the string pattern which is to be searched</code></em></div>
+<div class="line number13 index12 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">String delimiter =&nbsp; </code><code class="string">"\\d"</code><code class="plain">;</code></em></div>
+<div class="line number14 index13 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">Pattern pattern = Pattern.compile(delimiter,</code></em></div>
+<div class="line number15 index14 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">Pattern.CASE_INSENSITIVE);</code></em></div>
+<div class="line number16 index15 alt1"><em><code class="undefined spaces">&nbsp;</code>&nbsp;</em></div>
+<div class="line number17 index16 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Used to perform case insensitive search of the string</code></em></div>
+<div class="line number18 index17 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">String[] result = pattern.split(text);</code></em></div>
+<div class="line number19 index18 alt2"><em><code class="undefined spaces">&nbsp;</code>&nbsp;</em></div>
+<div class="line number20 index19 alt1"><em><code class="undefined spaces">&nbsp;</code>&nbsp;</em></div>
+<div class="line number21 index20 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">for</code> <code class="plain">(String temp: result)</code></em></div>
+<div class="line number22 index21 alt1"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">System.out.println(temp);</code></em></div>
+<div class="line number23 index22 alt2"><em><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></em></div>
+<div class="line number24 index23 alt1"><em><code class="plain">}</code></em></div>
+<div class="line number24 index23 alt1">
+<p>Output:</p>
+<p>geeks for geeks<br /><br /><strong>PatternSyntaxException class:&nbsp;</strong>This object of Regex is used to indicate a syntax error in a regular expression pattern and is an unchecked exception.: This object of Regex is used to indicate a syntax error in a regular expression pattern and is an unchecked exception.<br /><br /></p>
+<em><code class="plain"></code></em></div>
 <p><strong>Important Observations/Facts:</strong></p>
 <ol>
 <li>We create a pattern object by calling Pattern.compile(), there is no constructor. compile() is a static method in Pattern class.</li>
 <li>Like above, we create a Matcher object using matcher() on objects of Pattern class.</li>
-<li>matches() is also a static method that is used to check if given text as a whole matches pattern or not.</li>
+<li>Pattern.matches() is also a static method that is used to check if given text as a whole matches pattern or not.</li>
 <li>find() is used to find multiple occurrences of pattern in text.</li>
-<li>We can split a text based on a delimiter pattern<br />using split()</li>
+<li>We can split <a href="https://textfancy.com" rel="nofollow">a text based</a> on a delimiter pattern<br />using split()</li>
 </ol>
-<p>&nbsp;</p>
-<h1>Check if URL is valid or not in Java</h1>
+<h4>Check if URL is valid or not in Java</h4>
 <p><a href="https://www.geeksforgeeks.org/check-if-url-is-valid-or-not-in-java/">https://www.geeksforgeeks.org/check-if-url-is-valid-or-not-in-java/</a></p>
 <p>Given a URL as string, we need to find if the given URL is valid or not.</p>
 <p>Input : str = "https://www.geeksforgeeks.org/"</p>
 <p>Output : Yes</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <p>Input : str = "https:// www.geeksforgeeks.org/"</p>
 <p>Output : No</p>
 <p>Note that there is a space after https://</p>
@@ -137,9 +187,7 @@
 <p>// Java program to check if a URL is valid&nbsp;</p>
 <p>// using java.net.url</p>
 <p>import java.net.URL;</p>
-<p>&nbsp;&nbsp;</p>
 <p>class Test {</p>
-<p>&nbsp;&nbsp;</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;/* Returns true if url is valid */</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;public static boolean isValid(String url)</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
@@ -148,14 +196,12 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new URL(url).toURI();</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return true;</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// If there was an Exception</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// while creating URL object</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch (Exception e) {</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return false;</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;/*driver function*/&nbsp;&nbsp;&nbsp;&nbsp;</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
@@ -163,9 +209,8 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (isValid(url1))&nbsp;</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Yes");</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("No");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String url2 = "<u>http://</u> www.geeksforgeeks.org/";</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("No");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String url2 = "<u>http://</u>&nbsp;www.geeksforgeeks.org/";</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (isValid(url2))&nbsp;</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Yes");</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else</p>
@@ -175,12 +220,11 @@
 <p>Output:</p>
 <p>Yes</p>
 <p>No</p>
-<h1>Check if email address valid or not in Java</h1>
+<h4>Check if email address valid or not in Java</h4>
 <p><a href="https://www.geeksforgeeks.org/check-email-address-valid-not-java/?ref=rp">https://www.geeksforgeeks.org/check-email-address-valid-not-java/?ref=rp</a></p>
 <p>Given a string, find if the given string is a valid email or not.</p>
 <p>Input : email = "contribute@geeksforgeeks.org"</p>
 <p>Output : Yes</p>
-<p>&nbsp;</p>
 <p>Input : email = "contribute@geeksforgeeks..org"</p>
 <p>Output : No</p>
 <p>There is an extra dot before org.</p>
@@ -192,7 +236,6 @@
 <p>// is valid using Regex.</p>
 <p>import java.util.regex.Matcher;</p>
 <p>import java.util.regex.Pattern;</p>
-<p>&nbsp;&nbsp;</p>
 <p>class Test</p>
 <p>{</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;public static boolean isValid(String email)</p>
@@ -207,7 +250,6 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return false;</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return pat.matcher(email).matches();</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
-<p>&nbsp;&nbsp;</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;/* driver function to check */</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;{</p>
@@ -218,7 +260,7 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print("No");</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
 <p>}</p>
-<h1>Program to check valid mobile number</h1>
+<h4>Program to check valid mobile number</h4>
 <p><a href="https://www.geeksforgeeks.org/java-program-check-valid-mobile-number/">https://www.geeksforgeeks.org/java-program-check-valid-mobile-number/</a></p>
 <p><strong>Mobile Number validation criteria:</strong></p>
 <ul>
@@ -274,11 +316,10 @@
 <p>&nbsp;</p>
 <p>Output:</p>
 <p>Invalid Number</p>
-<h1>Get the first letter of each word in a string using regex in Java</h1>
+<h4>Get the first letter of each word in a string using regex in Java</h4>
 <p><a href="https://www.geeksforgeeks.org/get-first-letter-word-string-using-regex-java/">https://www.geeksforgeeks.org/get-first-letter-word-string-using-regex-java/</a></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+
+
 
 </body>
 </html>
