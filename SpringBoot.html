@@ -4,8 +4,11 @@
 
 <button type="button" onclick="document.location='index.html'" style="position:fixed;">Back To HOME</button>
 <br>
-<h1>SpringBoot Links</h1>
 
+
+
+
+<h1>SpringBoot</h1>
 <h3 id="q1-what-is-spring-boot-and-why-we-need-this">What is Spring Boot and why we need this?</h3>
 <p>Spring framework has become complicated over the years with lot of features. Initial Spring project setup takes time due to following :-</p>
 <ol>
@@ -16,7 +19,7 @@
 <li>Build process to generate jar/war and deployment process</li>
 <li>Best practices to use spring modules</li>
 </ol>
-<p><strong>✰ Spring boot solves all this problems and help to create stand-alone, production-grade Spring based applications that you can just run.</strong></p>
+<p><strong>Spring boot solves all this problems and help to create stand-alone, production-grade Spring based applications that you can just run.</strong></p>
 <p>Spring Boot take an opinionated view of the Spring platform and third-party libraries so you can get started with minimum fuss. Most Spring Boot applications need very little Spring configuration.</p>
 <h6 id="features">Features</h6>
 <ol>
@@ -25,24 +28,23 @@
 <li>Provide opinionated &lsquo;starter&rsquo; dependencies to simplify your build and application configuration</li>
 <li>Automatically configure Spring and 3rd party libraries whenever possible</li>
 <li>Provide production-ready features such as metrics, health checks and externalized configuration</li>
-<li>Absolutely no code generation and no requirement for XML configuration<br /><br /></li>
+<li>Absolutely no code generation and no requirement for XML configuration</li>
 </ol>
-<h3 id="q2-what-springbootapplication-annotation-do">Q2. What @SpringBootApplication annotation do?</h3>
+<h3 id="q2-what-springbootapplication-annotation-do">What @SpringBootApplication annotation do?</h3>
 <p><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-using-springbootapplication-annotation">@SpringBootApplication</a>&nbsp;comprises of three annotations which are widely used:-</p>
 <ul>
 <li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-auto-configuration">@EnableAutoConfiguration</a>&nbsp;enable Spring Boot&rsquo;s auto-configuration mechanism</li>
 <li><a href="https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/ComponentScan.html">@ComponentScan</a>&nbsp;enable @Component scan on the package where the application is located</li>
-<li><a href="https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/Configuration.html">@Configuration</a>&nbsp;allow to register extra beans in the context or import additional configuration classes<br /><br /></li>
+<li><a href="https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/Configuration.html">@Configuration</a> allow to register extra beans in the context or import additional configuration classes</li>
 </ul>
-<h3 id="q3-what-happens-in-the-background-when-a-spring-boot-application-runs">Q3. What happens in the background when a spring boot application runs?</h3>
+<h3 id="q3-what-happens-in-the-background-when-a-spring-boot-application-runs">What happens in the background when a spring boot application runs?</h3>
 <ol>
 <li>Looks for active profile and initialize properties and beans based on profile</li>
 <li>Automatically launch an embedded tomcat server if it is a web application means project has&nbsp;<em>spring-boot-starter-web</em>&nbsp;dependency in pom.xml</li>
 </ol>
-<p>&nbsp;</p>
-<h3 id="q4-what-is-spring-initializer">Q4. What is Spring Initializer?</h3>
-<p>We can quickly generate spring boot project by choosing language&nbsp;<em>(Java, Kotlin, Groovy)</em>, builder&nbsp;<em>(Maven,, Gradle)</em>, spring boot version, project metadata&nbsp;<em>(group, artifact, name, description, package name, java version)</em>&nbsp;and spring boot dependencies&nbsp;<em>(spring-boot-starter-web, spring-boot-starter-jpa etc.)</em>&nbsp;using&nbsp;<a href="https://start.spring.io/" target="_blank" rel="noopener">Spring Initializer</a><br /><br /></p>
-<h3 id="q5-what-is-spring-boot-starter-parent">Q5. What is spring-boot-starter-parent?</h3>
+<h3 id="q4-what-is-spring-initializer">What is Spring Initializer?</h3>
+<p>We can quickly generate spring boot project by choosing language&nbsp;<em>(Java, Kotlin, Groovy)</em>, builder&nbsp;<em>(Maven,, Gradle)</em>, spring boot version, project metadata&nbsp;<em>(group, artifact, name, description, package name, java version)</em>&nbsp;and spring boot dependencies&nbsp;<em>(spring-boot-starter-web, spring-boot-starter-jpa etc.)</em>&nbsp;using&nbsp;<a href="https://start.spring.io/" target="_blank" rel="noopener">Spring Initializer</a></p>
+<h3 id="q5-what-is-spring-boot-starter-parent">What is spring-boot-starter-parent?</h3>
 <p>The&nbsp;<code>spring-boot-starter-parent</code>&nbsp;is spring boot starter project. It can be used as a parent in our project&rsquo;s pom.xml:</p>
 <div class="highlight">
 <pre><code class="language-pom.xml" data-lang="pom.xml">&lt;parent&gt;
@@ -58,9 +60,9 @@
 <li>UTF-8 source encoding</li>
 <li>Dependency management inherited from&nbsp;<code>spring-boot-dependencies</code>&nbsp;POM which allow us to omit&nbsp;<code>version</code>&nbsp;tag for common dependencies.</li>
 <li><strong>Resource filtering</strong>&nbsp;only import required thirdparty libraries based on&nbsp;<code>application.properties</code>&nbsp;or&nbsp;<code>application.yml</code></li>
-<li>Default configuration for maven plugins such as maven-failsafe-plugin, maven-jar-plugin, maven-surefire-plugin, maven-war-plugin.<br /><br /></li>
+<li>Default configuration for maven plugins such as maven-failsafe-plugin, maven-jar-plugin, maven-surefire-plugin, maven-war-plugin.</li>
 </ol>
-<h3 id="q6-what-is-default-embedded-server-and-port-in-spring-boot-how-to-change-server-port">Q6. What is default embedded server and port in spring boot? How to change server port?</h3>
+<h3 id="q6-what-is-default-embedded-server-and-port-in-spring-boot-how-to-change-server-port">What is default embedded server and port in spring boot? How to change server port?</h3>
 <p>Spring boot provides support for Tomcat, Jetty and Undertow embedded servers. Default embedded server is&nbsp;<strong>Tomcat</strong>&nbsp;and default port is&nbsp;<strong>8080</strong>.</p>
 <p>Default server port can be changed using&nbsp;<code>server.port</code>&nbsp;property or command line argument&nbsp;<code>-Dserver.port</code>.</p>
 <blockquote>
@@ -83,11 +85,9 @@
 &lt;dependency&gt;
     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
     &lt;artifactId&gt;spring-boot-starter-jetty&lt;/artifactId&gt;
-&lt;/dependency&gt;
-</code></pre>
+&lt;/dependency&gt;</code></pre>
 </div>
-<p>&nbsp;</p>
-<h3 id="q7-what-is-default-logging-in-sprint-boot-how-to-change-default-logging">Q7. What is default logging in Sprint Boot? How to change default logging?</h3>
+<h3 id="q7-what-is-default-logging-in-sprint-boot-how-to-change-default-logging">What is default logging in Sprint Boot? How to change default logging?</h3>
 <p>Spring boot provides&nbsp;<strong>logback</strong>&nbsp;as default logging. If you want to change default logging to&nbsp;<strong>log4j2</strong>&nbsp;then exclude&nbsp;<code>spring-boot-starter-logging</code>&nbsp;from&nbsp;<code>spring-boot-starter</code>&nbsp;and add&nbsp;<code>spring-boot-starter-log4j2</code>&nbsp;dependency like below:</p>
 <div class="highlight">
 <pre><code class="language-pom.xml" data-lang="pom.xml">&lt;!-- Exclude Spring Boot's Default Logback Logging --&gt;
@@ -105,11 +105,9 @@
 &lt;dependency&gt;
 	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
 	&lt;artifactId&gt;spring-boot-starter-log4j2&lt;/artifactId&gt;
-&lt;/dependency&gt;
-</code></pre>
+&lt;/dependency&gt;</code></pre>
 </div>
-<p>&nbsp;</p>
-<h3 id="q8-how-to-generate-deployable-jar-and-war-file-in-spring-boot">Q8. How to generate deployable JAR and WAR file in Spring Boot?</h3>
+<h3 id="q8-how-to-generate-deployable-jar-and-war-file-in-spring-boot">How to generate deployable JAR and WAR file in Spring Boot?</h3>
 <p>Spring boot provides a maven plugin&nbsp;<code>spring-boot-maven-plugin</code>&nbsp;to generate JAR and WAR files which we can add in pom.xml as follows:</p>
 <div class="highlight">
 <pre><code class="language-pom.xml" data-lang="pom.xml">&lt;plugin&gt;
@@ -133,20 +131,18 @@
     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
     &lt;artifactId&gt;spring-boot-starter-tomcat&lt;/artifactId&gt;
     &lt;scope&gt;provided&lt;/scope&gt;
-&lt;/dependency&gt;
-</code></pre>
+&lt;/dependency&gt;</code></pre>
 </div>
-<p>&nbsp;</p>
-<h3 id="q9-how-to-configure-properties-in-spring-boot">Q9. How to configure properties in Spring Boot?</h3>
+<h3 id="q9-how-to-configure-properties-in-spring-boot">How to configure properties in Spring Boot?</h3>
 <p>Spring Boot provides support for external configuration, allowing us to run the same application in various environments. We can use properties files, YAML files, environment variables, system properties, and command-line option arguments to specify configuration properties.</p>
 <p>We can then gain access to those properties using the&nbsp;<code>@Value</code>&nbsp;annotation, a bound object via the&nbsp;<code>@ConfigurationProperties</code>&nbsp;annotation, or the Environment abstraction.</p>
 <p>Here are the most common sources of external configuration:</p>
 <ul>
 <li><strong>Command-line properties:</strong>&nbsp;Command-line option arguments are program arguments starting with a double hyphen, such as&nbsp;<em>&ndash;-server.port=8080</em>. Spring Boot converts all the arguments to properties and adds them to the set of environment properties.</li>
 <li><strong>Application properties:</strong>&nbsp;Application properties are those loaded from the application.properties file or its YAML counterpart. By default, Spring Boot searches for this file in the current directory, classpath root, or their config subdirectory.</li>
-<li><strong>Profile-specific properties:</strong>&nbsp;Profile-specific properties are loaded from the application-{profile}.properties file or its YAML counterpart. The {profile} placeholder refers to an active profile. These files are in the same locations as, and take precedence over, non-specific property files.<br /><br /></li>
+<li><strong>Profile-specific properties:</strong> Profile-specific properties are loaded from the application-{profile}.properties file or its YAML counterpart. The {profile} placeholder refers to an active profile. These files are in the same locations as, and take precedence over, non-specific property files.</li>
 </ul>
-<h3 id="q10-what-is-spring-boot-actuator">Q10. What is Spring Boot Actuator?</h3>
+<h3 id="q10-what-is-spring-boot-actuator">&nbsp;What is Spring Boot Actuator?</h3>
 <p>Spring Boot Actuator provides production-ready features for monitoring and managing spring boot application by exposing many useful HTTP endpoints related to application health, info etc.</p>
 <p>To Enable Actuator in spring boot application, we just need to include&nbsp;<code>spring-boot-starter-actuator</code>&nbsp;dependency in the pom.xml file:</p>
 <div class="highlight">
@@ -209,8 +205,8 @@
 <em>LOGGER.error("Generic Contract Exception has occurred.");</em>
 <em>&nbsp; &nbsp; ContractError cerr = ex.createContractError();</em>
 <em>return status(gcex.getRespCode()).body(cerr);</em>
-<em>&nbsp; }<br /><br /></em></pre>
-<h1 class="post__title">How to create and configure custom banner in spring boot</h1>
+<em>  }<br /></em></pre>
+<h3 class="post__title">How to create and configure custom banner in spring boot</h3>
 <p><strong>https://codingnconcepts.com/spring-boot/how-to-create-custom-banner/</strong></p>
 <p>Spring boot application comes with default banner which shows up first when you start your application.</p>
 <pre><code>  .   ____          _            __ _ _
@@ -241,7 +237,7 @@
                            |___/                                    |_|            
 </code></pre>
 <h3 id="2-configure-text-banner-in-spring-boot-application">2. Configure text banner in Spring boot application</h3>
-<p>Now we have created text banner, save this in file with name&nbsp;<strong>banner.txt</strong>&nbsp;under&nbsp;<strong>src/main/resources</strong>. Spring Boot by default picks up the content from the banner.txt file under resources folder and display it on the startup.</p>
+<p>Now we have <a href="https://textfancy.com" rel="nofollow">created text</a> banner, save this in file with name&nbsp;<strong>banner.txt</strong>&nbsp;under&nbsp;<strong>src/main/resources</strong>. Spring Boot by default picks up the content from the banner.txt file under resources folder and display it on the startup.</p>
 <p>You can also change the location or file name by configuring in application.properties or application.yml file</p>
 <h6 id="applicationproperties">application.properties</h6>
 <pre><code>spring.banner.location=classpath:/path/to/custom-banner.txt
@@ -254,28 +250,27 @@
 <p>That&rsquo;s it, Restart your application to see your self made banner in console output as below:-</p>
 <p><img src="https://codingnconcepts.com/img/spring-boot/how-to-create-custom-banner-1.png" alt="Coding N Concept Spring Boot Banner" /></p>
 <pre><em><br />============================================================================<br /><br /></em></pre>
-<h1 class="post__title">application.properties vs application.yml in Spring Boot</h1>
-<p><strong>https://codingnconcepts.com/spring-boot/spring-boot-application-properties-vs-yml/</strong></p>
-<pre><em><br />=============================================================================<br /></em></pre>
-<h1 class="post__title">Spring @ConfigurationProperties using YAML</h1>
+<h3 class="post__title">application.properties vs application.yml in Spring Boot</h3>
+<p><strong><a href="https://codingnconcepts.com/spring-boot/spring-boot-application-properties-vs-yml/">https://codingnconcepts.com/spring-boot/spring-boot-application-properties-vs-yml/</a></strong></p>
+<p><em>=============================================================================<br /></em></p>
+<h3 class="post__title">Spring @ConfigurationProperties using YAML</h3>
 <p>https://codingnconcepts.com/spring-boot/spring-configuration-properties-using-yml/</p>
-<pre><em><br /><br />===========================================================================<br /></em></pre>
-<h1 class="post__title">Spring @Value Annotation Guide</h1>
+<pre><em><br />===========================================================================<br /></em></pre>
+<h3 class="post__title">Spring @Value Annotation Guide</h3>
 <p>https://codingnconcepts.com/spring-boot/spring-value-annotation/</p>
 <pre><em>===========================================================================<br /></em></pre>
-<h1 class="post__title">How to change server port in spring boot</h1>
-<p>https://codingnconcepts.com/spring-boot/how-to-change-server-port/</p>
-<pre><em><br /><br />===========================================================================<br /></em></pre>
-<h1 class="post__title">How to disable default banner in spring boot</h1>
+<h3 class="post__title">How to change server port in spring boot</h3>
+<p><a href="https://codingnconcepts.com/spring-boot/how-to-change-server-port/">https://codingnconcepts.com/spring-boot/how-to-change-server-port/ </a><em>===========================================================================<br /></em></p>
+<h3 class="post__title">How to disable default banner in spring boot</h3>
 <p>https://codingnconcepts.com/spring-boot/how-to-disable-banner/</p>
-<pre><em><br /><br />===========================================================================<br /><br /><br />===========================================================================<br /><br /><br />===========================================================================<br /></em></pre>
-<p>&nbsp;</p>
+<pre><em><br /><br />===========================================================================</em></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
+
 
 </body>
 </html>
