@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button type="button" onclick="document.location='index.html'" style="position:fixed;">Back To HOME</button>
+<br>
+<h1>Memory Mgmt Links</h1>
+
+<h1 class="h1"><a href="https://www.javatpoint.com/stack-vs-heap-java" target="_blank">https://www.javatpoint.com/stack-vs-heap-java</a></h1>
+<p><a href="https://www.journaldev.com/4098/java-heap-space-vs-stack-memory" target="_blank">https://www.journaldev.com/4098/java-heap-space-vs-stack-memory</a></p>
+<h1 class="h1">&nbsp;</h1>
+<h1 class="h1">Stack Vs Heap Java</h1>
+<p>In Java,&nbsp;<a href="https://www.javatpoint.com/memory-management-in-java">memory management</a>&nbsp;is a vital process. It is managed by Java automatically. The JVM divides the memory into two parts:&nbsp;<a href="https://www.javatpoint.com/java-stack">stack</a>&nbsp;memory and&nbsp;<a href="https://www.javatpoint.com/java-heap">heap</a>&nbsp;memory. From the perspective of Java, both are important memory areas but both are used for different purposes. The&nbsp;<strong>major difference between Stack memory and heap memory</strong>&nbsp;is that the stack is used to store the order of method execution and local variables while the heap memory stores the objects and it uses dynamic memory allocation and deallocation. In this section, we will discuss the differences between stack and heap in detail.</p>
+<p><img src="https://static.javatpoint.com/core/images/stack-vs-heap-java.png" alt="Stack Vs Heap Java" /></p>
+<h2 class="h2">Stack Memory</h2>
+<p>The stack memory is a physical space (in RAM) allocated to each thread at run time. It is created when a thread creates. Memory management in the stack follows LIFO (Last-In-First-Out) order because it is accessible globally. It stores the variables, references to objects, and partial results. Memory allocated to stack lives until the function returns. If there is no space for creating the new objects, it throws the&nbsp;<span class="hlight">java.lang.StackOverFlowError</span>. The scope of the elements is limited to their threads. The&nbsp;<a href="https://www.javatpoint.com/jvm-java-virtual-machine">JVM</a>&nbsp;creates a separate stack for each thread.</p>
+<h2 class="h2">Heap Memory</h2>
+<p>It is created when the JVM starts up and used by the application as long as the application runs. It stores objects and JRE classes. Whenever we create objects it occupies space in the heap memory while the reference of that object creates in the stack. It does not follow any order like the stack. It dynamically handles the memory blocks. It means, we need not to handle the memory manually. For managing the memory automatically,&nbsp;<a href="https://www.javatpoint.com/java-tutorial">Java</a>&nbsp;provides the&nbsp;<a href="https://www.javatpoint.com/Garbage-Collection">garbage collector</a>&nbsp;that deletes the objects which are no longer being used. Memory allocated to heap lives until any one event, either program terminated or memory free does not occur. The elements are globally accessible in the application. It is a common memory space shared with all the threads. If the heap space is full, it throws the&nbsp;<span class="hlight">java.lang.OutOfMemoryError</span>. The heap memory is further divided into the following memory areas:</p>
+<ul class="points">
+<li>Young generation</li>
+<li>Survivor space</li>
+<li>Old generation</li>
+<li>Permanent generation</li>
+<li>Code Cache</li>
+</ul>
+<p>The following image shows the allocation of stack memory and heap space.</p>
+<div id="31d834e2-cf8d-4065-b4b0-2502cb42b89b" class="_ap_apex_ad" style="display: block; clear: both; text-align: center; margin: 10px auto; width: 535px; height: 300px; overflow: hidden;" data-section="31d834e2-cf8d-4065-b4b0-2502cb42b89b" data-xpath="#city &gt; table:eq(0) &gt; tbody:eq(0) &gt; tr:eq(0) &gt; td:eq(0) &gt; p:eq(3)" data-section-id="" data-ap-network="custom">
+<div>
+<div id="primisPlayerContainerDiv" class="primisslate">
+<div id="primis_container_div">
+<div id="placeHolder">
+<div>&nbsp;</div>
+</div>
+<div id="primis_playerSekindoSPlayer617ebbc991793">
+<div id="Player-Div-SekindoSPlayer617ebbc991793">
+<div id="Video-Div-SekindoSPlayer617ebbc991793">
+<div id="Video-iFrame-SekindoSPlayer617ebbc991793">
+<div id="layoutContainerDiv">
+<div id="layoutDesign">
+<div id="topRightElements">
+<div id="shareContainer">
+<div id="shareBtn"><img src="https://static.javatpoint.com/core/images/stack-vs-heap-java2.png" alt="Stack Vs Heap Java" /></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2 class="h2">Difference Between Stack and Heap Memory</h2>
+<p>The following table summarizes all the major differences between stack memory and heap space.</p>
+<table class="alt">
+<tbody>
+<tr>
+<th>Parameter</th>
+<th>Stack Memory</th>
+<th>Heap Space</th>
+</tr>
+<tr>
+<td><strong>Application</strong></td>
+<td>It stores items that have a very short life such as&nbsp;<strong>methods, variables,</strong>&nbsp;and&nbsp;<strong>reference variables</strong>&nbsp;of the objects.</td>
+<td>It stores&nbsp;<strong>objects</strong>&nbsp;and Java Runtime Environment (<strong>JRE</strong>) classes.</td>
+</tr>
+<tr>
+<td><strong>Ordering</strong></td>
+<td>It follows the&nbsp;<strong>LIFO</strong>&nbsp;order.</td>
+<td>It does not follow any order because it is a dynamic memory allocation and does not have any fixed pattern for allocation and deallocation of memory blocks.</td>
+</tr>
+<tr>
+<td><strong>Flexibility</strong></td>
+<td>It is&nbsp;<strong>not flexible</strong>&nbsp;because we cannot alter the allocated memory.</td>
+<td>It is&nbsp;<strong>flexible</strong>&nbsp;because we can alter the allocated memory.</td>
+</tr>
+<tr>
+<td><strong>Efficiency</strong></td>
+<td>It has&nbsp;<strong>faster</strong>&nbsp;access, allocation, and deallocation.</td>
+<td>It has&nbsp;<strong>slower</strong>&nbsp;access, allocation, and deallocation.</td>
+</tr>
+<tr>
+<td><strong>Memory Size</strong></td>
+<td>It is&nbsp;<strong>smaller</strong>&nbsp;in size.</td>
+<td>It is&nbsp;<strong>larger</strong>&nbsp;in size.</td>
+</tr>
+<tr>
+<td><strong>Java Options Used</strong></td>
+<td>We can increase the stack size by using the JVM option -Xss.</td>
+<td>We can increase or decrease the heap memory size by using the -<a href="https://www.javatpoint.com/java-xmx">Xmx</a>&nbsp;and -Xms JVM options.</td>
+</tr>
+<tr>
+<td><strong>Visibility or Scope</strong></td>
+<td>The variables are visible only to the owner thread.</td>
+<td>It is visible to all threads.</td>
+</tr>
+<tr>
+<td><strong>Generation of Space</strong></td>
+<td>When a thread is created, the operating system automatically allocates the stack.</td>
+<td>To create the heap space for the application, the language first calls the operating system at run time.</td>
+</tr>
+<tr>
+<td><strong>Distribution</strong></td>
+<td>Separate stack is created for each object.</td>
+<td>It is shared among all the threads.</td>
+</tr>
+<tr>
+<td><strong>Exception Throws</strong></td>
+<td>JVM throws the&nbsp;<strong>java.lang.StackOverFlowError</strong>&nbsp;if the stack size is greater than the limit. To avoid this error, increase the stack size.</td>
+<td>JVM throws the&nbsp;<strong>java.lang.OutOfMemoryError</strong>&nbsp;if the JVM is unable to create a new native method.</td>
+</tr>
+<tr>
+<td><strong>Allocation/ Deallocation</strong></td>
+<td>It is done automatically by the&nbsp;<strong>compiler</strong>.</td>
+<td>It is done manually by the&nbsp;<strong>programmer</strong>.</td>
+</tr>
+<tr>
+<td><strong>Cost</strong></td>
+<td>Its cost is&nbsp;<strong>less</strong>.</td>
+<td>Its cost is&nbsp;<strong>more</strong>&nbsp;in comparison to stack.</td>
+</tr>
+<tr>
+<td><strong>Implementation</strong></td>
+<td>Its implementation is&nbsp;<strong>hard</strong>.</td>
+<td>Its implementation is&nbsp;<strong>easy</strong>.</td>
+</tr>
+<tr>
+<td><strong>Order of allocation</strong></td>
+<td>Memory allocation is&nbsp;<strong>continuous</strong>.</td>
+<td>Memory allocated in&nbsp;<strong>random</strong>&nbsp;order.</td>
+</tr>
+<tr>
+<td><strong>Thread-Safety</strong></td>
+<td>It is thread-safe because each thread has its own stack.</td>
+<td>It is not thread-safe, so properly synchronization of code is required.</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+ 
+</body>
+</html>

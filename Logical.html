@@ -6,6 +6,8 @@
 <br>
 <h1>Logical QA Links</h1>
 
+<a href="https://www.geekyprep.com/puzzles" target="_blank">https://www.geekyprep.com/puzzles</a>
+
 <ol>
 <li>
 <ol start="4">
@@ -28,6 +30,228 @@
 </ol>
 </li>
 </ol>
+
+<hr>
+
+<h1>Puzzle | 8 balls problem</h1>
+<article id="post-363020" class="content post-363020 post type-post status-publish format-standard hentry category-puzzles tag-aptitude-puzzles tag-puzzles">
+<div class="text">
+<p><strong><u>Puzzle</u>:&nbsp;</strong>You are provided with 8 identical balls and a measuring instrument. 7 of the eight balls are equal in weight and one of the eight given balls is defective and weighs less. The task is to find the defective ball in exactly two measurements.<br /><a href="https://media.geeksforgeeks.org/wp-content/uploads/20191127175810/8-ball-puzzle.png"><img class="aligncenter size-full wp-image-1387815" src="https://media.geeksforgeeks.org/wp-content/uploads/20191127175810/8-ball-puzzle.png" alt="" width="356" height="219" /></a></p>
+<p><strong><u>Solution</u>:</strong></p>
+<ul>
+<li><strong>Step 1:</strong>&nbsp;Divide the balls into three categories(C1, C2 and C3).
+<ul>
+<li>Let C1 consist of balls B1, B2 and B3.</li>
+<li>Let C2 consist of balls B4, B5 and B6.</li>
+<li>Let C3 consist of balls B7 and B8.</li>
+</ul>
+<p><a href="https://media.geeksforgeeks.org/wp-content/uploads/20191127181015/8-balls-puzzle-solution.png"><img class="aligncenter size-full wp-image-1387846" src="https://media.geeksforgeeks.org/wp-content/uploads/20191127181015/8-balls-puzzle-solution.png" alt="" width="398" height="245" /></a></p>
+</li>
+<li><strong>Step 2:</strong>&nbsp;Put C1 on one side of the weighing machine and C2 on the other.<br />This can give rise to 3 conditions:
+<ol>
+<li>Condition 1:&nbsp;<em>C1 equals C2</em></li>
+<li>Condition 2:&nbsp;<em>C1 &lt; C2</em></li>
+<li>Condition 3:&nbsp;<em>C1 &gt; C2</em></li>
+</ol>
+<p><a href="https://media.geeksforgeeks.org/wp-content/uploads/20191127185520/8-balls-puzzle-solution-11.png"><img class="aligncenter size-full wp-image-1387929" src="https://media.geeksforgeeks.org/wp-content/uploads/20191127185520/8-balls-puzzle-solution-11.png" alt="" width="393" height="242" /></a></p>
+</li>
+</ul>
+<p>Now let&rsquo;s analyse the three conditions to find the defective ball:</p>
+<ul>
+<li><strong><u>Condition 1</u>:</strong>&nbsp;If C1 is equal C2, then C3 has the defective ball. Now measure the weights of ball B7 and B8.
+<ul>
+<li>If B7 &lt; B8, B7 is defective</li>
+<li>If B7 &gt; B8, B8 is defective.</li>
+</ul>
+<p><a href="https://media.geeksforgeeks.org/wp-content/uploads/20191127185611/8-balls-puzzle-solution-21.png"><img class="aligncenter size-full wp-image-1387935" src="https://media.geeksforgeeks.org/wp-content/uploads/20191127185611/8-balls-puzzle-solution-21.png" alt="" width="290" height="181" /></a></p>
+</li>
+<li><strong><u>Condition 2</u>:</strong>&nbsp;If C1 &lt; C2, then C1 has the defective ball. Now measure the weights of ball B1 and B2.
+<ul>
+<li>If B1 equals B2, B3 is defective.</li>
+<li>If B1 &lt; B2, B1 is defective.</li>
+<li>If B1 &gt; B2, B2 is defective.</li>
+</ul>
+<p><a href="https://media.geeksforgeeks.org/wp-content/uploads/20191127190506/8-balls-puzzle-solution-3.png"><img class="aligncenter size-full wp-image-1387958" src="https://media.geeksforgeeks.org/wp-content/uploads/20191127190506/8-balls-puzzle-solution-3.png" alt="" width="454" height="283" /></a></p>
+</li>
+<li><strong><u>Condition 3</u>:</strong>&nbsp;If C1 &gt; C2, then C2 has the defective ball. Now measure the weights of ball B4 and B5.
+<ul>
+<li>If B4 equals B5, B6 is defective.</li>
+<li>If B4 &lt; B5, B4 is defective.</li>
+<li>If B4 &gt; B5, B5 is defective.</li>
+</ul>
+<p><a href="https://media.geeksforgeeks.org/wp-content/uploads/20191127190850/8-balls-puzzle-solution-4.png"><img class="aligncenter size-full wp-image-1387974" src="https://media.geeksforgeeks.org/wp-content/uploads/20191127190850/8-balls-puzzle-solution-4.png" alt="" width="433" height="270" /></a></p>
+</li>
+</ul>
+</div>
+</article>
+
+<hr>
+
+<h2>3 boxes puzzle solution by logic analysis and reasoning</h2>
+<p>3 boxes puzzle: You have 3 boxes containing colored balls. All 3 boxes are wrongly labeled. Open only one box, pick one ball and correctly label the boxes.</p>
+<h3>The puzzle</h3>
+<p>Three boxes with closed lids are labeled BB, BR and RR. The boxes have colored balls inside.</p>
+<p>One box has only blue, second box only red and the third&mdash;red and blue mixed colored balls.</p>
+<p>The label BB says, only blue balls are in the box. Label RR says, only red balls are in the box and label BR says, the box has balls of both blue and red colors.</p>
+<p>The problems is&mdash;all the boxes are wrongly labeled.</p>
+<p>And the job is to open exactly one box, take out only one ball and tell the color of balls in each of the three boxes.</p>
+<p><strong>Conclusion:</strong>&nbsp;RR and BB labeled boxes you can't open first.</p>
+<p>At this point itself you can confidently&nbsp;<strong>decide to open the BR labeled box,</strong>&nbsp;knowing surely that this would give you the solution.</p>
+<p>You have your solution of opening the BR labeled box first. But you have not examined yet in details what exactly the results of opening the BR labeled box could be.</p>
+<h4>Implications for opening the BR labeled box: 3 boxes puzzle</h4>
+<p>If the ball taken out of BR labeled box turns to be blue, it implies with certainty that&nbsp;<strong>all balls inside are blue.</strong>&nbsp;This further implies that the&nbsp;<strong>BB labeled box must be having only all red balls.</strong>&nbsp;Why? because the RR labeled box&nbsp;<strong>cannot have all red balls,</strong>&nbsp;that's why. Out of two possibilities of ball color in RR labeled box, BB and RR are not possible. So it can contain only blue red mix colored balls.</p>
+<p>Exactly in the same way, if the BR labeled box contains all red balls, the RR labeled box must have all blue balls and the BB labeled box blue red mix colored balls.</p>
+<p><strong>You have your solution nice and clear:</strong>&nbsp;you will open the BR labeled box first and take out one ball from it. If it is blue, BR box has all blue, BB box has all red and RR box has mixed color balls.</p>
+<p>Exactly similar and reverse result if the ball taken out is red.</p>
+
+<hr>
+
+<pre>There is one scooter which has 2 tyres and one stepney/spare (meaning 3 tyres). Each tyre can run up to max 5 km. How long will the scooter run till?</pre>
+<div>
+<pre>7.5 kms .
+
+At first, we can ride 2.5 kilometers. with stock tires (front and rear)
+Then, replace the rear tire with spare tire and ride for another 2.5 kilometers .
+Total kilometers run - 2.5+2.5 = 5 kilometers.
+Now replace the front tire which has already run 5 kilometers with  spare tire(which was earlier replaced from the rear)
+Hence, 2.5+2.5+2.5 = 7.5 kilometers.</pre>
+</div>
+
+<p>&nbsp;</p>
+<hr />
+<pre>You are an astronaut and right now at an arbitrary planet. You are in a room with 10 glasses of samples of milk with poison dissolved in one of them and nothing else. You have one rat to test the sample. If the rat drinks the poisonous sample at a given time, it dies 10 hours later. You have 24 hours to find out, which sample is poisonous. How would you do that? And yeah, the gravity there is 1.5 times the gravity of earth.</pre>
+<div>
+<pre>I would let the rat drink each sample of milk at an interval of 1 hour for consecutive 10 hours. Later I will check the time it dies. The sample corresponding to the time 10 hours before the death would be the right sample</pre>
+</div>
+
+<p>&nbsp;</p>
+<hr />
+<pre>Measure 90 mins with candle<br /><br /></pre>
+<pre>You are given two candles of equal size, which can burn 1 hour each. You have to measure 90 minutes with these candles. (There is no scale or clock). Also you are given a lighter.</pre>
+<div>
+<pre> First light up the two ends of the 1st candle. When it will burn out light up one end of the second
+candle. (30+60=90)</pre>
+</div>
+
+<p>&nbsp;</p>
+<hr />
+<pre>Make 120 with 5 Zeros using mathematical operators</pre>
+<div>
+<pre>Sol 1 :- (0! + 0! + 0! + 0! + 0!)! = 120
+
+Here '!' symbol is used for factorial. 
+And 0! = 1
+ = (0! + 0! + 0! + 0! + 0!)!
+ = (1 + 1 + 1 + 1 + 1)!
+ = 5!
+ = 120
+
+Sol 2 :- (cos (0) + cos (0) + cos (0) + cos (0) + cos (0))! = 120
+
+ = (cos (0) + cos (0) + cos (0) + cos (0) + cos (0))!
+ = (1 + 1 + 1 + 1 + 1)!
+ = 5!
+ = 120
+
+Similarly you can replace cos (0) with tan (0).
+
+Sol 3 :- (0!0! * 0!0!) - 0! = 120
+
+ = (0!0! * 0!0!) - 0!
+ = (11 * 11) - 1
+ = 121 - 1
+ = 120
+
+Sol 4 :- ((0! + 0!)^(0! + 0!) + 0!)! = 120
+
+ = ((0! + 0!)^(0! + 0!) + 0!)!
+ = ((1 + 1)^(1 + 1) + 1)!
+ = (2^2 + 1)!
+ = (4 + 1)!
+ = 5!
+ = 120</pre>
+</div>
+
+<p>&nbsp;</p>
+<hr />
+<pre>Find the survivor</pre>
+<pre>100 people standing in a circle in an order 1 to 100. No.1 has a sword. He kills next person (i.e. no. 2) and gives sword to next to next (i.e no.3). All person does the same until only 1 survives. Which number survives at the last?</pre>
+<div>
+<pre>This is the famous Josephus Problem. The solution requires getting the nearest smaller number that is the power of 2,in this case 64 and subtract it with the given number.100-64=36.Now we apply the formula 2n+1. 2*36+1=72+1=73.</pre>
+</div>
+
+<p>&nbsp;</p>
+<hr />
+<pre>2 fever and 2 cold tablets puzzle<br /><br /></pre>
+<pre>If I give you 4 tablets which contain 2 for fever and 2 for cold..all 4 have same size, shape and color, No cover.
+
+You have to take 1 cold and 1 fever tablet right now. How will you choose correctly?</pre>
+<div>
+<pre>1. Take half from all tablets
+
+2. You should mix all togather an make it into a powder, then two equal portions.(In a variant of same puzzle, you can make 4 equal portions and take accordingly)</pre>
+</div>
+
+<p>&nbsp;</p>
+<hr />
+<h2 id="firstHeading" class="title">The man in the Elevator</h2>
+<div id="contentSub" class="clear_both">A man lives on the tenth floor of a building. Every day he takes the elevator to go down to the ground floor to go to work or to go shopping. When he returns he takes the elevator to the seventh floor and walks up the stairs to reach his apartment on the tenth floor. He hates walking so why does he do it?</div>
+<div class="clear_both">&nbsp;</div>
+<div class="clear_both">
+<table id="collapsibleTable0" class="toccolours collapsible collapsed" width="100%">
+<tbody>
+<tr>
+<th colspan="2">Answer</th>
+</tr>
+<tr>
+<td>
+<p>The man is too short to reach the number 10 button.</p>
+<p>An alternative solution: The elevator only runs to the 7th floor. The riddle did not state that he takes the elevator from the 10th floor in the morning, just that he takes the elevator to the ground floor. He walks to the 7th floor each morning to take the elevator to the ground floor also.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>&nbsp;</p>
+<hr />
+<div class="clear_both">3 litres and 5 litres containers puzzle</div>
+<div class="clear_both">&nbsp;</div>
+<div class="clear_both">
+<pre>You have two container - one can contain exactly 3 litres of water and the other can contain exactly 5 litres of water. How many minimum steps will you take to get exactly 4 litres of water without using any other container? You can assume the availability of sufficient quantity of water.</pre>
+<div>
+<pre> Find below the steps:-
+
+Step #1: fill the 5 litres container (3L - 0, 5L - 5)
+Step #2: fill the 3 litres container with the filled 5 litres container (3L - 3, 5L - 2)
+Step #3: empty the just filled 3 litres container (3L -0, 5L - 2)
+Step #4: transfer the 2 litres of water left in 5 litres container into 3 litres container (3L - 2, 5L - 0)
+Step #5: fill the 5 litres container (3L - 2, 5L - 5)
+Step #6: fill the 3 litres container (having 2L currently) using just filled 5 litres container (3L - 3, 5L - 4)</pre>
+</div>
+</div>
+
+<p>&nbsp;</p>
+<hr />
+<div class="clear_both">
+<div>
+<pre>One Bulb with 3 Switches<br /><br /></pre>
+<pre>You have 3 switches in a room. One of them is for a bulb in next room. You can not see whether the bulb is on or off, until you enter the room. What is the minimum number of times you need to go in to the room to determine which switch corresponds to the bulb in next room.</pre>
+<div>
+<pre>the answer will be 1.
+
+we have to go to that room only once.
+
+Steps:
+First switch on the first switch, keep it on for say 2-3 minutes.
+then switch off first switch and on the second switch.
+as soon as u on the second switch go to the room.
+
+If you found that the bulb is glowing  that means the second switch corresponds to the room.
+if not then touch the bulb if it is warm that means it corresponds to the first switch if not then it corresponds to the third switch.</pre>
+</div>
+</div>
+</div>
 
 </body>
 </html>
