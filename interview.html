@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<style>
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+border-color:red;
+} 
+</style>
+<body>
+
+<button type="button" onclick="document.location='index.html'" style="position:fixed;">Back To HOME</button>
+<br>
+
+
+<h1>Interview&nbsp;</h1>
+<hr>
+<table class="alt">
+<tbody>
+<tr>
+<th>ArrayList</th>
+<th>LinkedList</th>
+</tr>
+<tr>
+<td>1) ArrayList internally uses a&nbsp;<strong>dynamic array</strong>&nbsp;to store the elements.</td>
+<td>LinkedList internally uses a&nbsp;<strong>doubly linked list</strong>&nbsp;to store the elements.</td>
+</tr>
+<tr>
+<td>2) Manipulation with ArrayList is&nbsp;<strong>slow</strong>&nbsp;because it internally uses an array. If any element is removed from the array, all the bits are shifted in memory.</td>
+<td>Manipulation with LinkedList is&nbsp;<strong>faster</strong>&nbsp;than ArrayList because it uses a doubly linked list, so no bit shifting is required in memory.</td>
+</tr>
+<tr>
+<td>3) An ArrayList class can&nbsp;<strong>act as a list</strong>&nbsp;only because it implements List only.</td>
+<td>LinkedList class can&nbsp;<strong>act as a list and queue</strong>&nbsp;both because it implements List and Deque interfaces.</td>
+</tr>
+<tr>
+<td>4) ArrayList is&nbsp;<strong>better for storing and accessing</strong>&nbsp;data.</td>
+<td>LinkedList is&nbsp;<strong>better for manipulating</strong>&nbsp;data.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 class="h1">Working of HashMap in Java</h1>
+<h2 class="h2">What is Hashing</h2>
+<p>It is the process of converting an object into an integer value. The integer value helps in indexing and faster searches.</p>
+<h2 class="h2">What is HashMap</h2>
+<p>HashMap is a part of the Java collection framework. It uses a technique called Hashing. It implements the map interface. It stores the data in the pair of Key and Value. HashMap contains an array of the nodes, and the node is represented as a class. It uses an array and LinkedList data structure internally for storing Key and Value. There are four fields in HashMap.</p>
+<p><img src="https://static.javatpoint.com/images/core/working-of-hashmap-in-java.png" alt="Working of HashMap in Java" /></p>
+<p>Before understanding the internal working of HashMap, you must be aware of hashCode() and equals() method.</p>
+<ul class="points">
+<li><strong>equals():</strong>&nbsp;It checks the equality of two objects. It compares the Key, whether they are equal or not. It is a method of the Object class. It can be overridden. If you override the equals() method, then it is mandatory to override the hashCode() method.</li>
+<li><strong>hashCode():</strong>&nbsp;This is the method of the object class. It returns the memory reference of the object in integer form. The value received from the method is used as the bucket number. The bucket number is the address of the element inside the map. Hash code of null Key is 0.</li>
+<li><strong>Buckets:</strong>&nbsp;Array of the node is called buckets. Each node has a data structure like a LinkedList. More than one node can share the same bucket. It may be different in capacity.</li>
+</ul>
+<p><img src="https://static.javatpoint.com/images/core/working-of-hashmap-in-java2.png" alt="Working of HashMap in Java" /></p>
+<h2 class="h2">Insert Key, Value pair in HashMap</h2>
+<p>We use put() method to insert the Key and Value pair in the HashMap. The default size of HashMap is 16 (0 to 15).</p>
+<h3 class="h3">Example</h3>
+<p>In the following example, we want to insert three (Key, Value) pair in the HashMap.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools">&nbsp;</div>
+</div>
+<ol class="dp-j" start="1">
+<li class="alt">HashMap&lt;String,&nbsp;Integer&gt;&nbsp;map&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;HashMap&lt;&gt;();&nbsp;&nbsp;</li>
+<li class="">map.put(<span class="string">"Aman"</span>,&nbsp;<span class="number">19</span>);&nbsp;&nbsp;</li>
+<li class="alt">map.put(<span class="string">"Sunny"</span>,&nbsp;<span class="number">29</span>);&nbsp;&nbsp;</li>
+<li class="">map.put(<span class="string">"Ritesh"</span>,&nbsp;<span class="number">39</span>);&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Let's see at which index the Key, value pair will be saved into HashMap. When we call the put() method, then it calculates the hash code of the Key "Aman." Suppose the hash code of "Aman" is 2657860. To store the Key in memory, we have to calculate the index.</p>
+<h3 class="h3">Calculating Index</h3>
+<p>Index minimizes the size of the array. The Formula for calculating the index is:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools">&nbsp;</div>
+</div>
+<ol class="dp-j" start="1">
+<li class="alt">Index&nbsp;=&nbsp;hashcode(Key)&nbsp;&amp;&nbsp;(n-<span class="number">1</span>)&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Where n is the size of the array. Hence the index value for "Aman" is:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools">&nbsp;</div>
+</div>
+<ol class="dp-j" start="1">
+<li class="alt">Index&nbsp;=&nbsp;<span class="number">2657860</span>&nbsp;&amp;&nbsp;(<span class="number">16</span>-<span class="number">1</span>)&nbsp;=&nbsp;<span class="number">4</span>&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>The value 4 is the computed index value where the Key and value will store in HashMap.</p>
+<p><img src="https://static.javatpoint.com/images/core/working-of-hashmap-in-java3.png" alt="Working of HashMap in Java" /></p>
+<h2 class="h2">Hash Collision</h2>
+<p>This is the case when the calculated index value is the same for two or more Keys. Let's calculate the hash code for another Key "Sunny." Suppose the hash code for "Sunny" is 63281940. To store the Key in the memory, we have to calculate index by using the index formula.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools">&nbsp;</div>
+</div>
+<ol class="dp-j" start="1">
+<li class="alt">Index=<span class="number">63281940</span>&nbsp;&amp;&nbsp;(<span class="number">16</span>-<span class="number">1</span>)&nbsp;=&nbsp;<span class="number">4</span>&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>The value 4 is the computed index value where the Key will be stored in HashMap. In this case, equals() method check that both Keys are equal or not. If Keys are same, replace the value with the current value. Otherwise, connect this node object to the existing node object through the LinkedList. Hence both Keys will be stored at index 4.</p>
+<p><img src="https://static.javatpoint.com/images/core/working-of-hashmap-in-java4.png" alt="Working of HashMap in Java" /></p>
+<p>Similarly, we will store the Key "Ritesh." Suppose hash code for the Key is 2349873. The index value will be 1. Hence this Key will be stored at index 1.</p>
+<h2 class="h2">get() method in HashMap</h2>
+<p>get() method is used to get the value by its Key. It will not fetch the value if you don't know the Key. When get(K Key) method is called, it calculates the hash code of the Key.</p>
+<p>Suppose we have to fetch the Key "Aman." The following method will be called.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools">&nbsp;</div>
+</div>
+<ol class="dp-j" start="1">
+<li class="alt">map.get(<span class="keyword">new</span>&nbsp;Key(<span class="string">"Aman"</span>));&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>It generates the hash code as 2657860. Now calculate the index value of 2657860 by using index formula. The index value will be 4, as we have calculated above. get() method search for the index value 4. It compares the first element Key with the given Key. If both keys are equal, then it returns the value else check for the next element in the node if it exists. In our scenario, it is found as the first element of the node and return the value 19.</p>
+<p>Let's fetch another Key "Sunny."</p>
+<p>The hash code of the Key "Sunny" is 63281940. The calculated index value of 63281940 is 4, as we have calculated for put() method. Go to index 4 of the array and compare the first element's Key with the given Key. It also compares Keys. In our scenario, the given Key is the second element, and the next of the node is null. It compares the second element Key with the specified Key and returns the value 29. It returns null if the next of the node is null.</p>
+<hr>
+<h1>Bean life cycle in Java Spring</h1>
+<h1><a href="https://www.geeksforgeeks.org/bean-life-cycle-in-java-spring/" target="_blank" rel="noopener">https://www.geeksforgeeks.org/bean-life-cycle-in-java-spring/</a></h1>
+<hr>
+<h2>How encryption works</h2>
+<p>The basic idea of encryption is to convert data into a form in which the original meaning is masked, and only those who are properly authorized can decipher it. This is done by scrambling the information using mathematical functions based on a number called a&nbsp;<strong>key</strong>. An inverse process, using the same or a different key, is used to unscramble (or decrypt) the information. If the same key is used for both encryption and decryption, the process is said to be&nbsp;<strong>symmetric</strong>. If different keys are used the process is defined as&nbsp;<strong>asymmetric</strong>.</p>
+<p>Two of the most widely used encryption algorithms today are AES and RSA. Both are highly effective and secure, but they are typically used in different ways. Let&rsquo;s take a look at how they compare.</p>
+<h2>AES encryption</h2>
+<p>AES (Advanced Encryption Standard) has become the encryption algorithm of choice for governments, financial institutions, and security-conscious enterprises around the world. The U.S. National Security Agency (NSC) uses it to protect the country&rsquo;s &ldquo;top secret&rdquo; information.</p>
+<p>The AES algorithm successively applies a series of mathematical transformations to each 128-bit block of data. Because the computational requirements of this approach are low, AES can be used with consumer computing devices such as laptops and smartphones, as well as for quickly encrypting large amounts of data. For example, the IBM z14 mainframe series uses AES to enable pervasive encryption in which all the data in the entire system, whether at rest or in transit, is encrypted.</p>
+<p>AES is a symmetric algorithm which uses the same 128, 192, or 256 bit key for both encryption and decryption (the security of an AES system increases exponentially with key length). With even a 128-bit key, the task of cracking AES by checking each of the 2<sup>128</sup>&nbsp;possible key values (a &ldquo;brute force&rdquo; attack) is so computationally intensive that even the fastest supercomputer would require, on average,&nbsp;<a href="https://www.eetimes.com/document.asp?doc_id=1279619" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">more than 100 trillion years</a>&nbsp;to do it. In fact, AES has never been cracked, and&nbsp;<a href="https://www.researchgate.net/publication/316284124_The_AES-256_Cryptosystem_Resists_Quantum_Attacks" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">based on current technological trends</a>, is expected to remain secure for years to come.</p>
+<h2>RSA encryption</h2>
+<p>RSA is named for the MIT scientists (Rivest, Shamir, and Adleman) who first described it in 1977. It is an asymmetric algorithm that uses a publicly known key for encryption, but requires a different key, known only to the intended recipient, for decryption. In this system, appropriately called public key cryptography (PKC), the public key is the product of multiplying two huge prime numbers together. Only that product, 1024, 2048, or 4096 bits in length, is made public. But RSA decryption requires knowledge of the two prime factors of that product. Because there is no known method of calculating the prime factors of such large numbers, only the creator of the public key can also generate the private key required for decryption.</p>
+<p>RSA is more computationally intensive than AES, and much slower. It&rsquo;s normally used to encrypt only small amounts of data.</p>
+<h2>How AES and RSA work together</h2>
+<p>A major issue with AES is that, as a symmetric algorithm, it requires that both the encryptor and the decryptor use the same key. This gives rise to a crucial key management issue &ndash; how can that all-important secret key be distributed to perhaps hundreds of recipients around the world without running a huge risk of it being carelessly or deliberately compromised somewhere along the way? The answer is to combine the strengths of AES and RSA encryption.</p>
+<p>In many modern communication environments, including the internet, the bulk of the data exchanged is encrypted by the speedy AES algorithm. To get the secret key required to decrypt that data, authorized recipients publish a public key while retaining an associated private key that only they know. The sender then uses that public key and RSA to encrypt and transmit to each recipient their own secret AES key, which can be used to decrypt the data.</p>
+<hr>
+<p>Spring 5 documentation suggests that&nbsp;<a href="https://howtodoinjava.com/spring-webflux/webclient-get-post-example/">WebClient</a>&nbsp;is now the preferred way to make HTTP requests.&nbsp;<code>WebClient</code>&nbsp;is part of&nbsp;<a href="https://howtodoinjava.com/spring-webflux/spring-webflux-tutorial/">Spring WebFlux</a>&nbsp;and is intended to replace the classic&nbsp;<a href="https://howtodoinjava.com/spring-boot2/resttemplate/spring-restful-client-resttemplate-example/">RestTemplate</a>.</p>
+<p>Compared to&nbsp;<code>RestTemplate</code>,&nbsp;<code>WebClient</code>&nbsp;has a more functional feel and is fully reactive. Since Spring 5.0,&nbsp;<strong>RestTemplate is deprecated</strong>. It will probably stay for some more time but will not have major new features added going forward in future releases. So it&rsquo;s not advised to use&nbsp;<code>RestTemplate</code>&nbsp;in new code.</p>
+<h2>1. Difference between WebClient and RestTemplate</h2>
+<h4>1.1. RestTemplate is blocking</h4>
+<p><code>RestTemplate</code>&nbsp;are blocking in nature and uses one thread-per-request model of Java Servlet API. It means that&nbsp;<code>RestTemplate</code>&nbsp;will wait for the response everytime it dispatches a request to the remote server.</p>
+<p>By default,&nbsp;<code>RestTemplate</code>&nbsp;creates new&nbsp;<code>Httpconnection</code>&nbsp;every time and closes the connection once response is received and processed.</p>
+<p>Creating and closing the URL connections is a costly operation. For using&nbsp;<code>RestTemplate</code>&nbsp;in our production class applications, we must use a&nbsp;<a href="https://howtodoinjava.com/spring-boot2/resttemplate/resttemplate-httpclient-java-config/">HTTP connection pooling</a>.</p>
+<p>Please note that&nbsp;<strong>RestTemplate is thread-safe</strong>&nbsp;and a single instance can be shared across multiple connections at any time.</p>
+<p>For each request,&nbsp;<code>RestTemplate</code>&nbsp;craetes a new&nbsp;<code>Thread</code>&nbsp;and uses it for request-response lifecyle. After sending a request, RestTemplate waits for the response from the server until a configured timeout is reached. This action blocks the thread.</p>
+<p>When there are high number of requests in the application, there will be high number of threads and connections, in proportion. This puts a load on the server resources.</p>
+<p>And if the server is slow, soon, users will start seeing the degraded performance and even unresponsiveness in the application.</p>
+<h4>1.2. WebClient is non-blocking</h4>
+<p>Opposite to RestTemplate,&nbsp;<code>WebClient</code>&nbsp;is asynchronous and non-blocking in nature. It follows&nbsp;<strong>events-diven architecture</strong>&nbsp;from reactive framework of Spring WebFlux.</p>
+<p>Using&nbsp;<code>WebClient</code>, the client need not wait till response comes back. Instead it will be notified usign a&nbsp;<strong>callback method</strong>&nbsp;when there is a response from the server.</p>
+<p>When we invoke an API through&nbsp;<code>WebClient</code>&nbsp;that returns a&nbsp;<code>Mono</code>&nbsp;or a&nbsp;<code>Flux</code>, it will return immediately. The results of the call will be delivered to us through the mono or flux callbacks when they become available.</p>
+<p>Please note that we can achieve&nbsp;<code>RestTemplate</code>&nbsp;like synchronous processing in WebClient using&nbsp;<code>block()</code>&nbsp;method.</p>
+<h2>2. Conclusion</h2>
+<p>From the above discussion, it is clear that the only big&nbsp;<strong>difference between WebClient and RestTemplate</strong>&nbsp;is their blocking nature. RestTemplate blocks the request threads while WebClient does not.</p>
+<p>We can use WebClient to make synchronous requests, but the opposite is not true. RestTemplate cannot make asynchronous requests.</p>
+<p>While WebClient is the preferred way for future uses, RestTemplate seems to stay here for long though without any major feature addition.</p>
+<p>While considering WebClient for our next application, we must remember that to build a truly non-blocking application, we must aim to create/use all of its components as non-blocking i.e. client, controller, middle services, and even the database. If one of them is blocking the requests, our aim will be defeated.</p>
+<hr>
+<h3 class="LC20lb MBeuO DKV0Md">6 Different ways to run method on Spring Boot startup</h3>
+<h3 class="LC20lb MBeuO DKV0Md"><a href="https://stacktraceguru.com/springboot/run-method-on-startup" target="_blank">https://stacktraceguru.com/springboot/run-method-on-startup</a></h3>
+<hr>
+<h1 class="fs-headline1 ow-break-word mb8 flex--item fl1"><a class="question-hyperlink" href="https://stackoverflow.com/questions/9664810/spring-prototype-scope-use-cases">Spring prototype scope - Use Cases?</a></h1>
+<div class="answercell post-layout--right">
+<div class="s-prose js-post-body">
+<p>By using&nbsp;<code>new</code>&nbsp;keyword you are creating an java object but it is not a spring bean and will not present in spring container. But if you use&nbsp;<code>@scope("prototype")</code> for every request a new spring bean is provided.</p>
+<p><strong>What is a spring bean?</strong></p>
+<blockquote>
+<p>A Spring bean is basically an object managed by Spring. More specifically, it is an object that is instantiated, configured and otherwise managed by a Spring Framework container. Spring beans are defined in a Spring configuration file (or, more recently, by using annotations), instantiated by the Spring container, and then injected into your application.</p>
+</blockquote>
+<p><strong>Advantages of spring bean?</strong></p>
+<p>1) By default all spring beans are immutable and spring IOC container will manage them</p>
+<p>2) By using dependency injection you can inject the beans into any other object easily</p>
+<p>3) Dependency injection makes testing easier. The injection can be done through constructor.</p>
+<p>4) If you are using&nbsp;<a href="https://www.baeldung.com/spring-value-annotation" rel="nofollow noreferrer">spring boot</a>&nbsp;then you can inject the values from&nbsp;<code>application.yml</code>&nbsp;or&nbsp;<code>application.properties</code>&nbsp;into spring beans by using&nbsp;<code>@Value</code>&nbsp;annotation</p>
+</div>
+</div>
+</body>
+</html>
