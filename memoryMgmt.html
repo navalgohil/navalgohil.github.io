@@ -1,7 +1,39 @@
 <!DOCTYPE html>
 <html>
+<style>
+    .container{
+        width: 80%;
+        margin: 0 auto; /* Center the DIV horizontally */
+    }
+    .fixed-header,  .fixed-footer{
+        width: 100%;
+        position: fixed;        
+        background: #3d4c1f;
+        padding: 5px 0;
+        color: #fff;
+    }
+    .fixed-header{
+        top: 0;
+    }
+    nav a{
+        color: #fff;
+        text-decoration: none;
+        padding: 2px 10px;
+        display: inline-block;
+    }
+    .fixed-footer{
+        bottom: 0;
+    }   
+       
+    </style>
 <body>
-
+<div class="fixed-header">
+	<div class="container">
+		<nav>
+			<a href="index.html">Home</a>
+		</nav>
+	</div>
+</div>
 <button type="button" onclick="document.location='index.html'" style="position:fixed;">Back To HOME</button>
 <br>
 <h1>Memory Mgmt Links</h1>
@@ -141,6 +173,8 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
- 
+ <div class="fixed-footer">
+	<div class="container">Copyright &copy; 2019 Naval Gohil</div>        
+</div>	
 </body>
 </html>
