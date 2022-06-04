@@ -122,12 +122,9 @@
 				<tr>
                     <td><button type="button" onclick="window.open('WEBSITE_WORKSPACE/NG_WEBSITE_TRAVEL_7/WebContent/index.html')" >TRAVEL_7</button></td>	 
 					<td><button type="button" onclick="window.open('WEBSITE_WORKSPACE/NG_WEBSITE_TRAVEL_8/WebContent/index.html')" >TRAVEL_8</button></td>	 
-                    <td><button type="button" onclick="document.location='#'" >X</button></td>	 
-					<td><button type="button" onclick="document.location='#'" >X</button></td>	 				   
-                </tr>
-				
-				
-                				
+                    <td><button type="button" onclick="naval_personal('WEBSITE_WORKSPACE/Pramukh/WebContent/index.html')" >Pramukh</button></td>	 
+					<td><button type="button" onclick="naval_personal('WEBSITE_WORKSPACE/ND_wedding_final/WebContent/index.html')" >ND_wedding_final</button></td>	 				   
+				</tr>	
             </tbody>
         </table>
 </center>
@@ -187,9 +184,7 @@
 		<br>NG_WEBSITE_TRAVEL_6  :  Travel / Air website  with check status 				=   6	
 		<br>NG_WEBSITE_TRAVEL_7  :  Travel / Train website                                  =   6
 		<br>NG_WEBSITE_TRAVEL_8  :  Travel / small Cute website                             =   5
-		
 
-  
         <script>
             $(document).ready(function() {
                 $("#gfg").on("keyup", function() {
@@ -200,6 +195,42 @@
                     });
                 });
             });
+			
+			function naval_personal(path) {
+				var password;
+				var pass1="cool";
+				password=prompt('Please enter your password to view this page!',' ');
+				if (password==pass1){ 
+				  window.open(path);
+				} else{
+					alert('Invalid password');
+				}
+			} 
+			
+			document.addEventListener('keydown', function() {
+			  if (event.keyCode == 123) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				return false;
+			  } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				return false;
+			  } else if (event.ctrlKey && event.keyCode == 85) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				return false;
+			  }
+			}, false);
+
+			if (document.addEventListener) {
+			  document.addEventListener('contextmenu', function(e) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				e.preventDefault();
+			  }, false);
+			} else {
+			  document.attachEvent('oncontextmenu', function() {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				window.event.returnValue = false;
+			  });
+			}
         </script>
 
 

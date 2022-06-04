@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Pramukh Tailor</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="css/mystyle.css" rel="stylesheet">
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/bootstrap-social.css" rel="stylesheet">
+</head>
+<body>
+
+<!--=============================================================== NAVBAR =============================================================== -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.html">Pramukh</a>
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-control="navbar" >
+				<span class="sr-only">Toggle Navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li  class="active"><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>				
+			</ul>
+		 </div>
+	</div> <!-- container -->
+</nav>
+
+<!--=============================================================== MAIN BODY =============================================================== -->
+<div class="container">
+	<div class="row row-content">
+		<div class="col-xs-12 col-sm-12">						
+			<p style="font-size: 50px;">Contact Us</p>
+		</div>	
+	<!--=============================================================== LEFT =============================================================== -->
+		<div class="col-xs-12 col-sm-6">
+			<p style="padding: 20px;"></p>
+			<h3>FIND US</h3>			
+			<blockquote><p class="text-primary">Office Address</p></blockquote>
+				<P>
+				 Shop No.1,Pramukh Tailor<br>
+				 XYZ Apartment, Carter Road No. X <br>
+				 Borivali-(E). Mumbai-66.<br>
+				 <i class="fa fa-phone"></i> Tel.:  02228X4XYX5<br>
+				 <i class="fa fa-fax"></i> Fax: 02228X4XYX5<br>
+				 <i class="fa fa-envelope"></i> Email:<a href="#">pramukh@gmail.com</a>
+				</p>
+			<h3>Our pop-up stores</h3>								
+				<blockquote><p class="text-primary">Mumbai Central</p></blockquote>
+				<P>
+				 Shop No.1,Pramukh Tailor<br>
+				 XYZ Apartment, Carter Road No. X <br>
+				 Mumbai Central. Mumbai-90.<br>
+				 <i class="fa fa-phone"></i> Tel.:  02228X4XYX5<br>
+				 <i class="fa fa-fax"></i> Fax: 02228X4XYX5<br>
+				 <i class="fa fa-envelope"></i> Email:<a href="#">pramukh@gmail.com</a>
+				</p>				
+				<blockquote><p class="text-primary">Shivdi , Lower Parel</p></blockquote>
+				<P>
+				 Shop No.1,Pramukh Tailor<br>
+				 XYZ Apartment, Carter Road No. X <br>
+				 Borivali-(W). Mumbai-52.<br>
+				 <i class="fa fa-phone"></i> Tel.:  02228X4XYX5<br>
+				 <i class="fa fa-fax"></i> Fax: 02228X4XYX5<br>
+				 <i class="fa fa-envelope"></i> Email:<a href="#">pramukh@gmail.com</a>
+				</p>				
+		</div>
+		<!--=============================================================== RIGHT START=============================================================== -->
+		<div class="col-xs-12 col-sm-6">
+			<p style="padding: 20px;"></p>
+			<h3>CONTACT US</h3>			
+			<p>We are devoted to serving the needs of our current and prospective customers and will respond to any questions, 
+			comments or concerns within 24 hours.</p>
+			<form class="form-horizontal" role="form" id="contactForm" method="post" action="manage_comments.php">
+			   <div class="form-group">
+			      <label class="col-sm-2">Name</label>			      
+			   </div>
+			   <div class="form-group">			      
+			      <div class="col-sm-8">
+			         <input type="text" class="form-control"  name="name"  id="name" placeholder="Enter Name">
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label class="col-sm-2">Email</label>			      
+			   </div>	
+			   <div class="form-group">			      
+			      <div class="col-sm-8">
+			         <input type="text" class="form-control"  name="email" id="email" placeholder="Enter Email">
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label class="col-sm-2">Subject</label>			      
+			   </div>	
+			   <div class="form-group">			      
+			      <div class="col-sm-8">
+				    <select name="subject" id="subject" style="min-width: 255px;cursor:pointer;">
+				      <option value="-1">Select</option>
+				      <option value="General Feedback">General Feedback</option>
+				      <option value="Measurements">Measurements</option>
+				      <option value="Technical Problem">Technical Problem</option>
+				      <option value="Delivery Time">Delivery Time</option>
+				      <option value="Payments">Payments</option>
+				      <option value="Complaints">Complaints</option>
+				      <option value="Changes">Changes</option>
+				      <option value="Others">Others</option>
+				    </select>
+			      </div>
+			   </div>
+			    
+			   <div class="form-group">
+			      <label class="col-sm-2 control-label">Message</label>			        
+			   </div>		   
+			   <div class="form-group">			      
+			      <div class="col-sm-8">
+			         <textarea class="form-control" rows="3" name="message" id="message" placeholder="Type Your Message Here..."></textarea>
+			      </div>			      
+			   </div>	
+			   <div class="form-group">
+			      <div class="col-sm-offset-2 col-sm-10">
+			         <button type="submit" class="btn btn-primary">Submit</button>
+			      </div>
+			   </div>
+			</form>
+		
+		</div>
+		<!--=============================================================== RIGHT END =============================================================== -->
+	</div>  <!-- B ROW 1 -->
+</div>  <!-- B CONTAINER -->
+<!--=============================================================== FOOTER =============================================================== -->
+<div class="footer row-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-1">
+				<h5>Links</h5>
+				<ul class="list-unstyled">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+			<div class="col-xs-6 col-sm-5">
+				<h5>Our Address</h5>
+				<address>
+				 Shop No.1,Pramukh Tailor<br>
+				 XYZ Apartment, Carter Road No. X <br>
+				 Borivali-(E). Mumbai-66.<br>
+				 <i class="fa fa-phone"></i> Tel.:  02228X4XYX5<br>
+				 <i class="fa fa-fax"></i> Fax: 02228X4XYX5<br>
+				 <i class="fa fa-envelope"></i> Email:<a href="#">pramukh@gmail.com</a>
+				</address>
+			</div>
+			<div class="col-xs-12 col-sm-4">
+				<div class="nav navbar-nav"  style="padding: 40px 45px;">
+					<a class="btn btn-social-icon btn-google-plus" href="#"><i class="fa fa-google-plus"></i></a>
+					<a class="btn btn-social-icon btn-facebook"  href="#"><i class="fa fa-facebook"></i></a>
+					<a class="btn btn-social-icon btn-linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+					<a class="btn btn-social-icon btn-twitter" href="#"><i class="fa fa-twitter"></i></a>
+					<a class="btn btn-social-icon btn-youtube" href="#"><i class="fa fa-youtube"></i></a>
+					<a class="btn btn-social-icon" href="#"><i class="fa fa-envelope-o"></i></a>					
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<p style="padding: 10px;"></p>
+				<p align="center"> @Copyright 2015 Naval Gohil</p>
+			</div>
+		</div> <!-- F ROW 1 -->
+	</div> <!-- F CONTAINER -->
+</div> <!-- FOOTER -->
+
+
+<script  src="js/jquery-1.11.3.min.js" ></script>
+<script  src="js/bootstrap.min.js" ></script>
+<script type="text/javascript">
+$(document).ready(function(){			
+
+	 $("#contactForm").submit(function(){
+		 
+ 	    if($('#name').val() == ""){
+				alert("Please Enter Name.");
+				return false;
+	    } 
+		if($('#email').val() == ""){
+  				alert("Please Enter Email-Id.");
+  				return false;
+      	}
+      	if($('#subject').val() == "-1"){
+  				alert("Please select Subject.");
+  				return false;
+      	}
+      	if($('#message').val() == ""){
+	         	alert("Please Enter Message.");
+  				return false;
+      	}		         			
+	 });
+	 
+});
+</script>
+</body>
+</html>
