@@ -21,7 +21,12 @@
             color: green;
         }
     </style>
-<body onload="return myFunction()">
+<body onload="myFunction()">
+<div id="msg"> 
+		<center>
+			<p>Connect with Naval to get the password. <br>Reload the page to enter password and view the content <br> Thank you</p>
+		</center>
+</div>
 <div id="check">
 <center>
 <h1>NAVAL JAVA Links</h1>
@@ -116,16 +121,20 @@
                 });
             });
 			function myFunction() {
+			    
 			    var password;
 				var pass1="enter";
 				
 				password=prompt('Please enter password to view this page!',' ');
 				if (password==pass1){ 
-				  window.open(path);
+				 $("#msg").hide();
 				  $("#check").show();
+				  
 				} else{
 					alert('Invalid password. Connect with Naval if you want password');
+					$("#msg").show();
 					 $("#check").hide(); 
+					 
 				}
 			}
 			document.addEventListener('keydown', function() {
