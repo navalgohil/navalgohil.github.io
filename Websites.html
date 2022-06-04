@@ -187,7 +187,7 @@
 
         <script>
             $(document).ready(function() {
-                $("#gfg").on("keyup", function() {
+				$("#gfg").on("keyup", function() {
                     var value = $(this).val().toLowerCase();
                     $("#geeks tr").filter(function() {
                         $(this).toggle($(this).text()
@@ -199,9 +199,10 @@
 			function naval_personal(path) {
 				var password;
 				var pass1="cool";
+				
 				password=prompt('Please enter your password to view this page!',' ');
 				if (password==pass1){ 
-				  window.open(path);
+				    window.open(path);
 				} else{
 					alert('Invalid password');
 				}
