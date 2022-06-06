@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
   <script src="JS/jquery.min-3.4.1.js"></script>
 <style>
@@ -199,8 +200,7 @@
 			function naval_personal(path) {
 				var password;
 				var pass1="cool";
-				
-				password=prompt('Please enter your password to view this page!',' ');
+				password=prompt('Please enter your password to view this page!');
 				if (password==pass1){ 
 				    window.open(path);
 				} else{
@@ -208,30 +208,7 @@
 				}
 			} 
 			
-			document.addEventListener('keydown', function() {
-			  if (event.keyCode == 123) {
-				alert("This function has been disabled to prevent you from stealing my code!");
-				return false;
-			  } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
-				alert("This function has been disabled to prevent you from stealing my code!");
-				return false;
-			  } else if (event.ctrlKey && event.keyCode == 85) {
-				alert("This function has been disabled to prevent you from stealing my code!");
-				return false;
-			  }
-			}, false);
-
-			if (document.addEventListener) {
-			  document.addEventListener('contextmenu', function(e) {
-				alert("This function has been disabled to prevent you from stealing my code!");
-				e.preventDefault();
-			  }, false);
-			} else {
-			  document.attachEvent('oncontextmenu', function() {
-				alert("This function has been disabled to prevent you from stealing my code!");
-				window.event.returnValue = false;
-			  });
-			}
+			
         </script>
 
 
