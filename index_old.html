@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+  <script src="JS/jquery.min-3.4.1.js"></script>
+
+</head>
+<style>
+	.container{
+        width: 80%;
+        margin: 0 auto; 
+    }
+    .fixed-header,.fixed-footer{
+        width: 100%;
+        position: fixed;        
+        background: #3d4c1f;
+        padding: 10px 0;
+        color: #fff;
+    }
+    .fixed-header{
+        top: 0;
+    }
+    nav a{
+        color: #fff;
+        text-decoration: none;
+        padding: 7px 25px;
+        display: inline-block;
+    }
+	.fixed-footer{
+        bottom: 0;
+    }   
+	table {
+		font-family: arial, sans-serif;
+		border-collapse: collapse;
+		width: 50%;
+	}    
+	td,th {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+	}     
+	h1 {
+		color: green;
+	}
+	.highlight{
+		color: red;
+	}
+
+    </style>
+<body > <!--onload="myFunction()"
+<div id="msg"> 
+		<center>
+			<p>Connect with Naval to get the password. <br>Reload the page to enter password and view the content. <br> Thank you...</p>
+		</center>
+</div>-->
+<div class="fixed-header">
+	<div class="container">
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="MASTER/master.html">Master</a>
+		</nav>
+	</div>
+</div>
+
+<div id="check">
+<center>
+<br><br>
+<h1>NAVAL JAVA Links</h1>
+<button type="button" onclick="window.open('https://html-online.com/editor/');" target="_blank" >Editor</button></br></br></br>
+		<b>Search the table for content, Type: 
+          <input id="search" type="text" placeholder="Search here">
+        </b>
+        <br>
+        <br>
+        <table>
+            <!--<tr>
+                <th>Core Java</th>
+                <th>Spring</th>
+                <th>Database</th>
+				 <th>Database</th>
+            </tr>-->
+            <tbody id="geeks">
+                <tr>
+                    <td><button type="button" onclick="document.location='OOPS.html'" style="background-color: #4CAF50;" >OOPS</button></td>
+					<td><button type="button" onclick="document.location='static.html'" style="background-color: #4CAF50;">static</button></td>
+                    <td><button type="button" onclick="document.location='Excpetion.html'"style="background-color: #4CAF50;" >Excpetion</button></td>
+					<td><button type="button" onclick="document.location='string.html'" style="background-color: #4CAF50;">string</button></td>	
+					<td><button type="button" onclick="document.location='Collections.html'" style="background-color: #4CAF50;" >Collections</button></td>
+					<td><button type="button" onclick="document.location='MultiThreading.html'" style="background-color: #4CAF50;">MultiThreading</button></td>
+					<td><button type="button" onclick="document.location='Constructor.html'" style="background-color: #4CAF50;">Constructor</button></td>
+					<td><button type="button" onclick="document.location='X.html'" >X</button></td>						
+                </tr>
+				
+				<tr>
+                    <td><button type="button" onclick="document.location='Java.html'" style="background-color: #4CAF50;">JAVA</button></td>
+					<td><button type="button" onclick="document.location='Java8.html'" style="background-color: #4CAF50;">Java 8</button></td>
+					<td><button type="button" onclick="document.location='JavaHistory.html'" style="background-color: #4CAF50;">JavaHistory</button></td>                    
+					<td><button type="button" onclick="document.location='X.html'" >X</button></td>	 
+					<td><button type="button" onclick="document.location='Spring.html'" style="background-color: #4CAF50;">Spring</button></td>
+					<td><button type="button" onclick="document.location='SpringBoot.html'" style="background-color: #4CAF50;">SpringBoot</button></td>
+					<td><button type="button" onclick="document.location='RestWebservice.html'" style="background-color: #4CAF50;">RestWebservice</button></td>
+					<td><button type="button" onclick="document.location='microservice.html'" style="border: 2px solid #f44336">microservice</button></td>
+                </tr>
+                <tr>                    
+					<td><button type="button" onclick="document.location='JDBC.html'" style="background-color: #4CAF50;">JDBC</button></td>
+                    <td><button type="button" onclick="document.location='Hibernate.html'" style="background-color: #4CAF50;">Hibernate</button></td>
+					<td><button type="button" onclick="document.location='Database.html'" style="border: 2px solid #f44336">Database</button></td>                   
+					<td><button type="button" onclick="document.location='Json.html'" style="background-color: #4CAF50;" >JSON</button></td>
+                    <td><button type="button" onclick="document.location='Algoritham.html'" style="border: 2px solid #f44336">Algoritham</button></td>
+					<td><button type="button" onclick="document.location='Sorting.html'" style="border: 2px solid #f44336">Sorting</button></td>		
+					<td><button type="button" onclick="document.location='DesignPatterns.html'" style="border: 2px solid #f44336">DesignPatterns</button></td>
+					<td><button type="button" onclick="document.location='Logical.html'" style="border: 2px solid #f44336">Logical</button></td>				
+                </tr>				
+				<tr>                    		
+					<td><button type="button" onclick="document.location='JMS.html'" style="border: 2px solid #f44336">JMS</button></td>
+                    <td><button type="button" onclick="document.location='REGEX.html'" style="background-color: #4CAF50;">REGEX</button></td>
+					<td><button type="button" onclick="document.location='memoryMgmt.html'" style="background-color: #4CAF50;">Memory Mgmt</button></td>	 
+					<td><button type="button" onclick="document.location='interview.html'" style="background-color: #FFFF00;">INTERVIEW</button></td>	 
+                    <td><button type="button" onclick="document.location='jQuery.html'" style="background-color: #4CAF50;">jQuery</button></td>
+                    <td><button type="button" onclick="document.location='javascript.html'" style="background-color: #4CAF50;">javascript</button></td>
+                    <td><button type="button" onclick="document.location='HTML.html'" style="border: 2px solid #f44336">HTML</button></td>
+					<td><button type="button" onclick="document.location='bootstrap.html'" style="border: 2px solid #f44336">bootstrap</button></td>
+                </tr>
+				<tr>
+                    <td><button type="button" onclick="document.location='JSP.html'" style="background-color: #4CAF50;">JSP</button></td>
+                    <td><button type="button" onclick="document.location='Servlets.html'" style="background-color: #4CAF50;">Servlets</button></td>
+					<td><button type="button" onclick="document.location='struts.html'"style="background-color: #4CAF50;" >struts</button></td>
+                    <td><button type="button" onclick="document.location='Ajax.html'"style="background-color: #4CAF50;" >AJAX</button></td>
+                    <td><button type="button" onclick="document.location='Linux.html'"style="background-color: #4CAF50;" >Linux</button></td>
+                    <td><button type="button" onclick="document.location='jUnit.html'" >jUnit</button></td>
+					<td><button type="button" onclick="document.location='PDF.html'" >PDF</button></td>
+                    <td><button type="button" onclick="document.location='Websites.html'" >Websites</button></td>
+                </tr>				
+            </tbody>
+        </table>
+  
+	
+  
+        <script>
+	
+            $(document).ready(function() {
+				$("#header").load("header.html"); 
+				$("#footer").load("footer.html"); 
+                $("#search").on("keyup", function() {  //http://jsfiddle.net/e2106b62/42/
+                     $(".highlight").removeClass("highlight");
+					var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+					$('table tr').hide().filter(function() {
+						var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+						return ~text.indexOf(val);
+					}).show().find("td").each(function(){
+					
+						/*$(this).hover(function() {
+							   $(this).prop('title', $.trim($(this).text()));
+						});*/
+						/*var start = $(this).text().toLowerCase().indexOf(val);
+						
+						if(start !== -1){
+							var end = val.length;
+							
+							var start_text = start != 0 ? $(this).text().substring(0,start) : "";
+							var end_text = $(this).text().substring(start + end);
+							var match = $(this).text().substring(start, start + end);
+							
+							$(this).html(start_text+'<span class="highlight">'+match+'</span>'+end_text);
+						}*/
+					});
+                });
+            });
+			function myFunction() {
+			    
+			    var password;
+				var pass1="enter";
+				
+				password=prompt('Please enter password to view this page!',' ');
+				if (password==pass1){ 
+				 $("#msg").hide();
+				 
+				  $("#check").show();
+				  
+  
+				} else{
+					alert('Invalid password. Connect with Naval if you want password');
+					$("#msg").show();
+					 $("#check").hide(); 
+					 
+				}
+			}
+			/*document.addEventListener('keydown', function() {
+			  if (event.keyCode == 123) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				return false;
+			  } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				return false;
+			  } else if (event.ctrlKey && event.keyCode == 85) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				return false;
+			  }
+			}, false);
+
+			if (document.addEventListener) {
+			  document.addEventListener('contextmenu', function(e) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				e.preventDefault();
+			  }, false);
+			} else {
+			  document.attachEvent('oncontextmenu', function() {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				window.event.returnValue = false;
+			  });
+			}*/
+        </script>
+  </center>
+  <hr>
+  
+	<button type="button" onclick="window.open('https://dzone.com/articles/java-unit-testing-interview');" target="_blank" >jUnit1</button>&nbsp;&nbsp;&nbsp;
+	<button type="button" onclick="window.open('https://career.guru99.com/top-11-junit-interview-questions/');" target="_blank" >jUnit2</button>&nbsp;&nbsp;&nbsp;
+    <button type="button" onclick="window.open('https://scrutinybykhimaanshu.blogspot.com/2016/04/java-part-3-core-java-interview.html');" target="_blank" >Encapsulation_Loop</button> &nbsp;&nbsp;&nbsp;
+	<button type="button" onclick="window.open('https://scrutinybykhimaanshu.blogspot.com/2016/04/java-part-6-core-java-interview.html');" target="_blank" >Static_wrapper</button>&nbsp;&nbsp;&nbsp;
+	<button type="button" onclick="window.open('https://scrutinybykhimaanshu.blogspot.com/2016/04/java-interview-questions.html');" target="_blank" >SqlInjection</button>&nbsp;&nbsp;&nbsp;
+	<button type="button" onclick="window.open('https://scrutinybykhimaanshu.blogspot.com/2016/06/java-8-interview-questions-and-answers.html');" target="_blank" >JAVA8</button>&nbsp;&nbsp;&nbsp;
+	<button type="button" onclick="window.open('https://scrutinybykhimaanshu.blogspot.com/2016/04/java-collections-interview-questions.html');" target="_blank" >Collection</button>&nbsp;&nbsp;&nbsp;
+	<button type="button" onclick="window.open('https://scrutinybykhimaanshu.blogspot.com/2016/04/design-pattern-interview-questions.html');" target="_blank" >Design Pattern</button>&nbsp;&nbsp;&nbsp;
+	<button type="button" onclick="window.open('https://scrutinybykhimaanshu.blogspot.com/2018/07/spring-singleton-vs-singleton-pattern.html');" target="_blank" >Spring&JavaSingleton </button>&nbsp;&nbsp;&nbsp;
+	<button type="button" onclick="window.open('https://scrutinybykhimaanshu.blogspot.com/2017/03/spring-introduction-and-dependency.html');" target="_blank" >SpringIOC&DI</button></br></br>
+	<button type="button" onclick="window.open('https://scrutinybykhimaanshu.blogspot.com/p/spring-security.html');" target="_blank" >Spring</button>&nbsp;&nbsp;&nbsp;
+	<button type="button" onclick="window.open('https://scrutinybykhimaanshu.blogspot.com/p/hibernate-series.html');" target="_blank" >HIbernate</button>&nbsp;&nbsp;&nbsp;
+	<button type="button" onclick="window.open('https://html-online.com/editor/');" target="_blank" >X</button>&nbsp;&nbsp;&nbsp;
+</div>
+<div class="fixed-footer">
+	<div class="container">Copyright &copy; 2019 Naval Gohil  <small>(Last Updated : 04-JUN-2022)</small></div>      
+</div>		
+</body>
+</html>
