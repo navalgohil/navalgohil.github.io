@@ -197,14 +197,10 @@
             });
 			
 			function naval_personal(path) {
-        // alert("t");
 				var password;
 				var pass1="cool";
-				
-				password=prompt('Please enter your password to view this page!',' ');
-				alert(password);
-                                if (password==pass1){ 
-                                //if(true){
+				password=prompt('Please enter your password to view this page!');
+				if (password==pass1){ 
 				    window.open(path);
 				} else{
 					alert('Invalid password');
