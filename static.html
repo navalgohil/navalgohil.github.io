@@ -1,11 +1,46 @@
-<!DOCTYPE html>
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>NG</title>
+	<link href="CSS/bootstrap.min.css" rel="stylesheet">
+	<link href="CSS/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="CSS/mystyle.css" rel="stylesheet">
+	<link href="CSS/font-awesome.min.css" rel="stylesheet">
+	<link href="CSS/bootstrap-social.css" rel="stylesheet"> 	
+
+</head>
 <body>
 
-<button type="button" onclick="document.location='index.html'" style="position:fixed;">Back To HOME</button>
-<br>
+<!--=============================================================== NAVBAR =============================================================== -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="master.html">NavalGohil</a>
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-control="navbar" >
+				<span class="sr-only">Toggle Navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li  class="active"><a href="master.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+				<li><a onclick="window.open('https://html-online.com/editor/');" target="_blank">Editor</a></li>
+				<li><a href="contact.html">Contact</a></li>					
+			</ul>
+		 </div>
+	</div> <!-- container -->
+</nav>
 
+<!--=============================================================== HEADER =============================================================== -->
 
+<!--=============================================================== MAIN BODY =============================================================== -->
+<div class="container">
 
 <h1>Static Concepts</h1>
 <p><a title="Static" href="https://www.geeksforgeeks.org/static-keyword-java/" target="_blank">https://www.geeksforgeeks.org/static-keyword-java</a></p>
@@ -68,6 +103,57 @@
 <p>Static variable are loaded when classloader brings the class to the JVM. It is not necessary that an object has to be created. Static variables will be allocated memory space when they have been loaded. The code in a static block is loaded/executed only once i.e. when the class is first initialized. A class can have any number of static blocks. Static block is not member of a class, they do not have a return statement and they cannot be called directly. Cannot contain this or super. They are primarily used to initialize static fields</p>
 <p><strong>Explain public static void main(String args[]) in Java.</strong><br />main() in Java is the entry point for any Java program. It is always written as public static void main(String[] args).<br />public: Public is an access modifier, which is used to specify who can access this method. Public means that this Method will be accessible by any Class.<br />static: It is a keyword in java which identifies it is class-based. main() is made static in Java so that it can be accessed without creating the instance of a Class. In case, main is not made static then the compiler will throw an error as main() is called by the JVM before any objects are made and only static methods can be directly invoked via the class.<br />void: It is the return type of the method. Void defines the method which will not return any value.<br />main: It is the name of the method which is searched by JVM as a starting point for an application with a particular signature only. It is the method where the main execution occurs.<br />String args[]: It is the parameter passed to the main method.</p>
 <p>&nbsp;</p>
+
+
+</div> <!-- B CONTAINER -->             
+
+  
+<!--=============================================================== FOOTER =============================================================== -->
+<div class="footer row-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				
+				<p align="Left"> <b>@Copyright 2019 Naval Gohil</b></p>
+			</div>
+		</div> <!-- F ROW 1 -->
+	</div> <!-- F CONTAINER -->
+</div> <!-- FOOTER -->
+
+<script  src="JS/jquery-1.11.3.min.js" ></script>
+<script  src="JS/bootstrap.min.js" ></script>
+<script  src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script> 
+<script type="text/javascript">
+           $(document).ready(function() {
+				$('#example').DataTable({
+					pagingType: 'full_numbers',
+				});
+			});
+			document.addEventListener('keydown', function() {
+			  if (event.keyCode == 123) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				return false;
+			  } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				return false;
+			  } else if (event.ctrlKey && event.keyCode == 85) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				return false;
+			  }
+			}, false);
+
+			if (document.addEventListener) {
+			  document.addEventListener('contextmenu', function(e) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				e.preventDefault();
+			  }, false);
+			} else {
+			  document.attachEvent('oncontextmenu', function() {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				window.event.returnValue = false;
+			  });
+			}
+</script>
 
 
 </body>
