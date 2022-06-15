@@ -83,7 +83,7 @@
 		 
 		 $("#submitLogin").click(function(){
 			// alert("userName : "+$("#userName").val() +" : password : "+$("#password").val());
-			 if( $("#userName").val()=="admin" && $('#password').val()=="admin"){
+			 if( $("#userName").val().toLowerCase() =="admin" && $('#password').val().toLowerCase()=="admin"){
 				window.location.href = 'master.html';
 			 }else{
 				alert("Invalid Credential");
