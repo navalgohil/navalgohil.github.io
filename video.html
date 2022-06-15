@@ -117,29 +117,24 @@
         </thead>
         <tbody>
             <tr>
-				<td>JAVA</td>
-				<td>OOPS</td>
-                <td><button type="button" class="btn btn-default" onclick="myFunction('https://www.youtube.com/embed/tgbNymZ7vqY')" > <i class="fa fa-eye"></i> </button></td>
-				<td>-</td>
+				<td>Microservices</td>
+				<td>Spring Boot Microservices Level 1: Communication and Discovery</td>
+                <td><button type="button" class="btn btn-default" onclick="myFunction('https://www.youtube.com/embed/y8IQb4ofjDo')" > <i class="fa fa-eye"></i> </button></td>
+				<td>01 Agenda - Spring Boot Microservices Level 1 (JavaBrains.io)</td>
             </tr>
-            <tr>
-				<td>JAVA</td>
-				<td>Static</td>
-                <td><button type="button" class="btn btn-default" onclick="document.location='static.html'"> <i class="fa fa-eye"></i> </button></td>
-				<td>-</td>
+             <tr>
+				<td>Microservices</td>
+				<td>Spring Boot Microservices Level 2: Fault Tolerance and Resilience</td>
+                <td><button type="button" class="btn btn-default" onclick="myFunction('https://www.youtube.com/embed/o8RO38KbWvA')" > <i class="fa fa-eye"></i> </button></td>
+				<td>1 Agenda and prerequisites - Spring Boot Microservices Level 2 (JavaBrains.io)</td>
             </tr>
-            <tr>
-				<td>JAVA</td>
-				<td>Excpetion</td>
-                <td><button type="button" class="btn btn-default" onclick="document.location='Excpetion.html'"> <i class="fa fa-eye"></i> </button></td>
-				<td>-</td>
+             <tr>
+				<td>Microservices</td>
+				<td>Spring Boot Microservices Level 3: Microservice configuration</td>
+                <td><button type="button" class="btn btn-default" onclick="myFunction('https://www.youtube.com/embed/upoIwn4rWCo')" > <i class="fa fa-eye"></i> </button></td>
+				<td>Microservice configuration with Spring Boot [01] - Java Brains (JavaBrains.io)</td>
             </tr>
-            <tr>
-				<td>JAVA</td>
-				<td>String</td>
-                <td><button type="button" class="btn btn-default" onclick="document.location='string.html'"> <i class="fa fa-eye"></i> </button></td>
-				<td>-</td>
-            </tr>
+            
         </tbody>
         <tfoot>
             <tr>
@@ -179,11 +174,13 @@
 			var span = document.getElementsByClassName("close")[0];
 			// When the user clicks on <span> (x), close the modal
 			span.onclick = function() {
+			  document.getElementById('iframe').src = ""; 
 			  modal.style.display = "none";
 			}
 			// When the user clicks anywhere outside of the modal, close it
 			window.onclick = function(event) {
 			  if (event.target == modal) {
+			    document.getElementById('iframe').src = ""; 
 				modal.style.display = "none";
 			  }
 			}
