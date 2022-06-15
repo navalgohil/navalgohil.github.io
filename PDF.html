@@ -37,7 +37,7 @@
 		}
 		/* The Close Button */
 		.close {
-		  color: #aaaaaa;
+		  color: #040000;
 		  float: right;
 		  font-size: 28px;
 		  font-weight: bold;
@@ -69,7 +69,10 @@
 			<ul class="nav navbar-nav">
 				<li  class="active"><a href="master.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
 				<li><a onclick="window.open('https://html-online.com/editor/');" target="_blank">Editor</a></li>
-				<li><a href="contact.html">Contact</a></li>					
+				<li><a onclick="window.open('https://onecompiler.com/java');" target="_blank">Compiler</a></li>
+				<li><a href="video.html" >Video</a></li>
+				<li><a href="pdf.html" >Pdf</a></li>
+				<li><a href="Contact.html">Contact</a></li>			
 			</ul>
 		 </div>
 	</div> <!-- container -->
@@ -134,6 +137,30 @@
 			function myFunction(path) {
 			  document.getElementById('iframe').src = path; 
 			  modal.style.display = "block";
+			}
+			document.addEventListener('keydown', function() {
+			  if (event.keyCode == 123) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				return false;
+			  } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				return false;
+			  } else if (event.ctrlKey && event.keyCode == 85) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				return false;
+			  }
+			}, false);
+
+			if (document.addEventListener) {
+			  document.addEventListener('contextmenu', function(e) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				e.preventDefault();
+			  }, false);
+			} else {
+			  document.attachEvent('oncontextmenu', function() {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				window.event.returnValue = false;
+			  });
 			}
 			
 </script>
