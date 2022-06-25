@@ -50,7 +50,7 @@
 								    <input class="form-control" id="num2" type="hidden">									
 		                         </div> 
 								 <div class="col-sm-3">
-		                            <button type="submit" class="btn btn-success btn-sm" onclick='validate()' >Go</button>
+		                            <button type="submit" id="go" class="btn btn-success btn-sm" onclick='validate()' >Go</button>
 								 </div>	
 		                    </div>
 							<div class="form-group has-feedback">
@@ -86,13 +86,15 @@
 			alert("Please Enter Calculate value");
 		}else{
 			if(ans==(parseInt(num1)+parseInt(num2))){
-				alert("Correct");
-				//window.location.href = 'master.html';
+				//alert("Correct");
+				window.location.href = 'master.html';
 			}else{
 				alert("Please Enter Correct value");
 			}
 		}
 	}
+	 
+    
 </script>
 </body>
 </html>
