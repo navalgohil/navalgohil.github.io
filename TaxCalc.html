@@ -355,37 +355,37 @@
 					const  inputD7 = document.getElementById("inputD7").value ==""  ? 0 : document.getElementById("inputD7").value.replace("₹","").replaceAll(",","");
 					var  deduction = Number(inputD1) + Number(inputD2) + Number(inputD3) + Number(inputD4)+ Number(inputD5)+ Number(inputD6)+ Number(inputD7);					
 					var taxableAmount = (totalIncome-deduction)
-					alert("taxableAmount--"+taxableAmount);
+					//alert("taxableAmount--"+taxableAmount);
 					var taxAmount=0;
 					var dynamicTaxableAmount=taxableAmount;
 					//₹ 10,50,000.00
 					if(taxableAmount < 250000){
 						taxAmount=0;
-						alert("A--"+taxAmount+"--"+dynamicTaxableAmount);
+						//alert("A--"+taxAmount+"--"+dynamicTaxableAmount);
 					}
 					if(taxableAmount > 250001 && taxableAmount < 500000){
 						dynamicTaxableAmount = dynamicTaxableAmount-250000;
 						taxAmount=taxAmount+(taxableAmount * 5)/100;	
 						taxAmount=(taxAmount * 4)/100;
-						alert("B--"+ taxAmount+"--"+dynamicTaxableAmount);
+						//alert("B--"+ taxAmount+"--"+dynamicTaxableAmount);
 					}
 					if(taxableAmount > 500001 && taxableAmount < 750000){
 						dynamicTaxableAmount = dynamicTaxableAmount-500000;
 						taxAmount=12500+(dynamicTaxableAmount * 20)/100;
 						taxAmount=(taxAmount * 4)/100;
-						alert("C--"+ taxAmount+"--"+dynamicTaxableAmount);
+						//alert("C--"+ taxAmount+"--"+dynamicTaxableAmount);
 					}
 					if(taxableAmount > 750001 && taxableAmount < 100000){
 						dynamicTaxableAmount = dynamicTaxableAmount-750000;
 						taxAmount=12500+50000+(dynamicTaxableAmount * 20)/100;
 						taxAmount=(taxAmount * 4)/100;
-						alert("C--"+ taxAmount+"--"+dynamicTaxableAmount);
+						//alert("C--"+ taxAmount+"--"+dynamicTaxableAmount);
 					}
 					if(taxableAmount > 1000001 ){
 					    dynamicTaxableAmount = dynamicTaxableAmount-1000000;
 						taxAmount=12500+50000+50000+(dynamicTaxableAmount * 30)/100;
 						taxAmount=(taxAmount * 4)/100;
-						alert("D--"+ taxAmount+"--"+dynamicTaxableAmount);
+						//alert("D--"+ taxAmount+"--"+dynamicTaxableAmount);
 					}
 					var myTable = document.getElementById('myTable');
 					totalIncome = formatNumber(totalIncome.toString());
@@ -398,10 +398,10 @@
 					myTable.rows[3].cells[1].innerHTML = "Rs."+taxableAmount;
 					myTable.rows[4].cells[1].innerHTML = "Rs."+taxAmount;
 					
-					myTable.rows[1].cells[2].innerHTML = "Rs."+totalIncome;
-					myTable.rows[2].cells[2].innerHTML = "Rs."+deduction;
-					myTable.rows[3].cells[2].innerHTML = "Rs."+taxableAmount;
-					myTable.rows[4].cells[2].innerHTML = "Rs."+taxAmount;
+					myTable.rows[1].cells[2].innerHTML = "Rs."+0;
+					myTable.rows[2].cells[2].innerHTML = "Rs."+0;
+					myTable.rows[3].cells[2].innerHTML = "Rs."+0;
+					myTable.rows[4].cells[2].innerHTML = "Rs."+0;
 					
 			}
 			function reset(){
