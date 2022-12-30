@@ -357,41 +357,35 @@
 					var taxableAmount = (totalIncome-deduction)
 					alert("taxableAmount--"+taxableAmount);
 					var taxAmount=0;
+					var dynamicTaxableAmount=taxableAmount;
 					//₹ 10,50,000.00
 					if(taxableAmount < 250000){
-						taxableAmount = taxableAmount-250000;
 						taxAmount=0;
-						alert("A--"+taxAmount+"--"+taxableAmount);
+						alert("A--"+taxAmount+"--"+dynamicTaxableAmount);
 					}
 					if(taxableAmount > 250001 && taxableAmount < 500000){
-						taxableAmount = taxableAmount-250000;
-						if(taxableAmount < 250000){
-							taxAmount=taxAmount+(taxableAmount * 5)/100;	
-							alert("B1--"+ taxAmount+"--"+taxableAmount);							
-						}else{
-							taxAmount=taxAmount+(250000 * 5)/100;
-							alert("B2--"+ taxAmount+"--"+taxableAmount);
-							taxAmount=taxAmount+(taxAmount * 4)/100;
-						}
-						alert("B--"+ taxAmount+"--"+taxableAmount);
+						dynamicTaxableAmount = dynamicTaxableAmount-250000;
+						taxAmount=taxAmount+(taxableAmount * 5)/100;	
+						taxAmount=(taxAmount * 4)/100;
+						alert("B--"+ taxAmount+"--"+dynamicTaxableAmount);
 					}
 					if(taxableAmount > 500001 && taxableAmount < 750000){
-						taxableAmount = taxableAmount-250000;
-						taxAmount=(taxableAmount * 20)/100;
+						dynamicTaxableAmount = dynamicTaxableAmount-500000;
+						taxAmount=12500+(dynamicTaxableAmount * 20)/100;
 						taxAmount=(taxAmount * 4)/100;
-						alert("C--"+ taxAmount+"--"+taxableAmount);
+						alert("C--"+ taxAmount+"--"+dynamicTaxableAmount);
 					}
 					if(taxableAmount > 750001 && taxableAmount < 100000){
-						taxableAmount = taxableAmount-250000;
-						taxAmount=(taxableAmount * 20)/100;
+						dynamicTaxableAmount = dynamicTaxableAmount-750000;
+						taxAmount=12500+50000+(dynamicTaxableAmount * 20)/100;
 						taxAmount=(taxAmount * 4)/100;
-						alert("C--"+ taxAmount+"--"+taxableAmount);
+						alert("C--"+ taxAmount+"--"+dynamicTaxableAmount);
 					}
 					if(taxableAmount > 1000001 ){
-					    taxableAmount = taxableAmount-250000;
-						taxAmount=(taxableAmount * 30)/100;
+					    dynamicTaxableAmount = dynamicTaxableAmount-1000000;
+						taxAmount=12500+50000+50000+(dynamicTaxableAmount * 30)/100;
 						taxAmount=(taxAmount * 4)/100;
-						alert("D--"+ taxAmount+"--"+taxableAmount);
+						alert("D--"+ taxAmount+"--"+dynamicTaxableAmount);
 					}
 					var myTable = document.getElementById('myTable');
 					totalIncome = formatNumber(totalIncome.toString());
