@@ -364,44 +364,93 @@
 						//alert("A--"+taxAmount+"--"+dynamicTaxableAmount);
 					}
 					if(taxableAmount > 250001 && taxableAmount < 500000){
-						dynamicTaxableAmount = dynamicTaxableAmount-250000;
-						taxAmount=taxAmount+(taxableAmount * 5)/100;	
-						taxAmount=(taxAmount * 4)/100;
+						dynamicTaxableAmount = Number(dynamicTaxableAmount)-250000;
+						taxAmount=(dynamicTaxableAmount * 5)/100;	
 						//alert("B--"+ taxAmount+"--"+dynamicTaxableAmount);
 					}
 					if(taxableAmount > 500001 && taxableAmount < 750000){
-						dynamicTaxableAmount = dynamicTaxableAmount-500000;
-						taxAmount=12500+(dynamicTaxableAmount * 20)/100;
-						taxAmount=(taxAmount * 4)/100;
+						dynamicTaxableAmount = Number(dynamicTaxableAmount)-500000;
+						taxAmount=12500+((dynamicTaxableAmount * 20)/100);
 						//alert("C--"+ taxAmount+"--"+dynamicTaxableAmount);
 					}
-					if(taxableAmount > 750001 && taxableAmount < 100000){
-						dynamicTaxableAmount = dynamicTaxableAmount-750000;
-						taxAmount=12500+50000+(dynamicTaxableAmount * 20)/100;
-						taxAmount=(taxAmount * 4)/100;
+					if(taxableAmount > 750001 && taxableAmount < 1000000){
+						dynamicTaxableAmount = Number(dynamicTaxableAmount)-750000;
+						taxAmount=12500+50000+((dynamicTaxableAmount * 20)/100);
 						//alert("C--"+ taxAmount+"--"+dynamicTaxableAmount);
 					}
 					if(taxableAmount > 1000001 ){
-					    dynamicTaxableAmount = dynamicTaxableAmount-1000000;
-						taxAmount=12500+50000+50000+(dynamicTaxableAmount * 30)/100;
-						taxAmount=(taxAmount * 4)/100;
-						//alert("D--"+ taxAmount+"--"+dynamicTaxableAmount);
+					    dynamicTaxableAmount = Number(dynamicTaxableAmount)-1000000;
+						taxAmount=12500+50000+50000+((dynamicTaxableAmount * 30)/100);
+						//alert("D--"+ taxAmount+"--"+dynamicTaxableAmount);						
 					}
+					var cessTax=((taxAmount * 4)/100);
+					cessTax = Math.round(cessTax );
+					taxAmount = Number(taxAmount)  + Number(cessTax) ;
+					taxAmount = Math.round(taxAmount );
+					//alert("--"+ cessTax+ "--"+taxAmount+"--"+dynamicTaxableAmount);	
+					
+					
+					var taxAmountNew=0;
+					var dynamicTaxableAmountNew=income;
+					//₹ 10,50,000.00
+					if(income < 250000){
+						taxAmountNew=0;
+						//alert("AA--"+taxAmount+"--"+dynamicTaxableAmount);
+					}
+					if(income > 250001 && income < 500000){
+						dynamicTaxableAmountNew = Number(dynamicTaxableAmountNew)-250000;
+						taxAmountNew=(dynamicTaxableAmountNew * 5)/100;	
+						//alert("BB--"+ taxAmountNew+"--"+dynamicTaxableAmountNew);
+					}
+					if(income > 500001 && income < 750000){
+						dynamicTaxableAmountNew = Number(dynamicTaxableAmountNew)-500000;
+						taxAmountNew=12500+((dynamicTaxableAmountNew * 10)/100);
+						//alert("CC--"+ taxAmountNew+"--"+dynamicTaxableAmountNew);
+					}
+					if(income > 750001 && income < 1000000){
+						dynamicTaxableAmountNew = Number(dynamicTaxableAmountNew)-750000;
+						taxAmountNew=12500+25000+((dynamicTaxableAmountNew * 15)/100);
+						//alert("DD--"+ taxAmountNew+"--"+dynamicTaxableAmountNew);
+					}
+					if(income > 1000001 && income < 1250000){
+						dynamicTaxableAmountNew = Number(dynamicTaxableAmountNew)-1000000;
+						taxAmountNew=12500+25000+37500+((dynamicTaxableAmountNew * 20)/100);
+						//alert("EE--"+ taxAmountNew+"--"+dynamicTaxableAmountNew);
+					}
+					if(income > 1250001 && income < 1500000){
+						dynamicTaxableAmountNew = Number(dynamicTaxableAmountNew)-1250000;
+						taxAmountNew=12500+25000+37500+50000+((dynamicTaxableAmountNew * 25)/100);
+						//alert("FF--"+ taxAmountNew+"--"+dynamicTaxableAmountNew);
+					}
+					if(income > 1500001 ){
+					    dynamicTaxableAmountNew = Number(dynamicTaxableAmountNew)-1500000;
+						taxAmountNew=12500+25000+37500+50000+62500+((dynamicTaxableAmountNew * 30)/100);
+						//alert("GG--"+ taxAmountNew+"--"+dynamicTaxableAmountNew);						
+					}
+					var cessTaxNew=((taxAmountNew * 4)/100);
+					cessTaxNew = Math.round(cessTaxNew );
+					taxAmountNew = Number(taxAmountNew)  + Number(cessTaxNew) ;
+					taxAmountNew = Math.round(taxAmountNew );
+					//alert("-dscsdcsd-"+ cessTaxNew+ "--"+taxAmountNew+"--"+dynamicTaxableAmountNew);	
+					
+					
 					var myTable = document.getElementById('myTable');
 					totalIncome = formatNumber(totalIncome.toString());
 					deduction = formatNumber(deduction.toString());
 					taxableAmount = formatNumber(taxableAmount.toString());
 					taxAmount = formatNumber(taxAmount.toString());
+					totalIncomeNew = formatNumber(income.toString());
+					taxAmountNew = formatNumber(taxAmountNew.toString());
 					
 					myTable.rows[1].cells[1].innerHTML = "Rs."+totalIncome;
 					myTable.rows[2].cells[1].innerHTML = "Rs."+deduction;
 					myTable.rows[3].cells[1].innerHTML = "Rs."+taxableAmount;
 					myTable.rows[4].cells[1].innerHTML = "Rs."+taxAmount;
 					
-					myTable.rows[1].cells[2].innerHTML = "Rs."+0;
+					myTable.rows[1].cells[2].innerHTML = "Rs."+totalIncomeNew;
 					myTable.rows[2].cells[2].innerHTML = "Rs."+0;
-					myTable.rows[3].cells[2].innerHTML = "Rs."+0;
-					myTable.rows[4].cells[2].innerHTML = "Rs."+0;
+					myTable.rows[3].cells[2].innerHTML = "Rs."+totalIncomeNew;
+					myTable.rows[4].cells[2].innerHTML = "Rs."+taxAmountNew;
 					
 			}
 			function reset(){
