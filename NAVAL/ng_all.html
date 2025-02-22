@@ -1,0 +1,265 @@
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>NG</title>
+	<link href="../CSS/bootstrap.min.css" rel="stylesheet">
+	<link href="../CSS/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="../CSS/mystyle.css" rel="stylesheet">
+	<link href="../CSS/font-awesome.min.css" rel="stylesheet">
+	<link href="../CSS/bootstrap-social.css" rel="stylesheet"> 	
+
+</head>
+<body>
+
+<!--=============================================================== NAVBAR =============================================================== -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="../master.html">NavalGohil</a>
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-control="navbar" >
+				<span class="sr-only">Toggle Navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li  class="active"><a href="../master.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+				<li><a onclick="window.open('https://html-online.com/editor/');" target="_blank">Editor</a></li>
+				<li><a href="../contact.html">Contact</a></li>					
+			</ul>
+		 </div>
+	</div> <!-- container -->
+</nav>
+
+<!--=============================================================== HEADER =============================================================== -->
+
+<!--=============================================================== MAIN BODY =============================================================== -->
+<div class="container">
+
+
+<table class="table table-hover">
+<thead>
+      <tr>
+        <th>ALL</th>
+      </tr>
+    </thead>
+    <tbody>
+	<tr><td>
+		<a data-toggle="collapse" data-target="#6">Spring</a>
+		<div id="6" class="collapse">
+		<ol>
+		<li><strong>What is the Spring Framework?</strong></li>
+		</ol>
+		<p>Spring is an open-source Java framework that simplifies enterprise application development. It provides tools for dependency injection, aspect-oriented programming, and integration with other frameworks.</p>
+		<ol start="2">
+		<li><strong>What are the core modules of Spring?</strong></li>
+		</ol>
+		<p>Core modules include &ndash; Spring Core, Spring Context, Spring AOP, Spring Data, Spring Web, Spring Security, and Spring Boot.&nbsp;</p>
+		<ol start="3">
+		<li><strong>What is Dependency Injection in Spring?</strong></li>
+		</ol>
+		<p>Dependency Injection (DI) is a design pattern where Spring manages object dependencies &ndash; allowing loose coupling between components.</p>
+		<ol start="4">
+		<li><strong>What is the Spring Bean Lifecycle?</strong></li>
+		</ol>
+		<p>The lifecycle includes bean instantiation, property setting, initialization (via @PostConstruct or init-method), and destruction (via @PreDestroy or destroy-method).</p>
+		<ol start="5">
+		<li><strong>What is the role of the ApplicationContext in Spring?</strong></li>
+		</ol>
+		<p>ApplicationContext is a container providing configuration, lifecycle management, and dependency injection for Spring beans.</p>
+		<ol start="6">
+		<li><strong>What is the difference between BeanFactory and ApplicationContext?</strong></li>
+		</ol>
+		<p>BeanFactory is a basic container for bean management &ndash; while ApplicationContext offers advanced features like internationalization, event handling, and AOP support.</p>
+		<ol start="7">
+		<li><strong>How does Spring support transaction management?</strong></li>
+		</ol>
+		<p>Spring supports both programmatic and declarative transaction management using @Transactional or the TransactionTemplate class.</p>
+		<ol start="8">
+		<li><strong>What is Spring IoC?</strong></li>
+		</ol>
+		<p>This is one of the most important Spring IoC interview questions. Here is how you should answer it.&nbsp;</p>
+		<p>Spring IoC (Inversion of Control) is a container that manages object creation and their dependencies &ndash; promoting loose coupling through Dependency Injection.</p>
+		<ol start="9">
+		<li><strong>How does Spring achieve loose coupling?</strong></li>
+		</ol>
+		<p>Spring achieves loose coupling through Dependency Injection and the use of interfaces &ndash; making modules independent and easily interchangeable.</p>
+		<ol start="10">
+		<li><strong>What is the DispatcherServlet in Spring?</strong></li>
+		</ol>
+		<p>The DispatcherServlet is the front controller in Spring MVC that handles incoming HTTP requests and delegates them to appropriate handlers.</p>
+		<ol start="11">
+		<li><strong>What is Spring AOP, and why is it used?</strong></li>
+		</ol>
+		<p>Spring AOP (Aspect-Oriented Programming) allows you to define cross-cutting concerns like logging, security, and transactions, separately from the application logic.</p>
+		<ol start="12">
+		<li><strong>How do you handle exceptions in Spring?</strong></li>
+		</ol>
+		<p>Spring handles exceptions using @ExceptionHandler in controllers, @ControllerAdvice for global handling, and custom exceptions with proper HTTP status codes.</p>
+		<ol start="13">
+		<li><strong>What is the difference between @Transactional and programmatic transactions?</strong></li>
+		</ol>
+		<p>@Transactional simplifies transaction management declaratively, while programmatic transactions use code (e.g., TransactionTemplate) for finer control.</p>
+		<ol start="14">
+		<li><strong>How does Spring Boot differ from the traditional Spring Framework?</strong></li>
+		</ol>
+		<p>Spring Boot simplifies development by providing embedded servers. It also offers auto-configuration and starter dependencies. This reduces the need for manual setup.&nbsp;</p>
+		<ol start="15">
+		<li><strong>What is a Spring Boot Starter?</strong></li>
+		</ol>
+		<p>Spring Boot Starters are predefined dependencies. They help set up Spring applications quickly. They require minimal configuration. Examples include spring-boot-starter-web and spring-boot-starter-data-jpa.</p>
+		<ol start="16">
+		<li><strong>What is the use of @Qualifier annotation?</strong></li>
+		</ol>
+		<p>@Qualifier is used when multiple beans of the same type exist. It helps specify which bean to inject. This resolves ambiguity in bean selection.</p>
+		<ol start="17">
+		<li><strong>What is Spring JDBC?</strong></li>
+		</ol>
+		<p>You might also come across Spring JDBC interview questions like this one.&nbsp;</p>
+		<p>Spring JDBC simplifies database operations. It provides helper classes and templates. These classes reduce repetitive code. They also handle common tasks like connection management.</p>
+		<ol start="18">
+		<li><strong>What is the role of @Bean in Spring?</strong></li>
+		</ol>
+		<p>@Bean is used to define a bean within a Java configuration class, &ndash; allowing Spring to manage its lifecycle and dependencies.</p>
+		<ol start="19">
+		<li><strong>What is the difference between @RequestMapping and @GetMapping?</strong></li>
+		</ol>
+		<p>@RequestMapping is a generic annotation for handling HTTP requests, while @GetMapping is a shortcut for HTTP GET requests.</p>
+		<ol start="20">
+		<li><strong>What is Spring Boot Actuator?</strong></li>
+		</ol>
+		<p>Spring Boot Actuator provides production-ready features like metrics, health checks, and application insights to monitor and manage Spring Boot applications.</p>
+		<ol start="21">
+		<li><strong>What is the use of Spring Profiles?</strong></li>
+		</ol>
+		<p>Spring Profiles allow you to define different configurations for different environments (e.g., dev, prod) in a Spring application.</p>
+		<ol start="22">
+		<li><strong>What is the difference between Spring MVC and Spring WebFlux?</strong></li>
+		</ol>
+		<p>Spring MVC is synchronous &ndash; while Spring WebFlux is asynchronous, built for handling non-blocking, reactive programming in web applications.</p>
+		<ol start="23">
+		<li><strong>What is the use of @PreAuthorize in Spring Security?</strong></li>
+		</ol>
+		<p>@PreAuthorize is used to secure methods with specific roles or permissions before method execution, based on expression-based access control.</p>
+		<ol start="24">
+		<li><strong>How does Spring manage transactions?</strong></li>
+		</ol>
+		<p>Spring uses @Transactional for declarative transaction management, allowing automatic transaction handling at the method level with rollback features.</p>
+		<ol start="25">
+		<li><strong>What is the difference between @Scope and @Singleton?</strong></li>
+		</ol>
+		<p>@Scope defines the lifecycle of a Spring bean (e.g., singleton, prototype) &ndash; while @Singleton (in non-Spring contexts) restricts a class to one instance globally.</p>
+		<ol start="26">
+		<li><strong>How does Spring support Aspect-Oriented Programming (AOP)?</strong></li>
+		</ol>
+		<p>Spring AOP allows the separation of cross-cutting concerns like logging, security, and transactions from the main business logic using aspects.</p>
+		<ol start="27">
+		<li><strong>What is Spring Data JPA?</strong></li>
+		</ol>
+		<p>Spring Data JPA simplifies database interaction by creating repositories for entities and providing built-in methods for CRUD operations.</p>
+		<ol start="28">
+		<li><strong>What are the advantages of using Spring Boot over Spring MVC?</strong></li>
+		</ol>
+		<p>Spring Boot simplifies configuration, provides embedded servers, and includes auto-configuration, reducing the need for boilerplate code compared to Spring MVC.</p>
+		<ol start="29">
+		<li><strong>How can you enable Caching in Spring?</strong></li>
+		</ol>
+		<p>You can enable caching by using the @EnableCaching annotation in a configuration class and @Cacheable on methods that require caching.</p>
+		<ol start="30">
+		<li><strong>How do you implement microservices in Spring?</strong></li>
+		</ol>
+		<p>Spring Boot, Spring Cloud, and Spring Data are used to build microservices, with tools like Eureka for service discovery and Ribbon for load balancing.</p>
+		<ol start="31">
+		<li><strong>What are the common design patterns used in Spring?</strong></li>
+		</ol>
+		<p>Common patterns in Spring include Singleton, Factory, Proxy, and Observer patterns, which help manage beans and improve modularity.</p>
+		<ol start="32">
+		<li><strong>What is Spring Batch?</strong></li>
+		</ol>
+		<p>Spring Batch is used for processing large volumes of data in batch jobs. It supports features like transaction management, job scheduling, and error handling.</p>
+		<ol start="33">
+		<li><strong>How would you handle a situation where two beans of the same type are present in the Spring context?</strong></li>
+		</ol>
+		<p><em>&ldquo;I would use the @Qualifier annotation to specify which bean to inject. This helps me avoid ambiguity when multiple beans of the same type are present in the context.&rdquo;</em></p>
+		<ol start="34">
+		<li><strong>How do you manage a database transaction that requires rolling back only under certain conditions?</strong></li>
+		</ol>
+		<p><em>&ldquo;I would use the @Transactional annotation with the rollbackFor attribute. This allows me to specify which exceptions should trigger a rollback, giving me more control over transaction management.&rdquo;</em></p>
+		<ol start="35">
+		<li><strong>How would you handle a situation where the Spring Boot application starts very slowly?</strong></li>
+		</ol>
+		<p><em>&ldquo;I would first profile the application to identify bottlenecks. I&rsquo;d review the autoconfiguration, lazy loading, and database connections. I might optimize startup performance by using @Lazy or adjusting application configurations.&rdquo;</em></p>
+		<ol start="36">
+		<li><strong>What would you do if a Spring MVC controller method is not handling the request as expected?</strong></li>
+		</ol>
+		<p><em>&ldquo;I would check if the request URL matches the method mapping and ensure the correct HTTP method (GET, POST) is used. I&rsquo;d also validate the controller and method annotations like @RequestMapping or @GetMapping.&rdquo;</em></p>
+		<br>
+		</div>
+	</td></tr><tr><td>
+		<a data-toggle="collapse" data-target="#100">TEST</a>
+		<div id="100" class="collapse well well-sm">
+		This is test...
+		</div>
+	</td></tr>
+   </tbody>
+</table>
+
+</div> <!-- B CONTAINER -->             
+
+  
+<!--=============================================================== FOOTER =============================================================== -->
+<div class="footer row-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				
+				<p align="Left"> <b>@Copyright 2019 Naval Gohil</b></p>
+			</div>
+		</div> <!-- F ROW 1 -->
+	</div> <!-- F CONTAINER -->
+</div> <!-- FOOTER -->
+
+<script  src="../JS/jquery-1.11.3.min.js" ></script>
+<script  src="../JS/bootstrap.min.js" ></script>
+<script  src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script> 
+<script type="text/javascript">
+           $(document).ready(function() {
+				$('#example').DataTable({
+					pagingType: 'full_numbers',
+				});
+			});
+			document.addEventListener('keydown', function() {
+			  if (event.keyCode == 123) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				return false;
+			  } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				return false;
+			  } else if (event.ctrlKey && event.keyCode == 85) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				return false;
+			  }
+			}, false);
+
+			if (document.addEventListener) {
+			  document.addEventListener('contextmenu', function(e) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				e.preventDefault();
+			  }, false);
+			} else {
+			  document.attachEvent('oncontextmenu', function() {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				window.event.returnValue = false;
+			  });
+			}
+</script>
+
+
+</body>
+</html>
