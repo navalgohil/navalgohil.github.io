@@ -1,0 +1,458 @@
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>NG</title>
+	<link href="../CSS/bootstrap.min.css" rel="stylesheet">
+	<link href="../CSS/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="../CSS/mystyle.css" rel="stylesheet">
+	<link href="../CSS/font-awesome.min.css" rel="stylesheet">
+	<link href="../CSS/bootstrap-social.css" rel="stylesheet"> 	
+
+</head>
+<body>
+
+<!--=============================================================== NAVBAR =============================================================== -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="../master.html">NavalGohil</a>
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-control="navbar" >
+				<span class="sr-only">Toggle Navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li  class="active"><a href="../master.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+				<li><a onclick="window.open('https://html-online.com/editor/');" target="_blank">Editor</a></li>
+				<li><a href="../contact.html">Contact</a></li>					
+			</ul>
+		 </div>
+	</div> <!-- container -->
+</nav>
+
+<!--=============================================================== HEADER =============================================================== -->
+
+<!--=============================================================== MAIN BODY =============================================================== -->
+<div class="container">
+<br><br>
+<div class="row">
+  <div class="col-md-4">
+	<table class="table table-bordered">
+	  <thead>
+		<tr>
+		  <th scope="col">Description</th>
+		  <th scope="col">Amount</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr>
+		  <td>Basic</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>HRA</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>Other Allownace</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>Gross Salary</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>HRA</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>Net Salary</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>STD Deduction </td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>Employee Tax</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>Net Taxable Salary</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>Home loan</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>Gross Total Salary</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>Basic Deductions - 80C</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>Interest from Deposits - 80TTA </td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>Medical Insurance - 80D</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>Donations to Charity - 80G</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>Interest on Educational Loan - 80E</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>Interest on Housing Loan - 80EEA</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>Employee's contribution to NPS - 80CCD</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>Total Deduction</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>Total Taxable Income</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="finalTaxable"  onfocusout="populateTaxableValueOnTaxGrid()"></td>
+		</tr>
+		<tr>
+		  <td>Total Tax</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+	  </tbody>
+	</table>
+  </div> <!--col-md-4-->
+  <div class="col-md-8">
+  <div class="col-md-6">
+	<table class="table table-bordered">
+	  <thead>
+		<tr>
+		  <th colspan="2" style="text-align:center;">HRA calculation</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr>
+		  <td>Monthly Rent</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>Yearly Rent</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>Actual HRA</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>40% or 50% of Basic</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>Rent paid - 10% of Basic</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>Total Tax</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+	  </tbody>
+	</table>	
+  </div><!--col-md-6-->
+  <div class="col-md-6">
+	<table class="table table-bordered">
+	  <thead>
+		<tr>
+		  <th colspan="2"style="text-align:center;">Deduction under VIA</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr>
+		  <td>80C - PPF</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>80C - MF</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>80C - PF</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>80C - Repayment of Home loan</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>80C - Other</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+		<tr>
+		  <td>80C - Total</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		</tr>
+	  </tbody>
+	</table>
+  </div><!--col-md-6-->
+  <div class="col-md-12">
+	<table class="table table-bordered">
+	  <thead>
+		<tr>
+		  <th style="text-align:center;">Amount Range </th>
+		  <th style="text-align:center;">Tax Slab % </th>
+		  <th style="text-align:center;">Taxable </th>
+		  <th style="text-align:center;">TAX </th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr>
+		  <td>0 to 2.5 Lac</td>
+		  <td>0%</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_0_taxable"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_0_tax"></td>
+		</tr>
+		<tr>
+		  <td>2.5 to 5 Lac</td>
+		  <td>5%</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_5_taxable"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_5_tax"></td>
+		</tr>
+		<tr>
+		  <td>5 to 10 Lac</td>
+		  <td>20%</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_20_taxable"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_20_tax"></td>
+		</tr>
+		<tr>
+		  <td>10 Lac ++</td>
+		  <td>30%</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_30_taxable"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_30_tax"></td>
+		</tr>
+		<tr>
+		  <td>Total Tax</td>
+		  <td></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_final_taxable"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_final_tax"></td>
+		</tr>
+		<tr>
+		  <td>Cess</td>
+		  <td>4%</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_cess_taxable"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_cess_tax"></td>
+		</tr>
+		<tr>
+		  <td>Tax Yearly</td>
+		  <td></td>
+		  <td></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_tax_yearly"></td>
+		</tr>
+		<tr>
+		  <td>Tax Monthly</td>
+		  <td></td>
+		  <td></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_tax_monthly"></td>
+		</tr>
+	  </tbody>
+	</table>	
+  </div><!--col-md-6-->
+  </div><!--col-md-8-->
+</div>
+<br>
+<br>
+<br>
+  
+</div> <!-- B CONTAINER -->             
+
+  
+<!--=============================================================== FOOTER =============================================================== -->
+<div class="footer row-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				
+				<p align="Left"> <b>@Copyright 2019 Naval Gohil</b></p>
+			</div>
+		</div> <!-- F ROW 1 -->
+	</div> <!-- F CONTAINER -->
+</div> <!-- FOOTER -->
+
+<script  src="../JS/jquery-1.11.3.min.js" ></script>
+<script  src="../JS/bootstrap.min.js" ></script>
+<script  src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script> 
+<script type="text/javascript">
+           $(document).ready(function() {
+				$('#example').DataTable({
+					pagingType: 'full_numbers',
+				});
+			});
+			$("input[data-type='currency']").on({
+				keyup: function() {
+				  formatCurrency($(this));
+				},
+				blur: function() { 
+				  formatCurrency($(this), "blur");
+				}
+			});
+			function formatNumber(n) {
+			  // format number 1000000 to 1,234,567
+			  return n.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			}
+			//https://codepen.io/559wade/pen/LRzEjj
+			function formatCurrency(input, blur) {
+			  // appends $ to value, validates decimal side
+			  // and puts cursor back in right position.
+			  
+			  // get input value
+			  var input_val = input.val();
+			  
+			  // don't validate empty input
+			  if (input_val === "") { return; }
+			  
+			  // original length
+			  var original_len = input_val.length;
+
+			  // initial caret position 
+			  var caret_pos = input.prop("selectionStart");
+				
+			  // check for decimal
+			  if (input_val.indexOf(".") >= 0) {
+
+				// get position of first decimal
+				// this prevents multiple decimals from
+				// being entered
+				var decimal_pos = input_val.indexOf(".");
+
+				// split number by decimal point
+				var left_side = input_val.substring(0, decimal_pos);
+				var right_side = input_val.substring(decimal_pos);
+
+				// add commas to left side of number
+				left_side = formatNumber(left_side);
+
+				// validate right side
+				right_side = formatNumber(right_side);
+				
+				// On blur make sure 2 numbers after decimal
+				if (blur === "blur") {
+				  right_side += "00";
+				}
+				
+				// Limit decimal to only 2 digits
+				right_side = right_side.substring(0, 2);
+
+				// join number by .
+				input_val = "₹" + left_side ;//+ "." + right_side;
+
+			  } else {
+				// no decimal entered
+				// add commas to number
+				// remove all non-digits
+				input_val = formatNumber(input_val);
+				input_val = "₹" + input_val;
+				
+				// final formatting
+				if (blur === "blur") {
+				  //input_val += ".00";
+				   input_val += "";
+				}
+			  }
+			  
+			  // send updated string to input
+			  input.val(input_val);
+
+			  // put caret back in the right position
+			  var updated_len = input_val.length;
+			  caret_pos = updated_len - original_len + caret_pos;
+			  input[0].setSelectionRange(caret_pos, caret_pos);
+			}
+			/*document.addEventListener('keydown', function() {
+			  if (event.keyCode == 123) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				return false;
+			  } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				return false;
+			  } else if (event.ctrlKey && event.keyCode == 85) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				return false;
+			  }
+			}, false);
+
+			if (document.addEventListener) {
+			  document.addEventListener('contextmenu', function(e) {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				e.preventDefault();
+			  }, false);
+			} else {
+			  document.attachEvent('oncontextmenu', function() {
+				alert("This function has been disabled to prevent you from stealing my code!");
+				window.event.returnValue = false;
+			  });
+			}*/
+			function populateTaxableValueOnTaxGrid() {
+			  
+			    document.getElementById("taxGrid_final_taxable").value = document.getElementById("finalTaxable").value;
+				let finalTaxable = document.getElementById("finalTaxable").value.replace("₹","").replaceAll(",","");;
+				//alert(finalTaxable);
+				if(finalTaxable < 250000){
+					document.getElementById("taxGrid_0_taxable").value = finalTaxable;
+					document.getElementById("taxGrid_0_tax").value = "0";
+					document.getElementById("taxGrid_5_taxable").value = "0";
+					document.getElementById("taxGrid_5_tax").value = "0";
+					document.getElementById("taxGrid_20_taxable").value = "0";
+					document.getElementById("taxGrid_20_tax").value = "0";
+					document.getElementById("taxGrid_30_taxable").value = "0";
+					document.getElementById("taxGrid_30_tax").value = "0";
+					document.getElementById("taxGrid_final_tax").value = "0";
+					document.getElementById("taxGrid_cess_taxable").value = "0";
+					document.getElementById("taxGrid_cess_tax").value = "0";
+					document.getElementById("taxGrid_tax_yearly").value = "0";
+					document.getElementById("taxGrid_tax_monthly").value = "0";
+				}
+				if(taxableAmount > 250001 && taxableAmount < 500000){
+					document.getElementById("taxGrid_0_taxable").value = "250000";
+					document.getElementById("taxGrid_0_tax").value = "0";
+					document.getElementById("taxGrid_5_taxable").value = finalTaxable;
+					document.getElementById("taxGrid_5_tax").value = (finalTaxable * 5 ) / 100 ;
+					document.getElementById("taxGrid_20_taxable").value = "0";
+					document.getElementById("taxGrid_20_tax").value = "0";
+					document.getElementById("taxGrid_30_taxable").value = "0";
+					document.getElementById("taxGrid_30_tax").value = "0";
+					//alert("B--"+ taxAmount+"--"+dynamicTaxableAmount);
+				}
+				if(taxableAmount > 500001 && taxableAmount < 750000){
+				}
+				if(taxableAmount > 750001 && taxableAmount < 1000000){
+				}
+				if(taxableAmount > 1000001 ){						
+				}
+				
+			  if(finalTaxable < 50){
+				//alert("50")
+				document.getElementById("taxGrid_0_taxable").value = finalTaxable;
+				document.getElementById("taxGrid_5_taxable").value = "100";
+			  }
+			  document.getElementById("taxGrid_cess_taxable").value = document.getElementById("taxGrid_final_tax").value;
+			}
+</script>
+
+
+</body>
+</html>
