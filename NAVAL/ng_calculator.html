@@ -64,7 +64,7 @@
 		  <td>Other Allownace</td>
 		  <td><input type="text" data-type="currency" class="form-control" id="main_othAll" onfocusout="populateGrossSalary()"></td> 
 		</tr>
-		<tr>
+		<tr class="success">
 		  <td>Gross Salary</td>
 		  <td><input type="text" data-type="currency" class="form-control" id="main_grossSal"></td>
 		</tr>
@@ -72,7 +72,7 @@
 		  <td>HRA</td>
 		  <td><input type="text" data-type="currency" class="form-control" id="main_hra_calc" onfocusout="populateNetSalary()"></td>
 		</tr>
-		<tr>
+		<tr class="success">
 		  <td>Net Salary</td>
 		  <td><input type="text" data-type="currency" class="form-control" id="main_netSal"></td>
 		</tr>
@@ -84,7 +84,7 @@
 		  <td>Employee Tax</td>
 		  <td><input type="text" data-type="currency" class="form-control" id="main_empTax"  onfocusout="populateNetTaxSalary()"></td>
 		</tr>
-		<tr>
+		<tr  class="success">
 		  <td>Net Taxable Salary</td>
 		  <td><input type="text" data-type="currency" class="form-control" id="main_netTaxSal"></td>
 		</tr>
@@ -92,7 +92,7 @@
 		  <td>Home loan</td>
 		  <td><input type="text" data-type="currency" class="form-control" id="main_homeLoan" onfocusout="populateGrossTotalSalary()"></td>
 		</tr>
-		<tr>
+		<tr class="success">
 		  <td>Gross Total Salary</td>
 		  <td><input type="text" data-type="currency" class="form-control" id="main_grossTotalSal"></td>
 		</tr>
@@ -128,11 +128,11 @@
 		  <td>Total Deduction</td>
 		  <td><input type="text" data-type="currency" class="form-control" id="main_totalDed" ></td>
 		</tr>
-		<tr>
+		<tr class="success">
 		  <td>Total Taxable Income</td>
 		  <td><input type="text" data-type="currency" class="form-control" id="finalTaxable"  onfocusout="populateTaxableValueOnTaxGrid()"></td>
 		</tr>
-		<tr>
+		<tr class="danger">
 		  <td>Total Tax</td>
 		  <td><input type="text" data-type="currency" class="form-control" id="main_tax"></td>
 		</tr>
@@ -245,25 +245,25 @@
 		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_30_taxable"></td>
 		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_30_tax"></td>
 		</tr>
-		<tr>
+		<tr >
 		  <td>Total</td>
 		  <td></td>
 		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_final_taxable"></td>
-		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_final_tax"></td>
+		  <td class="danger"><input type="text" data-type="currency" class="form-control" id="taxGrid_final_tax"></td>
 		</tr>
 		<tr>
 		  <td>Cess</td>
 		  <td>4%</td>
 		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_cess_taxable"></td>
-		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_cess_tax"></td>
+		  <td class="danger"><input type="text" data-type="currency" class="form-control" id="taxGrid_cess_tax"></td>
 		</tr>
-		<tr>
+		<tr class="danger">
 		  <td>Tax Yearly</td>
 		  <td></td>
 		  <td></td>
 		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_tax_yearly"></td>
 		</tr>
-		<tr>
+		<tr >
 		  <td>Tax Monthly</td>
 		  <td></td>
 		  <td></td>
