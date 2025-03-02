@@ -382,7 +382,7 @@
 			  caret_pos = updated_len - original_len + caret_pos;
 			  input[0].setSelectionRange(caret_pos, caret_pos);
 			}
-			/*document.addEventListener('keydown', function() {
+			document.addEventListener('keydown', function() {
 			  if (event.keyCode == 123) {
 				alert("This function has been disabled to prevent you from stealing my code!");
 				return false;
@@ -405,7 +405,7 @@
 				alert("This function has been disabled to prevent you from stealing my code!");
 				window.event.returnValue = false;
 			  });
-			}*/
+			}
 			//main_basic main_hra  main_othAll   main_grossSal  main_hra_calc main_netSal  main_STD  main_empTax  main_netTaxSal
 			//main_homeLoan  main_grossTotalSal  main_80C  main_80TTA main_80D  main80G  main80E  main_80EEA  main_80CCD main_totalDed  finalTaxable
 			//ppf mf pf repayLoan Other80Oth	Total80CTotal
@@ -442,8 +442,8 @@
 				let main_totalDed = Number(main_80C)+Number(main_80TTA)+Number(main_80D)+Number(main_80G)+Number(main_80E)+Number(main_80EEA)+Number(main_80CCD);
 				let main_grossTotalSal = populateGrossTotalSalary();
 				let finalTaxable = Number(main_grossTotalSal) - Number(main_totalDed);
-				alert("main_grossTotalSal="+main_grossTotalSal);
-				alert("finalTaxable="+finalTaxable);
+				//alert("main_grossTotalSal="+main_grossTotalSal);
+				//alert("finalTaxable="+finalTaxable);
 				document.getElementById("main_totalDed").value = main_totalDed;
 				document.getElementById("finalTaxable").value = finalTaxable;
 				
