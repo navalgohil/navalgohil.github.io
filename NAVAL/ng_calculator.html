@@ -54,15 +54,15 @@
 	  <tbody>
 		<tr>
 		  <td>Basic</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="main_basic"></td>
 		</tr>
 		<tr>
 		  <td>HRA</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="main_hra"></td> 
 		</tr>
 		<tr>
 		  <td>Other Allownace</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="main_othAll"></td>
 		</tr>
 		<tr>
 		  <td>Gross Salary</td>
@@ -134,7 +134,7 @@
 		</tr>
 		<tr>
 		  <td>Total Tax</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="main_tax"></td>
 		</tr>
 	  </tbody>
 	</table>
@@ -150,27 +150,27 @@
 	  <tbody>
 		<tr>
 		  <td>Monthly Rent</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="hra_monthly" onfocusout="populateYearlyRent()"></td>
 		</tr>
 		<tr>
 		  <td>Yearly Rent</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="hra_yearly"></td>
 		</tr>
 		<tr>
 		  <td>Actual HRA</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="hra_actual"></td>
 		</tr>
 		<tr>
 		  <td>40% or 50% of Basic</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="hra_4050"></td> 
 		</tr>
 		<tr>
 		  <td>Rent paid - 10% of Basic</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="hra_rent10"></td>
 		</tr>
 		<tr>
-		  <td>Total Tax</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td>HRA Final</td>
+		  <td><input type="text" data-type="currency" class="form-control" id="hra_final"></td>
 		</tr>
 	  </tbody>
 	</table>	
@@ -246,7 +246,7 @@
 		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_30_tax"></td>
 		</tr>
 		<tr>
-		  <td>Total Tax</td>
+		  <td>Total</td>
 		  <td></td>
 		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_final_taxable"></td>
 		  <td><input type="text" data-type="currency" class="form-control" id="taxGrid_final_tax"></td>
@@ -406,12 +406,26 @@
 				window.event.returnValue = false;
 			  });
 			}*/
+			
+			function populateYearlyRent() {
+			  let monthlyRent = document.getElementById("hra_monthly").value.replace("₹","").replaceAll(",","");
+			  let yearly_rent = monthlyRent*12;
+			  let basic = document.getElementById("main_basic").value.replace("₹","").replaceAll(",","");
+			  let hra = document.getElementById("main_hra").value.replace("₹","").replaceAll(",","");
+			  let hra_4050 = (basic * 50)/100;
+			  let rent10 = yearly_rent - ((basic*10)/100);
+			  document.getElementById("hra_yearly").value = yearly_rent;
+			  document.getElementById("hra_actual").value = hra;   
+			  document.getElementById("hra_4050").value = hra_4050;
+			  document.getElementById("hra_rent10").value = rent10;
+			  document.getElementById("hra_final").value = Math.min(hra, hra_4050, rent10);
+			}
+			
 			function populateTaxableValueOnTaxGrid() {
 			  
-			    document.getElementById("taxGrid_final_taxable").value = document.getElementById("finalTaxable").value;
-				let finalTaxable = document.getElementById("finalTaxable").value.replace("₹","").replaceAll(",","");;
+			    let finalTaxable = document.getElementById("finalTaxable").value.replace("₹","").replaceAll(",","");;
 				//alert(finalTaxable);
-				if(finalTaxable < 250000){
+				if(finalTaxable <= 250000){
 					document.getElementById("taxGrid_0_taxable").value = finalTaxable;
 					document.getElementById("taxGrid_0_tax").value = "0";
 					document.getElementById("taxGrid_5_taxable").value = "0";
@@ -420,36 +434,93 @@
 					document.getElementById("taxGrid_20_tax").value = "0";
 					document.getElementById("taxGrid_30_taxable").value = "0";
 					document.getElementById("taxGrid_30_tax").value = "0";
+					
+					document.getElementById("taxGrid_final_taxable").value = finalTaxable;
 					document.getElementById("taxGrid_final_tax").value = "0";
 					document.getElementById("taxGrid_cess_taxable").value = "0";
 					document.getElementById("taxGrid_cess_tax").value = "0";
 					document.getElementById("taxGrid_tax_yearly").value = "0";
 					document.getElementById("taxGrid_tax_monthly").value = "0";
+					document.getElementById("main_tax").value = "0";
+					
 				}
-				if(taxableAmount > 250001 && taxableAmount < 500000){
+				if(finalTaxable > 250001 && finalTaxable <= 500000){
 					document.getElementById("taxGrid_0_taxable").value = "250000";
 					document.getElementById("taxGrid_0_tax").value = "0";
-					document.getElementById("taxGrid_5_taxable").value = finalTaxable;
-					document.getElementById("taxGrid_5_tax").value = (finalTaxable * 5 ) / 100 ;
+					let dynamicTaxableAmount=finalTaxable;
+					dynamicTaxableAmount = Number(dynamicTaxableAmount)-250000;
+					let taxAmount = (dynamicTaxableAmount * 5 ) / 100 ;
+					alert("taxAmount : "+taxAmount)
+					let cessTax = (taxAmount * 4)/100;
+					let taxYearly = taxAmount+cessTax;
+					let taxMonthly = taxYearly/12;
+					document.getElementById("taxGrid_5_taxable").value = dynamicTaxableAmount;
+					document.getElementById("taxGrid_5_tax").value = taxAmount;
 					document.getElementById("taxGrid_20_taxable").value = "0";
 					document.getElementById("taxGrid_20_tax").value = "0";
 					document.getElementById("taxGrid_30_taxable").value = "0";
 					document.getElementById("taxGrid_30_tax").value = "0";
-					//alert("B--"+ taxAmount+"--"+dynamicTaxableAmount);
+					
+					document.getElementById("taxGrid_final_taxable").value = finalTaxable;
+					document.getElementById("taxGrid_final_tax").value = taxAmount;
+					document.getElementById("taxGrid_cess_taxable").value = taxAmount;
+					document.getElementById("taxGrid_cess_tax").value = cessTax;
+					document.getElementById("taxGrid_tax_yearly").value = taxYearly;
+					document.getElementById("taxGrid_tax_monthly").value = taxMonthly;
+					document.getElementById("main_tax").value = taxYearly;
 				}
-				if(taxableAmount > 500001 && taxableAmount < 750000){
-				}
-				if(taxableAmount > 750001 && taxableAmount < 1000000){
-				}
-				if(taxableAmount > 1000001 ){						
+				if(finalTaxable > 500001 && finalTaxable <= 1000000){
+					document.getElementById("taxGrid_0_taxable").value = "250000";
+					document.getElementById("taxGrid_0_tax").value = "0";
+					document.getElementById("taxGrid_5_taxable").value = "250000";
+					document.getElementById("taxGrid_5_tax").value = "12500";
+					let dynamicTaxableAmount=finalTaxable;
+					dynamicTaxableAmount = Number(dynamicTaxableAmount)-500000;
+					let taxAmount = (dynamicTaxableAmount * 20 ) / 100 ;
+					let finalTax = Number(0)+Number(12500)+ Number(taxAmount);
+					let cessTax = (finalTax * 4)/100;
+					let taxYearly = finalTax+cessTax;
+					let taxMonthly = taxYearly/12;
+					document.getElementById("taxGrid_20_taxable").value = dynamicTaxableAmount;
+					document.getElementById("taxGrid_20_tax").value = taxAmount;
+					document.getElementById("taxGrid_30_taxable").value = "0";
+					document.getElementById("taxGrid_30_tax").value = "0";
+					
+					document.getElementById("taxGrid_final_taxable").value = finalTaxable;
+					document.getElementById("taxGrid_final_tax").value = finalTax;
+					document.getElementById("taxGrid_cess_taxable").value = finalTax;
+					document.getElementById("taxGrid_cess_tax").value = cessTax;
+					document.getElementById("taxGrid_tax_yearly").value = taxYearly;
+					document.getElementById("taxGrid_tax_monthly").value = taxMonthly;
+					document.getElementById("main_tax").value = taxYearly;
 				}
 				
-			  if(finalTaxable < 50){
-				//alert("50")
-				document.getElementById("taxGrid_0_taxable").value = finalTaxable;
-				document.getElementById("taxGrid_5_taxable").value = "100";
-			  }
-			  document.getElementById("taxGrid_cess_taxable").value = document.getElementById("taxGrid_final_tax").value;
+				if(finalTaxable > 1000001 ){
+					document.getElementById("taxGrid_0_taxable").value = "250000";
+					document.getElementById("taxGrid_0_tax").value = "0";
+					document.getElementById("taxGrid_5_taxable").value = "250000";
+					document.getElementById("taxGrid_5_tax").value = "12500";
+					document.getElementById("taxGrid_20_taxable").value = "1000000";
+					document.getElementById("taxGrid_20_tax").value = "200000";
+					let dynamicTaxableAmount=finalTaxable;
+					dynamicTaxableAmount = Number(dynamicTaxableAmount)-1000000;
+					let taxAmount = (dynamicTaxableAmount * 30 ) / 100 ;
+					let finalTax = Number(0)+Number(12500)+Number(200000)+ Number(taxAmount);
+					let cessTax = (finalTax * 4)/100;
+					let taxYearly = finalTax+cessTax;
+					let taxMonthly = taxYearly/12;
+					document.getElementById("taxGrid_30_taxable").value = dynamicTaxableAmount;
+					document.getElementById("taxGrid_30_tax").value = taxAmount;
+					
+					document.getElementById("taxGrid_final_taxable").value = finalTaxable;
+					document.getElementById("taxGrid_final_tax").value = finalTax;
+					document.getElementById("taxGrid_cess_taxable").value = finalTax;
+					document.getElementById("taxGrid_cess_tax").value = cessTax;
+					document.getElementById("taxGrid_tax_yearly").value = taxYearly;
+					document.getElementById("taxGrid_tax_monthly").value = taxMonthly;
+					document.getElementById("main_tax").value = taxYearly;
+				}
+				
 			}
 </script>
 
