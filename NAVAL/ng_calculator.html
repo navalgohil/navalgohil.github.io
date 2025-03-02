@@ -54,7 +54,7 @@
 	  <tbody>
 		<tr>
 		  <td>Basic</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="main_basic"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="main_basic"></td>  
 		</tr>
 		<tr>
 		  <td>HRA</td>
@@ -62,71 +62,71 @@
 		</tr>
 		<tr>
 		  <td>Other Allownace</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="main_othAll"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="main_othAll" onfocusout="populateGrossSalary()"></td> 
 		</tr>
 		<tr>
 		  <td>Gross Salary</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="main_grossSal"></td>
 		</tr>
 		<tr>
 		  <td>HRA</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="main_hra_calc" onfocusout="populateNetSalary()"></td>
 		</tr>
 		<tr>
 		  <td>Net Salary</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="main_netSal"></td>
 		</tr>
 		<tr>
 		  <td>STD Deduction </td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="main_STD"></td>
 		</tr>
 		<tr>
 		  <td>Employee Tax</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="main_empTax"  onfocusout="populateNetTaxSalary()"></td>
 		</tr>
 		<tr>
 		  <td>Net Taxable Salary</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="main_netTaxSal"></td>
 		</tr>
 		<tr>
 		  <td>Home loan</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="main_homeLoan" onfocusout="populateGrossTotalSalary()"></td>
 		</tr>
 		<tr>
 		  <td>Gross Total Salary</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="main_grossTotalSal"></td>
 		</tr>
 		<tr>
 		  <td>Basic Deductions - 80C</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="main_80C"></td>
 		</tr>
 		<tr>
 		  <td>Interest from Deposits - 80TTA </td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="main_80TTA"></td>
 		</tr>
 		<tr>
 		  <td>Medical Insurance - 80D</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="main_80D"></td>
 		</tr>
 		<tr>
 		  <td>Donations to Charity - 80G</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="main_80G"></td>
 		</tr>
 		<tr>
 		  <td>Interest on Educational Loan - 80E</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="main_80E"></td>
 		</tr>
 		<tr>
 		  <td>Interest on Housing Loan - 80EEA</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="main_80EEA"></td>
 		</tr>
 		<tr>
 		  <td>Employee's contribution to NPS - 80CCD</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="main_80CCD" onfocusout="populateTaxableValue()"></td>
 		</tr>
 		<tr>
 		  <td>Total Deduction</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="main_totalDed" ></td>
 		</tr>
 		<tr>
 		  <td>Total Taxable Income</td>
@@ -185,27 +185,27 @@
 	  <tbody>
 		<tr>
 		  <td>80C - PPF</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="ppf"></td>
 		</tr>
 		<tr>
 		  <td>80C - MF</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="mf"></td>
 		</tr>
 		<tr>
 		  <td>80C - PF</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="pf"></td>
 		</tr>
-		<tr>
+		<tr>  
 		  <td>80C - Repayment of Home loan</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="repayLoan"></td>
 		</tr>
 		<tr>
 		  <td>80C - Other</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="Other80Oth" onfocusout="populate80CTotal()"></td>
 		</tr>
 		<tr>
 		  <td>80C - Total</td>
-		  <td><input type="text" data-type="currency" class="form-control" id="usr"></td>
+		  <td><input type="text" data-type="currency" class="form-control" id="Total80CTotal"></td>
 		</tr>
 	  </tbody>
 	</table>
@@ -406,12 +406,104 @@
 				window.event.returnValue = false;
 			  });
 			}*/
+			//main_basic main_hra  main_othAll   main_grossSal  main_hra_calc main_netSal  main_STD  main_empTax  main_netTaxSal
+			//main_homeLoan  main_grossTotalSal  main_80C  main_80TTA main_80D  main80G  main80E  main_80EEA  main_80CCD main_totalDed  finalTaxable
+			//ppf mf pf repayLoan Other80Oth	Total80CTotal
+			function populate80CTotal(){
+				let ppf = document.getElementById("ppf").value.replace("₹","").replaceAll(",","");
+				let mf = document.getElementById("mf").value.replace("₹","").replaceAll(",","");
+				let pf = document.getElementById("pf").value.replace("₹","").replaceAll(",","");
+				let repayLoan = document.getElementById("repayLoan").value.replace("₹","").replaceAll(",","");
+				let Other80Oth = document.getElementById("Other80Oth").value.replace("₹","").replaceAll(",","");
+				if(ppf==""){ ppf="0";}
+				if(mf==""){ mf="0";}
+				if(pf==""){ pf="0";}
+				if(repayLoan==""){ repayLoan="0";}
+				if(Other80Oth==""){ Other80Oth="0";}
+				let Total80CTotal = Number(ppf)+Number(mf)+Number(pf)+Number(repayLoan)+Number(Other80Oth);
+				document.getElementById("Total80CTotal").value = Total80CTotal;
+			}
+			function populateTaxableValue() {
+				let main_80C = document.getElementById("main_80C").value.replace("₹","").replaceAll(",","");
+				let main_80TTA = document.getElementById("main_80TTA").value.replace("₹","").replaceAll(",","");
+				let main_80D = document.getElementById("main_80D").value.replace("₹","").replaceAll(",","");
+				let main_80G = document.getElementById("main_80G").value.replace("₹","").replaceAll(",","");
+				let main_80E = document.getElementById("main_80E").value.replace("₹","").replaceAll(",","");
+				let main_80EEA = document.getElementById("main_80EEA").value.replace("₹","").replaceAll(",","");
+				let main_80CCD = document.getElementById("main_80CCD").value.replace("₹","").replaceAll(",","");
+				if(main_80C==""){ main_80C="0";}
+				if(main_80TTA==""){ main_80TTA="0";}
+				if(main_80D==""){ main_80D="0";}
+				if(main_80G==""){ main_80G="0";}
+				if(main_80E==""){ main_80E="0";}
+				if(main_80EEA==""){ main_80EEA="0";}
+				if(main_80CCD==""){ main_80CCD="0";}
+				
+				let main_totalDed = Number(main_80C)+Number(main_80TTA)+Number(main_80D)+Number(main_80G)+Number(main_80E)+Number(main_80EEA)+Number(main_80CCD);
+				let main_grossTotalSal = populateGrossTotalSalary();
+				let finalTaxable = Number(main_grossTotalSal) - Number(main_totalDed);
+				alert("main_grossTotalSal="+main_grossTotalSal);
+				alert("finalTaxable="+finalTaxable);
+				document.getElementById("main_totalDed").value = main_totalDed;
+				document.getElementById("finalTaxable").value = finalTaxable;
+				
+			}
 			
+			function populateGrossTotalSalary() {
+				let main_homeLoan = document.getElementById("main_homeLoan").value.replace("₹","").replaceAll(",","");
+				if(main_homeLoan==""){ main_homeLoan="0";}
+				let main_netTaxSal = populateNetTaxSalary();
+				let main_grossTotalSal = Number(main_netTaxSal) - Number(main_homeLoan);
+				document.getElementById("main_grossTotalSal").value = main_grossTotalSal;
+				return main_grossTotalSal;
+			}
+			function populateNetTaxSalary() {
+				let main_STD = document.getElementById("main_STD").value.replace("₹","").replaceAll(",","");
+				let main_empTax = document.getElementById("main_empTax").value.replace("₹","").replaceAll(",","");
+				//alert("main_STD :"+main_STD+"=main_empTax="+main_empTax);
+				if(main_STD==""){ main_STD="0";}
+				if(main_empTax==""){ main_empTax="0";}
+				let ded = Number(main_STD) + Number(main_empTax) ;
+				//alert("ded:"+ded);
+				let main_netSal =populateNetSalary();
+				//alert("A:"+main_netSal);
+				let main_netTaxSal= Number(main_netSal) - Number(ded);
+				//alert("B:"+main_netTaxSal);
+				document.getElementById("main_netTaxSal").value = main_netTaxSal;
+				return main_netTaxSal;
+			}
+			function populateNetSalary() {
+				let main_hra_calc = document.getElementById("main_hra_calc").value.replace("₹","").replaceAll(",","");
+				if(main_hra_calc==""){ main_hra_calc="0";}
+				let main_grossSal =populateGrossSalary();
+				let main_netSal = Number(main_grossSal) - Number(main_hra_calc) ;
+				document.getElementById("main_netSal").value = main_netSal;
+				return main_netSal;
+			}
+			function populateGrossSalary() {
+				let main_basic = document.getElementById("main_basic").value.replace("₹","").replaceAll(",","");
+				let main_hra = document.getElementById("main_hra").value.replace("₹","").replaceAll(",","");
+				let main_othAll = document.getElementById("main_othAll").value.replace("₹","").replaceAll(",","");
+				if(main_basic==""){ main_basic="0";}
+				if(main_hra==""){ main_hra="0";}
+				if(main_othAll==""){ main_othAll="0";}
+				
+				let main_grossSal = Number(main_basic) +Number(main_hra) + Number(main_othAll) ;
+				//alert(main_grossSal);
+				document.getElementById("main_grossSal").value = main_grossSal;
+				return main_grossSal;
+			}
 			function populateYearlyRent() {
 			  let monthlyRent = document.getElementById("hra_monthly").value.replace("₹","").replaceAll(",","");
 			  let yearly_rent = monthlyRent*12;
 			  let basic = document.getElementById("main_basic").value.replace("₹","").replaceAll(",","");
 			  let hra = document.getElementById("main_hra").value.replace("₹","").replaceAll(",","");
+			  if(basic==""){
+			     basic="0";
+			  }
+			  if(hra==""){
+			     hra="0";
+			  }
 			  let hra_4050 = (basic * 50)/100;
 			  let rent10 = yearly_rent - ((basic*10)/100);
 			  document.getElementById("hra_yearly").value = yearly_rent;
@@ -419,6 +511,7 @@
 			  document.getElementById("hra_4050").value = hra_4050;
 			  document.getElementById("hra_rent10").value = rent10;
 			  document.getElementById("hra_final").value = Math.min(hra, hra_4050, rent10);
+			 
 			}
 			
 			function populateTaxableValueOnTaxGrid() {
@@ -500,12 +593,12 @@
 					document.getElementById("taxGrid_0_tax").value = "0";
 					document.getElementById("taxGrid_5_taxable").value = "250000";
 					document.getElementById("taxGrid_5_tax").value = "12500";
-					document.getElementById("taxGrid_20_taxable").value = "1000000";
-					document.getElementById("taxGrid_20_tax").value = "200000";
+					document.getElementById("taxGrid_20_taxable").value = "500000";
+					document.getElementById("taxGrid_20_tax").value = "100000";
 					let dynamicTaxableAmount=finalTaxable;
 					dynamicTaxableAmount = Number(dynamicTaxableAmount)-1000000;
 					let taxAmount = (dynamicTaxableAmount * 30 ) / 100 ;
-					let finalTax = Number(0)+Number(12500)+Number(200000)+ Number(taxAmount);
+					let finalTax = Number(0)+Number(12500)+Number(100000)+ Number(taxAmount);
 					let cessTax = (finalTax * 4)/100;
 					let taxYearly = finalTax+cessTax;
 					let taxMonthly = taxYearly/12;
