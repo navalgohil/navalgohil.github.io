@@ -10,7 +10,46 @@
 	<link href="../CSS/mystyle.css" rel="stylesheet">
 	<link href="../CSS/font-awesome.min.css" rel="stylesheet">
 	<link href="../CSS/bootstrap-social.css" rel="stylesheet"> 	
-
+	<style>
+	body {font-family: Arial, Helvetica, sans-serif;}
+		/* The Modal (background) */
+		.modal {
+		  display: none; /* Hidden by default */
+		  position: fixed; /* Stay in place */
+		  z-index: 1; /* Sit on top */
+		  padding-top: 60px; /* Location of the box */
+		  left: 0;
+		  top: 0;
+		  width: 100%; /* Full width */
+		  height: 100%; /* Full height */
+		  overflow: auto; /* Enable scroll if needed */
+		  background-color: rgb(0,0,0); /* Fallback color */
+		  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
+		/* Modal Content */
+		.modal-content {
+		  background-color: #fefefe;
+		  margin: auto;
+		  padding: 6px;
+		  border: 3px solid #0a0a0a;
+		  width: 80%;
+		  height: 80%;
+		}
+		/* The Close Button */
+		.close {
+		  color: #040000;
+		  float: right;
+		  font-size: 28px;
+		  font-weight: bold;
+		}
+		.close:hover,
+		.close:focus {
+		  color: #000;
+		  text-decoration: none;
+		  cursor: pointer;
+		}
+	</style>
+	</style>
 </head>
 <body>
 
@@ -50,163 +89,296 @@
       </tr>
     </thead>
     <tbody>
-	<tr><td>
-		<a data-toggle="collapse" data-target="#6">Spring</a>
-		<div id="6" class="collapse">
-		<ol>
-		<li><strong>What is the Spring Framework?</strong></li>
-		</ol>
-		<p>Spring is an open-source Java framework that simplifies enterprise application development. It provides tools for dependency injection, aspect-oriented programming, and integration with other frameworks.</p>
-		<ol start="2">
-		<li><strong>What are the core modules of Spring?</strong></li>
-		</ol>
-		<p>Core modules include &ndash; Spring Core, Spring Context, Spring AOP, Spring Data, Spring Web, Spring Security, and Spring Boot.&nbsp;</p>
-		<ol start="3">
-		<li><strong>What is Dependency Injection in Spring?</strong></li>
-		</ol>
-		<p>Dependency Injection (DI) is a design pattern where Spring manages object dependencies &ndash; allowing loose coupling between components.</p>
-		<ol start="4">
-		<li><strong>What is the Spring Bean Lifecycle?</strong></li>
-		</ol>
-		<p>The lifecycle includes bean instantiation, property setting, initialization (via @PostConstruct or init-method), and destruction (via @PreDestroy or destroy-method).</p>
-		<ol start="5">
-		<li><strong>What is the role of the ApplicationContext in Spring?</strong></li>
-		</ol>
-		<p>ApplicationContext is a container providing configuration, lifecycle management, and dependency injection for Spring beans.</p>
-		<ol start="6">
-		<li><strong>What is the difference between BeanFactory and ApplicationContext?</strong></li>
-		</ol>
-		<p>BeanFactory is a basic container for bean management &ndash; while ApplicationContext offers advanced features like internationalization, event handling, and AOP support.</p>
-		<ol start="7">
-		<li><strong>How does Spring support transaction management?</strong></li>
-		</ol>
-		<p>Spring supports both programmatic and declarative transaction management using @Transactional or the TransactionTemplate class.</p>
-		<ol start="8">
-		<li><strong>What is Spring IoC?</strong></li>
-		</ol>
-		<p>This is one of the most important Spring IoC interview questions. Here is how you should answer it.&nbsp;</p>
-		<p>Spring IoC (Inversion of Control) is a container that manages object creation and their dependencies &ndash; promoting loose coupling through Dependency Injection.</p>
-		<ol start="9">
-		<li><strong>How does Spring achieve loose coupling?</strong></li>
-		</ol>
-		<p>Spring achieves loose coupling through Dependency Injection and the use of interfaces &ndash; making modules independent and easily interchangeable.</p>
-		<ol start="10">
-		<li><strong>What is the DispatcherServlet in Spring?</strong></li>
-		</ol>
-		<p>The DispatcherServlet is the front controller in Spring MVC that handles incoming HTTP requests and delegates them to appropriate handlers.</p>
-		<ol start="11">
-		<li><strong>What is Spring AOP, and why is it used?</strong></li>
-		</ol>
-		<p>Spring AOP (Aspect-Oriented Programming) allows you to define cross-cutting concerns like logging, security, and transactions, separately from the application logic.</p>
-		<ol start="12">
-		<li><strong>How do you handle exceptions in Spring?</strong></li>
-		</ol>
-		<p>Spring handles exceptions using @ExceptionHandler in controllers, @ControllerAdvice for global handling, and custom exceptions with proper HTTP status codes.</p>
-		<ol start="13">
-		<li><strong>What is the difference between @Transactional and programmatic transactions?</strong></li>
-		</ol>
-		<p>@Transactional simplifies transaction management declaratively, while programmatic transactions use code (e.g., TransactionTemplate) for finer control.</p>
-		<ol start="14">
-		<li><strong>How does Spring Boot differ from the traditional Spring Framework?</strong></li>
-		</ol>
-		<p>Spring Boot simplifies development by providing embedded servers. It also offers auto-configuration and starter dependencies. This reduces the need for manual setup.&nbsp;</p>
-		<ol start="15">
-		<li><strong>What is a Spring Boot Starter?</strong></li>
-		</ol>
-		<p>Spring Boot Starters are predefined dependencies. They help set up Spring applications quickly. They require minimal configuration. Examples include spring-boot-starter-web and spring-boot-starter-data-jpa.</p>
-		<ol start="16">
-		<li><strong>What is the use of @Qualifier annotation?</strong></li>
-		</ol>
-		<p>@Qualifier is used when multiple beans of the same type exist. It helps specify which bean to inject. This resolves ambiguity in bean selection.</p>
-		<ol start="17">
-		<li><strong>What is Spring JDBC?</strong></li>
-		</ol>
-		<p>You might also come across Spring JDBC interview questions like this one.&nbsp;</p>
-		<p>Spring JDBC simplifies database operations. It provides helper classes and templates. These classes reduce repetitive code. They also handle common tasks like connection management.</p>
-		<ol start="18">
-		<li><strong>What is the role of @Bean in Spring?</strong></li>
-		</ol>
-		<p>@Bean is used to define a bean within a Java configuration class, &ndash; allowing Spring to manage its lifecycle and dependencies.</p>
-		<ol start="19">
-		<li><strong>What is the difference between @RequestMapping and @GetMapping?</strong></li>
-		</ol>
-		<p>@RequestMapping is a generic annotation for handling HTTP requests, while @GetMapping is a shortcut for HTTP GET requests.</p>
-		<ol start="20">
-		<li><strong>What is Spring Boot Actuator?</strong></li>
-		</ol>
-		<p>Spring Boot Actuator provides production-ready features like metrics, health checks, and application insights to monitor and manage Spring Boot applications.</p>
-		<ol start="21">
-		<li><strong>What is the use of Spring Profiles?</strong></li>
-		</ol>
-		<p>Spring Profiles allow you to define different configurations for different environments (e.g., dev, prod) in a Spring application.</p>
-		<ol start="22">
-		<li><strong>What is the difference between Spring MVC and Spring WebFlux?</strong></li>
-		</ol>
-		<p>Spring MVC is synchronous &ndash; while Spring WebFlux is asynchronous, built for handling non-blocking, reactive programming in web applications.</p>
-		<ol start="23">
-		<li><strong>What is the use of @PreAuthorize in Spring Security?</strong></li>
-		</ol>
-		<p>@PreAuthorize is used to secure methods with specific roles or permissions before method execution, based on expression-based access control.</p>
-		<ol start="24">
-		<li><strong>How does Spring manage transactions?</strong></li>
-		</ol>
-		<p>Spring uses @Transactional for declarative transaction management, allowing automatic transaction handling at the method level with rollback features.</p>
-		<ol start="25">
-		<li><strong>What is the difference between @Scope and @Singleton?</strong></li>
-		</ol>
-		<p>@Scope defines the lifecycle of a Spring bean (e.g., singleton, prototype) &ndash; while @Singleton (in non-Spring contexts) restricts a class to one instance globally.</p>
-		<ol start="26">
-		<li><strong>How does Spring support Aspect-Oriented Programming (AOP)?</strong></li>
-		</ol>
-		<p>Spring AOP allows the separation of cross-cutting concerns like logging, security, and transactions from the main business logic using aspects.</p>
-		<ol start="27">
-		<li><strong>What is Spring Data JPA?</strong></li>
-		</ol>
-		<p>Spring Data JPA simplifies database interaction by creating repositories for entities and providing built-in methods for CRUD operations.</p>
-		<ol start="28">
-		<li><strong>What are the advantages of using Spring Boot over Spring MVC?</strong></li>
-		</ol>
-		<p>Spring Boot simplifies configuration, provides embedded servers, and includes auto-configuration, reducing the need for boilerplate code compared to Spring MVC.</p>
-		<ol start="29">
-		<li><strong>How can you enable Caching in Spring?</strong></li>
-		</ol>
-		<p>You can enable caching by using the @EnableCaching annotation in a configuration class and @Cacheable on methods that require caching.</p>
-		<ol start="30">
-		<li><strong>How do you implement microservices in Spring?</strong></li>
-		</ol>
-		<p>Spring Boot, Spring Cloud, and Spring Data are used to build microservices, with tools like Eureka for service discovery and Ribbon for load balancing.</p>
-		<ol start="31">
-		<li><strong>What are the common design patterns used in Spring?</strong></li>
-		</ol>
-		<p>Common patterns in Spring include Singleton, Factory, Proxy, and Observer patterns, which help manage beans and improve modularity.</p>
-		<ol start="32">
-		<li><strong>What is Spring Batch?</strong></li>
-		</ol>
-		<p>Spring Batch is used for processing large volumes of data in batch jobs. It supports features like transaction management, job scheduling, and error handling.</p>
-		<ol start="33">
-		<li><strong>How would you handle a situation where two beans of the same type are present in the Spring context?</strong></li>
-		</ol>
-		<p><em>&ldquo;I would use the @Qualifier annotation to specify which bean to inject. This helps me avoid ambiguity when multiple beans of the same type are present in the context.&rdquo;</em></p>
-		<ol start="34">
-		<li><strong>How do you manage a database transaction that requires rolling back only under certain conditions?</strong></li>
-		</ol>
-		<p><em>&ldquo;I would use the @Transactional annotation with the rollbackFor attribute. This allows me to specify which exceptions should trigger a rollback, giving me more control over transaction management.&rdquo;</em></p>
-		<ol start="35">
-		<li><strong>How would you handle a situation where the Spring Boot application starts very slowly?</strong></li>
-		</ol>
-		<p><em>&ldquo;I would first profile the application to identify bottlenecks. I&rsquo;d review the autoconfiguration, lazy loading, and database connections. I might optimize startup performance by using @Lazy or adjusting application configurations.&rdquo;</em></p>
-		<ol start="36">
-		<li><strong>What would you do if a Spring MVC controller method is not handling the request as expected?</strong></li>
-		</ol>
-		<p><em>&ldquo;I would check if the request URL matches the method mapping and ensure the correct HTTP method (GET, POST) is used. I&rsquo;d also validate the controller and method annotations like @RequestMapping or @GetMapping.&rdquo;</em></p>
-		<br>
-		</div>
-	</td></tr><tr><td>
-		<a data-toggle="collapse" data-target="#100">TEST</a>
-		<div id="100" class="collapse well well-sm">
-		This is test...
-		</div>
-	</td></tr>
+	<tr>
+		<td>
+			<a data-toggle="collapse" data-target="#6">Spring</a>
+			<div id="6" class="collapse">
+			<ol>
+			<li><strong>What is the Spring Framework?</strong></li>
+			</ol>
+			<p>Spring is an open-source Java framework that simplifies enterprise application development. It provides tools for dependency injection, aspect-oriented programming, and integration with other frameworks.</p>
+			<ol start="2">
+			<li><strong>What are the core modules of Spring?</strong></li>
+			</ol>
+			<p>Core modules include &ndash; Spring Core, Spring Context, Spring AOP, Spring Data, Spring Web, Spring Security, and Spring Boot.&nbsp;</p>
+			<ol start="3">
+			<li><strong>What is Dependency Injection in Spring?</strong></li>
+			</ol>
+			<p>Dependency Injection (DI) is a design pattern where Spring manages object dependencies &ndash; allowing loose coupling between components.</p>
+			<ol start="4">
+			<li><strong>What is the Spring Bean Lifecycle?</strong></li>
+			</ol>
+			<p>The lifecycle includes bean instantiation, property setting, initialization (via @PostConstruct or init-method), and destruction (via @PreDestroy or destroy-method).</p>
+			<ol start="5">
+			<li><strong>What is the role of the ApplicationContext in Spring?</strong></li>
+			</ol>
+			<p>ApplicationContext is a container providing configuration, lifecycle management, and dependency injection for Spring beans.</p>
+			<ol start="6">
+			<li><strong>What is the difference between BeanFactory and ApplicationContext?</strong></li>
+			</ol>
+			<p>BeanFactory is a basic container for bean management &ndash; while ApplicationContext offers advanced features like internationalization, event handling, and AOP support.</p>
+			<ol start="7">
+			<li><strong>How does Spring support transaction management?</strong></li>
+			</ol>
+			<p>Spring supports both programmatic and declarative transaction management using @Transactional or the TransactionTemplate class.</p>
+			<ol start="8">
+			<li><strong>What is Spring IoC?</strong></li>
+			</ol>
+			<p>This is one of the most important Spring IoC interview questions. Here is how you should answer it.&nbsp;</p>
+			<p>Spring IoC (Inversion of Control) is a container that manages object creation and their dependencies &ndash; promoting loose coupling through Dependency Injection.</p>
+			<ol start="9">
+			<li><strong>How does Spring achieve loose coupling?</strong></li>
+			</ol>
+			<p>Spring achieves loose coupling through Dependency Injection and the use of interfaces &ndash; making modules independent and easily interchangeable.</p>
+			<ol start="10">
+			<li><strong>What is the DispatcherServlet in Spring?</strong></li>
+			</ol>
+			<p>The DispatcherServlet is the front controller in Spring MVC that handles incoming HTTP requests and delegates them to appropriate handlers.</p>
+			<ol start="11">
+			<li><strong>What is Spring AOP, and why is it used?</strong></li>
+			</ol>
+			<p>Spring AOP (Aspect-Oriented Programming) allows you to define cross-cutting concerns like logging, security, and transactions, separately from the application logic.</p>
+			<ol start="12">
+			<li><strong>How do you handle exceptions in Spring?</strong></li>
+			</ol>
+			<p>Spring handles exceptions using @ExceptionHandler in controllers, @ControllerAdvice for global handling, and custom exceptions with proper HTTP status codes.</p>
+			<ol start="13">
+			<li><strong>What is the difference between @Transactional and programmatic transactions?</strong></li>
+			</ol>
+			<p>@Transactional simplifies transaction management declaratively, while programmatic transactions use code (e.g., TransactionTemplate) for finer control.</p>
+			<ol start="14">
+			<li><strong>How does Spring Boot differ from the traditional Spring Framework?</strong></li>
+			</ol>
+			<p>Spring Boot simplifies development by providing embedded servers. It also offers auto-configuration and starter dependencies. This reduces the need for manual setup.&nbsp;</p>
+			<ol start="15">
+			<li><strong>What is a Spring Boot Starter?</strong></li>
+			</ol>
+			<p>Spring Boot Starters are predefined dependencies. They help set up Spring applications quickly. They require minimal configuration. Examples include spring-boot-starter-web and spring-boot-starter-data-jpa.</p>
+			<ol start="16">
+			<li><strong>What is the use of @Qualifier annotation?</strong></li>
+			</ol>
+			<p>@Qualifier is used when multiple beans of the same type exist. It helps specify which bean to inject. This resolves ambiguity in bean selection.</p>
+			<ol start="17">
+			<li><strong>What is Spring JDBC?</strong></li>
+			</ol>
+			<p>You might also come across Spring JDBC interview questions like this one.&nbsp;</p>
+			<p>Spring JDBC simplifies database operations. It provides helper classes and templates. These classes reduce repetitive code. They also handle common tasks like connection management.</p>
+			<ol start="18">
+			<li><strong>What is the role of @Bean in Spring?</strong></li>
+			</ol>
+			<p>@Bean is used to define a bean within a Java configuration class, &ndash; allowing Spring to manage its lifecycle and dependencies.</p>
+			<ol start="19">
+			<li><strong>What is the difference between @RequestMapping and @GetMapping?</strong></li>
+			</ol>
+			<p>@RequestMapping is a generic annotation for handling HTTP requests, while @GetMapping is a shortcut for HTTP GET requests.</p>
+			<ol start="20">
+			<li><strong>What is Spring Boot Actuator?</strong></li>
+			</ol>
+			<p>Spring Boot Actuator provides production-ready features like metrics, health checks, and application insights to monitor and manage Spring Boot applications.</p>
+			<ol start="21">
+			<li><strong>What is the use of Spring Profiles?</strong></li>
+			</ol>
+			<p>Spring Profiles allow you to define different configurations for different environments (e.g., dev, prod) in a Spring application.</p>
+			<ol start="22">
+			<li><strong>What is the difference between Spring MVC and Spring WebFlux?</strong></li>
+			</ol>
+			<p>Spring MVC is synchronous &ndash; while Spring WebFlux is asynchronous, built for handling non-blocking, reactive programming in web applications.</p>
+			<ol start="23">
+			<li><strong>What is the use of @PreAuthorize in Spring Security?</strong></li>
+			</ol>
+			<p>@PreAuthorize is used to secure methods with specific roles or permissions before method execution, based on expression-based access control.</p>
+			<ol start="24">
+			<li><strong>How does Spring manage transactions?</strong></li>
+			</ol>
+			<p>Spring uses @Transactional for declarative transaction management, allowing automatic transaction handling at the method level with rollback features.</p>
+			<ol start="25">
+			<li><strong>What is the difference between @Scope and @Singleton?</strong></li>
+			</ol>
+			<p>@Scope defines the lifecycle of a Spring bean (e.g., singleton, prototype) &ndash; while @Singleton (in non-Spring contexts) restricts a class to one instance globally.</p>
+			<ol start="26">
+			<li><strong>How does Spring support Aspect-Oriented Programming (AOP)?</strong></li>
+			</ol>
+			<p>Spring AOP allows the separation of cross-cutting concerns like logging, security, and transactions from the main business logic using aspects.</p>
+			<ol start="27">
+			<li><strong>What is Spring Data JPA?</strong></li>
+			</ol>
+			<p>Spring Data JPA simplifies database interaction by creating repositories for entities and providing built-in methods for CRUD operations.</p>
+			<ol start="28">
+			<li><strong>What are the advantages of using Spring Boot over Spring MVC?</strong></li>
+			</ol>
+			<p>Spring Boot simplifies configuration, provides embedded servers, and includes auto-configuration, reducing the need for boilerplate code compared to Spring MVC.</p>
+			<ol start="29">
+			<li><strong>How can you enable Caching in Spring?</strong></li>
+			</ol>
+			<p>You can enable caching by using the @EnableCaching annotation in a configuration class and @Cacheable on methods that require caching.</p>
+			<ol start="30">
+			<li><strong>How do you implement microservices in Spring?</strong></li>
+			</ol>
+			<p>Spring Boot, Spring Cloud, and Spring Data are used to build microservices, with tools like Eureka for service discovery and Ribbon for load balancing.</p>
+			<ol start="31">
+			<li><strong>What are the common design patterns used in Spring?</strong></li>
+			</ol>
+			<p>Common patterns in Spring include Singleton, Factory, Proxy, and Observer patterns, which help manage beans and improve modularity.</p>
+			<ol start="32">
+			<li><strong>What is Spring Batch?</strong></li>
+			</ol>
+			<p>Spring Batch is used for processing large volumes of data in batch jobs. It supports features like transaction management, job scheduling, and error handling.</p>
+			<ol start="33">
+			<li><strong>How would you handle a situation where two beans of the same type are present in the Spring context?</strong></li>
+			</ol>
+			<p><em>&ldquo;I would use the @Qualifier annotation to specify which bean to inject. This helps me avoid ambiguity when multiple beans of the same type are present in the context.&rdquo;</em></p>
+			<ol start="34">
+			<li><strong>How do you manage a database transaction that requires rolling back only under certain conditions?</strong></li>
+			</ol>
+			<p><em>&ldquo;I would use the @Transactional annotation with the rollbackFor attribute. This allows me to specify which exceptions should trigger a rollback, giving me more control over transaction management.&rdquo;</em></p>
+			<ol start="35">
+			<li><strong>How would you handle a situation where the Spring Boot application starts very slowly?</strong></li>
+			</ol>
+			<p><em>&ldquo;I would first profile the application to identify bottlenecks. I&rsquo;d review the autoconfiguration, lazy loading, and database connections. I might optimize startup performance by using @Lazy or adjusting application configurations.&rdquo;</em></p>
+			<ol start="36">
+			<li><strong>What would you do if a Spring MVC controller method is not handling the request as expected?</strong></li>
+			</ol>
+			<p><em>&ldquo;I would check if the request URL matches the method mapping and ensure the correct HTTP method (GET, POST) is used. I&rsquo;d also validate the controller and method annotations like @RequestMapping or @GetMapping.&rdquo;</em></p>
+			<br>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a data-toggle="collapse" data-target="#100">TEST</a>
+			<div id="100" class="collapse well well-sm">
+				This is test...
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a data-toggle="collapse" data-target="#api_terms">API TERMS</a>
+			<div id="api_terms" class="collapse well well-sm">
+				<img src="../IMG/API_TERMS.gif" alt="GIT flow" width="500" height="600">
+					<p>Must-Know API Terms<br /><br />Here&rsquo;s a quick guide to essential API concepts every developer should know:<br /><br />🔷 Endpoint <br />▸ The specific API URL that carries out a function or retrieves a resource.<br /><br />🔷 Request <br />▸ The action your system or client takes to interact with the API.<br /><br />🔷 Pagination <br />▸ Splits large results into smaller, manageable pages for easier data handling.<br /><br />🔷 Status Code <br />▸ HTTP code that shows if your request worked or failed (like 200 for OK, 404 for not found).<br /><br />🔷 Payload <br />▸ The data sent with your request or received in the response.<br /><br />🔷 Throttling <br />▸ Mechanism to slow down requests to keep the API from being overloaded.<br /><br />🔷 Authentication <br />▸ Process of verifying who is making the API call (often before access is given).<br /><br />🔷 API Key <br />▸ A unique token to identify and verify a client using the API.<br /><br />🔷 Rate Limiting <br />▸ Controls how many requests a client can make in a set time frame.<br /><br />🔷 Timeout <br />▸ The maximum time the API will wait before giving up on a response.<br /><br />🔷 Client <br />▸ The user or software that interacts with the API.<br /><br />🔷 Query Method <br />▸ The type of HTTP action you&rsquo;re taking - GET, POST, PUT, and so on.<br /><br />🔷 Cache <br />▸ Temporary storage to speed up repeated responses.<br /><br />🔷 API Gateway <br />▸ A service that handles routing, security, and controls the flow of API requests.<br /><br />Keep this handy for clear communication and efficient API integration!</p>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a data-toggle="collapse" data-target="#sql_basics">SQL BASICS</a>
+			<div id="sql_basics" class="collapse well well-sm">
+				<img src="../IMG/SQL_BASIC.jpeg" alt="GIT flow" width="500" height="600">
+				<p>SQL Cheatsheet - Master the Essentials<br /><br />Whether you're a beginner or brushing up, this concise guide covers the fundamentals of SQL.<br /><br />🔸 Basic Commands<br />&rarr; SELECT, INSERT INTO, UPDATE, DELETE &ndash; perform CRUD operations on database tables.<br /><br />🔸 Filtering Data<br />&rarr; Use WHERE, BETWEEN, IN, LIKE, IS NULL to filter specific rows based on conditions.<br /><br />🔸 Sorting Data<br />&rarr; Use ORDER BY to sort results in ascending (ASC) or descending (DESC) order.<br /><br />🔸 Aggregate Functions<br />&rarr; Functions like COUNT(), SUM(), AVG(), MIN(), MAX() to compute values over groups of rows.<br /><br />🔸 Grouping Data<br />&rarr; GROUP BY helps group rows sharing a property, often paired with aggregate functions.<br />&rarr; HAVING filters grouped results (like WHERE, but for groups).<br /><br />🔸 Joins<br />&rarr; Combine data from multiple tables:<br />INNER JOIN &ndash; only matching rows<br />LEFT JOIN &ndash; all rows from the left, matching from the right<br />RIGHT JOIN &ndash; all rows from the right<br />FULL JOIN &ndash; all rows from both, with nulls for missing matches<br /><br />🔸 Database &amp; Table Management<br />&rarr; CREATE, ALTER, DROP for databases and tables.<br />&rarr; Define schemas, add/modify columns, and manage structure.<br /><br />🔸 Constraints<br />&rarr; Enforce rules: PRIMARY KEY, FOREIGN KEY, UNIQUE, CHECK, NOT NULL.<br /><br />🔸 Indexes<br />&rarr; CREATE INDEX boosts query performance on large datasets, especially for filtered/search queries.<br /><br />🔸 Subqueries<br />&rarr; Use nested SELECT queries within WHERE, FROM, or SELECT to perform complex logic.</p>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a data-toggle="collapse" data-target="#git">GIT</a>
+			<div id="git" class="collapse well well-sm">
+				<img src="../IMG/GIT.gif" alt="GIT flow" width="500" height="600">
+				<img src="../IMG/GIT2.gif" alt="GIT flow" width="500" height="600">
+					
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a data-toggle="collapse" data-target="#REST_API_AUTH_METHODS">REST API AUTHENTICATION METHODS</a>
+			<div id="REST_API_AUTH_METHODS" class="collapse well well-sm">
+				<img src="../IMG/REST_API_AUTH_METHODS.gif" alt="GIT flow" width="500" height="600">					
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a data-toggle="collapse" data-target="#HTTP_STATUS_CODE">HTTP STATUS CODE</a>
+			<div id="HTTP_STATUS_CODE" class="collapse well well-sm">
+				<img src="../IMG/HTTP_STATUS_CODE.gif" alt="GIT flow" width="500" height="600">					
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a data-toggle="collapse" data-target="#DB_ACID">ACID in database</a>
+			<div id="DB_ACID" class="collapse well well-sm">
+				<img src="../IMG/DB_ACID.gif" alt="GIT flow" width="500" height="600">					
+				<p>What is ACID in Databases?<br />ACID is a foundational set of properties that ensure reliable transactions in relational databases.<br /><br />🔹 A &ndash; Atomicity<br />&rarr; Guarantees that all operations in a transaction are completed successfully or none are applied at all.<br />&ldquo;All or nothing.&rdquo;<br /><br />🔹 C &ndash; Consistency<br />&rarr; Ensures that a transaction brings the database from one valid state to another, maintaining integrity rules.<br />&ldquo;No rule-breaking allowed.&rdquo;<br /><br />🔹 I &ndash; Isolation<br />&rarr; Transactions execute independently. Intermediate states are not visible until the transaction is committed.<br />&ldquo;No interference.&rdquo;<br /><br />🔹 D &ndash; Durability<br />&rarr; Once a transaction is committed, its results persist even in the event of a system crash.<br />&ldquo;Permanent and safe.&rdquo;</p>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a data-toggle="collapse" data-target="#API_TESTING">API TESTING</a>
+			<div id="API_TESTING" class="collapse well well-sm">
+				<img src="../IMG/API_TESTING.gif" alt="GIT flow" width="500" height="600">					
+				<p>6 Essential Types of API Testing<br /><br />🔸 Smoke Testing<br />&rarr; A quick test to check if the basic functionality of an API is working without diving deep<br />&rarr; Ensures the most critical paths are functional<br /><br />🔸 Regression Testing<br />&rarr; Verifies that new changes don&rsquo;t break existing functionality<br />&rarr; Crucial when APIs are updated or modified<br /><br />🔸 Integration Testing<br />&rarr; Ensures the API integrates correctly with other systems or services<br />&rarr; Identifies potential conflicts in combined operations<br /><br />🔸 Functional Testing<br />&rarr; Focuses on validating the expected behavior of the API<br />&rarr; Tests if the API returns correct outputs for specific inputs<br /><br />🔸 Load Testing<br />&rarr; Assesses API performance under expected traffic conditions<br />&rarr; Measures how well the API handles large volumes of requests<br /><br />🔸 Stress Testing<br />&rarr; Pushes the API beyond its limits to see how it behaves under extreme load<br />&rarr; Identifies the breaking points and potential vulnerabilities</p>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a data-toggle="collapse" data-target="#API_PROTOCOL">API PROTOCOL</a>
+			<div id="API_PROTOCOL" class="collapse well well-sm">
+				<img src="../IMG/API_PROTOCOL.gif" alt="GIT flow" width="500" height="600">					
+				<p>➤ API Protocols Explained<br /><br />1️⃣ REST (Representational State Transfer)<br />&rarr; A lightweight, stateless protocol based on HTTP, used for accessing and manipulating web resources through standard CRUD operations (GET, POST, PUT, DELETE).<br /><br />2️⃣ SSE (Server-Sent Events)<br />&rarr; A unidirectional protocol for sending real-time updates from a server to a web client over a single HTTP connection. Often used for live notifications and real-time applications.<br /><br />3️⃣ SOAP (Simple Object Access Protocol)<br />&rarr; A messaging protocol for exchanging structured information between systems, typically using XML. It&rsquo;s more rigid and formal than REST and often used in enterprise-level applications.<br /><br />4️⃣ GraphQL<br />&rarr; A query language for APIs, allowing clients to request only the data they need. Unlike REST, which exposes fixed endpoints, GraphQL enables flexible queries and reduces over-fetching.<br /><br />5️⃣ WebSocket<br />&rarr; A full-duplex communication protocol that allows for two-way communication between the client and server over a single connection. Ideal for real-time applications like chat and gaming.<br /><br />6️⃣ EDA (Event-Driven Architecture)<br />&rarr; A design pattern in which components communicate by producing and consuming events. It enables reactive systems and facilitates asynchronous messaging and event handling.<br /><br />7️⃣ AMQP (Advanced Message Queuing Protocol)<br />&rarr; A messaging protocol that supports reliable, flexible, and asynchronous communication between applications or services, ensuring message delivery with robust routing capabilities.<br /><br />8️⃣ MQTT (Message Queuing Telemetry Transport)<br />&rarr; A lightweight messaging protocol designed for low-bandwidth, high-latency, or unreliable networks. It&rsquo;s often used in IoT (Internet of Things) systems.<br /><br />9️⃣ EDI (Electronic Data Interchange)<br />&rarr; A standardized method for exchanging business documents (such as invoices, orders, and shipping notices) between organizations in a structured electronic format.<br /><br />🔟 Webhooks<br />&rarr; HTTP callbacks triggered by specific events in the source system. Webhooks allow applications to send real-time data to another system whenever an event occurs.<br /><br />1️⃣1️⃣ gRPC (gRPC Remote Procedure Call)<br />&rarr; A high-performance, open-source RPC framework that uses HTTP/2 for transport and Protocol Buffers for serialization. Ideal for microservices and communication between services in distributed systems.</p>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a data-toggle="collapse" data-target="#API_SECURITY_TIPS">API SECURITY TIPS</a>
+			<div id="API_SECURITY_TIPS" class="collapse well well-sm">
+				<img src="../IMG/API_SECURITY_TIPS.gif" alt="GIT flow" width="500" height="600">					
+				<p>🔐 Top 12 API Security Best Practices You Should Never Ignore<br /><br />Securing your APIs isn&rsquo;t optional - it&rsquo;s mission-critical. Here&rsquo;s a bulletproof checklist to harden your APIs:<br /><br />1️⃣ Implement API Versioning<br />&rarr; Maintain multiple versions to avoid breaking changes and manage feature rollouts cleanly.<br /><br />2️⃣ Know the OWASP API Top 10 Risks<br />&rarr; Stay informed about common vulnerabilities like Broken Object Level Authorization (BOLA) and Excessive Data Exposure.<br /><br />3️⃣ Enforce Rate Limiting<br />&rarr; Protect your endpoints from abuse, DDoS, or brute-force attacks by limiting request frequency.<br /><br />4️⃣ Use an API Gateway<br />&rarr; Centralize routing, security, throttling, and observability for all your APIs.<br /><br />5️⃣ Enforce IP Allowlisting<br />&rarr; Restrict access to only trusted IPs - essential for internal or partner APIs.<br /><br />6️⃣ Adopt WebAuthn<br />&rarr; Use modern, phishing-resistant authentication methods like biometrics or hardware tokens.<br /><br />7️⃣ Always Use HTTPS<br />&rarr; Encrypt all traffic to prevent man-in-the-middle (MITM) attacks.<br /><br />8️⃣ Use Tiered API Keys<br />&rarr; Assign role-based access with scoped permissions and expirations.<br /><br />9️⃣ Strong Authorization Controls<br />&rarr; Verify user permissions at every endpoint - not just at login.<br /><br />🔟 Sanitize &amp; Validate Input<br />&rarr; Prevent injection attacks and malformed requests by strictly validating input types, lengths, and formats.<br /><br />1️⃣1️⃣ Use OAuth2 for Delegated Access<br />&rarr; Securely delegate permissions using access tokens and scopes.<br /><br />1️⃣2️⃣ Handle Errors Gracefully<br />&rarr; Avoid leaking sensitive data in error messages; use generic responses and proper status codes.</p>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a data-toggle="collapse" data-target="#SERVER_TYPES">BASIC SERVER TYPES</a>
+			<div id="SERVER_TYPES" class="collapse well well-sm">
+				<img src="../IMG/SERVER_TYPES.gif" alt="GIT flow" width="500" height="600">					
+				<p>8 Core Servers Every IT Pro Should Know<br /><br />Whether you're setting up infrastructure or troubleshooting systems, knowing these server roles is fundamental:<br /><br />🌐 Web Server &rarr; Delivers websites and APIs over HTTP/HTTPS, supports SSL/TLS for secure communication.<br /><br />📧 Email Server &rarr; Handles the sending, receiving, filtering, and archiving of email across secure protocols.<br /><br />🗃️ Database Server &rarr; Manages structured datasets, processes queries using SQL, ensures consistency and access control.<br /><br />🌍 DNS Server &rarr; Resolves human-readable domain names into IP addresses, enabling seamless internet navigation.<br /><br />📁 File Server &rarr; Centralizes data storage with permission management, versioning, and backup capabilities.<br /><br />📤 FTP Server &rarr; Enables file uploads/downloads via FTP/SFTP, supporting authentication and encryption.<br /><br />🛡️ Web Proxy Server &rarr; Acts as a middle layer to filter traffic, cache content, and enhance speed and security.<br /><br />📡 DHCP Server &rarr; Automatically assigns IPs, subnet masks, gateways, and DNS settings to network devices.</p>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a data-toggle="collapse" data-target="#NETWORK_PROTOCOL">Top 8 Most Used Network Protocol</a>
+			<div id="NETWORK_PROTOCOL" class="collapse well well-sm">
+				<img src="../IMG/NETWORK_PROTOCOL.gif" alt="GIT flow" width="500" height="600">					
+				<p>⏩ Top 8 Most Used Network Protocols<br /><br />Network protocols are the rules that let computers share data and talk to each other.<br /><br />🔹 HTTP &ndash; The foundation for web browsing and data transfer online. <br />🔹 HTTP/3 &ndash; The latest version of HTTP, offering faster and more reliable connections. <br />🔹 HTTPS &ndash; Like HTTP, but with encryption for secure web communication. <br />🔹 WebSocket &ndash; Enables real-time, two-way communication between browsers and servers. <br />🔹 TCP &ndash; Ensures reliable delivery of data packets over the internet. <br />🔹 UDP &ndash; Sends data quickly without checking for completeness, ideal for streaming and gaming. <br />🔹 SMTP &ndash; Used for sending emails between servers. <br />🔹 FTP &ndash; Transfers files between computers over a network.</p>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a data-toggle="collapse" data-target="#SQL_BASIC_PART_2">SQL Basics Part 2</a>
+			<div id="SQL_BASIC_PART_2" class="collapse well well-sm">
+				<img src="../IMG/SQL_BASIC_PART_2.gif" alt="GIT flow" width="500" height="600">					
+				<p>🔷 SQL CHEATSHEET (Quick Reference)<br /><br />1️⃣ Core SQL Commands<br /><br />DDL (Data Definition Language):<br />➤ CREATE, DROP, ALTER, TRUNCATE, VIEW<br /><br />DML (Data Manipulation Language):<br />➤ SELECT, INSERT, UPDATE, DELETE<br /><br />DCL (Data Control Language):<br />➤ GRANT, REVOKE<br /><br />DQL (Data Query Language):<br />➤ SELECT<br /><br />2️⃣ Clauses &amp; Operators<br /><br />➤ WHERE, HAVING, GROUP BY, ORDER BY<br />➤ Comparison: &lt;, &gt;, &lt;&gt;, =, &lt;=, &gt;=<br />➤ Logical: AND, OR, NOT<br />➤ Range: BETWEEN, IN, LIKE, EXISTS, ANY, ALL<br /><br />3️⃣ ORDER BY Examples<br />➤ ORDER BY column_name ASC<br />➤ ORDER BY column_name DESC<br /><br />4️⃣ Joins<br />➤ INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN<br /><br />5️⃣ Functions<br />➤ Aggregates: COUNT(), SUM(), AVG(), MIN(), MAX()<br /><br />WINDOW Functions:<br />➤ OVER(), RANK(), DENSE_RANK(), NTILE(), ROW_NUMBER()<br />➤ LAG(), LEAD()<br /><br />6️⃣ Aliasing<br />➤ Column/Table Alias: AS alias_name<br /><br />7️⃣ Table Management<br /><br />➤ CREATE TABLE, ALTER TABLE<br />➤ ADD, REMOVE, MODIFY<br />➤ TRUNCATE TABLE, DROP TABLE<br /><br />8️⃣ Data Handling<br />➤ All columns: SELECT * FROM table<br />➤ Specific columns: SELECT column1, column2 FROM table<br /><br />9️⃣ Views<br />➤ CREATE VIEW, DROP VIEW<br /><br />1️⃣0️⃣ Schema Reference<br />➤ DATABASE &rarr; contains &rarr; TABLE &rarr; contains &rarr; FIELD(S)<br />➤ TABLE &rarr; stores &rarr; rows of data (RECORDS)</p>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a data-toggle="collapse" data-target="#PDF">PDF</a>
+			<div id="PDF" class="collapse well well-sm">
+				<button onclick="myFunction('../PDF/JAVA_LINKDIN_BHUVNESH_YADAV.pdf')" >Master Core Java Interviews</button>
+				<p>https://www.linkedin.com/in/bhuvneshyadav02/</p>				
+				<p>What&rsquo;s Inside the PDF?<br /><br />Here&rsquo;s a quick look at the key topics covered:<br />&bull; ✅ OOPs Concepts &ndash; Core principles like inheritance, polymorphism, encapsulation, and abstraction<br />&bull; ✅ Collections Framework &ndash; List, Set, Map, and their internal workings<br />&bull; ✅ Exception Handling &ndash; Try-catch, custom exceptions, best practices<br />&bull; ✅ Memory Management &ndash; JVM, Garbage Collection, memory leaks<br />&bull; ✅ String Handling, HashMap, equals() &amp; hashCode() &ndash; Deep dive into common pitfalls and optimization techniques</p>
+				<!-- The Modal -->
+				<div id="myModal" class="modal">
+				  <!-- Modal content -->
+				  <div class="modal-content">
+					<span class="close">&times;</span>
+					<iframe id="iframe"  style="min-height:90%;width:100%"></iframe>
+				  </div>
+				</div>
+        
+
+			</div>
+		</td>
+	</tr>
+	
    </tbody>
 </table>
 
@@ -234,6 +406,24 @@
 					pagingType: 'full_numbers',
 				});
 			});
+			// Get the modal
+			var modal = document.getElementById("myModal");
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+			  modal.style.display = "none";
+			}
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+			  if (event.target == modal) {
+				modal.style.display = "none";
+			  }
+			}
+			function myFunction(path) {
+			  document.getElementById('iframe').src = path; 
+			  modal.style.display = "block";
+			}
 			document.addEventListener('keydown', function() {
 			  if (event.keyCode == 123) {
 				alert("This function has been disabled to prevent you from stealing my code!");
@@ -258,6 +448,7 @@
 				window.event.returnValue = false;
 			  });
 			}
+			
 </script>
 
 
